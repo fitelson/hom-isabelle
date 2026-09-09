@@ -1,0 +1,16 @@
+FOUNDATION: standard HOL-ZF; distinct from the pure-HOL term interpretation audit
+SCOPE: actual represented interpretation over the countable-name full-C canonical frame, including all-future abstraction; no complete modal-model or completeness claim
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 13 checked endpoints
+inverse maps decode typed assignments: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+actual counterparts transport typed assignments: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+assignment decoding commutes with actual counterpart transport: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+assignment decoding commutes with variable update: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the actual represented interpretation has typed values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the actual represented interpretation evaluates variables: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+closed terms have their represented identity-class values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the represented interpretation is local: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the represented interpretation evaluates actual graph application: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+the represented interpretation commutes with counterparts: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+the represented interpretation respects raw typed conversion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+abstraction evaluates correctly at every future world and argument: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+every interpreted abstraction is a genuine future homomorphism: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1

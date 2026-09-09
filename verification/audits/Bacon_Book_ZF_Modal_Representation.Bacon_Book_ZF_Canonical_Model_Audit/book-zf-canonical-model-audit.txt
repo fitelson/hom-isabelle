@@ -1,0 +1,17 @@
+FOUNDATION: standard HOL-ZF; not pure HOL
+SCOPE: Proposition 18.5 canonical modal-model certificate for the countable-name full-C frame, with the explicit future-domain implication convention; not generic interpretation, soundness or Theorem 18.4 completeness
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 14 checked endpoints
+typed two-stage future behavior identifies the prescribed curried graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=0
+typed three-stage future behavior identifies the prescribed curried graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=0
+future comprehensions commute with the actual world-code reindexing: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+compatible predicates give the same future comprehension after reindexing: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the canonical k is exactly the independently prescribed k graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the canonical s is exactly the independently prescribed s graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the canonical implication is exactly the prescribed future-restricted graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the canonical universal operator is exactly the prescribed graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the canonical identity operator is exactly the prescribed graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+all original declared constants have actual typed root values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+original constants denote the counterparts of their actual root values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the primitive root interpretations equal the independent prescribed values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the canonical data instantiate every independent modal-model field: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the canonical primitive denotations have the independent root interpretation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1

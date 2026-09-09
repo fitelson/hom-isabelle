@@ -1,0 +1,14 @@
+FOUNDATION: standard HOL-ZF; not pure HOL
+SCOPE: Independent interpretation uniqueness, assignment transport and semantic signature pullback. No generic interpretation existence or soundness claim.
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 11 checked endpoints
+typed assignments transport to every accessible world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=0
+assignment transport composes: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=0
+assignment transport commutes with a single update: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+the abstraction clause gives its exact future application: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+every admissible interpretation is unique on typed inputs: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+formula validity is independent of the admissible interpretation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+theory satisfaction is independent of the admissible interpretation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+every modal model pulls back along a declared constant map: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+every admissible interpretation pulls back along the same map: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+signature pullback preserves and reflects formula validity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+signature pullback preserves and reflects arbitrary theory satisfaction: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1

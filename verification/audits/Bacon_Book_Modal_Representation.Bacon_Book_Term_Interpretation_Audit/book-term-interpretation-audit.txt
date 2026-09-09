@@ -1,0 +1,19 @@
+FOUNDATION: pure HOL; no HOL-ZF import
+SCOPE: actual identity-class interpretation, representative independence, exact environment condition and counterpart naturality; no modal-model or completeness claim
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 16 checked endpoints
+H validates identity of typed convertible terms: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+identity classes contain typed conversion equivalence: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the canonical term interpretation is typed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the canonical term interpretation evaluates variables: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+closed terms denote their actual world identity classes: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the canonical term interpretation preserves application: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the canonical term interpretation is local: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the canonical term interpretation respects raw typed conversion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+the term interpretation satisfies the exact full environment condition: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the term interpretation has the ordinary abstraction equation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+finitely many equivalent representative changes preserve the result class: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+representative independence requires agreement only on free variables: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+every suitable choice of closed representatives computes the same interpretation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+every actual full-C world instantiates the constructed environment: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+counterpart transport preserves typed source assignments: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+the actual term interpretation commutes with counterparts: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1

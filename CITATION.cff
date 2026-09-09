@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this formalization, please cite the repository and the mathematical sources listed in docs/SOURCES_AND_CREDITS.md."
+title: "Higher-Order Logic and Classicism in Isabelle"
+type: software
+authors:
+  - family-names: Fitelson
+    given-names: Branden
+license: BSD-2-Clause
+abstract: "An open Isabelle formalization of higher-order logic H and Classicism C, with checked semantic results and explicitly documented remaining formalization tasks."

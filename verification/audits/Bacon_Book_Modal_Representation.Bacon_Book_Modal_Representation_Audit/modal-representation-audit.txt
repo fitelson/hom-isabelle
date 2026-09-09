@@ -1,0 +1,26 @@
+SCOPE: actual canonical base interfaces and e-to-e representation; conditional arbitrary function-type step; no all-type recursion or modal completeness claim
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 24 checked endpoints
+the actual full-C frame satisfies the pointed-preorder interface: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+every actual full-C term domain satisfies the modalized-set interface: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the source of term application is an actual modalized product: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+actual term application is a modalized map: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the inverse of a modalized bijection is a proved modalized map: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the constructed function is an actual future homomorphism under the lower-type hypotheses: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+source quasi-functionality makes the constructed function map injective: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the constructed function map is bijective onto its image domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the function inverse recovers each source value under separation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the function forward map recovers each image-domain value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+function representation commutes with literal future restriction: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+the constructed function image domains form a modalized set: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the whole function-type step is a modalized bijection under source separation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the canonical individual representation is the identity bijection: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the actual canonical e-to-e function representation is a modalized bijection: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the actual e-to-e inverse recovers each source class: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the actual e-to-e forward map recovers each represented function: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+represented e-to-e values are actual future homomorphisms: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+actual full-C proposition domains satisfy the modalized-set interface: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the actual full-C proposition map satisfies the modalized-bijection interface: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the canonical function step constructs a modalized bijection at arbitrary full types from lower representations: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=2
+the canonical function step produces actual future homomorphisms: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=2
+the constructed function satisfies exactly the source defining-behavior equation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the constructed image domain equals the future homomorphisms represented by source values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1

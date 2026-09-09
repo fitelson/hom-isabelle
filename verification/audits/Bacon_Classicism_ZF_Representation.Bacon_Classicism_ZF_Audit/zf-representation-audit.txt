@@ -1,0 +1,259 @@
+FOUNDATION: standard HOL-ZF set axioms, not pure HOL
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 257 checked endpoints
+graph encoding has the specified function-space type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+graph decoding has the specified normalized-function type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+function decode after encode is identity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+function encode after decode is identity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+actual function graph bijection: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+subset decode after encode is identity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+subset encode after decode is identity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+actual powerset carrier bijection: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+the entire HOL ZF type is not an internal ZF set: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+actual dependent pair carrier bijection: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+dependent pair projections reconstruct valid codes: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+dependent function graph bijection: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+dependent function decode after encode: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+dependent function encode after decode: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+bounded carrier image has an actual bijective code: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+bounded carrier image decoder is bijective: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+identity arrows give bounded object encoding: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+outgoing pair code matches the generic exponential domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+pair-function graphs have an actual dependent-product bijection: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+pair-function decode after encode: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+pair-function encode after decode: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+coherent exponential graphs match the generic full fiber: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+exponential decode after encode: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+exponential encode after decode: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+exponential encoding preserves typing and coherence: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+exponential decoding preserves typing and coherence: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+pair precomposition leaves the target argument unchanged: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+pair advancement transports the target argument: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+exponential encoding commutes with precomposition: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+exponential decoding commutes with graph transport: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+coded exponential transport is an actual action: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+coded powerset fiber has an actual bijection: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+powerset decoding commutes with separation transport: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+coded powerset is an actual action: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+coded individual fibers have actual bijections: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+bounded individual encoding constructs an actual action: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+individual decoding commutes with transport on fibers: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+individual-fiber nonemptiness is preserved: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+bounded arrow recoding constructs an actual category: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+arrow recoding reindexes actions without changing values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+identity-base fiber code retains exactly the original values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+identity-base value map is an actual fiber bijection: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+identity-base fibers retain the original action maps: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+bounded range code contains exactly the image: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+injective bounded family is bijective onto its range code: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+range decode after encode preserves original values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+range encode after decode preserves coded values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+equivariant bounded range is an actual action: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+equivariant bounded range is an ambient subaction: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+range encoding is an equivariant action map: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+injective range decoding is an equivariant action map: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+bounded arrow encoding commutes with powerset transport: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+R proposition code contains exactly the encoded truth profile: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+R proposition code reflects membership of original arrows: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+R proposition code lies in the coded outgoing powerset: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+quasi-Fregeanness makes R proposition coding injective: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+R proposition coding commutes with coded powerset transport: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+R proposition coding is an actual action map: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+old R proposition action is reindexed without value changes: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+R proposition stock is exactly its own encoded profile range: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+R proposition range is an actual action: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+R proposition range is a coded powerset subaction: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+R proposition map targets its own range action: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+quasi-Fregean R proposition fiber is bijective with its range: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+R proposition range decoding returns an original typed value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+R proposition range encode after decode: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+quasi-Fregean R proposition range decode after encode: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+quasi-Fregean R proposition inverse is equivariant: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+raw R recursion leaves individual values literally unchanged: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+raw R proposition domain is its specified own-profile range: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+raw arrow graph encoding evaluates on legitimate pair inputs: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+representation invariant derives the left inverse on original values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+representation invariant derives the right inverse on coded values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+representation invariant derives inverse equivariance from the source action: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+recursive individual fiber is literally the bounded original fiber: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+actual individual recursion base satisfies the representation invariant: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+actual proposition recursion base has exactly its encoded range: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+actual proposition recursion base is a powerset subaction: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+quasi-Fregean proposition base satisfies the representation invariant: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+arrow body coherence follows from the child action maps: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+every encoded original arrow value belongs to its exponential bound: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+arrow range contains every encoded original value without truncation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+arrow body naturality retains all target-domain tests: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+arrow graph encoding commutes with canonical exponential transport: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+child injectivity and quasi-functionality imply new arrow injectivity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+the actual arrow range inherits an action: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+arrow constructor preserves the representation invariant: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+actual structural recursion satisfies the invariant at every R type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+root-arrow recoding retains the complete root-arrow fiber: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+bounded arrow recoding preserves weak rootedness: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+forward representation assignment preserves its domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+inverse representation assignment preserves its domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+forward representation assignment preserves adequacy exactly: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+inverse representation assignment preserves adequacy exactly: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+actual recursive domains are empty outside R: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+constructed proposition domain satisfies the premodel subaction clause: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+constructed arrow domains are subactions of actual child exponentials: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+bounded original individuals give nonempty constructed individual fibers: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+declared root constants belong to their actual constructed domains: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+root constants transport through every encoded original arrow: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+recursive domains and root constants construct an independent action premodel: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+an intensional represented rooted R category gives an actual premodel: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+canonical identity-arrow application preserves original R application: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+application is closed on every pair of constructed-domain values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+forward assignment coding preserves typing at all assigned R slots: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+inverse assignment coding recovers original typing without non-R inverses: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+typed original partial assignments survive decode after encode: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+typed constructed partial assignments survive encode after decode: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+graph application succeeds exactly on a functional graph and domain input: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+graph application explicitly fails outside its guards: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+guarded graph application returns its actual value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=0
+literal negation graph evaluates to outgoing complement: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+literal conjunction graph evaluates to transported intersection: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+literal disjunction graph evaluates to transported union: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+literal universal graph tests every target-domain argument: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+literal existential graph tests some target-domain argument: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+literal identity graph tests equal transported values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+quantifier tests are typed when their predicate is an actual dependent graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+strict abstraction is defined when every outgoing body evaluation succeeds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+strict abstraction failure is witnessed by an undefined body input: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+a returned abstraction is a function graph with the exact pair domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+returned abstraction evaluates after transport then binder update: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+partial evaluator application has exact success and graph-domain guards: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+partial evaluator abstraction obeys the literal outgoing-pair equation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+partial evaluator abstraction retains strict failure semantics: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+typed adequate variable evaluation needs no premodel assumption: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+action transport preserves explicitly R-supported assignment typing: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+an independent premodel supplies application graph definedness and closure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+declared constants evaluate with the premodel root type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+premodel application evaluation is typed from defined typed subterms: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+constructed R evaluator has the original encoded variable value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+constructed R evaluator has the original encoded constant value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=10 sort_hyps=1
+constructed R evaluator application step uses only its two induction hypotheses: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=13 sort_hyps=1
+forward representation assignments commute with every coded arrow: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+inverse representation assignments commute with every coded arrow: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+Lambda body input is the encoding of the transported updated old assignment: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+Lambda body preimage assignment is typed and adequate: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+encoded old abstraction has the required value at every outgoing pair: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=11 sort_hyps=1
+independent evaluator Lambda step uses only the uniform strict-body induction hypothesis: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=12 sort_hyps=1
+coded R negation profile is exactly the outgoing complement: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+encoded empty-assignment negation equals the independent literal graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+encoded negation at every typed assignment equals the literal graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+independent evaluator Not case equals the encoded original value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+coded arrows preserve original R application: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+encoded arrow application has its actual pair-domain value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+partial binary logical graphs cover every inner pair: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+binary logical graphs cover both complete nested pair domains: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+conjunction profile coding preserves the actual set operation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+conjunction original value equals the independent literal graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+independent evaluator And case has the original encoded value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+disjunction profile coding preserves the actual set operation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+disjunction original value equals the independent literal graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+independent evaluator Or case has the original encoded value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+identity profile coding tests original transported equality: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+identity codes reflect equality using child encoding injectivity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+identity equals the literal doubly transported equality graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+independent evaluator identity case holds at every R type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+encoded predicate tests recover original application truth: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=10 sort_hyps=1
+quantifier tests cover every represented target-domain value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+quantified truth profiles equal the literal target-test subset: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+both quantifier values equal their independent literal graphs: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+independent evaluator handles universal and existential families: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+identity membership in a proposition code is original truth: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+all six independent logical families have encoded original values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+structural R typing induction discharges every evaluator case: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=11 sort_hyps=1
+every R-language term has its encoded original interpretation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=10 sort_hyps=1
+every new adequate assignment is covered by exact decoding: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=10 sort_hyps=1
+every adequate evaluation is defined and in the selected domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=10 sort_hyps=1
+bounded quasi-Fregean quasi-functional construction is an action model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+bounded intensional construction satisfies the independent model criterion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+truth agrees at every encoded adequate assignment: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=10 sort_hyps=1
+truth agrees at every new adequate assignment: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=10 sort_hyps=1
+all-assignment truth agrees at every root arrow: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+truth in the original root model equals truth at the coded identity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+reachable restriction gives an actual bounded action model with the same root truth: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+raw partial evaluation depends only on free-variable assignments: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+normalized R BBK-domain typing is exactly supported action typing: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+the degenerate logical example has legitimate typed adequate inputs: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+unguarded premodel naturality fails for a legal off-domain extension: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+defined negation has undefined selected-fiber partial transport: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+target-dependent pair graphs commute with canonical precomposition: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+all six literal logical graphs commute with canonical precomposition: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+R-supported partial assignments satisfy identity transport: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+R-supported partial assignments satisfy composed transport: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+canonical exponential transport evaluates by precomposition: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+a premodel supplies the assignment identity law: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+a premodel supplies the assignment composition law: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+premodel application naturality retains both selected-value guards: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+defined abstraction commutes with canonical exponential transport: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+own-action abstraction naturality requires selected membership: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+own-action logical naturality requires selected logical membership: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+one-object empty-relational-stock construction is an actual premodel: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+an actual premodel can define a logical value outside its selected stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+a supplied action model produces typed values through actual root arrows: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+a supplied action model has nonempty domains at every R type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+normalized R domains of a supplied action model are nonempty: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+a supplied model discharges selected logical-value membership: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+logical naturality follows from the independent action-model criterion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+C.1 holds for every typed adequate interpretation in a supplied action model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+abstraction congruence preserves both strict definedness and graph values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+uniform raw evaluator equality lifts through every named context: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+typed adequate contextual equality preserves all premodel input guards: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=10 sort_hyps=1
+C.3 literal capture-free substitution holds for partial adequate assignments: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=10 sort_hyps=1
+C.4 beta follows from graph application and literal substitution: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+C.5 eta compares every outgoing pair without transport surjectivity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+transported application tests arbitrary target arguments at identity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+every dependent function graph equals Lambda of its actual applications: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+contextual beta preserves evaluation with both endpoint guards: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+contextual eta preserves evaluation with both endpoint guards: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+signature conversion preserves evaluation under R-total assignments: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+signature conversion needs adequacy only for its endpoints: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+C.6 raw R conversion is retracted into the declared signature: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+the candidate root-arrow denotation has an actual selected value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+candidate application has its actual graph and valid identity-pair input: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+candidate application congruence allows heterogeneous overlapping domains: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=13 sort_hyps=1
+candidate valuation matches the independent action-model truth predicate: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+candidate denotation locality follows from raw partial-evaluator locality: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+selected proposition values contain only legitimate outgoing arrows: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+identity truth after proposition transport is original arrow membership: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+formula truth after each outgoing arrow tests the original proposition value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+uniform truth at all root inputs separates proposition values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+candidate logical denotation is the independently defined literal graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+unary logical application uses the actual graph at a guarded identity pair: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+binary logical application uses both guarded identity pairs: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+fresh-variable updates realize every target predicate argument: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+candidate negation truth is outgoing complement: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+candidate conjunction truth is transported intersection: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+candidate disjunction truth is transported union: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+candidate identity truth is actual equality at every R type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+candidate universal truth ranges over every target-domain value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+candidate existential truth ranges over every target-domain value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+uniform body equality lifts under arbitrary literal binder vectors: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+uniform truth yields vector equality with abstraction-only adequacy: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=10 sort_hyps=1
+candidate denotation respects raw R conversion by the proved C6 theorem: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+each root arrow of a supplied action model yields an actual independent R BBK model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+uniform truth validates literal vector identity without H or C assumptions: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=10 sort_hyps=1
+native R H truth follows through the derived R BBK model at every root arrow: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+an H-certified literal biconditional gives uniform truth agreement: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+C7 validates H-certified Logical Equivalence with abstraction-only adequacy: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=10 sort_hyps=1
+C7 holds at every typed assignment adequate for the final identity formula: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+every H-certified Logical Equivalence instance is valid in the same constructed R BBK model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+Proposition3.21 packages one R BBK model with same truth and all Logical Equivalence instances: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+native R Classicism is valid in the derived root-arrow R BBK model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+native R Classicism holds at every typed adequate root-arrow input: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+native R Classicism is sound at the root identity of every supplied action model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the actual HOL-ZF set Nat has an infinite decoded carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+a proved cardinal bound yields an actual bounded injection without a global carrier assumption: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the size-controlled classical hull constructs an action model and preserves all root truth: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+a native C non-theorem has an actual action model and a typed adequate root counterassignment: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+native C equals validity in all actual action models on the fixed world carrier under the represented signature bound: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+pure Classicism has action completeness using the actual HOL-ZF set Nat: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+countably many declared names suffice for action completeness without ambient name-type countability: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+typed constant pullback preserves the full partial evaluator including undefined results: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+pulling back only constants preserves an actual independent action model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+old record-indexed validity is exactly generic validity at its original world-label type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+arbitrary-signature C non-theorems have actual action countermodels on the explicit padded label carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+arbitrary-signature C equals validity in all independent action models on the padded label carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1

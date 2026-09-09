@@ -1,0 +1,222 @@
+theory Bacon_Book_Conversion_Classes
+  imports Bacon_Book_Minimal_Formula_Syntax
+    Bacon_Source_Vocabulary_Development.Bacon_Source_Named_Raw_Conversion
+begin
+
+section \<open>βη classes of typed closed terms\<close>
+
+text \<open>
+  Dτ consists of classes [A]τ of closed terms A:τ, where B∈[A]τ
+  exactly when B is closed in the declared language and A≡βηB.
+  Source: Bacon, p.320, explicitly allows the term construction to use
+  the βη quotient. Closed representatives here track the repaired
+  universal-closure and closed-decision route, not an all-open completion.
+
+  Representation. A class is an ordinary set of named terms. The raw
+  conversion relation keeps every node well typed but does not restrict
+  intermediate nonlogical constants to Σ. Class members themselves must
+  belong to Σ. Reflexivity and class-equality reflection are therefore
+  stated with explicit typed closed endpoint guards.
+
+  Scope. This is quotient syntax, not a PER function-space construction
+  or a semantic model. It assumes no theoremhood, consistency, richness,
+  domain inhabitation, separation, or Functionality. A SOME representative
+  is justified only for a value already belonging to the indicated domain.
+\<close>
+
+definition book_closed_terms ::
+  "'c ssignature \<Rightarrow> sgcontext \<Rightarrow> otype \<Rightarrow> 'c book_named_term set" where
+  "book_closed_terms \<Sigma> G \<tau> =
+    {A. book_in_language book_minimal_logical_type UNIV \<Sigma> G A \<tau> \<and> named_fv A = {}}"
+
+definition book_conversion_class ::
+  "'c ssignature \<Rightarrow> sgcontext \<Rightarrow> otype \<Rightarrow> 'c book_named_term \<Rightarrow> 'c book_named_term set" where
+  "book_conversion_class \<Sigma> G \<tau> A =
+    {B \<in> book_closed_terms \<Sigma> G \<tau>. named_raw_beta_eta book_minimal_logical_type G \<tau> A B}"
+
+definition book_conversion_domain ::
+  "'c ssignature \<Rightarrow> sgcontext \<Rightarrow> otype \<Rightarrow> 'c book_named_term set set" where
+  "book_conversion_domain \<Sigma> G \<tau> =
+    image (book_conversion_class \<Sigma> G \<tau>) (book_closed_terms \<Sigma> G \<tau>)"
+
+definition book_conversion_rep :: "'c book_named_term set \<Rightarrow> 'c book_named_term" where
+  "book_conversion_rep X = (SOME A. A \<in> X)"
+
+lemma book_closed_termsI:
+  assumes language: "book_in_language book_minimal_logical_type UNIV \<Sigma> G A \<tau>"
+    and closed: "named_fv A = {}"
+  shows "A \<in> book_closed_terms \<Sigma> G \<tau>"
+  unfolding book_closed_terms_def by (rule CollectI, rule conjI[OF language closed])
+
+lemma book_closed_terms_language:
+  "A \<in> book_closed_terms \<Sigma> G \<tau> \<Longrightarrow>
+    book_in_language book_minimal_logical_type UNIV \<Sigma> G A \<tau>"
+  unfolding book_closed_terms_def by blast
+
+lemma book_closed_terms_type:
+  assumes member: "A \<in> book_closed_terms \<Sigma> G \<tau>"
+  shows "has_ntype book_minimal_logical_type G A \<tau>"
+  by (rule book_language_type[OF book_closed_terms_language[OF member]])
+
+lemma book_closed_terms_closed:
+  "A \<in> book_closed_terms \<Sigma> G \<tau> \<Longrightarrow> named_fv A = {}"
+  unfolding book_closed_terms_def by blast
+
+lemma book_closed_terms_raw_refl:
+  assumes member: "A \<in> book_closed_terms \<Sigma> G \<tau>"
+  shows "named_raw_beta_eta book_minimal_logical_type G \<tau> A A"
+proof -
+  have language: "named_in_language book_minimal_logical_type (\<lambda>_. UNIV) G A \<tau>"
+    by (simp only: named_universal_language; rule book_closed_terms_type[OF member])
+  show ?thesis by (rule named_beta_eta_in_language.Refl[OF language])
+qed
+
+lemma book_conversion_classI:
+  assumes member: "B \<in> book_closed_terms \<Sigma> G \<tau>"
+    and conversion: "named_raw_beta_eta book_minimal_logical_type G \<tau> A B"
+  shows "B \<in> book_conversion_class \<Sigma> G \<tau> A"
+  unfolding book_conversion_class_def by (rule CollectI, rule conjI[OF member conversion])
+
+lemma book_conversion_class_member_closed_terms:
+  "B \<in> book_conversion_class \<Sigma> G \<tau> A \<Longrightarrow> B \<in> book_closed_terms \<Sigma> G \<tau>"
+  unfolding book_conversion_class_def by blast
+
+lemma book_conversion_class_member_conversion:
+  "B \<in> book_conversion_class \<Sigma> G \<tau> A \<Longrightarrow>
+    named_raw_beta_eta book_minimal_logical_type G \<tau> A B"
+  unfolding book_conversion_class_def by blast
+
+lemma book_conversion_class_member_language:
+  assumes member: "B \<in> book_conversion_class \<Sigma> G \<tau> A"
+  shows "book_in_language book_minimal_logical_type UNIV \<Sigma> G B \<tau>"
+  by (rule book_closed_terms_language[OF book_conversion_class_member_closed_terms[OF member]])
+
+lemma book_conversion_class_member_closed:
+  assumes member: "B \<in> book_conversion_class \<Sigma> G \<tau> A"
+  shows "named_fv B = {}"
+  by (rule book_closed_terms_closed[OF book_conversion_class_member_closed_terms[OF member]])
+
+lemma book_conversion_class_self_member:
+  assumes member: "A \<in> book_closed_terms \<Sigma> G \<tau>"
+  shows "A \<in> book_conversion_class \<Sigma> G \<tau> A"
+  by (rule book_conversion_classI[OF member book_closed_terms_raw_refl[OF member]])
+
+lemma book_conversion_class_nonempty:
+  assumes member: "A \<in> book_closed_terms \<Sigma> G \<tau>"
+  shows "book_conversion_class \<Sigma> G \<tau> A \<noteq> {}"
+  using book_conversion_class_self_member[OF member] by blast
+
+section \<open>Equality of classes reflects conversion on closed endpoints\<close>
+
+theorem book_conversion_class_eq:
+  assumes conversion: "named_raw_beta_eta book_minimal_logical_type G \<tau> A B"
+  shows "book_conversion_class \<Sigma> G \<tau> A = book_conversion_class \<Sigma> G \<tau> B"
+proof (rule set_eqI, rule iffI)
+  fix C
+  assume member: "C \<in> book_conversion_class \<Sigma> G \<tau> A"
+  have closed_C: "C \<in> book_closed_terms \<Sigma> G \<tau>"
+    by (rule book_conversion_class_member_closed_terms[OF member])
+  have AC: "named_raw_beta_eta book_minimal_logical_type G \<tau> A C"
+    by (rule book_conversion_class_member_conversion[OF member])
+  have BC: "named_raw_beta_eta book_minimal_logical_type G \<tau> B C"
+    by (rule named_beta_eta_in_language.Trans[OF named_beta_eta_in_language.Sym[OF conversion] AC])
+  show "C \<in> book_conversion_class \<Sigma> G \<tau> B" by (rule book_conversion_classI[OF closed_C BC])
+next
+  fix C
+  assume member: "C \<in> book_conversion_class \<Sigma> G \<tau> B"
+  have closed_C: "C \<in> book_closed_terms \<Sigma> G \<tau>"
+    by (rule book_conversion_class_member_closed_terms[OF member])
+  have BC: "named_raw_beta_eta book_minimal_logical_type G \<tau> B C"
+    by (rule book_conversion_class_member_conversion[OF member])
+  have AC: "named_raw_beta_eta book_minimal_logical_type G \<tau> A C"
+    by (rule named_beta_eta_in_language.Trans[OF conversion BC])
+  show "C \<in> book_conversion_class \<Sigma> G \<tau> A" by (rule book_conversion_classI[OF closed_C AC])
+qed
+
+theorem book_conversion_class_eq_iff:
+  assumes first: "A \<in> book_closed_terms \<Sigma> G \<tau>"
+    and second: "B \<in> book_closed_terms \<Sigma> G \<tau>"
+  shows "book_conversion_class \<Sigma> G \<tau> A = book_conversion_class \<Sigma> G \<tau> B
+    \<longleftrightarrow> named_raw_beta_eta book_minimal_logical_type G \<tau> A B"
+proof
+  assume equality: "book_conversion_class \<Sigma> G \<tau> A = book_conversion_class \<Sigma> G \<tau> B"
+  have self: "B \<in> book_conversion_class \<Sigma> G \<tau> B"
+    by (rule book_conversion_class_self_member[OF second])
+  have member: "B \<in> book_conversion_class \<Sigma> G \<tau> A" using self equality by simp
+  show "named_raw_beta_eta book_minimal_logical_type G \<tau> A B"
+    by (rule book_conversion_class_member_conversion[OF member])
+next
+  assume conversion: "named_raw_beta_eta book_minimal_logical_type G \<tau> A B"
+  show "book_conversion_class \<Sigma> G \<tau> A = book_conversion_class \<Sigma> G \<tau> B"
+    by (rule book_conversion_class_eq[OF conversion])
+qed
+
+section \<open>Domain values and guarded representative choice\<close>
+
+lemma book_conversion_domainI:
+  assumes member: "A \<in> book_closed_terms \<Sigma> G \<tau>"
+  shows "book_conversion_class \<Sigma> G \<tau> A \<in> book_conversion_domain \<Sigma> G \<tau>"
+  unfolding book_conversion_domain_def by (rule imageI[OF member])
+
+lemma book_conversion_domainE:
+  assumes member: "X \<in> book_conversion_domain \<Sigma> G \<tau>"
+  obtains A where "A \<in> book_closed_terms \<Sigma> G \<tau>" and "X = book_conversion_class \<Sigma> G \<tau> A"
+proof -
+  obtain A where closed_A: "A \<in> book_closed_terms \<Sigma> G \<tau>"
+    and shape: "X = book_conversion_class \<Sigma> G \<tau> A"
+    using member unfolding book_conversion_domain_def by blast
+  show thesis by (rule that[OF closed_A shape])
+qed
+
+lemma book_conversion_value_nonempty:
+  assumes member: "X \<in> book_conversion_domain \<Sigma> G \<tau>"
+  shows "X \<noteq> {}"
+proof -
+  obtain A where closed_A: "A \<in> book_closed_terms \<Sigma> G \<tau>"
+    and shape: "X = book_conversion_class \<Sigma> G \<tau> A"
+    by (rule book_conversion_domainE[OF member]; rule that; assumption)
+  show ?thesis by (simp only: shape; rule book_conversion_class_nonempty[OF closed_A])
+qed
+
+lemma book_conversion_domain_member_closed_terms:
+  assumes domain: "X \<in> book_conversion_domain \<Sigma> G \<tau>" and member: "A \<in> X"
+  shows "A \<in> book_closed_terms \<Sigma> G \<tau>"
+proof -
+  obtain B where closed_B: "B \<in> book_closed_terms \<Sigma> G \<tau>"
+    and shape: "X = book_conversion_class \<Sigma> G \<tau> B"
+    by (rule book_conversion_domainE[OF domain]; rule that; assumption)
+  have in_class: "A \<in> book_conversion_class \<Sigma> G \<tau> B" using member by (simp only: shape)
+  show ?thesis by (rule book_conversion_class_member_closed_terms[OF in_class])
+qed
+
+lemma book_conversion_rep_member:
+  assumes domain: "X \<in> book_conversion_domain \<Sigma> G \<tau>"
+  shows "book_conversion_rep X \<in> X"
+proof -
+  have inhabited: "\<exists>A. A \<in> X" using book_conversion_value_nonempty[OF domain] by blast
+  show ?thesis unfolding book_conversion_rep_def by (rule someI_ex; rule inhabited)
+qed
+
+lemma book_conversion_rep_closed_terms:
+  assumes domain: "X \<in> book_conversion_domain \<Sigma> G \<tau>"
+  shows "book_conversion_rep X \<in> book_closed_terms \<Sigma> G \<tau>"
+  by (rule book_conversion_domain_member_closed_terms[OF domain book_conversion_rep_member[OF domain]])
+
+theorem book_conversion_rep_class:
+  assumes domain: "X \<in> book_conversion_domain \<Sigma> G \<tau>"
+  shows "book_conversion_class \<Sigma> G \<tau> (book_conversion_rep X) = X"
+proof -
+  obtain A where closed_A: "A \<in> book_closed_terms \<Sigma> G \<tau>"
+    and shape: "X = book_conversion_class \<Sigma> G \<tau> A"
+    by (rule book_conversion_domainE[OF domain]; rule that; assumption)
+  have member: "book_conversion_rep X \<in> book_conversion_class \<Sigma> G \<tau> A"
+    using book_conversion_rep_member[OF domain] by (simp only: shape)
+  have conversion: "named_raw_beta_eta book_minimal_logical_type G \<tau> A (book_conversion_rep X)"
+    by (rule book_conversion_class_member_conversion[OF member])
+  have equality: "book_conversion_class \<Sigma> G \<tau> A =
+    book_conversion_class \<Sigma> G \<tau> (book_conversion_rep X)"
+    by (rule book_conversion_class_eq[OF conversion])
+  show ?thesis by (rule trans[OF equality[symmetric] shape[symmetric]])
+qed
+
+end

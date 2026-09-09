@@ -1,0 +1,16 @@
+FOUNDATION: standard HOL-ZF; not pure HOL
+SCOPE: Canonical independent interpretation and original-theory truth; actual full-C model existence in a fixed countable ambient signature with infinite reserves. Explicit future-restricted implication convention; not generic soundness or unrestricted completeness.
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 13 checked endpoints
+canonical independent interpretation clause: type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+canonical independent interpretation clause: variable: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+canonical independent interpretation clause: constant: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+canonical independent interpretation clause: logical: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+canonical independent interpretation clause: application: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+canonical independent interpretation clause: abstraction: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the canonical interpretation satisfies all independent clauses: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the canonical interpretation is unique on typed inputs: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+root validity agrees with the established per-world interpretation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+membership of a universal closure ensures original formula validity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the canonical model satisfies every original premise: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+every admissible canonical interpretation satisfies the original theory: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+full-C consistency constructs an actual model in a fixed countable ambient signature: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1

@@ -1,0 +1,5 @@
+FOUNDATION: pure HOL; no HOL-ZF import
+SCOPE: typed closed canonical k/s syntax; no modal-model or completeness claim
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 2 checked endpoints
+the canonical k lambda term is closed and has every required full type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the canonical s lambda term is closed and has every required full type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1

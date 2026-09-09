@@ -1,0 +1,4 @@
+FOUNDATION: pure HOL; no HOL-ZF import
+SCOPE: actual full-C term-domain separation at all full types; no complete modal-model or completeness claim
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 1 checked endpoints
+Leibniz equivalence is equality in the actual canonical term general models: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1

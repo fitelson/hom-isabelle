@@ -1,0 +1,9 @@
+{
+  "checkpoint": "pre-split 612 endpoints, 2026-09-08",
+  "original_theory_path": "theories/core_audit/Bacon_Core_Theorem_Audit.thy",
+  "original_theory_sha256": "5a02c2067f4b8f0e054ef1954abeddab3f9fc35affd186139957b8e60cca01c7",
+  "existing_export_path": "reports/core_audit/Bacon_Core_Theorem_Audit.Bacon_Core_Theorem_Audit/core-audit.txt",
+  "existing_export_sha256": "ad105be1d184ba328b33ecda3d9d41f3010082a3b017774fecf5d3dcedde2d4b",
+  "target_count": 612,
+  "ordered_label_fact_sha256": "fe9d1fda1511833c4be38d0988ef4f6689d3802387b6793e6f906b4b59981720"
+}

@@ -1,0 +1,21 @@
+FOUNDATION: standard HOL-ZF; not pure HOL
+SCOPE: independent Definition 18.1 data and prescribed operations, exact graph regression and all-world operator membership; no interpreter or completeness claim
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 18 checked endpoints
+dependent future pairs have their exact typed membership condition: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+single-valuedness and domain equality alone do not exclude non-pair junk: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+actual Lambda graphs reconstruct from their application: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+the prescribed k graph has its two-stage behavior: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=0
+the prescribed s graph has its three-stage behavior: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=0
+the prescribed implication graph has its explicit future-domain behavior: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=0
+the prescribed universal graph has its full future behavior: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+the prescribed identity graph has its future equality behavior: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=0
+exact graph reconstruction implies single-valuedness and the required domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=0
+the fixed root logical interpretation is typed in every independent model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+restriction of an outer future family changes only its domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=0
+root k membership yields membership at every world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+root s membership yields membership at every world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+root implication membership yields membership at every world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+root universal membership yields membership at every world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+root identity membership yields membership at every world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+exact graph fields imply future quasi-functionality: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=0
+typed future behavior identifies an actual function with its prescribed Lambda graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=0

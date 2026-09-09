@@ -1,0 +1,10 @@
+FOUNDATION: pure HOL; no HOL-ZF import
+SCOPE: actual canonical per-world general-model and truth clauses; not the complete modal-model certificate or C completeness
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 7 checked endpoints
+characteristic truth is independent of the proposition representative: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+literal primitive symbols have typed class values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the displayed bottom proposition is false: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+implication has its truth clause on every proposition class: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+universal quantification ranges over every typed class value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the actual term data form a general model under witnesses and inhabitation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+each actual full-C world supplies those witnesses and nonempty domains: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1

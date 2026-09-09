@@ -1,0 +1,11 @@
+.DS_Store
+.isabelle/
+__pycache__/
+*.py[cod]
+build/
+isabelle-kg/
+*.log
+*.heap
+*.db
+# Optional cache-only ROOT from the parent checkout, not a release session.
+theories/classicism/prefix/

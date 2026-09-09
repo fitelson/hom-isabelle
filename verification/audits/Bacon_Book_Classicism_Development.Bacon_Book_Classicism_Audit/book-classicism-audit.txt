@@ -1,0 +1,94 @@
+SCOPE: full-F/minimal Equivalence-rule base; Chapter 8 full C also requires all-type Modalized Functionality; no modal completeness claim
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 92 checked endpoints
+native full-F book C proofs have book-language conclusions: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+book Definition 6.1 equals the independent finite C calculus: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+C-theory consequence with no additional assumptions is exactly C: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+C-theory consequence uses finitely many additional assumptions: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+C-theory consistency has finite character: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+closed underivability permits a consistent negative extension over C: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the book Equivalence rule gives propositional Leibniz identity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+H proves the literal biconditional-with-truth implication without C completeness: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+book C admits Necessitation on original theorems only: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+book C proves normal modal K from its own Propositional Equivalence: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the book literal Box satisfies T already in H: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+closed additional premises admit finite boxed consequence over fixed C: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+closed C theorems recover the entire open C background: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+consistent closed C premise sets have actual fixed-signature maximal extensions: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+an absent Box has an actual closed negation-complete fixed-signature successor: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+book C proves modal 4 by necessitating only the original theorem Box top: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+canonical accessibility of closed maximal C sets is transitive: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+Box membership is exactly truth in all accessible fixed-signature closed maximal sets: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the entire native book C proof has finite fresh-variable retraction support: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+native book C theoremhood is conservative under declared-signature extension: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+one fresh retraction transports a C-plus-assumptions proof including its finitely used C background: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+one fresh conditional witness preserves consistency with the full enlarged-language C background: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+finite witness families preserve C consistency at each partial signature: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+arbitrary witness families preserve consistency over the full enlarged C background: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+uniform constant-name maps preserve all four book C proof constructors: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+injective name-carrier transport preserves and reflects C-theory consistency: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+all constructed Henkin premise stages retain their own C consistency: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the actual full Henkin premise union is consistent over final-signature C: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+a consistent C premise set has an actual closed maximal constant-witness-complete extension: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the constructed full Henkin signature leaves an explicit infinite name reserve at every type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+type-indexed constant-name maps preserve the exact declared language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+type-indexed name maps preserve all native H theory rules: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+type-indexed name maps preserve all native book C proof constructors: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+declared-component injectivity preserves and reflects C consequence in the exact image: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+declared-component injectivity preserves and reflects C consistency in the exact image: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the nested Henkin-name carrier is countable for a countable original carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+the explicit reserve embedding is injective and fixes old declared names: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the explicit reserve embedding leaves infinitely many ambient names unused: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+every target closed predicate has a literal conditional witness in the image premises: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+injective old-name-fixing image transport yields an actual maximal witness-complete C extension: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+the transported Henkin signature stays inside the fixed countable ambient language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the transported Henkin signature retains infinitely many ambient names at each type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+actual C Henkin completion fixes old formulas inside a countable ambient language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+an absent Box has an actual witness-complete enlarged-language successor inside the countable ambient language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+countably declared signatures on arbitrary carriers have consistency-equivalent natural-name recodings: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the natural-name image signature has an infinite reserve at every type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+H proves typed Leibniz reflexivity without C completeness: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+literal boxed-sentence accessibility forces declared-language inclusion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+a canonical world's sentence set uniquely determines its signature: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+canonical varying-language accessibility preserves declared signatures: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+canonical varying-language accessibility is reflexive: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+canonical varying-language accessibility is transitive: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+countably declared C-consistent premises have an actual canonical world after initial recoding: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the actual canonical world set supplies a witness-complete successor for every absent Box: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+a consistent C premise set has an actual rooted canonical frame inside its countable ambient language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+Bacon Proposition 18.3 holds on the rooted witness-complete canonical frame: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+H proves identity stability conditional only on necessary reflexive identity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+C proves identity stability at every type without local Necessitation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+closed identity membership persists along canonical accessibility: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+H supplies the literal identity-symmetry implication: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+H supplies the literal identity-transitivity implication: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+H supplies typed application congruence for literal identity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+identity in a closed C world respects both application arguments: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+equality of typed closed term classes is equivalent to identity in the world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+term-class application is independent of both representatives: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+the actual identity-class application has a typed result: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the actual term application sends F and A classes to the FA class: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+canonical identity classes grow along accessibility: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+the actual counterpart sends the A class at w to the A class at v: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+the actual term counterpart has a typed target value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+term counterparts satisfy the identity law on their typed domains: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+term counterparts satisfy composition on their typed domains: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+term application commutes with the actual counterpart maps: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+the three Boolean identities used for boxed PE are original C theorems: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+H derives boxed PE from those three explicitly displayed identities: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+C proves boxed propositional equivalence without a separation premise: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+boxed propositional equivalence yields identity membership in a canonical world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+the literal biconditional has the Boolean membership clause in closed C worlds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+H proves that proposition identity implies the literal biconditional: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+equal future truth sets are equivalent to proposition identity at the source world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+future truth sets separate the closed proposition identity classes: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the actual proposition map is a bijection from term classes onto future truth sets: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the proposition inverse after the forward map is identity on term-class values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the proposition forward map after its inverse is identity on represented propositions: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+proposition profiles truncate by intersection with the later future: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the proposition representation commutes with term counterparts and future restriction: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+every represented proposition is a subset of its world's future: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+current-world membership of a proposition profile is sentence membership: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the represented proposition domains are closed under future restriction: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+H proves the existential of the closed constant-truth predicate at each type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+every canonical world's signature has a declared constant at each type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+every canonical identity-class domain is nonempty: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1

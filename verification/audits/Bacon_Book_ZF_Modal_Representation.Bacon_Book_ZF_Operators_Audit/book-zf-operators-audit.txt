@@ -1,0 +1,17 @@
+FOUNDATION: standard HOL-ZF; distinct from the pure-HOL combinator-syntax audit
+SCOPE: actual canonical future implication (explicit future restriction), universal operator, k and s on the countable-name full-C frame; no complete modal-model or completeness claim
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 14 checked endpoints
+the whole actual implication result has its future truth set: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the whole actual universal result has its future truth set: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the root implication operator has its two-stage future behavior: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+the root universal operator has its full future behavior: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the universal future comprehension belongs to the chosen proposition domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the implication future comprehension belongs to the chosen proposition domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+the actual implication set is the explicitly future-restricted difference and union: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+the actual canonical k belongs to its full function domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the actual canonical k commutes with counterparts: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the actual canonical k has Bacon's two-stage future behavior: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+the actual canonical s belongs to its full function domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the actual canonical s commutes with counterparts: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the actual s body evaluates through graph application: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the actual canonical s has Bacon's three-stage future behavior: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
