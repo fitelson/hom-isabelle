@@ -11,7 +11,10 @@ text \<open>
 
   Isabelle representation: induction on paper_global_derivable replaces
   assumption leaves, retains actual source H theorem leaves, and composes MP.
-  Neither premise set needs to be finite or globally well-formed.
+  Both premise sets may be infinite. S may contain unused ill-formed
+  expressions, but the replacement hypothesis, together with
+  paper_global_derivable_language, forces every member of T to be a
+  well-formed formula in the declared language and variable stock.
 
   Status: source local cut only. It does not generalize under undischarged
   assumptions and has no target proof or model premise.

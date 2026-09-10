@@ -12,6 +12,13 @@ text \<open>
   Sources: Bacon--Dorr Figure 2, p.8, and the finite-proof Henkin argument
   in p.45 n.64; Bacon, Chapter 15, Proposition 15.4.
 
+  These are sources for the proof method, not definitions of this local
+  relation. Footnote 64 concerns formula sets, whereas Theorem 3.2 states
+  model existence for sentence sets. Unrestricted closure of open premises
+  under the source H-theory rules differs from assumption/theorem/MP closure.
+  Quantifier-rule transport here requires the explicit independence guards
+  proved in Bacon_Parametric_Local_Quantifiers.
+
   Isabelle representation.  The name type is arbitrary.  Signature guards
   accompany local assumptions as well as H theorems.  Consistency means
   nonderivability of PObjFalse, the negation of ∀p.(p → p).

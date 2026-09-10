@@ -18,13 +18,6 @@ PDFs of the source publications are not redistributed here. Obtain lawful copies
 publishers, or a library. The software license does not grant rights in the
 underlying publications.
 
-The repository's own [Isabelle-versus-Lean comparison note](WHY_ISABELLE_RATHER_THAN_LEAN.pdf)
-is included with its [LaTeX source](WHY_ISABELLE_RATHER_THAN_LEAN.tex).
-It adapts the parent project's September 7 assessment and updates core status
-through September 9. Its Goodman and AOT examples are external comparisons,
-not application modules included in this repository. It is a project-specific
-rationale, not a controlled performance benchmark.
-
 ## Implementation and tools
 
 Branden Fitelson developed this implementation with assistance from OpenAI's

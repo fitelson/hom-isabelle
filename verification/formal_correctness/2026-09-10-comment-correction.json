@@ -1,0 +1,8 @@
+{
+  "path": "theories/base/source_vocabulary/Bacon_Source_Global_Substitution.thy",
+  "reviewed_sha256": "b3e32f9508a6aca7d21caf68782e60adc7906aaaba68380b50b88fc4e55a3c18",
+  "corrected_sha256": "cb1b171060ddbf6e6dbc99c7b1f5f7af1c59a4616d9635b7059d0d3ee505fbe7",
+  "date": "2026-09-10",
+  "change": "Documentation only: premise ranges over every variable index; no definition, theorem statement or proof changed.",
+  "line_count_unchanged": true
+}

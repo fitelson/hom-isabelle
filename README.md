@@ -15,8 +15,11 @@ H soundness and completeness are proved in the scopes described in the
 we now have both original-signature model existence for countably declared
 signatures and an admissible interpretation for every independent
 full-minimal modal model. The latter includes the exact future-function
-interpretation of abstraction, without adding model assumptions. Generic
-full-C soundness and final modal completeness remain open.
+interpretation of abstraction, without adding model assumptions. The
+canonical existence result now also supplies inhabited domains and a false
+proposition at every world. An [audited source clarification](docs/MODAL_NONTRIVIALITY.md)
+explains why those conditions are explicit in a separately named model
+class. Generic full-C soundness and final modal completeness remain open.
 
 ## Start here
 
@@ -24,25 +27,54 @@ full-C soundness and final modal completeness remain open.
 - [Reading the Isabelle theories](docs/READING_GUIDE.md)
 - [Source statements and theorem names](docs/SOURCE_CORRESPONDENCE.md)
 - [Published notation and Isabelle notation](docs/NOTATION.md)
+- [Modal-model source clarification and regression](docs/MODAL_NONTRIVIALITY.md)
 - [Open problems and contributor projects](CONTRIBUTING.md)
-- [Why I Chose Isabelle/HOL](docs/WHY_ISABELLE_RATHER_THAN_LEAN.pdf)
-  ([LaTeX source](docs/WHY_ISABELLE_RATHER_THAN_LEAN.tex))
+- [Partial source-fidelity audit: 120 files reviewed, 1,260 deferred](docs/PARTIAL_SOURCE_AUDIT_2026-09-10.md)
+- [Formal-correctness audit of those same 120 files](docs/FORMAL_CORRECTNESS_AUDIT_2026-09-10.md)
 - [Sources, credits, and provenance](docs/SOURCES_AND_CREDITS.md)
+
+For one concrete source-to-code example, the sentence-consequence instance
+of Bacon–Dorr's Theorem 3.2 is
+[`paper_named_closed_strong_completeness`](theories/base/source_models/Bacon_Source_Named_Closed_Strong_Completeness.thy).
+Its statement keeps the sentence, rich-variable-stock and carrier conditions
+explicit. The source guide explains its full-F scope and remaining
+correspondence qualifications.
+
+## Access and contributions
+
+The standalone repository is
+[fitelson/bacon-dorr-isabelle](https://github.com/fitelson/bacon-dorr-isabelle).
+As of 10 September 2026 it is private. Workshop invitees should ask Branden
+for collaborator access, supplying their GitHub username. Once access is
+granted:
+
+```sh
+git clone https://github.com/fitelson/bacon-dorr-isabelle.git
+cd bacon-dorr-isabelle
+```
+
+Use [issues](https://github.com/fitelson/bacon-dorr-isabelle/issues) to agree
+the scope of a contribution and [pull requests](https://github.com/fitelson/bacon-dorr-isabelle/pulls)
+to submit it for review. See the contributor guide before changing a theorem.
 
 ## Check the development
 
 Install **Isabelle2025-2**, put its `bin` directory on your PATH, and install
-Python 3. Run from the repository root:
+Python **3.9 or newer**. This is the required API floor, not a tested
+compatibility matrix for every Python version and platform. Run from the
+repository root:
 
 ```sh
 isabelle version
+python3 --version
 ./check_isabelle.sh
 ```
 
 This checks the selected core sessions and their theorem-object audits.
 Builds are serialized and use a 60-second limit **per session**, not for the
 whole repository. A first build also builds dependencies and takes longer
-than a cached run. No Vampire, Claude, Codex, account, or API key is needed.
+than a cached run. No Vampire, Claude, Codex, or AI-service account/API key
+is needed for local verification.
 
 To explore a theory interactively:
 

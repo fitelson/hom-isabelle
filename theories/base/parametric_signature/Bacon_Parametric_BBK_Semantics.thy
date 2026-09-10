@@ -68,11 +68,13 @@ qed
 text \<open>
   In Definition 3.1(ii.d), Bacon and Dorr quantify over βη-equivalent
   terms of ℒ(Σ).  We represent this as the closure of the immediate
-  conversions within that declared language.  This qualification matters for a proper
-  sub-signature: a β-expansion can introduce a foreign constant and later
-  erase it.  The unindexed relation above records raw syntactic conversion;
-  the following is the source-faithful language-relative relation used by
-  BBK models.
+  conversions within that declared language. A raw β-expansion can introduce
+  a foreign constant and later erase it. This distinguishes permitted paths,
+  not necessarily equivalence of endpoints already in ℒ(Σ). The theorem
+  pbeta_eta_equiv_in_signature_raw below proves guarded-to-raw conversion;
+  the converse for typed Σ-endpoints remains a source-correspondence
+  obligation. A suitable Church–Rosser argument could establish it.
+  BBK models below use the explicit language-relative relation.
 \<close>
 
 inductive pbeta_eta_equiv_in_signature ::

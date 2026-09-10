@@ -5,8 +5,8 @@ begin
 section \<open>Global typing of capture-avoiding substitution\<close>
 
 text \<open>
-  If G ⊢ A:τ and H ⊢ s(v):G(v) for each free variable v, then
-  H ⊢ A[s]:τ.  This is the typing requirement for capture-avoiding
+  If G ⊢ A:τ and H ⊢ s(v):G(v) for every variable index v, then
+  H ⊢ A[s]:τ.  This total-stock condition suffices for capture-avoiding
   substitution in Bacon–Dorr Figure 2, p. 8.
 
   Isabelle representation: the existing ssubst and slift_subst operations

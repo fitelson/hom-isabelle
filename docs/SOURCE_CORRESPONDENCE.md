@@ -9,6 +9,15 @@ The paper's numbering refers to the **1 July 2022 draft** of Bacon–Dorr's
 in the book or paper has been formalized. “Proved” refers to the maintained,
 checked development; ongoing unverified work is not counted.
 
+The [partial source audit](PARTIAL_SOURCE_AUDIT_2026-09-10.md) covers 120
+of 1,380 theory files, not this whole table. It distinguishes the source
+language from the constructor-based intermediate calculus and records
+remaining raw/guarded βη and sentence-premise closure obligations. These
+are source-correspondence qualifications, not failed kernel derivations.
+In particular, model existence for an encoded interface must not silently
+be promoted to an unrestricted source-model claim while an interface
+equivalence used for that promotion remains unproved.
+
 ## At a glance
 
 | Development | Soundness | Model existence and completeness | Main boundary |
@@ -16,7 +25,7 @@ checked development; ongoing unverified work is not counted.
 | H: Bacon–Dorr's named full-F language | Proved, including local soundness for open premises | Sentence-set model existence and closed strong completeness proved | Completeness requires closed premises and conclusion, a rich variable stock, and an explicit carrier |
 | H: Bacon's full-F minimal language | Proved for the printed-guard calculus | Original-signature model existence, countermodels, and global strong completeness proved | Open formulas and arbitrary premise sets allowed; full minimal language, rich stock, and the specified general-model class |
 | C: Bacon–Dorr's relational-type language R | Proved for the stated category and action semantics | Category representation/completeness and single-formula action completeness proved | R-language scope; explicit carriers; action-model representation uses HOL–ZF |
-| C: Bacon's full-type minimal language | Generic modal soundness remains open | Original-signature model existence proved for countably declared signatures; final modal completeness remains open | This is a different model class and calculus from H; countability concerns declared constants at each type |
+| C: Bacon's full-type minimal language | Generic modal soundness remains open | Original-signature model existence proved for countably declared signatures, now also in the explicit nontrivial class; final modal completeness remains open | Inhabited domains and false propositions at every world; countability concerns declared constants at each type |
 
 Here **F** is the full simple-type grammar; **R** is the paper's relational-type
 restriction. For the book's H, “global” truth means truth under every typed
@@ -33,13 +42,13 @@ specified sufficiently large carrier, not only the constructed canonical model.
 |---|---|---|
 | Independent H calculus — **defined** | Figure 2, p.8 | [`paper_named_H`](../theories/base/source_vocabulary/Bacon_Source_Named_H.thy): ten-constructor named presentation, not a definition by semantic validity |
 | H theorem soundness — **proved** | Figure 2 and Theorem 3.2, pp.44–45 | [`paper_named_H_soundness`](../theories/base/source_models/Bacon_Source_Named_H_Soundness.thy): every H theorem is valid in every independent named BBK model, with that model's rich variable stock |
-| H local soundness — **proved** | Theorem 3.2 and the paper's local-consequence formulation | [`paper_named_local_soundness`](../theories/base/source_models/Bacon_Source_Named_H_Soundness.thy): local derivability preserves truth at a typed partial assignment adequate for the premises and conclusion; open formulas and infinite premise sets allowed |
+| H local soundness — **proved** | Project-defined local consequence associated with Figure 2 H | [`paper_named_local_soundness`](../theories/base/source_models/Bacon_Source_Named_H_Soundness.thy): local derivability preserves truth at a typed partial assignment adequate for the premises and conclusion; open formulas and infinite premise sets allowed |
 | H model existence — **proved** | Theorem 3.2, sentence-set form | [`paper_named_BBK_model_existence`](../theories/base/source_models/Bacon_Source_Named_Model_Existence.thy): constructs a model for a consistent sentence set in a rich stock, with the stated carrier |
 | H closed strong completeness — **proved** | Theorem 3.2, sentence-consequence form | [`paper_named_closed_strong_completeness`](../theories/base/source_models/Bacon_Source_Named_Closed_Strong_Completeness.thy): derivability from a sentence set iff semantic consequence; arbitrary signatures and sentence sets, but closed premises and conclusion |
 | Countable-domain refinement — **proved** | Refinement of the Theorem 3.2 construction | [`paper_named_BBK_countable_signature_model_existence`](../theories/base/source_models/Bacon_Source_Named_Countable_Model_Existence.thy) and [`paper_named_nat_closed_strong_completeness`](../theories/base/source_models/Bacon_Source_Named_Nat_Strong_Completeness.thy): countably declared signatures admit the stated natural-number-domain version; the entire constant-name type need not be countable |
 
 Open-premise **soundness** in this section does not assert open-premise
-**completeness** for the paper's local consequence relation. The book result
+**completeness** for the project's local consequence relation for paper H. The book result
 below uses its separately defined global consequence relation.
 
 ### What Figure 2 and Theorem 3.2 say
@@ -195,7 +204,8 @@ construction uses the separate HOL–ZF foundation.
 | Result | Source | Formal endpoint and scope |
 |---|---|---|
 | Full-type C calculus — **defined, with presentation bridges proved** | p.160 and p.178 endnote 5 | `book_full_C_proves`: H+MF+PE, distinct from the older Equivalence-rule base |
-| Independent modal-model conditions — **defined** | Definition 18.1 | `book_ZF_modal_model`, with the explicitly documented future-restricted implication convention |
+| Structural modal-model conditions — **defined** | Displayed Definition 18.1 | `book_ZF_modal_model`, retained with the documented future-restricted implication convention; admits all-true models |
+| Nontrivial modal-model refinement — **defined and instantiated** | Explicit source clarification, using Definition 15.1 and the p.392 general-model claim | `book_ZF_nontrivial_modal_model`: inhabited domains and a false proposition at every world; not an additional clause claimed to be printed in Definition 18.1 |
 | Canonical modal model — **proved** | Proposition 18.5 | `full_ZF_canonical_modal_model`: all fields of the independent model predicate instantiated under the countable-ambient frame assumptions |
 | Canonical interpretation — **proved** | Definition 17.13 | `full_ZF_canonical_interpretation`: the constructed model satisfies every independent interpretation clause |
 | Generic interpretation existence — **proved** | Definition 17.13; Theorem 17.1, interpretation-existence component | [`generic_interpretation_exists`](../theories/classicism/book/modal_semantics/interpretation/Bacon_Book_ZF_Generic_Interpretation_Existence.thy): every independent full-minimal modal model has an admissible interpretation; no countability, richness, supplied interpreter or extra nonemptiness premise |
@@ -204,6 +214,14 @@ construction uses the separate HOL–ZF foundation.
 | Fixed-ambient model existence — **proved** | Theorem 18.4, existence direction | `book_full_C_ambient_modal_model_exists`: actual model existence in a countable ambient signature with infinite reserves |
 | Original-signature model existence — **proved** | Theorem 18.4, countably declared signature instance | [`book_full_C_countable_modal_model_exists`](../theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Countable_Model_Existence.thy): actual model and admissible interpretation satisfying the entire consistent theory; open formulas and infinite premise sets allowed; arbitrary name carrier, countably many declared constants per type, no original spare-name requirement |
 | Semantic signature pullback — **proved** | Auxiliary transport for the existence construction | `signature_pullback_model`, `signature_pullback_interpretation`: no injectivity or countability assumption on the constant map |
+| Nontrivial original-signature model existence — **proved** | Strengthened forward instance of Theorem 18.4, retaining countably declared signatures | [`book_full_C_countable_nontrivial_modal_model_exists`](../theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Countable_Nontrivial_Existence.thy): same four input premises, but the constructed model also has inhabited domains and a false proposition at every world |
+| All-true structural model and its exclusion — **proved** | Audit regression for the omitted nontriviality condition | [`probe_inconsistent_theory_has_model`, `probe_not_nontrivial`](../theories/classicism/book/modal_semantics/regressions/Bacon_Book_ZF_Singleton_Regression.thy): the structural predicate does not imply consistency; the strengthened class excludes this example |
+
+The [nontriviality clarification](MODAL_NONTRIVIALITY.md) is essential when
+reading the remaining consistency target. The reverse implication of
+Theorem 18.4 is false for the broad structural class, not merely unproved.
+The stronger class removes the checked obstruction; generic soundness
+and the complete characterization for it are still separate obligations.
 
 ### What remains open for full-type C
 
@@ -285,11 +303,15 @@ silently dropping this containment premise.
 A theory extending Classicism is consistent exactly when some modal model
 makes it true. The forward construction uses completed theories as worlds,
 represents their term structures by modalized domains, and invokes the model
-and truth results above. The reverse direction needs generic soundness.
+and truth results above. The reverse direction needs generic soundness
+and a nontrivial model class: the broad displayed conditions admit the
+checked all-true singleton counterexample.
 Our verified progress now includes an actual original-signature model and
 interpretation for each consistent theory with countably many declared
-constants per type, without an original spare-name assumption. Generic
-soundness and the unrestricted theorem remain open. Thus Theorem 18.4 is
+constants per type, without an original spare-name assumption. This
+construction now also satisfies the separately stated worldwise
+nontriviality conditions. Generic soundness and the unrestricted theorem
+for that strengthened class remain open. Thus Theorem 18.4 is
 **partially formalized**, unlike the H completeness results in Chapter 15.
 
 ## Reading the entries correctly

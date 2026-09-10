@@ -5,7 +5,7 @@ begin
 section \<open>The minimal higher-order logic H\<close>
 
 text \<open>
-  This theory gives a Hilbert-style derivability system for Bacon's minimal
+  This theory gives a constructor-based, primitive-basis variant of minimal
   classical higher-order logic H.  The judgment \<open>\<Gamma> \<turnstile>\<^sub>H A\<close> says that the
   object-language formula \<open>A\<close> is a theorem of H in type context \<open>\<Gamma>\<close>.
 
@@ -14,6 +14,12 @@ text \<open>
   generalization, typed reflexivity, Leibniz's law, beta/eta conversion in
   formula contexts, modus ponens, and the Hilbert-Ackermann generalization and
   instantiation rules.
+
+  Primitive Imp here is not definitionally the paper's λpq.¬p ∨ q.
+  Truth equivalence does not establish identity at higher types in H.
+  Use the separate source_vocabulary development and its explicit translation
+  theorems for the printed logical constants; no direct vocabulary identity
+  or unrestricted source correspondence is asserted by this definition.
 
   Three judgments must be kept separate:
 

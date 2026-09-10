@@ -69,7 +69,9 @@ text \<open>
   Local consequence has only Assumption, Theorem and MP. An inference
   that generalizes an assumed formula requires its own eigenvariable
   conditions; it is not silently included as an unrestricted local rule.
-  Source: the definition of derivability preceding Figure 2, pp.7–8.
+  This is the project's local-consequence construction from the H
+  theoremhood rules in Figure 2, pp.7–8, not a separately stated
+  local-consequence definition in the paper.
 \<close>
 
 inductive paper_named_derivable ::

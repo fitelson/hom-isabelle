@@ -1,6 +1,19 @@
 # Verification status
 
-Workshop extraction checkpoint: 9 September 2026.
+Audit-response checkpoint: 10 September 2026.
+
+The subsequent [source-fidelity consensus audit](docs/PARTIAL_SOURCE_AUDIT_2026-09-10.md)
+completed 120 of 1,380 theory files and stopped at the requested cap.
+Its confirmed comment/citation corrections do not change theorem statements
+or proofs. The other 1,260 files, cross-batch reconciliation, and explicit
+conversion/consequence correspondence obligations remain open. The checked
+endpoints below must not be read as an exhaustive source-fidelity certificate.
+
+A separate [formal-correctness review](docs/FORMAL_CORRECTNESS_AUDIT_2026-09-10.md)
+has now covered the same 120 files with both participants. It found no
+demonstrated formal defect, recording 18 qualified file assessments and
+the remaining dependency/source-bridge limitations. This is additional
+review evidence, not a new soundness or completeness theorem.
 
 This document states the intended checked scope of the selected ROOT sessions.
 The terminal build result is recorded separately in
@@ -13,11 +26,18 @@ conclusion, not its name or this overview, determine its scope.
 | H, Bacon's full-F minimal language | General-model soundness, original-signature model existence, and global strong completeness, including open formulas and arbitrary premise sets | Full grammar and minimal logical basis; witnessed closed values; arbitrary general sublanguages are not covered |
 | Classicism proof theory | Independent presentations and their proved correspondences, including the book's MF+PE and MF+vector-Equivalence presentations | The older Equivalence-rule base is not identical by definition to full-type C |
 | Bacon–Dorr relational-type C | BBK-category representation/completeness and action-model single-formula soundness/completeness at arbitrary signatures | R types; explicit carrier/world-label scope; the action-model result is not an infinite-theory compression theorem |
-| Bacon's full-type C | All-type canonical modal model, its independent interpretation, and original-signature model existence for full-C-consistent theories with countably many declared constants per type | Arbitrary constant-name carrier; no original spare-name requirement; full-F minimal language and rich variable stock |
+| Bacon's full-type C | All-type canonical model and original-signature existence, now also in the explicit nontrivial class with inhabited domains and false propositions at every world | Arbitrary constant-name carrier; countably declared constants per type; full-F minimal language and rich variable stock |
 | Generic book modal interpretations | Constructed interpretation for every independent full-minimal modal model; exact future abstraction, naturality, typed-input uniqueness, and signature pullback | No countability, richness, supplied interpreter or extra nonemptiness premise; generic full-C soundness remains open |
 | Book full-C unrestricted modal completeness | **Not completed** | See the contributor plan |
 
 ## Completed: original-signature model existence
+
+The audit response strengthens this to
+`book_full_C_countable_nontrivial_modal_model_exists`, with the SAME four
+premises on Σ, G and S. The stronger conclusion has actual typed assignments
+and false propositions at every world, established for the existing
+canonical construction rather than assumed of the input theory.
+See [the model-class distinction](docs/MODAL_NONTRIVIALITY.md).
 
 On 9 September 2026, `book_full_C_countable_modal_model_exists` passed
 Isabelle, together with its 14-endpoint audit. It combines syntactic
@@ -56,6 +76,16 @@ default build. Run `python3 tools/check_release.py --inventory` to see the
 actual source-closure inventory rather than treating every .thy file as checked.
 
 ## Source qualifications that must remain visible
+
+- `book_ZF_modal_model` retains the broad structural conditions. It admits
+  an inhabited all-true model, as the maintained singleton regression proves.
+  It cannot characterize consistency merely by existence of a model.
+- `book_ZF_nontrivial_modal_model` adds inhabited domains and a false
+  proposition at EVERY world. This is an explicit source-motivated
+  strengthened subclass, not a literal transcription of additional
+  printed clauses of Definition 18.1. Both the canonical instance and
+  countable-signature forward existence are checked; generic soundness
+  and the final consistency equivalence still require proofs.
 
 - Full F and the paper's default relational R type language are distinct.
 - Pure HOL results and the stronger HOL–ZF representation layer are distinct.

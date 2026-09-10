@@ -5,9 +5,11 @@ if [[ $# -gt 1 || ( $# == 1 && "$1" != "--core" ) ]]; then
   echo "Usage: $0 [--core]" >&2
   exit 2
 fi
+python3 -m unittest discover -s "$ROOT_DIR/tools/tests" -p 'test_*.py'
+python3 "$ROOT_DIR/tools/check_isabelle_trust.py"
 python3 "$ROOT_DIR/tools/check_core_source_boundary.py"
 python3 "$ROOT_DIR/tools/check_release.py"
-# The 29 selected core sessions are declared in ROOT; applications are absent.
+# The selected core sessions are declared in ROOT; applications are absent.
 # One build job at a time. Do not run another build/export concurrently.
 exec isabelle build -j 1 -d "$ROOT_DIR" -o timeout=60 -o export_theory=true \
   Bacon_Base \
@@ -21,6 +23,7 @@ exec isabelle build -j 1 -d "$ROOT_DIR" -o timeout=60 -o export_theory=true \
   Bacon_Book_Modal_Representation \
   Bacon_Book_ZF_Modal_Semantics \
   Bacon_Book_ZF_Modal_Interpretation \
+  Bacon_Book_ZF_Model_Regressions \
   Bacon_Book_ZF_Modal_Representation \
   Bacon_Classicism_Action_Development \
   Bacon_Classicism_ZF_Representation \

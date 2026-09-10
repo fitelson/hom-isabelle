@@ -186,8 +186,11 @@ proof -
 qed
 
 text \<open>
-  Elimination itself does not require c ∈ Σσ: an undeclared witness axiom
-  cannot be used as a guarded local assumption.  The final extension theorem
+  Elimination itself does not require c ∈ Σσ. If substitution leaves an
+  occurrence of the undeclared constant in the witness axiom, the signature
+  guard excludes that axiom as a local assumption. For a vacuous binder,
+  however, the axiom may be constant-free and pass the guard: A = PObjTrue
+  gives (∃xσ. PObjTrue) → PObjTrue. The final extension theorem
   includes that declaration condition and proves both typing and consistency.
   Freshness excludes the name c at every type, a sufficient explicit condition.
 

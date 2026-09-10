@@ -11,7 +11,7 @@ text \<open>
   five-constructor C soundness theorem then applies to Mₕ. No general
   Equivalence-rule closure or presentation inclusion is used.
 
-  Source: the soundness direction of Theorem 3.23, p.57, as concluded
+  Source: the soundness direction of Theorem 3.23, p.58, as concluded
   after Proposition C.7, pp.71–72. Completeness is not asserted here.
   The supplied generic action model is the only model premise; no
   category of BBK models, empty theory, F model or representability

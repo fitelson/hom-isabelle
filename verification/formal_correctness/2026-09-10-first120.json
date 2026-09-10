@@ -1,0 +1,3735 @@
+{
+  "date": "2026-09-10",
+  "post_review_corrections": ["2026-09-10-comment-correction.json"],
+  "models": [
+    "Fable 5.1",
+    "Astra 6"
+  ],
+  "coverage": 120,
+  "deferred": 1260,
+  "scope": "Same 120 theory files separately reviewed for source fidelity and formal correctness; no exhaustive dependency or foundations certificate",
+  "revision_note": "Seven documentation-only changes between fidelity and correctness snapshots; coordinator compared formal text after removing document commands. All 120 live hashes matched correctness snapshot at completion.",
+  "correctness_result": "No demonstrated formal defect; 102 REVIEWED and 18 QUALIFIED",
+  "files": [
+    {
+      "id": "F0001",
+      "path": "theories/base/Bacon_Beta.thy",
+      "selected": true,
+      "fidelity_sha256": "4baeeccfaf3b4637a40ddf926855fb3c1158706814d56457e7fd05e5a3593e7c",
+      "correctness_sha256": "4baeeccfaf3b4637a40ddf926855fb3c1158706814d56457e7fd05e5a3593e7c",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 40,
+      "fidelity": {
+        "status": "SOURCE_MATCH",
+        "claude": {
+          "status": "SOURCE_MATCH",
+          "note": "Paper Fig. 2 β root step p.8; beta_contract, subject reduction; de Bruijn subst0 realizes capture-free A[B/v]; no limitation."
+        },
+        "codex": {
+          "status": "SOURCE_MATCH",
+          "note": "Paper Figure 2 p.8; beta_contract and both typing results reviewed; root contraction implements capture-avoiding substitution; subject reduction is auxiliary and normalization is not claimed."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "beta_contract, beta_contract_preserves_typing (inversion + typing_unique), typed_beta_example; Bacon_Substitution contracts checked."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Root beta relation, subject-reduction inversion and subst0 typing contract, and typed_beta_example checked; no contextual or normalization claim."
+        }
+      }
+    },
+    {
+      "id": "F0002",
+      "path": "theories/base/Bacon_Deduction.thy",
+      "selected": true,
+      "fidelity_sha256": "e635735ca1b7305e34e8cef450edc9ecfc06d1b3ac37530c34f511f5ff8ffc70",
+      "correctness_sha256": "84974641f97507c98b59052ecbd4b1cba7e112320d1e494e8e6d9d5190686aa4",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 223,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper Fig. 2 p.8, H⁻_V n.8, p.9/n.9 Existence; H_proves, prop_tautology, compatible_step, eta_contract, H_derivable checked; hybrid primitive basis now shown a proper sublogic on identity theorems via separating model plus soundness; disclosed local consequence."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper Figure 2 p.8 and pp.7–9 nn.8–9; evaluator, contextual conversion, eta, all theorem rules, and local derivability reviewed; disclosed primitive-basis and local-consequence qualifications remain."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "prop_eval/prop_tautology, compatible_step, eta_contract, H_proves (11 rules), H_proves_formula all cases, H_derivable; IndividualExistence is derivable here via Const/Ref/EG/MP (redundant in the unrestricted base, load-bearing only in F0263); local relation ≠ H-theory closure."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Boolean evaluator, tautologies, all compatible contexts, eta pattern, eleven H rules, formula invariant and local derivability checked; constructor basis and local consequence retained; IndividualExistence is redundant in this unrestricted language."
+        }
+      }
+    },
+    {
+      "id": "F0003",
+      "path": "theories/base/Bacon_Substitution.thy",
+      "selected": true,
+      "fidelity_sha256": "fef925d8f4f21afe7ff65ff116d4081269370293b879f08d4d8f9e8339e773de",
+      "correctness_sha256": "fef925d8f4f21afe7ff65ff116d4081269370293b879f08d4d8f9e8339e773de",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 233,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "de Bruijn renaming/substitution for source A[B/v]; all operations and typing preservation checked; no strengthening."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "All renaming, lifting, simultaneous substitution, shift, subst0, and typing-preservation declarations reviewed; binder lifting and source/target context hypotheses retained."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "lift_ren/rename/lift_subst/subst/shift/subst0; lookup_lift_ren; renaming/substitution/subst0 typing preservation inductions; weakening_front."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "All renaming/substitution equations and preservation inductions checked, including lifted context maps, weakening, binder cases and subst0’s removal of slot zero."
+        }
+      }
+    },
+    {
+      "id": "F0004",
+      "path": "theories/base/Bacon_Syntax.thy",
+      "selected": true,
+      "fidelity_sha256": "e40d09cbb6863053e3a844f4f8c58a2b26e9707eec42e40dd416fde9a5f4c8cf",
+      "correctness_sha256": "e40d09cbb6863053e3a844f4f8c58a2b26e9707eec42e40dd416fde9a5f4c8cf",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 60,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper §1.1 pp.5–6; oterm, ObjIff, ObjTrue, ObjFalse; primitive Imp and truth representative differ from print; λ-representations of operators remain possible; identity-level divergence demonstrated."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper pp.5–6 Figure 1; datatype and all logical abbreviations/definitions reviewed; primitive Imp and truth representative differ from print; identity-sensitive equivalence fails under direct correspondence, while lambda representations of operators remain possible."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "oterm datatype, ObjIff abbreviation, ObjTrue/ObjFalse definitions; truth equivalence not identified with object identity."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "All syntax constructors, de Bruijn binder conventions, typed constant identity, ObjIff and literal truth/falsehood definitions checked; truth equivalence is not identified with object identity."
+        }
+      }
+    },
+    {
+      "id": "F0005",
+      "path": "theories/base/Bacon_Types.thy",
+      "selected": true,
+      "fidelity_sha256": "8bf6d6a36813f55f6f963258344447bc1abd038269e70c39ddce42bb82d73175",
+      "correctness_sha256": "8bf6d6a36813f55f6f963258344447bc1abd038269e70c39ddce42bb82d73175",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 34,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper p.5 R/F; unrestricted Arr is full F (disclosed); order is bookkeeping."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper p.5 F/R distinction; unrestricted Arr implements F, explicitly disclosed; order and arrow positivity are auxiliary bookkeeping."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "otype datatype, order, order_nonzero_if_arrow; full F types."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Full simple-type datatype, recursive order and positive arrow-order lemma checked; no restriction to relational types."
+        }
+      }
+    },
+    {
+      "id": "F0006",
+      "path": "theories/base/Bacon_Typing.thy",
+      "selected": true,
+      "fidelity_sha256": "975394577c7538118e518f33dc62c975874cddc9d8e859ee475c43ff4ca07419",
+      "correctness_sha256": "975394577c7538118e518f33dc62c975874cddc9d8e859ee475c43ff4ca07419",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 164,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Typing judgment, lookup, infer_type soundness/completeness, typing_unique checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Lookup, every typing/inference clause, inference soundness/completeness, uniqueness, and examples reviewed; typing remains distinct from theoremhood."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "lookup, has_type, infer_type all branches, infer_type_sound/complete, typing_unique, typed examples."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Lookup, eleven typing constructors, every inference-function branch, soundness/completeness inductions, uniqueness and typed examples checked; out-of-range variables return None."
+        }
+      }
+    },
+    {
+      "id": "F0254",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_BBK_Name_Transport.thy",
+      "selected": true,
+      "fidelity_sha256": "33bd6a92175f2dd2b8c7796b2ea9c5b2abf8805ac68acac352d5e300de88ffb6",
+      "correctness_sha256": "33bd6a92175f2dd2b8c7796b2ea9c5b2abf8805ac68acac352d5e300de88ffb6",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 280,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "n.64 signature-restriction role; every pullback obligation discharged; injectivity unnecessary; no model existence inferred."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Paper p.45 n.64 restriction role; name-map conversion, every model-pullback obligation, truth, and realization reviewed; injectivity unnecessary for pullback and no model existence inferred."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "pbbk_name_map_fv, both conversion transports, all 14 pullback clauses, injective corollary, truth/realization lemmas; conditional on a supplied target pbbk_model."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Free-slot preservation, raw and guarded conversion transport, all fourteen pullback obligations, injective corollary and realization equations checked; target-model existence is a premise."
+        }
+      }
+    },
+    {
+      "id": "F0255",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_BBK_Semantics.thy",
+      "selected": true,
+      "fidelity_sha256": "d5bd9a19fff29e90af03d67c1859681b5c0765eaa519a85d332983cb1562047e",
+      "correctness_sha256": "72809d56125ebce3ba52f4cc46dbe09058dd1dcd61f51f2f49f06e9d50669cfc",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 423,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper Def 3.1 pp.43–44; all clauses matched; denote_rename redundant by closed-abstraction argument but unproved in batch; in-signature vs raw βη coincide on Σ-endpoints modulo unformalized Church–Rosser bridge."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper Definition 3.1 pp.43–44; both conversion relations, environments, all locale clauses, and one-binder substitution reviewed; primitive-basis qualification and unformalized redundancy/endpoint-comparison bridges retained."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "both βη closures and data lemmas, fv/env/extend lemmas, signature_subst0, 14-clause locale, shift_assignment, denote_beta, slot_restore, one_binder; no model constructed; guarded/raw converse is a disclosed bridge."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Both conversion closures, endpoint invariants, environments, free slots, fourteen locale fields and full one-binder proof checked; model existence and guarded/raw converse are not established here."
+        }
+      }
+    },
+    {
+      "id": "F0256",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Beta.thy",
+      "selected": true,
+      "fidelity_sha256": "2f94414fa94b86d4888be70cda7b4c3cd87acb53716681fc149ed16879256d5c",
+      "correctness_sha256": "2f94414fa94b86d4888be70cda7b4c3cd87acb53716681fc149ed16879256d5c",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 17,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Import wrapper; no declarations."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Import wrapper and status text reviewed; no independent authored mathematical declarations."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "import wrapper only; no declarations."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Complete import wrapper examined; Propositional imports Conversion and Contraction transitively; no new theoremhood or semantic assertion."
+        }
+      }
+    },
+    {
+      "id": "F0257",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Constant_Substitution_Algebra.thy",
+      "selected": true,
+      "fidelity_sha256": "6b2c5aa39c2d9707fbec140ec130ca98ee568ee0c4266ef01aa15d655014f66c",
+      "correctness_sha256": "6b2c5aa39c2d9707fbec140ec130ca98ee568ee0c4266ef01aa15d655014f66c",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 180,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Constant-replacement commutation equations, fresh-instance restoration, witness-axiom abstraction checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Constant-substitution commutation with renaming, lifting, substitution, and subst0, plus fresh-instance and witness abstraction equations reviewed; syntactic infrastructure for the witness argument."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "pconst commutation with prename/shift/lift/psubst/psubst0 (side conditions checked), abstract_fresh_instance, abstract_witness_axiom."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Constant-replacement commutation with renaming, lifting and substitution checked with both maps/replacement premises; fresh-instance abstraction and witness-axiom abstraction follow without capture."
+        }
+      }
+    },
+    {
+      "id": "F0258",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Contraction.thy",
+      "selected": true,
+      "fidelity_sha256": "2235205dbdd737ae79d374c078db5c0d16551d60db245eab54ce500413bc13e3",
+      "correctness_sha256": "2235205dbdd737ae79d374c078db5c0d16551d60db245eab54ce500413bc13e3",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 283,
+      "fidelity": {
+        "status": "SOURCE_MATCH",
+        "claude": {
+          "status": "SOURCE_MATCH",
+          "note": "Paper Fig. 2 β/η root steps; inversion lemmas, subject reduction checked; undefined constant used only for raw typing reflection."
+        },
+        "codex": {
+          "status": "SOURCE_MATCH",
+          "note": "Paper Figure 2 p.8; beta/eta root patterns reviewed; all typing inversions, substitution inverse, shift reflection, and subject-reduction helpers assessed; undefined constant used only for raw typing."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "root contractions, nine ptype_*_iff inversions, psubst_prename_inverse, psubst0_pshift, pshift_reflects_typing (raw typing witness only), beta/eta subject reduction."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Root relations, all typing inversions, substitution-renaming inverse, shift reflection and both subject-reduction proofs checked; undefined supplies only a raw typing witness, not a declared constant."
+        }
+      }
+    },
+    {
+      "id": "F0259",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Conversion.thy",
+      "selected": true,
+      "fidelity_sha256": "f58adc2dfc30102044331706615a33d43e704608f4145b35b1d7226af4cffcc9",
+      "correctness_sha256": "f58adc2dfc30102044331706615a33d43e704608f4145b35b1d7226af4cffcc9",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 390,
+      "fidelity": {
+        "status": "SOURCE_MATCH",
+        "claude": {
+          "status": "SOURCE_MATCH",
+          "note": "Paper Fig. 2 single-occurrence contexts; pcompatible_step, typing, two-way string correspondence checked."
+        },
+        "codex": {
+          "status": "SOURCE_MATCH",
+          "note": "Paper pp.6–8 occurrence-context convention; every contextual constructor, typing preservation, and two-way string correspondence reviewed; no theoremhood conservativity inferred."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "pcompatible_step 15 rules, preservation all cases, beta/eta corollaries, string correspondence both directions."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "All fifteen compatible-step rules and preservation cases checked; root/context string correspondence proved in both directions using inverse translations and commuting equations."
+        }
+      }
+    },
+    {
+      "id": "F0260",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Conversion_Constant_Substitution.thy",
+      "selected": true,
+      "fidelity_sha256": "c8f1df23995cc561bf9639423c358f1c299e2ac5271f0836d733ef0a56149b02",
+      "correctness_sha256": "c8f1df23995cc561bf9639423c358f1c299e2ac5271f0836d733ef0a56149b02",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 119,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "β/η under constant substitution; all context cases checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Root and contextual conversion under constant replacement reviewed in every constructor case; replacement shifts beneath binders; no Functionality assumption."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "beta/eta pconst transport, compatible induction with pshift N under binders."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Beta and eta constant-substitution transports checked; compatible-context induction generalizes replacement N and shifts it in every binder case."
+        }
+      }
+    },
+    {
+      "id": "F0261",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Conversion_Renaming.thy",
+      "selected": true,
+      "fidelity_sha256": "c7b9f61cb807fca7e738bd3ff08bf0b61e1294240e6e5b020c1c0b4f83475cde",
+      "correctness_sha256": "c7b9f61cb807fca7e738bd3ff08bf0b61e1294240e6e5b020c1c0b4f83475cde",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 117,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "β/η under lifted renaming; all context cases checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Root and contextual conversion under renaming reviewed in every constructor case; lifted maps preserve bound slots; raw transport needs no typing premise."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "beta/eta prename transport, compatible induction with lift_ren under binders."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Beta/eta renaming transports and every compatible-context case checked; lifted renamings preserve the fresh slot; raw transport requires no injectivity."
+        }
+      }
+    },
+    {
+      "id": "F0262",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Conversion_Substitution.thy",
+      "selected": true,
+      "fidelity_sha256": "be4abcbd832db6f2719d09928be4d57fe78af56f6553013bc3cb1c33f6e44bc1",
+      "correctness_sha256": "be4abcbd832db6f2719d09928be4d57fe78af56f6553013bc3cb1c33f6e44bc1",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 138,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Tautology transport by valuation composition; aliases checked; no propositional identity asserted."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Both evaluator identities, both tautology transports, and all six aliases reviewed; valuation composition establishes truth-functional preservation, not propositional identity."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "pprop_eval commutation with prename/pconst_subst, taut_prename/pconst, lemmas re-exports."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Evaluation transport checked separately for opaque atoms and Boolean constructors; constant substitution correctly uses recursive evaluation in the pulled valuation; typing guards and aliases checked."
+        }
+      }
+    },
+    {
+      "id": "F0263",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Deduction.thy",
+      "selected": true,
+      "fidelity_sha256": "ef32c38be13b9714d6ac77cdce749064da8054b11e361bdbe0814f36b1db4924",
+      "correctness_sha256": "ef32c38be13b9714d6ac77cdce749064da8054b11e361bdbe0814f36b1db4924",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 338,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper Fig. 2 with ℒ(Σ) guards p.6; all rules, invariants, string bridge (universal signature only) checked; same basis qualification as F0002."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper Figure 2 p.8 and language guards p.6; all guarded rules, language invariants, truth definitions, and string bridges reviewed; converse restricted to universal signature; basis qualification retained."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "PObjTrue/False, guarded pH_proves, formula/signature/language invariants, both universal-string translations; guarded-MP scope, no reflection into smaller Σ claimed; IndividualExistence needed here for Σ Ind = {}."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Guarded H definition, all typing/signature induction cases and both universal-string translations checked; no arbitrary restricted-signature reflection follows from these statements."
+        }
+      }
+    },
+    {
+      "id": "F0264",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Existential_Witness_Theorem.thy",
+      "selected": true,
+      "fidelity_sha256": "8677db8fc7114a61ed792ee67571d1ddea78b2711d60850837b9c1c88e2bd2c7",
+      "correctness_sha256": "8677db8fc7114a61ed792ee67571d1ddea78b2711d60850837b9c1c88e2bd2c7",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 205,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Paper n.9 all-type Existence and n.64/Prop 15.4 witness-implication role; PC helpers, type witnesses, pH_all_type_existence, pH_exists_imp_shift_exists checked; both existential cases and inhabitation handled."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Paper p.9 n.9 and p.45 n.64 witness role; PC helpers, type witnesses, all-type Existence, slot restoration, and existential-implication theorem reviewed; both existential cases and inhabitation handled."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "PC helpers, pH_type_witness typed/signature, all-type existence via Inst from IndividualExistence, slot restore, existential-implication theorem both branches."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "PC helpers, recursive type witnesses, all-type existence descent, slot restoration and both branches of existential-implication theorem checked; no predeclared witness or choice function assumed."
+        }
+      }
+    },
+    {
+      "id": "F0265",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Finite_Signature_Support.thy",
+      "selected": true,
+      "fidelity_sha256": "e34940f5be31ccb4d3ec2df4adce17432c1e4d1ebc38078eeb364326cfa0bbab",
+      "correctness_sha256": "e34940f5be31ccb4d3ec2df4adce17432c1e4d1ebc38078eeb364326cfa0bbab",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 204,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Finite name support of derivations; restriction, monotonicity, three support theorems checked; supports the derivation, not all of S."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Name restriction, finite names, monotonicity, and theorem/local/set support results reviewed; finite name support concerns the derivation, not necessarily every member of its premise set."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "name_restrict, names_finite, restrict iff/mono, finite-support inductions over pH_proves/pH_derivable, set corollary."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Restriction characterization and all theorem/local/set support proofs checked; finite support counts names, not necessarily finitely many typed declarations or every unused premise."
+        }
+      }
+    },
+    {
+      "id": "F0266",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Fresh_Constant.thy",
+      "selected": true,
+      "fidelity_sha256": "a708183642ec0680983ad20b9ea631118ea15f358fa09cc9b4c6772388f81d93",
+      "correctness_sha256": "a708183642ec0680983ad20b9ea631118ea15f358fa09cc9b4c6772388f81d93",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 180,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "pconst_subst, pabstract_const, freshness, local deduction step checked; status text accurate."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Typed-pair replacement, signature/freshness facts, abstraction, embedded-theory equations, and local deduction reviewed; stage-local limitations distinguish these helpers from later consistency results."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "pconst_subst type/signature/fresh lemmas, pabstract_const lemmas, embedded-fresh theorem, eigen_witness_deduction."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Typed-pair constant replacement, all binder/type/signature/freshness cases, abstraction and local deduction checked; structural results do not themselves assert proof transport."
+        }
+      }
+    },
+    {
+      "id": "F0267",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Fresh_Witness_Elimination.thy",
+      "selected": true,
+      "fidelity_sha256": "725b8622675bbef0ac7cc696040f313ae5c60d9ff136e11caf30199d31d176bc",
+      "correctness_sha256": "c341cfbfadfcf85ea4a3df1be6295125099b44083629fdd510ca7de5628ad3a7",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 202,
+      "fidelity": {
+        "status": "SOURCE_PROBLEM",
+        "claude": {
+          "status": "SOURCE_PROBLEM",
+          "note": "Book Prop 15.4 p.319 / paper n.64; elimination, consistency, and extension theorems verified and sound; line 189 comment false: vacuous-binder witness axiom (e.g. A = PObjTrue) is constant-free and usable as a guarded assumption with c undeclared."
+        },
+        "codex": {
+          "status": "SOURCE_PROBLEM",
+          "note": "Book Proposition 15.4 p.319 and paper p.45 n.64; transport, elimination, consistency, and typed-extension results reviewed; lines 189–190 falsely exclude guarded use of an undeclared-witness axiom when substitution leaves it constant-free; theorem chain unaffected."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "full elimination chain (shift, abstract, rewrite, deduction, local Inst, MP with F0264), consistency and adjoin theorems; name-wide freshness stronger than pair-freshness but sound; declaration needed only for typedness."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Shift and abstraction transport, fresh-premise rewriting, local Inst descent, existential discharge and consistency/typed-extension theorems checked; name-wide freshness and declaration distinctions are sound."
+        }
+      }
+    },
+    {
+      "id": "F0268",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_H_Soundness.thy",
+      "selected": true,
+      "fidelity_sha256": "e141425814edfa309f4d6e3c797d3a572b075d2a0e1efc042688bf255f1b16d1",
+      "correctness_sha256": "e141425814edfa309f4d6e3c797d3a572b075d2a0e1efc042688bf255f1b16d1",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 166,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper Thm 3.2 soundness direction pp.44–45; Gen/Inst via pshift, full induction checked; conditional on explicit model interface and basis variant."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper Theorem 3.2 pp.44–45; Gen/Inst assignment arguments and every derivation-induction case reviewed; conditional soundness for the represented basis and explicit model interface."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "Gen/Inst via shift_assignment, soundness induction all 11 cases, pH_BBK_soundness; conditional on pbbk_model."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Gen/Inst assignment arguments and all eleven soundness induction cases checked; validity retains typing/signature guards and the supplied pbbk_model premise."
+        }
+      }
+    },
+    {
+      "id": "F0269",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_H_Soundness_Basic.thy",
+      "selected": true,
+      "fidelity_sha256": "bfb0c475fba642fc349693cf068d24c7a46ec62a9d4c9c7ffa2b5781168bd68c",
+      "correctness_sha256": "bfb0c475fba642fc349693cf068d24c7a46ec62a9d4c9c7ffa2b5781168bd68c",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 282,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper Fig. 2 axiom soundness; PC, Existence via nonempty D_e, UI/EG via one-binder law, Ref/LL, β/η, MP checked."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper Figure 2 and Theorem 3.2; evaluator, PC, Existence, UI/EG, Ref/LL, conversion, and MP soundness reviewed with actual signature and typed-environment premises."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "prop_eval bridge, PC, IndividualExistence (domain_nonempty), UI/EG via one_binder, Ref, LL, conversion/Beta/Eta, MP; conditional on pbbk_model."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Evaluator bridge and every axiom/MP soundness lemma checked, including unnamed individual existence, UI/EG substitution and LL application congruence; all remain locale-conditional."
+        }
+      }
+    },
+    {
+      "id": "F0270",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Henkin_Consistency.thy",
+      "selected": true,
+      "fidelity_sha256": "ec4d58a06c51f25fbd1e4e1740b7c0a30a540675aceed27434bd78a49980c541",
+      "correctness_sha256": "ec4d58a06c51f25fbd1e4e1740b7c0a30a540675aceed27434bd78a49980c541",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 13,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Import wrapper; text accurate."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Consistency import wrapper and dependency description reviewed; no independent authored theorem."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "import wrapper only; no declarations."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Complete stable import wrapper checked; finite-rank, finite-elimination and full-consistency results enter through their declared predecessor chain."
+        }
+      }
+    },
+    {
+      "id": "F0271",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Henkin_Existence.thy",
+      "selected": true,
+      "fidelity_sha256": "48a2d5e3491a890ac51e9fdd715993f14371f421ee6fab2beb9930d14c4d1834",
+      "correctness_sha256": "48a2d5e3491a890ac51e9fdd715993f14371f421ee6fab2beb9930d14c4d1834",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 226,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper n.64 T⁺ with constant witness, any Σ; Zorn plus rank replaces book enumeration; closed sentences only; depends on frozen phenkin_full_consistency_preserved (inspected, proved)."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper Theorem 3.2 and p.45 n.64; Henkin predicate/projections, base facts, witness-instance membership, and extension theorem reviewed; closed sentences and arbitrary name carriers; no semantic model constructed here; signature conservativity remains a cross-batch dependency."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "Henkin predicate and projections, typed/consistent base, member_derivable, witness membership via MP + closure, Zorn assembly; out-of-batch Signature_Conservativity dependency; closed sentences only."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Henkin predicate/projections, typed and consistent base, actual witness membership and maximal-extension assembly checked; closed-sentence scope and imported signature-conservativity dependency retained."
+        }
+      }
+    },
+    {
+      "id": "F0272",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Henkin_Finite_Elimination.thy",
+      "selected": true,
+      "fidelity_sha256": "03cb7092f5f5c3928a25bc5dfa911086a180936835ef085976fd4f5588821018",
+      "correctness_sha256": "03cb7092f5f5c3928a25bc5dfa911086a180936835ef085976fd4f5588821018",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 148,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Maximal-rank elimination for finite witness sets; equal-rank distinct labels handled by index-name injectivity; expanded-signature base consistency explicit."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Selection/typing helpers and finite witness consistency reviewed; maximal-rank removal handles distinct equal-rank labels; expanded-signature base consistency explicit."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "image helpers, axioms_typed, finite psubset induction with Max-rank removal, equal-rank freshness, axiom identity, restoration."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Image helpers, axiom typing and finite proper-subset induction checked; maximum existence, equal-rank freshness, fixed expanded signature and restoration of the removed axiom are justified."
+        }
+      }
+    },
+    {
+      "id": "F0273",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Henkin_Full_Consistency.thy",
+      "selected": true,
+      "fidelity_sha256": "69e8f7489677833c5d297615eba5c4e25d023357cf85ff1b72f3d9e34be549c0",
+      "correctness_sha256": "69e8f7489677833c5d297615eba5c4e25d023357cf85ff1b72f3d9e34be549c0",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 100,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Book Prop 15.4 finite-support step for all witness axioms; expanded-signature consistency premise retained, not inferred."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Book Proposition 15.4 finite-proof role and paper n.64; finite support extends consistency to all witness axioms; embedded corollary retains expanded-signature consistency rather than inferring it from forward embedding."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "finite support, finite_subset_image, mono contradiction, embedded-base freshness; expanded-signature consistency is an explicit premise of the embedded corollary."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Finite-support extraction, finite preimage selection, monotonicity contradiction and embedded-base freshness checked; expanded-signature consistency remains an explicit premise of its embedded corollary."
+        }
+      }
+    },
+    {
+      "id": "F0274",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Henkin_Names.thy",
+      "selected": true,
+      "fidelity_sha256": "7bd89b49dee4dad5a73905e335e4fd12d671334bbf9ecb51e026f93093ed0d64",
+      "correctness_sha256": "7bd89b49dee4dad5a73905e335e4fd12d671334bbf9ecb51e026f93093ed0d64",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 291,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Nested positive name datatype, least generated signature, injective embedding, disjointness, witness availability checked; implementation of Σ⁺, not a published datatype theorem."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Nested positive name datatype, mutual membership, exact membership characterizations, embedding/projection, disjointness, and witness availability reviewed; implementation of signature expansion, not an independently published datatype theorem."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "nested datatype, mutual inductive membership, signature iffs, embed injective/type/signature/language/proves, disjointness, witness/axiom language, every-existential-has-witness."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Positive nested name datatype, mutual admission predicates, membership equivalences, embeddings/projection inverse and final-language witness availability checked; labels are finite trees and availability is not truth."
+        }
+      }
+    },
+    {
+      "id": "F0275",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Henkin_One_Step.thy",
+      "selected": true,
+      "fidelity_sha256": "79ff12ef6beb934e5bfc1d2fad2b74e0c57a7d7cbf38618f84f4333794945f4f",
+      "correctness_sha256": "79ff12ef6beb934e5bfc1d2fad2b74e0c57a7d7cbf38618f84f4333794945f4f",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 447,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "phenkin_map forward preservation over all rules, one-step names, phenkin_names, witness-language result checked; no consistency inferred."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "All name-map algebra/proof cases, one-step signature, embedding inverse, names/freshness, and witness-language results reviewed; forward preservation and witness availability do not establish consistency or Henkin closure."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "phenkin_map algebra, tautology transport, phenkin_map_proves 11 cases, one-step names, embed/project inverse, phenkin_names, witness freshness and axiom language."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "All name-map algebra, tautology and eleven-rule proof transports checked; disjoint one-step names, projection inverse, freshness and witness-axiom language proofs preserve their closed-body scope."
+        }
+      }
+    },
+    {
+      "id": "F0276",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Henkin_Rank.thy",
+      "selected": true,
+      "fidelity_sha256": "350fbf5566ec3664266b8dcde8a58add00c7170813154f98ddfdf3da39d56bfa",
+      "correctness_sha256": "350fbf5566ec3664266b8dcde8a58add00c7170813154f98ddfdf3da39d56bfa",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 336,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Structural rank, freshness under substitution, witness indices, injectivity, maximal-rank freshness checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Size/rank bounds, freshness/substitution helpers, witness-index definitions, injectivity, and maximal-rank freshness reviewed; finite-tree dependence excludes cycles."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "body_name_size all constructors, witness_rank, fresh_body/lift/subst/full_axiom, index definitions and injectivity, max_rank_fresh."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Every size-bound constructor case, strict witness rank, substitution freshness, index definitions/injectivity and maximal-rank freshness checked; no acyclic-dependency assumption is substituted for the structural proof."
+        }
+      }
+    },
+    {
+      "id": "F0277",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Lindenbaum.thy",
+      "selected": true,
+      "fidelity_sha256": "477c3a712aa72731156d49d3e7c41b84d8196f1e0828c2cf134350ee33311317",
+      "correctness_sha256": "477c3a712aa72731156d49d3e7c41b84d8196f1e0828c2cf134350ee33311317",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 247,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Book Ex. 15.3 pp.319–320 / n.64 Lindenbaum via Zorn; decision extension, chain union, closure, negation completeness checked; no witnesses added."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Book Exercise 15.3 pp.319–320 and paper n.64; decision extension, nonempty-chain consistency, Zorn maximality, deductive closure, and negation decisions reviewed; arbitrary-carrier method and local-context scope retained; no witnesses added."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "false type/signature, insert_derivable, decision tautology, chain-union consistency, subset_Zorn_nonempty, closed/decides, Lindenbaum theorem."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Deduction-based consistency lemmas, decision tautology, nonempty-chain argument, Zorn hypotheses, maximal closure and negation completeness checked; arbitrary carriers require no enumeration."
+        }
+      }
+    },
+    {
+      "id": "F0278",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Local_Derivability.thy",
+      "selected": true,
+      "fidelity_sha256": "5700628360751a3aabbd0d43d30132920bf949f81b5a523f6617e604b140cf4f",
+      "correctness_sha256": "ac93277aeafe56b7aea6a42ced75eeaa87363a7bc0fe2146794fd2aa391dccd4",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 302,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Figure 2 pp.7–8, book p.318 finite-proof consequence, n.64 (formulae, closure-based consistency); all local/set definitions, invariants, deduction, finite support, name-map lemmas checked; MP-only open-premise consequence diverges from H-theory closure ({p} counterexample), agrees for sentence sets; header cites n.64 without naming this."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Figure 2 pp.7–8; book p.318; paper p.45 n.64 concerns formulae; all local/set definitions, invariants, monotonicity, finite support, deduction, mappings and consistency reflection reviewed; MP-only consequence cannot be identified with unrestricted open-premise H-theory closure."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Local derivability constructors and invariants, set lift, finite support, deduction theorem by derivation induction with removeAll, phenkin_map transport, consistency reflection direction; hash re-verified against manifest."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked local constructors and invariants, set lifting and finite support, deduction by derivation induction and removeAll, name transport, inverse equation, and consistency-reflection direction; no local quantifier constructor is introduced."
+        }
+      }
+    },
+    {
+      "id": "F0279",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Local_Quantifiers.thy",
+      "selected": true,
+      "fidelity_sha256": "c4af7142fd01010d4f7e7e65669fcf9d8e1ef472401102619f8cf5f33aa720c0",
+      "correctness_sha256": "6aa9b8550a01ad1c3132eed1ba9fab08d6412c3f359e4184ed2a33870d81d964",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 347,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Figure 2 Gen/Inst admissibility over shifted local premises; qchain/qconj, local/set Gen/Inst, eigen-witness descent checked; supplies target-side sentence-set agreement of local and H-theory closure; heading typo."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Figure 2 Gen/Inst implementation; all chain/conjunction, language, evaluation, discharge, shifted-list/set and eigen-witness results reviewed; independence hypotheses retained; existential antecedent remains in descent; heading typo."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "qchain/qconj evaluation identities, discharge/reapply, Gen/Inst premise forms, shifted-set recovery via psubst0_pshift; independence encoded by shifted premises plus old-context typing (refinement accepted), eigen-witness descent leaves existential antecedent."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked chain/conjunction language and evaluation lemmas, discharge/reapplication, Gen/Inst factoring, shifted-support recovery, and eigen-witness descent; independence is encoded by shifted old premises, and the existential antecedent remains."
+        }
+      }
+    },
+    {
+      "id": "F0280",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Proof_Substitution.thy",
+      "selected": true,
+      "fidelity_sha256": "5b56d5d46fb4a4f723b29026a3e3bed42619b0f75212719feddc432895a0173c",
+      "correctness_sha256": "5b56d5d46fb4a4f723b29026a3e3bed42619b0f75212719feddc432895a0173c",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 147,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Local/set transport under prename and pconst_subst plus alias lemmas; checked; aliases inherit their generating facts."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Generic local/set transport, typed renaming, constant replacement and all public aliases reviewed; aliases inherit their generating facts and assumptions."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Generic local/set transport with theorem/typing/signature/PImp-commutation contracts; prename and pconst instances; alias lemmas resolve in the built session."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked generic local/set transport contracts, renaming and constant-replacement instances, implication commutation, image supports, and stable aliases; substantive theorem transport comes from the named imports."
+        }
+      }
+    },
+    {
+      "id": "F0281",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Propositional.thy",
+      "selected": true,
+      "fidelity_sha256": "88447d3335d546eaa88719337140641ee304827c20ddc1d409d09f72ac7d36d9",
+      "correctness_sha256": "88447d3335d546eaa88719337140641ee304827c20ddc1d409d09f72ac7d36d9",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 98,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Figure 2 PC p.8; evaluator clauses, typed tautology, string correspondence checked; quantified/identity/application subterms are atoms; primitive target PImp is a disclosed vocabulary qualification."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Figure 2 PC p.8; evaluator clauses, typed tautology predicate and string correspondence reviewed; quantified terms, identity and applications are propositional atoms; target primitive implication requires the vocabulary bridge."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "pprop_eval with quantifiers, equality, applications, and λ as atoms; Prop typing in tautology; string correspondence both directions by valuation transport."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked every evaluation constructor, Prop typing in tautologicity, and both string-correspondence directions using transported valuations and inverse syntax maps; quantified formulas remain atoms."
+        }
+      }
+    },
+    {
+      "id": "F0282",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Refutation_Consistency.thy",
+      "selected": true,
+      "fidelity_sha256": "eef454e5d2a3296184f8dc3297bc982ad1d42d2d9550158bc08d2db37728b663",
+      "correctness_sha256": "eef454e5d2a3296184f8dc3297bc982ad1d42d2d9550158bc08d2db37728b663",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 144,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "n.64/book Cor 15.1 refutation role; ⊤₀=∀p(p→p) proved by PC+Gen, refutation theorem, negation extension checked; ⊤₀/⊥₀ are not Figure 1's abbreviations (disclosed)."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Book p.318 refutation discussion and paper p.45 n.64 proof role; truth typing/signature, quantified truth proof, guarded refutation and negation extension reviewed; project truth/falsity representatives differ from Figure 1's literal abbreviations."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "PObjTrue by PC, Gen, MP with pshift typing; refutation via tautology T→((¬A→¬T)→A) discharged by proved T; set refutation; negation-extension consistency."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked truth typing/signature, PC–Gen–MP proof of quantified truth, guarded refutation tautology, set refutation, and negation-extension consistency; no fixed-true Boolean atom is assumed."
+        }
+      }
+    },
+    {
+      "id": "F0283",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Renaming_Algebra.thy",
+      "selected": true,
+      "fidelity_sha256": "e31417016a1106567e2d45ed7e7986d6e74504a97194663d00ae9720963032a8",
+      "correctness_sha256": "e31417016a1106567e2d45ed7e7986d6e74504a97194663d00ae9720963032a8",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 180,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Seven renaming/substitution algebra equations checked; pure syntax."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "All seven renaming/substitution algebra lemmas reviewed, including lifted maps and single-slot substitution; structural equalities without semantic or object-identity assertions."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Renaming composition and substitution commutation, all constructor cases, lift equations at 0 and Suc, psubst0 map identity."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked all structural cases of renaming composition and substitution commutation, generalized binder maps, zero/Suc lifting equations, shift transport, and the subst0 map identity."
+        }
+      }
+    },
+    {
+      "id": "F0284",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Set_Soundness.thy",
+      "selected": true,
+      "fidelity_sha256": "b51ad8dda4926c837fe847608d5c3247aa15ac696cf09c5093f83645bfd477b1",
+      "correctness_sha256": "a0dd165c204283fb207f01a4ffcc9b7272c043c19fd8f61c8f21bdb80e92005e",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 111,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Theorem 3.2 soundness direction pp.44–45 at a typed assignment with local/set premises; depends on out-of-batch pH_BBK_soundness_at_assignment; Thm 15.2 citation imprecise; model class may be broader than Def 3.1 pending the guarded-βη item."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Theorem 3.2 pp.44–45; local/set soundness and satisfaction corollary reviewed in pbbk_model with typed assignment and true premises; base soundness and model representation remain dependencies; book Theorem 15.2 locator imprecise."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "Local and set soundness at a typed assignment inside pbbk_model; MP via pH_BBK_MP with guards from derivation invariants; supplied-model contract, no model existence."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Checked local soundness induction, MP language guards, finite-support set reduction, and satisfaction corollary; all semantic conclusions retain pbbk_model and typed-assignment premises."
+        }
+      }
+    },
+    {
+      "id": "F0285",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Signature_Conservativity.thy",
+      "selected": true,
+      "fidelity_sha256": "b74ba41d24bd70338b03a10d1586200ca2bb25504172ea5307482c7f903daccf",
+      "correctness_sha256": "b74ba41d24bd70338b03a10d1586200ca2bb25504172ea5307482c7f903daccf",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 360,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "n.64 first step (conservative witness-signature expansion) using Existence p.7–9; fresh-declaration removal, hybrid finite induction, projection after elimination, consistency preservation checked; no witness axioms (disclosed)."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper p.45 n.64 signature-extension technique and pp.7–9 Existence; slot/declaration removal, hybrid signatures, finite elimination, projection, reflection and consistency preservation reviewed; no witness axioms or assumed old closed inhabitants."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "Fresh-declaration removal, unused-slot removal via Inst and pH_all_type_existence (proof read), hybrid finite elimination with τ=σ forcing, projection on old names only, consistency preservation; typed old theories and no witness axioms are the scope."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Checked unused-slot and fresh-declaration removal, hybrid signature equations and finite induction, old-name projection, proof reflection, theorem iff, and consistency preservation; typed old theories and absence of added witness axioms are essential scope."
+        }
+      }
+    },
+    {
+      "id": "F0286",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Signature_Transport.thy",
+      "selected": true,
+      "fidelity_sha256": "569b89b08c3a83f1aff70783545e637f0a273ffcc9ebaaa5612460238e33011b",
+      "correctness_sha256": "569b89b08c3a83f1aff70783545e637f0a273ffcc9ebaaa5612460238e33011b",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 183,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Cross-signature constant replacement and signature monotonicity through all eleven constructors; checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "All cross-signature replacement and signature-monotonicity results reviewed; constructor replay retains guards and shifted replacements under binders."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Cross-signature pconst_subst guard consumed exactly at PConst; all eleven constructors with N generalized; local/set transport; signature monotonicity via phenkin_map id."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked target-signature replacement guard, all eleven theorem constructors with generalized replacement, shifted Gen/Inst and UI/EG commutation, local/set transport, and signature monotonicity."
+        }
+      }
+    },
+    {
+      "id": "F0287",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_String_Bridge.thy",
+      "selected": true,
+      "fidelity_sha256": "4c3eae668b4d5442419f2449a87e702683fdf528bbc8d06c628ec5821d42daed",
+      "correctness_sha256": "4c3eae668b4d5442419f2449a87e702683fdf528bbc8d06c628ec5821d42daed",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 295,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "String-instance transport and conditional bridge contract; constructor translations checked; \"parametric constructors\" wording accurate; pH_string_universal_iff out of batch."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "String representation, invariants, universal-signature iff, every constructor translation and conditional bridge contract reviewed; no unconditional identification with the later guarded calculus."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "String-syntax H, universal-signature iff, guarded constructor translations; pH_string_bridge is a conditional contract, not an identification with H_signature_proves."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Checked string definition, formula/signature invariants, universal-signature iff, every guarded constructor translation, and bridge reduction; identification with an arbitrary later relation remains conditional."
+        }
+      }
+    },
+    {
+      "id": "F0288",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Substitution.thy",
+      "selected": true,
+      "fidelity_sha256": "755a93d8a7001263506fc82d2ad696efbdafb80a7a400784ab3ffaa74a492c70",
+      "correctness_sha256": "755a93d8a7001263506fc82d2ad696efbdafb80a7a400784ab3ffaa74a492c70",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 348,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Capture-avoiding de Bruijn substitution with typing/signature preservation and string commutation; named/free-for correspondence not claimed."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "All renaming, shift, lifted/single/simultaneous substitution definitions and typing/signature/string lemmas reviewed; structural capture avoidance does not itself prove named-syntax correspondence."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "prename/pshift/psubst/psubst0 definitions, typing preservation with lookup shift, signature preservation, string commutation, injectivity of pterm_to_oterm."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked all renaming/substitution definitions, binder lifting, typing inductions, signature preservation, string commuting equations, and translation injectivity; substitutions require the displayed type-respecting contracts."
+        }
+      }
+    },
+    {
+      "id": "F0289",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Syntax.thy",
+      "selected": true,
+      "fidelity_sha256": "17200df0fe37ae0f62b5e2c203d960caeb9c37f5c223a3e69fd5ff39567757db",
+      "correctness_sha256": "17200df0fe37ae0f62b5e2c203d960caeb9c37f5c223a3e69fd5ff39567757db",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 229,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "§1.1 pp.5–6 ℒ(Σ) with arbitrary name carrier; full F grammar and dedicated target constructors disclosed; string isomorphism checked."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper §1.1 pp.5–6; datatype, signature, typing, language and string-isomorphism results reviewed; arbitrary name carrier, full F grammar and dedicated target logical constructors disclosed."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "pterm datatype, signature guard, has_ptype with signature-independent constant typing, language, string isomorphism and typing/signature iff."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked arbitrary-name syntax, typed constant pairs, separate typing/signature predicates, monotonicity, constant injectivity, inverse string translations, and typing/signature correspondences."
+        }
+      }
+    },
+    {
+      "id": "F0290",
+      "path": "theories/base/parametric_signature/Bacon_Parametric_Theorem_Substitution.thy",
+      "selected": true,
+      "fidelity_sha256": "210095848b946ae6e8631ab911ec57d44230189c98d4031a81346d34b9bdc654",
+      "correctness_sha256": "210095848b946ae6e8631ab911ec57d44230189c98d4031a81346d34b9bdc654",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 250,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "pH_proves closed under type-respecting renaming and constant-for-term substitution; all cases incl. shifted N under Gen/Inst checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Signature-preserving renaming and theorem-level constant substitution reviewed through every constructor; type-respecting maps and shifted replacement terms retained."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "pH_proves_prename with Δ and r generalized (UI/EG psubst0 commutation, Beta/Eta compatible-step renaming, Gen/Inst lift-shift); same-signature pconst instance."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked both theorem-transport inductions, generalized contexts/maps or replacements, every constructor, conversion preservation contracts, and shifted quantifier premises; no unrestricted substitution admissibility is assumed."
+        }
+      }
+    },
+    {
+      "id": "F0353",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Axiom_Guards.thy",
+      "selected": true,
+      "fidelity_sha256": "d3e6cbc039e0ffdb24a35a60f7c87c1ad0c58ffef9248e29c1c9a023649a3982",
+      "correctness_sha256": "d3e6cbc039e0ffdb24a35a60f7c87c1ad0c58ffef9248e29c1c9a023649a3982",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 217,
+      "fidelity": {
+        "status": "SOURCE_MATCH",
+        "claude": {
+          "status": "SOURCE_MATCH",
+          "note": "Figure 2 UI/EG/Ref/LL p.8 in first-class form with whole-formula ℒ(Σ) guard; operand types recovered by typing uniqueness; endpoints rely on out-of-batch paper_*_translation."
+        },
+        "codex": {
+          "status": "SOURCE_MATCH",
+          "note": "Figure 2 UI/EG/Ref/LL p.8; implication decomposition, application/binary guard inversion and all four translation endpoints reviewed; operand guards recovered from whole-formula membership; translation helpers remain cross-batch dependencies."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Operand guards by has_stype inversion and typing uniqueness; UI/EG/Ref/LL whole-axiom guards reduce to operand guards and compose with axiom translations."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked application inversion and type uniqueness, binary operand recovery, UI/EG/identity/LL guards, and final whole-axiom translation compositions; no additional operand assumption is silently imposed."
+        }
+      }
+    },
+    {
+      "id": "F0354",
+      "path": "theories/base/source_vocabulary/Bacon_Source_BBK_Binding.thy",
+      "selected": true,
+      "fidelity_sha256": "509e17bb5a7aacc655881106e24e33004f7c41d156137bd7002917e4520a0c84",
+      "correctness_sha256": "509e17bb5a7aacc655881106e24e33004f7c41d156137bd7002917e4520a0c84",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 202,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Def 3.1(ii) one-binder substitution in paper_db_bbk_model; slot restore, shift assignment, denote_beta checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Definition 3.1(ii) pp.43–44 implementation; signature/language lemmas, slot restoration, shift, beta denotation and one-binder substitution reviewed in the stated model locale; coherence redundancy supplied separately."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "ssubst signature, β slot restore identity, shift-assignment via denote_rename with inj Suc, guarded β denotation, one-binder substitution in paper_db_bbk_model."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked substitution signatures, language helpers, slot restoration, shift coherence, guarded beta denotation, and the two-environment application comparison proving one-binder substitution inside paper_db_bbk_model."
+        }
+      }
+    },
+    {
+      "id": "F0355",
+      "path": "theories/base/source_vocabulary/Bacon_Source_BBK_Global_Assignments.thy",
+      "selected": true,
+      "fidelity_sha256": "e9373f713c20ca71687da72b4a25db7abc8b2ae61bf81aa25948226ed0b569b4",
+      "correctness_sha256": "e9373f713c20ca71687da72b4a25db7abc8b2ae61bf81aa25948226ed0b569b4",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 139,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Total global assignments vs paper's adequate partial assignments (disclosed); prefix typing, choice existence, proof/env alignment checked."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Definition 3.1 assignments pp.43–44; total global assignment definition, prefix characterization, choice existence, typing/roundtrip and proof-prefix alignment reviewed; adequate partial named assignments remain separate."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Total assignment typed for all prefixes both directions, Hilbert-choice existence on nonempty domains, prefix denotation type and roundtrip, proof-prefix with env."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked total-environment definition, both prefix-equivalence directions, Hilbert-choice existence from nonempty domains, finite-frame semantic specialization, and eventual proof/environment conjunction; no named-assignment equivalence follows."
+        }
+      }
+    },
+    {
+      "id": "F0356",
+      "path": "theories/base/source_vocabulary/Bacon_Source_BBK_Interface.thy",
+      "selected": true,
+      "fidelity_sha256": "bb34b706a6e138f9d9649b272d8819f5be9917d1efb2aa586c7b7d71fa2958df",
+      "correctness_sha256": "bb34b706a6e138f9d9649b272d8819f5be9917d1efb2aa586c7b7d71fa2958df",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 121,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Definition 3.1 pp.43–44 clause by clause; A_σ read as M_σ; finite frames, total functions, full F, separate renaming field disclosed; guarded (ii.d) reading is a recorded obligation."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Definition 3.1 pp.43–44 compared clause by clause; both locales, satisfaction, validity and closed denotation reviewed; finite frames, total functions and separate coherence field disclosed; guarded-conversion correspondence remains recorded."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "paper_db_bbk_structure fields, fresh-slot quantifier clauses, satisfaction versus guarded validity, closed denotation via empty env, separate injective-renaming extension."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked every weak-structure field, guarded quantifier/application clauses, unguarded satisfaction versus guarded validity, closed-denotation proof, and separate injective-renaming extension; these are conditional interfaces."
+        }
+      }
+    },
+    {
+      "id": "F0357",
+      "path": "theories/base/source_vocabulary/Bacon_Source_BBK_Pullback_Model.thy",
+      "selected": true,
+      "fidelity_sha256": "cb4987e9436237ae598a0050b7f580b41b40ad7bf3414946409b898029d96528",
+      "correctness_sha256": "cb4987e9436237ae598a0050b7f580b41b40ad7bf3414946409b898029d96528",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 51,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Target-to-source model assembly; unfold_locales discharge checked; one-way, no isomorphism."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Both target-to-source model assembly theorems reviewed against structural/truth helpers; same domains and valuation; conditional construction without model existence or two-sided isomorphism."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "unfold_locales assembly of paper_db_bbk_model from pbbk_model via pullback lemmas; pbbk_to_paper_db_model unfolds paper_target_denote."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked field-by-field pullback locale assembly and explicit model theorem unfolding; supplies a source interpretation from a target model without asserting a two-sided isomorphism."
+        }
+      }
+    },
+    {
+      "id": "F0358",
+      "path": "theories/base/source_vocabulary/Bacon_Source_BBK_Pullback_Structure.thy",
+      "selected": true,
+      "fidelity_sha256": "7bafae90280a200f809baea3dd0772130e00e03ba794de32cae9ba65c1f56f47",
+      "correctness_sha256": "7bafae90280a200f809baea3dd0772130e00e03ba794de32cae9ba65c1f56f47",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 141,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Pullback structural clauses checked; depends on out-of-batch language/rename translation lemmas."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Pullback denotation and every structural clause reviewed under pbbk_model; typing, application, locality, guarded conversion and injective renaming transported."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Pullback type, var, application with PApp signatures, locality via paper_to_pterm_fv, βη via paper_to_pterm_conversion, renaming via target field with inj r."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked pullback definition and type, variable, application, locality, conversion, and renaming clauses; translation preserves required signatures/free slots, and target renaming retains injectivity."
+        }
+      }
+    },
+    {
+      "id": "F0359",
+      "path": "theories/base/source_vocabulary/Bacon_Source_BBK_Pullback_Truth.thy",
+      "selected": true,
+      "fidelity_sha256": "e85887350fdea7fa44f6a7dee50c61779b24c2b7a8567d412c494b78444efdf6",
+      "correctness_sha256": "e85887350fdea7fa44f6a7dee50c61779b24c2b7a8567d412c494b78444efdf6",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 152,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Def 3.1(iii) truth clauses via guarded β then target clause; arbitrary predicates retained; paper_*_application out of batch."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Definition 3.1(iii) pp.43–44 implementation; conversion-denotation helper and all six truth-clause transports reviewed; arbitrary predicates retained in quantifier clauses."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Truth clauses for ¬, ∧, ∨, =, ∀, ∃ via paper_*_application conversion then target clause; body typing recovered by cases; shift translation identity."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked guarded conversion-to-denotation helper and all six logical truth transports; quantifier cases recover body typing and translate the fresh-slot application exactly."
+        }
+      }
+    },
+    {
+      "id": "F0360",
+      "path": "theories/base/source_vocabulary/Bacon_Source_BBK_Renaming_Derived.thy",
+      "selected": true,
+      "fidelity_sha256": "bb4ea263fef6d4956dbfa86c0e138be4790d35ba6001cc8b1a417d861392415b",
+      "correctness_sha256": "bb4ea263fef6d4956dbfa86c0e138be4790d35ba6001cc8b1a417d861392415b",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 135,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Renaming coherence derived from Def 3.1(ii.b–d) for noninjective type-respecting maps; structure⇒model corollary checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Definition 3.1(ii.b–d) implementation; argument-language lemma, noninjective renaming theorem and structure-to-model corollary reviewed; closed abstraction/vector beta argument uses full F types."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Renaming coherence from locality, vector congruence, and two guarded β theorems; no injectivity or Functionality used; corollary discharges the model axioms."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked argument-language lifting, closed abstraction locality, reversed typed vectors, individual variable equalities, vector congruence, both beta endpoints, and locale-extension corollary; injectivity and Functionality are unused."
+        }
+      }
+    },
+    {
+      "id": "F0361",
+      "path": "theories/base/source_vocabulary/Bacon_Source_BBK_Reverse_Booleans.thy",
+      "selected": true,
+      "fidelity_sha256": "ee9debe541e63e2fe89f9a53d9675f136fc03bf627466057c1a2dc386df1c8b6",
+      "correctness_sha256": "ee9debe541e63e2fe89f9a53d9675f136fc03bf627466057c1a2dc386df1c8b6",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 118,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Figure 1 → := λpq.¬p∨q gets the material clause in any source structure; reverse Boolean/identity clauses checked; no primitive-implication identity assumed."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Figure 1 p.6 and Definition 3.1(iii); language helpers, literal-implication truth and all reverse Boolean/identity clauses reviewed; no target model or primitive-implication identity assumed."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Literal λ-defined implication truth clause via reverse guarded conversion and roundtrip; reverse Boolean and identity clauses in the weak structure."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked reverse language helpers, literal implication conversion and source roundtrip recovery, then reverse Boolean/identity clauses; truth equivalence is not promoted to arbitrary target denotation identity."
+        }
+      }
+    },
+    {
+      "id": "F0362",
+      "path": "theories/base/source_vocabulary/Bacon_Source_BBK_Reverse_Model.thy",
+      "selected": true,
+      "fidelity_sha256": "d4002c868f963eb6ba41437ec5d10aaa4e657ffbe8bcf718a4ff8549897dfc83",
+      "correctness_sha256": "d4002c868f963eb6ba41437ec5d10aaa4e657ffbe8bcf718a4ff8549897dfc83",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 56,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Source structure yields target pbbk_model incl. valuation_imp via F0361; checked; no target roundtrip recovery."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Both reverse-model assembly results reviewed in weak source structure; coherence derived and implication interpreted through the literal source definition; arbitrary target denotation recovery not claimed."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "unfold_locales assembly of pbbk_model from paper_db_bbk_structure; renaming from derived theorem; implication from paper_db_imp_truth."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked every target locale field against reverse structural/truth lemmas and final explicit construction; renaming is derived from the weak source structure, not assumed additionally."
+        }
+      }
+    },
+    {
+      "id": "F0363",
+      "path": "theories/base/source_vocabulary/Bacon_Source_BBK_Reverse_Quantifiers.thy",
+      "selected": true,
+      "fidelity_sha256": "2fb45e08bc1f27cff2b78c3a6d8651b3acf5c057b7b1d6a38fe0947edc77abf0",
+      "correctness_sha256": "2fb45e08bc1f27cff2b78c3a6d8651b3acf5c057b7b1d6a38fe0947edc77abf0",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 142,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Def 3.1(iii.d–e) binder specialization; fresh-lambda β, ball/bex congruence, reverse corollaries checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Definition 3.1(iii.d–e) specialization; guarded fresh-lambda beta, denotation, universal/existential body clauses and reverse corollaries reviewed; typed extended assignments explicit."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Fresh-lambda β conversion with restore identity; ∀/∃ binder clauses by ball/bex_cong over typed extensions; reverse corollaries."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked fresh-lambda redex typing/signatures and restoration, guarded denotation equality, universal/existential body transport over typed extensions, and reverse-translation corollaries."
+        }
+      }
+    },
+    {
+      "id": "F0364",
+      "path": "theories/base/source_vocabulary/Bacon_Source_BBK_Reverse_Structure.thy",
+      "selected": true,
+      "fidelity_sha256": "e43d4a5e0509d0b60edb54e05a745968589db17b106dabaaeafcc312c77663af",
+      "correctness_sha256": "e43d4a5e0509d0b60edb54e05a745968589db17b106dabaaeafcc312c77663af",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 147,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Reverse interpretation structural fields incl. renaming from F0360; checked; guarded reverse conversion out of batch."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Reverse denotation definition and all source-language, structural and renaming lemmas reviewed; renaming uses F0360 and conversion uses guarded reverse translation."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Reverse denotation type, var, application, locality via pterm_to_paper_fv, βη via guarded reverse conversion, renaming derived without inj."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked reverse interpretation and each structural field, signature decomposition, free-slot agreement, guarded reverse conversion, and renaming through the derived weak-structure theorem."
+        }
+      }
+    },
+    {
+      "id": "F0365",
+      "path": "theories/base/source_vocabulary/Bacon_Source_BBK_Roundtrip.thy",
+      "selected": true,
+      "fidelity_sha256": "9c717bc92f6bc2073dc5811dd205836806b8dc1a19aae85d7cf4945bb18030c1",
+      "correctness_sha256": "9c717bc92f6bc2073dc5811dd205836806b8dc1a19aae85d7cf4945bb18030c1",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 29,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Source round-trip denotation via η (Def 3.1 ii.d); checked; opposite recovery not claimed."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Definition 3.1(ii.d) implementation; source roundtrip denotation reviewed with language/environment premises; source conversion dependency inspected; opposite recovery not claimed."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Roundtrip denotation from paper_roundtrip_conversion and denote_beta_eta; one-sided as documented."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked source roundtrip denotation by guarded source conversion and the locale conversion clause; recovery is one-sided and retains language/environment guards."
+        }
+      }
+    },
+    {
+      "id": "F0366",
+      "path": "theories/base/source_vocabulary/Bacon_Source_BBK_Vector_Congruence.thy",
+      "selected": true,
+      "fidelity_sha256": "ec207bab8a3e53c71900f7d414f6dc7ca82c7a1946cbeebf71c9f1cc74f7111f",
+      "correctness_sha256": "ec207bab8a3e53c71900f7d414f6dc7ca82c7a1946cbeebf71c9f1cc74f7111f",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 68,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Iterated Def 3.1(ii.b) along typed vectors; induction checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Definition 3.1(ii.b) iterated application congruence; application-language and vector theorem reviewed, including empty vector, mixed types and distinct assignments."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Vector application congruence by induction on the type list, Nil forcing empty vectors, Cons step using only denote_application_cong."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked vector congruence induction: empty type list forces empty vectors; successor step preserves argument types, environments, and tail equalities using application congruence alone."
+        }
+      }
+    },
+    {
+      "id": "F0367",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Binder_Conversion.thy",
+      "selected": true,
+      "fidelity_sha256": "ff04eb95cb6409730ee47974ca569f4e21416ed3b86d05845c271c2fb516b300",
+      "correctness_sha256": "ff04eb95cb6409730ee47974ca569f4e21416ed3b86d05845c271c2fb516b300",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 129,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "p.6 binder notation ∀σ(λv.P) to target PForall/PExists via two guarded β steps; checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Paper p.6 binder notation and Figure 2 beta; slot restoration, fresh application, quantifier congruences, abstraction typing and both binder conversions reviewed."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Binder restore identity, β step under pshift, quantifier congruence via source_conversion_map, Trans with quantifier application conversion."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked slot-restoration identity, typed fresh-variable beta contraction, quantifier congruence via source_conversion_map, abstraction language, and both binder-conversion compositions."
+        }
+      }
+    },
+    {
+      "id": "F0368",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Closed_Proof_Preservation.thy",
+      "selected": true,
+      "fidelity_sha256": "6649337d865838496c43a3e6d27f0935f26b525422cbb36a93cdf56a231381ce",
+      "correctness_sha256": "6649337d865838496c43a3e6d27f0935f26b525422cbb36a93cdf56a231381ce",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 53,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Closed ten-rule source H theorems become target theorems in []; context elimination uses Existence (H not H⁻), disclosed; full F."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Figure 2 and Existence discussion pp.7–9; closed-language and forward closed-proof preservation reviewed; finite proof support precedes context elimination; full F representation bridge."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Closed global language to empty frame, finite-prefix target proof, and imported closed-context elimination now read in full (induction on Γ, closed shift identity, unused-slot removal on empty theory)."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked closed global-to-empty-frame language, translation typing, finite-prefix proof selection, and imported closed-context elimination; target existence machinery is explicitly used without adding a source rule."
+        }
+      }
+    },
+    {
+      "id": "F0369",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Closed_Set_Preservation.thy",
+      "selected": true,
+      "fidelity_sha256": "d205e8461e81106fe879869bcfb5725dc64f79ee428f37e4d0542d10bca46e56",
+      "correctness_sha256": "d205e8461e81106fe879869bcfb5725dc64f79ee428f37e4d0542d10bca46e56",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 39,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Theorem 3.2 sentence-set forward consequence preservation; eventual prefix then closed context elimination checked; local-consequence caveat as F0278."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Theorem 3.2 sentence-set scope p.44; closed-set preservation reviewed; sentence assumptions and closed conclusion retained; target frame removed after eventual-prefix transport."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Eventual set derivability at prefix N, typed closed target theory, imported set context elimination checked by statement only."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked eventual set proof at its bound, closed target-premise typing, and imported set context-elimination induction; the premise set may be infinite but every member must be a sentence."
+        }
+      }
+    },
+    {
+      "id": "F0370",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Closing_Proof_Transport.thy",
+      "selected": true,
+      "fidelity_sha256": "3ebaa041c8dd1136789356d49fdf00a96194ec4dd773d52332cb7246011b60cd",
+      "correctness_sha256": "3ebaa041c8dd1136789356d49fdf00a96194ec4dd773d52332cb7246011b60cd",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 57,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Translation commutes with closing; pH_proves_prename transport checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Figure 2 Gen/Inst implementation; both closing equations, typed theorem renaming and closing transport reviewed; no assumed translation of an entire source derivation."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "paper_to_pterm commutes with sclose and srename; fresh close equals pshift; target renaming and closing via pH_proves_prename with sclose_lookup."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked translation/closing equations, fresh-close shift equation, target proof renaming, and typed closing via sclose_lookup; input is a target proof, not presumed source proof preservation."
+        }
+      }
+    },
+    {
+      "id": "F0371",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Closing_Structure.thy",
+      "selected": true,
+      "fidelity_sha256": "13402c0b835a69a203b1307d7eb7f0db2b86215f2b620e48b87f7df91eb35554",
+      "correctness_sha256": "13402c0b835a69a203b1307d7eb7f0db2b86215f2b620e48b87f7df91eb35554",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 139,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "sclose renaming, fv agreement, typing/signature, paper_imp commutation checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "All free-variable agreement, closing/shift, signature, lookup, typing, abstraction and literal-implication commutation results reviewed; original context slot remains available."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "sfv-agreement renaming with binder case, sclose_fresh_eq_sshift, sclose_lookup forcing σ=ρ at k=n, closing typing/language/abstraction, paper_imp preserved under renaming."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked free-variable agreement including lifted binder case, freshness-to-shift equality, signature preservation, selected-slot type equality, closing language/abstraction, and literal implication renaming."
+        }
+      }
+    },
+    {
+      "id": "F0372",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Consistency_Basics.thy",
+      "selected": true,
+      "fidelity_sha256": "29ec5a17d033de652941965d4875d523248fbfc1288370a42b6e44601d29582d",
+      "correctness_sha256": "29ec5a17d033de652941965d4875d523248fbfc1288370a42b6e44601d29582d",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 116,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Consistency as no derivable contradictory pair vs target PObjFalse; explosion checked; open local consistency is not n.64's closure-based H-consistency (disclosed via definition and docs)."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Figure 2 PC/MP and book p.318 consistency discussion; contradictory-pair consistency, source explosion and target explosion/falsity reviewed; open local consistency is not unrestricted H-theory consistency."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Contradictory-pair consistency, source explosion via template tautology, target explosion and PObjFalse with own language guards; open contradictory pairs allowed."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked independent contradictory-pair consistency definition, source explosion by guarded PC and MP, target explosion, and falsity language guards; contradictory witnesses need not be closed."
+        }
+      }
+    },
+    {
+      "id": "F0373",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Consistency_Correspondence.thy",
+      "selected": true,
+      "fidelity_sha256": "3612bbbd1d05756a3ac7f82d11e7f5f57c1c7d5333ff5441635c7e6ab50b49a5",
+      "correctness_sha256": "3612bbbd1d05756a3ac7f82d11e7f5f57c1c7d5333ff5441635c7e6ab50b49a5",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 123,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Theorem 3.2 sentence-set consistency with rich stock (§1.1); both directions checked; source→target rests on out-of-batch paper_target_set_preimage; source-side Gen/Inst admissibility not found in frozen source_vocabulary (reconciliation item)."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Theorem 3.2 p.44 sentence sets and §1.1 rich variables; truth-sentence helpers, both consistency directions and standard-stock iff reviewed; source-to-target uses richness and set preimage; H-theory closure identification remains for reconciliation."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "Closed sentence sets only; target→source via explosion on back(PObjTrue), forward preservation, ¬-conversion; source→target via preimage needing sg_rich G; iff and standard-stock corollary; sg_standard_stock_rich by statement."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Checked both consistency directions, closed truth/negation witnesses, forward negation conversion, reverse preimage, iff, and standard-stock specialization; sentence-set and richness requirements retain their asymmetric roles."
+        }
+      }
+    },
+    {
+      "id": "F0374",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Conversion.thy",
+      "selected": true,
+      "fidelity_sha256": "46da9ee761676dd56782b568febe319830a82d75f07d143885058abe3db2f0d7",
+      "correctness_sha256": "46da9ee761676dd56782b568febe319830a82d75f07d143885058abe3db2f0d7",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 281,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Figure 2 β/η pp.7–8 and Def 3.1(ii.d); contractions, contextual closure, guarded equivalence, translation preservation checked; guarded-vs-raw coincidence on Σ-endpoints and named/α correspondence are open cross-batch obligations."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Figure 2 beta/eta pp.7–8 and Definition 3.1(ii.d); all free-slot, contraction, contextual-step, guarded-equivalence and translation results reviewed; named/alpha and unrestricted-versus-guarded correspondence remain cross-batch obligations."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "sfv, wrapper closedness, β/η/compatible step translation under wrapper invariance, guarded equivalence with language invariant, forward transport for paper and book bases."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked free-slot equations, closed wrappers, root and contextual conversion translation, guarded equivalence constructors and language invariant, and paper/book forward transport; no conversion reflection or semantic equivalence is inferred."
+        }
+      }
+    },
+    {
+      "id": "F0375",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Conversion_Axioms.thy",
+      "selected": true,
+      "fidelity_sha256": "c34dd527a9c472daaf9bc54a4103cc632bf7038e9d73ccde8842a529390466a2",
+      "correctness_sha256": "c34dd527a9c472daaf9bc54a4103cc632bf7038e9d73ccde8842a529390466a2",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 81,
+      "fidelity": {
+        "status": "SOURCE_MATCH",
+        "claude": {
+          "status": "SOURCE_MATCH",
+          "note": "Figure 2 β/η biconditionals with literal Figure 1 ↔ derived from target PObjIff by PC and reverse guarded conversion; checked."
+        },
+        "codex": {
+          "status": "SOURCE_MATCH",
+          "note": "Figures 1–2 pp.6–8; biconditional transport and both contextual conversion-axiom translations reviewed; formula-level PC and guarded conversion restore literal source syntax."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "PObjIff to material biconditional by PC consequence, backward conversion to literal paper_iff, Beta/Eta axiom translations via target constructors."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked target biconditional-to-material-form PC consequence, guarded backward conversion to literal source biconditional, and contextual beta/eta axiom translations; no arbitrary material replacement is used."
+        }
+      }
+    },
+    {
+      "id": "F0376",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Conversion_Congruence.thy",
+      "selected": true,
+      "fidelity_sha256": "323f7e10b1b2733da0c5dba6d52984c25f43303ba3c109e19883cd60eceffaf6",
+      "correctness_sha256": "323f7e10b1b2733da0c5dba6d52984c25f43303ba3c109e19883cd60eceffaf6",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 228,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Target-side βη congruence motivated by Figure 2 contexts pp.7–8; source_conversion_map and all Neg/Conj/Disj/App/Lam instances checked; typing/signature guards retained, no material-equivalence replacement."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "All context-map, endpoint-language and Neg/Conj/Disj/App/Lam congruences checked; target syntactic conversion preserves typing/signature guards, without material-equivalence replacement."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "source_conversion_map induction over all five constructors with OF order checked; Neg/Conj/Disj/App/Lam instances via pcompatible_step; binary congruences by Trans with endpoint languages."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked conversion-map induction, endpoint guards, every displayed constructor context, and binary congruences through guarded intermediate terms."
+        }
+      }
+    },
+    {
+      "id": "F0377",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Conversion_Contexts.thy",
+      "selected": true,
+      "fidelity_sha256": "72a66f9ddacb7928c98beee2105c5c2ec6acf180f92b72e677fad6142efce689",
+      "correctness_sha256": "72a66f9ddacb7928c98beee2105c5c2ec6acf180f92b72e677fad6142efce689",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 149,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Source-side contextual congruence for the Def. 3.1(ii.d)/Figure 2 conversion representation; sbeta_eta_context and App/Lam lemmas checked; fixed-operand language guards retained."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Figure 2 pp.7–8 motivates source context transport; generic induction and all App/Lam instances checked, including fixed-operand language guards."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "sbeta_eta_context mirrors F0376 on source terms; App_left/App_right/App/Lam; fixed operand language premise explicit."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked source context induction and application/abstraction instances; fixed operands require language membership and lambda extends the typing frame."
+        }
+      }
+    },
+    {
+      "id": "F0378",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Defined_Connectives.thy",
+      "selected": true,
+      "fidelity_sha256": "5347abdd7ee0753413d25f7ce3bca5c6a703e33d76ffd8c1eb20b264ec3c1cb2",
+      "correctness_sha256": "5347abdd7ee0753413d25f7ce3bca5c6a703e33d76ffd8c1eb20b264ec3c1cb2",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 179,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Figure 1 p.6 definitions computed to material bodies by guarded β; all expansion/slot/const/application lemmas checked; no identification of PImp with the source arrow."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Figure 1 p.6; all ten expansion, slot, constant and application lemmas compute literal definitions into target material bodies by guarded conversion; no PImp identification."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "imp/iff constant conversions via Lam congruence over slot conversions; two-stage binary β substitution verified through plift_subst and subst_shift; arrow reduces to PDisj (PNeg A) B, not PImp."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked connective expansions, slot typings, double abstraction, and binary beta substitutions; the paper arrow reduces to its material body."
+        }
+      }
+    },
+    {
+      "id": "F0379",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Finite_Typing.thy",
+      "selected": true,
+      "fidelity_sha256": "0e53ee91737a3545530acb781600ecac296eaac7b60165487205ca4a59773090",
+      "correctness_sha256": "0e53ee91737a3545530acb781600ecac296eaac7b60165487205ca4a59773090",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 124,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Finite support of typing (§1.1 p.5 infinite stock); global↔finite typing, source_free_bound, finite-support theorem checked; typing only."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Both global/finite typing directions, free-bound recursion, coverage and finite-support theorem checked; agreement premises differ as disclosed; no proof-frame restriction follows."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "global↔finite typing both ways (Lam case via sgextend/lookup agreement); source_free_bound covers sfv; finite-support theorem; catalogued endpoint."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked both global/finite typing directions, binder agreement, free-bound recursion, and explicit finite support; converse agreement covers declared slots."
+        }
+      }
+    },
+    {
+      "id": "F0380",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Formula_Conversion.thy",
+      "selected": true,
+      "fidelity_sha256": "d5e3097175f0e68d2bf7ea585debc162feaafef406c9a0d38bd7628404f034c0",
+      "correctness_sha256": "d5e3097175f0e68d2bf7ea585debc162feaafef406c9a0d38bd7628404f034c0",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 155,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Target PC/MP biconditional infrastructure and Prop-restricted conversion induction checked; source motivation Figure 2 p.8; PObjIff/PImp only at theorem level as disclosed."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Target PC/MP, iff reflexivity/symmetry/transitivity, Prop-restricted conversion induction and backward theorem transport checked; Figure 2 p.8 is the source motivation."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "PC-based iff refl/sym/trans; conversion→PObjIff induction with pH_proves.Beta/Eta premise order checked; backward transport."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked PC/MP biconditional bridges, every conversion-induction case, proposition-type restriction, and backward theorem transport."
+        }
+      }
+    },
+    {
+      "id": "F0381",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Fresh_Embedding.thy",
+      "selected": true,
+      "fidelity_sha256": "00b37f9a0035b385f1fb4ab2a1496cc60c1b1d99d4308ab008bb49d8a96cdc85",
+      "correctness_sha256": "00b37f9a0035b385f1fb4ab2a1496cc60c1b1d99d4308ab008bb49d8a96cdc85",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 149,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Fresh-slot extension supporting Gen/Inst variable conditions (p.8); case_nat map, FV image, freshness, typing embedding, closing equation checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Extension map, FV image, freshness, typing/language embeddings, shift cancellation, closing equation and aliases checked; no injectivity or proof-reflection assumption."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "sfv_srename, extend-map typing, sshift cancellation, fresh-close agreement both branches; no injectivity of r required."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked free-variable images, extended-map typing, shift cancellation, and fresh closing; no injectivity of the old representation map is needed."
+        }
+      }
+    },
+    {
+      "id": "F0382",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Generalization_Translation.thy",
+      "selected": true,
+      "fidelity_sha256": "feea6d1968c362dd2cf7d0d3c0864251be9d783e00e6f2b047e8f511e9d34f0e",
+      "correctness_sha256": "feea6d1968c362dd2cf7d0d3c0864251be9d783e00e6f2b047e8f511e9d34f0e",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 130,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Figure 2 p.8 Gen/Inst finite-frame transport; chosen-variable type/freshness preserved, old slot retained (disclosed); depends on paper_target_H_close, binder conversions and paper_imp_translation_proves_iff outside batch."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Figure 2 p.8 Gen/Inst; closing helper and finite-frame translations preserve variable typing/freshness and retain the old slot; imported proof-renaming and binder/connective bridges remain recorded dependencies."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "Gen/Inst finite-frame transport correct; relies on pH_proves_prename (Codex read the proof, I read the statement); requires lookup Γ n = Some σ; catalogued."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked closing, freshness-to-shift, target Gen/Inst, binder restoration, and arrow bridge; Codex additionally inspected the target proof-renaming induction."
+        }
+      }
+    },
+    {
+      "id": "F0383",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Global_Connective_Language.thy",
+      "selected": true,
+      "fidelity_sha256": "a846217ed9f9d235d1e44ca7089a9c9489021daf50cf23b8d9b7b5ce1a9b8991",
+      "correctness_sha256": "a846217ed9f9d235d1e44ca7089a9c9489021daf50cf23b8d9b7b5ce1a9b8991",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 102,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Global language guards for Figure 1 connectives (pp.5–6) via prefix transport; checked; language facts only."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Prefix/global language transport, generic binary equivalence and implication/biconditional introduction lemmas checked; language facts only."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "prefix→global language; binary language iff at max bound; imp/iff global language iff."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked prefix/global language transport and both binary-language directions; the generic finite equivalence is assumed for every frame."
+        }
+      }
+    },
+    {
+      "id": "F0384",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Global_Conversion_Transport.thy",
+      "selected": true,
+      "fidelity_sha256": "c0f05b7bf26ab650d0aadc91fca3c8ff14b7f1801e02e7b15bec3ba968e7ff48",
+      "correctness_sha256": "c0f05b7bf26ab650d0aadc91fca3c8ff14b7f1801e02e7b15bec3ba968e7ff48",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 111,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Global theoremhood transport along guarded conversion via actual β/η biconditionals and PC/MP (p.8); induction and renaming steps checked; no injectivity/richness."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Conversion-transport induction, specialization and alias checked; type-respecting renaming plus actual global biconditional theorems transport theoremhood, without richness or injectivity."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "conversion transport of global theoremhood, induction arbitrary G r; β/η via renamed steps and F0388 transports; equivalence not identity."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked conversion induction under type-respecting renaming; conclusion is global theoremhood equivalence without richness or injectivity assumptions."
+        }
+      }
+    },
+    {
+      "id": "F0385",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Global_Existence.thy",
+      "selected": true,
+      "fidelity_sha256": "790f8d08c3e81e443405814e79bb5fbe96b58f0cad0bf471a00e6923b6147233",
+      "correctness_sha256": "790f8d08c3e81e443405814e79bb5fbe96b58f0cad0bf471a00e6923b6147233",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 140,
+      "fidelity": {
+        "status": "SOURCE_MATCH",
+        "claude": {
+          "status": "SOURCE_MATCH",
+          "note": "Existence derivation p.7 (Ref, β, EG, PC, MP) reproduced literally; rich-stock and standard-stock corollaries checked; richness used only to obtain a variable."
+        },
+        "codex": {
+          "status": "SOURCE_MATCH",
+          "note": "Paper p.7 Existence derivation matched through Ref, beta, EG and explicit PC/MP; prefix typing and variable/rich-stock/standard-stock results checked."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Existence derived from a variable with G n = σ; PC template and tautology checked; also discharges target IndividualExistence in the reverse direction under sg_rich."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked Ref, beta, EG, exact PC instance, and three MP steps; derived Existence supplies the reverse translation of target IndividualExistence under richness."
+        }
+      }
+    },
+    {
+      "id": "F0386",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Global_H.thy",
+      "selected": true,
+      "fidelity_sha256": "36e647375b94308a5938bfade08f9a2bd3598edf97441be416423385ad48c769",
+      "correctness_sha256": "36e647375b94308a5938bfade08f9a2bd3598edf97441be416423385ad48c769",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 104,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Figure 2 p.8 ten constructors and PC predicate matched with Figure 1 literal abbreviations; qualifications: full-F otype (paper default R, codomain ≠ e), de Bruijn representation of α-variants, total stock needing sg_rich; conclusion guards derivable, not axioms."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Figure 2 p.8 ten constructors, PC definition, language invariant and PC transports checked; full-F, rich-stock interpretation and de Bruijn representation qualifications retained."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "ten source constructors (target has eleven, corrected); language invariant; PC finite-frame translation."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked ten source constructors, language invariant, and PC translation; distinguished them from the target's eleven constructors."
+        }
+      }
+    },
+    {
+      "id": "F0387",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Global_PC_Embedding.thy",
+      "selected": true,
+      "fidelity_sha256": "741f123221d4451e6ec3900e4b6f62eb6d5eadbe6eb0fef7505bb91215a79f94",
+      "correctness_sha256": "741f123221d4451e6ec3900e4b6f62eb6d5eadbe6eb0fef7505bb91215a79f94",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 80,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "PC instance renaming and global PC embedding (Figure 2 PC p.8); srename commutes with paper_prop_instance; reverse PC case only."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Biconditional/template renaming, finite PC embedding and reverse-target PC corollaries checked; no map injectivity or whole-proof reflection assumed."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "srename commutes with paper_prop_instance; PC embedding into global stock with same template."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked renaming of literal propositional instances and PC embedding; the same tautological template uses renamed substitutions."
+        }
+      }
+    },
+    {
+      "id": "F0388",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Global_Proof_Basics.thy",
+      "selected": true,
+      "fidelity_sha256": "115a2dd3bfa14b58682f5f806e9d600c572dcd97e3614d9c062563873c9ba305",
+      "correctness_sha256": "115a2dd3bfa14b58682f5f806e9d600c572dcd97e3614d9c062563873c9ba305",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 177,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Two-formula PC instances, iff elimination/expansion, β/η biconditional transports (Figure 2 p.8); derived consequences checked; no new rules."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Two-formula PC, iff elimination/expansion, beta/eta biconditionals, directional transports and aliases checked; derived Figure 2 PC/MP infrastructure."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "two-formula PC instances; iff forward/backward; β/η biconditionals and transports."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked two-formula PC construction, biconditional elimination and expansion, and contextual beta/eta theorem transport."
+        }
+      }
+    },
+    {
+      "id": "F0389",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Global_Proof_Preservation.thy",
+      "selected": true,
+      "fidelity_sha256": "ef64108674d6f6cb2b3ea73f40bedb76c4fb4babf9f1e859006b2133e295a52b",
+      "correctness_sha256": "ef64108674d6f6cb2b3ea73f40bedb76c4fb4babf9f1e859006b2133e295a52b",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 123,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Forward preservation of paper_global_H into all sufficiently long target prefixes (Figure 2 p.8, §1.1 stock); induction checked; full-F disclosed; eventual-prefix not minimal-frame; relies on outside-batch prefix wrappers and guarded axiom translations."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Whole forward induction, beta/eta eventual wrappers and finite-prefix corollary checked; proof-dependent bound supports every sufficiently large prefix; full-F disclosed, no minimal-frame claim."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "forward induction complete over ten source cases into the eleven-constructor target; prefix wrappers read; Axiom_Guards/Conversion_Axioms translations at statement level; catalogued."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Checked complete forward induction and immediate prefix/axiom wrappers; eventual target preservation is established, with deeper translation dependencies outside full file coverage."
+        }
+      }
+    },
+    {
+      "id": "F0390",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Global_Substitution.thy",
+      "selected": true,
+      "fidelity_sha256": "b3e32f9508a6aca7d21caf68782e60adc7906aaaba68380b50b88fc4e55a3c18",
+      "correctness_sha256": "b3e32f9508a6aca7d21caf68782e60adc7906aaaba68380b50b88fc4e55a3c18",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 160,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Global substitution typing and close/open inverses (Figure 2 substitution proviso p.8); ssubst0_sclose, ssubst0_sshift checked; de Bruijn algebra only."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Shift/lift/substitution typing and inverse-renaming/closing/opening equations checked; general substitution premise covers every stock variable; no semantic or derivability substitution theorem."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "substitution typing correct; premise quantifies replacement typing over every stock index, stronger than the header's free-variable wording; ssubst_srename_inverse, ssubst0_sclose/sshift verified."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Checked substitution typing and binder inverse equations; the displayed replacement premise covers every stock index, stronger than the introductory free-variable wording."
+        }
+      }
+    },
+    {
+      "id": "F0391",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Global_Typing.thy",
+      "selected": true,
+      "fidelity_sha256": "772b7b8ce21edb22446d7e31ebea76ebacd060880a55b92ac6849559a09e2ebb",
+      "correctness_sha256": "772b7b8ce21edb22446d7e31ebea76ebacd060880a55b92ac6849559a09e2ebb",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 178,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "§1.1 p.5 typed infinite stock as sg_rich, notes 8–9 on H⁻; sgextend, has_sgtype, renaming, sclose checked; full-F stock broader than default R."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Paper §1.1 p.5; rich typed stock, extension, global typing, renaming and closing checked; full-F stock is broader than the paper's default R."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "sg_rich, sgextend, has_sgtype, total-map renaming preservation, sclose global typing at k=n and k≠n."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked richness, extension, global typing, total type-respecting renaming, and closing; variable availability is distinct from semantic inhabitation."
+        }
+      }
+    },
+    {
+      "id": "F0392",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Identity_Axioms.thy",
+      "selected": true,
+      "fidelity_sha256": "a29fb1360f684645cf294d1333e18d2bf5e788f299de0e4920d51561a5bc6465",
+      "correctness_sha256": "a29fb1360f684645cf294d1333e18d2bf5e788f299de0e4920d51561a5bc6465",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 108,
+      "fidelity": {
+        "status": "SOURCE_MATCH",
+        "claude": {
+          "status": "SOURCE_MATCH",
+          "note": "Figure 2 p.8 Ref and LL with premises A,B:σ, F:σ→t; literal source arrow restored by material PC step then genuine β conversion and theoremhood bridge; checked."
+        },
+        "codex": {
+          "status": "SOURCE_MATCH",
+          "note": "Figure 2 p.8 Ref/LL forms and typing premises matched; language helpers and translations checked; nested literal implication restored using material PC consequence and genuine conversion."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Ref and LL translations; LL chain via PC consequence, Imp_left/Imp_right conversion, backward transport, arrow bridge; no PImp/paper_imp identification."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked Ref and LL translation chains, including material PC consequence and ordered conversions; no primitive/source-arrow identity is assumed."
+        }
+      }
+    },
+    {
+      "id": "F0393",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Local_Conversion_Transport.thy",
+      "selected": true,
+      "fidelity_sha256": "50982b87fca5f2f57746ad664b2a973b1a2beb99dfa3b4b7dfa0fcc2c59d3b9b",
+      "correctness_sha256": "50982b87fca5f2f57746ad664b2a973b1a2beb99dfa3b4b7dfa0fcc2c59d3b9b",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 159,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Local iff and conversion transports under project MP-only consequence; biconditional theorem leaves justify local MP with S fixed; checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Local iff and conversion transports checked; actual biconditional theorem leaves justify local MP with S fixed; project-local-consequence qualification retained."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "local iff transport with Theorem leaf plus two MP; conversion transport of local derivability with fixed S."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked local biconditional transport through actual theorem leaves and MP, followed by guarded conversion induction with the premise set unchanged."
+        }
+      }
+    },
+    {
+      "id": "F0394",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Local_Cut.thy",
+      "selected": true,
+      "fidelity_sha256": "ea988b7503b9638ee1746cb07d43c6ecd1a275ce1530d02859e8cebfda9195db",
+      "correctness_sha256": "561aa2821c007e9a8b7ad6fb185173376ad46eb11f37057373c50655a2aa9c2f",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 41,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Cut induction correct; documentation error at line 14: replacement premise over all of T forces every member of T to be well-formed, contrary to the comment; S may contain unused ill-formed entries, both sets may be infinite."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Cut induction correct; line 14 documentation error: derivable replacements for every member of T force all T members to be well formed; S may contain unused ill-formed entries, and both sets may be infinite."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "local cut by induction; replacements cover all intermediate premises; catalogued."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked cut induction; replacements cover every intermediate premise, theorem leaves remain source theorems, and no local quantifier inference is introduced."
+        }
+      }
+    },
+    {
+      "id": "F0395",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Local_Deduction.thy",
+      "selected": true,
+      "fidelity_sha256": "5cfd6d58233a21216d284ddaf4d1eb0df5949b4a70692249bbac88ab387fb746",
+      "correctness_sha256": "5cfd6d58233a21216d284ddaf4d1eb0df5949b4a70692249bbac88ab387fb746",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 161,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Assumption/Theorem/MP local consequence for Figure 2 and Theorem 3.2 sentence sets (pp.8, 44–45); language, monotonicity, finite support, empty-set equivalence checked; coincides with H-theory closure for sentence sets (deduction argument), project choice for open sets, disclosed."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Assumption/Theorem/MP definition, language, monotonicity, finite support, theorem-premise collapse and empty-set equivalence checked; open-premise consequence is a project choice; sentence-set closure argument is mathematical reconciliation."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "local derivability definition, language invariant, monotonicity, finite support, empty-set equivalence."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked local definition, language invariant, monotonicity, finite assumption support, theorem-premise collapse, and empty-premise equivalence."
+        }
+      }
+    },
+    {
+      "id": "F0396",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Logical_Applications.thy",
+      "selected": true,
+      "fidelity_sha256": "ce6514ee5a6cead6144c305568c5a680f1c7c0ecc84392c68981cd8827b9ebb3",
+      "correctness_sha256": "ce6514ee5a6cead6144c305568c5a680f1c7c0ecc84392c68981cd8827b9ebb3",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 273,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Guarded β computations for saturated logical constants and quantifier translations (pp.5–6, Figure 2); book lemmas use the p.92–93 (PDF 111–112) minimal → / ∀σ basis defined outside batch; no identity-semantics claim."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "All application/substitution/beta helpers and paper/book logical computations checked; paper pp.5–6 and book printed pp.92–93 identify separate bases; quantifier applications correctly shift F."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "guarded unary/binary β helpers; saturated connective/identity/quantifier applications with pshift under binders."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked guarded unary/binary beta computations and logical applications; quantifier translations shift predicates beneath their binders."
+        }
+      }
+    },
+    {
+      "id": "F0397",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Logical_Roundtrip.thy",
+      "selected": true,
+      "fidelity_sha256": "9ca60de30781f2e093faa7c69d16ea9ff12d8bc5a64c72ee4d58cdb977eac7fc",
+      "correctness_sha256": "9ca60de30781f2e093faa7c69d16ea9ff12d8bc5a64c72ee4d58cdb977eac7fc",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 166,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Round trip of six primitive constant families up to guarded η (§1.1, Figure 2 η); checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Unary, binary and quantifier eta chains and six-family logical round trip checked; primitive constants survive up to guarded source conversion."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "η round trips for six primitive families; sshift computations checked; roundtrip is conversion."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked unary, binary, and quantifier eta chains and all six logical-symbol cases; the roundtrip concludes conversion rather than literal equality."
+        }
+      }
+    },
+    {
+      "id": "F0398",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Minimal_Frame.thy",
+      "selected": true,
+      "fidelity_sha256": "5c605c02b85e2919787afb270e8aaa68af65bd16d8ab058032301cea6496dc4a",
+      "correctness_sha256": "5c605c02b85e2919787afb270e8aaa68af65bd16d8ab058032301cea6496dc4a",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 105,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Minimal typing frame (§1.1 p.5); agreement/take/free-bound lemmas checked; out-of-range nth unused; typing only."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Context agreement, take-support, free-bound inequality and minimal typing/language frames checked; unsupported nth values unused; no proof-context erasure."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "context agreement via global detour at supported slots only; take-support; free_bound ≤ length Γ; catalogued."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked supported context agreement, take-prefix typing, and free-bound inequality; unspecified out-of-range nth values do not enter supported-slot reasoning."
+        }
+      }
+    },
+    {
+      "id": "F0399",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Alpha.thy",
+      "selected": true,
+      "fidelity_sha256": "f2c5689fb1f25d5e466ffdad52e2a2d339f11bce468ce5504bb2190982cbb875",
+      "correctness_sha256": "f2c5689fb1f25d5e466ffdad52e2a2d339f11bce468ce5504bb2190982cbb875",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 147,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Independent fresh-all-names named α relation (§1.1 p.5 typed variables, Figure 2 proviso p.8); equivalence, typing/signature/FV invariants checked; stronger generator guard disclosed, characterization in F0400."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Independent fresh-all-names alpha generators, equivalence, typing/signature/FV/language invariants and examples checked; stronger generator guard disclosed."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "generated α with fresh-all-names guard (disclosed); equivalence; typing/signature/fv invariance."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked independent alpha generators, equivalence closure, typing/signature/free-variable invariants, identity binders, and variable equality."
+        }
+      }
+    },
+    {
+      "id": "F0400",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Alpha_Characterization.thy",
+      "selected": true,
+      "fidelity_sha256": "eaab15759f5c41888679be7ba3ed04203f0a37bae57cc44b6587bb2a938b6f82",
+      "correctness_sha256": "eaab15759f5c41888679be7ba3ed04203f0a37bae57cc44b6587bb2a938b6f82",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 165,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "named_alpha equals de Bruijn encoding equality in a rich stock; node induction, fresh common binder, sclose/ssubst0 cancellation checked; no α rule added to H."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Node measure, swap invariance, fresh common binder, encoding cancellation and alpha characterization checked; rich G supplies fresh same-type names."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "encoding equality ⇒ α under sg_rich; fresh z, ssubst0_sclose cancellation, named_nodes measure; catalogued."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked common fresh-binder selection, closing cancellation, node-measure induction, and both characterization directions under richness."
+        }
+      }
+    },
+    {
+      "id": "F0401",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Alpha_Conversion.thy",
+      "selected": true,
+      "fidelity_sha256": "735d8a0bde9a53f09b9a37775eeadf4859cbd2a3fcda779ec0613e1d61ce09be",
+      "correctness_sha256": "735d8a0bde9a53f09b9a37775eeadf4859cbd2a3fcda779ec0613e1d61ce09be",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 154,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Named α-variants inter-convertible by Figure 2 β and η only (pp.7–8, no α rule in Def. 3.1(ii.d)); staged induction handles shadowing without circularity; free-for use checked; key fidelity support for the representation."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Decomposition, substitution/swap alignment, fresh-binder and alpha-to-beta-eta results checked; Figure 2 pp.7–8 derivation handles shadowing without circularity or an added alpha rule."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "α ⇒ literal βη; shadowing case uses strict-subterm alignment plus F0404, no circularity; Sym/Trans language transport."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked substitution/swap induction including shadowing, then alpha induction; strict-subterm alignment avoids circularity."
+        }
+      }
+    },
+    {
+      "id": "F0402",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Alpha_Representation.thy",
+      "selected": true,
+      "fidelity_sha256": "9a5c61f9a7093b71493f33471f5a2b7e72e581ab931e2288e1fea52492138545",
+      "correctness_sha256": "9a5c61f9a7093b71493f33471f5a2b7e72e581ab931e2288e1fea52492138545",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 215,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Named α preserves de Bruijn representation; stack-map, swap, closing and fresh-binder encoding lemmas checked; forward direction only."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Stack maps, closing, swap maps, fresh-binder encoding and alpha invariance at empty/arbitrary stacks checked; representation equality is proved rather than stipulated."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "stack-map transport, swap commutation, sclose_swap_fresh, α ⇒ encoding equality for any stack."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked stack transport, swap commutation, fresh closing equality, and alpha encoding invariance for empty and arbitrary binder stacks."
+        }
+      }
+    },
+    {
+      "id": "F0403",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Assignments.thy",
+      "selected": true,
+      "fidelity_sha256": "c408b80514dd7bd4d20c88bbc0416f6fea2fb78be29355c06c5658244848cb2c",
+      "correctness_sha256": "c408b80514dd7bd4d20c88bbc0416f6fea2fb78be29355c06c5658244848cb2c",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 207,
+      "fidelity": {
+        "status": "SOURCE_MATCH",
+        "claude": {
+          "status": "SOURCE_MATCH",
+          "note": "Definition 3.1 pp.43–44 typed partial assignments and adequacy on free variables matched; completion/update lemmas auxiliary; no semantic locality inferred."
+        },
+        "codex": {
+          "status": "SOURCE_MATCH",
+          "note": "Definition 3.1 pp.43–44 typed partial assignments and adequacy matched; completion, agreement, domain/update, freshness and binder-adequacy results checked; semantic locality not inferred."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "partial typed assignments; completion existence needs nonempty domains (explicit); update lemmas; no denotation claims."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked partial typing, completion, adequacy, and updates; completion existence explicitly assumes nonempty domains and uses HOL choice."
+        }
+      }
+    },
+    {
+      "id": "F0404",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Binder_Conversion.thy",
+      "selected": true,
+      "fidelity_sha256": "b94ad709899a0a2bd1097bc50355923e3f3700ee17be7dcbaeea73df6f6443b2",
+      "correctness_sha256": "b94ad709899a0a2bd1097bc50355923e3f3700ee17be7dcbaeea73df6f6443b2",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 107,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "λx.A ≡βη λy.A[y/x] via η expansion then literal free-for β under capture-permitted outer binder (Figure 2 p.8, p.7 context convention); checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Fresh-variable free-for, variable/swap language and both binder-conversion lemmas checked; eta expansion then guarded literal beta respects Figure 2 and p.7 binding contexts."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "η-expansion then literal β with free_for from y ∉ vars A; every node typed."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked eta expansion followed by literal beta, free-for freshness, all language guards, and binder lifting of alignment."
+        }
+      }
+    },
+    {
+      "id": "F0405",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Chart_Prefix.thy",
+      "selected": true,
+      "fidelity_sha256": "3ce71c9840021f8412ee0c41724bb18348009f6dae6e6d216913aa5cc740776a",
+      "correctness_sha256": "3ce71c9840021f8412ee0c41724bb18348009f6dae6e6d216913aa5cc740776a",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 72,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Chart-prefix α-equivalence of decodings; srename agreement on supported slots checked; both typings and rich stock explicit."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Chart restriction, encoding equality and alpha corollary checked; both typings and rich stock explicit; only supported chart entries compared."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "chart prefix restriction gives equal encodings on sfv M below k; α under sg_rich."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked prefix chart validity and supported nth agreement; equal encodings yield alpha while raw decoder outputs may differ."
+        }
+      }
+    },
+    {
+      "id": "F0406",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Charts.thy",
+      "selected": true,
+      "fidelity_sha256": "e408726790521365963213be29dda6f3129d61d40420b5bb2f8d43faa3c6cf52",
+      "correctness_sha256": "e408726790521365963213be29dda6f3129d61d40420b5bb2f8d43faa3c6cf52",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 127,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Distinct typed charts, fresh names via sg_rich (§1.1 p.5), index inverse checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Chart definition, projections, lookup, fresh choice/existence and index inverse checked; distinct typed names represent finite slots without semantic carrier assumptions."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "charts, SOME-chosen fresh name from sg_rich_fresh, chart existence, named_index inverse in bounds."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked distinct typed charts, guarded fresh-name choice, chart existence, and inverse indexing within chart bounds."
+        }
+      }
+    },
+    {
+      "id": "F0407",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Closed_Roundtrip.thy",
+      "selected": true,
+      "fidelity_sha256": "83571577e939e51eb5322cd5e35861f2d4ddfd7061131281120ebf8103de96b9",
+      "correctness_sha256": "83571577e939e51eb5322cd5e35861f2d4ddfd7061131281120ebf8103de96b9",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 64,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Closed named terms type in the empty frame and decode up to α with rich G; checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Closed named encoding types in the empty frame, preserves language and decodes up to alpha; closedness, typing and richness premises retained."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "closed named terms type in []; closed roundtrip α."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked closed encoding typing through vacuous support agreement and closed decoder roundtrip followed by alpha characterization."
+        }
+      }
+    },
+    {
+      "id": "F0408",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Coherent_Charts.thy",
+      "selected": true,
+      "fidelity_sha256": "fbcba35a4df93ee7f606951c4a11879137fd34c2508ca661a6a0f1953f7397bb",
+      "correctness_sha256": "fbcba35a4df93ee7f606951c4a11879137fd34c2508ca661a6a0f1953f7397bb",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 135,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Coherent typed name supply via from_nat_into on infinite fibers; injectivity, chart validity, aligned charts checked; variable identifiers only."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Typed supply, equality/injectivity, coherent charts and aligned-chart existence checked; enumeration concerns variable-name fibers, not constant names or semantic domains."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "from_nat_into enumeration on infinite fibers; injective pair supply; aligned charts on supported equal-type slots."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked infinite-fiber enumeration contracts, pair injectivity, coherent chart validity, and agreement on supported equal-type slots."
+        }
+      }
+    },
+    {
+      "id": "F0409",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Consistency_Correspondence.thy",
+      "selected": true,
+      "fidelity_sha256": "aedae4b2bcf86ccbfc59ad6e263b006e73463697174ece08093ba55fc2b76416",
+      "correctness_sha256": "aedae4b2bcf86ccbfc59ad6e263b006e73463697174ece08093ba55fc2b76416",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 103,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Contradictory-pair consistency under project MP-only local consequence and its named/source correspondence (Theorem 3.2 pp.44–45 motivates; paper leaves ConH undefined); open witnesses allowed; proof depends on outside-batch named correspondence lemmas."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Native contradictory-pair consistency and both correspondence directions checked; arbitrary S/open witnesses allowed under project local consequence; Theorem 3.2 pp.44–45 does not explicitly define this open-set convention."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "consistency iff correct via encoding/decoding under sg_rich; native calculus uses G-dependent canonical named_paper_imp (shared representation qualification); catalogued."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Checked both consistency directions with open witnesses under richness; the native calculus uses its defined canonical arrow, and full upstream proof correspondence remains outside file coverage."
+        }
+      }
+    },
+    {
+      "id": "F0410",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Consistent_Negation.thy",
+      "selected": true,
+      "fidelity_sha256": "020353fc60bd42786ec7c06ef800762b9d7261eb95f49b9dd1567d37bca86316",
+      "correctness_sha256": "020353fc60bd42786ec7c06ef800762b9d7261eb95f49b9dd1567d37bca86316",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 99,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Lindenbaum step for sentence sets with closed A and rich G (Theorem 3.2 refutation construction); inserted-assumption conversion lemma checked; richness enters via paper_closed_set_derivable_iff, paper_target_consistent_to_source needs none; outside-batch bridges inspected at statement level."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "Sentence-set negation closure, inserted-assumption conversion and consistency theorem checked; closed S/A and rich G retained; richness enters through closed consequence correspondence, not paper_target_consistent_to_source."
+        }
+      },
+      "correctness": {
+        "status": "QUALIFIED",
+        "claude": {
+          "status": "QUALIFIED",
+          "note": "insert-negation consistency via parametric refutation lemma and set correspondence; reverse preservation discharges IndividualExistence by F0385 under rich; conversion-insert helper correct; catalogued."
+        },
+        "codex": {
+          "status": "QUALIFIED",
+          "note": "Checked negated-sentence insertion, conversion-insert helper, and refutation/correspondence directions; deeper target context-elimination dependencies remain qualified."
+        }
+      }
+    },
+    {
+      "id": "F0411",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Conversion.thy",
+      "selected": true,
+      "fidelity_sha256": "7ca4d3ea1ee7459997f769d26ed6698616231ec59b0e963d1e10cc89ac8ecdbd",
+      "correctness_sha256": "7ca4d3ea1ee7459997f769d26ed6698616231ec59b0e963d1e10cc89ac8ecdbd",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 168,
+      "fidelity": {
+        "status": "SOURCE_MATCH",
+        "claude": {
+          "status": "SOURCE_MATCH",
+          "note": "Named guarded βη chains (Figure 2 p.8, Def. 3.1(ii.d) p.44); no α constructor; endpoint languages and eventual-prefix transport including intermediate support checked."
+        },
+        "codex": {
+          "status": "SOURCE_MATCH",
+          "note": "Figure 2 p.8 and Definition 3.1(ii.d) p.44; guarded named conversion constructors, endpoint languages and eventual-prefix induction checked, including intermediate-term support."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "named βη relation without α constructor; prefix-eventual conversion with max at Trans."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked guarded named conversion, endpoint languages, and prefix-eventual induction preserving intermediate-term support."
+        }
+      }
+    },
+    {
+      "id": "F0412",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Conversion_Contexts.thy",
+      "selected": true,
+      "fidelity_sha256": "f5c504dd145ef2f8b49201a18aa79eb03e294f10ceba5665ba6ce6371ce9c082",
+      "correctness_sha256": "f5c504dd145ef2f8b49201a18aa79eb03e294f10ceba5665ba6ce6371ce9c082",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 161,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Named βη congruence under application and λ; generic context lemma and instances checked; fixed G under binders, all nodes guarded."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Language constructors, generic named context transport and App/Lam congruences checked; named binders retain fixed G and every conversion node remains guarded."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "language under NLam/NApp; generic context lemma; Lam/App congruences."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked named language introductions, generic context transport, and application/abstraction congruences under the fixed named stock."
+        }
+      }
+    },
+    {
+      "id": "F0413",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Conversion_Steps.thy",
+      "selected": true,
+      "fidelity_sha256": "77e06ef99bd0ccacbffd33c7a3cbb48010fa3750b599907b88a9e3e2cdba6fb3",
+      "correctness_sha256": "77e06ef99bd0ccacbffd33c7a3cbb48010fa3750b599907b88a9e3e2cdba6fb3",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 147,
+      "fidelity": {
+        "status": "SOURCE_MATCH",
+        "claude": {
+          "status": "SOURCE_MATCH",
+          "note": "Literal named β with the p.8 free-for proviso and η with x ∉ FV(F); contextual closure without α constructor; root/context encodings to source steps checked."
+        },
+        "codex": {
+          "status": "SOURCE_MATCH",
+          "note": "Figure 2 p.8 beta free-for proviso and eta freshness matched; contextual closure and root/context encoding results checked; no alpha constructor."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "literal named β/η roots; compatible steps; encoding transport with sclose at binders via srename_beta/eta_step."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked literal beta/eta roots and compatible contexts; abstraction encoding closes the name and uses source renaming preservation."
+        }
+      }
+    },
+    {
+      "id": "F0414",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Decoder.thy",
+      "selected": true,
+      "fidelity_sha256": "5b8fbc6f557ccfe098a22aa47d712269319af6411b135f3aae8141138ca241c9",
+      "correctness_sha256": "5b8fbc6f557ccfe098a22aa47d712269319af6411b135f3aae8141138ca241c9",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 150,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Decoder with fresh typed binders; signature, typing, language, FV bound, relative round trip checked; rich G required as stated."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Total decoder, signature/type/language/FV properties and relative round trip checked; typing/chart bounds justify nth, richness supplies fresh typed binders."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "decoder typing, signature, fv bound, relative roundtrip; nth bounds discharged by typing and chart."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked decoder definition, typing/signature/free-variable results, and relative roundtrip; typing and charts discharge index bounds."
+        }
+      }
+    },
+    {
+      "id": "F0415",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Decoder_Beta.thy",
+      "selected": true,
+      "fidelity_sha256": "b04bc0694ed44f1c05fcaf73faee7efcea990263c35c5df4a0a348f613eab13f",
+      "correctness_sha256": "b04bc0694ed44f1c05fcaf73faee7efcea990263c35c5df4a0a348f613eab13f",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 110,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Source β root decodes to named βη via literal free-for β plus equal-encoding α alignment; determinism and inversion lemmas checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Root determinism, redex language inversion and beta decoding checked; literal free-for beta followed by equal-encoding alpha-to-beta-eta alignment."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "β root reflection; determinism applied only to root sbeta_contract on encodings; free_for from F0419; α alignment."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked beta root inversion, decoder free-for condition, literal contraction, root determinism on encodings, and derived alpha alignment."
+        }
+      }
+    },
+    {
+      "id": "F0416",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Decoder_Contexts.thy",
+      "selected": true,
+      "fidelity_sha256": "f10080ae0e4e6b39db2f2254ea98ca73d302904b6d4325e3f6088e4e3ceabb86",
+      "correctness_sha256": "f10080ae0e4e6b39db2f2254ea98ca73d302904b6d4325e3f6088e4e3ceabb86",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 154,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Context reflection for the decoder; typing uniqueness aligns operand types, same extended chart under λ; checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Application/lambda inversion, uniqueness, compatible-step reflection and beta/eta corollaries checked; unchanged operands align types, binders share the extended chart."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "contexts with operand-type uniqueness and shared fresh binder."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked compatible-step induction, application type alignment, shared fresh binder, and beta/eta specializations with both endpoint guards."
+        }
+      }
+    },
+    {
+      "id": "F0417",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Decoder_Conversion.thy",
+      "selected": true,
+      "fidelity_sha256": "52802fe89d09018080b956485c3f382b1078f8245ecea50dc6b8cbf6e619bd46",
+      "correctness_sha256": "52802fe89d09018080b956485c3f382b1078f8245ecea50dc6b8cbf6e619bd46",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 61,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Guarded source βη chain decodes to named conversion; induction with shared chart checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Entire guarded conversion induction checked; common chart retained through symmetry/transitivity and endpoint guards supplied to contextual reflection."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "guarded source chain decodes to named conversion under one chart."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked every guarded conversion constructor under one chart; root reflection composes into literal named beta/eta conversion."
+        }
+      }
+    },
+    {
+      "id": "F0418",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Decoder_Eta.thy",
+      "selected": true,
+      "fidelity_sha256": "b72357d2914fe96929da2c1197d05816d3487700e2404a38c55515b5703463a5",
+      "correctness_sha256": "b72357d2914fe96929da2c1197d05816d3487700e2404a38c55515b5703463a5",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 102,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Source η root decodes via shift/α alignment and literal named η; chart freshness and FV invariance checked; no raw-decoder equality assumed."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Shift encoding/alpha lemmas and eta root decoding checked; chart freshness and FV invariance justify literal eta, without assuming raw-decoder equality."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "η root reflection via shift-encoding cancellation, α-derived fv equality, fresh ?n; no decoder-output equality assumed."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked shift-encoding cancellation, alpha-based freshness transfer, literal eta, and final alignment without assuming equal decoder outputs."
+        }
+      }
+    },
+    {
+      "id": "F0419",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Decoder_Freshness.thy",
+      "selected": true,
+      "fidelity_sha256": "2c3f431e16af4f60b2b0c6375112bd2bb1db608dd6b204ff41c9536bcdccfdd1",
+      "correctness_sha256": "2c3f431e16af4f60b2b0c6375112bd2bb1db608dd6b204ff41c9536bcdccfdd1",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 70,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Decoded binders avoid the input chart, yielding named_free_for; bound-name recursion and argument FV bound checked."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "Bound-name recursion, decoder freshness, free-for sufficient condition and decoded-argument theorem checked; argument typing supplies FV bounds while the body may be raw."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "decoder bound-name freshness; free_for from disjointness; argument typing only for the free-name bound."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Checked raw decoder binder freshness, disjointness-to-free-for induction, and typed argument support; body typing is unnecessary for the freshness conclusion."
+        }
+      }
+    },
+    {
+      "id": "F0420",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Decoder_Roundtrip.thy",
+      "selected": true,
+      "fidelity_sha256": "9031efccf6fde769f5d32ec1e611eb538ffaeda68d72365bb124b628b7194f47",
+      "correctness_sha256": "9031efccf6fde769f5d32ec1e611eb538ffaeda68d72365bb124b628b7194f47",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 103,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001–D006 decoder round-trip helpers checked; assumptions named_chart + sg_rich + has_stype preserve finite chart support; §1.1 p.5 cited as role only; no findings."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001–D006: chart nth/index inverse, empty-stack chart-renaming equation, image inverse, exact FV equation, closed roundtrip and FV corollaries checked; typing/chart/richness guards preserve finite support; §1.1 p.5 supplies binding conventions, not a published counterpart."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "All six declarations and proof chains checked against named_index/named_chart/srename lemmas; nth objection tested and withdrawn on both sides since free slots are chart-bounded and the agreement lemma lifts under binders; premises has_stype, chart, rich."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "All six declarations and their proof chains checked; chart distinctness, typed decoder round trip, exact encoding FV and supported renaming agreement justify both main equations; empty charts and off-domain nth do not invalidate them."
+        }
+      }
+    },
+    {
+      "id": "F0421",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Eta_Representation.thy",
+      "selected": true,
+      "fidelity_sha256": "61cb3803ef74c6eeff992060782fed56b13d3eeeb6734b7b5e6afa08710030c7",
+      "correctness_sha256": "61cb3803ef74c6eeff992060782fed56b13d3eeeb6734b7b5e6afa08710030c7",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 35,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001 named_eta_encoding: literal Figure 2 p.8 η with x∉FV(F) encodes to source seta_contract via sclose=sshift under freshness; no typing or H claim; no findings."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001 named_eta_encoding checked against Figure 2 p.8 freshness; closing becomes shifting when x is absent from FV; raw syntactic preservation only, no typing or H claim."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "named_eta_encoding checked by unfolding binder and variable encodings; exact FV equation transports freshness and sclose_fresh_eq_sshift yields the exact seta_contract.eta pattern; raw contraction, no typing or richness premise."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "named_eta_encoding checked by unfolding the binder and variable encodings; exact FV transports freshness and sclose_fresh_eq_sshift supplies the source eta pattern; raw contraction only, without typing or richness assumptions."
+        }
+      }
+    },
+    {
+      "id": "F0422",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_Existence.thy",
+      "selected": true,
+      "fidelity_sha256": "38907e8e03927f4798524b126bc7a33195d311cb2f554366d06bddfc05c49cc5",
+      "correctness_sha256": "38907e8e03927f4798524b126bc7a33195d311cb2f554366d06bddfc05c49cc5",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 38,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "D001–D002 Existence schema p.7 at every F type; p.9 fn.9 verified as the paper's own F-variant discussion; hypotheses G n=σ and sg_rich (p.5); route via paper_global_type_existence and paper_named_H_decoding is cross-batch (Codex inspected the Ref–β–EG–PC–MP proof); full-F scope disclosed."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "D001–D002: literal Existence encoding and named theorem checked against p.7 derivation, p.5 F grammar and p.9 note 9; G n=σ and rich G retained; inspected global Ref–β–EG–PC–MP route; full-F scope disclosed."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "named_existence_encoding by unfolding with G n = σ; paper_named_type_existence composes paper_global_type_existence (rich) with syntactic decoding; imported source derivation via Ref, β, PC, EG, MP confirmed by Codex; no Existence constructor or semantic premise."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "named_existence_encoding and paper_named_type_existence checked; G n = sigma determines the binder annotation, and rich G supports syntactic decoding; imported source Existence derivation inspected through Ref, Beta, PC, EG and MP."
+        }
+      }
+    },
+    {
+      "id": "F0423",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_H.thy",
+      "selected": true,
+      "fidelity_sha256": "ec2091fbb3730a056d07027cd51cae223a1d85370a39b614bdecbcd39cacc4a5",
+      "correctness_sha256": "ec2091fbb3730a056d07027cd51cae223a1d85370a39b614bdecbcd39cacc4a5",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 94,
+      "fidelity": {
+        "status": "SOURCE_QUALIFIED",
+        "claude": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "D001–D004 ten Figure 2 p.8 constructors with Figure 1 p.6 →/↔ and p.7 context convention checked incl. free-for β proviso, η freshness, Gen/Inst eigenvariable conditions; qualifications: full F not default R, PC reads →/↔ abbreviations transparently per source convention (equivalence claim withdrawn); paper_named_derivable is disclosed auxiliary local consequence; language lemmas checked."
+        },
+        "codex": {
+          "status": "SOURCE_QUALIFIED",
+          "note": "D001–D004: all ten H constructors and both language lemmas checked against Figure 2 p.8, Figure 1 p.6 and binding convention p.7; full F and rich-stock source use qualified; independent Assumption–Theorem–MP consequence explicitly AUXILIARY_REVIEWED."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Ten paper_named_H constructors compared clause by clause with paper_global_H; guards yield the language invariant by rule induction; free-for β and η/Gen/Inst freshness provisos verified in imports; local consequence is Assumption/Theorem/MP only as disclosed."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "All ten paper_named_H constructors, both language invariants and the three local-consequence constructors examined; fixed stock, formula guards, literal free-for beta and eta/Gen/Inst freshness accounted for; no unrestricted local generalization."
+        }
+      }
+    },
+    {
+      "id": "F0424",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_H_Alpha.thy",
+      "selected": true,
+      "fidelity_sha256": "35282f53a7244db1456774ca05a7bec664ac49d2ea282341f6bb4b1193135cc9",
+      "correctness_sha256": "35282f53a7244db1456774ca05a7bec664ac49d2ea282341f6bb4b1193135cc9",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 38,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001–D002 derived α-invariance and same-encoding transport via typed βη conversion and native biconditional; assumes sg_rich; depends on named_alpha_implies_beta_eta and named_encoding_implies_alpha (out of batch); no findings."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001–D002: H alpha-invariance and same-encoding transport checked; derived typed βη conversion and rich-stock encoding characterization inspected; no added alpha rule or semantic equality."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Both α transport chains checked through language preservation, named_alpha_implies_beta_eta, paper_named_H_conversion and named_encoding_implies_alpha; encoding equality is de Bruijn HOL equality identified with α, not βη or truth; rich required."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Both alpha transport chains checked through language preservation, independently derived typed beta-eta conversion and encoding characterization; inspected fresh-binder alignment and decreasing-node induction; no semantic equality or extra alpha rule."
+        }
+      }
+    },
+    {
+      "id": "F0425",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_H_Conversion.thy",
+      "selected": true,
+      "fidelity_sha256": "c843db2f0163549d8166d7c0b006595e127bbc0f65b4e29cd399d291e9f8934f",
+      "correctness_sha256": "c843db2f0163549d8166d7c0b006595e127bbc0f65b4e29cd399d291e9f8934f",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 110,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001–D005 iff sym/trans, Prop-restricted conversion induction, iff_conversion, H_conversion using only Figure 2 PC/β/η/MP; τ=Prop retained; assumes sg_rich; no findings."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001–D005: iff symmetry/transitivity, Prop-restricted conversion induction, iff-conversion and theorem transport checked; native Figure 2 PC/β/η/MP only; language and richness assumptions retained."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Symmetry and transitivity MP chains, all five conversion-induction cases with carried τ = Prop, specialization and final theoremhood transport verified; no higher-type biconditional asserted."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Symmetry and transitivity MP chains, all five conversion-induction cases, specialization to Prop and final theoremhood transport checked; carried type equality prevents an unsupported higher-type biconditional claim."
+        }
+      }
+    },
+    {
+      "id": "F0426",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_H_Correspondence.thy",
+      "selected": true,
+      "fidelity_sha256": "d034c3641d4090cbae9e696ced87b5f99428d2dd12a280e810b37706632e7d86",
+      "correctness_sha256": "d034c3641d4090cbae9e696ced87b5f99428d2dd12a280e810b37706632e7d86",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 73,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001–D003 ten-case preimage induction, decoding, theoremhood iff under sg_rich; representation adequacy between two project calculi, no published counterpart claimed; Reverse_PC/Conversion/Rules and Alpha_Characterization are cross-batch dependencies; no findings."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001–D003: ten-case preimage induction, decoding and theoremhood iff checked under rich G; reverse-PC/rules and conversion interfaces inspected; deeper decoder conversion infrastructure remains a reconciliation dependency."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Reverse induction covers exactly ten paper_global_H clauses with matching hypothesis lists; decoding and iff need rich only for open formulas; reverse PC SOME witness confirmed as someI_ex on occurring atoms; substitution and freshness dependencies statement-level only."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "All ten reverse-induction cases and decoding/iff chains examined with imported reverse PC, axioms, conversion and rule proofs; open formulas supported with rich G only; deeper substitution and freshness dependencies remain explicitly limited."
+        }
+      }
+    },
+    {
+      "id": "F0427",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_H_Forward.thy",
+      "selected": true,
+      "fidelity_sha256": "e925d27e81687c5a058a1bca9799310cf4c283d197dea6b0066f9df8ab7c4f63",
+      "correctness_sha256": "e925d27e81687c5a058a1bca9799310cf4c283d197dea6b0066f9df8ab7c4f63",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 152,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001–D003 one-way encoding into paper_global_H, all ten cases checked against twin clauses; exact Gen/Inst FV conditions and fixed G preserved; assumes sg_rich for literal →/↔ encoding; no findings."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001–D003: encoding-language lemma, lambda closing equation and all ten forward proof cases checked against source-global constructors; exact Gen/Inst FV conditions and fixed G preserved; no completeness claim."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "All ten forward cases checked: encoding rewrites, exact freshness transport, NLam closing via named_H_Lam_encoding, contextual β/η via step-encoding lemmas; one-way preservation only."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Encoding-language and lambda-closing helpers plus all ten forward cases checked; conclusion guards, exact freshness transport and contextual beta/eta contracts match source constructors; establishes forward proof preservation."
+        }
+      }
+    },
+    {
+      "id": "F0428",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_H_PC_Basics.thy",
+      "selected": true,
+      "fidelity_sha256": "1a778b63829c158729663c67821cfcf6d57746de45482161330a2bf90fd72dab",
+      "correctness_sha256": "1a778b63829c158729663c67821cfcf6d57746de45482161330a2bf90fd72dab",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 128,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001–D006 atom-supported language induction, PC instantiation, four iff schemata as checked Boolean tautology templates per Figure 2 PC with Figure 1 ↔; assumes sg_rich and occurring-atom guards; no findings."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001–D006: atom-supported language induction, PC instantiation and four iff schemata checked against Boolean evaluation and Figure 1/2 conventions; rich G and occurring-atom guards retained; no contextual Boolean substitution principle added."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Six-case template-language induction, PC-instance construction, and four tautology schemata with explicit valuations checked; imp/iff guards require rich; atom guards occurrence-relative."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Six-case template-language induction, PC-instance construction and all four explicit tautology valuations checked; atom guards are occurrence-relative and literal implication/biconditional language requires richness."
+        }
+      }
+    },
+    {
+      "id": "F0429",
+      "path": "theories/base/source_vocabulary/Bacon_Source_Named_H_Reverse_Axioms.thy",
+      "selected": true,
+      "fidelity_sha256": "ecb1be53189a30d990c2eb658db07b424cb0b189d123857a154bb2033c0a7a96",
+      "correctness_sha256": "ecb1be53189a30d990c2eb658db07b424cb0b189d123857a154bb2033c0a7a96",
+      "formal_text_matches_fidelity_snapshot": true,
+      "correctness_lines": 184,
+      "fidelity": {
+        "status": "AUXILIARY_REVIEWED",
+        "claude": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001–D006 prefix-to-global language, typed representation, UI/EG/Ref/LL preimages from whole-formula guard + sg_rich only; depends on Axiom_Guards, Prefix_Preservation, Representation_Reflection (statements read); no findings."
+        },
+        "codex": {
+          "status": "AUXILIARY_REVIEWED",
+          "note": "D001–D006: prefix-to-global language, typed representation and UI/EG/Ref/LL preimages checked; whole-language guard plus rich G suffices; inspected operand extraction and representation reflection; no extra capture or semantic premise."
+        }
+      },
+      "correctness": {
+        "status": "REVIEWED",
+        "claude": {
+          "status": "REVIEWED",
+          "note": "Prefix-to-global typing, representation helper, and UI/EG/Ref/LL preimage chains verified: guard extraction, operand representatives, encoding equality, language reflection, native constructor; source_prefix G m = map G [0..<m] justifies agreement; no H or model premise."
+        },
+        "codex": {
+          "status": "REVIEWED",
+          "note": "Prefix-to-global and representation helpers plus UI/EG/Ref/LL witness chains examined; guard-extraction proofs checked through application inversion and type uniqueness; signature retained and no H or model premise smuggled into reconstruction."
+        }
+      }
+    }
+  ]
+}

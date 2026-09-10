@@ -20,6 +20,12 @@ then extracts proof dependencies and runs the maintained dependency-policy
 checks. Run it serially, never beside another Isabelle build or export.
 It requires no API access or third-party Python libraries.
 
+For ambiguous names, search first and copy the full returned node ID into
+`explain`. The [reading guide](READING_GUIDE.md#reading-a-theorem) gives an
+example and explains why a displayed machine statement is not the preferred
+mathematical presentation. To distinguish build, source-review and explicit
+audit coverage, follow the [evidence recipe](VERIFICATION.md#check-the-evidence-for-one-result).
+
 Data is written to `isabelle-kg/bacon/graph.json` and is not committed.
 The `bacon` directory name is retained for tool compatibility; there is
 only one graph family here. Graph output includes local source locations.

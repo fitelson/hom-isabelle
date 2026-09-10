@@ -21,6 +21,13 @@ Neither result establishes generic full-C soundness or unrestricted modal
 completeness. Interpretation uniqueness is on typed inputs, not on arbitrary
 off-language values of the total evaluator.
 
+The unchanged `book_ZF_modal_model` is the broad STRUCTURAL class.
+Use the explicitly stronger `book_ZF_nontrivial_modal_model` for the
+source-directed consistency target: every domain is inhabited and each
+world has a false proposition. Its canonical/countable existence is checked.
+The maintained singleton regression proves why the broad class is
+insufficient. Read docs/MODAL_NONTRIVIALITY.md; do not erase this distinction.
+
 Use the native graph via tools/isabelle_kg/query_graph.py, not Graphify.
 Read docs/KNOWLEDGE_GRAPH.md. Rebuild it after source changes before relying
 on exact dependencies. A graph edge is not a source-fidelity proof.

@@ -591,6 +591,7 @@ session Bacon_Book_ZF_Modal_Semantics in "theories/classicism/book/modal_semanti
     Bacon_Book_ZF_Modal_Model
     Bacon_Book_ZF_Model_Operator_Restriction
     Bacon_Book_ZF_Model_Definition_Audit
+    Bacon_Book_ZF_Nontrivial_Model
 
 session Bacon_Book_ZF_Modal_Interpretation in "theories/classicism/book/modal_semantics/interpretation" = Bacon_Book_ZF_Modal_Semantics +
   description "Independent typed interpretation clauses and semantic proofs for Bacon's modal models."
@@ -609,6 +610,14 @@ session Bacon_Book_ZF_Modal_Interpretation in "theories/classicism/book/modal_se
     Bacon_Book_ZF_Model_Truth
     Bacon_Book_ZF_Signature_Pullback
     Bacon_Book_ZF_Generic_Interpretation_Audit
+    Bacon_Book_ZF_Nontrivial_Interpretation
+
+session Bacon_Book_ZF_Model_Regressions in "theories/classicism/book/modal_semantics/regressions" = Bacon_Book_ZF_Modal_Interpretation +
+  description "Checked semantic regressions distinguishing structural and nontrivial book modal models."
+  options [timeout = 60, export_theory = true]
+  sessions Bacon_Book_Classicism_Development
+  theories
+    Bacon_Book_ZF_Singleton_Regression
 
 session Bacon_Book_ZF_Modal_Representation in "theories/classicism/book/representation/hol_zf" = Bacon_Book_Modal_Representation +
   description "Explicit HOL-ZF universe assembly for the source-faithful full-C canonical modal model."
@@ -671,6 +680,10 @@ session Bacon_Book_ZF_Modal_Representation in "theories/classicism/book/represen
     Bacon_Book_ZF_Ambient_Existence_Audit
     Bacon_Book_ZF_Countable_Model_Existence
     Bacon_Book_ZF_Model_Existence_Audit
+    Bacon_Book_ZF_Canonical_Nontrivial_Model
+    Bacon_Book_ZF_Ambient_Nontrivial_Existence
+    Bacon_Book_ZF_Countable_Nontrivial_Existence
+    Bacon_Book_ZF_Nontrivial_Audit
 
 session Bacon_Classicism_Action_Development in "theories/classicism/action_models" = Bacon_Source_Model_Development +
   description "

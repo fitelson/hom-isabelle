@@ -37,8 +37,11 @@ text \<open>
   restriction. No canonical-world predicate, source proof judgment,
   name-cardinality condition or total interpreter occurs in this
   independent definition. No false-proposition or extra nonemptiness
-  field is silently inserted. Generic interpretation and soundness
-  require further proofs, not an appeal to this definition alone.
+  field is silently inserted. This is the retained STRUCTURAL class.
+  The all-true singleton regression shows why it cannot by itself
+  characterize consistency. The explicit worldwise nontrivial refinement
+  is book_ZF_nontrivial_modal_model. Generic interpretation is proved
+  separately; generic full-C soundness remains a further obligation.
 \<close>
 
 end

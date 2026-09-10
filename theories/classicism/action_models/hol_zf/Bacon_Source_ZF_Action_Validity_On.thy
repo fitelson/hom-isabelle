@@ -22,7 +22,7 @@ text \<open>
   These are exactly the existing universal validity clauses, with the
   world type made independent of the nonlogical constant-name type.
   The old record-indexed definition is retained unchanged. Source:
-  Definition 3.20 and Theorem 3.23, pp.56–57. No world encoding,
+  Definition 3.20, p.56, and Theorem 3.23, p.58. No world encoding,
   completeness statement or model-existence premise is introduced.
 \<close>
 

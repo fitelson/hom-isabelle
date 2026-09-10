@@ -154,7 +154,7 @@ lemma pH_qchain_to_local:
     pH_derivable \<Sigma> \<Gamma> \<Delta> A"
   by (rule pH_qchain_elim) (assumption, rule subset_refl, rule pH_derivable.Theorem, assumption)
 
-subsection \<open>Theorem rules after finite premise_facts have been discharged\<close>
+subsection \<open>Theorem rules after finitely many premises have been discharged\<close>
 
 lemma pH_qchain_Gen:
   assumes premise_facts: "pH_typed_theory \<Sigma> \<Gamma> (set \<Delta>)"

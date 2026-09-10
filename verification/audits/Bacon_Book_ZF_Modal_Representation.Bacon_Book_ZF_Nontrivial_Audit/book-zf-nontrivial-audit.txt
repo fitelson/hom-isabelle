@@ -1,0 +1,12 @@
+FOUNDATION: standard HOL-ZF; not pure HOL
+SCOPE: explicit nontrivial-model refinement and actual canonical/countable-signature existence; not generic soundness or final completeness
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 9 checked endpoints
+every nontrivial world has actual typed assignments: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+nontriviality survives semantic signature pullback: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+a nontrivial model has a false proposition at its root: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+no nontrivial world makes every proposition true: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+canonical reindexed domains are inhabited: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+each canonical reindexed world has a false proposition: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the canonical model satisfies the explicit nontrivial refinement: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+fixed-ambient consistency constructs a nontrivial model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+countably declared consistent theories have nontrivial original-signature models: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1

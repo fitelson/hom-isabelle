@@ -75,7 +75,8 @@ text \<open>
   The arbitrary-signature theorem retains its bound by an actual
   infinite HOL-ZF set B. It makes no assertion that every ambient HOL
   constant carrier has a bounded injection into ZF.
-  Source: Theorem 3.23, through Propositions 3.21–3.22, pp.57 and 72.
+  Source: Theorem 3.23, p.58, through Propositions 3.21–3.22,
+  pp.57 and 72.
 \<close>
 
 end

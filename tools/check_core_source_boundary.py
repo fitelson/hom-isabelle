@@ -611,8 +611,11 @@ def main() -> int:
             relative = str(path.relative_to(ROOT))
             forbid(relative, [
                 r"^\s*imports[^\n]*goodman",
-                r"^\s*(sorry|oops|admit|axiomatization|axioms|oracle)\b",
             ])
+    # Proof-hole/trust tokens are checked by check_isabelle_trust.py, which
+    # also covers core_audit, embedded ML, and referenced local ML files.
+    # Do not restore a line-anchored keyword regex here: it both misses
+    # inline commands and mistakes documentation/comments for executable code.
 
     require("ROOT", [
         "session Bacon_C_Equivalence_Development",

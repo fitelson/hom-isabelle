@@ -1,0 +1,10 @@
+FOUNDATION: standard HOL-ZF; not pure HOL
+SCOPE: actual inhabited all-true structural model, inconsistent satisfiable premise set, and exclusion by the explicit nontrivial refinement
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 7 checked endpoints
+the inhabited singleton data form a structural modal model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+the singleton model has an explicit typed assignment: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+every well-typed formula is true in the singleton model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+the singleton model satisfies bottom: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+the singleton bottom premise is syntactically inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+a concrete inconsistent theory has a structural modal model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+the nontrivial model refinement excludes the singleton model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0

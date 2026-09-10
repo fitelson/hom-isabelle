@@ -7,8 +7,9 @@ section \<open>Soundness with local assumptions\<close>
 text \<open>
   Σ; Γ; Δ ⊢ₕ A and 𝔐,g ⊨ B for every B ∈ Δ imply 𝔐,g ⊨ A,
   provided g is a typed assignment in the Σ-model 𝔐.
-  Source: Bacon–Dorr, Theorem 3.2, pp. 44–45; Bacon,
-  Theorem 15.1, p. 318.
+  Source role: a local-consequence extension of Bacon–Dorr's soundness
+  argument, Theorem 3.2, pp. 44–45. Bacon's Theorem 15.1, p. 318, proves
+  closure of model validity; it is not this at-an-assignment statement.
 
   Isabelle representation: pH_derivable has Assumption, Theorem, and MP
   constructors.  Its invariants retain the typing and signature of every
@@ -56,8 +57,9 @@ section \<open>Soundness with an arbitrary set of assumptions\<close>
 
 text \<open>
   Σ; Γ; S ⊢ₕ A and 𝔐,g ⊨ S imply 𝔐,g ⊨ A.
-  Source: the finite-proof interpretation of consequence in Bacon,
-  Theorem 15.2, p. 318, and Bacon–Dorr, Theorem 3.2, pp. 44–45.
+  Source role: the finite-proof discussion in Bacon, p. 318, immediately
+  before Theorem 15.2 (the deduction theorem), and Bacon–Dorr's soundness
+  argument in Theorem 3.2, pp. 44–45. The local relation is project-defined.
 
   Isabelle representation: pH_set_derivable supplies a finite supporting
   list Δ with set(Δ) ⊆ S.  Restrict the semantic premises to that list and
