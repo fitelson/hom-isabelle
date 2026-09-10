@@ -25,6 +25,8 @@ full-C soundness and final modal completeness remain open.
 - [Source statements and theorem names](docs/SOURCE_CORRESPONDENCE.md)
 - [Published notation and Isabelle notation](docs/NOTATION.md)
 - [Open problems and contributor projects](CONTRIBUTING.md)
+- [Why I Chose Isabelle/HOL](docs/WHY_ISABELLE_RATHER_THAN_LEAN.pdf)
+  ([LaTeX source](docs/WHY_ISABELLE_RATHER_THAN_LEAN.tex))
 - [Sources, credits, and provenance](docs/SOURCES_AND_CREDITS.md)
 
 ## Check the development

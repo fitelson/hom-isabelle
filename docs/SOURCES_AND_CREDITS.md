@@ -14,9 +14,16 @@
   The source copy used in the parent project has SHA-256
   `49c6b04e48964360b0331e7108077798ae2807e58385240ba054c4eebdbc095f`.
 
-PDFs are not redistributed here. Obtain lawful copies from the authors,
+PDFs of the source publications are not redistributed here. Obtain lawful copies from the authors,
 publishers, or a library. The software license does not grant rights in the
 underlying publications.
+
+The repository's own [Isabelle-versus-Lean comparison note](WHY_ISABELLE_RATHER_THAN_LEAN.pdf)
+is included with its [LaTeX source](WHY_ISABELLE_RATHER_THAN_LEAN.tex).
+It adapts the parent project's September 7 assessment and updates core status
+through September 9. Its Goodman and AOT examples are external comparisons,
+not application modules included in this repository. It is a project-specific
+rationale, not a controlled performance benchmark.
 
 ## Implementation and tools
 
