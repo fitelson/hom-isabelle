@@ -65,7 +65,8 @@ def main():
     for forbidden in ["theories/goodman", "theories/zalta", "sources/pdfs", "vampire",
                       "finite_core_search", "pure_diagonal_search"]:
         assert not (ROOT / forbidden).exists(), forbidden
-    required = {"Bacon_Book_ZF_Countable_Model_Existence.thy", "Bacon_Book_ZF_Model_Existence_Audit.thy"}
+    required = {"Bacon_Book_ZF_Countable_Model_Existence.thy", "Bacon_Book_ZF_Model_Existence_Audit.thy",
+                "Bacon_Book_ZF_Generic_Interpretation_Existence.thy", "Bacon_Book_ZF_Interpretation_Existence_Audit.thy"}
     assert required <= {Path(x).name for x in data["checked_source_closure"]}
     assert not any(Path(x).name in required for x in data["unselected_source_files"])
     if args.inventory:

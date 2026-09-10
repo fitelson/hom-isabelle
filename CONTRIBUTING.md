@@ -22,22 +22,26 @@ The theorem supplies a model and an admissible interpretation for arbitrary cons
 carriers with countably many declared constants per type, with no supplied
 model or original spare-name premise. It and its audit are selected in ROOT.
 Open formulas and infinite premise sets are allowed. This is still not
-unrestricted full C completeness; the following projects remain open.
+unrestricted full C completeness. The next item is also completed; project 3
+and the later source-review projects remain open.
 
-### 2. Generic interpretation existence for the book's modal models
+### 2. Completed: generic interpretation existence
 
-Start with `book_ZF_modal_model` and `book_ZF_modal_interpretation`.
-Uniqueness is proved, and canonical existence is supplied. What remains is
-existence for every independently specified admissible model, using the
-prescribed k and s as in the book's interpretation construction.
+`Bacon_Book_ZF_Generic_Interpretation_Existence.thy` now constructs an
+interpretation for every `book_ZF_modal_model` and proves all the independent
+`book_ZF_modal_interpretation` clauses. It uses typed K/S abstraction
+elimination and proves equality with the required whole future Lambda graph.
 
-Completion means deriving every interpretation clause without assuming a
-total interpreter, full function spaces, or additional nonemptiness axioms.
-Check empty-domain and degenerate cases explicitly.
+No supplied interpreter, full function space, countability, richness or
+additional nonemptiness axiom is assumed. Assignment guards are preserved,
+including in degenerate cases. Naturality and the existing typed-input
+uniqueness are covered by the 15-endpoint existence audit. This does not
+prove generic soundness.
 
 ### 3. Full-type C: soundness and final modal completeness
 
-Build on the completed existence theorem and project 2. Derive generic soundness, then formulate and prove
+Build on the two completed existence constructions. Derive generic soundness,
+then formulate and prove
 the exact countermodel/completeness statements at their source scope.
 Treat arbitrary uncountably declared signatures as a separate substantive
 obligation: finite compression of one formula is not compression of an

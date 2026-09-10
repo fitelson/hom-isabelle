@@ -15,9 +15,11 @@ No sorry, oops, admitted facts, quick_and_dirty, new oracles, or unexplained
 axiomatizations. Check the actual theorem statement before reporting scope.
 
 Do not delete or move files without explicit user approval. Preserve
-unrelated edits. The countable-signature model-existence theorem and its audit
-are selected in ROOT. Do not promote this result to generic soundness or
-unrestricted full-type modal completeness.
+unrelated edits. The countable-signature model-existence and generic
+interpretation-existence theorems, with their audits, are selected in ROOT.
+Neither result establishes generic full-C soundness or unrestricted modal
+completeness. Interpretation uniqueness is on typed inputs, not on arbitrary
+off-language values of the total evaluator.
 
 Use the native graph via tools/isabelle_kg/query_graph.py, not Graphify.
 Read docs/KNOWLEDGE_GRAPH.md. Rebuild it after source changes before relying

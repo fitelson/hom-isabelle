@@ -10,6 +10,7 @@ From the repository root:
 ./tools/isabelle_kg/build_graph.sh
 python3 tools/isabelle_kg/query_graph.py stats
 python3 tools/isabelle_kg/query_graph.py search paper_named_closed_strong_completeness
+python3 tools/isabelle_kg/query_graph.py search generic_interpretation_exists
 python3 tools/isabelle_kg/query_graph.py explain paper_ZF_arbitrary_signature_action_iff
 python3 tools/isabelle_kg/query_graph.py deps paper_ZF_arbitrary_signature_action_iff --depth 2
 ```

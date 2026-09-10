@@ -14,7 +14,7 @@ conclusion, not its name or this overview, determine its scope.
 | Classicism proof theory | Independent presentations and their proved correspondences, including the book's MF+PE and MF+vector-Equivalence presentations | The older Equivalence-rule base is not identical by definition to full-type C |
 | Bacon–Dorr relational-type C | BBK-category representation/completeness and action-model single-formula soundness/completeness at arbitrary signatures | R types; explicit carrier/world-label scope; the action-model result is not an infinite-theory compression theorem |
 | Bacon's full-type C | All-type canonical modal model, its independent interpretation, and original-signature model existence for full-C-consistent theories with countably many declared constants per type | Arbitrary constant-name carrier; no original spare-name requirement; full-F minimal language and rich variable stock |
-| Generic book modal interpretations | Uniqueness, typed-assignment transport, and model/interpretation pullback along constant maps | Generic interpretation existence and full generic soundness remain open |
+| Generic book modal interpretations | Constructed interpretation for every independent full-minimal modal model; exact future abstraction, naturality, typed-input uniqueness, and signature pullback | No countability, richness, supplied interpreter or extra nonemptiness premise; generic full-C soundness remains open |
 | Book full-C unrestricted modal completeness | **Not completed** | See the contributor plan |
 
 ## Completed: original-signature model existence
@@ -29,9 +29,27 @@ type must be countable. Open formulas and infinite premise sets are allowed.
 `Bacon_Book_ZF_Countable_Model_Existence.thy` and
 `Bacon_Book_ZF_Model_Existence_Audit.thy` are now selected in ROOT.
 The earlier fixed-ambient theorem and its audit remain selected too.
-This completes only the immediate model-existence assembly: generic
-interpretation existence, generic full-C soundness, uncountably declared
-signatures, and unrestricted modal completeness remain open.
+This completes the countably declared-signature model-existence assembly.
+Generic full-C soundness, uncountably declared signatures, and unrestricted
+modal completeness remain open; generic interpretation existence is now
+established separately below.
+
+## Completed: generic interpretation existence
+
+`book_ZF_modal_model.generic_interpretation_exists` constructs an admissible
+interpretation for every model satisfying the independent modal-model
+predicate, in the full minimal language. Typed K/S abstraction elimination
+produces a value in the chosen function domain, and that value is proved
+identical to Definition 17.13's entire future Lambda graph. Evaluation
+commutes with counterparts; the earlier uniqueness theorem applies on typed
+terms and assignments.
+
+No canonical construction, countability, rich variable stock, supplied
+interpreter, full function space, or additional nonemptiness assumption is
+needed. The model and interpretation definitions are unchanged. A separate
+15-endpoint audit checks the construction and its ingredients. This is the
+interpretation-existence component of Theorem 17.1 for the independent
+full-minimal modal-model class, not generic soundness or completeness.
 
 Other preserved theories not reached by ROOT are not covered by a successful
 default build. Run `python3 tools/check_release.py --inventory` to see the

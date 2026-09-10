@@ -1,0 +1,18 @@
+FOUNDATION: standard HOL-ZF; not pure HOL
+SCOPE: Generic interpretation existence for every independent full-minimal modal model, via typed K/S abstraction elimination; exact future Lambda graphs, type closure, naturality and typed-input uniqueness. No countability, richness, supplied interpreter or extra nonemptiness premise. Existing future-restricted implication convention unchanged. Not generic soundness or completeness.
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 15 checked endpoints
+typed K/S abstraction elimination: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+object-language translation preserves typing: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+generic k evaluation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+generic s evaluation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+derived identity belongs to every typed function domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+derived identity has the exact future graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+combinatory evaluation remains in the chosen domains: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+combinatory evaluation commutes with counterparts: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+abstracted combinatory evaluation has current beta behavior: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+abstracted combinatory evaluation has future beta behavior: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+abstraction is the exact future Lambda graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+constructed generic interpretation satisfies every independent clause: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+every independent modal model has an admissible interpretation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+constructed interpretation commutes with counterparts: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+admissible interpretations agree on every typed input: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1

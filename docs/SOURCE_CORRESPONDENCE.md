@@ -1,7 +1,7 @@
 # Source statements, verified results, and remaining scope
 
 **H soundness and completeness are proved in the scopes below.** The remaining
-generic modal interpretation, soundness, and completeness work concerns
+generic modal soundness and completeness work concerns
 **Bacon's full-type Classicism C**, not those H results.
 
 The paper's numbering refers to the **1 July 2022 draft** of Bacon–Dorr's
@@ -198,6 +198,8 @@ construction uses the separate HOL–ZF foundation.
 | Independent modal-model conditions — **defined** | Definition 18.1 | `book_ZF_modal_model`, with the explicitly documented future-restricted implication convention |
 | Canonical modal model — **proved** | Proposition 18.5 | `full_ZF_canonical_modal_model`: all fields of the independent model predicate instantiated under the countable-ambient frame assumptions |
 | Canonical interpretation — **proved** | Definition 17.13 | `full_ZF_canonical_interpretation`: the constructed model satisfies every independent interpretation clause |
+| Generic interpretation existence — **proved** | Definition 17.13; Theorem 17.1, interpretation-existence component | [`generic_interpretation_exists`](../theories/classicism/book/modal_semantics/interpretation/Bacon_Book_ZF_Generic_Interpretation_Existence.thy): every independent full-minimal modal model has an admissible interpretation; no countability, richness, supplied interpreter or extra nonemptiness premise |
+| Generic interpretation naturality — **proved** | Lemma 17.1 | [`generic_interpretation_natural`](../theories/classicism/book/modal_semantics/interpretation/Bacon_Book_ZF_Generic_Interpretation_Existence.thy): moving a term's value by a counterpart map agrees with evaluating it at the future world under the moved assignment; term and assignment typing guards retained |
 | Original-theory truth — **proved** | Proposition 18.6, truth step | `full_ZF_original_theory_satisfied`: satisfaction of the original theory when the root contains its universal closures |
 | Fixed-ambient model existence — **proved** | Theorem 18.4, existence direction | `book_full_C_ambient_modal_model_exists`: actual model existence in a countable ambient signature with infinite reserves |
 | Original-signature model existence — **proved** | Theorem 18.4, countably declared signature instance | [`book_full_C_countable_modal_model_exists`](../theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Countable_Model_Existence.thy): actual model and admissible interpretation satisfying the entire consistent theory; open formulas and infinite premise sets allowed; arbitrary name carrier, countably many declared constants per type, no original spare-name requirement |
@@ -207,7 +209,6 @@ construction uses the separate HOL–ZF foundation.
 
 | Obligation | Current boundary |
 |---|---|
-| Generic interpretation existence | Existence in the canonical model is proved; an interpretation for every independently specified admissible modal model is not yet part of the checked results |
 | Generic modal soundness | Soundness of full-type C for the independent modal-model class remains open; the H and R-language soundness results above do not substitute for it |
 | Final modal countermodel/completeness theorem | The precise consequence theorem still needs assembly and verification; model existence alone is not the full soundness/completeness equivalence |
 | Uncountably declared signatures | The checked full-C model-existence theorem requires countably many declared constants per type; arbitrary-theory generalization is separate |
@@ -232,8 +233,25 @@ Application uses the function's value at the current world and argument.
 An abstraction denotes a function on all accessible future world–argument
 pairs: move the assignment to the future world, assign the argument to the
 bound variable, and evaluate the body. The important existence obligation
-is that this entire function belongs to the chosen domain. The canonical
-case is verified; generic existence is not yet included among checked results.
+is that this entire function belongs to the chosen domain. Both the canonical
+case and generic existence for the independent full-minimal modal-model class
+are now verified.
+
+**Theorem 17.1 guarantees that interpreting terms does not leave the
+structure.** Bacon states both totality on well-typed terms and closure for
+the associated iterated future-abstraction operations. Our generic result
+establishes its interpretation-existence component in full-minimal modal
+models: K/S abstraction elimination supplies a typed value and proves that
+it is exactly the required future function graph. The checked construction
+does not assume a canonical model or replace restricted domains by full
+function spaces. This entry does not claim the theorem's entire broader
+general-signature formulation.
+
+**Lemma 17.1 states naturality of interpretation.** Interpreting a term and
+then moving its value to an accessible world gives the same result as first
+moving the assignment and interpreting the term there. The generic
+construction proves this equality with explicit world, language and typed
+assignment conditions. Counterpart maps need not be injective.
 
 **Definition 18.1 specifies a modal model for Classicism.** It comprises a
 pointed frame, a domain at every type and world, counterpart maps, and

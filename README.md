@@ -10,6 +10,14 @@ finished**. In particular, the paper's relational-type Classicism results
 must not be confused with the still unfinished full-type modal completeness
 development for Bacon's book.
 
+H soundness and completeness are proved in the scopes described in the
+[source guide](docs/SOURCE_CORRESPONDENCE.md). For the book's full-type C,
+we now have both original-signature model existence for countably declared
+signatures and an admissible interpretation for every independent
+full-minimal modal model. The latter includes the exact future-function
+interpretation of abstraction, without adding model assumptions. Generic
+full-C soundness and final modal completeness remain open.
+
 ## Start here
 
 - [What is proved, with exact scope](STATUS.md)

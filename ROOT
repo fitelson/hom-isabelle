@@ -598,8 +598,14 @@ session Bacon_Book_ZF_Modal_Interpretation in "theories/classicism/book/modal_se
   sessions Bacon_Book_Environment_Development Bacon_Book_Classicism_Development
   theories
     Bacon_Book_ZF_Model_Assignments
+    Bacon_Book_ZF_Generic_Combinators
+    Bacon_Book_Combinatory_Translation
+    Bacon_Book_ZF_Combinatory_Evaluation
+    Bacon_Book_ZF_Generic_Abstraction
     Bacon_Book_ZF_Interpretation_Clauses
     Bacon_Book_ZF_Model_Interpretation_Uniqueness
+    Bacon_Book_ZF_Generic_Interpretation_Existence
+    Bacon_Book_ZF_Interpretation_Existence_Audit
     Bacon_Book_ZF_Model_Truth
     Bacon_Book_ZF_Signature_Pullback
     Bacon_Book_ZF_Generic_Interpretation_Audit

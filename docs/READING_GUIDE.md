@@ -37,11 +37,18 @@ Its rules include all-type Modalized Functionality and Propositional
 Equivalence. The older `book_C_proves` is a separately defined base.
 Do not transfer consistency merely by adding axioms.
 
-The current modal endpoint is
-`book/representation/hol_zf/Bacon_Book_ZF_Ambient_Model_Existence.thy`.
+The current model-existence endpoint is
+`theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Countable_Model_Existence.thy`.
 Follow its imports to the canonical interpretation, then compare that
 interpretation with the independently defined model and interpretation in
-`book/modal_semantics/`.
+`theories/classicism/book/modal_semantics/`.
+
+For generic interpretation existence, start with
+`theories/classicism/book/modal_semantics/interpretation/Bacon_Book_ZF_Generic_Interpretation_Existence.thy`.
+Its imports separate typed combinatory translation, generic evaluation,
+and the proof that abstraction has the exact future Lambda graph. It uses
+the independent model fields, not the canonical construction. Generic
+full-C soundness is still a separate open task.
 
 ## Reading a theorem
 

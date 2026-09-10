@@ -37,6 +37,36 @@ The countable-signature full-C model-existence theorem and its dependent
 audit are now selected. The nine remaining preserved unselected theory
 files are listed by the same command. They are not release certificates.
 
+## Generic interpretation existence (9 September 2026)
+
+`book_ZF_modal_model.generic_interpretation_exists` is now checked for
+every independent full-minimal modal model. The explicit construction uses
+typed K/S abstraction elimination and derives type closure, exact future
+Lambda graphs, and naturality. The existing uniqueness result identifies
+all admissible interpretations on typed inputs. No model or interpretation
+definition was changed; no supplied interpreter, countability, rich variable
+stock, full function space or additional nonemptiness premise was added.
+
+The complete serial `./check_isabelle.sh` passed in 0:00:24; the changed
+interpretation session took 0:00:14. Its separate 15-endpoint audit reports
+zero oracle dependencies, residual kernel hypotheses and flex-flex
+constraints. The existence endpoint has only the independent model premise
+and the ordinary HOL type requirement on constant names.
+
+The selected closure now contains 1,364 theories in 29 sessions; nine
+additional theories remain unselected. The source-boundary and packaging
+guards pass. This completes generic interpretation existence for this
+model/language class, not generic full-C soundness or completeness. Goodman
+and the original research checkout were not modified.
+
+The rebuilt native graph contains 31,592 nodes and 2,314,872 edges over the
+1,364 selected project theories. The maintained dependency policies pass.
+A focused traversal of proof dependencies and used definitions from the
+existence endpoint reached 1,644 entities and found no occurrence of the
+listed C/CEV derivability judgments or full-C canonical-model predicates.
+This is an additional dependency check, not an independent source-fidelity
+proof. All 21 exported audit-report checksums match their manifest.
+
 ## Countable-signature proof completion (9 September 2026)
 
 The previously unfinished `book_full_C_countable_modal_model_exists` now
@@ -51,9 +81,10 @@ and no original spare-name condition remains.
 
 The complete standalone check passed before the extension (0:05:03) and
 after selecting the completed theorem and updating the packaging guard
-(0:00:09). The selected closure now contains 1,358 theory files in the same
-29 sessions, with nine preserved unselected theories. Generic interpretation
-existence, generic soundness and unrestricted modal completeness remain open.
+(0:00:09). At that checkpoint the selected closure contained 1,358 theory
+files in the same 29 sessions, with nine preserved unselected theories.
+Generic interpretation existence was then open; it is completed above.
+Generic soundness and unrestricted modal completeness remain open.
 No theorem here asserts that the constructed model's domains are countable.
 The graph was rebuilt after this completion: 1,358 project theories,
 30,625 nodes and 2,166,484 edges. Its maintained dependency-policy checks
@@ -81,13 +112,15 @@ policies passed, including the HOL/HOL–ZF separation checks. These policies
 cover their explicitly listed theorem roots, not an exhaustive independent
 source audit of every declaration.
 
-Twenty generated theorem-audit reports are included in
+Twenty-one generated theorem-audit reports are included in
 [`verification/audits/`](../verification/audits/). They record the principal
 1,143-endpoint HOL audit, the separate 257-endpoint HOL–ZF action audit, and
 the smaller book audits, including the 11-endpoint generic-interpretation
 and 13-endpoint fixed-ambient existence audits. The new 14-endpoint
 countable-signature existence report preserves and extends the latter
-coverage without removing the earlier report. Catalogs overlap; do not
+coverage without removing the earlier report. The separate 15-endpoint
+generic interpretation-existence audit covers the new construction.
+Catalogs overlap; do not
 add their counts to claim a count of distinct mathematical results.
 
 ## Reproducing audit reports
