@@ -1,0 +1,25 @@
+M5-COLLISION-REPAIR-AUDIT: 23 clean endpoints
+SCOPE: actual historical operator has exact semantic collision on punctured truth and truth, with explicit unequal typed inputs; existential collision and nonreversibility true at root, including native translations. No new CEV+ theorem, local fun-prime NC(r) collision, or PP model. HOL-ZF.
+gi_M5_punctured_truth_nonextreme(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_punctured_truth_nonextreme(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_punctured_truth_view(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_punctured_truth_NC(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_raw_corrected_collision(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_raw_corrected_collision(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_raw_corrected_collision(3): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_collision_operator_logical(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_collision_operator_denotation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_collision_operator_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_collision_application_extract(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_collision_operator_raw(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_equal_propositions_from_extract(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_M5_exact_corrected_collision(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_exact_corrected_collision(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_exact_corrected_collision(3): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_exact_operator_not_injective(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_corrected_collision_sentence_typed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_corrected_collision_sentence_root(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_raw_collision_no_left_inverse(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_actual_nonreversibility_at_root(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_native_corrected_collision_at_root(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_M5_native_actual_nonreversibility_at_root(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3

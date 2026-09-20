@@ -1,0 +1,20 @@
+gi_T9_cardinality_subset_spec:
+?n \<le> card ?A \<Longrightarrow> gi_T9_cardinality_subset ?A ?n \<subseteq> ?A \<and> card (gi_T9_cardinality_subset ?A ?n) = ?n
+gi_T9_native_purity.gi_T9_left_composition_respects_kind:
+\<lbrakk>gi_T9_native_purity ?C ?G; ?Z \<in> gi_T9_root_group ?C; ?X \<in> gi_T9_root_pure ?C pp_e_unary_type; ?Y \<in> gi_T9_root_pure ?C pp_e_unary_type; gi_T9_kind ?C ?X = gi_T9_kind ?C ?Y\<rbrakk> \<Longrightarrow> gi_T9_kind ?C (gi_exact_value_compose ?Z ?X) = gi_T9_kind ?C (gi_exact_value_compose ?Z ?Y)
+gi_T9_native_purity.gi_T9_left_action_member:
+\<lbrakk>gi_T9_native_purity ?C ?G; ?Z \<in> gi_T9_root_group ?C; ?k \<in> gi_T9_kinds ?C\<rbrakk> \<Longrightarrow> gi_T9_left_action ?C ?Z ?k \<in> gi_T9_kinds ?C
+gi_T9_native_purity.gi_T9_left_action_bijective:
+\<lbrakk>gi_T9_native_purity ?C ?G; ?Z \<in> gi_T9_root_group ?C\<rbrakk> \<Longrightarrow> bij_betw (gi_T9_left_action ?C ?Z) (gi_T9_kinds ?C) (gi_T9_kinds ?C)
+gi_T9_native_purity.gi_T9_selector_collision_covariance:
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C; gi_T9_root_L2 ?C; Elem ?r (pp_e_domain Prop); pp_e_holds (gi_T9_J_value ?C \<acute> ?r) []; ?S \<subseteq> gi_T9_kinds ?C; ?T \<subseteq> gi_T9_kinds ?C; gi_T9_kind ?C (gi_T9_kind_selector ?C ?S) = gi_T9_kind ?C (gi_T9_kind_selector ?C ?T); \<And>Z. \<lbrakk>Z \<in> gi_T9_root_group ?C; bij_betw (gi_T9_left_action ?C Z) (gi_T9_kinds ?C) (gi_T9_kinds ?C); gi_T9_left_action ?C Z ` ?S = ?T\<rbrakk> \<Longrightarrow> ?thesis\<rbrakk> \<Longrightarrow> ?thesis
+gi_T9_native_purity.gi_T9_selector_collision_preserves_card:
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C; gi_T9_root_L2 ?C; Elem ?r (pp_e_domain Prop); pp_e_holds (gi_T9_J_value ?C \<acute> ?r) []; ?S \<subseteq> gi_T9_kinds ?C; ?T \<subseteq> gi_T9_kinds ?C; gi_T9_kind ?C (gi_T9_kind_selector ?C ?S) = gi_T9_kind ?C (gi_T9_kind_selector ?C ?T)\<rbrakk> \<Longrightarrow> card ?S = card ?T
+gi_T9_native_purity.gi_T9_native_PC_L2_infinitely_many_kinds:
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C; gi_T9_root_L2 ?C; Elem ?r (pp_e_domain Prop); pp_e_holds (gi_T9_J_value ?C \<acute> ?r) []\<rbrakk> \<Longrightarrow> infinite (gi_T9_kinds ?C)
+gi_T9_native_purity.gi_T9_native_PC_L2_exponential_group_bound:
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C; gi_T9_root_L2 ?C; Elem ?r (pp_e_domain Prop); pp_e_holds (gi_T9_J_value ?C \<acute> ?r) []\<rbrakk> \<Longrightarrow> |Pow (gi_T9_kinds ?C)| \<le>o |gi_T9_root_group ?C|
+gi_T9_native_purity.gi_T9_native_formula_infinitely_many_kinds:
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C; gi_goodman_names ?k; book_env_typed gi_exact_domain ?G ?g; gi_exact_valuation [] (gi_exact_goodman_denote ?C ?G ?g (gi_to_book ?G [] ?k pp_L2)); gi_exact_valuation [] (gi_exact_goodman_denote ?C ?G ?g (gi_to_book ?G [] ?k pp_exists_fun_prime))\<rbrakk> \<Longrightarrow> infinite (gi_T9_kinds ?C)
+gi_T9_native_purity.gi_T9_native_formula_exponential_group_bound:
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C; gi_goodman_names ?k; book_env_typed gi_exact_domain ?G ?g; gi_exact_valuation [] (gi_exact_goodman_denote ?C ?G ?g (gi_to_book ?G [] ?k pp_L2)); gi_exact_valuation [] (gi_exact_goodman_denote ?C ?G ?g (gi_to_book ?G [] ?k pp_exists_fun_prime))\<rbrakk> \<Longrightarrow> |Pow (gi_T9_kinds ?C)| \<le>o |gi_T9_root_group ?C|

@@ -1,0 +1,56 @@
+gi_named_consts_finite(1):
+finite (gi_named_consts ?M)
+gi_named_consts_map(1):
+gi_named_consts (map_named_term ?f id ?M) = ?f ` gi_named_consts ?M
+gi_named_fv_map(1):
+named_fv (map_named_term ?f id ?M) = named_fv ?M
+gi_exact_poly_propositional_string(1):
+gi_exact_poly_propositional_term ?G ?M = gi_exact_named_propositional_term ?G ?M
+gi_exact_poly_propositional_map(1):
+gi_exact_poly_propositional_term ?G (map_named_term ?f id ?M) = gi_exact_poly_propositional_term ?G ?M
+gi_exact_named_to_pterm_map(1):
+book_minimal_to_pterm (named_to_source ?G ?ns (map_named_term ?f id ?M)) = map_pterm ?f (book_minimal_to_pterm (named_to_source ?G ?ns ?M))
+gi_exact_decode_map(1):
+gi_exact_decode ?G (map_named_term ?f id ?M) = pterm_to_oterm (map_pterm ?f (book_named_to_pterm ?G ?M))
+gi_has_ptype_map(1):
+has_ptype ?\<Gamma> ?P ?\<tau> \<Longrightarrow> has_ptype ?\<Gamma> (map_pterm ?f ?P) ?\<tau>
+gi_exact_poly_pterm_type(1):
+\<lbrakk>book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G ?M ?\<tau>; named_fv ?M = {}\<rbrakk> \<Longrightarrow> has_ptype [] (book_named_to_pterm ?G ?M) ?\<tau>
+gi_exact_renamed_decode_type(1):
+\<lbrakk>book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G ?M ?\<tau>; named_fv ?M = {}\<rbrakk> \<Longrightarrow> [] \<turnstile> gi_exact_decode ?G (map_named_term ?f id ?M) : ?\<tau>
+gi_exact_renamed_decode_fragment(1):
+gi_exact_poly_propositional_term ?G ?M \<Longrightarrow> pp_e_propositional_term (gi_exact_decode ?G (map_named_term ?f id ?M))
+gi_exact_decode_consts(1):
+consts_of (gi_exact_decode ?G ?M) \<subseteq> gi_named_consts ?M
+pp_e_eval_constant_agreement(1):
+(\<And>c \<sigma>. c \<in> consts_of ?N \<Longrightarrow> ?C c \<sigma> = ?C' c \<sigma>) \<Longrightarrow> pp_e_eval ?C ?\<rho> ?N = pp_e_eval ?C' ?\<rho> ?N
+gi_exact_named_denote_constant_agreement(1):
+(\<And>c \<sigma>. c \<in> gi_named_consts ?M \<Longrightarrow> ?C c \<sigma> = ?C' c \<sigma>) \<Longrightarrow> gi_exact_named_denote ?C ?G ?g ?M = gi_exact_named_denote ?C' ?G ?g ?M
+gi_exact_finite_string_injection(1):
+finite ?K \<Longrightarrow> \<exists>\<iota>. inj_on \<iota> ?K
+gi_exact_name_code_inj(1):
+inj_on (gi_exact_name_code ?M) (gi_named_consts ?M)
+gi_exact_name_decode_code(1):
+?c \<in> gi_named_consts ?M \<Longrightarrow> gi_exact_name_decode ?M (gi_exact_name_code ?M ?c) = ?c
+pp_e_eval_pterm_rename(1):
+pp_e_eval ?C ?\<rho> (pterm_to_oterm (map_pterm ?f ?P)) = pp_e_eval (\<lambda>c. ?C (?f c)) ?\<rho> (pterm_to_oterm ?P)
+gi_exact_named_denote_rename(1):
+gi_exact_named_denote ?C ?G ?g (map_named_term ?f id ?M) = gi_exact_named_denote (\<lambda>c. ?C (?f c)) ?G ?g ?M
+gi_exact_poly_denote_string(1):
+gi_exact_poly_denote ?C ?G ?g ?M = gi_exact_named_denote ?C ?G ?g ?M
+gi_exact_poly_denote_closed_assignment_independent(1):
+named_fv ?M = {} \<Longrightarrow> gi_exact_poly_denote ?C ?G ?g ?M = gi_exact_poly_denote ?C ?G ?h ?M
+gi_exact_poly_glued_as_string(1):
+gi_exact_poly_glued ?A ?c ?\<sigma> = pp_e_Bacon_glued_constants (\<lambda>n s. ?A n ?c) ?s ?\<sigma>
+gi_exact_poly_glued_typed(1):
+(\<And>n c \<sigma>. pp_e_propositional_type \<sigma> \<Longrightarrow> Elem (?A n c \<sigma>) (pp_e_domain \<sigma>)) \<Longrightarrow> Elem (gi_exact_poly_glued ?A ?c ?\<sigma>) (pp_e_domain ?\<sigma>)
+gi_exact_poly_glued_action(1):
+\<lbrakk>\<And>n c \<sigma>. pp_e_propositional_type \<sigma> \<Longrightarrow> Elem (?A n c \<sigma>) (pp_e_domain \<sigma>); pp_e_propositional_type ?\<sigma>\<rbrakk> \<Longrightarrow> pp_b_action ?\<sigma> [?n] (gi_exact_poly_glued ?A ?c ?\<sigma>) = ?A ?n ?c ?\<sigma>
+gi_exact_poly_glued_renamed(1):
+?c \<in> gi_named_consts ?M \<Longrightarrow> pp_e_Bacon_glued_constants (\<lambda>n s. ?A n (gi_exact_name_decode ?M s)) (gi_exact_name_code ?M ?c) ?\<sigma> = gi_exact_poly_glued ?A ?c ?\<sigma>
+gi_exact_Bacon_10_1_parametric_action(1):
+\<lbrakk>\<And>n c \<sigma>. pp_e_propositional_type \<sigma> \<Longrightarrow> Elem (?A n c \<sigma>) (pp_e_domain \<sigma>); book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G ?M ?\<tau>; named_fv ?M = {}; gi_exact_poly_propositional_term ?G ?M\<rbrakk> \<Longrightarrow> pp_b_action ?\<tau> [?n] (gi_exact_poly_denote (gi_exact_poly_glued ?A) ?G ?g ?M) = gi_exact_poly_denote (?A ?n) ?G ?h ?M
+gi_exact_Bacon_10_1_parametric_truth_branch(1):
+\<lbrakk>\<And>n c \<sigma>. pp_e_propositional_type \<sigma> \<Longrightarrow> Elem (?A n c \<sigma>) (pp_e_domain \<sigma>); book_theory_formula ?\<Sigma> ?G ?M; named_fv ?M = {}; gi_exact_poly_propositional_term ?G ?M\<rbrakk> \<Longrightarrow> pp_e_holds (gi_exact_poly_denote (gi_exact_poly_glued ?A) ?G ?g ?M) [?n] = pp_e_holds (gi_exact_poly_denote (?A ?n) ?G ?h ?M) []
+gi_exact_Bacon_10_1_parametric(1):
+(\<And>n c \<sigma>. pp_e_propositional_type \<sigma> \<Longrightarrow> Elem (?A n c \<sigma>) (pp_e_domain \<sigma>)) \<Longrightarrow> \<exists>C. (\<forall>c \<sigma>. Elem (C c \<sigma>) (pp_e_domain \<sigma>)) \<and> (\<forall>n c \<sigma>. pp_e_propositional_type \<sigma> \<longrightarrow> pp_b_action \<sigma> [n] (C c \<sigma>) = ?A n c \<sigma>) \<and> (\<forall>n G \<Sigma> M \<tau> g h. book_in_language book_minimal_logical_type UNIV \<Sigma> G M \<tau> \<longrightarrow> named_fv M = {} \<longrightarrow> gi_exact_poly_propositional_term G M \<longrightarrow> pp_b_action \<tau> [n] (gi_exact_poly_denote C G g M) = gi_exact_poly_denote (?A n) G h M)

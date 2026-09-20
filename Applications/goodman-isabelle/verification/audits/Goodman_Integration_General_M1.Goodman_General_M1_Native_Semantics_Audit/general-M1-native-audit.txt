@@ -1,0 +1,14 @@
+GENERAL-M1-NATIVE-AUDIT: 12 clean endpoints
+SCOPE: Arbitrary-carrier full minimal book models, rich variable stock and typed named assignment. Actual native liar, QSS and unique-fundamentality evaluation; Leibniz congruence and proposition truth agreement derived from the independent model interface. No exact-tree restriction or assumed semantic diagonal. C+[T] soundness is explicitly retained only in the final corollary; Pure(Fun) remains in its native purity stock. No PP-alone contradiction.
+gi_M1_book_model.gi_book_Pure_constant(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M1_book_model.gi_book_Fun_constant(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M1_book_model.gi_book_pure_truth(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_M1_book_model.gi_book_fun_truth(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_M1_book_model.gi_book_unary_application(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_M1_book_model.gi_book_fn59_liar_clause(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M1_book_model.gi_book_QSS_clause(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M1_book_model.gi_book_unique_fundamental_clause(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M1_book_model.gi_book_fn59_liar_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M1_book_model.gi_book_fn59_diagonal_contradiction(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_M1_book_model.gi_book_native_fn59_contradiction(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_M1_book_model.gi_book_fn59_from_native_extension_soundness(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4

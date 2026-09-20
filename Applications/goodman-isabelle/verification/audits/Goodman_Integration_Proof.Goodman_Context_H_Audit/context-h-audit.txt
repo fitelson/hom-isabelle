@@ -1,0 +1,19 @@
+GOODMAN-CONTEXT-H-AUDIT: 18 clean endpoints; partial H-rule transfer only
+gi_chart_encoding_lookup: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_chart_encoding_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_expand_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_decoder_alignment: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_named_conversion_from_expansion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_to_book_beta_context: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_to_book_eta_context: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_H_conversion_pair: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_goodman_conversion_transport: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_goodman_conversion_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_H_beta_context_implications: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_H_eta_context_implications: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_H_MP: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_H_and_certificate: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_H_and_intro: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_H_beta_schema: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_H_eta_schema: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_H_UI: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7

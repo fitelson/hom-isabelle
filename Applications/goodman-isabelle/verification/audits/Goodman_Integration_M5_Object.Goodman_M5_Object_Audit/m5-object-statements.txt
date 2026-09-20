@@ -1,0 +1,18 @@
+CEV_Goodman_M5_collision:
+\<lbrakk>pp_T2_min_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop; pp_fun_prime ?r \<in> ?T\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Conj (Neg (Eq Prop (pp_noncontingent ?r) ObjTrue)) (Eq Prop (App pp_M5_collision_operator (pp_noncontingent ?r)) (App pp_M5_collision_operator ObjTrue))
+CEV_M5_inverse_witness_injective:
+\<lbrakk>?\<Gamma> \<turnstile> ?Z : pp_unary_ty; ?\<Gamma> \<turnstile> ?W : pp_unary_ty; ?\<Gamma> \<turnstile> ?p : Prop; ?\<Gamma> \<turnstile> ?q : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (pp_inverse_witness ?Z ?W) (Imp (Eq Prop (App ?Z ?p) (App ?Z ?q)) (Eq Prop ?p ?q))
+CEV_M5_reversible_injective:
+\<lbrakk>?\<Gamma> \<turnstile> ?Z : pp_unary_ty; ?\<Gamma> \<turnstile> ?p : Prop; ?\<Gamma> \<turnstile> ?q : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (pp_reversible ?Z) (Imp (Eq Prop (App ?Z ?p) (App ?Z ?q)) (Eq Prop ?p ?q))
+CEV_Goodman_M5_collision_operator_not_reversible:
+\<lbrakk>pp_T2_min_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop; pp_fun_prime ?r \<in> ?T\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Neg (pp_reversible pp_M5_collision_operator)
+gi_M5_collision_source:
+\<lbrakk>pp_T2_min_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop; pp_fun_prime ?r \<in> ?T\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gi_M5_collision_result ?r
+gi_M5_collision_in_signature:
+\<lbrakk>sg_rich ?G; pp_T2_min_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop; pp_fun_prime ?r \<in> ?T; \<And>A. A \<in> ?T \<Longrightarrow> [] \<turnstile> A : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; \<And>A. A \<in> ?T \<Longrightarrow> gi_constants_admitted ?k ?\<Sigma> A; gi_constants_admitted ?k ?\<Sigma> (gi_M5_collision_result ?r)\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G (gi_to_book ?G [] ?k ` ?T) (gi_to_book ?G ?ns ?k (gi_M5_collision_result ?r))
+gi_M5_nonreversible_in_signature:
+\<lbrakk>sg_rich ?G; pp_T2_min_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop; pp_fun_prime ?r \<in> ?T; \<And>A. A \<in> ?T \<Longrightarrow> [] \<turnstile> A : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; \<And>A. A \<in> ?T \<Longrightarrow> gi_constants_admitted ?k ?\<Sigma> A; gi_constants_admitted ?k ?\<Sigma> (Neg (pp_reversible pp_M5_collision_operator))\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G (gi_to_book ?G [] ?k ` ?T) (gi_to_book ?G ?ns ?k (Neg (pp_reversible pp_M5_collision_operator)))
+gi_M5_inverse_witness_injective:
+\<lbrakk>sg_rich ?G; ?\<Gamma> \<turnstile> ?Z : pp_unary_ty; ?\<Gamma> \<turnstile> ?W : pp_unary_ty; ?\<Gamma> \<turnstile> ?p : Prop; ?\<Gamma> \<turnstile> ?q : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k ?\<Sigma> (Imp (pp_inverse_witness ?Z ?W) (Imp (Eq Prop (App ?Z ?p) (App ?Z ?q)) (Eq Prop ?p ?q)))\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G {} (gi_to_book ?G ?ns ?k (Imp (pp_inverse_witness ?Z ?W) (Imp (Eq Prop (App ?Z ?p) (App ?Z ?q)) (Eq Prop ?p ?q))))
+gi_M5_reversible_injective:
+\<lbrakk>sg_rich ?G; ?\<Gamma> \<turnstile> ?Z : pp_unary_ty; ?\<Gamma> \<turnstile> ?p : Prop; ?\<Gamma> \<turnstile> ?q : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k ?\<Sigma> (Imp (pp_reversible ?Z) (Imp (Eq Prop (App ?Z ?p) (App ?Z ?q)) (Eq Prop ?p ?q)))\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G {} (gi_to_book ?G ?ns ?k (Imp (pp_reversible ?Z) (Imp (Eq Prop (App ?Z ?p) (App ?Z ?q)) (Eq Prop ?p ?q))))

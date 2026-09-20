@@ -1,0 +1,110 @@
+pp_e_constants.gi_exact_MF_global_valid:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G\<rbrakk> \<Longrightarrow> gi_exact_global_valid ?C ?G (book_MF_axiom ?G ?\<sigma> ?\<tau>)
+pp_e_constants.gi_exact_C_global_sound:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_full_C_proves ?\<Sigma> ?G ?A\<rbrakk> \<Longrightarrow> gi_exact_global_valid ?C ?G ?A
+pp_e_constants.gi_exact_extension_global_sound:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; goodman_book_proves ?\<Sigma> ?G ?T ?A; \<And>B. B \<in> ?T \<Longrightarrow> gi_exact_global_valid ?C ?G B\<rbrakk> \<Longrightarrow> gi_exact_global_valid ?C ?G ?A
+pp_e_constants.gi_exact_bottom_not_global:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G\<rbrakk> \<Longrightarrow> \<not> gi_exact_global_valid ?C ?G (book_bottom ?G)
+pp_e_constants.gi_exact_consistent_of_global_axioms:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; \<And>B. B \<in> ?T \<Longrightarrow> gi_exact_global_valid ?C ?G B\<rbrakk> \<Longrightarrow> goodman_book_consistent ?\<Sigma> ?G ?T
+gi_exact_future_pointwise_identity:
+\<lbrakk>?f \<in> gi_exact_domain (?\<sigma> \<rightarrow>\<^sub>o ?\<tau>); ?h \<in> gi_exact_domain (?\<sigma> \<rightarrow>\<^sub>o ?\<tau>); \<And>v x. \<lbrakk>prefix ?w v; x \<in> gi_exact_domain ?\<sigma>\<rbrakk> \<Longrightarrow> pp_e_eqv ?\<tau> v (?f \<acute> x) (?h \<acute> x)\<rbrakk> \<Longrightarrow> pp_e_eqv (?\<sigma> \<rightarrow>\<^sub>o ?\<tau>) ?w ?f ?h
+pp_e_constants.gi_exact_named_leibniz_holds:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g; book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G ?A ?\<sigma>; book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G ?B ?\<sigma>\<rbrakk> \<Longrightarrow> pp_e_holds (gi_exact_named_denote ?C ?G ?g (book_leibniz ?G ?\<sigma> ?A ?B)) ?w = pp_e_eqv ?\<sigma> ?w (gi_exact_named_denote ?C ?G ?g ?A) (gi_exact_named_denote ?C ?G ?g ?B)
+pp_e_constants.gi_exact_named_imp_holds:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g; book_theory_formula ?\<Sigma> ?G ?A; book_theory_formula ?\<Sigma> ?G ?B\<rbrakk> \<Longrightarrow> pp_e_holds (gi_exact_named_denote ?C ?G ?g (book_imp ?A ?B)) ?w = (pp_e_holds (gi_exact_named_denote ?C ?G ?g ?A) ?w \<longrightarrow> pp_e_holds (gi_exact_named_denote ?C ?G ?g ?B) ?w)
+pp_e_constants.gi_exact_named_all_holds:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g; book_theory_formula ?\<Sigma> ?G ?A\<rbrakk> \<Longrightarrow> pp_e_holds (gi_exact_named_denote ?C ?G ?g (book_all ?G ?n ?A)) ?w = (\<forall>a\<in>gi_exact_domain (?G ?n). pp_e_holds (gi_exact_named_denote ?C ?G (?g(?n := a)) ?A) ?w)
+pp_e_constants.gi_exact_named_top_holds:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> pp_e_holds (gi_exact_named_denote ?C ?G ?g (book_top ?G)) ?w
+pp_e_constants.gi_exact_named_box_holds:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g; book_theory_formula ?\<Sigma> ?G ?P\<rbrakk> \<Longrightarrow> pp_e_holds (gi_exact_named_denote ?C ?G ?g (book_box ?G ?P)) ?w = (\<forall>v. prefix ?w v \<longrightarrow> pp_e_holds (gi_exact_named_denote ?C ?G ?g ?P) v)
+pp_e_constants.gi_exact_MF_body_holds:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> pp_e_holds (gi_exact_named_denote ?C ?G ?g (book_MF_body ?G ?\<sigma> ?\<tau>)) ?w
+pp_e_constants.gi_exact_MF_axiom_holds:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> pp_e_holds (gi_exact_named_denote ?C ?G ?g (book_MF_axiom ?G ?\<sigma> ?\<tau>)) ?w
+gi_exact_identity_test_term_type:
+[?\<sigma>] \<turnstile> Lam ?\<sigma> (Eq ?\<sigma> (Var 0) (Var 1)) : ?\<sigma> \<rightarrow>\<^sub>o Prop
+gi_exact_identity_test_denotation:
+pp_e_eval pp_e_default_constants (extend_env ?a pp_e_closed_env) (Lam ?\<sigma> (Eq ?\<sigma> (Var 0) (Var 1))) = gi_exact_identity_test ?\<sigma> ?a
+gi_exact_identity_test_member:
+?a \<in> gi_exact_domain ?\<sigma> \<Longrightarrow> gi_exact_identity_test ?\<sigma> ?a \<in> gi_exact_domain (?\<sigma> \<rightarrow>\<^sub>o Prop)
+gi_exact_identity_test_apply:
+?x \<in> gi_exact_domain ?\<sigma> \<Longrightarrow> gi_exact_app ?\<sigma> Prop (gi_exact_identity_test ?\<sigma> ?a) ?x = pp_e_prop (\<lambda>v. pp_e_eqv ?\<sigma> v ?x ?a)
+gi_exact_identity_test_truth:
+?x \<in> gi_exact_domain ?\<sigma> \<Longrightarrow> gi_exact_valuation ?w (gi_exact_app ?\<sigma> Prop (gi_exact_identity_test ?\<sigma> ?a) ?x) = pp_e_eqv ?\<sigma> ?w ?x ?a
+gi_exact_local_identity_implies_leibniz:
+\<lbrakk>?a \<in> gi_exact_domain ?\<sigma>; ?b \<in> gi_exact_domain ?\<sigma>; pp_e_eqv ?\<sigma> ?w ?a ?b\<rbrakk> \<Longrightarrow> book_leibniz_equiv gi_exact_domain gi_exact_app (gi_exact_valuation ?w) ?\<sigma> ?a ?b
+gi_exact_leibniz_implies_local_identity:
+book_leibniz_equiv gi_exact_domain gi_exact_app (gi_exact_valuation ?w) ?\<sigma> ?a ?b \<Longrightarrow> pp_e_eqv ?\<sigma> ?w ?a ?b
+gi_exact_leibniz_iff_local_identity:
+\<lbrakk>?a \<in> gi_exact_domain ?\<sigma>; ?b \<in> gi_exact_domain ?\<sigma>\<rbrakk> \<Longrightarrow> book_leibniz_equiv gi_exact_domain gi_exact_app (gi_exact_valuation ?w) ?\<sigma> ?a ?b = pp_e_eqv ?\<sigma> ?w ?a ?b
+gi_exact_leibniz_iff_action_identity:
+\<lbrakk>?a \<in> gi_exact_domain ?\<sigma>; ?b \<in> gi_exact_domain ?\<sigma>\<rbrakk> \<Longrightarrow> book_leibniz_equiv gi_exact_domain gi_exact_app (gi_exact_valuation ?w) ?\<sigma> ?a ?b = (pp_b_action ?\<sigma> (rev ?w) ?a = pp_b_action ?\<sigma> (rev ?w) ?b)
+gi_exact_root_leibniz_iff_equality:
+\<lbrakk>?a \<in> gi_exact_domain ?\<sigma>; ?b \<in> gi_exact_domain ?\<sigma>\<rbrakk> \<Longrightarrow> book_leibniz_equiv gi_exact_domain gi_exact_app (gi_exact_valuation []) ?\<sigma> ?a ?b = (?a = ?b)
+gi_exact_global_validI:
+(\<And>w g. book_env_typed gi_exact_domain ?G g \<Longrightarrow> gi_exact_valuation w (gi_exact_named_denote ?C ?G g ?A)) \<Longrightarrow> gi_exact_global_valid ?C ?G ?A
+gi_exact_global_validD:
+\<lbrakk>gi_exact_global_valid ?C ?G ?A; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_valuation ?w (gi_exact_named_denote ?C ?G ?g ?A)
+gi_exact_propositions_extensional:
+\<lbrakk>?p \<in> gi_exact_domain Prop; ?q \<in> gi_exact_domain Prop; \<And>w. gi_exact_valuation w ?p = gi_exact_valuation w ?q\<rbrakk> \<Longrightarrow> ?p = ?q
+pp_e_constants.gi_exact_H_global_sound:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_H ?\<Sigma> ?G ?A\<rbrakk> \<Longrightarrow> gi_exact_global_valid ?C ?G ?A
+pp_e_constants.gi_exact_global_MP:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_theory_formula ?\<Sigma> ?G ?A; book_theory_formula ?\<Sigma> ?G ?B; gi_exact_global_valid ?C ?G ?A; gi_exact_global_valid ?C ?G (book_imp ?A ?B)\<rbrakk> \<Longrightarrow> gi_exact_global_valid ?C ?G ?B
+pp_e_constants.gi_exact_global_Gen:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_theory_formula ?\<Sigma> ?G ?A; book_theory_formula ?\<Sigma> ?G ?B; ?n \<notin> named_fv ?A; gi_exact_global_valid ?C ?G (book_imp ?A ?B)\<rbrakk> \<Longrightarrow> gi_exact_global_valid ?C ?G (book_imp ?A (book_all ?G ?n ?B))
+pp_e_constants.gi_exact_global_PE:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_theory_formula ?\<Sigma> ?G ?A; book_theory_formula ?\<Sigma> ?G ?B; gi_exact_global_valid ?C ?G (book_iff ?G ?A ?B)\<rbrakk> \<Longrightarrow> gi_exact_global_valid ?C ?G (book_leibniz ?G Prop ?A ?B)
+gi_goodman_string_term_as_constant_rename:
+gi_goodman_string_term ?A = book_constant_rename gi_goodman_string_name ?A
+gi_exact_goodman_denote_pullback:
+gi_exact_goodman_denote ?C ?G = book_constant_pullback_denote (gi_exact_named_denote ?C ?G) gi_goodman_string_name
+gi_exact_goodman_global_valid_iff:
+gi_exact_goodman_global_valid ?C ?G ?A = (\<forall>w g. book_env_typed gi_exact_domain ?G g \<longrightarrow> gi_exact_valuation w (gi_exact_goodman_denote ?C ?G g ?A))
+pp_e_constants.gi_exact_goodman_minimal_model:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G\<rbrakk> \<Longrightarrow> book_full_minimal_model gi_exact_domain gi_exact_app gb_signature ?G (gi_exact_goodman_denote ?C ?G) (gi_exact_valuation ?w) gi_exact_logical_value
+pp_e_constants.gi_exact_goodman_extension_global_sound:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; goodman_book_proves gb_signature ?G ?T ?A; \<And>B. B \<in> ?T \<Longrightarrow> gi_exact_goodman_global_valid ?C ?G B\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid ?C ?G ?A
+pp_e_constants.gi_exact_goodman_consistent_of_global_axioms:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; \<And>B. B \<in> ?T \<Longrightarrow> gi_exact_goodman_global_valid ?C ?G B\<rbrakk> \<Longrightarrow> goodman_book_consistent gb_signature ?G ?T
+gi_exact_empty_native_extension_consistent:
+sg_rich ?G \<Longrightarrow> goodman_book_consistent gb_signature ?G {}
+pp_e_constants.gi_exact_book_minimal_model:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G\<rbrakk> \<Longrightarrow> book_full_minimal_model gi_exact_domain gi_exact_app ?\<Sigma> ?G (gi_exact_named_denote ?C ?G) (gi_exact_valuation ?w) gi_exact_logical_value
+pp_e_constants.gi_exact_book_H_sound:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_H ?\<Sigma> ?G ?A\<rbrakk> \<Longrightarrow> book_formula_valid gi_exact_domain ?G (gi_exact_named_denote ?C ?G) (gi_exact_valuation ?w) ?A
+pp_e_constants.gi_exact_book_H_at_world:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_H ?\<Sigma> ?G ?A; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> pp_e_holds (gi_exact_named_denote ?C ?G ?g ?A) ?w
+gi_exact_named_logical_value:
+gi_exact_named_denote ?C ?G ?g (NLogical ?l) = gi_exact_logical_value ?l
+gi_exact_logical_value_member:
+gi_exact_logical_value ?l \<in> gi_exact_domain (book_minimal_logical_type ?l)
+gi_exact_implication_truth:
+\<lbrakk>?p \<in> gi_exact_domain Prop; ?q \<in> gi_exact_domain Prop\<rbrakk> \<Longrightarrow> gi_exact_valuation ?w (gi_exact_app Prop Prop (gi_exact_app Prop gb_unary (gi_exact_logical_value SImp) ?p) ?q) = (gi_exact_valuation ?w ?p \<longrightarrow> gi_exact_valuation ?w ?q)
+gi_exact_forall_truth:
+?f \<in> gi_exact_domain (?\<sigma> \<rightarrow>\<^sub>o Prop) \<Longrightarrow> gi_exact_valuation ?w (gi_exact_app (?\<sigma> \<rightarrow>\<^sub>o Prop) Prop (gi_exact_logical_value (SBAll ?\<sigma>)) ?f) = (\<forall>a\<in>gi_exact_domain ?\<sigma>. gi_exact_valuation ?w (gi_exact_app ?\<sigma> Prop ?f a))
+gi_exact_false_proposition:
+\<exists>p\<in>gi_exact_domain Prop. \<not> gi_exact_valuation ?w p
+gi_exact_logical_value_witness:
+\<exists>g. book_env_typed gi_exact_domain ?G g \<and> gi_exact_named_denote ?C ?G g (NLogical ?l) = gi_exact_logical_value ?l
+pp_e_constants.gi_exact_pterm_beta_eval:
+\<lbrakk>pp_e_constants ?C; pcompatible_step pbeta_contract ?M ?N; has_ptype ?\<Gamma> ?M ?\<tau>; has_ptype ?\<Gamma> ?N ?\<tau>; pp_e_env_typed ?\<Gamma> ?g\<rbrakk> \<Longrightarrow> pp_e_eval ?C ?g (pterm_to_oterm ?M) = pp_e_eval ?C ?g (pterm_to_oterm ?N)
+pp_e_constants.gi_exact_pterm_eta_eval:
+\<lbrakk>pp_e_constants ?C; pcompatible_step peta_contract ?M ?N; has_ptype ?\<Gamma> ?M ?\<tau>; has_ptype ?\<Gamma> ?N ?\<tau>; pp_e_env_typed ?\<Gamma> ?g\<rbrakk> \<Longrightarrow> pp_e_eval ?C ?g (pterm_to_oterm ?M) = pp_e_eval ?C ?g (pterm_to_oterm ?N)
+pp_e_constants.gi_exact_pterm_raw_conversion_eval:
+\<lbrakk>pp_e_constants ?C; pbeta_eta_equiv ?\<Gamma> ?\<tau> ?M ?N; pp_e_env_typed ?\<Gamma> ?g\<rbrakk> \<Longrightarrow> pp_e_eval ?C ?g (pterm_to_oterm ?M) = pp_e_eval ?C ?g (pterm_to_oterm ?N)
+pp_e_constants.gi_exact_pterm_signature_conversion_eval:
+\<lbrakk>pp_e_constants ?C; pbeta_eta_equiv_in_signature ?\<Sigma> ?\<Gamma> ?\<tau> ?M ?N; pp_e_env_typed ?\<Gamma> ?g\<rbrakk> \<Longrightarrow> pp_e_eval ?C ?g (pterm_to_oterm ?M) = pp_e_eval ?C ?g (pterm_to_oterm ?N)
+pp_e_constants.gi_exact_named_denote_conversion:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G ?A ?\<tau>; book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G ?B ?\<tau>; named_raw_beta_eta book_minimal_logical_type ?G ?\<tau> ?A ?B; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_named_denote ?C ?G ?g ?A = gi_exact_named_denote ?C ?G ?g ?B
+pp_e_constants.gi_exact_named_environment:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G ?A ?\<tau>; book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G ?B ?\<tau>; named_raw_beta_eta book_minimal_logical_type ?G ?\<tau> ?A ?B; book_env_typed gi_exact_domain ?G ?g; book_env_typed gi_exact_domain ?G ?h; \<And>n. n \<in> named_fv ?A \<inter> named_fv ?B \<Longrightarrow> ?g n = ?h n\<rbrakk> \<Longrightarrow> gi_exact_named_denote ?C ?G ?g ?A = gi_exact_named_denote ?C ?G ?h ?B
+pp_e_constants.gi_exact_book_environment_conditions:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G\<rbrakk> \<Longrightarrow> book_environment_conditions gi_exact_domain gi_exact_app book_minimal_logical_type UNIV ?\<Sigma> ?G UNIV (gi_exact_named_denote ?C ?G)
+pp_e_constants.gi_exact_book_full_environment:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G\<rbrakk> \<Longrightarrow> book_full_environment gi_exact_domain gi_exact_app book_minimal_logical_type UNIV ?\<Sigma> ?G (gi_exact_named_denote ?C ?G)
+pp_e_constants.gi_exact_named_lambda_application:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G ?A ?\<tau>; book_env_typed gi_exact_domain ?G ?g; ?a \<in> gi_exact_domain (?G ?n)\<rbrakk> \<Longrightarrow> gi_exact_app (?G ?n) ?\<tau> (gi_exact_named_denote ?C ?G ?g (NLam ?n ?A)) ?a = gi_exact_named_denote ?C ?G (?g(?n := ?a)) ?A

@@ -1,0 +1,40 @@
+gi_T4_source_stock(1):
+pp_T4_axioms = pp_T2_min_axioms
+gi_T4_fun_prime_at_admitted(1):
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?p\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_fun_prime_at ?\<sigma> ?p)
+gi_T4_parameter_admitted(1):
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?C; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (Imp (pp_pure pp_T4_C_ty ?C) (Neg (pp_fun_prime_at pp_unary_ty (App ?C ?r))))
+gi_T4_quantified_admitted(1):
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T4_no_higher_fun_prime ?r)
+gi_T4_parameter_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?C : pp_T4_C_ty; ?\<Gamma> \<turnstile> ?r : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?C; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gi_to_book ?G ?ns ?k (Imp (pp_pure pp_T4_C_ty ?C) (Neg (pp_fun_prime_at pp_unary_ty (App ?C ?r)))))
+gi_T4_quantified_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?r : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gi_to_book ?G ?ns ?k (pp_T4_no_higher_fun_prime ?r))
+gb_T4_fun_prime_at_proposition(1):
+gb_T4_fun_prime_at ?G ?ns Prop ?p = gb_T2a_fun_prime_on_chart ?G ?ns ?p
+gi_T4_fun_prime_application_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [?c, ?r] ?k (pp_fun_prime_at ?\<sigma> (App (Var 0) (Var 1))) = gb_T4_fun_prime_at ?G [?c, ?r] ?\<sigma> (NApp (NVar ?c) (NVar ?r))
+gi_T4_claim_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [?r] ?k (pp_T4_no_higher_fun_prime (Var 0)) = gb_T4_claim ?G ?r
+gi_T4_no_higher_fun_prime(1):
+\<lbrakk>sg_rich ?G; ?G ?r = Prop\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gb_T4_claim ?G ?r)
+gi_T5_source_stock(1):
+pp_T5_axioms = pp_T6_core_PP_axioms
+gi_T5_proliferation_admitted(1):
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (Imp (pp_fun_prime ?r) (pp_T5_proliferation ?r))
+gi_T5_no_two_admitted(1):
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (Imp (pp_fun_prime ?r) (Neg (pp_T5_two_fun_prime ?r)))
+gi_T5_proliferation_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?r : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gi_to_book ?G ?ns ?k (Imp (pp_fun_prime ?r) (pp_T5_proliferation ?r)))
+gi_T5_no_two_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?r : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gi_to_book ?G ?ns ?k (Imp (pp_fun_prime ?r) (Neg (pp_T5_two_fun_prime ?r))))
+gi_T5_fun_prime_head_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G (?r # ?ns) ?k (pp_fun_prime (Var 0)) = gb_T2a_fun_prime_on_chart ?G (?r # ?ns) (NVar ?r)
+gi_T5_claim_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [?r] ?k (Imp (pp_fun_prime (Var 0)) (pp_T5_proliferation (Var 0))) = gb_T5_claim ?G ?r
+gi_T5_no_two_claim_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [?r] ?k (Imp (pp_fun_prime (Var 0)) (Neg (pp_T5_two_fun_prime (Var 0)))) = gb_T5_no_two_claim ?G ?r
+gi_T5_proliferation(1):
+\<lbrakk>sg_rich ?G; ?G ?r = Prop\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gb_T5_claim ?G ?r)
+gi_T5_no_two(1):
+\<lbrakk>sg_rich ?G; ?G ?r = Prop\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gb_T5_no_two_claim ?G ?r)

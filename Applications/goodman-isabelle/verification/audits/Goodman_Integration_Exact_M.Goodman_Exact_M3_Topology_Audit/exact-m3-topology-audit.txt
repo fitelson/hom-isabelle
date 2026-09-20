@@ -1,0 +1,12 @@
+EXACT-M3-TOPOLOGY-AUDIT: 10 clean endpoints
+SCOPE: explicit finite-cylinder product topology on propositions; exact closed-logical fun-prime and native free-generator classes are meager by proved extreme-view coverage. No arbitrary-stock theorem, particular glued-r identification, or PP model. HOL-ZF exact instantiation retained.
+gi_M3_cylinder_self(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M3_cylinder_nonempty(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M3_product_meager_mono(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M3_fresh_cone_point(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M3_necessary_cone_nowhere_dense(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M3_word_enum_surjective(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M3_top_view_class_is_product_meager(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M3_fun_prime_class_is_product_meager(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_native_M3_fun_prime_class_is_product_meager(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_M3_free_generator_class_is_product_meager(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

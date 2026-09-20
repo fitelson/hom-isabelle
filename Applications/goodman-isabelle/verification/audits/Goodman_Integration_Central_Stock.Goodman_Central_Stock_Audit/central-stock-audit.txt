@@ -1,0 +1,25 @@
+GOODMAN-CENTRAL-STOCK-AUDIT: 14 clean integration endpoints; 9 clean historical replay endpoints (counted separately)
+SCOPE: native existence of fun-prime from the repaired central stock; four T6 refutations with route extras retained.
+gb_fun_prime_with_names_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gb_fun_prime_with_names_fv: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gb_exists_fun_prime_names: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_exists_fun_prime_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_exists_fun_prime_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exists_fun_prime_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_repaired_native_exists_fun_prime: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_central_T6_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_central_T6_support: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_central_T6_refutation_transfer: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_central_T6_Inv_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_central_T6_TU_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_central_T6_WI_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_central_T6_RS_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+CEV_QSS_modal_core_from_recombination: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+CEV_QSS_from_recombination_with_zeroary_exhaustion_parameter: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+CEV_QSS_from_recombination_with_zeroary_exhaustion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+CEV_exists_fun_prime_from_QSS_and_unique_fundamentality: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+CEV_exists_fun_prime_from_recombination_with_zeroary_exhaustion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+CEV_Goodman_T6_Inv_repaired_central_stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+CEV_Goodman_T6_TU_repaired_central_stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+CEV_Goodman_T6_WI_repaired_central_stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+CEV_Goodman_T6_RS_repaired_central_stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0

@@ -1,0 +1,16 @@
+gi_M3_box_term_type:
+[] \<turnstile> gi_M3_box_term ?b : gb_unary
+gi_M3_box_term_logical:
+pp_logical_vocabulary (gi_M3_box_term ?b)
+gi_M3_future_truth_iff_view:
+(\<forall>v. prefix (rev ?i) v \<longrightarrow> pp_e_holds (pp_n_bacon_embed ?P) v) = (pp_view ?i ?P = UNIV)
+gi_M3_box_raw:
+pp_e_raw_operator (pp_e_closed_den (gi_M3_box_term ?b)) ?P = pp_sem_box (if ?b then ?P else - ?P)
+gi_exact_M3_box_in_stock:
+(\<lambda>P. pp_sem_box (if ?b then P else - P)) \<in> pp_e_exact_operator_stock
+gi_exact_M3_box_nonzero:
+(\<lambda>P. pp_sem_box (if ?b then P else - P)) \<noteq> (\<lambda>P. {})
+gi_exact_M3_fun_prime_has_extreme_views:
+pp_e_exact_fun_prime ?p \<Longrightarrow> UNIV \<in> pp_orbit ?p \<and> {} \<in> pp_orbit ?p
+gi_native_M3_fun_prime_has_extreme_views:
+\<lbrakk>sg_rich ?G; gi_stock_fun_prime (gi_exact_native_operator_stock ?G) ?p\<rbrakk> \<Longrightarrow> UNIV \<in> pp_orbit ?p \<and> {} \<in> pp_orbit ?p

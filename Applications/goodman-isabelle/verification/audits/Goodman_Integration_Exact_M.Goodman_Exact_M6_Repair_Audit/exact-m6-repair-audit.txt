@@ -1,0 +1,26 @@
+EXACT-M6-REPAIR-AUDIT: 24 clean endpoints
+SCOPE: actual exact stock; one-view heredity, separation of substitutions, missing arbitrary single-coordinate target, strict fun-prime pair outside pure-operator images and blocked joint assignment. No fixed-r necessitated-QSS premise, particular glued-r identification, arbitrary enlarged stock, or PP model.
+gi_exact_M6_fun_prime_preimage(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M6_fun_prime_not_extreme(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M6_fun_prime_not_extreme(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M6_fresh_letter(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M6_fresh_branch_view(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M6_fresh_branch_excludes(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_M6_fun_prime_truth_separates(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M6_fun_prime_separates_distinct_substitutions(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_M6_fun_prime_separates_distinct_substitutions(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M6_orbit_diagonal_differs(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M6_single_proposition_independence_fails(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M6_equivariant_empty_extreme(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M6_pure_empty_extreme(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M6_reversible_orbit_subset_images(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M6_copy_views(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M6_copy_views(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M6_copy_views(3): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M6_copy_views(4): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M6_views_preserve_inclusion(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M6_fun_prime_strict_pair(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M6_strict_pair_exists(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_native_M6_strict_pair_exists(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M6_joint_assignment_blocked_by_inclusion(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_M6_joint_assignment_counterexample(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0

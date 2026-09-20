@@ -1,0 +1,28 @@
+gi_M1_exact_closed_truth:
+pp_e_holds (pp_e_closed_den ObjTrue) ?w
+gi_M1_exact_closed_falsity:
+\<not> pp_e_holds (pp_e_closed_den ObjFalse) ?w
+gi_M1_exact_proposition_stock_noncontingency:
+Elem ?p (pp_e_domain Prop) \<Longrightarrow> pp_e_closed_logical_stock Prop ?w ?p = ((\<forall>v. prefix ?w v \<longrightarrow> pp_e_holds ?p v) \<or> (\<forall>v. prefix ?w v \<longrightarrow> \<not> pp_e_holds ?p v))
+gi_M1_NC_body_language:
+sg_rich ?G \<Longrightarrow> book_theory_formula ?\<Sigma> ?G (gi_M1_NC_body ?G)
+gi_M1_NC_language:
+sg_rich ?G \<Longrightarrow> book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G (gi_M1_NC ?G) gb_unary
+gi_M1_NC_closed:
+named_fv (gi_M1_NC ?G) = {}
+gi_M1_NC_closed_logical:
+sg_rich ?G \<Longrightarrow> gb_closed_logical ?G gb_unary (gi_M1_NC ?G)
+gi_M1_NC_string_rename:
+gi_goodman_string_term (gi_M1_NC ?G) = gi_M1_NC ?G
+pp_e_constants.gi_M1_NC_body_holds:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> pp_e_holds (gi_exact_named_denote ?C ?G ?g (gi_M1_NC_body ?G)) ?w = ((\<forall>v. prefix ?w v \<longrightarrow> pp_e_holds (?g (gb_x ?G Prop)) v) \<or> (\<forall>v. prefix ?w v \<longrightarrow> \<not> pp_e_holds (?g (gb_x ?G Prop)) v))
+pp_e_constants.gi_M1_NC_denotes_exact_classifier:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_named_denote ?C ?G ?g (gi_M1_NC ?G) = pp_e_classifier Prop (pp_e_closed_logical_stock Prop)
+gi_M1_NC_native_closed_denotation:
+sg_rich ?G \<Longrightarrow> gi_exact_native_closed_den ?G (gi_M1_NC ?G) = pp_e_classifier Prop (pp_e_closed_logical_stock Prop)
+gi_M1_exact_bottom_classifier_in_native_stock:
+sg_rich ?G \<Longrightarrow> gi_exact_native_logical_stock ?G gb_unary ?w (pp_e_classifier Prop (pp_e_closed_logical_stock Prop))
+gi_M1_exact_native_purity_is_noncontingency:
+\<lbrakk>sg_rich ?G; book_theory_formula gb_signature ?G ?A; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_valuation ?w (gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g (gb_pure Prop ?A)) = ((\<forall>v. prefix ?w v \<longrightarrow> pp_e_holds (gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g ?A) v) \<or> (\<forall>v. prefix ?w v \<longrightarrow> \<not> pp_e_holds (gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g ?A) v))
+gi_M1_exact_bottom_PP_gvalid:
+sg_rich ?G \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G (gb_purity_of_pure Prop)

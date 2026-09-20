@@ -1,0 +1,34 @@
+gi_granularity_logical_builder_pure:
+\<lbrakk>pp_T2_min_axioms \<subseteq> ?T; [] \<turnstile> ?B : ?\<sigma>; pp_logical_vocabulary ?B; ?\<Gamma> \<turnstile> ?B : ?\<sigma>\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_pure ?\<sigma> ?B
+gi_granularity_pure_agreement:
+\<lbrakk>pp_T2_min_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?Z : pp_unary_ty; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_pure pp_unary_ty ?Z\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_pure pp_unary_ty (pp_agreement_operator ?Z)
+gi_granularity_pure_disagreement:
+\<lbrakk>pp_T2_min_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?Z : pp_unary_ty; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_pure pp_unary_ty ?Z\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_pure pp_unary_ty (pp_disagreement_operator ?Z)
+gi_granularity_conditional_source:
+\<lbrakk>?\<Gamma> \<turnstile> ?Z : pp_unary_ty; ?\<Gamma> \<turnstile> ?r : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; gi_granularity_source \<turnstile>\<^sub>CEV\<^sup>+ gi_granularity_conditional ?Z ?r
+gi_granularity_source_closed:
+?A \<in> gi_granularity_source \<Longrightarrow> [] \<turnstile> ?A : Prop
+gb_granularity_axioms_language:
+\<lbrakk>sg_rich ?G; ?A \<in> gb_granularity_axioms ?G\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?A
+gi_granularity_axiom_from_native:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?A \<in> gi_granularity_source\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gb_granularity_axioms ?G) (gi_to_book ?G [] ?k ?A)
+gi_granularity_admitted:
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?Z; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (gi_granularity_conditional ?Z ?r)
+gi_granularity_iff_truth_uniform:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?Z : pp_unary_ty; ?\<Gamma> \<turnstile> ?r : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?Z; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_granularity_axioms ?G) (gi_to_book ?G ?ns ?k (gi_granularity_conditional ?Z ?r))
+pp_surjective_truth_fibre_congruence_imp_uniform:
+\<lbrakk>surj ?Z; ?holds ?t; \<not> ?holds ?f; pp_truth_fibre_congruence ?holds ?Z\<rbrakk> \<Longrightarrow> pp_sem_truth_preserving ?holds ?Z \<or> pp_sem_truth_flipping ?holds ?Z
+pp_bijective_truth_fibre_congruence_imp_uniform:
+\<lbrakk>bij ?Z; ?holds ?t; \<not> ?holds ?f; pp_truth_fibre_congruence ?holds ?Z\<rbrakk> \<Longrightarrow> pp_sem_truth_preserving ?holds ?Z \<or> pp_sem_truth_flipping ?holds ?Z
+pp_fregean_granularity_imp_uniform:
+\<lbrakk>pp_fregean_granularity ?holds; bij ?Z; ?holds ?t; \<not> ?holds ?f\<rbrakk> \<Longrightarrow> pp_sem_truth_preserving ?holds ?Z \<or> pp_sem_truth_flipping ?holds ?Z
+pp_fregean_granularity_excludes_third_proposition:
+\<lbrakk>pp_fregean_granularity ?holds; ?holds ?t; \<not> ?holds ?f; ?r \<noteq> ?t; ?r \<noteq> ?f\<rbrakk> \<Longrightarrow> False
+pp_QLN_truth_uniform_iff_agreement_noncontingent:
+\<lbrakk>\<And>p. ?holds (?agree ?Z p) = (?holds (?Z p) = ?holds p); \<And>p. ?holds (?neg p) = (\<not> ?holds p); ?necessary (?agree ?Z ?r) = (\<forall>p. ?holds (?agree ?Z p)); ?necessary (?neg (?agree ?Z ?r)) = (\<forall>p. ?holds (?neg (?agree ?Z p)))\<rbrakk> \<Longrightarrow> pp_sem_agreement_noncontingent ?necessary ?neg ?agree ?Z ?r = (pp_sem_truth_preserving ?holds ?Z \<or> pp_sem_truth_flipping ?holds ?Z)
+pp_attack2_kind_sized_group_refutes_attack3:
+\<lbrakk>|Pow ?K| \<le>o |?G|; |?G| \<le>o |?K|\<rbrakk> \<Longrightarrow> False
+pp_attack2_kind_bounded_descriptions_refute_attack3:
+\<lbrakk>inj_on ?describe ?G; ?describe ` ?G \<subseteq> ?D; |?D| \<le>o |?K|; |Pow ?K| \<le>o |?G|\<rbrakk> \<Longrightarrow> False
+pp_attack2_countable_group_refutes_attack3:
+\<lbrakk>infinite ?K; countable ?G; |Pow ?K| \<le>o |?G|\<rbrakk> \<Longrightarrow> False

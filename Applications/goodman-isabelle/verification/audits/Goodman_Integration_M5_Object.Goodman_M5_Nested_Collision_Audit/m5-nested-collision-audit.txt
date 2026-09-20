@@ -1,0 +1,24 @@
+M5-NESTED-COLLISION-AUDIT: 21 clean endpoints
+SCOPE: actual object-language repair using q=NC(Box r), not NC(r). Output identity proved over EMPTY added stock before local fun-prime assumption; only input inequality uses T2-min and MP-only local reasoning. Repaired collision/nonreversibility implications and scoped native transfer; no global-fun-prime axiom or PP model.
+DIRECT-PROVENANCE: 45185 proof nodes traversed; no historical axiom-stock collision or fixed-fun-prime collapse endpoint used.
+gi_M5_nested_input_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_PC1: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_M5_PC2: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_M5_PC3: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_M5_local_PC2: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_M5_local_PC3: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_M5_box_mono: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_M5_modal_T: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_modal_four: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_box_branch_stable: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_M5_nested_stable: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_nested_dense: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_nested_NC_equivalent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_nested_F_true: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_F_truth_true: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_nested_outputs_equal: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_nested_input_false_locally: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M5_nested_local_collision: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M5_nested_local_nonreversibility: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M5_nested_native_collision_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_M5_nested_native_nonreversibility_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6

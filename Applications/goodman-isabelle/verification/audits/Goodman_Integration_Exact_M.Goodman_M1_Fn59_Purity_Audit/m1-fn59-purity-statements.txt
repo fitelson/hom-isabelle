@@ -1,0 +1,48 @@
+typed_gi_M1_fn59_liar:
+?\<Gamma> \<turnstile> gi_M1_fn59_liar : pp_unary_ty
+gi_M1_fn59_builder_constant_free:
+consts_of gi_M1_fn59_builder = {}
+typed_gi_M1_fn59_builder:
+?\<Gamma> \<turnstile> gi_M1_fn59_builder : (pp_unary_ty \<rightarrow>\<^sub>o Prop) \<rightarrow>\<^sub>o gb_unary \<rightarrow>\<^sub>o pp_unary_ty
+typed_gi_M1_fn59_instance:
+?\<Gamma> \<turnstile> gi_M1_fn59_instance : pp_unary_ty
+typed_gi_M1_fn59_after_pure:
+?\<Gamma> \<turnstile> gi_M1_fn59_after_pure : gb_unary \<rightarrow>\<^sub>o pp_unary_ty
+gi_M1_fn59_first_beta:
+App gi_M1_fn59_builder (pp_Pure pp_unary_ty) \<rightarrow>\<^sub>\<beta> gi_M1_fn59_after_pure
+gi_M1_fn59_second_beta:
+App gi_M1_fn59_after_pure (pp_Fun Prop) \<rightarrow>\<^sub>\<beta> gi_M1_fn59_liar
+gi_M1_fn59_instance_beta_eta:
+?\<Gamma> \<turnstile>\<^sub>CEV Eq pp_unary_ty gi_M1_fn59_instance gi_M1_fn59_liar
+gi_M1_fn59_builder_purity_axiom:
+pp_pure ((pp_unary_ty \<rightarrow>\<^sub>o Prop) \<rightarrow>\<^sub>o gb_unary \<rightarrow>\<^sub>o pp_unary_ty) gi_M1_fn59_builder \<in> gi_M1_fn59_axioms
+gi_M1_fn59_application_closure:
+pp_application_closure ?\<sigma> ?\<tau> \<in> gi_M1_fn59_axioms
+gi_M1_fn59_PP:
+pp_target_PP \<in> gi_M1_fn59_axioms
+gi_M1_fn59_purity_of_fun:
+pp_purity_of_fun Prop \<in> gi_M1_fn59_axioms
+gi_M1_fn59_liar_pure:
+?\<Gamma> ; gi_M1_fn59_axioms \<turnstile>\<^sub>CEV\<^sup>+ pp_pure pp_unary_ty gi_M1_fn59_liar
+gi_M1_fn59_liar_vocabulary:
+consts_of gi_M1_fn59_liar = {pp_pure_name, pp_fun_name}
+gi_M1_fn59_liar_admitted:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature gi_M1_fn59_liar
+gi_M1_fn59_native_shape:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k gi_M1_fn59_liar = gi_M1_native_fn59_liar ?G
+gi_M1_native_fn59_liar_language:
+sg_rich ?G \<Longrightarrow> book_in_language book_minimal_logical_type UNIV gb_signature ?G (gi_M1_native_fn59_liar ?G) gb_unary
+gi_M1_native_fn59_liar_closed:
+named_fv (gi_M1_native_fn59_liar ?G) = {}
+gi_M1_fn59_purity_of_fun_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k (pp_purity_of_fun Prop) = gb_purity_of_fun Prop
+gi_M1_fn59_axioms_closed:
+?A \<in> gi_M1_fn59_axioms \<Longrightarrow> [] \<turnstile> ?A : Prop
+gi_M1_fn59_native_stock_inclusion:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> gi_to_book ?G [] ?k ` gi_M1_fn59_axioms \<subseteq> gi_M1_fn59_native_axioms ?G
+gi_M1_fn59_native_axioms_language:
+\<lbrakk>sg_rich ?G; ?A \<in> gi_M1_fn59_native_axioms ?G\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?A
+gi_M1_native_fn59_liar_pure:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_M1_fn59_native_axioms ?G) (gb_pure gb_unary (gi_M1_native_fn59_liar ?G))
+gi_M1_fn59_translated_liar_pure:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_M1_fn59_native_axioms ?G) (gb_pure gb_unary (gi_to_book ?G [] ?k gi_M1_fn59_liar))

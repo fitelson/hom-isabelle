@@ -1,0 +1,22 @@
+gi_T9_infinite_product_bound:
+\<lbrakk>infinite ?D; |?A| \<le>o |?D|; |?B| \<le>o |?D|\<rbrakk> \<Longrightarrow> |?A \<times> ?B| \<le>o |?D|
+gi_T9_product_power_dichotomy:
+|Pow ?K| \<le>o |?K \<times> ?H| \<Longrightarrow> finite ?K \<or> |Pow ?K| \<le>o |?H|
+gi_T9_native_purity.gi_T9_pure_kind_member:
+\<lbrakk>gi_T9_native_purity ?C ?G; ?X \<in> gi_T9_root_pure ?C pp_e_unary_type\<rbrakk> \<Longrightarrow> gi_T9_kind ?C ?X \<in> gi_T9_kinds ?C
+gi_T9_native_purity.gi_T9_cardinal_code_injective:
+gi_T9_native_purity ?C ?G \<Longrightarrow> inj_on (gi_T9_cardinal_code ?C) (gi_T9_root_pure ?C pp_e_unary_type)
+gi_T9_native_purity.gi_T9_cardinal_code_range:
+gi_T9_native_purity ?C ?G \<Longrightarrow> gi_T9_cardinal_code ?C ` gi_T9_root_pure ?C pp_e_unary_type \<subseteq> gi_T9_kinds ?C \<times> gi_T9_root_group ?C
+gi_T9_native_purity.gi_T9_pure_le_kinds_times_group:
+gi_T9_native_purity ?C ?G \<Longrightarrow> |gi_T9_root_pure ?C pp_e_unary_type| \<le>o |gi_T9_kinds ?C \<times> gi_T9_root_group ?C|
+gi_T9_native_purity.gi_T9_kind_selector_range:
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C\<rbrakk> \<Longrightarrow> gi_T9_kind_selector ?C ` Pow (gi_T9_kinds ?C) \<subseteq> gi_T9_root_pure ?C pp_e_unary_type
+gi_T9_native_purity.gi_T9_powerset_kinds_le_pure:
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C; gi_T9_root_L2 ?C; Elem ?r (pp_e_domain Prop); pp_e_holds (gi_T9_J_value ?C \<acute> ?r) []\<rbrakk> \<Longrightarrow> |Pow (gi_T9_kinds ?C)| \<le>o |gi_T9_root_pure ?C pp_e_unary_type|
+gi_T9_native_purity.gi_T9_native_counting_bound:
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C; gi_T9_root_L2 ?C; Elem ?r (pp_e_domain Prop); pp_e_holds (gi_T9_J_value ?C \<acute> ?r) []\<rbrakk> \<Longrightarrow> |Pow (gi_T9_kinds ?C)| \<le>o |gi_T9_kinds ?C \<times> gi_T9_root_group ?C|
+gi_T9_native_purity.gi_T9_native_cardinal_dichotomy:
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C; gi_T9_root_L2 ?C; Elem ?r (pp_e_domain Prop); pp_e_holds (gi_T9_J_value ?C \<acute> ?r) []\<rbrakk> \<Longrightarrow> finite (gi_T9_kinds ?C) \<or> |Pow (gi_T9_kinds ?C)| \<le>o |gi_T9_root_group ?C|
+gi_T9_native_purity.gi_T9_infinite_kinds_group_bound:
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C; gi_T9_root_L2 ?C; Elem ?r (pp_e_domain Prop); pp_e_holds (gi_T9_J_value ?C \<acute> ?r) []; infinite (gi_T9_kinds ?C)\<rbrakk> \<Longrightarrow> |Pow (gi_T9_kinds ?C)| \<le>o |gi_T9_root_group ?C|

@@ -1,0 +1,38 @@
+gi_pterm_empty_signature_const_free(1):
+pterm_in_signature (\<lambda>_. {}) ?P \<Longrightarrow> consts_of (pterm_to_oterm ?P) = {}
+gi_closed_named_decode_type(1):
+\<lbrakk>book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G ?A ?\<sigma>; named_fv ?A = {}\<rbrakk> \<Longrightarrow> [] \<turnstile> gi_exact_decode ?G ?A : ?\<sigma>
+gi_closed_logical_decode(1):
+gb_closed_logical ?G ?\<sigma> ?A \<Longrightarrow> [] \<turnstile> gi_exact_decode ?G ?A : ?\<sigma>
+gi_closed_logical_decode(2):
+gb_closed_logical ?G ?\<sigma> ?A \<Longrightarrow> pp_logical_vocabulary (gi_exact_decode ?G ?A)
+gi_exact_old_closed_evaluation(1):
+\<lbrakk>[] \<turnstile> ?M : ?\<sigma>; pp_logical_vocabulary ?M\<rbrakk> \<Longrightarrow> pp_e_eval ?C ?g ?M = pp_e_closed_den ?M
+gi_closed_logical_decode_denotation(1):
+gb_closed_logical ?G ?\<sigma> ?A \<Longrightarrow> gi_exact_named_denote ?C ?G ?g ?A = pp_e_closed_den (gi_exact_decode ?G ?A)
+gi_empty_signature_name_map_language(1):
+book_in_language book_minimal_logical_type UNIV (\<lambda>_. {}) ?G ?A ?\<sigma> \<Longrightarrow> book_in_language book_minimal_logical_type UNIV (\<lambda>_. {}) ?G (book_typed_name_map ?f ?A) ?\<sigma>
+gi_empty_signature_name_map_closed_logical(1):
+gb_closed_logical ?G ?\<sigma> ?A \<Longrightarrow> gb_closed_logical ?G ?\<sigma> (book_typed_name_map ?f ?A)
+gi_logical_string_roundtrip(1):
+named_in_signature (\<lambda>_. {}) ?A \<Longrightarrow> gi_goodman_string_term (gi_string_logical_to_goodman ?A) = ?A
+gi_goodman_closed_logical_decode_denotation(1):
+gb_closed_logical ?G ?\<sigma> ?A \<Longrightarrow> [] \<turnstile> gi_exact_decode ?G (gi_goodman_string_term ?A) : ?\<sigma>
+gi_goodman_closed_logical_decode_denotation(2):
+gb_closed_logical ?G ?\<sigma> ?A \<Longrightarrow> pp_logical_vocabulary (gi_exact_decode ?G (gi_goodman_string_term ?A))
+gi_goodman_closed_logical_decode_denotation(3):
+gb_closed_logical ?G ?\<sigma> ?A \<Longrightarrow> gi_exact_goodman_denote ?C ?G ?g ?A = pp_e_closed_den (gi_exact_decode ?G (gi_goodman_string_term ?A))
+gi_exact_native_closed_den_decoded(1):
+gb_closed_logical ?G ?\<sigma> ?A \<Longrightarrow> gi_exact_native_closed_den ?G ?A = pp_e_closed_den (gi_exact_decode ?G (gi_goodman_string_term ?A))
+gi_exact_native_closed_den_member(1):
+gb_closed_logical ?G ?\<sigma> ?A \<Longrightarrow> gi_exact_native_closed_den ?G ?A \<in> gi_exact_domain ?\<sigma>
+gi_exact_native_closed_den_independent(1):
+gb_closed_logical ?G ?\<sigma> ?A \<Longrightarrow> gi_exact_goodman_denote ?C ?G ?g ?A = gi_exact_native_closed_den ?G ?A
+gi_old_closed_logical_native_witness(1):
+\<lbrakk>sg_rich ?G; [] \<turnstile> ?M : ?\<sigma>; pp_logical_vocabulary ?M\<rbrakk> \<Longrightarrow> \<exists>A. gb_closed_logical ?G ?\<sigma> A \<and> gi_exact_native_closed_den ?G A = pp_e_closed_den ?M
+gi_exact_logical_denotation_sets_equal(1):
+sg_rich ?G \<Longrightarrow> gi_exact_native_logical_denotations ?G ?\<sigma> = {x. \<exists>M. [] \<turnstile> M : ?\<sigma> \<and> pp_logical_vocabulary M \<and> x = pp_e_closed_den M}
+gi_exact_native_stock_iff_original(1):
+sg_rich ?G \<Longrightarrow> gi_exact_native_logical_stock ?G ?\<sigma> ?w ?x = pp_e_closed_logical_stock ?\<sigma> ?w ?x
+gi_exact_native_stock_independent_of_rich_names(1):
+\<lbrakk>sg_rich ?G; sg_rich ?H\<rbrakk> \<Longrightarrow> gi_exact_native_logical_stock ?G ?\<sigma> ?w ?x = gi_exact_native_logical_stock ?H ?\<sigma> ?w ?x

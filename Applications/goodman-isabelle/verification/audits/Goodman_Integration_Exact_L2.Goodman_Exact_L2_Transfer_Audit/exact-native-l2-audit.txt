@@ -1,0 +1,33 @@
+EXACT-NATIVE-L2-AUDIT: 31 clean endpoints from 26 named facts
+SCOPE: Literal equality of the complete native closed-logical raw unary stock with the historical exact stock; independently stock-parametric fun-prime, reversible, same-kind, L2/strong-L2 definitions; logical child-variation denotability, surjectivity, noninjectivity, cancellation, nonreversibility, a nonempty fun-prime class, and a concrete id/child-variation L2 collision. Richness and HOL-ZF foundations retained. No object-language L2 evaluation or arbitrary/enlarged Pure stock is asserted by this catalog alone; no PP model or consistency conclusion.
+gi_exact_native_operator_stock_eq(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_operator_stockI(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_operator_stockE(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_native_operator_stock_countable(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_identity_in_stock(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_operator_stock_compose(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_native_fun_prime_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_reversible_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_group_eq(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_same_kind_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_L2_pair_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_L2_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_strong_L2_pair_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_strong_L2_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_right_cancellative_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_child_variation_logical_witness(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_child_variation_in_stock(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_fun_prime_exists(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_child_variation_right_cancellative(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_child_variation_nonreversible(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_child_variation_preserves_fun_prime(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_native_child_variation_not_identity_kind(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_child_variation_certificate(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_child_variation_certificate(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_child_variation_certificate(3): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_child_variation_certificate(4): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_child_variation_certificate(5): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_child_variation_certificate(6): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_L2_counterexample(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_L2_false(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_strong_L2_false(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

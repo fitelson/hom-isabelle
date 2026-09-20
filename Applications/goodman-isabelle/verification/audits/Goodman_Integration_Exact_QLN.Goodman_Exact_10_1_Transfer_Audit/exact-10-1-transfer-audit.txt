@@ -1,0 +1,11 @@
+EXACT-10-1-TRANSFER-AUDIT: 9 clean endpoints
+SCOPE: Exact Bacon10.1 branch gluing for every closed native string term in the directly defined t-generated fragment, with decoder correspondence and result-type check. Countable interpretation family is typed at t-generated types; glued constants are typed at all types. Arbitrary assignments are harmless only because terms are closed. HOL-ZF foundation retained; not generic-seed identification, PP, or syntactic completeness.
+gi_exact_minimal_logical_propositional_fragment: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_named_propositional_encoding: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_named_propositional_decode_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_old_propositional_result_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_closed_named_propositional_result_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_closed_named_decoder_value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_Bacon_10_1_named_action: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_exact_Bacon_10_1_named_truth_branch: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_exact_Bacon_10_1_named: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

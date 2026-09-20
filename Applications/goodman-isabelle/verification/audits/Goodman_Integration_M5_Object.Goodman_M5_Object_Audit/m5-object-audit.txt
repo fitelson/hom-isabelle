@@ -1,0 +1,11 @@
+M5-OBJECT-AUDIT: 9 clean endpoints
+SCOPE: inverse/reversible injectivity in empty native extension; collision/nonreversibility in explicit closed image axiom stocks. No discharge of fun-prime added axiom to a local antecedent. Arbitrary admitted target signatures.
+CEV_Goodman_M5_collision: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+CEV_M5_inverse_witness_injective: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+CEV_M5_reversible_injective: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+CEV_Goodman_M5_collision_operator_not_reversible: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_M5_collision_source: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_M5_collision_in_signature: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9
+gi_M5_nonreversible_in_signature: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9
+gi_M5_inverse_witness_injective: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_M5_reversible_injective: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7

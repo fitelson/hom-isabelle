@@ -1,0 +1,12 @@
+EXACT-KIND-ROOT-AUDIT: 10 clean endpoints
+SCOPE: Actual root evaluation in the exact generic interpretation. Pure unary values correspond to the literal raw stock. pp_reversible asserts a stock inverse only; pp_group_member additionally asserts purity of the argument and matches pp_e_exact_reversible. pp_same_kind matches X=Y composed with a pure reversible input re-description. Typed terms, typed environments, and exact-domain premises remain explicit. HOL-ZF foundations retained; no non-root, enlarged-stock, full L2, or PP assertion in this catalog alone.
+gi_exact_raw_stock_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_identity_denotation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_identity_denotation_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_root_compose_eq_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_root_inverse_eq_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_reversible_body_root(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_reversible_value_witness(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_reversible_root_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_group_member_root_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_same_kind_root_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3

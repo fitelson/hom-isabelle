@@ -2,6 +2,12 @@
 
 ## Default check
 
+This section concerns the core ROOT/import closure under `theories/`.
+Applications are not part of that closure. Check Goodman separately with
+`./Applications/goodman-isabelle/check_isabelle.sh --export` from the
+repository root, and never run the two checks concurrently. See
+[Applications](../Applications/README.md).
+
 `./check_isabelle.sh` runs the lexical trust-guard tests, the trust guard,
 the source-boundary guard, the core-only packaging check, and a serialized
 Isabelle build of the 30 ROOT sessions. It includes

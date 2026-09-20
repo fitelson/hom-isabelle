@@ -1,0 +1,14 @@
+gi_exact_generic_QLN_background_gvalid:
+\<lbrakk>sg_rich ?G; ?A \<in> gi_native_QLN_background ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G ?A
+gi_exact_generic_QLN_background_consistent:
+sg_rich ?G \<Longrightarrow> goodman_book_consistent gb_signature ?G (gi_native_QLN_background ?G)
+gi_exact_generic_target_PP_value:
+\<lbrakk>sg_rich ?G; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g gb_target_PP = pp_e_eval pp_e_generic_internal_constants pp_e_closed_env pp_target_PP
+gi_exact_generic_native_PP_holds_iff:
+\<lbrakk>sg_rich ?G; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_valuation ?w (gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g gb_target_PP) = gi_exact_native_logical_stock ?G (gb_unary \<rightarrow>\<^sub>o Prop) ?w (pp_e_classifier gb_unary (pp_e_closed_logical_stock gb_unary))
+gi_exact_generic_native_PP_global_iff:
+sg_rich ?G \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G gb_target_PP = gi_exact_native_logical_stock ?G (gb_unary \<rightarrow>\<^sub>o Prop) [] (pp_e_classifier gb_unary (pp_e_closed_logical_stock gb_unary))
+gi_exact_generic_native_QLN_PP_global_iff:
+sg_rich ?G \<Longrightarrow> (\<forall>A\<in>gb_zeroary_unary_QLN_PP_axioms ?G. gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G A) = gi_exact_native_logical_stock ?G (gb_unary \<rightarrow>\<^sub>o Prop) [] (pp_e_classifier gb_unary (pp_e_closed_logical_stock gb_unary))
+gi_exact_generic_native_QLN_PP_consistent_if_classifier:
+\<lbrakk>sg_rich ?G; gi_exact_native_logical_stock ?G (gb_unary \<rightarrow>\<^sub>o Prop) [] (pp_e_classifier gb_unary (pp_e_closed_logical_stock gb_unary))\<rbrakk> \<Longrightarrow> goodman_book_consistent gb_signature ?G (gb_zeroary_unary_QLN_PP_axioms ?G)

@@ -1,0 +1,20 @@
+T2DEF-AUDIT: 18 clean endpoints
+SCOPE: T2d/e/f retain exact stocks and fun-prime antecedents; all fifteen object inequalities written. Source truth/modal representations explicit.
+gi_T2_PP_native_preservation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T2d_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T2d_possibly_pure_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T2d_claim_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2d_possibly_pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2_box_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T2_noncontingent_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T2e_false_but_possible_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T2_noncontingent_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2e_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T2e_false_but_possible_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T2e_claim_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2e_false_but_possible: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2f_six_distinct_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T2f_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T2f_six_distinct_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T2f_claim_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2f_six_distinct: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

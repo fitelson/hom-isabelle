@@ -1,0 +1,22 @@
+gi_exact_named_denote_var:
+gi_exact_named_denote ?C ?G ?g (NVar ?n) = ?g ?n
+gi_exact_named_denote_const:
+gi_exact_named_denote ?C ?G ?g (NConst ?c ?\<sigma>) = ?C ?c ?\<sigma>
+gi_exact_named_denote_app:
+gi_exact_named_denote ?C ?G ?g (NApp ?F ?A) = gi_exact_app ?\<sigma> ?\<tau> (gi_exact_named_denote ?C ?G ?g ?F) (gi_exact_named_denote ?C ?G ?g ?A)
+gi_exact_assignment_prefix:
+book_env_typed gi_exact_domain ?G ?g \<Longrightarrow> pp_e_env_typed (source_prefix ?G ?m) ?g
+pp_e_constants.gi_exact_named_denote_type:
+\<lbrakk>pp_e_constants ?C; book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G ?A ?\<tau>; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_named_denote ?C ?G ?g ?A \<in> gi_exact_domain ?\<tau>
+gi_exact_pterm_eval_locality:
+(\<And>n. n \<in> pbbk_fv ?A \<Longrightarrow> ?g n = ?h n) \<Longrightarrow> pp_e_eval ?C ?g (pterm_to_oterm ?A) = pp_e_eval ?C ?h (pterm_to_oterm ?A)
+gi_exact_named_denote_locality:
+(\<And>n. n \<in> named_fv ?A \<Longrightarrow> ?g n = ?h n) \<Longrightarrow> gi_exact_named_denote ?C ?G ?g ?A = gi_exact_named_denote ?C ?G ?h ?A
+gi_exact_named_closed_assignment_independent:
+named_fv ?A = {} \<Longrightarrow> gi_exact_named_denote ?C ?G ?g ?A = gi_exact_named_denote ?C ?G ?h ?A
+pp_e_constants.gi_exact_book_interpretation_structure:
+pp_e_constants ?C \<Longrightarrow> book_interpretation_structure gi_exact_domain gi_exact_app book_minimal_logical_type UNIV ?\<Sigma> ?G UNIV (gi_exact_named_denote ?C ?G)
+gi_exact_assignment_join_typed:
+\<lbrakk>book_env_typed gi_exact_domain ?G ?g; book_env_typed gi_exact_domain ?G ?h\<rbrakk> \<Longrightarrow> book_env_typed gi_exact_domain ?G (\<lambda>n. if n \<in> ?S then ?g n else ?h n)
+gi_exact_environment_from_same_assignment_conversion:
+\<lbrakk>book_env_typed gi_exact_domain ?G ?g; book_env_typed gi_exact_domain ?G ?h; \<And>n. n \<in> named_fv ?A \<inter> named_fv ?B \<Longrightarrow> ?g n = ?h n; \<And>v. book_env_typed gi_exact_domain ?G v \<Longrightarrow> gi_exact_named_denote ?C ?G v ?A = gi_exact_named_denote ?C ?G v ?B\<rbrakk> \<Longrightarrow> gi_exact_named_denote ?C ?G ?g ?A = gi_exact_named_denote ?C ?G ?h ?B

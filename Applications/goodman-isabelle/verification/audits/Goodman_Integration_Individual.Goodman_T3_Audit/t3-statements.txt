@@ -1,0 +1,42 @@
+gi_T3_modal_source_closed(1):
+?A \<in> gi_T3_modal_source \<Longrightarrow> [] \<turnstile> ?A : Prop
+gi_T3_min_source_closed(1):
+?A \<in> pp_T3_min_axioms \<Longrightarrow> [] \<turnstile> ?A : Prop
+gb_T3_modal_axioms_language(1):
+\<lbrakk>sg_rich ?G; ?A \<in> gb_T3_modal_axioms ?G\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?A
+gb_T3_exhaustion_axioms_language(1):
+\<lbrakk>sg_rich ?G; ?A \<in> gb_T3_exhaustion_axioms ?G\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?A
+gi_T3_modal_axiom_from_native(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; gb_T3_modal_axioms ?G \<subseteq> ?U; ?A \<in> gi_T3_modal_source\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G [] ?k ?A)
+gi_T3_exhaustion_axiom_from_native(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?A \<in> pp_T3_min_axioms\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gb_T3_exhaustion_axioms ?G) (gi_to_book ?G [] ?k ?A)
+gi_T3_modal_result_admitted(1):
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?r; gi_constants_admitted ?k gb_signature ?X; gi_constants_admitted ?k gb_signature ?Y\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (Imp (\<diamond>\<^sub>o pp_fun Prop ?r) (Imp (Conj (pp_pure pp_unary_ty ?X) (pp_pure pp_unary_ty ?Y)) (Imp (Eq Prop (App ?X ?r) (App ?Y ?r)) (\<diamond>\<^sub>o Eq pp_unary_ty ?X ?Y))))
+gi_T3_modal_core(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?r : Prop; ?\<Gamma> \<turnstile> ?X : pp_unary_ty; ?\<Gamma> \<turnstile> ?Y : pp_unary_ty; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?r; gi_constants_admitted ?k gb_signature ?X; gi_constants_admitted ?k gb_signature ?Y\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T3_modal_axioms ?G) (gb_T3_modal_result ?G ?ns (gi_to_book ?G ?ns ?k ?r) (gi_to_book ?G ?ns ?k ?X) (gi_to_book ?G ?ns ?k ?Y))
+gi_T3_heredity_admitted(1):
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_T3_heredity
+gi_T3_heredity_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k pp_T3_heredity = gb_T3_heredity ?G
+gi_T3_heredity_with_exhaustion(1):
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T3_exhaustion_axioms ?G) (gb_T3_heredity ?G)
+gi_T3_pure_eq_rigidity_admitted(1):
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_pure_eq_rigidity ?\<sigma>)
+gi_T3_pure_eq_rigidity_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k (pp_pure_eq_rigidity ?\<sigma>) = gb_T3_pure_eq_rigidity ?G ?\<sigma>
+gb_T3_pure_eq_rigidity_language(1):
+sg_rich ?G \<Longrightarrow> book_theory_formula gb_signature ?G (gb_T3_pure_eq_rigidity ?G ?\<sigma>)
+gb_T3_rigid_axioms_language(1):
+\<lbrakk>sg_rich ?G; ?A \<in> gb_T3_rigid_axioms ?G\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?A
+gi_T3_rigid_source_closed(1):
+?A \<in> pp_T3_rigid_axioms \<Longrightarrow> [] \<turnstile> ?A : Prop
+gi_T3_rigid_axiom_from_native(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?A \<in> pp_T3_rigid_axioms\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gb_T3_rigid_axioms ?G) (gi_to_book ?G [] ?k ?A)
+gi_T3_heredity_with_pure_rigidity(1):
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T3_rigid_axioms ?G) (gb_T3_heredity ?G)
+gi_T3_possible_identity_source_closed(1):
+?A \<in> gi_T3_possible_identity_source \<Longrightarrow> [] \<turnstile> ?A : Prop
+gi_T3_possible_identity_source_admitted(1):
+\<lbrakk>gi_goodman_names ?k; ?A \<in> gi_T3_possible_identity_source\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature ?A
+gi_T3_heredity_with_all_unary_rigidity_image_stock(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_to_book ?G [] ?k ` gi_T3_possible_identity_source) (gb_T3_heredity ?G)

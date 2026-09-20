@@ -1,0 +1,40 @@
+gi_T9_J_builder_type(1):
+[] \<turnstile> gi_T9_J_builder : (pp_e_unary_type \<rightarrow>\<^sub>o Prop) \<rightarrow>\<^sub>o pp_e_unary_type
+gi_T9_lower_builder_type(1):
+[] \<turnstile> gi_T9_lower_builder : (pp_e_unary_type \<rightarrow>\<^sub>o Prop) \<rightarrow>\<^sub>o (pp_e_unary_type \<rightarrow>\<^sub>o Prop) \<rightarrow>\<^sub>o pp_e_unary_type \<rightarrow>\<^sub>o pp_e_unary_type
+gi_T9_builders_logical(1):
+pp_logical_vocabulary gi_T9_J_builder
+gi_T9_builders_logical(2):
+pp_logical_vocabulary gi_T9_lower_builder
+pp_e_constants.gi_T9_J_value_member(1):
+pp_e_constants ?C \<Longrightarrow> Elem (gi_T9_J_value ?C) (pp_e_domain pp_e_unary_type)
+pp_e_constants.gi_T9_lower_value_member(1):
+\<lbrakk>pp_e_constants ?C; Elem ?H (pp_e_domain (pp_e_unary_type \<rightarrow>\<^sub>o Prop))\<rbrakk> \<Longrightarrow> Elem (gi_T9_lower_value ?C ?H) (pp_e_domain pp_e_unary_type)
+pp_e_constants.gi_T9_J_value_holds(1):
+\<lbrakk>pp_e_constants ?C; Elem ?p (pp_e_domain Prop)\<rbrakk> \<Longrightarrow> pp_e_holds (gi_T9_J_value ?C \<acute> ?p) ?w = (\<forall>X. Elem X (pp_e_domain pp_e_unary_type) \<longrightarrow> (\<forall>Y. Elem Y (pp_e_domain pp_e_unary_type) \<longrightarrow> gi_M1_exact_Pure ?C pp_e_unary_type ?w X \<and> gi_M1_exact_Pure ?C pp_e_unary_type ?w Y \<longrightarrow> pp_e_eqv Prop ?w (X \<acute> ?p) (Y \<acute> ?p) \<longrightarrow> pp_e_eqv pp_e_unary_type ?w X Y))
+pp_e_constants.gi_T9_fun_prime_formula_holds(1):
+\<lbrakk>pp_e_constants ?C; ?\<Gamma> \<turnstile> ?M : Prop; pp_e_env_typed ?\<Gamma> ?\<rho>\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval ?C ?\<rho> (pp_fun_prime ?M)) ?w = pp_e_holds (gi_T9_J_value ?C \<acute> pp_e_eval ?C ?\<rho> ?M) ?w
+pp_e_constants.gi_T9_lower_value_holds(1):
+\<lbrakk>pp_e_constants ?C; Elem ?H (pp_e_domain (pp_e_unary_type \<rightarrow>\<^sub>o Prop)); Elem ?p (pp_e_domain Prop)\<rbrakk> \<Longrightarrow> pp_e_holds (gi_T9_lower_value ?C ?H \<acute> ?p) ?w = (\<exists>X. Elem X (pp_e_domain pp_e_unary_type) \<and> (\<exists>q. Elem q (pp_e_domain Prop) \<and> gi_M1_exact_Pure ?C pp_e_unary_type ?w X \<and> pp_e_holds (?H \<acute> X) ?w \<and> pp_e_holds (gi_T9_J_value ?C \<acute> q) ?w \<and> pp_e_eqv Prop ?w ?p (X \<acute> q)))
+gi_T9_native_purity.gi_T9_core_at_root(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?A \<in> gb_T6_core ?G\<rbrakk> \<Longrightarrow> gi_exact_valuation [] (gi_exact_goodman_denote ?C ?G (gi_exact_default_assignment ?G) ?A)
+gi_T9_native_purity.gi_T9_closed_logical_value_pure(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; [] \<turnstile> ?M : ?\<sigma>; pp_logical_vocabulary ?M\<rbrakk> \<Longrightarrow> pp_e_closed_den ?M \<in> gi_T9_root_pure ?C ?\<sigma>
+gi_T9_native_purity.gi_T9_closed_source_axiom_at_root(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; [] \<turnstile> ?M : Prop; gi_goodman_names ?k; consts_of ?M \<subseteq> {pp_pure_name, pp_fun_name}; gi_to_book ?G [] ?k ?M \<in> gb_T6_core ?G\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval ?C pp_e_closed_env ?M) []
+gi_T9_native_purity.gi_T9_root_application_closed(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?f \<in> gi_T9_root_pure ?C (?\<sigma> \<rightarrow>\<^sub>o ?\<tau>); ?x \<in> gi_T9_root_pure ?C ?\<sigma>\<rbrakk> \<Longrightarrow> ?f \<acute> ?x \<in> gi_T9_root_pure ?C ?\<tau>
+gi_T9_native_purity.gi_T9_root_Pure_pure(1):
+gi_T9_native_purity ?C ?G \<Longrightarrow> ?C pp_pure_name (pp_e_unary_type \<rightarrow>\<^sub>o Prop) \<in> gi_T9_root_pure ?C (pp_e_unary_type \<rightarrow>\<^sub>o Prop)
+gi_T9_native_purity.gi_T9_J_value_pure(1):
+gi_T9_native_purity ?C ?G \<Longrightarrow> gi_T9_J_value ?C \<in> gi_T9_root_pure ?C pp_e_unary_type
+gi_T9_native_purity.gi_T9_lower_value_pure(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?H \<in> gi_T9_root_pure ?C (pp_e_unary_type \<rightarrow>\<^sub>o Prop)\<rbrakk> \<Longrightarrow> gi_T9_lower_value ?C ?H \<in> gi_T9_root_pure ?C pp_e_unary_type
+gi_T9_PC_witness_spec(1):
+\<lbrakk>gi_T9_full_unary_PC ?C; ?A \<subseteq> gi_T9_root_pure ?C pp_e_unary_type\<rbrakk> \<Longrightarrow> gi_T9_PC_witness ?C ?A \<in> gi_T9_root_pure ?C (pp_e_unary_type \<rightarrow>\<^sub>o Prop)
+gi_T9_PC_witness_spec(2):
+\<lbrakk>gi_T9_full_unary_PC ?C; ?A \<subseteq> gi_T9_root_pure ?C pp_e_unary_type; Elem ?X (pp_e_domain pp_e_unary_type)\<rbrakk> \<Longrightarrow> pp_e_holds (gi_T9_PC_witness ?C ?A \<acute> ?X) [] = (?X \<in> ?A)
+gi_T9_native_purity.gi_T9_PC_lowered_pure(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C; ?A \<subseteq> gi_T9_root_pure ?C pp_e_unary_type\<rbrakk> \<Longrightarrow> gi_T9_PC_lowered ?C ?A \<in> gi_T9_root_pure ?C pp_e_unary_type
+gi_T9_native_purity.gi_T9_PC_lowered_spec(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C; ?A \<subseteq> gi_T9_root_pure ?C pp_e_unary_type; Elem ?p (pp_e_domain Prop)\<rbrakk> \<Longrightarrow> pp_e_holds (gi_T9_PC_lowered ?C ?A \<acute> ?p) [] = (\<exists>X\<in>?A. \<exists>q. Elem q (pp_e_domain Prop) \<and> pp_e_holds (gi_T9_J_value ?C \<acute> q) [] \<and> ?p = X \<acute> q)

@@ -1,0 +1,18 @@
+EXACT-GENERIC-FUN-PRIME-AUDIT: 16 clean endpoints
+SCOPE: Complement closure of the complete exact logical stock, freeness and fun-prime of the ACTUAL chosen pp_e_generic_raw_seed, exact root-seed extraction, and actual generic Fun-to-fun-prime at the root. Not merely existence of some separator. HOL-ZF foundations retained; no identification with an arbitrary Theorem-10.1 glued assignment, no every-view claim, no PP.
+gi_generic_complement_term_type(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_generic_complement_term_logical(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_generic_complement_raw(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_generic_complement_closed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_operator_index_in_generic_stock(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_generic_seed_index_recombination(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_generic_seed_vanishing_operator_zero(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_generic_raw_seed_free(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_generic_raw_seed_fun_prime(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_generic_raw_seed_separates(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_generic_root_seed_extract(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_generic_root_seed_fun_prime(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_generic_seed_native_fun_prime(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_generic_seed_at_root(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_generic_fundamental_root_fun_prime(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_generic_Fun_implies_fun_prime_root(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3

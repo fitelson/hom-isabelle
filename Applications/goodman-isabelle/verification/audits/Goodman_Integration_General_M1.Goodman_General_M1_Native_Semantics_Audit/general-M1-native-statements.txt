@@ -1,0 +1,24 @@
+gi_M1_book_model.gi_book_Pure_constant(1):
+\<lbrakk>gi_M1_book_model ?domain ?app ?G ?denote ?V ?kappa ?g; book_env_typed ?domain ?G ?h\<rbrakk> \<Longrightarrow> ?denote ?h (gb_Pure ?\<sigma>) = ?denote ?g (gb_Pure ?\<sigma>)
+gi_M1_book_model.gi_book_Fun_constant(1):
+\<lbrakk>gi_M1_book_model ?domain ?app ?G ?denote ?V ?kappa ?g; book_env_typed ?domain ?G ?h\<rbrakk> \<Longrightarrow> ?denote ?h (gb_Fun Prop) = ?denote ?g (gb_Fun Prop)
+gi_M1_book_model.gi_book_pure_truth(1):
+\<lbrakk>gi_M1_book_model ?domain ?app ?G ?denote ?V ?kappa ?g; book_env_typed ?domain ?G ?h; book_in_language book_minimal_logical_type UNIV gb_signature ?G ?A ?\<sigma>\<rbrakk> \<Longrightarrow> ?V (?denote ?h (gb_pure ?\<sigma> ?A)) = gi_M1_book_model.gi_book_Pure ?app ?denote ?V ?g ?\<sigma> (?denote ?h ?A)
+gi_M1_book_model.gi_book_fun_truth(1):
+\<lbrakk>gi_M1_book_model ?domain ?app ?G ?denote ?V ?kappa ?g; book_env_typed ?domain ?G ?h; book_theory_formula gb_signature ?G ?A\<rbrakk> \<Longrightarrow> ?V (?denote ?h (gb_fun Prop ?A)) = gi_M1_book_model.gi_book_Fun ?app ?denote ?V ?g (?denote ?h ?A)
+gi_M1_book_model.gi_book_unary_application(1):
+\<lbrakk>gi_M1_book_model ?domain ?app ?G ?denote ?V ?kappa ?g; book_env_typed ?domain ?G ?h; book_in_language book_minimal_logical_type UNIV gb_signature ?G ?F gb_unary; book_theory_formula gb_signature ?G ?A\<rbrakk> \<Longrightarrow> ?denote ?h (NApp ?F ?A) = ?app Prop Prop (?denote ?h ?F) (?denote ?h ?A)
+gi_M1_book_model.gi_book_fn59_liar_clause(1):
+\<lbrakk>gi_M1_book_model ?domain ?app ?G ?denote ?V ?kappa ?g; ?p \<in> ?domain Prop\<rbrakk> \<Longrightarrow> ?V (?app Prop Prop (?denote ?g (gi_M1_native_fn59_liar ?G)) ?p) = (\<forall>X\<in>?domain gb_unary. \<forall>q\<in>?domain Prop. gi_M1_book_model.gi_book_Pure ?app ?denote ?V ?g gb_unary X \<and> gi_M1_book_model.gi_book_Fun ?app ?denote ?V ?g q \<and> book_leibniz_equiv ?domain ?app ?V Prop ?p (?app Prop Prop X q) \<longrightarrow> \<not> ?V (?app Prop Prop X ?p))
+gi_M1_book_model.gi_book_QSS_clause(1):
+gi_M1_book_model ?domain ?app ?G ?denote ?V ?kappa ?g \<Longrightarrow> ?V (?denote ?g (gb_QSS ?G)) = (\<forall>X\<in>?domain gb_unary. \<forall>Y\<in>?domain gb_unary. \<forall>r\<in>?domain Prop. gi_M1_book_model.gi_book_Pure ?app ?denote ?V ?g gb_unary X \<and> gi_M1_book_model.gi_book_Pure ?app ?denote ?V ?g gb_unary Y \<and> gi_M1_book_model.gi_book_Fun ?app ?denote ?V ?g r \<longrightarrow> book_leibniz_equiv ?domain ?app ?V Prop (?app Prop Prop X r) (?app Prop Prop Y r) \<longrightarrow> book_leibniz_equiv ?domain ?app ?V gb_unary X Y)
+gi_M1_book_model.gi_book_unique_fundamental_clause(1):
+gi_M1_book_model ?domain ?app ?G ?denote ?V ?kappa ?g \<Longrightarrow> ?V (?denote ?g (gb_unique_fundamental ?G Prop)) = (\<exists>r\<in>?domain Prop. gi_M1_book_model.gi_book_Fun ?app ?denote ?V ?g r \<and> (\<forall>q\<in>?domain Prop. gi_M1_book_model.gi_book_Fun ?app ?denote ?V ?g q \<longrightarrow> book_leibniz_equiv ?domain ?app ?V Prop q r))
+gi_M1_book_model.gi_book_fn59_liar_member(1):
+gi_M1_book_model ?domain ?app ?G ?denote ?V ?kappa ?g \<Longrightarrow> ?denote ?g (gi_M1_native_fn59_liar ?G) \<in> ?domain gb_unary
+gi_M1_book_model.gi_book_fn59_diagonal_contradiction(1):
+\<lbrakk>gi_M1_book_model ?domain ?app ?G ?denote ?V ?kappa ?g; gi_M1_book_model.gi_book_Pure ?app ?denote ?V ?g gb_unary (?denote ?g (gi_M1_native_fn59_liar ?G)); ?V (?denote ?g (gb_QSS ?G)); ?V (?denote ?g (gb_unique_fundamental ?G Prop))\<rbrakk> \<Longrightarrow> False
+gi_M1_book_model.gi_book_native_fn59_contradiction(1):
+\<lbrakk>gi_M1_book_model ?domain ?app ?G ?denote ?V ?kappa ?g; ?V (?denote ?g (gb_pure gb_unary (gi_M1_native_fn59_liar ?G))); ?V (?denote ?g (gb_QSS ?G)); ?V (?denote ?g (gb_unique_fundamental ?G Prop))\<rbrakk> \<Longrightarrow> False
+gi_M1_book_model.gi_book_fn59_from_native_extension_soundness(1):
+\<lbrakk>gi_M1_book_model ?domain ?app ?G ?denote ?V ?kappa ?g; \<And>A. goodman_book_proves gb_signature ?G (gi_M1_fn59_native_axioms ?G) A \<Longrightarrow> ?V (?denote ?g A); ?V (?denote ?g (gb_QSS ?G)); ?V (?denote ?g (gb_unique_fundamental ?G Prop))\<rbrakk> \<Longrightarrow> False

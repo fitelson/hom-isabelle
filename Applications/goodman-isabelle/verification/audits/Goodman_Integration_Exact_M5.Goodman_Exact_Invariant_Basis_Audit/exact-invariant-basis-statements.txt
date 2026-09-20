@@ -1,0 +1,24 @@
+gi_exact_invariant_basis.gi_basis_pure_member(1):
+\<lbrakk>gi_exact_invariant_basis ?B; gi_basis_pure ?B ?\<sigma> ?w ?x\<rbrakk> \<Longrightarrow> Elem ?x (pp_e_domain ?\<sigma>)
+gi_exact_invariant_basis.gi_basis_pureI(1):
+\<lbrakk>gi_exact_invariant_basis ?B; ?x \<in> ?B ?\<sigma>\<rbrakk> \<Longrightarrow> gi_basis_pure ?B ?\<sigma> ?w ?x
+gi_exact_invariant_basis.gi_basis_pure_persistent(1):
+\<lbrakk>gi_exact_invariant_basis ?B; gi_basis_pure ?B ?\<sigma> ?w ?x; prefix ?w ?v\<rbrakk> \<Longrightarrow> gi_basis_pure ?B ?\<sigma> ?v ?x
+gi_exact_invariant_basis.gi_basis_pure_admissible(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_predicate_admissible ?\<sigma> (gi_basis_pure ?B ?\<sigma>)
+gi_exact_invariant_basis.gi_basis_pure_application_closed(1):
+\<lbrakk>gi_exact_invariant_basis ?B; gi_basis_pure ?B (?\<sigma> \<rightarrow>\<^sub>o ?\<tau>) ?w ?f; gi_basis_pure ?B ?\<sigma> ?w ?x\<rbrakk> \<Longrightarrow> gi_basis_pure ?B ?\<tau> ?w (?f \<acute> ?x)
+gi_exact_invariant_basis.gi_basis_pure_logical_denotation(1):
+\<lbrakk>gi_exact_invariant_basis ?B; [] \<turnstile> ?M : ?\<sigma>; pp_logical_vocabulary ?M\<rbrakk> \<Longrightarrow> gi_basis_pure ?B ?\<sigma> ?w (pp_e_closed_den ?M)
+gi_exact_invariant_basis.gi_basis_contains_logical_eval(1):
+\<lbrakk>gi_exact_invariant_basis ?B; [] \<turnstile> ?M : ?\<sigma>; pp_logical_vocabulary ?M\<rbrakk> \<Longrightarrow> gi_basis_pure ?B ?\<sigma> ?w (pp_e_eval ?C ?\<rho> ?M)
+gi_exact_invariant_basis.gi_basis_contains_native_closed_logical(1):
+\<lbrakk>gi_exact_invariant_basis ?B; gb_closed_logical ?G ?\<sigma> ?A\<rbrakk> \<Longrightarrow> gi_basis_pure ?B ?\<sigma> ?w (gi_exact_goodman_denote ?C ?G ?g ?A)
+gi_exact_invariant_basis.gi_basis_pure_classifier_member(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> Elem (pp_e_classifier ?\<sigma> (gi_basis_pure ?B ?\<sigma>)) (pp_e_domain (?\<sigma> \<rightarrow>\<^sub>o Prop))
+gi_exact_invariant_basis.gi_basis_pure_iff_action_member(1):
+\<lbrakk>gi_exact_invariant_basis ?B; Elem ?x (pp_e_domain ?\<sigma>)\<rbrakk> \<Longrightarrow> gi_basis_pure ?B ?\<sigma> ?w ?x = (pp_b_action ?\<sigma> (rev ?w) ?x \<in> ?B ?\<sigma>)
+gi_exact_invariant_basis.gi_basis_pure_root_iff(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> gi_basis_pure ?B ?\<sigma> [] ?x = (?x \<in> ?B ?\<sigma>)
+gi_exact_invariant_basis.gi_basis_pure_all_worlds_iff_root(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> (\<forall>w. gi_basis_pure ?B ?\<sigma> w ?x) = gi_basis_pure ?B ?\<sigma> [] ?x

@@ -1,0 +1,46 @@
+gb_fun_prime_with_names_language:
+\<lbrakk>sg_rich ?G; ?G ?x = gb_unary; ?G ?y = gb_unary; book_theory_formula gb_signature ?G ?p\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G (gb_fun_prime_with_names ?G ?x ?y ?p)
+gb_fun_prime_with_names_fv:
+named_fv (gb_fun_prime_with_names ?G ?x ?y ?p) = named_fv ?p - {?x, ?y}
+gb_exists_fun_prime_names:
+sg_rich ?G \<Longrightarrow> distinct [gb_x ?G Prop, gb_y ?G Prop gb_unary, gb_z ?G Prop gb_unary gb_unary]
+gb_exists_fun_prime_language:
+sg_rich ?G \<Longrightarrow> book_theory_formula gb_signature ?G (gb_exists_fun_prime ?G)
+gb_exists_fun_prime_closed:
+named_fv (gb_exists_fun_prime ?G) = {}
+gi_exists_fun_prime_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k pp_exists_fun_prime = gb_exists_fun_prime ?G
+gi_repaired_native_exists_fun_prime:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_recombination_PP_zeroary_exhaustion ?G) (gb_exists_fun_prime ?G)
+gi_central_T6_language:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?S \<subseteq> gi_T6_extra_inventory; ?B \<in> gb_central_T6_extension ?G ?k ?S\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?B
+gi_central_T6_support:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?S \<subseteq> gi_T6_extra_inventory; ?B \<in> pp_recombination_zeroary_exhaustion_axioms \<union> ?S\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gb_central_T6_extension ?G ?k ?S) (gi_to_book ?G [] ?k ?B)
+gi_central_T6_refutation_transfer:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?S \<subseteq> gi_T6_extra_inventory; [] ; pp_recombination_zeroary_exhaustion_axioms \<union> ?S \<turnstile>\<^sub>CEV\<^sup>+ ObjFalse\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_central_T6_extension ?G ?k ?S) (book_bottom ?G)
+gi_central_T6_Inv_refutation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_central_T6_extension ?G ?k {pp_L2, pp_Inv}) (book_bottom ?G)
+gi_central_T6_TU_refutation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_central_T6_extension ?G ?k {pp_L2, pp_TU}) (book_bottom ?G)
+gi_central_T6_WI_refutation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_central_T6_extension ?G ?k {pp_L2, pp_WI}) (book_bottom ?G)
+gi_central_T6_RS_refutation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_central_T6_extension ?G ?k {pp_strong_L2, pp_RS}) (book_bottom ?G)
+CEV_QSS_modal_core_from_recombination:
+\<lbrakk>pp_recombination_PP_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?X : pp_unary_ty; ?\<Gamma> \<turnstile> ?Y : pp_unary_ty; ?\<Gamma> \<turnstile> ?r : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (Conj (pp_pure pp_unary_ty ?X) (Conj (pp_pure pp_unary_ty ?Y) (pp_fun Prop ?r))) (Imp (Eq Prop (App ?X ?r) (App ?Y ?r)) (Conj (mf_condition Prop ?X ?Y) (pp_pointwise_necessary_identity ?X ?Y)))
+CEV_QSS_from_recombination_with_zeroary_exhaustion_parameter:
+\<lbrakk>pp_recombination_zeroary_exhaustion_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?X : pp_unary_ty; ?\<Gamma> \<turnstile> ?Y : pp_unary_ty; ?\<Gamma> \<turnstile> ?r : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_QSS_instance ?X ?Y ?r
+CEV_QSS_from_recombination_with_zeroary_exhaustion:
+?\<Gamma> ; pp_recombination_zeroary_exhaustion_axioms \<turnstile>\<^sub>CEV\<^sup>+ pp_QSS
+CEV_exists_fun_prime_from_QSS_and_unique_fundamentality:
+\<lbrakk>\<And>\<Delta>. \<Delta> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_QSS; pp_unique_fundamental Prop \<in> ?T\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_exists_fun_prime
+CEV_exists_fun_prime_from_recombination_with_zeroary_exhaustion:
+?\<Gamma> ; pp_recombination_zeroary_exhaustion_axioms \<turnstile>\<^sub>CEV\<^sup>+ pp_exists_fun_prime
+CEV_Goodman_T6_Inv_repaired_central_stock:
+[] ; pp_repaired_T6_Inv_axioms \<turnstile>\<^sub>CEV\<^sup>+ ObjFalse
+CEV_Goodman_T6_TU_repaired_central_stock:
+[] ; pp_repaired_T6_TU_axioms \<turnstile>\<^sub>CEV\<^sup>+ ObjFalse
+CEV_Goodman_T6_WI_repaired_central_stock:
+[] ; pp_repaired_T6_WI_axioms \<turnstile>\<^sub>CEV\<^sup>+ ObjFalse
+CEV_Goodman_T6_RS_repaired_central_stock:
+[] ; pp_repaired_T6_RS_axioms \<turnstile>\<^sub>CEV\<^sup>+ ObjFalse

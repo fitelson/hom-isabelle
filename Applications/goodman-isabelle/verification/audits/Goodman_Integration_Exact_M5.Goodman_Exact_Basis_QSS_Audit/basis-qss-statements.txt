@@ -1,0 +1,28 @@
+gi_exact_invariant_basis.gi_basis_fundamental_action:
+\<lbrakk>gi_exact_invariant_basis ?B; Elem ?r (pp_e_domain Prop); gi_basis_fundamental_at ?B Prop ?w ?r\<rbrakk> \<Longrightarrow> pp_b_action Prop (rev ?w) ?r = gi_basis_root_seed ?B
+gi_exact_invariant_basis.gi_basis_QSS_at_world:
+\<lbrakk>gi_exact_invariant_basis ?B; gi_basis_pure ?B gb_unary ?w ?X; gi_basis_pure ?B gb_unary ?w ?Y; Elem ?r (pp_e_domain Prop); gi_basis_fundamental_at ?B Prop ?w ?r; pp_e_eqv Prop ?w (?X \<acute> ?r) (?Y \<acute> ?r)\<rbrakk> \<Longrightarrow> pp_e_eqv gb_unary ?w ?X ?Y
+gi_exact_invariant_basis.gi_basis_QSS_holds_iff:
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_holds (pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> pp_QSS) ?w = (\<forall>X. Elem X (pp_e_domain gb_unary) \<longrightarrow> (\<forall>Y. Elem Y (pp_e_domain gb_unary) \<longrightarrow> (\<forall>r. Elem r (pp_e_domain Prop) \<longrightarrow> gi_basis_pure ?B gb_unary ?w X \<and> gi_basis_pure ?B gb_unary ?w Y \<and> gi_basis_fundamental_at ?B Prop ?w r \<longrightarrow> pp_e_eqv Prop ?w (X \<acute> r) (Y \<acute> r) \<longrightarrow> pp_e_eqv gb_unary ?w X Y)))
+gi_exact_invariant_basis.gi_basis_QSS_holds:
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_holds (pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> pp_QSS) ?w
+gi_exact_invariant_basis.gi_basis_fun_prime_holds_iff:
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_holds (pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> (pp_fun_prime ?M)) ?w = (\<forall>X. Elem X (pp_e_domain gb_unary) \<longrightarrow> (\<forall>Y. Elem Y (pp_e_domain gb_unary) \<longrightarrow> gi_basis_pure ?B gb_unary ?w X \<and> gi_basis_pure ?B gb_unary ?w Y \<longrightarrow> pp_e_eqv Prop ?w (X \<acute> pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> ?M) (Y \<acute> pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> ?M) \<longrightarrow> pp_e_eqv gb_unary ?w X Y))
+gi_exact_invariant_basis.gi_basis_fundamental_fun_prime_holds:
+\<lbrakk>gi_exact_invariant_basis ?B; Elem ?r (pp_e_domain Prop); gi_basis_fundamental_at ?B Prop ?w ?r\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval (gi_basis_internal_constants ?B) (extend_env ?r ?\<rho>) (pp_fun_prime (Var 0))) ?w
+gi_exact_invariant_basis.gi_basis_moving_seed_fun_prime_at_world:
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_holds (pp_e_eval (gi_basis_internal_constants ?B) (extend_env (gi_basis_seed_at ?B ?w) ?\<rho>) (pp_fun_prime (Var 0))) ?w
+gi_exact_invariant_basis.gi_basis_exists_fun_prime_holds:
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_holds (pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> pp_exists_fun_prime) ?w
+gi_exact_invariant_basis.gi_basis_native_QSS_gvalid:
+\<lbrakk>gi_exact_invariant_basis ?B; sg_rich ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid (gi_basis_internal_constants ?B) ?G (gb_QSS ?G)
+gi_exact_invariant_basis.gi_basis_native_exists_fun_prime_gvalid:
+\<lbrakk>gi_exact_invariant_basis ?B; sg_rich ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid (gi_basis_internal_constants ?B) ?G (gb_exists_fun_prime ?G)
+gi_exact_expanded_stock.gi_M5_rebuilt_native_QSS_gvalid:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; sg_rich ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid (gi_M5_rebuilt_constants ?k ?K) ?G (gb_QSS ?G)
+gi_exact_expanded_stock.gi_M5_rebuilt_native_exists_fun_prime_gvalid:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; sg_rich ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid (gi_M5_rebuilt_constants ?k ?K) ?G (gb_exists_fun_prime ?G)
+gi_exact_M5_rebuilt_QSS_gvalid:
+sg_rich ?G \<Longrightarrow> gi_exact_goodman_global_valid (gi_M5_exotic_constants ?R) ?G (gb_QSS ?G)
+gi_exact_M5_rebuilt_exists_fun_prime_gvalid:
+sg_rich ?G \<Longrightarrow> gi_exact_goodman_global_valid (gi_M5_exotic_constants ?R) ?G (gb_exists_fun_prime ?G)

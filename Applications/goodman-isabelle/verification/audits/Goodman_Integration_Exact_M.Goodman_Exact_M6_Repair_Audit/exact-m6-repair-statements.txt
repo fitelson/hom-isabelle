@@ -1,0 +1,48 @@
+gi_exact_M6_fun_prime_preimage(1):
+pp_e_exact_fun_prime (pp_view ?i ?p) \<Longrightarrow> pp_e_exact_fun_prime ?p
+gi_exact_M6_fun_prime_not_extreme(1):
+pp_e_exact_fun_prime ?p \<Longrightarrow> ?p \<noteq> {}
+gi_exact_M6_fun_prime_not_extreme(2):
+pp_e_exact_fun_prime ?p \<Longrightarrow> ?p \<noteq> UNIV
+gi_M6_fresh_letter(1):
+(\<And>n. n \<notin> set ?i \<union> set ?j \<Longrightarrow> ?thesis) \<Longrightarrow> ?thesis
+gi_M6_fresh_branch_view(1):
+?n \<notin> set ?i \<Longrightarrow> pp_view [?n] (pp_lift [?n] ?r \<union> {?i}) = ?r
+gi_M6_fresh_branch_excludes(1):
+\<lbrakk>?n \<notin> set ?j; ?i \<noteq> ?j\<rbrakk> \<Longrightarrow> ?j \<notin> pp_lift [?n] ?r \<union> {?i}
+gi_exact_M6_fun_prime_truth_separates(1):
+?i \<noteq> ?j \<Longrightarrow> \<exists>p. pp_e_exact_fun_prime p \<and> ?i \<in> p \<and> ?j \<notin> p
+gi_exact_M6_fun_prime_separates_distinct_substitutions(1):
+?i \<noteq> ?j \<Longrightarrow> \<exists>p. pp_e_exact_fun_prime p \<and> pp_view ?i p \<noteq> pp_view ?j p
+gi_native_M6_fun_prime_separates_distinct_substitutions(1):
+\<lbrakk>sg_rich ?G; ?i \<noteq> ?j\<rbrakk> \<Longrightarrow> \<exists>p. gi_stock_fun_prime (gi_exact_native_operator_stock ?G) p \<and> pp_view ?i p \<noteq> pp_view ?j p
+gi_M6_orbit_diagonal_differs(1):
+pp_view ?i ?p \<noteq> gi_M6_orbit_diagonal ?p
+gi_M6_single_proposition_independence_fails(1):
+\<exists>q. \<forall>i. pp_view i ?p \<noteq> q
+gi_M6_equivariant_empty_extreme(1):
+pp_equivariant_operator ?F \<Longrightarrow> ?F {} = {} \<or> ?F {} = UNIV
+gi_exact_M6_pure_empty_extreme(1):
+?F \<in> pp_e_exact_operator_stock \<Longrightarrow> ?F {} = {} \<or> ?F {} = UNIV
+gi_M6_reversible_orbit_subset_images(1):
+gi_M6_pure_reversible_orbit ?S ?p \<subseteq> gi_M6_pure_images ?S ?p
+gi_M6_copy_views(1):
+pp_view [0] (gi_M6_left_copy ?r) = ?r
+gi_M6_copy_views(2):
+pp_view [1] (gi_M6_left_copy ?r) = {}
+gi_M6_copy_views(3):
+pp_view [0] (gi_M6_two_copies ?r) = ?r
+gi_M6_copy_views(4):
+pp_view [1] (gi_M6_two_copies ?r) = ?r
+gi_M6_views_preserve_inclusion(1):
+?p \<subseteq> ?q \<Longrightarrow> pp_view ?i ?p \<subseteq> pp_view ?i ?q
+gi_exact_M6_fun_prime_strict_pair(1):
+pp_e_exact_fun_prime ?r \<Longrightarrow> pp_e_exact_fun_prime (gi_M6_left_copy ?r) \<and> pp_e_exact_fun_prime (gi_M6_two_copies ?r) \<and> gi_M6_left_copy ?r \<subset> gi_M6_two_copies ?r \<and> gi_M6_two_copies ?r \<notin> gi_M6_pure_images pp_e_exact_operator_stock (gi_M6_left_copy ?r) \<and> (\<forall>i. pp_view i (gi_M6_left_copy ?r) \<subseteq> pp_view i (gi_M6_two_copies ?r))
+gi_exact_M6_strict_pair_exists(1):
+\<exists>p q. pp_e_exact_fun_prime p \<and> pp_e_exact_fun_prime q \<and> p \<subset> q \<and> q \<notin> gi_M6_pure_reversible_orbit pp_e_exact_operator_stock p \<and> (\<forall>i. pp_view i p \<subseteq> pp_view i q)
+gi_native_M6_strict_pair_exists(1):
+sg_rich ?G \<Longrightarrow> \<exists>p q. gi_stock_fun_prime (gi_exact_native_operator_stock ?G) p \<and> gi_stock_fun_prime (gi_exact_native_operator_stock ?G) q \<and> p \<subset> q \<and> q \<notin> gi_M6_pure_reversible_orbit (gi_exact_native_operator_stock ?G) p \<and> (\<forall>i. pp_view i p \<subseteq> pp_view i q)
+gi_M6_joint_assignment_blocked_by_inclusion(1):
+\<lbrakk>\<forall>i. pp_view i ?p \<subseteq> pp_view i ?q; \<not> ?A \<subseteq> ?B\<rbrakk> \<Longrightarrow> \<nexists>i. pp_view i ?p = ?A \<and> pp_view i ?q = ?B
+gi_exact_M6_joint_assignment_counterexample(1):
+\<exists>p q. pp_e_exact_fun_prime p \<and> pp_e_exact_fun_prime q \<and> q \<notin> gi_M6_pure_reversible_orbit pp_e_exact_operator_stock p \<and> (\<nexists>i. pp_view i p = UNIV \<and> pp_view i q = {})

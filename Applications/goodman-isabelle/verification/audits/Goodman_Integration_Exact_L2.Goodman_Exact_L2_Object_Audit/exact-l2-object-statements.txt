@@ -1,0 +1,12 @@
+gi_exact_L2_root_instance:
+\<lbrakk>pp_e_holds (pp_e_eval pp_e_generic_internal_constants ?\<rho> pp_L2) []; Elem ?X (pp_e_domain gb_unary); Elem ?Y (pp_e_domain gb_unary); Elem ?p (pp_e_domain Prop); Elem ?q (pp_e_domain Prop); pp_e_closed_logical_stock gb_unary [] ?X; pp_e_closed_logical_stock gb_unary [] ?Y; pp_e_exact_fun_prime (pp_n_bacon_extract ?p); pp_e_exact_fun_prime (pp_n_bacon_extract ?q); ?X \<acute> ?p = ?Y \<acute> ?q\<rbrakk> \<Longrightarrow> pp_e_exact_same_kind (pp_e_raw_operator ?X) (pp_e_raw_operator ?Y)
+gi_exact_L2_root_implies_fixed_stock:
+pp_e_holds (pp_e_eval pp_e_generic_internal_constants ?\<rho> pp_L2) [] \<Longrightarrow> pp_e_exact_L2
+gi_exact_generic_L2_false_at_root:
+\<not> pp_e_holds (pp_e_eval pp_e_generic_internal_constants ?\<rho> pp_L2) []
+gi_exact_native_L2_formula_false_at_root:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> \<not> gi_exact_valuation [] (gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g (gi_to_book ?G [] ?k pp_L2))
+gi_exact_native_L2_formula_not_global:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> \<not> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G (gi_to_book ?G [] ?k pp_L2)
+gi_exact_QLN_background_not_proves_L2:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> \<not> goodman_book_proves gb_signature ?G (gi_native_QLN_background ?G) (gi_to_book ?G [] ?k pp_L2)

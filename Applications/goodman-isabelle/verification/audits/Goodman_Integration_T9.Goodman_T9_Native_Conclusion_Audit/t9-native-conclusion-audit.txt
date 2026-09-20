@@ -1,0 +1,11 @@
+T9-NATIVE-CONCLUSION-AUDIT: 9 clean endpoints
+SCOPE: T9 bounds and finite-kinds/exponential-group dichotomy for actual root-pure exact unary values, actual kinds and pure inverse group. Explicit native translated pp_L2 and pp_exists_fun_prime root inputs supply semantic L2 and the typed J witness. Native purity locale, rich variable stock, typed C/native environment, name guards, and FULL external unary PC remain. Infinitude is an additional hypothesis only in the final corollary. HOL-ZF foundations retained; not all arbitrary Henkin interfaces, a derivation of PC, or model existence.
+gi_T9_exists_fun_prime_vocabulary(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T9_native_exists_fun_prime_language(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+pp_e_constants.gi_T9_exists_fun_prime_formula_root_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+pp_e_constants.gi_T9_native_exists_fun_prime_root_witness(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_T9_native_purity.gi_T9_native_formula_counting_chain(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T9_native_purity.gi_T9_native_formula_counting_chain(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T9_native_purity.gi_T9_native_formula_counting_bound(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T9_native_purity.gi_T9_native_formula_cardinal_dichotomy(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T9_native_purity.gi_T9_native_formula_infinite_kinds_bound(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7

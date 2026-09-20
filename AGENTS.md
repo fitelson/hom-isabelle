@@ -1,8 +1,11 @@
 # Instructions for work in this repository
 
 Read README.md, STATUS.md, CONTRIBUTING.md, and docs/SOURCE_CORRESPONDENCE.md.
-This is a standalone H/Classicism core repository. Do not introduce
-applications or import from the parent research checkout.
+This repository's main development is the H/Classicism core. Applications
+belong only under Applications/ and have their own instructions and checks.
+The core must not import an application or the parent research checkout.
+Goodman is an ordinary subfolder at Applications/goodman-isabelle, not a
+submodule. Its presence does not expand the core's formal or audit scope.
 
 Use the source book and paper, with the editions recorded in
 docs/SOURCES_AND_CREDITS.md. Preserve source notation in Unicode comments.
@@ -11,6 +14,9 @@ claims, or HOL/HOL-ZF foundations.
 
 Use ./check_isabelle.sh. Every Isabelle build, export and graph extraction
 must be serialized. Sessions retain timeout=60; split slow proofs.
+The root checker selects the core. Check Goodman separately with
+./Applications/goodman-isabelle/check_isabelle.sh --export, also serially.
+Do not change the core ROOT merely to include an application in its build.
 No sorry, oops, admitted facts, quick_and_dirty, new oracles, or unexplained
 axiomatizations. Check the actual theorem statement before reporting scope.
 

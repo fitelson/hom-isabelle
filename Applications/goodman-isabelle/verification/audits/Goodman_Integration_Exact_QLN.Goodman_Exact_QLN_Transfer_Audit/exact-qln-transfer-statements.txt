@@ -1,0 +1,32 @@
+pp_e_constants.gi_exact_goodman_closed_global_translation:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; [] \<turnstile> ?M : Prop; gi_goodman_names ?k; consts_of ?M \<subseteq> {pp_pure_name, pp_fun_name}; \<And>w. pp_e_holds (pp_e_eval ?C pp_e_closed_env ?M) w\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid ?C ?G (gi_to_book ?G [] ?k ?M)
+pp_e_constants.gi_exact_goodman_empty_equivalence_transport:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_theory_formula gb_signature ?G ?A; book_theory_formula gb_signature ?G ?B; goodman_book_proves (\<lambda>_. UNIV) ?G {} (book_iff ?G ?A ?B); gi_exact_goodman_global_valid ?C ?G ?A\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid ?C ?G ?B
+pp_e_constants.gi_exact_goodman_closed_equivalence_transfer:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; [] \<turnstile> ?M : Prop; gi_goodman_names ?k; consts_of ?M \<subseteq> {pp_pure_name, pp_fun_name}; gi_constants_admitted ?k gb_signature ?M; book_theory_formula gb_signature ?G ?B; goodman_book_proves (\<lambda>_. UNIV) ?G {} (book_iff ?G (gi_to_book ?G [] ?k ?M) ?B); \<And>w. pp_e_holds (pp_e_eval ?C pp_e_closed_env ?M) w\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid ?C ?G ?B
+gi_exact_zeroary_recombination_vocabulary:
+consts_of pp_zeroary_recombination \<subseteq> {pp_pure_name, pp_fun_name}
+gi_exact_unary_recombination_vocabulary:
+consts_of pp_unary_recombination \<subseteq> {pp_pure_name, pp_fun_name}
+gi_exact_zeroary_exhaustion_vocabulary:
+consts_of pp_zeroary_exhaustion \<subseteq> {pp_pure_name, pp_fun_name}
+gi_exact_unary_exhaustion_vocabulary:
+consts_of pp_unary_exhaustion \<subseteq> {pp_pure_name, pp_fun_name}
+gi_exact_zeroary_recombination_admitted:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_zeroary_recombination
+gi_exact_unary_recombination_admitted:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_unary_recombination
+gi_exact_zeroary_exhaustion_admitted:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_zeroary_exhaustion
+gi_exact_unary_exhaustion_admitted:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_unary_exhaustion
+gi_exact_QLN_constants:
+pp_e_constants pp_e_generic_internal_constants
+gi_exact_generic_zeroary_recombination_gvalid:
+sg_rich ?G \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G (gb_zeroary_recombination ?G)
+gi_exact_generic_unary_recombination_gvalid:
+sg_rich ?G \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G (gb_unary_recombination ?G)
+gi_exact_generic_zeroary_exhaustion_gvalid:
+sg_rich ?G \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G (gb_zeroary_exhaustion ?G)
+gi_exact_generic_unary_exhaustion_gvalid:
+sg_rich ?G \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G (gb_unary_exhaustion ?G)

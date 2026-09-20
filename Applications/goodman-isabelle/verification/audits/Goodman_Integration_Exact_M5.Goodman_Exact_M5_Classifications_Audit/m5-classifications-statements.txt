@@ -1,0 +1,28 @@
+gi_M5_negation_value:
+pp_e_eval ?C ?\<rho> pp_negation_operator = pp_e_closed_den pp_negation_operator
+gi_M5_identity_application:
+Elem ?p (pp_e_domain Prop) \<Longrightarrow> pp_e_closed_den pp_identity_operator \<acute> ?p = ?p
+gi_M5_negation_application_truth:
+Elem ?p (pp_e_domain Prop) \<Longrightarrow> pp_e_holds (pp_e_closed_den pp_negation_operator \<acute> ?p) ?w = (\<not> pp_e_holds ?p ?w)
+gi_M5_identity_at_root_implies_preserving:
+pp_e_eqv gb_unary [] ?X (pp_e_closed_den pp_identity_operator) \<Longrightarrow> \<forall>p. Elem p (pp_e_domain Prop) \<longrightarrow> pp_e_holds (?X \<acute> p) [] = pp_e_holds p []
+gi_M5_negation_at_root_implies_flipping:
+pp_e_eqv gb_unary [] ?X (pp_e_closed_den pp_negation_operator) \<Longrightarrow> \<forall>p. Elem p (pp_e_domain Prop) \<longrightarrow> pp_e_holds (?X \<acute> p) [] = (\<not> pp_e_holds p [])
+gi_M5_Inv_root_classifies_group_member:
+\<lbrakk>pp_e_holds (pp_e_eval ?C ?\<rho> pp_Inv) []; Elem ?X (pp_e_domain gb_unary); pp_e_holds (pp_e_eval ?C (extend_env ?X ?\<rho>) (pp_group_member (Var 0))) []\<rbrakk> \<Longrightarrow> pp_e_eqv gb_unary [] ?X (pp_e_closed_den pp_identity_operator) \<or> pp_e_eqv gb_unary [] ?X (pp_e_closed_den pp_negation_operator)
+gi_exact_M5_rebuilt_Inv_false_at_root:
+\<not> pp_e_holds (pp_e_eval (gi_M5_exotic_constants ?R) ?\<rho> pp_Inv) []
+gi_M5_Inv_vocabulary:
+consts_of pp_Inv \<subseteq> {pp_pure_name, pp_fun_name}
+gi_exact_M5_native_Inv_false_at_root:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> \<not> gi_exact_valuation [] (gi_exact_goodman_denote (gi_M5_exotic_constants ?R) ?G ?g (gi_to_book ?G [] ?cmap pp_Inv))
+gi_exact_M5_native_Inv_not_global:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap\<rbrakk> \<Longrightarrow> \<not> gi_exact_goodman_global_valid (gi_M5_exotic_constants ?R) ?G (gi_to_book ?G [] ?cmap pp_Inv)
+gi_M5_Inv_not_derivable_from_QLN_background:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap\<rbrakk> \<Longrightarrow> \<not> goodman_book_proves gb_signature ?G (gi_native_QLN_background ?G) (gi_to_book ?G [] ?cmap pp_Inv)
+gi_M5_WI_entails_TU:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G {gi_to_book ?G [] ?cmap pp_WI} (gi_to_book ?G [] ?cmap pp_TU)
+gi_M5_WI_not_derivable_from_QLN_background:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap\<rbrakk> \<Longrightarrow> \<not> goodman_book_proves gb_signature ?G (gi_native_QLN_background ?G) (gi_to_book ?G [] ?cmap pp_WI)
+gi_exact_M5_native_WI_not_global:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap\<rbrakk> \<Longrightarrow> \<not> gi_exact_goodman_global_valid (gi_M5_exotic_constants ?R) ?G (gi_to_book ?G [] ?cmap pp_WI)

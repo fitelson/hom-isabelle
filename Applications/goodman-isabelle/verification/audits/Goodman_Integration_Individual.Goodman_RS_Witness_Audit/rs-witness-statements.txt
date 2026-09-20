@@ -1,0 +1,48 @@
+gi_RS_plus_type:
+?\<Gamma> \<turnstile> gi_RS_plus : pp_unary_ty
+gi_RS_plus_builder_type:
+?\<Gamma> \<turnstile> gi_RS_plus_builder : (pp_unary_ty \<rightarrow>\<^sub>o Prop) \<rightarrow>\<^sub>o pp_unary_ty
+gi_RS_plus_builder_logical:
+pp_logical_vocabulary gi_RS_plus_builder
+gi_RS_plus_builder_beta:
+App gi_RS_plus_builder (pp_Pure pp_unary_ty) \<rightarrow>\<^sub>\<beta> gi_RS_plus
+gi_RS_plus_pure:
+pp_T6_core_PP_axioms \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_pure pp_unary_ty gi_RS_plus
+gi_RS_plus_shift:
+shift gi_RS_plus = gi_RS_plus
+gi_RS_plus_subst:
+subst ?s gi_RS_plus = gi_RS_plus
+gi_RS_plus_apply_type:
+?\<Gamma> \<turnstile> ?p : Prop \<Longrightarrow> ?\<Gamma> \<turnstile> App gi_RS_plus ?p : Prop
+gi_RS_plus_beta:
+compatible_step (\<rightarrow>\<^sub>\<beta>) (App gi_RS_plus ?p) (Conj ?p (pp_fun_prime ?p))
+gi_RS_plus_apply_iff:
+?\<Gamma> \<turnstile> ?p : Prop \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>CEV (App gi_RS_plus ?p \<longleftrightarrow>\<^sub>o Conj ?p (pp_fun_prime ?p))
+gi_RS_plus_elim:
+\<lbrakk>?\<Gamma> \<turnstile> ?p : Prop; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s App gi_RS_plus ?p\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s Conj ?p (pp_fun_prime ?p)
+gi_RS_plus_intro:
+\<lbrakk>?\<Gamma> \<turnstile> ?p : Prop; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s ?p; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_fun_prime ?p\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s App gi_RS_plus ?p
+gi_RS_plus_only_fun_prime:
+[] ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_spec_only_fun_prime gi_RS_plus
+gi_RS_plus_exist_intro:
+\<lbrakk>?\<Gamma> \<turnstile> ?p : Prop; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s ?p; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_fun_prime ?p\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_spec_instantiated gi_RS_plus
+gi_RS_plus_instantiated_from_fun_prime:
+\<lbrakk>pp_T6_core_PP_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?p : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (pp_fun_prime ?p) (pp_spec_instantiated gi_RS_plus)
+gi_RS_plus_instantiated:
+\<lbrakk>pp_T6_core_PP_axioms \<subseteq> ?T; pp_exists_fun_prime \<in> ?T\<rbrakk> \<Longrightarrow> [] ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_spec_instantiated gi_RS_plus
+gi_RS_standard_same_truth_equal:
+\<lbrakk>?\<Gamma> \<turnstile> ?Z : pp_unary_ty; ?\<Gamma> \<turnstile> ?p : Prop; ?\<Gamma> \<turnstile> ?q : Prop; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s ?p; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s ?q; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s Eq Prop ?q (App ?Z ?p); ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s Eq pp_unary_ty ?Z (gi_uniform_operator ?b)\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s Eq Prop ?p ?q
+gi_RS_plus_rigidity_local:
+\<lbrakk>pp_T1_axioms \<subseteq> ?T; pp_TU \<in> ?T; ?\<Gamma> \<turnstile> ?Z : pp_unary_ty; ?\<Gamma> \<turnstile> ?p : Prop; ?\<Gamma> \<turnstile> ?q : Prop; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_group_member ?Z; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s App gi_RS_plus ?p; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s App gi_RS_plus ?q; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s Eq Prop ?q (App ?Z ?p)\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s Eq Prop ?p ?q
+gi_RS_plus_rigid_parameter:
+\<lbrakk>pp_T1_axioms \<subseteq> ?T; pp_TU \<in> ?T; ?\<Gamma> \<turnstile> ?Z : pp_unary_ty; ?\<Gamma> \<turnstile> ?p : Prop; ?\<Gamma> \<turnstile> ?q : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gi_RS_plus_rigid_body ?Z ?p ?q
+gi_RS_plus_rigid:
+\<lbrakk>pp_T1_axioms \<subseteq> ?T; pp_TU \<in> ?T\<rbrakk> \<Longrightarrow> [] ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_spec_rigid gi_RS_plus
+gi_CEV_TU_RS_explicit_witness:
+\<lbrakk>pp_T6_core_PP_axioms \<subseteq> ?T; pp_zeroary_exhaustion \<in> ?T; pp_exists_fun_prime \<in> ?T; pp_TU \<in> ?T\<rbrakk> \<Longrightarrow> [] ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_rigid_specification gi_RS_plus
+gi_CEV_TU_Exhaustion_PP_exists_implies_RS:
+\<lbrakk>pp_T6_core_PP_axioms \<subseteq> ?T; pp_zeroary_exhaustion \<in> ?T; pp_exists_fun_prime \<in> ?T; pp_TU \<in> ?T\<rbrakk> \<Longrightarrow> [] ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_RS
+gi_CEV_TU_RS_exact_witness:
+[] ; gi_TU_RS_axioms \<turnstile>\<^sub>CEV\<^sup>+ pp_rigid_specification gi_RS_plus
+gi_CEV_TU_RS_exact_stock:
+[] ; gi_TU_RS_axioms \<turnstile>\<^sub>CEV\<^sup>+ pp_RS

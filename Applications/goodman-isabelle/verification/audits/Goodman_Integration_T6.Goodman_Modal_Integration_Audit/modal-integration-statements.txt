@@ -1,0 +1,106 @@
+gi_true_translation:
+gi_to_book ?G ?ns ?k ObjTrue = gi_old_top ?G ?ns
+gi_old_top_language:
+sg_rich ?G \<Longrightarrow> book_theory_formula ?\<Sigma> ?G (gi_old_top ?G ?ns)
+gi_old_top_closed:
+named_fv (gi_old_top ?G ?ns) = {}
+book_full_minimal_model.gi_old_top_true:
+\<lbrakk>book_full_minimal_model ?domain ?app ?signature ?stock ?denote ?V ?\<kappa>; sg_rich ?stock; book_env_typed ?domain ?stock ?g\<rbrakk> \<Longrightarrow> ?V (?denote ?g (gi_old_top ?stock ?ns))
+gi_H_truth_equivalence:
+sg_rich ?G \<Longrightarrow> book_H ?\<Sigma> ?G (book_iff ?G (gi_old_top ?G ?ns) (book_top ?G))
+gi_goodman_truth_identity:
+sg_rich ?G \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G ?T (book_leibniz ?G Prop (gi_old_top ?G ?ns) (book_top ?G))
+gi_H_box_representative:
+\<lbrakk>sg_rich ?G; book_theory_formula ?\<Sigma> ?G ?A; book_theory_formula ?\<Sigma> ?G ?U\<rbrakk> \<Longrightarrow> book_H ?\<Sigma> ?G (book_imp (book_leibniz ?G Prop ?U (book_top ?G)) (book_iff ?G (book_leibniz ?G Prop ?A ?U) (book_box ?G ?A)))
+gi_goodman_box_equivalence:
+\<lbrakk>sg_rich ?G; book_theory_formula ?\<Sigma> ?G ?A\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G ?T (book_iff ?G (book_leibniz ?G Prop ?A (gi_old_top ?G ?ns)) (book_box ?G ?A))
+gi_translated_box_equivalence:
+\<lbrakk>sg_rich ?G; book_theory_formula ?\<Sigma> ?G (gi_to_book ?G ?ns ?k ?A)\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G ?T (book_iff ?G (gi_to_book ?G ?ns ?k (\<box>\<^sub>o ?A)) (book_box ?G (gi_to_book ?G ?ns ?k ?A)))
+gi_H_iff_reflexive:
+\<lbrakk>sg_rich ?G; book_theory_formula ?\<Sigma> ?G ?A\<rbrakk> \<Longrightarrow> book_H ?\<Sigma> ?G (book_iff ?G ?A ?A)
+gi_goodman_iff_reflexive:
+\<lbrakk>sg_rich ?G; book_theory_formula ?\<Sigma> ?G ?A\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G ?T (book_iff ?G ?A ?A)
+gi_H_iff_imp_congruence:
+\<lbrakk>sg_rich ?G; book_theory_formula ?\<Sigma> ?G ?A; book_theory_formula ?\<Sigma> ?G ?B; book_theory_formula ?\<Sigma> ?G ?C; book_theory_formula ?\<Sigma> ?G ?D\<rbrakk> \<Longrightarrow> book_H ?\<Sigma> ?G (book_imp (book_iff ?G ?A ?B) (book_imp (book_iff ?G ?C ?D) (book_iff ?G (book_imp ?A ?C) (book_imp ?B ?D))))
+gi_goodman_iff_imp_congruence:
+\<lbrakk>sg_rich ?G; book_theory_formula ?\<Sigma> ?G ?A; book_theory_formula ?\<Sigma> ?G ?B; book_theory_formula ?\<Sigma> ?G ?C; book_theory_formula ?\<Sigma> ?G ?D; goodman_book_proves ?\<Sigma> ?G ?T (book_iff ?G ?A ?B); goodman_book_proves ?\<Sigma> ?G ?T (book_iff ?G ?C ?D)\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G ?T (book_iff ?G (book_imp ?A ?C) (book_imp ?B ?D))
+gi_H_iff_all_congruence:
+\<lbrakk>sg_rich ?G; book_theory_formula ?\<Sigma> ?G ?A; book_theory_formula ?\<Sigma> ?G ?B\<rbrakk> \<Longrightarrow> book_H ?\<Sigma> ?G (book_imp (book_all ?G ?n (book_iff ?G ?A ?B)) (book_iff ?G (book_all ?G ?n ?A) (book_all ?G ?n ?B)))
+gi_goodman_iff_all_congruence:
+\<lbrakk>sg_rich ?G; book_theory_formula ?\<Sigma> ?G ?A; book_theory_formula ?\<Sigma> ?G ?B; goodman_book_proves ?\<Sigma> ?G ?T (book_iff ?G ?A ?B)\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G ?T (book_iff ?G (book_all ?G ?n ?A) (book_all ?G ?n ?B))
+gi_H_iff_forward:
+\<lbrakk>sg_rich ?G; book_theory_formula ?\<Sigma> ?G ?A; book_theory_formula ?\<Sigma> ?G ?B\<rbrakk> \<Longrightarrow> book_H ?\<Sigma> ?G (book_imp (book_iff ?G ?A ?B) (book_imp ?A ?B))
+gi_H_iff_symmetric:
+\<lbrakk>sg_rich ?G; book_theory_formula ?\<Sigma> ?G ?A; book_theory_formula ?\<Sigma> ?G ?B\<rbrakk> \<Longrightarrow> book_H ?\<Sigma> ?G (book_imp (book_iff ?G ?A ?B) (book_iff ?G ?B ?A))
+gi_goodman_iff_transport:
+\<lbrakk>sg_rich ?G; book_theory_formula ?\<Sigma> ?G ?A; book_theory_formula ?\<Sigma> ?G ?B; goodman_book_proves ?\<Sigma> ?G ?T (book_iff ?G ?A ?B); goodman_book_proves ?\<Sigma> ?G ?T ?A\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G ?T ?B
+gi_goodman_equivalent_proofs:
+\<lbrakk>sg_rich ?G; book_theory_formula ?\<Sigma> ?G ?A; book_theory_formula ?\<Sigma> ?G ?B; goodman_book_proves ?\<Sigma> ?G ?T (book_iff ?G ?A ?B)\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G ?T ?A = goodman_book_proves ?\<Sigma> ?G ?T ?B
+gi_gb_z_reversed:
+named_chart_fresh ?G [gb_y ?G ?\<sigma> ?\<tau>, gb_x ?G ?\<sigma>] ?\<upsilon> = gb_z ?G ?\<sigma> ?\<tau> ?\<upsilon>
+gi_zeroary_recombination_shape:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k pp_zeroary_recombination = book_all ?G (gb_x ?G Prop) (book_imp (gb_pure Prop (NVar (gb_x ?G Prop))) (book_imp (book_leibniz ?G Prop (NVar (gb_x ?G Prop)) (gi_old_top ?G [gb_x ?G Prop])) (NVar (gb_x ?G Prop))))
+gi_zeroary_exhaustion_shape:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k pp_zeroary_exhaustion = book_all ?G (gb_x ?G Prop) (book_imp (gb_pure Prop (NVar (gb_x ?G Prop))) (book_imp (NVar (gb_x ?G Prop)) (book_leibniz ?G Prop (NVar (gb_x ?G Prop)) (gi_old_top ?G [gb_x ?G Prop]))))
+gi_unary_recombination_shape:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k pp_unary_recombination = book_all ?G (gb_x ?G gb_unary) (book_all ?G (gb_y ?G gb_unary Prop) (book_imp (gb_QLN_guard ?G) (book_imp (book_leibniz ?G Prop (NApp (NVar (gb_x ?G gb_unary)) (NVar (gb_y ?G gb_unary Prop))) (gi_old_top ?G [gb_y ?G gb_unary Prop, gb_x ?G gb_unary])) (gb_QLN_all ?G))))
+gi_unary_exhaustion_shape:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k pp_unary_exhaustion = book_all ?G (gb_x ?G gb_unary) (book_all ?G (gb_y ?G gb_unary Prop) (book_imp (gb_QLN_guard ?G) (book_imp (gb_QLN_all ?G) (book_leibniz ?G Prop (NApp (NVar (gb_x ?G gb_unary)) (NVar (gb_y ?G gb_unary Prop))) (gi_old_top ?G [gb_y ?G gb_unary Prop, gb_x ?G gb_unary])))))
+gi_persistence_shape:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k (pp_persistence ?\<sigma>) = book_all ?G (gb_x ?G ?\<sigma>) (book_imp (gb_pure ?\<sigma> (NVar (gb_x ?G ?\<sigma>))) (book_leibniz ?G Prop (gb_pure ?\<sigma> (NVar (gb_x ?G ?\<sigma>))) (gi_old_top ?G [gb_x ?G ?\<sigma>])))
+gi_gb_universal_language:
+book_in_language book_minimal_logical_type UNIV gb_signature ?G ?A ?\<sigma> \<Longrightarrow> book_in_language book_minimal_logical_type UNIV (\<lambda>_. UNIV) ?G ?A ?\<sigma>
+gi_zeroary_recombination_equivalence:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?T (book_iff ?G (gi_to_book ?G [] ?k pp_zeroary_recombination) (gb_zeroary_recombination ?G))
+gi_zeroary_exhaustion_equivalence:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?T (book_iff ?G (gi_to_book ?G [] ?k pp_zeroary_exhaustion) (gb_zeroary_exhaustion ?G))
+gi_unary_recombination_equivalence:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?T (book_iff ?G (gi_to_book ?G [] ?k pp_unary_recombination) (gb_unary_recombination ?G))
+gi_unary_exhaustion_equivalence:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?T (book_iff ?G (gi_to_book ?G [] ?k pp_unary_exhaustion) (gb_unary_exhaustion ?G))
+gi_persistence_equivalence:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?T (book_iff ?G (gi_to_book ?G [] ?k (pp_persistence ?\<sigma>)) (gb_persistence ?G ?\<sigma>))
+gi_axiom_from_native_equivalent:
+\<lbrakk>sg_rich ?G; [] \<turnstile> ?A : Prop; book_theory_formula gb_signature ?G ?B; goodman_book_proves (\<lambda>_. UNIV) ?G ?U (book_iff ?G (gi_to_book ?G [] ?k ?A) ?B); ?B \<in> ?U\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G [] ?k ?A)
+gi_zeroary_recombination_from_native:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; gb_zeroary_recombination ?G \<in> ?U\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G [] ?k pp_zeroary_recombination)
+gi_zeroary_exhaustion_from_native:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; gb_zeroary_exhaustion ?G \<in> ?U\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G [] ?k pp_zeroary_exhaustion)
+gi_unary_recombination_from_native:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; gb_unary_recombination ?G \<in> ?U\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G [] ?k pp_unary_recombination)
+gi_unary_exhaustion_from_native:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; gb_unary_exhaustion ?G \<in> ?U\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G [] ?k pp_unary_exhaustion)
+gi_persistence_from_native:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; gb_persistence ?G ?\<sigma> \<in> ?U\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G [] ?k (pp_persistence ?\<sigma>))
+gi_background_axiom_from_native:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; gb_background_axioms ?G \<subseteq> ?U; ?A \<in> pp_background_axioms\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G [] ?k ?A)
+gi_PP_axiom_from_native:
+\<lbrakk>gi_goodman_names ?k; gb_target_PP \<in> ?U\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G [] ?k pp_target_PP)
+gi_native_package_preservation:
+\<lbrakk>sg_rich ?G; ?\<Gamma> ; ?S \<turnstile>\<^sub>CEV\<^sup>+ ?A; \<And>B. B \<in> ?S \<Longrightarrow> [] \<turnstile> B : Prop; \<And>B. B \<in> ?S \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G [] ?k B); map ?G ?ns = ?\<Gamma>; distinct ?ns\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G ?ns ?k ?A)
+gi_recombination_package_support:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; gb_recombination_PP_axioms ?G \<subseteq> ?U; ?A \<in> pp_recombination_PP_axioms\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G [] ?k ?A)
+gi_QLN_package_support:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; gb_zeroary_unary_QLN_PP_axioms ?G \<subseteq> ?U; ?A \<in> pp_zeroary_unary_QLN_PP_axioms\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G [] ?k ?A)
+gi_recombination_PP_preservation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; pp_recombination_PP_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gb_recombination_PP_axioms ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_QLN_PP_preservation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; pp_zeroary_unary_QLN_PP_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gb_zeroary_unary_QLN_PP_axioms ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_repaired_package_support:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?A \<in> insert pp_zeroary_exhaustion pp_recombination_PP_axioms\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gb_recombination_PP_zeroary_exhaustion ?G) (gi_to_book ?G [] ?k ?A)
+gi_repaired_PP_preservation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; insert pp_zeroary_exhaustion pp_recombination_PP_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gb_recombination_PP_zeroary_exhaustion ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_persistent_QLN_package_support:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?A \<in> pp_zeroary_unary_QLN_PP_persistence_axioms\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gb_zeroary_unary_QLN_PP_axioms ?G \<union> gb_persistence_schema ?G) (gi_to_book ?G [] ?k ?A)
+gi_persistent_QLN_PP_preservation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; pp_zeroary_unary_QLN_PP_persistence_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gb_zeroary_unary_QLN_PP_axioms ?G \<union> gb_persistence_schema ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_native_consistency_implies_CEV_axiom_consistency:
+\<lbrakk>sg_rich ?G; goodman_book_consistent (\<lambda>_. UNIV) ?G ?U; \<And>A. [] ; ?S \<turnstile>\<^sub>CEV\<^sup>+ A \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G [] ?k A)\<rbrakk> \<Longrightarrow> CEV_axiom_consistent [] ?S
+gi_recombination_PP_consistency_transfer:
+\<lbrakk>sg_rich ?G; goodman_book_consistent (\<lambda>_. UNIV) ?G (gb_recombination_PP_axioms ?G)\<rbrakk> \<Longrightarrow> CEV_axiom_consistent [] pp_recombination_PP_axioms
+gi_QLN_PP_consistency_transfer:
+\<lbrakk>sg_rich ?G; goodman_book_consistent (\<lambda>_. UNIV) ?G (gb_zeroary_unary_QLN_PP_axioms ?G)\<rbrakk> \<Longrightarrow> CEV_axiom_consistent [] pp_zeroary_unary_QLN_PP_axioms
+gi_repaired_PP_consistency_transfer:
+\<lbrakk>sg_rich ?G; goodman_book_consistent (\<lambda>_. UNIV) ?G (gb_recombination_PP_zeroary_exhaustion ?G)\<rbrakk> \<Longrightarrow> CEV_axiom_consistent [] (insert pp_zeroary_exhaustion pp_recombination_PP_axioms)
+gi_persistent_QLN_PP_consistency_transfer:
+\<lbrakk>sg_rich ?G; goodman_book_consistent (\<lambda>_. UNIV) ?G (gb_zeroary_unary_QLN_PP_axioms ?G \<union> gb_persistence_schema ?G)\<rbrakk> \<Longrightarrow> CEV_axiom_consistent [] pp_zeroary_unary_QLN_PP_persistence_axioms

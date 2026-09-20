@@ -1,0 +1,24 @@
+gi_exact_chart_assignment_typed:
+\<lbrakk>map ?G ?ns = ?\<Gamma>; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> pp_e_env_typed ?\<Gamma> (\<lambda>i. ?g (?ns ! i))
+gi_exact_chart_update_lookup:
+\<lbrakk>?n \<notin> set ?ns; lookup (?\<sigma> # map ?G ?ns) ?i = Some ?\<tau>\<rbrakk> \<Longrightarrow> (?g(?n := ?x)) ((?n # ?ns) ! ?i) = extend_env ?x (\<lambda>j. ?g (?ns ! j)) ?i
+pp_e_constants.gi_exact_eval_agrees_on_context:
+\<lbrakk>pp_e_constants ?C; ?\<Gamma> \<turnstile> ?M : ?\<tau>; pp_e_env_typed ?\<Gamma> ?\<rho>; pp_e_env_typed ?\<Gamma> ?\<eta>; \<And>n \<sigma>. lookup ?\<Gamma> n = Some \<sigma> \<Longrightarrow> ?\<rho> n = ?\<eta> n\<rbrakk> \<Longrightarrow> pp_e_eval ?C ?\<rho> ?M = pp_e_eval ?C ?\<eta> ?M
+pp_e_constants.gi_exact_chart_body_eval:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; ?\<sigma> # ?\<Gamma> \<turnstile> ?A : ?\<tau>; map ?G ?ns = ?\<Gamma>; book_env_typed gi_exact_domain ?G ?g; ?x \<in> gi_exact_domain ?\<sigma>\<rbrakk> \<Longrightarrow> pp_e_eval ?C (\<lambda>i. (?g(named_chart_fresh ?G ?ns ?\<sigma> := ?x)) ((named_chart_fresh ?G ?ns ?\<sigma> # ?ns) ! i)) ?A = pp_e_eval ?C (extend_env ?x (\<lambda>i. ?g (?ns ! i))) ?A
+pp_e_constants.gi_exact_translation_language:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; ?\<Gamma> \<turnstile> ?M : ?\<tau>; map ?G ?ns = ?\<Gamma>\<rbrakk> \<Longrightarrow> book_in_language book_minimal_logical_type UNIV (\<lambda>_. UNIV) ?G (gi_to_book ?G ?ns (\<lambda>c \<sigma>. c) ?M) ?\<tau>
+pp_e_constants.gi_exact_translated_member:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; ?\<Gamma> \<turnstile> ?M : ?\<tau>; map ?G ?ns = ?\<Gamma>; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_named_denote ?C ?G ?g (gi_to_book ?G ?ns (\<lambda>c \<sigma>. c) ?M) \<in> gi_exact_domain ?\<tau>
+pp_e_constants.gi_exact_translation_prop_ext:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; ?\<Gamma> \<turnstile> ?M : Prop; map ?G ?ns = ?\<Gamma>; book_env_typed gi_exact_domain ?G ?g; \<And>w. pp_e_holds (gi_exact_named_denote ?C ?G ?g (gi_to_book ?G ?ns (\<lambda>c \<sigma>. c) ?M)) w = pp_e_holds (pp_e_eval ?C (\<lambda>i. ?g (?ns ! i)) ?M) w\<rbrakk> \<Longrightarrow> gi_exact_named_denote ?C ?G ?g (gi_to_book ?G ?ns (\<lambda>c \<sigma>. c) ?M) = pp_e_eval ?C (\<lambda>i. ?g (?ns ! i)) ?M
+pp_e_constants.gi_exact_named_not_holds:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g; book_theory_formula ?\<Sigma> ?G ?A\<rbrakk> \<Longrightarrow> pp_e_holds (gi_exact_named_denote ?C ?G ?g (book_not ?G ?A)) ?w = (\<not> pp_e_holds (gi_exact_named_denote ?C ?G ?g ?A) ?w)
+pp_e_constants.gi_exact_named_and_holds:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g; book_theory_formula ?\<Sigma> ?G ?A; book_theory_formula ?\<Sigma> ?G ?B\<rbrakk> \<Longrightarrow> pp_e_holds (gi_exact_named_denote ?C ?G ?g (book_and ?G ?A ?B)) ?w = (pp_e_holds (gi_exact_named_denote ?C ?G ?g ?A) ?w \<and> pp_e_holds (gi_exact_named_denote ?C ?G ?g ?B) ?w)
+pp_e_constants.gi_exact_named_or_holds:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g; book_theory_formula ?\<Sigma> ?G ?A; book_theory_formula ?\<Sigma> ?G ?B\<rbrakk> \<Longrightarrow> pp_e_holds (gi_exact_named_denote ?C ?G ?g (book_or ?G ?A ?B)) ?w = (pp_e_holds (gi_exact_named_denote ?C ?G ?g ?A) ?w \<or> pp_e_holds (gi_exact_named_denote ?C ?G ?g ?B) ?w)
+pp_e_constants.gi_exact_named_exists_holds:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g; book_theory_formula ?\<Sigma> ?G ?A\<rbrakk> \<Longrightarrow> pp_e_holds (gi_exact_named_denote ?C ?G ?g (book_exists ?G ?n ?A)) ?w = (\<exists>x\<in>gi_exact_domain (?G ?n). pp_e_holds (gi_exact_named_denote ?C ?G (?g(?n := x)) ?A) ?w)
+pp_e_constants.gi_exact_denotation_translation:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; ?\<Gamma> \<turnstile> ?M : ?\<tau>; map ?G ?ns = ?\<Gamma>; distinct ?ns; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_named_denote ?C ?G ?g (gi_to_book ?G ?ns (\<lambda>c \<sigma>. c) ?M) = pp_e_eval ?C (\<lambda>i. ?g (?ns ! i)) ?M

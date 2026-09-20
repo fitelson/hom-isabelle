@@ -1,0 +1,46 @@
+gi_exact_M7_operator_enum_range(1):
+range gi_exact_M7_operator_enum = pp_e_exact_operator_stock
+gi_exact_M7_operator_enum_member(1):
+gi_exact_M7_operator_enum ?n \<in> pp_e_exact_operator_stock
+gi_exact_M7_diagonal_view(1):
+pp_view [?n] (gi_exact_M7_diagonal ?r) = - pp_view [?n] (gi_exact_M7_operator_enum ?n ?r)
+gi_exact_M7_diagonal_differs(1):
+gi_exact_M7_diagonal ?r \<noteq> gi_exact_M7_operator_enum ?n ?r
+gi_exact_M7_diagonal_outside_logical_range(1):
+?F \<in> pp_e_exact_operator_stock \<Longrightarrow> ?F ?r \<noteq> gi_exact_M7_diagonal ?r
+gi_exact_M7_diagonal_value_member(1):
+gi_exact_M7_diagonal_value ?R \<in> gi_exact_domain Prop
+gi_exact_M7_diagonal_value_unreachable(1):
+\<lbrakk>?R \<in> gi_exact_domain Prop; pp_e_closed_logical_stock gb_unary [] ?F\<rbrakk> \<Longrightarrow> ?F \<acute> ?R \<noteq> gi_exact_M7_diagonal_value ?R
+gi_native_M7_logical_unary_completeness_fails(1):
+\<lbrakk>sg_rich ?G; ?R \<in> gi_exact_domain Prop\<rbrakk> \<Longrightarrow> \<exists>Q\<in>gi_exact_domain Prop. \<forall>F. gi_exact_native_logical_stock ?G gb_unary [] F \<longrightarrow> F \<acute> ?R \<noteq> Q
+gi_exact_M7_pure_proposition_constant_realization(1):
+\<lbrakk>?R \<in> gi_exact_domain Prop; pp_e_closed_logical_stock Prop [] ?Q\<rbrakk> \<Longrightarrow> \<exists>F. pp_e_closed_logical_stock gb_unary [] F \<and> F \<acute> ?R = ?Q
+gi_exact_M7_diagonal_not_pure_proposition(1):
+?R \<in> gi_exact_domain Prop \<Longrightarrow> \<not> pp_e_closed_logical_stock Prop [] (gi_exact_M7_diagonal_value ?R)
+gi_native_M7_zeroary_unary_completeness_fails(1):
+\<lbrakk>sg_rich ?G; ?R \<in> gi_exact_domain Prop\<rbrakk> \<Longrightarrow> \<exists>Q\<in>gi_exact_domain Prop. \<not> gi_exact_native_logical_stock ?G Prop [] Q \<and> (\<forall>F. gi_exact_native_logical_stock ?G gb_unary [] F \<longrightarrow> F \<acute> ?R \<noteq> Q)
+gi_exact_M7_invariant_raw_equivariant(1):
+?F \<in> gi_exact_M2_invariant_stock \<Longrightarrow> pp_equivariant_operator (pp_e_raw_operator ?F)
+gi_exact_M7_invariant_reachable_iff_classifier(1):
+\<lbrakk>?R \<in> gi_exact_domain Prop; ?Q \<in> gi_exact_domain Prop\<rbrakk> \<Longrightarrow> gi_exact_M7_invariant_reachable ?R ?Q = (\<exists>S. pp_classifier S (pp_n_bacon_extract ?R) = pp_n_bacon_extract ?Q)
+gi_exact_M7_orbit_image_classifier(1):
+inj (\<lambda>i. pp_view i ?r) \<Longrightarrow> pp_classifier ((\<lambda>i. pp_view i ?r) ` ?P) ?r = ?P
+gi_exact_M7_all_invariant_reachable_iff_orbit_injective(1):
+?R \<in> gi_exact_domain Prop \<Longrightarrow> (\<forall>Q\<in>gi_exact_domain Prop. gi_exact_M7_invariant_reachable ?R Q) = inj (\<lambda>i. pp_view i (pp_n_bacon_extract ?R))
+gi_exact_M7_fun_prime_orbit_collision(1):
+pp_e_exact_fun_prime ?r \<Longrightarrow> \<exists>i j. i \<noteq> j \<and> pp_view i ?r = pp_view j ?r
+gi_exact_M7_fun_prime_orbit_not_injective(1):
+pp_e_exact_fun_prime ?r \<Longrightarrow> \<not> inj (\<lambda>i. pp_view i ?r)
+gi_exact_M7_collision_blocks_singleton(1):
+\<lbrakk>?i \<noteq> ?j; pp_view ?i ?r = pp_view ?j ?r; pp_equivariant_operator ?F\<rbrakk> \<Longrightarrow> ?F ?r \<noteq> {?i}
+gi_exact_M7_fun_prime_singleton_unreachable(1):
+pp_e_exact_fun_prime ?r \<Longrightarrow> \<exists>i. \<forall>F\<in>gi_exact_M2_invariant_stock. pp_e_raw_operator F ?r \<noteq> {i}
+gi_exact_M7_fun_prime_exact_invariant_unreachable(1):
+\<lbrakk>?R \<in> gi_exact_domain Prop; pp_e_exact_fun_prime (pp_n_bacon_extract ?R)\<rbrakk> \<Longrightarrow> \<exists>i. pp_n_bacon_embed {i} \<in> gi_exact_domain Prop \<and> (\<forall>F\<in>gi_exact_M2_invariant_stock. F \<acute> ?R \<noteq> pp_n_bacon_embed {i})
+gi_exact_M7_generic_orbit_not_injective(1):
+\<not> inj (\<lambda>i. pp_view i pp_e_generic_raw_seed)
+gi_exact_M7_generic_invariant_unreachable(1):
+\<exists>Q\<in>gi_exact_domain Prop. \<not> gi_exact_M7_invariant_reachable pp_e_generic_root_seed Q
+gi_exact_M7_generic_fundamental_invariant_incomplete(1):
+\<lbrakk>?R \<in> gi_exact_domain Prop; pp_e_generic_fundamental_at Prop [] ?R\<rbrakk> \<Longrightarrow> \<exists>Q\<in>gi_exact_domain Prop. \<not> gi_exact_M7_invariant_reachable ?R Q

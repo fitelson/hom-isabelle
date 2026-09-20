@@ -1,0 +1,22 @@
+gi_M1_native_pure_clause:
+gi_exact_valuation ?w (gi_exact_goodman_denote ?C ?G ?g (gb_pure ?\<sigma> ?A)) = gi_M1_exact_Pure ?C ?\<sigma> ?w (gi_exact_goodman_denote ?C ?G ?g ?A)
+pp_e_constants.gi_M1_exact_fn59_liar_clause:
+\<lbrakk>pp_e_constants ?C; Elem ?p (pp_e_domain Prop)\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval ?C ?\<rho> gi_M1_fn59_liar \<acute> ?p) ?w = (\<forall>X. Elem X (pp_e_domain pp_e_unary_type) \<longrightarrow> (\<forall>q. Elem q (pp_e_domain Prop) \<longrightarrow> gi_M1_exact_Pure ?C pp_e_unary_type ?w X \<and> gi_M1_exact_Fun ?C ?w q \<and> pp_e_eqv Prop ?w ?p (X \<acute> q) \<longrightarrow> \<not> pp_e_holds (X \<acute> ?p) ?w))
+pp_e_constants.gi_M1_exact_QSS_clause:
+pp_e_constants ?C \<Longrightarrow> pp_e_holds (pp_e_eval ?C ?\<rho> pp_QSS) ?w = (\<forall>X. Elem X (pp_e_domain pp_e_unary_type) \<longrightarrow> (\<forall>Y. Elem Y (pp_e_domain pp_e_unary_type) \<longrightarrow> (\<forall>q. Elem q (pp_e_domain Prop) \<longrightarrow> gi_M1_exact_Pure ?C pp_e_unary_type ?w X \<and> gi_M1_exact_Pure ?C pp_e_unary_type ?w Y \<and> gi_M1_exact_Fun ?C ?w q \<longrightarrow> pp_e_eqv Prop ?w (X \<acute> q) (Y \<acute> q) \<longrightarrow> pp_e_eqv pp_e_unary_type ?w X Y)))
+pp_e_constants.gi_M1_exact_unique_fundamental_clause:
+pp_e_constants ?C \<Longrightarrow> pp_e_holds (pp_e_eval ?C ?\<rho> (pp_unique_fundamental Prop)) ?w = (\<exists>r. Elem r (pp_e_domain Prop) \<and> gi_M1_exact_Fun ?C ?w r \<and> (\<forall>q. Elem q (pp_e_domain Prop) \<longrightarrow> gi_M1_exact_Fun ?C ?w q \<longrightarrow> pp_e_eqv Prop ?w q r))
+pp_e_constants.gi_M1_exact_fn59_liar_member:
+pp_e_constants ?C \<Longrightarrow> Elem (pp_e_eval ?C pp_e_closed_env gi_M1_fn59_liar) (pp_e_domain pp_e_unary_type)
+pp_e_constants.gi_M1_exact_fn59_contradiction:
+\<lbrakk>pp_e_constants ?C; gi_M1_exact_Pure ?C pp_e_unary_type ?w (pp_e_eval ?C pp_e_closed_env gi_M1_fn59_liar); pp_e_holds (pp_e_eval ?C pp_e_closed_env pp_QSS) ?w; pp_e_holds (pp_e_eval ?C pp_e_closed_env (pp_unique_fundamental Prop)) ?w\<rbrakk> \<Longrightarrow> False
+pp_e_constants.gi_M1_native_fn59_denotation:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_goodman_denote ?C ?G ?g (gi_M1_native_fn59_liar ?G) = pp_e_eval ?C pp_e_closed_env gi_M1_fn59_liar
+pp_e_constants.gi_M1_native_QSS_denotation:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_goodman_denote ?C ?G ?g (gb_QSS ?G) = pp_e_eval ?C pp_e_closed_env pp_QSS
+pp_e_constants.gi_M1_native_unique_denotation:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_goodman_denote ?C ?G ?g (gb_unique_fundamental ?G Prop) = pp_e_eval ?C pp_e_closed_env (pp_unique_fundamental Prop)
+pp_e_constants.gi_M1_exact_native_fn59_contradiction:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; book_env_typed gi_exact_domain ?G ?g; gi_exact_valuation ?w (gi_exact_goodman_denote ?C ?G ?g (gb_pure pp_e_unary_type (gi_M1_native_fn59_liar ?G))); gi_exact_valuation ?w (gi_exact_goodman_denote ?C ?G ?g (gb_QSS ?G)); gi_exact_valuation ?w (gi_exact_goodman_denote ?C ?G ?g (gb_unique_fundamental ?G Prop))\<rbrakk> \<Longrightarrow> False
+pp_e_constants.gi_M1_no_exact_typed_interpretation_of_fn59_stock:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; \<And>A. A \<in> gi_M1_fn59_native_axioms ?G \<union> {gb_QSS ?G, gb_unique_fundamental ?G Prop} \<Longrightarrow> gi_exact_goodman_global_valid ?C ?G A\<rbrakk> \<Longrightarrow> False

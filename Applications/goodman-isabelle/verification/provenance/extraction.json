@@ -1,0 +1,1482 @@
+{
+  "date": "2026-09-20",
+  "selected_later": {
+    "date": "2026-09-20",
+    "note": "Contributor task 4 selected both preserved snapshots with their recorded replay session names (Goodman_Exact_Enumeration, Goodman_Exact_Frame_Completeness); proof bodies unchanged (see frozen.json hashes).",
+    "theories": [
+      "theories/preserved-additions/exact-enumeration/Bacon_PP_ZF_Exact_Enumeration.thy",
+      "theories/preserved-additions/exact-completeness/Bacon_PP_ZF_Exact_Completeness.thy"
+    ]
+  },
+  "source_directory_name": "goodman-integration",
+  "source_is_git_checkout": false,
+  "theories": [
+    {
+      "path": "theories/central_stock/Goodman_Central_Stock_Audit.thy",
+      "sha256": "497994c6b54be8ea89375f48d26769bb280ec4272ad69d8e1167aa4d7a6037db",
+      "source": "central_stock/Goodman_Central_Stock_Audit.thy"
+    },
+    {
+      "path": "theories/central_stock/Goodman_Central_Stock_T6.thy",
+      "sha256": "7c96d4b70c91eaa36dcd30f609a2de9946272abe14a95079d350bf2f96adfeae",
+      "source": "central_stock/Goodman_Central_Stock_T6.thy"
+    },
+    {
+      "path": "theories/central_stock/Goodman_Native_Fun_Prime.thy",
+      "sha256": "df336310d2490de7b86926686f6a6cb17080eaa42fd07feb89d299a28bb6cc63",
+      "source": "central_stock/Goodman_Native_Fun_Prime.thy"
+    },
+    {
+      "path": "theories/central_stock/Goodman_Native_QSS.thy",
+      "sha256": "57b65b81a15b30a3ea3bfcd3623613994c90523dbc2563d827e86a7e42e5fcf0",
+      "source": "central_stock/Goodman_Native_QSS.thy"
+    },
+    {
+      "path": "theories/control/Goodman_Control_Audit.thy",
+      "sha256": "9fe8c8fab1a8ce1166b78352ce165f233ed10c3e3b1ce49bab2296446081babd",
+      "source": "control/Goodman_Control_Audit.thy"
+    },
+    {
+      "path": "theories/control/Goodman_Control_Transfer.thy",
+      "sha256": "4e22a58e2ea18fedbd77fe8a0b6df283e79712ac4828441daab22d7c01ac37ce",
+      "source": "control/Goodman_Control_Transfer.thy"
+    },
+    {
+      "path": "theories/exact_l2/Goodman_Exact_Fun_Prime_Root.thy",
+      "sha256": "99a80f20a0069b421ce48a22f61d10dc5d361d516742bef20c6a80b425fcd038",
+      "source": "exact_l2/Goodman_Exact_Fun_Prime_Root.thy"
+    },
+    {
+      "path": "theories/exact_l2/Goodman_Exact_Fun_Prime_Root_Audit.thy",
+      "sha256": "d48a7beaa9481920660dd9f0c7434726e9c60b61b9ef24014ac2268a6f9f88c4",
+      "source": "exact_l2/Goodman_Exact_Fun_Prime_Root_Audit.thy"
+    },
+    {
+      "path": "theories/exact_l2/Goodman_Exact_Kind_Root.thy",
+      "sha256": "e9587af84dfe64e8ea378c43ddc6579710ac6629b9989ba772126af94d39e26a",
+      "source": "exact_l2/Goodman_Exact_Kind_Root.thy"
+    },
+    {
+      "path": "theories/exact_l2/Goodman_Exact_Kind_Root_Audit.thy",
+      "sha256": "89471de692c7f33c698ecbfcd5c0988e2dfa53a024c733ff1d0963054f11e7ad",
+      "source": "exact_l2/Goodman_Exact_Kind_Root_Audit.thy"
+    },
+    {
+      "path": "theories/exact_l2/Goodman_Exact_L2_Object_Audit.thy",
+      "sha256": "b4fdd0e5810a51c7fc1b8164cacac8a2386aa6fc2b57254175da13c31e7099f9",
+      "source": "exact_l2/Goodman_Exact_L2_Object_Audit.thy"
+    },
+    {
+      "path": "theories/exact_l2/Goodman_Exact_L2_Object_Refutation.thy",
+      "sha256": "e6c69257324fc1d985cfbbd64122929b7d334c3d2a56259c7316b9e888931cea",
+      "source": "exact_l2/Goodman_Exact_L2_Object_Refutation.thy"
+    },
+    {
+      "path": "theories/exact_l2/Goodman_Exact_L2_Root_Audit.thy",
+      "sha256": "330f1a712249bd10097778c2ed305a6479ee06a9999648939a23f70b03dd95e2",
+      "source": "exact_l2/Goodman_Exact_L2_Root_Audit.thy"
+    },
+    {
+      "path": "theories/exact_l2/Goodman_Exact_L2_Root_Semantics.thy",
+      "sha256": "ad72b19dc6b6730affccd48aacff2add03cb94b660e4a7671c722f46b6f0b08f",
+      "source": "exact_l2/Goodman_Exact_L2_Root_Semantics.thy"
+    },
+    {
+      "path": "theories/exact_l2/Goodman_Exact_L2_Transfer.thy",
+      "sha256": "dad1158cadd2aa9421b4a69d32ca30ae0ec1ebadec160f488577af3c765a68a6",
+      "source": "exact_l2/Goodman_Exact_L2_Transfer.thy"
+    },
+    {
+      "path": "theories/exact_l2/Goodman_Exact_L2_Transfer_Audit.thy",
+      "sha256": "88c42877afb88977ea33a3beed8a8f6524c2c2c4e992dc1efcc7dddb4d4620a4",
+      "source": "exact_l2/Goodman_Exact_L2_Transfer_Audit.thy"
+    },
+    {
+      "path": "theories/exact_qln/Goodman_Exact_10_1_Transfer.thy",
+      "sha256": "83a389a8bc55291dec42c2ac16a03862d83834f57e7147535ba50ab9c1c88a41",
+      "source": "exact_qln/Goodman_Exact_10_1_Transfer.thy"
+    },
+    {
+      "path": "theories/exact_qln/Goodman_Exact_10_1_Transfer_Audit.thy",
+      "sha256": "6842bc2cb295803c1d28d4ba40388fc53176ba844e8bac04f01d3b6d7b205258",
+      "source": "exact_qln/Goodman_Exact_10_1_Transfer_Audit.thy"
+    },
+    {
+      "path": "theories/exact_qln/Goodman_Exact_Generic_Interpretation.thy",
+      "sha256": "f209fdbdba760585f9107dba3c71e10f5cac501b10225e435ca936af5a5512d1",
+      "source": "exact_qln/Goodman_Exact_Generic_Interpretation.thy"
+    },
+    {
+      "path": "theories/exact_qln/Goodman_Exact_Generic_Interpretation_Audit.thy",
+      "sha256": "83b1d25715903ad409382e7bd0420e820cc9db48c56bd929c7348781e6d0fb39",
+      "source": "exact_qln/Goodman_Exact_Generic_Interpretation_Audit.thy"
+    },
+    {
+      "path": "theories/exact_qln/Goodman_Exact_QLN_Model.thy",
+      "sha256": "21d6369b29d0693248ddc6d19ef8df2c231c58bdc4a7181c69b8795cd5e095ad",
+      "source": "exact_qln/Goodman_Exact_QLN_Model.thy"
+    },
+    {
+      "path": "theories/exact_qln/Goodman_Exact_QLN_Model_Audit.thy",
+      "sha256": "daf1125c62de453691bdcfa2312ae14650ccd6756158c1ac1c35187aaa2ad3fc",
+      "source": "exact_qln/Goodman_Exact_QLN_Model_Audit.thy"
+    },
+    {
+      "path": "theories/exact_qln/Goodman_Exact_QLN_Transfer.thy",
+      "sha256": "6850502cbb57e1fbfc3df54d84c67db55d870f203a2582e819a1934507715bed",
+      "source": "exact_qln/Goodman_Exact_QLN_Transfer.thy"
+    },
+    {
+      "path": "theories/exact_qln/Goodman_Exact_QLN_Transfer_Audit.thy",
+      "sha256": "c2340c66c42075ec170409dd37dfe5a97e188544c206d2db6c33fcc971837be0",
+      "source": "exact_qln/Goodman_Exact_QLN_Transfer_Audit.thy"
+    },
+    {
+      "path": "theories/general_m1/Goodman_General_M1_Native_Semantics.thy",
+      "sha256": "611057bc5a462ecaa42ac20f4d14a91f4b32492e598d0395a566add9b0abc7df",
+      "source": "general_m1/Goodman_General_M1_Native_Semantics.thy"
+    },
+    {
+      "path": "theories/general_m1/Goodman_General_M1_Native_Semantics_Audit.thy",
+      "sha256": "a87b9ba9e9568dcec5a610b920c59d3cd33f3bbf6f26f8022b433529d7a33e5d",
+      "source": "general_m1/Goodman_General_M1_Native_Semantics_Audit.thy"
+    },
+    {
+      "path": "theories/granularity/Goodman_Granularity_Audit.thy",
+      "sha256": "491c689955fa5c84f6c9ec35e677a7a83df009ee11f407f6a841e1dcd0d6a751",
+      "source": "granularity/Goodman_Granularity_Audit.thy"
+    },
+    {
+      "path": "theories/granularity/Goodman_Granularity_Transfer.thy",
+      "sha256": "b2d7838022903225d0eee32c9480596978e6aeadbbda23900412e9b69ee44d0d",
+      "source": "granularity/Goodman_Granularity_Transfer.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_RS_Witness_Audit.thy",
+      "sha256": "ee4495638ee2c1e29ac5bbad502f3c5fe6a6f96717c175d5936016ea0f4e54f3",
+      "source": "individual/Goodman_RS_Witness_Audit.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_T1_QSS_Compactness_Audit.thy",
+      "sha256": "56d4bbeb252f9979f5630997f28eb1fa336d4178f22a5ac647f5f8c7de7c5103",
+      "source": "individual/Goodman_T1_QSS_Compactness_Audit.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_T1_Transfer.thy",
+      "sha256": "3bb35a9899e0784f2ce7d2b2c730ca543e1965c74f4e65860014bdc48245388f",
+      "source": "individual/Goodman_T1_Transfer.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_T2a_Audit.thy",
+      "sha256": "ce950b303f015277d18a39379e358f1247c340de1a082a5b382699a558a722db",
+      "source": "individual/Goodman_T2a_Audit.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_T2a_Transfer.thy",
+      "sha256": "78369bb52f2dc162c2388e10cf545b13a24d78e5089aca889d6d74e75a136892",
+      "source": "individual/Goodman_T2a_Transfer.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_T2bc_Audit.thy",
+      "sha256": "6a0b9907c05f5688c3a7b71dcfd3b4559f34c398499a9d4dafca7ceed600fa47",
+      "source": "individual/Goodman_T2bc_Audit.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_T2bc_Transfer.thy",
+      "sha256": "7064f6cc56bd1f7771b8ac51992bb1a39b30a691df7014254f4e8db79dadfedc",
+      "source": "individual/Goodman_T2bc_Transfer.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_T2def_Audit.thy",
+      "sha256": "70d2d28166ab50e29c9100c37cf2630ce4f30c49789fd0ab2f870216ccb04a5e",
+      "source": "individual/Goodman_T2def_Audit.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_T2def_Transfer.thy",
+      "sha256": "7eb431dd1ce05072ec95b0e7c65e946a7b554d713d4e9fad8279e986b2596299",
+      "source": "individual/Goodman_T2def_Transfer.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_T3_Audit.thy",
+      "sha256": "661a93cd1db76edd2412dc5d7fea7e5b6614221b5b906e25434da722a2ba532e",
+      "source": "individual/Goodman_T3_Audit.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_T3_Transfer.thy",
+      "sha256": "eab17b2b619f723e12a28c9a59f97d9cee15b9ed77f5065a0690e54e0ff47c6e",
+      "source": "individual/Goodman_T3_Transfer.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_T45_Audit.thy",
+      "sha256": "612bd3c34d9176751af5bbbb770445a01d2d02a522ef569fdd68028870482c0e",
+      "source": "individual/Goodman_T45_Audit.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_T45_Transfer.thy",
+      "sha256": "5d19194f51f8514f3bf9cbc6b7ad715c52dcf57ca21ba0e56013cd8232564afd",
+      "source": "individual/Goodman_T45_Transfer.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_TU_Inv_Audit.thy",
+      "sha256": "bc72fbd3bbca3e85ad181c5b56cee38b763dd2ff7d8a2945f7630338b81b3d66",
+      "source": "individual/Goodman_TU_Inv_Audit.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_TU_Inv_Exhaustion.thy",
+      "sha256": "c072d2ce40c7b109025f7d18763e3405314b16a4374a79ddf35f77902e341449",
+      "source": "individual/Goodman_TU_Inv_Exhaustion.thy"
+    },
+    {
+      "path": "theories/individual/Goodman_TU_RS_Witness.thy",
+      "sha256": "0bb2792609142c5b6836c47b2056c90ab4da9f27724dff099f7f62c8b85699c2",
+      "source": "individual/Goodman_TU_RS_Witness.thy"
+    },
+    {
+      "path": "theories/preserved/stage01/Bacon_CEV_Axiom_Extension.thy",
+      "sha256": "665a4d1f5a436d5f6fc68e561f33a3f082085c24a07764679135860bc6dae2c7",
+      "source": "legacy/stage01/Bacon_CEV_Axiom_Extension.thy"
+    },
+    {
+      "path": "theories/preserved/stage01/Bacon_PP_Diagonal.thy",
+      "sha256": "3a9356f62275357c60acb4901e16dee5fd0760f18e8b1d3eee14a9c1ce27fd3d",
+      "source": "legacy/stage01/Bacon_PP_Diagonal.thy"
+    },
+    {
+      "path": "theories/preserved/stage01/Bacon_PP_Intensionality.thy",
+      "sha256": "964cd48a0c633252abc15e3d7eb9b595719d8ffa4b42f2069e5144fb94ff04c5",
+      "source": "legacy/stage01/Bacon_PP_Intensionality.thy"
+    },
+    {
+      "path": "theories/preserved/stage01/Bacon_PP_Modalized_Functionality.thy",
+      "sha256": "faa1082a96c8a3e81ef87d36f75cef63c522e1eea6a1b1fe07a7ee6db6c75def",
+      "source": "legacy/stage01/Bacon_PP_Modalized_Functionality.thy"
+    },
+    {
+      "path": "theories/preserved/stage01/Bacon_PP_Modalized_Functionality_Derived.thy",
+      "sha256": "ffed2da9aaa3f87d4044f651ad9ac420af133b9db36ba00e61da125c42482080",
+      "source": "legacy/stage01/Bacon_PP_Modalized_Functionality_Derived.thy"
+    },
+    {
+      "path": "theories/preserved/stage01/Bacon_PP_Question.thy",
+      "sha256": "0b725daf34601bfa4d330516380caedef71d56d7630bf4f22dcaedff0f8a1644",
+      "source": "legacy/stage01/Bacon_PP_Question.thy"
+    },
+    {
+      "path": "theories/preserved/stage01/Bacon_PP_T6_Encoding.thy",
+      "sha256": "1f73a2ce9bf337c1a075475ed3ebcafdd9b0e0cdbabc011057b311c350c982df",
+      "source": "legacy/stage01/Bacon_PP_T6_Encoding.thy"
+    },
+    {
+      "path": "theories/preserved/stage02/Bacon_PP_Goodman_Composition.thy",
+      "sha256": "a45960af9568b27e427e2e047cd838836f87b809e505d082225f463f4052a69a",
+      "source": "legacy/stage02/Bacon_PP_Goodman_Composition.thy"
+    },
+    {
+      "path": "theories/preserved/stage02/Bacon_PP_Goodman_Fun_Prime_Attainment.thy",
+      "sha256": "df3ac0c6ce752c9694db6fb7df4cf297953a5d3f5794b66b030ff1400e84596e",
+      "source": "legacy/stage02/Bacon_PP_Goodman_Fun_Prime_Attainment.thy"
+    },
+    {
+      "path": "theories/preserved/stage02/Bacon_PP_Goodman_Fun_Prime_Closure.thy",
+      "sha256": "07ffacff1bed01dd25086cd6e94ba772d1b0541b07f53fefa7557ed65cb31150",
+      "source": "legacy/stage02/Bacon_PP_Goodman_Fun_Prime_Closure.thy"
+    },
+    {
+      "path": "theories/preserved/stage02/Bacon_PP_Goodman_Fun_Prime_Noncontingency.thy",
+      "sha256": "0860be4cfb8e1fc64ca42f78fc4097fba85c5848648f962a49dc7abc19572274",
+      "source": "legacy/stage02/Bacon_PP_Goodman_Fun_Prime_Noncontingency.thy"
+    },
+    {
+      "path": "theories/preserved/stage02/Bacon_PP_Goodman_Fun_Prime_Nontriviality.thy",
+      "sha256": "621bf28481b99f78c9804717f7f7560307aa384c0add6ad006c139d1f2b62bf4",
+      "source": "legacy/stage02/Bacon_PP_Goodman_Fun_Prime_Nontriviality.thy"
+    },
+    {
+      "path": "theories/preserved/stage02/Bacon_PP_Goodman_Fun_Prime_Possibly_Pure.thy",
+      "sha256": "a1fa0878099d6b3c861d9f4437dcbe666e7ebaa676cfddd252d44e19c93b0ee5",
+      "source": "legacy/stage02/Bacon_PP_Goodman_Fun_Prime_Possibly_Pure.thy"
+    },
+    {
+      "path": "theories/preserved/stage02/Bacon_PP_Goodman_Fun_Prime_Six_Distinct.thy",
+      "sha256": "d10735a80fa0a6d823248417b525843265c086de43277a0b09daf58dce7e5030",
+      "source": "legacy/stage02/Bacon_PP_Goodman_Fun_Prime_Six_Distinct.thy"
+    },
+    {
+      "path": "theories/preserved/stage02/Bacon_PP_Goodman_T2f_Operators.thy",
+      "sha256": "f9afa82cc80d139da3cd3a58db17fab8b09cbfedd13637bcfbff54c068be12d2",
+      "source": "legacy/stage02/Bacon_PP_Goodman_T2f_Operators.thy"
+    },
+    {
+      "path": "theories/preserved/stage03/Bacon_PP_Goodman_Biconditional_Classification.thy",
+      "sha256": "01d4e50a50ed563917fc07d329a3cb4a5fd4fb40e195fc94d2fe2fcc28935716",
+      "source": "legacy/stage03/Bacon_PP_Goodman_Biconditional_Classification.thy"
+    },
+    {
+      "path": "theories/preserved/stage03/Bacon_PP_Goodman_Heredity.thy",
+      "sha256": "fc9ea94272e7864058a21dda3e922bb8876c75148c4b71377275c7c1972e4083",
+      "source": "legacy/stage03/Bacon_PP_Goodman_Heredity.thy"
+    },
+    {
+      "path": "theories/preserved/stage03/Bacon_PP_Goodman_Heredity_Core.thy",
+      "sha256": "6b707c9c150b935c4b832327e29a85487158886f2b23a74894f5db4d215cff4f",
+      "source": "legacy/stage03/Bacon_PP_Goodman_Heredity_Core.thy"
+    },
+    {
+      "path": "theories/preserved/stage03/Bacon_PP_Goodman_Heredity_Modal.thy",
+      "sha256": "44c534b5e4d79d15f3be93008e7f02d503e0a00bafd4ebd653bf565db4293f83",
+      "source": "legacy/stage03/Bacon_PP_Goodman_Heredity_Modal.thy"
+    },
+    {
+      "path": "theories/preserved/stage03/Bacon_PP_Goodman_Heredity_Rigidity.thy",
+      "sha256": "d7af106c64515b6b493cedde94f2f410913b13ded4039efe6600d310577f8e75",
+      "source": "legacy/stage03/Bacon_PP_Goodman_Heredity_Rigidity.thy"
+    },
+    {
+      "path": "theories/preserved/stage03/Bacon_PP_Goodman_Pure_Proposition_Triviality.thy",
+      "sha256": "f767b63ee4f102d4654382aa3879c2f9293691f06cd96565e283a29e15d64212",
+      "source": "legacy/stage03/Bacon_PP_Goodman_Pure_Proposition_Triviality.thy"
+    },
+    {
+      "path": "theories/preserved/stage03/Bacon_PP_Goodman_T2f_Pairwise.thy",
+      "sha256": "bc3e000af0c4bde0c3ddb25c0b44ea6766f58778a318ec4927d002066e7325e7",
+      "source": "legacy/stage03/Bacon_PP_Goodman_T2f_Pairwise.thy"
+    },
+    {
+      "path": "theories/preserved/stage03/Bacon_PP_Goodman_T2f_Separation.thy",
+      "sha256": "4a9f0b7cb1f812bb3e5085acacca0ddb52c13c03936624cdb323b2d19bcabed4",
+      "source": "legacy/stage03/Bacon_PP_Goodman_T2f_Separation.thy"
+    },
+    {
+      "path": "theories/preserved/stage03/Bacon_PP_Goodman_T2f_Values.thy",
+      "sha256": "06bdd29ab572562d7a35e31940edc69fdfda137952802029533605d6be9809d6",
+      "source": "legacy/stage03/Bacon_PP_Goodman_T2f_Values.thy"
+    },
+    {
+      "path": "theories/preserved/stage03/Bacon_PP_Goodman_T2f_Verified.thy",
+      "sha256": "27e3aab5d5499b4fe31be7a34f3e23b2354d4cd31bc1597742f1144fd3a02020",
+      "source": "legacy/stage03/Bacon_PP_Goodman_T2f_Verified.thy"
+    },
+    {
+      "path": "theories/preserved/stage03/Bacon_PP_Goodman_WI_Collapse.thy",
+      "sha256": "5695d83d3fa01609785dc84f1df89ad14e80e45b6c57dae8a7ece58d3af1fda2",
+      "source": "legacy/stage03/Bacon_PP_Goodman_WI_Collapse.thy"
+    },
+    {
+      "path": "theories/preserved/stage04/Bacon_PP_Goodman_Fun_Prime_Axiom_Collapse.thy",
+      "sha256": "07748c3e432123a45ab1625d96842d0f47a0a64e1490630c1db6876177553cb8",
+      "source": "legacy/stage04/Bacon_PP_Goodman_Fun_Prime_Axiom_Collapse.thy"
+    },
+    {
+      "path": "theories/preserved/stage04/Bacon_PP_Goodman_Heredity_Exhaustion.thy",
+      "sha256": "5ac7ea597953c95ea8695efaee792471a182619711f27362081a15156cebc8ea",
+      "source": "legacy/stage04/Bacon_PP_Goodman_Heredity_Exhaustion.thy"
+    },
+    {
+      "path": "theories/preserved/stage04/Bacon_PP_Goodman_Heredity_Sharp.thy",
+      "sha256": "3635207c2f5b577a78b21df0d05dc3a74f292fd16096fb225a924e7043797cca",
+      "source": "legacy/stage04/Bacon_PP_Goodman_Heredity_Sharp.thy"
+    },
+    {
+      "path": "theories/preserved/stage04/Bacon_PP_Goodman_Higher_Type_Diagonal.thy",
+      "sha256": "b9334a8ffce471aff5992743cac8090220318cca743e7b94e391875dc4ebdcb4",
+      "source": "legacy/stage04/Bacon_PP_Goodman_Higher_Type_Diagonal.thy"
+    },
+    {
+      "path": "theories/preserved/stage04/Bacon_PP_Goodman_Proliferation.thy",
+      "sha256": "f0f5ab2acdb58140ff02b5dddfc84bb4c73bef53eaf324ebe72bbfd04e738765",
+      "source": "legacy/stage04/Bacon_PP_Goodman_Proliferation.thy"
+    },
+    {
+      "path": "theories/preserved/stage05/Bacon_PP_Goodman_T6_Inv.thy",
+      "sha256": "9b9f4d494dd649095b8b46887aa60f9f1a597f132234647b515e01c16a3c0dce",
+      "source": "legacy/stage05/Bacon_PP_Goodman_T6_Inv.thy"
+    },
+    {
+      "path": "theories/preserved/stage05/Bacon_PP_Goodman_T6_RS_Encoding.thy",
+      "sha256": "9e8d9c702955a9d2768f106b04913a4ff0789f3b2226f42b299421aebff7e2ad",
+      "source": "legacy/stage05/Bacon_PP_Goodman_T6_RS_Encoding.thy"
+    },
+    {
+      "path": "theories/preserved/stage05/Bacon_PP_Goodman_T6_TU.thy",
+      "sha256": "11d5164a83aac733e616c4c879ff1fdf2b84e8c0f6ce2695df93614387f5e0ea",
+      "source": "legacy/stage05/Bacon_PP_Goodman_T6_TU.thy"
+    },
+    {
+      "path": "theories/preserved/stage05/Bacon_PP_Goodman_T6_WI.thy",
+      "sha256": "c943d12cff26c00ab2c649b66e25fd6e0bf46ff3fa3906863facc0a299a3cd9b",
+      "source": "legacy/stage05/Bacon_PP_Goodman_T6_WI.thy"
+    },
+    {
+      "path": "theories/preserved/stage06/Bacon_PP_Goodman_T6_RS.thy",
+      "sha256": "16d44ded06941051f27fb7bc6141211d163546b0130932fc8474a45237606a87",
+      "source": "legacy/stage06/Bacon_PP_Goodman_T6_RS.thy"
+    },
+    {
+      "path": "theories/preserved-additions/central-stock/Bacon_PP_QSS_Recombination_Bridge.thy",
+      "sha256": "cf08b551c7bad6af55bc5e6b8eeb8cccfa74c26a97ce74ef8434ddd2f53fd98f",
+      "source": "legacy-additions/central-stock/Bacon_PP_QSS_Recombination_Bridge.thy"
+    },
+    {
+      "path": "theories/preserved-additions/control/Bacon_PP_Fun_Prime_Control.thy",
+      "sha256": "fbdb3865aa77ce4e397a00ee36778393804f925314e3f0bca58859418fe301a4",
+      "source": "legacy-additions/control/Bacon_PP_Fun_Prime_Control.thy"
+    },
+    {
+      "path": "theories/preserved-additions/control-heredity/Bacon_PP_Fun_Prime_Control_Heredity.thy",
+      "sha256": "e669522b658fee56141743ff42c6e366289bbd6034fd18357e06e728512cb366",
+      "source": "legacy-additions/control-heredity/Bacon_PP_Fun_Prime_Control_Heredity.thy"
+    },
+    {
+      "path": "theories/preserved-additions/control-range/Bacon_PP_Control_Range.thy",
+      "sha256": "3eabe85395d8716b54d9118797d1b0ffaf2336a679eec525cb4a570ef0cfd58f",
+      "source": "legacy-additions/control-range/Bacon_PP_Control_Range.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-completeness/Bacon_PP_ZF_Exact_Completeness.thy",
+      "sha256": "8ddb0b004e1b74f9084797c6078703b021625c0d983db2b42bad3e2e5404cb35",
+      "source": "legacy-additions/exact-completeness/Bacon_PP_ZF_Exact_Completeness.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-enumeration/Bacon_PP_ZF_Exact_Enumeration.thy",
+      "sha256": "090cac712b9208ca2e42a2caae8f71e89672124b4efaf51082a38fdd4a332033",
+      "source": "legacy-additions/exact-enumeration/Bacon_PP_ZF_Exact_Enumeration.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-first/stage01/Bacon_PP_Appendix_Model.thy",
+      "sha256": "f6318dea162e5c4f2918b08ffefebce3a05499caca212a7503a3a2d1fe196033",
+      "source": "legacy-additions/exact-first/stage01/Bacon_PP_Appendix_Model.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-first/stage01/Bacon_PP_Generic_Witness.thy",
+      "sha256": "7b31fca6de5496f33d1a931ba02f57ecfc9dcde8b3fc40d69c3e61ae91cb00f0",
+      "source": "legacy-additions/exact-first/stage01/Bacon_PP_Generic_Witness.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-first/stage01/Bacon_PP_MSet.thy",
+      "sha256": "8392837145471dad3fe0d3263129c9bcbd86d7d6ff65f043cb9f11b680e38955",
+      "source": "legacy-additions/exact-first/stage01/Bacon_PP_MSet.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-first/stage01/Bacon_PP_ZF_Word_Propositions.thy",
+      "sha256": "d1b745b8e69cdfcbd7da3e13bfbaccecd6bb78663e4446c7546b449864278418",
+      "source": "legacy-additions/exact-first/stage01/Bacon_PP_ZF_Word_Propositions.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-first/stage02/Bacon_PP_ZF_Full_MSet.thy",
+      "sha256": "f52dee7e007c2804130bd6dd79629b082dabf784cd49c75eb228c6694bf80df9",
+      "source": "legacy-additions/exact-first/stage02/Bacon_PP_ZF_Full_MSet.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-first/stage03/Bacon_PP_Axiom_Soundness.thy",
+      "sha256": "d336dfe920472091926623d11183b02da4ee0dc35fa67a766f719bbed4f9ff22",
+      "source": "legacy-additions/exact-first/stage03/Bacon_PP_Axiom_Soundness.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-first/stage03/Bacon_PP_Purity_Operator.thy",
+      "sha256": "40cfe6ed9070f46328ac8deafbe6ab4ac063c13b181c4ca93834b76c78a062a7",
+      "source": "legacy-additions/exact-first/stage03/Bacon_PP_Purity_Operator.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-first/stage04/Bacon_PP_ZF_Exact_Frame.thy",
+      "sha256": "dbc88cd95fd0446b5cbf65e48de66297104332892917b5d1b29932e8ffe40826",
+      "source": "legacy-additions/exact-first/stage04/Bacon_PP_ZF_Exact_Frame.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-first/stage05/Bacon_PP_ZF_Exact_Substitution.thy",
+      "sha256": "b82255c9c4ba8084256fa626f20ca2a6b78a0fd3c323217f3581a90edb4aed35",
+      "source": "legacy-additions/exact-first/stage05/Bacon_PP_ZF_Exact_Substitution.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-first/stage06/Bacon_PP_ZF_Exact_10_1.thy",
+      "sha256": "92eb771b4b723fb9c7b6596529653a6c4b4431a584362df6ee7ea583c7f29f86",
+      "source": "legacy-additions/exact-first/stage06/Bacon_PP_ZF_Exact_10_1.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-first/stage07/Bacon_PP_ZF_Exact_CEV_Soundness.thy",
+      "sha256": "530db47d6f08abfa4b3ddcd39b8b770d2e054d338c0bc904b3374d4e6557dc06",
+      "source": "legacy-additions/exact-first/stage07/Bacon_PP_ZF_Exact_CEV_Soundness.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-generic-seed/Bacon_PP_ZF_Exact_Generic_Seed.thy",
+      "sha256": "64503288481a06cb3d72ab7e2618d35528777efa386df9288976aee8ecc4bd68",
+      "source": "legacy-additions/exact-generic-seed/Bacon_PP_ZF_Exact_Generic_Seed.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_Heredity_Semantics.thy",
+      "sha256": "b9081bbfbd3a641bed9baf2bc04d3be2da5be37108150ecfde6da8aed8c818f4",
+      "source": "legacy-additions/exact-l2/stage01/Bacon_PP_Heredity_Semantics.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Cancellation.thy",
+      "sha256": "c0f40a5967f548cbbbc94ff2cc445b7d3ce92283c574c2aa24e1bb47468bdb94",
+      "source": "legacy-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Cancellation.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Child_Atom.thy",
+      "sha256": "877d466728eea94727222c9bea5bae86e6b77477792bd272ad0dda56357de886",
+      "source": "legacy-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Child_Atom.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Child_Variation_Semantics.thy",
+      "sha256": "4a1a67259cd782e93d5dada46675e533d5dd50b6e8caedf764d449cf157083cb",
+      "source": "legacy-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Child_Variation_Semantics.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Generic.thy",
+      "sha256": "4bfc4dd81a805f0a14245675fcaed6aea9128d03a17d3e14aa9c74712913cec5",
+      "source": "legacy-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Generic.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Generic_Prelim.thy",
+      "sha256": "fabd301ac89ce8db9d33bc9c18c74edbebfc55f3bc73c1481a339ca2933c575f",
+      "source": "legacy-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Generic_Prelim.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Immediate_Successor.thy",
+      "sha256": "da7eb0b8e7511fe4de1e1493d8a58d446f2a04d6a361eaecc16c3a0a2b7618a7",
+      "source": "legacy-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Immediate_Successor.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Model.thy",
+      "sha256": "03a6a4efb14f6b920de1e2430bbe014a9de97d4f6f073afcced7de2e00755fbd",
+      "source": "legacy-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Model.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Obstruction.thy",
+      "sha256": "29edd4e82926d3b35efc797b9cf3053d7342cf9fc7644e182ea2e077590cfc11",
+      "source": "legacy-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Obstruction.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Reduction.thy",
+      "sha256": "d79056d73b5249b59d6a5a97837569fcb52d0af750077fecf50c5ea0752a7afa",
+      "source": "legacy-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Reduction.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Refutation.thy",
+      "sha256": "6900356d3c4e16feb06c90305bbe6eaeaed9829a23c5d3476adafc0618fe04b3",
+      "source": "legacy-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Refutation.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-l2/stage02/Bacon_PP_ZF_Exact_L2_Child_Variation.thy",
+      "sha256": "6ec7f577d7b3cff39be0e9d0622581e68348aa22508a18803715b6b558de46da",
+      "source": "legacy-additions/exact-l2/stage02/Bacon_PP_ZF_Exact_L2_Child_Variation.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-logical-stock/Bacon_PP_ZF_Exact_Logical_Stock.thy",
+      "sha256": "7bd4c6f2c490d971b959541973cba5ffc6b89daba2c06b0f836f79425d41c35b",
+      "source": "legacy-additions/exact-logical-stock/Bacon_PP_ZF_Exact_Logical_Stock.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-recombination/Bacon_PP_ZF_Exact_Recombination.thy",
+      "sha256": "0ddf4dc0dae258f972bac92a68303c38ef1fbc4571c9e58dae051440f80c1e54",
+      "source": "legacy-additions/exact-recombination/Bacon_PP_ZF_Exact_Recombination.thy"
+    },
+    {
+      "path": "theories/preserved-additions/exact-stock-action/Bacon_PP_ZF_Exact_Logical_Stock_Action.thy",
+      "sha256": "ac01854c0a279d425c0ca03eaef3f10f5d0b94d3c076f93185b0186ef10d301d",
+      "source": "legacy-additions/exact-stock-action/Bacon_PP_ZF_Exact_Logical_Stock_Action.thy"
+    },
+    {
+      "path": "theories/preserved-additions/granularity/Bacon_PP_Goodman_Granularity.thy",
+      "sha256": "bf7e3618568e7cc7eda60a8af58966be55b1abdc9f18fa7483b4b71033ee8b8d",
+      "source": "legacy-additions/granularity/Bacon_PP_Goodman_Granularity.thy"
+    },
+    {
+      "path": "theories/preserved-additions/granularity-qln/Bacon_PP_Goodman_Granularity_QLN.thy",
+      "sha256": "7944153ba48120b0c8184d2d802b9eadc4de9cf0c90de2012414f6fd928e6608",
+      "source": "legacy-additions/granularity-qln/Bacon_PP_Goodman_Granularity_QLN.thy"
+    },
+    {
+      "path": "theories/preserved-additions/m2-classifiers/Bacon_PP_Goodman_M2.thy",
+      "sha256": "2969b2e4a2a8aa5cceab6217efd3c54839a1305182758dcc262ce192c4a6ff54",
+      "source": "legacy-additions/m2-classifiers/Bacon_PP_Goodman_M2.thy"
+    },
+    {
+      "path": "theories/preserved-additions/m5-collision/Bacon_PP_Goodman_M5_Collision.thy",
+      "sha256": "65799d66f36a5f308b048dbe706159f8d6f9b1bfbb022aa9a0fdf0636b8de888",
+      "source": "legacy-additions/m5-collision/Bacon_PP_Goodman_M5_Collision.thy"
+    },
+    {
+      "path": "theories/preserved-additions/m5-invertibles/Bacon_PP_Goodman_M5_Existential_Invertibles.thy",
+      "sha256": "da45c6ea5ae86e75df38552b7e09211ff78652a97c34958deacc94d70c75a53b",
+      "source": "legacy-additions/m5-invertibles/Bacon_PP_Goodman_M5_Existential_Invertibles.thy"
+    },
+    {
+      "path": "theories/preserved-additions/t7-absorption/Bacon_PP_Goodman_T7_Absorption.thy",
+      "sha256": "80554c92a81bf830281015870d7fff70cdcbd91583388ad5a4fcaf1b4325160f",
+      "source": "legacy-additions/t7-absorption/Bacon_PP_Goodman_T7_Absorption.thy"
+    },
+    {
+      "path": "theories/preserved-additions/t8-base/Bacon_PP_Goodman_T8_Base_Kinds.thy",
+      "sha256": "6a853eeeada8a22701a09a26f51190df10577e29b2133d21c8c4ab8ba4467433",
+      "source": "legacy-additions/t8-base/Bacon_PP_Goodman_T8_Base_Kinds.thy"
+    },
+    {
+      "path": "theories/preserved-additions/t8-encoding/Bacon_PP_Goodman_T8_Encoding.thy",
+      "sha256": "4733e0661cf43e4f59031af77154af2553003bdc260a45df338c261d82b9548d",
+      "source": "legacy-additions/t8-encoding/Bacon_PP_Goodman_T8_Encoding.thy"
+    },
+    {
+      "path": "theories/preserved-additions/t8-growth/Bacon_PP_Goodman_T8_Growth.thy",
+      "sha256": "91a3a263a1dbac8df55ed0ab79ac74d979072a4b234c08bd6b2c572c957ed882",
+      "source": "legacy-additions/t8-growth/Bacon_PP_Goodman_T8_Growth.thy"
+    },
+    {
+      "path": "theories/preserved-additions/t8-kind/Bacon_PP_Goodman_T8_Kind_Uniqueness.thy",
+      "sha256": "05aaf1f2b2586da42876edc05f09bb579b557ddb7aa2fd56fa5f3d1e346ed46c",
+      "source": "legacy-additions/t8-kind/Bacon_PP_Goodman_T8_Kind_Uniqueness.thy"
+    },
+    {
+      "path": "theories/preserved-additions/t9-cardinal/Bacon_PP_Goodman_T9.thy",
+      "sha256": "a6daad9b3e33ebddec9d30eaba0f96b95f2bd72fd6056fb9cbb297d2c961c5f3",
+      "source": "legacy-additions/t9-cardinal/Bacon_PP_Goodman_T9.thy"
+    },
+    {
+      "path": "theories/preserved-additions/t9-infinitude/Bacon_PP_Goodman_T9_Infinitude.thy",
+      "sha256": "8331e0f28e4a8427c656b8bda6d4058db95a752ac5aa10e897d25dc65f8fca88",
+      "source": "legacy-additions/t9-infinitude/Bacon_PP_Goodman_T9_Infinitude.thy"
+    },
+    {
+      "path": "theories/preserved-additions/wi-master/Bacon_PP_Goodman_T6_WI_Master.thy",
+      "sha256": "5d6f1c00aaa5b1b8899f23d515fac6915b57e45cd38d3f1f37fbb90afeb8ea90",
+      "source": "legacy-additions/wi-master/Bacon_PP_Goodman_T6_WI_Master.thy"
+    },
+    {
+      "path": "theories/logical_stock/Goodman_Exact_Closed_Decoding.thy",
+      "sha256": "2ecf8b8cf4eb7ce7522ba48da9815565b1f7ab5ac3b3014ae26bac923c249667",
+      "source": "logical_stock/Goodman_Exact_Closed_Decoding.thy"
+    },
+    {
+      "path": "theories/logical_stock/Goodman_Exact_Stock_Audit.thy",
+      "sha256": "be4f5c362da5805ef793ccfa88ab644c29b9c07447bd66435923a3cd55eb4bbf",
+      "source": "logical_stock/Goodman_Exact_Stock_Audit.thy"
+    },
+    {
+      "path": "theories/logical_stock/Goodman_Exact_Stock_Correspondence.thy",
+      "sha256": "7fda5920289abb377e77c8556186f9c9313285d2ba792c9fdf592fcdfaee9a7d",
+      "source": "logical_stock/Goodman_Exact_Stock_Correspondence.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Basis_Native_Background.thy",
+      "sha256": "0197a3c53df7245caafdcd4e2c5be05a611e18db8c16464d52f8216d0d652357",
+      "source": "m5/Goodman_Exact_Basis_Native_Background.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Basis_Native_Background_Audit.thy",
+      "sha256": "d8a0c7874018acf93463563b91e3eab3e34c0bf5ccc87d15553af3886b914aa1",
+      "source": "m5/Goodman_Exact_Basis_Native_Background_Audit.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Basis_QLN.thy",
+      "sha256": "3e0824f5fd8d2b1f2ae24d5ec653897e2d905e39799af771453228d57b62f1bf",
+      "source": "m5/Goodman_Exact_Basis_QLN.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Basis_QLN_Audit.thy",
+      "sha256": "b91403083ab94e32636f49fbe0a773a27ad2af85f1577222737bb2aa8db0ab73",
+      "source": "m5/Goodman_Exact_Basis_QLN_Audit.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Basis_QSS.thy",
+      "sha256": "dd18301551d80abebc5c71d2598d3110cfed56ece17d05c473bff526bbc02849",
+      "source": "m5/Goodman_Exact_Basis_QSS.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Basis_QSS_Audit.thy",
+      "sha256": "75d43a0904295877c640cf1ac5b0139236aa6b23097a487210162ce1edcb6d0e",
+      "source": "m5/Goodman_Exact_Basis_QSS_Audit.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Basis_Seed.thy",
+      "sha256": "cad3a385d36ab5d23293ab9c09641e2335a4ddb162187ece19b0a7be0bcea8b3",
+      "source": "m5/Goodman_Exact_Basis_Seed.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Basis_Seed_Audit.thy",
+      "sha256": "7ec7c87b782cfba579969d186096097907770c4aac25c7d5c53e7fcc3cffe782",
+      "source": "m5/Goodman_Exact_Basis_Seed_Audit.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Expanded_Minimality.thy",
+      "sha256": "f6e3a3ae6df8c25bf505f2cb027b0e5e490b2339f62ac3849b86d7a6f78a8be9",
+      "source": "m5/Goodman_Exact_Expanded_Minimality.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Expanded_Minimality_Audit.thy",
+      "sha256": "a22c0b64c055f73659d12309f0fb75aeb0ea50e9fc9445d6d56e0ac994a03d6a",
+      "source": "m5/Goodman_Exact_Expanded_Minimality_Audit.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Expanded_Stock.thy",
+      "sha256": "58d9f825154b55c96b211df49a2f52766895f76afd0d6c16f2bd115e55c043f8",
+      "source": "m5/Goodman_Exact_Expanded_Stock.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Expanded_Stock_Audit.thy",
+      "sha256": "56a5d2ee2c90301e0e1fbcf66d71608690c7408c73f627d7d9b21c6126cde2d7",
+      "source": "m5/Goodman_Exact_Expanded_Stock_Audit.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Fixed_Constant_Gluing.thy",
+      "sha256": "853e4ae3ceb9f4090e04be59fe6493baeac8acf7974a913da88a0286fc74a006",
+      "source": "m5/Goodman_Exact_Fixed_Constant_Gluing.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Fixed_Constant_Gluing_Audit.thy",
+      "sha256": "adbd48d0fad457902131415f4ddee639d6cdf380910223a121fca17cf2cd544f",
+      "source": "m5/Goodman_Exact_Fixed_Constant_Gluing_Audit.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Invariant_Basis.thy",
+      "sha256": "b1456a33dfcc777553a5a403fdb66e900eb177e3508c5a9b24507644dfee94c1",
+      "source": "m5/Goodman_Exact_Invariant_Basis.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Invariant_Basis_Audit.thy",
+      "sha256": "9563280f14802a0362418054a98037bdbf8efe5962f24aec8197bbc60d665bdd",
+      "source": "m5/Goodman_Exact_Invariant_Basis_Audit.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_M5_Classifications.thy",
+      "sha256": "5510b1bb93d8bede246742ba0927aa31adf55e82fb290d556c845136a62588e6",
+      "source": "m5/Goodman_Exact_M5_Classifications.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_M5_Classifications_Audit.thy",
+      "sha256": "d99a87bc36e3542678500b19398d48a000f80d67d3f7647034f1a01d6e216ec0",
+      "source": "m5/Goodman_Exact_M5_Classifications_Audit.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_M5_Fixed_Pair_Model.thy",
+      "sha256": "0275b956423736b3130a005069e7dc27aa93b68429f78942bf8445570e205501",
+      "source": "m5/Goodman_Exact_M5_Fixed_Pair_Model.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_M5_Fixed_Pair_Model_Audit.thy",
+      "sha256": "08834c783c984393e28938ae7cd0152fe1e02d5fba0928310f69f3a6aede2019",
+      "source": "m5/Goodman_Exact_M5_Fixed_Pair_Model_Audit.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_M5_Rebuilt_Model.thy",
+      "sha256": "586941ef7aa6512c0c64816586a5aa2e91b29b45cf1459c07404569256a5535e",
+      "source": "m5/Goodman_Exact_M5_Rebuilt_Model.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_M5_Rebuilt_Model_Audit.thy",
+      "sha256": "827a69c3a8f90ea44afa01b45936404f027892a8544bf680700b6f0e8a6c4e4f",
+      "source": "m5/Goodman_Exact_M5_Rebuilt_Model_Audit.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_M5_TU_Refutation.thy",
+      "sha256": "fe911b3dbc58793dfc8c1d35a97e854e670d73a44d2790c25061515925f6bf2b",
+      "source": "m5/Goodman_Exact_M5_TU_Refutation.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_M5_TU_Refutation_Audit.thy",
+      "sha256": "cd405c268235de310817acdd99d422f50f015d0b1785d21afa42ad18b99c5597",
+      "source": "m5/Goodman_Exact_M5_TU_Refutation_Audit.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Rebuilt_Constants.thy",
+      "sha256": "6bf1fdf22fc23662a73444245b32dd3d27229cc48134ac65dbe7ccbf208b6304",
+      "source": "m5/Goodman_Exact_Rebuilt_Constants.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_Exact_Rebuilt_Constants_Audit.thy",
+      "sha256": "08640ff835426773faaa069da5583ac9083866310b44eeecfd88ebeb87d8e543",
+      "source": "m5/Goodman_Exact_Rebuilt_Constants_Audit.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_M5_Collision_Repair.thy",
+      "sha256": "d337ae6e90de63be97f59a3f9c31cf909c685bcd73bcc4ae43eac5ea51213378",
+      "source": "m5/Goodman_M5_Collision_Repair.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_M5_Collision_Repair_Audit.thy",
+      "sha256": "6861f2c572ed6863088de36caf7c23ba350518c354636c527b7d9ca39346b7d0",
+      "source": "m5/Goodman_M5_Collision_Repair_Audit.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_M5_Exotic_Operators.thy",
+      "sha256": "652734610e7386e8d7c6415a069ad6d8b022a501201e20e868edc577d6eb014e",
+      "source": "m5/Goodman_M5_Exotic_Operators.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_M5_Exotic_Operators_Audit.thy",
+      "sha256": "43ee3287d30026eb650bc185b3a6978482dbde564beaec38fae3570f7adb4f31",
+      "source": "m5/Goodman_M5_Exotic_Operators_Audit.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_M5_Local_Collision_Counterexample.thy",
+      "sha256": "d6da14ca7fce6635783b54a0ba6399bec1337ad1177323eaf0d1dcaf597ba28d",
+      "source": "m5/Goodman_M5_Local_Collision_Counterexample.thy"
+    },
+    {
+      "path": "theories/m5/Goodman_M5_Local_Collision_Counterexample_Audit.thy",
+      "sha256": "0192cfe8c747e707582b045ce7c7fc29d733b9c8586230657e875ba0a7f0dbb1",
+      "source": "m5/Goodman_M5_Local_Collision_Counterexample_Audit.thy"
+    },
+    {
+      "path": "theories/m5_object/Goodman_Fixed_Fun_Prime_Audit.thy",
+      "sha256": "8597bacf2468d9319372757c011c567640f12cb784ba893777fd4187c7dd4928",
+      "source": "m5_object/Goodman_Fixed_Fun_Prime_Audit.thy"
+    },
+    {
+      "path": "theories/m5_object/Goodman_Fixed_Fun_Prime_Axiom.thy",
+      "sha256": "37fd451e65354f3c97741408e506ecf5ac1e0ee885db892da5516fa57e1eaa9d",
+      "source": "m5_object/Goodman_Fixed_Fun_Prime_Axiom.thy"
+    },
+    {
+      "path": "theories/m5_object/Goodman_M5_Nested_Collision.thy",
+      "sha256": "54dfd509d8a23a71036f8f1e7558e7641df05fadf05a8dc71c8c34fdd85a4578",
+      "source": "m5_object/Goodman_M5_Nested_Collision.thy"
+    },
+    {
+      "path": "theories/m5_object/Goodman_M5_Nested_Collision_Audit.thy",
+      "sha256": "596f4d42edd07f953664bbff16d86e85fd150ad2133e8cf0d33f1674f6781cf6",
+      "source": "m5_object/Goodman_M5_Nested_Collision_Audit.thy"
+    },
+    {
+      "path": "theories/m5_object/Goodman_M5_Object_Audit.thy",
+      "sha256": "46c9516c63b3e1091d5b87b1b10b61a8963caa9b0b628d1465bf0aefd9fb2bbd",
+      "source": "m5_object/Goodman_M5_Object_Audit.thy"
+    },
+    {
+      "path": "theories/m5_object/Goodman_M5_Object_Transfer.thy",
+      "sha256": "7fce4dd9bdac04929f292d730b1d92eae8e9e226e73b59564e39ee05d4c639e8",
+      "source": "m5_object/Goodman_M5_Object_Transfer.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_Generic_Fun_Prime.thy",
+      "sha256": "6f0d72fafed04d3dbb2bdd701fe9484c946cf3cf1bcec875fbfb4a14d6fd2c03",
+      "source": "m_claims/Goodman_Exact_Generic_Fun_Prime.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_Generic_Fun_Prime_Audit.thy",
+      "sha256": "f2e592d99c45b37029b999215caa0c5437b73e266d47aada3fa8ac75591e2044",
+      "source": "m_claims/Goodman_Exact_Generic_Fun_Prime_Audit.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M1_Bottom.thy",
+      "sha256": "c81166b755bce51b8dffb3206ba42bb77c92a68fdd9a517002e01e67eb7dc5b9",
+      "source": "m_claims/Goodman_Exact_M1_Bottom.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M1_Bottom_Audit.thy",
+      "sha256": "c85fdc06567dea8ddf8b63df2ffac1098a1704032b843d5a13f1bf86c3911315",
+      "source": "m_claims/Goodman_Exact_M1_Bottom_Audit.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M1_Fn59.thy",
+      "sha256": "3ca6fcf505a3a579aaf6a1a3e784079c42c3a9133557026ee1afbcf9a86d48e1",
+      "source": "m_claims/Goodman_Exact_M1_Fn59.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M1_Fn59_Audit.thy",
+      "sha256": "fde170453c8787dd526b74ee8af920725b45a6c2cde9f9726f6de2b106e7d6eb",
+      "source": "m_claims/Goodman_Exact_M1_Fn59_Audit.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M2_Transfer.thy",
+      "sha256": "371ee2fe8843cd2809c1e2ea8fa16daaeb7dd1d43622960846f4284473f9a07f",
+      "source": "m_claims/Goodman_Exact_M2_Transfer.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M2_Transfer_Audit.thy",
+      "sha256": "cf93acf67f85564ea9d43d20e007d8fa8bf26e70d418f261922f8c246eeb6bc1",
+      "source": "m_claims/Goodman_Exact_M2_Transfer_Audit.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M3_Algebra.thy",
+      "sha256": "1b3612f8f7c13009a5b2ab007a43af01f66a2fd8f183a37f87ae2bbd4ff3a781",
+      "source": "m_claims/Goodman_Exact_M3_Algebra.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M3_Algebra_Audit.thy",
+      "sha256": "adfac951189e7096a4d62a76a37ee76ee3ad97efeefe9d422b15736913b0f184",
+      "source": "m_claims/Goodman_Exact_M3_Algebra_Audit.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M3_Extreme_Audit.thy",
+      "sha256": "562967b24fe7daf24b078c6f6351e2a9c3175bcc610413630e75464859445f6c",
+      "source": "m_claims/Goodman_Exact_M3_Extreme_Audit.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M3_Extreme_Views.thy",
+      "sha256": "7f3e00fdd747c598e0c0bb1a983a52204ad9219899aa5fe70a5afe591d1992a9",
+      "source": "m_claims/Goodman_Exact_M3_Extreme_Views.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M3_No_All_View_Generator.thy",
+      "sha256": "e2fa6d900b2f72612e1344c9baf07481234b6569384a4170332b872bcc770456",
+      "source": "m_claims/Goodman_Exact_M3_No_All_View_Generator.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M3_No_All_View_Generator_Audit.thy",
+      "sha256": "36f74f68ba8b38b4a48ca35ea5be3b95affcea8fc5d6fd0d60e91799edb8db4f",
+      "source": "m_claims/Goodman_Exact_M3_No_All_View_Generator_Audit.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M3_Topology.thy",
+      "sha256": "3af4d3bfa9fda6d91d3bc3c0bbacf9dd80db2bdd746ac3154921800326260851",
+      "source": "m_claims/Goodman_Exact_M3_Topology.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M3_Topology_Audit.thy",
+      "sha256": "b47ccaf3c884c1c7d048c2d5581c14faf4a38f901e892b2338cf756d8b6ff2bb",
+      "source": "m_claims/Goodman_Exact_M3_Topology_Audit.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M4_Repair.thy",
+      "sha256": "3d60e5e46e31cf7fb3fc72bbe5afcf664b9f22cd1b90cdd0d659d6dc255af55b",
+      "source": "m_claims/Goodman_Exact_M4_Repair.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M4_Repair_Audit.thy",
+      "sha256": "d5d921a07397f8faf8ad6f3f771f3510439ce9180cc20d461a8b0b8ae77dcec0",
+      "source": "m_claims/Goodman_Exact_M4_Repair_Audit.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M6_Repair.thy",
+      "sha256": "9cf9f85d9b47fe31d96edd74f5697237d75bb1f5a4ad3f400889298994080950",
+      "source": "m_claims/Goodman_Exact_M6_Repair.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M6_Repair_Audit.thy",
+      "sha256": "16674a6fd392eef4117b5439ed2f3508fa35c3618d27a4496665d4231cce4fd3",
+      "source": "m_claims/Goodman_Exact_M6_Repair_Audit.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M7_Transfer.thy",
+      "sha256": "65f06c0651341f7b5855ac0dc2e80f2dbe20e5c9917f4a53f2f7177626149fd2",
+      "source": "m_claims/Goodman_Exact_M7_Transfer.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_Exact_M7_Transfer_Audit.thy",
+      "sha256": "b01c98876b7252fbe4076f27eca4d7c1bfe3d7d090f51b54ece946874b0eb336",
+      "source": "m_claims/Goodman_Exact_M7_Transfer_Audit.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_M1_Fn59_Purity.thy",
+      "sha256": "c54f19c2d7e532c12f56f6bd9c82d0e6072e76d34000d810b865fde3391b8b02",
+      "source": "m_claims/Goodman_M1_Fn59_Purity.thy"
+    },
+    {
+      "path": "theories/m_claims/Goodman_M1_Fn59_Purity_Audit.thy",
+      "sha256": "fe0e70ba1f2708cc8b274c25aef413632bca44b9e5acd345e9679b5d150c1a39",
+      "source": "m_claims/Goodman_M1_Fn59_Purity_Audit.thy"
+    },
+    {
+      "path": "theories/native_extras/Goodman_Native_T6_Extras.thy",
+      "sha256": "fac0cf4e2347dae1c14c059aa434ef104143296e62bf9e75c18f7d593c1bb406",
+      "source": "native_extras/Goodman_Native_T6_Extras.thy"
+    },
+    {
+      "path": "theories/native_extras/Goodman_Native_T6_Extras_Audit.thy",
+      "sha256": "efa439d7e07fceebe15f2d9aed651817e6d50bd3c54cff7da3cdc4f0e7664db8",
+      "source": "native_extras/Goodman_Native_T6_Extras_Audit.thy"
+    },
+    {
+      "path": "theories/native_extras/Goodman_Native_T6_Routes.thy",
+      "sha256": "41db6797b14d506582b37b631dee51ced3b771d17aae3633e182ada1a6828ac0",
+      "source": "native_extras/Goodman_Native_T6_Routes.thy"
+    },
+    {
+      "path": "theories/native_extras/Goodman_Native_T6_Routes_Audit.thy",
+      "sha256": "03b86e25ca96890ef3b7996793c17cb486ca3b26183c78152f13962144b3e33b",
+      "source": "native_extras/Goodman_Native_T6_Routes_Audit.thy"
+    },
+    {
+      "path": "theories/numbered/Goodman_T7_Audit.thy",
+      "sha256": "ec51a0350dd977e01a0b92512bfcdc28dde82da94a26a9013cd592da415f52c8",
+      "source": "numbered/Goodman_T7_Audit.thy"
+    },
+    {
+      "path": "theories/numbered/Goodman_T7_Transfer.thy",
+      "sha256": "54c64afa482fa796362adf4abeddcbda2ba9606b73b5c8943086eec8d6dffc81",
+      "source": "numbered/Goodman_T7_Transfer.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_CEV_Axiom_Preservation.thy",
+      "sha256": "6d0248140d407468f052eb7fe9a5da119e0bc233d8c860c42f62ad658d1148a2",
+      "source": "replay/Goodman_CEV_Axiom_Preservation.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_Constant_Map_Audit.thy",
+      "sha256": "19f16cf15bfaab5adc483101e8d6de6abe7a8267fbc9bdab9e5c83fc96cd1cc0",
+      "source": "replay/Goodman_Constant_Map_Audit.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_Extension_Constant_Map.thy",
+      "sha256": "bce0f818ff86ef8053f5105225048effc34b39c28144af11542b2e6d46aaa221",
+      "source": "replay/Goodman_Extension_Constant_Map.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_Extension_Finite_Support.thy",
+      "sha256": "20e238a9b12a26f693e2935fbfbe4274c2dbb1ae68fbfe75e97aa2e471128b3b",
+      "source": "replay/Goodman_Extension_Finite_Support.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_Extension_Retraction.thy",
+      "sha256": "b147e2619d7eafff5d632c3c04564a26dd7cb42125c8f0e175d64fc59d9526b8",
+      "source": "replay/Goodman_Extension_Retraction.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_Modal_Abbreviation_Bridge.thy",
+      "sha256": "a42b1d8b7dffbc9ea92df55517048561172754d9d29563c0bc9080c84614d1e3",
+      "source": "replay/Goodman_Modal_Abbreviation_Bridge.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_Modal_Integration_Audit.thy",
+      "sha256": "d29431cb60ff442333933e492bb39f6827d4300283d2438059c93fcb1c881e22",
+      "source": "replay/Goodman_Modal_Integration_Audit.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_Modal_Package_Preservation.thy",
+      "sha256": "d61a0dd747745efbb4d29f7271cc66b94f72113aebc61809899dfec472607a3b",
+      "source": "replay/Goodman_Modal_Package_Preservation.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_Native_Stock_Audit.thy",
+      "sha256": "e19c32aa5fc627e13ed1b9fb1315aa8943a4e6e0ede701761e01cf8e1be120a4",
+      "source": "replay/Goodman_Native_Stock_Audit.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_Native_Stock_Bridge.thy",
+      "sha256": "af00d8c45c59152bdcc904a2b2f577d557d360792206415b640dd8719b6bf217",
+      "source": "replay/Goodman_Native_Stock_Bridge.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_QLN_Translation.thy",
+      "sha256": "5bf82564752f5c77dd220c73725ceec44c1f083134f3d4d227f4d4befc276c54",
+      "source": "replay/Goodman_QLN_Translation.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_Restricted_Signature_Transfer.thy",
+      "sha256": "1cdb93226ff6320413cbc89a74c90325c2db40c9d771d23751adaaad57e18c25",
+      "source": "replay/Goodman_Restricted_Signature_Transfer.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_Signature_Audit.thy",
+      "sha256": "54e5765fcefd07b3116366833be9acab99f29817c91fe21da51ff6e2607538f7",
+      "source": "replay/Goodman_Signature_Audit.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_T6_Audit.thy",
+      "sha256": "0afbaa9f7d6eb8c9e5fd94fb39ca89b66fe80c24ebe6ed84b21431c0fe82a294",
+      "source": "replay/Goodman_T6_Audit.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_T6_Restricted_Signature.thy",
+      "sha256": "7240ece9d9817bd750ef5928791e49c4805ebc04875187c1e9e2bacd4d1b51f0",
+      "source": "replay/Goodman_T6_Restricted_Signature.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_T6_Transfer.thy",
+      "sha256": "6edef04cd30bd096ed8e5f46b81ff99fc8a191ee73032e6e604c0e3efedea713",
+      "source": "replay/Goodman_T6_Transfer.thy"
+    },
+    {
+      "path": "theories/replay/Goodman_Theorem_Equivalence_Congruence.thy",
+      "sha256": "c810c3da5f517081c09c7eb78ee223ab36d267d3991f8f7d0757ed152e9564e6",
+      "source": "replay/Goodman_Theorem_Equivalence_Congruence.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Applicative_Adapter.thy",
+      "sha256": "4f2b2de6630eeda7d3d7c3c02ff236485f9af7f0cf0d021c53e2f04c3dc43a2a",
+      "source": "semantics/Goodman_Exact_Applicative_Adapter.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Applicative_Audit.thy",
+      "sha256": "62633a2ae15e7d28aab98e1555c66b55230bff96048cf1ff52815147093eb082",
+      "source": "semantics/Goodman_Exact_Applicative_Audit.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Classicist_Soundness.thy",
+      "sha256": "1b8f5abc90191d4e28b95f51d2ec4aafe9afa7aa67dc4d1947559c3f804222f2",
+      "source": "semantics/Goodman_Exact_Classicist_Soundness.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Denotation_Audit.thy",
+      "sha256": "9c9a41003d9745d604ed4f75322d2c641a3f110fa13c1b4b534cb436ad12d936",
+      "source": "semantics/Goodman_Exact_Denotation_Audit.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Denotation_Translation.thy",
+      "sha256": "4d411702950dce8bbc0d59b4ac1fabaa3a0ec5476a3567e448cef89c314d1ec0",
+      "source": "semantics/Goodman_Exact_Denotation_Translation.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Denotation_Translation_Audit.thy",
+      "sha256": "0e73e3ea476e880e00f48d73129ea2c8a2394c223fe9f3e2840a8179b45d99a1",
+      "source": "semantics/Goodman_Exact_Denotation_Translation_Audit.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Global_Validity.thy",
+      "sha256": "9f09a5f99885a2537ab38c608e35846b453300ff872a13c7d25715dedb39d5ce",
+      "source": "semantics/Goodman_Exact_Global_Validity.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Goodman_Soundness.thy",
+      "sha256": "fdc29bf65b2a0be579fd29b6c243d2b5df3458eb38cc7fac858780704e82d3ba",
+      "source": "semantics/Goodman_Exact_Goodman_Soundness.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Goodman_Translation.thy",
+      "sha256": "55ad14e0b30bf1055ff7a25b87e541ee32e41e6b9906c13c66b7af031dc6c1d2",
+      "source": "semantics/Goodman_Exact_Goodman_Translation.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Goodman_Translation_Audit.thy",
+      "sha256": "041f674bb21026a1e1ad13e7985798f6c4c61e8aab870b3fddc22b22f0b14ef3",
+      "source": "semantics/Goodman_Exact_Goodman_Translation_Audit.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Interpretation_Structure.thy",
+      "sha256": "0227618a1b8e88abf3864b9da29f58c515fea7c2fcbdb37d324082a394fb71e8",
+      "source": "semantics/Goodman_Exact_Interpretation_Structure.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Leibniz_Characterization.thy",
+      "sha256": "3ffda2c3c888d3d6d7d00bd2c70116501b4d9d190e146d98086f261227d21fcd",
+      "source": "semantics/Goodman_Exact_Leibniz_Characterization.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Logical_Values.thy",
+      "sha256": "808a1fac8f0ab80e4dbe6a921e7a86baac5224d9ec69082187bf353b4b1eee5e",
+      "source": "semantics/Goodman_Exact_Logical_Values.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Minimal_Model.thy",
+      "sha256": "72b861e6278330bbef4c6034ab8b287c2001cb6ba2b2b0dedadae18264ea2e61",
+      "source": "semantics/Goodman_Exact_Minimal_Model.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Modal_Functionality.thy",
+      "sha256": "02dab2a7b087ade168303de69881bf43e6a590a04626748167aeadf77c2c978d",
+      "source": "semantics/Goodman_Exact_Modal_Functionality.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Named_Conversion.thy",
+      "sha256": "fa4708673a07e098dfe4d939de7ce11bdbdc19120b352bef50cdb90f7cb486b5",
+      "source": "semantics/Goodman_Exact_Named_Conversion.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Named_Denotation.thy",
+      "sha256": "b81cd1d38656c513a95a1938fdfc4186ae4fd34ac6457ccfb3b5ce2c0df7b09a",
+      "source": "semantics/Goodman_Exact_Named_Denotation.thy"
+    },
+    {
+      "path": "theories/semantics/Goodman_Exact_Soundness_Audit.thy",
+      "sha256": "632ece6d082553faa6567b57bc0e3d0b8abb1b43926dc18dfda768b15130b0fd",
+      "source": "semantics/Goodman_Exact_Soundness_Audit.thy"
+    },
+    {
+      "path": "theories/t8/Goodman_T8_Audit.thy",
+      "sha256": "633ecabda30b0d1e32936611c84a63a9ec672611590c1bd4261202c042971583",
+      "source": "t8/Goodman_T8_Audit.thy"
+    },
+    {
+      "path": "theories/t8/Goodman_T8_Transfer.thy",
+      "sha256": "2db4c41ea13444d45b99f53f75205da18cfc4183424a9ca8dc1c1f840d269e3d",
+      "source": "t8/Goodman_T8_Transfer.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_Cardinal.thy",
+      "sha256": "129f17701cdcb0c40531b2e63a34ac911e841b27f73e36746da98635bd5b4b77",
+      "source": "t9/Goodman_T9_Cardinal.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_Cardinal_Audit.thy",
+      "sha256": "6c4a35c0ad4a4aa90f149a4a892264db7b0c58e9b7e5096010916c102c7f9af4",
+      "source": "t9/Goodman_T9_Cardinal_Audit.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_Granularity_Audit.thy",
+      "sha256": "460b11481b0c10e964bb4d3e2c5daa2daae50db95d6dcf54227110cf959054d8",
+      "source": "t9/Goodman_T9_Granularity_Audit.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_Granularity_Bounds.thy",
+      "sha256": "51b33467b85a57b5204290da630813712cd5139dce694979e933b4839ad9b64d",
+      "source": "t9/Goodman_T9_Granularity_Bounds.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_Infinitude.thy",
+      "sha256": "d70be63c4c20bd63183de67391b21d8d19a4b83756439563bda8578bcd9ce0dc",
+      "source": "t9/Goodman_T9_Infinitude.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_Infinitude_Audit.thy",
+      "sha256": "a6c1b11d3217e5c28da7b208f8fc8c0113c79c5655c339c2fc0bd4ff16ef0e4a",
+      "source": "t9/Goodman_T9_Infinitude_Audit.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_Kind_Selector.thy",
+      "sha256": "a0c1c25dd14050bc3586112fc33a0b20e96d14eb87dee4ae12a9f336c51cec84",
+      "source": "t9/Goodman_T9_Kind_Selector.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_Kind_Selector_Audit.thy",
+      "sha256": "12dd94100b510defcb69c0ec9ed15b314b59a32c381b34645a9baa324dcd276b",
+      "source": "t9/Goodman_T9_Kind_Selector_Audit.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_L2_Semantics.thy",
+      "sha256": "0d91f602e4479739131d1919276092c76bb3fbe08a37e3c11f554c432cccf78f",
+      "source": "t9/Goodman_T9_L2_Semantics.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_L2_Semantics_Audit.thy",
+      "sha256": "48bf1add413fc69285313bcc1a7f118a6791c794862a52f8461f90ef8ee32b9e",
+      "source": "t9/Goodman_T9_L2_Semantics_Audit.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_Native_Conclusion.thy",
+      "sha256": "04ca3bca65f63c1f9c02f994758c77009050fde7267a630ddb5fe537b8f2a92d",
+      "source": "t9/Goodman_T9_Native_Conclusion.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_Native_Conclusion_Audit.thy",
+      "sha256": "598adb5f71441447076a84efe66119fdaebc6cc5329a16ddb473fc3f5392fdbe",
+      "source": "t9/Goodman_T9_Native_Conclusion_Audit.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_Native_Purity.thy",
+      "sha256": "64bec12ce15c717930ba2fbf2720bf67b0e69af013ea201623218c9a7ea26641",
+      "source": "t9/Goodman_T9_Native_Purity.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_PC_Selector.thy",
+      "sha256": "9d1d0f38c571696e572031027fe7de3e8277aaa41ac5d18c78b3f9c1b1f285c8",
+      "source": "t9/Goodman_T9_PC_Selector.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_Root_Algebra.thy",
+      "sha256": "bbde654bf013361b5a0937ff40cc0c313eb559e3a04068251fc77d4d4f9e1f80",
+      "source": "t9/Goodman_T9_Root_Algebra.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_Root_Algebra_Audit.thy",
+      "sha256": "5514ecedb4f410de1fcbc97ab0bc7630d412c15ac9d0a4013f85b59dbc0d85c7",
+      "source": "t9/Goodman_T9_Root_Algebra_Audit.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_Selector_Audit.thy",
+      "sha256": "9c14df80f00f6c99e62e3528d9f9e694cfad3df09a31ad3aefc85432d41d82e6",
+      "source": "t9/Goodman_T9_Selector_Audit.thy"
+    },
+    {
+      "path": "theories/t9/Goodman_T9_Selector_Terms.thy",
+      "sha256": "8714c6e458b589dea0145f6883c0f5ad85f30cc710138ea435ab5d506856356d",
+      "source": "t9/Goodman_T9_Selector_Terms.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Axiom_Extension_Quantifiers.thy",
+      "sha256": "68ac059a7a4167079b9e0b218f1588fb6860b7348c3e92b69956d232336bbed8",
+      "source": "theories/Goodman_Axiom_Extension_Quantifiers.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Binding_Conversion_Audit.thy",
+      "sha256": "1f215f0cc846029e499d4d98436319d304a5f8cfd6c980cf933da73d13a85c96",
+      "source": "theories/Goodman_Binding_Conversion_Audit.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Book_Axiom_Extension.thy",
+      "sha256": "b141695cc023071a6cfab5514fbc31b13b6fffcae68a4997ba8735bc5e97095b",
+      "source": "theories/Goodman_Book_Axiom_Extension.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Book_Axiom_Packages.thy",
+      "sha256": "aa652fb31bdfe37a323c09e4977923a7e796cf5b25328546eb558e58ac5e448e",
+      "source": "theories/Goodman_Book_Axiom_Packages.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Book_Extension_Closure.thy",
+      "sha256": "913d7e2cb3b00183d9deb582157660680aeca8798efe0620bb739f6f6c8d2071",
+      "source": "theories/Goodman_Book_Extension_Closure.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Book_QLN.thy",
+      "sha256": "33fd060aab8fd929ae4506cbe65e2e2b5c874824a819b40fd2ddcde1a3075937",
+      "source": "theories/Goodman_Book_QLN.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Book_Vector_Extension.thy",
+      "sha256": "d1ae086504341fd344457c26a5d8cb5fe612e7dc3324c07f608b15b7f37aa19c",
+      "source": "theories/Goodman_Book_Vector_Extension.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Book_Vocabulary.thy",
+      "sha256": "76328e52dbbb019eb20e099bfa5c1c5cd6916310dd5f8ba9df98d2ea3fec7c4a",
+      "source": "theories/Goodman_Book_Vocabulary.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Closed_Axiom_Transport.thy",
+      "sha256": "16b7a10294dc1f21fb119dbf48554efe595767718b2a14033611aea654ba46ac",
+      "source": "theories/Goodman_Closed_Axiom_Transport.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Constructor_Translation.thy",
+      "sha256": "0e8404092ba6883f72e866c317fe801fc9a8e994703f23d2dab23982c2c09072",
+      "source": "theories/Goodman_Constructor_Translation.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Context_H_Audit.thy",
+      "sha256": "2fe4d31db07c95704055f6d7d5750cdf544569a26995d5241e13e80627e6fbd9",
+      "source": "theories/Goodman_Context_H_Audit.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Conversion_Derivability.thy",
+      "sha256": "2a63bc8abe08a3d90996082c7bf5f810eeaae1335122bf5eadb5fb7f55937cf1",
+      "source": "theories/Goodman_Conversion_Derivability.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Expansion_Conversion.thy",
+      "sha256": "24bb2ac4a1e8243040d2fdc0c117e164141553ce3ad853dd4accded0bf86f782",
+      "source": "theories/Goodman_Expansion_Conversion.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Expansion_Language.thy",
+      "sha256": "cc7076136114ab05cb283d99991e514145bf60e7c703d0020b37a26725246eda",
+      "source": "theories/Goodman_Expansion_Language.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Extension_Rules_Audit.thy",
+      "sha256": "31a4a28ec668ec08bb52b86a368f0ebb3ae2351d9b03b085f12b66764853c73c",
+      "source": "theories/Goodman_Extension_Rules_Audit.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_H_Certificate_Interface.thy",
+      "sha256": "31f89d9206bec303467c38eb3caf4a7fe7a133cbf05f124c6112c98db450beda",
+      "source": "theories/Goodman_H_Certificate_Interface.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_H_Conversion_Schemas.thy",
+      "sha256": "4dd0c63c175ecf468c0ba241429db8b5eb67d5080b2db46aec95c77afcd5eb24",
+      "source": "theories/Goodman_H_Conversion_Schemas.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_H_Identity_Rules.thy",
+      "sha256": "e0bad5d57653e63a9dd2b763f451cb99932d9dc34d7dd3e2c8040ffbc9d4c7ca",
+      "source": "theories/Goodman_H_Identity_Rules.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_H_Preservation_Audit.thy",
+      "sha256": "cd403b4bcc74d96b12e483c1c202ae488db0ce76e9ff753bcbce3505bb6f3f5a",
+      "source": "theories/Goodman_H_Preservation_Audit.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_H_Preservation_Regression.thy",
+      "sha256": "bc759c954f7808eb21d4f99399dcbe672cdf309633c3181949bde3823949daab",
+      "source": "theories/Goodman_H_Preservation_Regression.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_H_Proof_Preservation.thy",
+      "sha256": "2d1437827a7f1bb8b1e9e35def38ff8b6a698f3c4d622cf261bc248c9e474749",
+      "source": "theories/Goodman_H_Proof_Preservation.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_H_Propositional_Rule.thy",
+      "sha256": "ac841aee1e3cc76c5da274bda8bf2fbc27e980be092970ee2382f07fed0b599c",
+      "source": "theories/Goodman_H_Propositional_Rule.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_H_Quantifier_Certificates.thy",
+      "sha256": "ba9f830fb4c79961aa6f0ea7ff4b58ea9c5df51f26e851f12d40891f34d075c2",
+      "source": "theories/Goodman_H_Quantifier_Certificates.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_H_Quantifier_Rules.thy",
+      "sha256": "29423c18e01efc62cb0adb2e4b514273d24b230f2a8ec7a725ae3ae3440bba11",
+      "source": "theories/Goodman_H_Quantifier_Rules.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_H_Universal_Instantiation.thy",
+      "sha256": "5fd23dd81f95aab0841c9277f325e013ecbf806594dcea0237b493ee33656712",
+      "source": "theories/Goodman_H_Universal_Instantiation.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Integration_Audit.thy",
+      "sha256": "22ea5f8b88671df6b8cc2234279d9192c121cdf9a017754776d3ec467ef4989d",
+      "source": "theories/Goodman_Integration_Audit.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Logical_Expansion.thy",
+      "sha256": "0113c5387c0502e99aa55473a56ea82ba2794f03397ead0eeed25e23e1f7a55b",
+      "source": "theories/Goodman_Logical_Expansion.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Named_Context_Conversion.thy",
+      "sha256": "5396339db50d41710923efdc45e7e2a1d1d2495525d7c439136734721c9e57a7",
+      "source": "theories/Goodman_Named_Context_Conversion.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Named_Renaming.thy",
+      "sha256": "321a9e7fec6c93b5916c2a6a729a9113597ffe6d561ba162d1087fcf0c2f5b0e",
+      "source": "theories/Goodman_Named_Renaming.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Named_Root_Conversion.thy",
+      "sha256": "67e3a8ae6a452679d609d507a5997ff2558075159e89a790225c0e879df94ad6",
+      "source": "theories/Goodman_Named_Root_Conversion.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Named_Substitution.thy",
+      "sha256": "e32917247d686145b5b5e582f5da29a4a721eed148c9fbf6b8354f8d2ad1fa19",
+      "source": "theories/Goodman_Named_Substitution.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Propositional_Equivalence_Bridge.thy",
+      "sha256": "b032aa8b0fc16437c11638d8a0ae6f7958bf81f177f882fd6998fb496604ea26",
+      "source": "theories/Goodman_Propositional_Equivalence_Bridge.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Translated_Extension_Rules.thy",
+      "sha256": "bb2d592f13b8f8b6fd27228821e4569311621d8683322525ff98644da51154c4",
+      "source": "theories/Goodman_Translated_Extension_Rules.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Translation_Encoding.thy",
+      "sha256": "802a274f222f67f922556ae99505ff2516e4babd2d911ca6dd213907b97ed834",
+      "source": "theories/Goodman_Translation_Encoding.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Translation_Support.thy",
+      "sha256": "d66ac26e7b97533e4a4485b18c63f8cf50effe12ab1c0408ea5057a8d1c288e2",
+      "source": "theories/Goodman_Translation_Support.thy"
+    },
+    {
+      "path": "theories/axiom_extension/Goodman_Vocabulary_Translation_Audit.thy",
+      "sha256": "a720483c035e77616887c038105610fba79d3b72c24b8ee2c8575a234c360aec",
+      "source": "theories/Goodman_Vocabulary_Translation_Audit.thy"
+    },
+    {
+      "path": "theories/vector/Goodman_Classicist_Preservation.thy",
+      "sha256": "ab83ebe873e07c54eb8740c811975bdf38930402603f76f275517629853f6d45",
+      "source": "vector/Goodman_Classicist_Preservation.thy"
+    },
+    {
+      "path": "theories/vector/Goodman_Vector_Charts.thy",
+      "sha256": "1fcabb0e455cb2b396c1ef105dff7fa2a104bfc05c3017bcd99a8175dfa6f419",
+      "source": "vector/Goodman_Vector_Charts.thy"
+    },
+    {
+      "path": "theories/vector/Goodman_Vector_Translation.thy",
+      "sha256": "b1ff578044a53185247feb7c06f55f2540bbd09a17a18cebc7491bd53d89df47",
+      "source": "vector/Goodman_Vector_Translation.thy"
+    },
+    {
+      "path": "theories/wi_master/Goodman_WI_Master_Transfer.thy",
+      "sha256": "d7ae8531f067ae818f363795c6dee2cc1f0829ebac031bf09c43e60f0820b89b",
+      "source": "wi_master/Goodman_WI_Master_Transfer.thy"
+    },
+    {
+      "path": "theories/wi_master/Goodman_WI_Master_Transfer_Audit.thy",
+      "sha256": "618db7100c6a9731c7d6867e498adbcff118d885a99e64454ee1c55397b3743b",
+      "source": "wi_master/Goodman_WI_Master_Transfer_Audit.thy"
+    }
+  ],
+  "theory_bytes_unchanged": true,
+  "unselected_theories": []
+}

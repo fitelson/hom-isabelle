@@ -1,0 +1,24 @@
+GOODMAN-H-PRESERVATION-AUDIT: 23 clean endpoints; whole-proof forward H preservation
+gi_H_validity_certificate: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_H_alpha_transport: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_H_imp_trans: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_constants_universal: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_book_H_Ref: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_book_H_LL: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_book_H_Exists_Ref: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_H_Ref: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_H_LL: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_H_IndividualExistence: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+book_full_minimal_model.gi_prop_eval_interpretation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_H_PC: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_book_H_EG: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_book_H_Inst: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_alpha_imp_left: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_alpha_imp_right: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_H_EG: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7
+gi_H_Gen: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_H_Inst: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_H_universal_preservation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_H_preservation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_H_closed_preservation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_H_foreign_constant_regression: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

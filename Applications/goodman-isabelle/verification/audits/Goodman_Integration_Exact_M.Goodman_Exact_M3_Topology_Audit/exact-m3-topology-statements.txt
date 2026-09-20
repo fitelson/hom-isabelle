@@ -1,0 +1,20 @@
+gi_M3_cylinder_self(1):
+?p \<in> gi_M3_cylinder ?F ?p
+gi_M3_cylinder_nonempty(1):
+gi_M3_cylinder ?F ?p \<noteq> {}
+gi_M3_product_meager_mono(1):
+\<lbrakk>gi_M3_product_meager ?B; ?A \<subseteq> ?B\<rbrakk> \<Longrightarrow> gi_M3_product_meager ?A
+gi_M3_fresh_cone_point(1):
+\<lbrakk>finite ?F; \<And>x. \<lbrakk>x \<notin> ?F; \<exists>u. x = u @ ?i\<rbrakk> \<Longrightarrow> ?thesis\<rbrakk> \<Longrightarrow> ?thesis
+gi_M3_necessary_cone_nowhere_dense(1):
+gi_M3_product_nowhere_dense (gi_M3_necessary_cone ?i)
+gi_M3_word_enum_surjective(1):
+surj gi_M3_word_enum
+gi_M3_top_view_class_is_product_meager(1):
+(\<And>p. p \<in> ?A \<Longrightarrow> UNIV \<in> pp_orbit p) \<Longrightarrow> gi_M3_product_meager ?A
+gi_exact_M3_fun_prime_class_is_product_meager(1):
+gi_M3_product_meager {p. pp_e_exact_fun_prime p}
+gi_native_M3_fun_prime_class_is_product_meager(1):
+sg_rich ?G \<Longrightarrow> gi_M3_product_meager {p. gi_stock_fun_prime (gi_exact_native_operator_stock ?G) p}
+gi_native_M3_free_generator_class_is_product_meager(1):
+sg_rich ?G \<Longrightarrow> gi_M3_product_meager {p. gi_M3_free_for_stock (gi_exact_native_operator_stock ?G) p}

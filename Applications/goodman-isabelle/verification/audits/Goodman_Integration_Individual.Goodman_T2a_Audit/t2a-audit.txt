@@ -1,0 +1,21 @@
+T2A-AUDIT: 19 clean endpoints
+SCOPE: T2a preservation of fun-prime by pure reversible operators, group members, and negation; original PP common core and antecedents retained. Native formulas use explicitly protected binder charts.
+gi_T2a_reversible_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T2a_group_member_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T2a_reversible_translated(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_T2a_group_member_translated(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_T2a_negation_translated(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gb_T2a_fun_prime_chart_fresh(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_T2a_fun_prime_chart_fresh(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_T2a_fun_prime_chart_fresh(3): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_T2a_fun_prime_chart_fresh(4): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2a_fun_prime_var1_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2a_fun_prime_application_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2a_reversible_var_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2a_group_member_var_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2a_reversible_claim_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2a_group_member_claim_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2a_reversible(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T2a_group_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T2a_negation_claim_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2a_negation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

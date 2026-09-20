@@ -1,0 +1,32 @@
+gi_generic_complement_term_type(1):
+[] \<turnstile> ?M : gb_unary \<Longrightarrow> [] \<turnstile> gi_generic_complement_term ?M : gb_unary
+gi_generic_complement_term_logical(1):
+pp_logical_vocabulary ?M \<Longrightarrow> pp_logical_vocabulary (gi_generic_complement_term ?M)
+gi_generic_complement_raw(1):
+[] \<turnstile> ?M : gb_unary \<Longrightarrow> pp_e_raw_operator (pp_e_closed_den (gi_generic_complement_term ?M)) = (\<lambda>P. - pp_e_raw_operator (pp_e_closed_den ?M) P)
+gi_exact_generic_complement_closed(1):
+?F \<in> pp_e_exact_operator_stock \<Longrightarrow> (\<lambda>P. - ?F P) \<in> pp_e_exact_operator_stock
+gi_exact_operator_index_in_generic_stock(1):
+?F \<in> pp_e_exact_operator_stock \<Longrightarrow> pp_operator_index ?F \<in> pp_e_closed_classifier_indices
+gi_exact_generic_seed_index_recombination(1):
+?S \<in> pp_e_closed_classifier_indices \<Longrightarrow> (pp_orbit pp_e_generic_raw_seed \<subseteq> ?S) = (?S = UNIV)
+gi_exact_generic_seed_vanishing_operator_zero(1):
+\<lbrakk>?F \<in> pp_e_exact_operator_stock; ?F pp_e_generic_raw_seed = {}\<rbrakk> \<Longrightarrow> ?F = (\<lambda>P. {})
+gi_exact_generic_raw_seed_free(1):
+gi_M3_free_for_stock pp_e_exact_operator_stock pp_e_generic_raw_seed
+gi_exact_generic_raw_seed_fun_prime(1):
+pp_e_exact_fun_prime pp_e_generic_raw_seed
+gi_exact_generic_raw_seed_separates(1):
+\<lbrakk>?F \<in> pp_e_exact_operator_stock; ?H \<in> pp_e_exact_operator_stock\<rbrakk> \<Longrightarrow> (?F pp_e_generic_raw_seed = ?H pp_e_generic_raw_seed) = (?F = ?H)
+gi_exact_generic_root_seed_extract(1):
+pp_n_bacon_extract pp_e_generic_root_seed = pp_e_generic_raw_seed
+gi_exact_generic_root_seed_fun_prime(1):
+pp_e_exact_fun_prime (pp_n_bacon_extract pp_e_generic_root_seed)
+gi_exact_generic_seed_native_fun_prime(1):
+sg_rich ?G \<Longrightarrow> gi_stock_fun_prime (gi_exact_native_operator_stock ?G) pp_e_generic_raw_seed
+gi_exact_generic_seed_at_root(1):
+pp_e_generic_seed_at [] = pp_e_generic_root_seed
+gi_exact_generic_fundamental_root_fun_prime(1):
+\<lbrakk>Elem ?R (pp_e_domain Prop); pp_e_generic_fundamental_at Prop [] ?R\<rbrakk> \<Longrightarrow> pp_e_exact_fun_prime (pp_n_bacon_extract ?R)
+gi_exact_generic_Fun_implies_fun_prime_root(1):
+\<lbrakk>?\<Gamma> \<turnstile> ?M : Prop; pp_e_env_typed ?\<Gamma> ?\<rho>; pp_e_holds (pp_e_eval pp_e_generic_internal_constants ?\<rho> (pp_fun Prop ?M)) []\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval pp_e_generic_internal_constants ?\<rho> (pp_fun_prime ?M)) []

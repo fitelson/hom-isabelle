@@ -1,0 +1,56 @@
+gi_M5_native_QLN_background_language(1):
+\<lbrakk>sg_rich ?G; ?A \<in> gi_native_QLN_background ?G\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?A
+gi_exact_expanded_stock.gi_M5_basis_native_QLN_background_gvalid(1):
+\<lbrakk>gi_exact_expanded_stock ?k ?K; sg_rich ?G; ?A \<in> gi_native_QLN_background ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid (gi_basis_internal_constants (gi_M5_expanded_basis ?k ?K)) ?G ?A
+gi_exact_expanded_stock.gi_M5_rebuilt_native_QLN_background_gvalid(1):
+\<lbrakk>gi_exact_expanded_stock ?k ?K; sg_rich ?G; ?A \<in> gi_native_QLN_background ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid (gi_M5_rebuilt_constants ?k ?K) ?G ?A
+gi_exact_expanded_stock.gi_M5_rebuilt_native_QLN_background_consistent(1):
+\<lbrakk>gi_exact_expanded_stock ?k ?K; sg_rich ?G\<rbrakk> \<Longrightarrow> goodman_book_consistent gb_signature ?G (gi_native_QLN_background ?G)
+gi_exact_expanded_stock.gi_M5_rebuilt_Pure_value(1):
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> pp_e_eval (gi_M5_rebuilt_constants ?k ?K) ?\<rho> (pp_Pure ?\<sigma>) = pp_e_classifier ?\<sigma> (gi_basis_pure (gi_M5_expanded_basis ?k ?K) ?\<sigma>)
+gi_exact_expanded_stock.gi_M5_rebuilt_pure_clause(1):
+\<lbrakk>gi_exact_expanded_stock ?k ?K; ?\<Gamma> \<turnstile> ?M : ?\<sigma>; pp_e_env_typed ?\<Gamma> ?\<rho>\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval (gi_M5_rebuilt_constants ?k ?K) ?\<rho> (pp_pure ?\<sigma> ?M)) ?w = gi_basis_pure (gi_M5_expanded_basis ?k ?K) ?\<sigma> ?w (pp_e_eval (gi_M5_rebuilt_constants ?k ?K) ?\<rho> ?M)
+gi_exact_expanded_stock.gi_M5_rebuilt_closed_term_in_basis(1):
+\<lbrakk>gi_exact_expanded_stock ?k ?K; [] \<turnstile> ?M : ?\<sigma>; oterm_in_string_signature (gi_M5_expanded_signature ?k) ?M\<rbrakk> \<Longrightarrow> pp_e_eval (gi_M5_rebuilt_constants ?k ?K) ?\<rho> ?M \<in> gi_M5_expanded_basis ?k ?K ?\<sigma>
+gi_exact_expanded_stock.gi_M5_rebuilt_closed_term_pure(1):
+\<lbrakk>gi_exact_expanded_stock ?k ?K; [] \<turnstile> ?M : ?\<sigma>; oterm_in_string_signature (gi_M5_expanded_signature ?k) ?M\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval (gi_M5_rebuilt_constants ?k ?K) ?\<rho> (pp_pure ?\<sigma> ?M)) ?w
+gi_exact_expanded_stock.gi_M5_rebuilt_K_pure(1):
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> gi_basis_pure (gi_M5_expanded_basis ?k ?K) gb_unary ?w ?K
+gi_exact_expanded_stock.gi_M5_rebuilt_K_pure_holds(1):
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> pp_e_holds (pp_e_eval (gi_M5_rebuilt_constants ?k ?K) ?\<rho> (pp_pure gb_unary (Const ?k gb_unary))) ?w
+gi_exact_expanded_stock.gi_M5_rebuilt_k_named_denotation(1):
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> gi_exact_named_denote (gi_M5_rebuilt_constants ?k ?K) ?G ?g (NConst ?k gb_unary) = ?K
+gi_exact_expanded_stock.gi_M5_rebuilt_named_closed_term_in_basis(1):
+\<lbrakk>gi_exact_expanded_stock ?k ?K; sg_rich ?G; book_in_language book_minimal_logical_type UNIV (gi_M5_expanded_signature ?k) ?G ?A ?\<sigma>; named_fv ?A = {}\<rbrakk> \<Longrightarrow> gi_exact_named_denote (gi_M5_rebuilt_constants ?k ?K) ?G ?g ?A \<in> gi_M5_expanded_basis ?k ?K ?\<sigma>
+gi_exact_expanded_stock.gi_M5_rebuilt_named_closed_term_pure(1):
+\<lbrakk>gi_exact_expanded_stock ?k ?K; sg_rich ?G; book_in_language book_minimal_logical_type UNIV (gi_M5_expanded_signature ?k) ?G ?A ?\<sigma>; named_fv ?A = {}\<rbrakk> \<Longrightarrow> gi_exact_valuation ?w (gi_exact_named_denote (gi_M5_rebuilt_constants ?k ?K) ?G ?g (NApp (NConst pp_pure_name (?\<sigma> \<rightarrow>\<^sub>o Prop)) ?A))
+gi_exact_expanded_stock.gi_M5_identity_in_expanded_raw_stock(1):
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> id \<in> gi_basis_raw_stock (gi_M5_expanded_basis ?k ?K)
+gi_exact_expanded_stock.gi_M5_K_in_expanded_raw_stock(1):
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> pp_e_raw_operator ?K \<in> gi_basis_raw_stock (gi_M5_expanded_basis ?k ?K)
+gi_exact_expanded_stock.gi_M5_rebuilt_seed_changes(1):
+\<lbrakk>gi_exact_expanded_stock ?k ?K; pp_e_raw_operator ?K ?R = ?R; pp_e_raw_operator ?K \<noteq> id\<rbrakk> \<Longrightarrow> gi_basis_raw_seed (gi_M5_expanded_basis ?k ?K) \<noteq> ?R
+gi_exact_M5_exotic_expanded_stock(1):
+gi_exact_expanded_stock gi_M5_exotic_name (gi_exact_M5_exotic ?R)
+gi_exact_M5_rebuilt_QLN_model(1):
+\<lbrakk>sg_rich ?G; ?A \<in> gi_native_QLN_background ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid (gi_M5_exotic_constants ?R) ?G ?A
+gi_exact_M5_rebuilt_exotic_pure(1):
+pp_e_holds (pp_e_eval (gi_M5_exotic_constants ?R) ?\<rho> (pp_pure gb_unary (Const gi_M5_exotic_name gb_unary))) ?w
+gi_exact_M5_rebuilt_exotic_denotation(1):
+pp_e_eval (gi_M5_exotic_constants ?R) ?\<rho> (Const gi_M5_exotic_name gb_unary) = gi_exact_M5_exotic ?R
+gi_exact_M5_rebuilt_complete_purity(1):
+\<lbrakk>[] \<turnstile> ?M : ?\<sigma>; oterm_in_string_signature (gi_M5_expanded_signature gi_M5_exotic_name) ?M\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval (gi_M5_exotic_constants ?R) ?\<rho> (pp_pure ?\<sigma> ?M)) ?w
+gi_exact_M5_rebuilt_seed_not_old(1):
+gi_basis_raw_seed (gi_M5_exotic_basis ?R) \<noteq> ?R
+gi_exact_M5_rebuilt_certificate(1):
+sg_rich ?G \<Longrightarrow> pp_e_constants (gi_M5_exotic_constants ?R)
+gi_exact_M5_rebuilt_certificate(2):
+sg_rich ?G \<Longrightarrow> \<forall>A\<in>gi_native_QLN_background ?G. gi_exact_goodman_global_valid (gi_M5_exotic_constants ?R) ?G A
+gi_exact_M5_rebuilt_certificate(3):
+sg_rich ?G \<Longrightarrow> \<forall>w \<rho>. pp_e_holds (pp_e_eval (gi_M5_exotic_constants ?R) \<rho> (pp_pure gb_unary (Const gi_M5_exotic_name gb_unary))) w
+gi_exact_M5_rebuilt_certificate(4):
+sg_rich ?G \<Longrightarrow> \<forall>p. Elem p (pp_e_domain Prop) \<longrightarrow> gi_exact_M5_exotic ?R \<acute> (gi_exact_M5_exotic ?R \<acute> p) = p
+gi_exact_M5_rebuilt_certificate(5):
+sg_rich ?G \<Longrightarrow> \<not> (\<forall>p. Elem p (pp_e_domain Prop) \<longrightarrow> pp_e_holds (gi_exact_M5_exotic ?R \<acute> p) [] = pp_e_holds p []) \<and> \<not> (\<forall>p. Elem p (pp_e_domain Prop) \<longrightarrow> pp_e_holds (gi_exact_M5_exotic ?R \<acute> p) [] = (\<not> pp_e_holds p []))
+gi_exact_M5_rebuilt_certificate(6):
+sg_rich ?G \<Longrightarrow> gi_basis_raw_seed (gi_M5_exotic_basis ?R) \<noteq> ?R

@@ -1,0 +1,12 @@
+gi_exact_eval_shift_two:
+pp_e_eval ?C (extend_env ?Y (extend_env ?X ?\<rho>)) (shift_by 2 ?M) = pp_e_eval ?C ?\<rho> ?M
+gi_exact_fun_prime_root_schema:
+pp_e_holds (pp_e_eval pp_e_generic_internal_constants ?\<rho> (pp_fun_prime ?M)) [] = (\<forall>X. Elem X (pp_e_domain gb_unary) \<longrightarrow> (\<forall>Y. Elem Y (pp_e_domain gb_unary) \<longrightarrow> pp_e_closed_logical_stock gb_unary [] X \<and> pp_e_closed_logical_stock gb_unary [] Y \<longrightarrow> pp_e_eqv Prop [] (X \<acute> pp_e_eval pp_e_generic_internal_constants ?\<rho> ?M) (Y \<acute> pp_e_eval pp_e_generic_internal_constants ?\<rho> ?M) \<longrightarrow> pp_e_eqv gb_unary [] X Y))
+gi_exact_fun_prime_root_schema_values:
+Elem ?p (pp_e_domain Prop) \<Longrightarrow> (\<forall>X. Elem X (pp_e_domain gb_unary) \<longrightarrow> (\<forall>Y. Elem Y (pp_e_domain gb_unary) \<longrightarrow> pp_e_closed_logical_stock gb_unary [] X \<and> pp_e_closed_logical_stock gb_unary [] Y \<longrightarrow> pp_e_eqv Prop [] (X \<acute> ?p) (Y \<acute> ?p) \<longrightarrow> pp_e_eqv gb_unary [] X Y)) = (\<forall>X\<in>pp_e_closed_unary_denotations. \<forall>Y\<in>pp_e_closed_unary_denotations. X \<acute> ?p = Y \<acute> ?p \<longrightarrow> X = Y)
+gi_exact_fun_prime_values_iff_raw:
+Elem ?p (pp_e_domain Prop) \<Longrightarrow> (\<forall>X\<in>pp_e_closed_unary_denotations. \<forall>Y\<in>pp_e_closed_unary_denotations. X \<acute> ?p = Y \<acute> ?p \<longrightarrow> X = Y) = pp_e_exact_fun_prime (pp_n_bacon_extract ?p)
+gi_exact_fun_prime_root_iff:
+\<lbrakk>?\<Gamma> \<turnstile> ?M : Prop; pp_e_env_typed ?\<Gamma> ?\<rho>\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval pp_e_generic_internal_constants ?\<rho> (pp_fun_prime ?M)) [] = pp_e_exact_fun_prime (pp_n_bacon_extract (pp_e_eval pp_e_generic_internal_constants ?\<rho> ?M))
+gi_exact_generic_fun_prime_variable_root:
+\<lbrakk>lookup ?\<Gamma> ?n = Some Prop; pp_e_env_typed ?\<Gamma> ?\<rho>\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval pp_e_generic_internal_constants ?\<rho> (pp_fun_prime (Var ?n))) [] = pp_e_exact_fun_prime (pp_n_bacon_extract (?\<rho> ?n))

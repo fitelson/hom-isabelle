@@ -1,0 +1,39 @@
+GOODMAN-T6-TRANSFER-AUDIT: 36 clean endpoints
+SCOPE: forward preservation; closed added stocks; full-F/minimal book extension; universal target signature.
+T6: exact image stocks; native book_bottom; not a PP-alone refutation or a reflection theorem.
+gi_prefix_types: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_prefix_distinct: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_prefix_length: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_arrow_fold: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_shift_by_prefix_alpha: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_translate_app_vec: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_translate_fresh_vars: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_alpha_fold_app: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_alpha_binary: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_alpha_expanded_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_H_rule_raise_shift: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_map_rev: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_ordered_arguments: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_ordered_application_alpha: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_book_vector_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_ordered_vector_rule: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_zeta_body_order: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_H_body_order: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_HLE_preservation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_C_preservation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_CEV_base_preservation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_CEV_to_book_full_C: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_CEV_axiom_preservation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_H_translated_false_elim: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_CEV_closed_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T6_core_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T6_TU_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T6_WI_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T6_Inv_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T6_Inv_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T6_TU_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T6_TU_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T6_WI_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T6_WI_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T6_RS_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T6_RS_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

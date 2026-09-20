@@ -1,0 +1,62 @@
+gi_exact_native_operator_stock_eq(1):
+sg_rich ?G \<Longrightarrow> gi_exact_native_operator_stock ?G = pp_e_exact_operator_stock
+gi_exact_native_operator_stockI(1):
+gb_closed_logical ?G gb_unary ?A \<Longrightarrow> pp_e_raw_operator (gi_exact_native_closed_den ?G ?A) \<in> gi_exact_native_operator_stock ?G
+gi_exact_native_operator_stockE(1):
+\<lbrakk>?F \<in> gi_exact_native_operator_stock ?G; \<And>A. \<lbrakk>gb_closed_logical ?G gb_unary A; ?F = pp_e_raw_operator (gi_exact_native_closed_den ?G A)\<rbrakk> \<Longrightarrow> ?thesis\<rbrakk> \<Longrightarrow> ?thesis
+gi_exact_native_operator_stock_countable(1):
+sg_rich ?G \<Longrightarrow> countable (gi_exact_native_operator_stock ?G)
+gi_exact_native_identity_in_stock(1):
+sg_rich ?G \<Longrightarrow> id \<in> gi_exact_native_operator_stock ?G
+gi_exact_native_operator_stock_compose(1):
+\<lbrakk>sg_rich ?G; ?F \<in> gi_exact_native_operator_stock ?G; ?H \<in> gi_exact_native_operator_stock ?G\<rbrakk> \<Longrightarrow> ?F \<circ> ?H \<in> gi_exact_native_operator_stock ?G
+gi_exact_native_fun_prime_iff(1):
+sg_rich ?G \<Longrightarrow> gi_stock_fun_prime (gi_exact_native_operator_stock ?G) ?p = pp_e_exact_fun_prime ?p
+gi_exact_native_reversible_iff(1):
+sg_rich ?G \<Longrightarrow> gi_stock_reversible (gi_exact_native_operator_stock ?G) ?Z = pp_e_exact_reversible ?Z
+gi_exact_native_group_eq(1):
+sg_rich ?G \<Longrightarrow> gi_stock_group (gi_exact_native_operator_stock ?G) = pp_e_exact_G
+gi_exact_native_same_kind_iff(1):
+sg_rich ?G \<Longrightarrow> gi_stock_same_kind (gi_exact_native_operator_stock ?G) ?X ?Y = pp_e_exact_same_kind ?X ?Y
+gi_exact_native_L2_pair_iff(1):
+sg_rich ?G \<Longrightarrow> gi_stock_L2_pair (gi_exact_native_operator_stock ?G) ?X ?Y = pp_e_exact_L2_pair ?X ?Y
+gi_exact_native_L2_iff(1):
+sg_rich ?G \<Longrightarrow> gi_stock_L2 (gi_exact_native_operator_stock ?G) = pp_e_exact_L2
+gi_exact_native_strong_L2_pair_iff(1):
+sg_rich ?G \<Longrightarrow> gi_stock_strong_L2_pair (gi_exact_native_operator_stock ?G) ?X ?Y = pp_e_exact_strong_L2_pair ?X ?Y
+gi_exact_native_strong_L2_iff(1):
+sg_rich ?G \<Longrightarrow> gi_stock_strong_L2 (gi_exact_native_operator_stock ?G) = pp_e_exact_strong_L2
+gi_exact_native_right_cancellative_iff(1):
+sg_rich ?G \<Longrightarrow> gi_stock_right_cancellative (gi_exact_native_operator_stock ?G) ?Z = pp_e_exact_right_cancellative ?Z
+gi_exact_native_child_variation_logical_witness(1):
+sg_rich ?G \<Longrightarrow> \<exists>A. gb_closed_logical ?G gb_unary A \<and> pp_e_raw_operator (gi_exact_native_closed_den ?G A) = pp_e_child_variation
+gi_exact_native_child_variation_in_stock(1):
+sg_rich ?G \<Longrightarrow> pp_e_child_variation \<in> gi_exact_native_operator_stock ?G
+gi_exact_native_fun_prime_exists(1):
+sg_rich ?G \<Longrightarrow> \<exists>p. gi_stock_fun_prime (gi_exact_native_operator_stock ?G) p
+gi_exact_native_child_variation_right_cancellative(1):
+sg_rich ?G \<Longrightarrow> gi_stock_right_cancellative (gi_exact_native_operator_stock ?G) pp_e_child_variation
+gi_exact_native_child_variation_nonreversible(1):
+sg_rich ?G \<Longrightarrow> \<not> gi_stock_reversible (gi_exact_native_operator_stock ?G) pp_e_child_variation
+gi_exact_native_child_variation_preserves_fun_prime(1):
+\<lbrakk>sg_rich ?G; gi_stock_fun_prime (gi_exact_native_operator_stock ?G) ?p\<rbrakk> \<Longrightarrow> gi_stock_fun_prime (gi_exact_native_operator_stock ?G) (pp_e_child_variation ?p)
+gi_exact_native_child_variation_not_identity_kind(1):
+sg_rich ?G \<Longrightarrow> \<not> gi_stock_same_kind (gi_exact_native_operator_stock ?G) id pp_e_child_variation
+gi_exact_native_child_variation_certificate(1):
+sg_rich ?G \<Longrightarrow> pp_e_child_variation \<in> gi_exact_native_operator_stock ?G
+gi_exact_native_child_variation_certificate(2):
+sg_rich ?G \<Longrightarrow> surj pp_e_child_variation
+gi_exact_native_child_variation_certificate(3):
+sg_rich ?G \<Longrightarrow> \<not> inj pp_e_child_variation
+gi_exact_native_child_variation_certificate(4):
+sg_rich ?G \<Longrightarrow> pp_e_child_variation (- ?P) = pp_e_child_variation ?P
+gi_exact_native_child_variation_certificate(5):
+sg_rich ?G \<Longrightarrow> gi_stock_right_cancellative (gi_exact_native_operator_stock ?G) pp_e_child_variation
+gi_exact_native_child_variation_certificate(6):
+sg_rich ?G \<Longrightarrow> \<not> gi_stock_reversible (gi_exact_native_operator_stock ?G) pp_e_child_variation
+gi_exact_native_L2_counterexample(1):
+sg_rich ?G \<Longrightarrow> \<exists>p. gi_stock_fun_prime (gi_exact_native_operator_stock ?G) p \<and> gi_stock_fun_prime (gi_exact_native_operator_stock ?G) (pp_e_child_variation p) \<and> id \<in> gi_exact_native_operator_stock ?G \<and> pp_e_child_variation \<in> gi_exact_native_operator_stock ?G \<and> id (pp_e_child_variation p) = pp_e_child_variation p \<and> \<not> gi_stock_same_kind (gi_exact_native_operator_stock ?G) id pp_e_child_variation
+gi_exact_native_L2_false(1):
+sg_rich ?G \<Longrightarrow> \<not> gi_stock_L2 (gi_exact_native_operator_stock ?G)
+gi_exact_native_strong_L2_false(1):
+sg_rich ?G \<Longrightarrow> \<not> gi_stock_strong_L2 (gi_exact_native_operator_stock ?G)

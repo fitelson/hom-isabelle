@@ -1,0 +1,8 @@
+T9-KIND-SELECTOR-AUDIT: 6 clean endpoints
+SCOPE: actual kinds and pure unary values; full external unary PC, semantic root L2 and typed fun-prime witness retained. Powerset selector injection, not model existence.
+gi_T9_native_purity.gi_T9_union_kinds_pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_native_purity.gi_T9_member_kind_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T9_native_purity.gi_T9_member_union_kinds_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T9_native_purity.gi_T9_kind_selector_pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T9_native_purity.gi_T9_kind_selector_spec: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7
+gi_T9_native_purity.gi_T9_kind_selector_injective: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5

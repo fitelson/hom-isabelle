@@ -1,5 +1,17 @@
 # Verification status
 
+## Repository organization, 20 September 2026
+
+The [Applications folder](Applications/README.md) now contains
+[Goodman's Purity of Pure project](Applications/goodman-isabelle/README.md)
+as ordinary files. Its [status](Applications/goodman-isabelle/STATUS.md),
+[report](Applications/goodman-isabelle/reports/GOODMAN_VERIFICATION_REPORT_2026-09-20.pdf)
+and checker are separate from the core's. The migration does not alter any
+core theorem or ROOT selection. The core theorem/audit status below remains
+unchanged; application claims must not be counted as core completions.
+
+## Core verification status
+
 Audit-response checkpoint: 10 September 2026.
 
 The subsequent [source-fidelity consensus audit](docs/PARTIAL_SOURCE_AUDIT_2026-09-10.md)

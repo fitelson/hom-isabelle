@@ -1,0 +1,48 @@
+gi_exact_invariant_basis.gi_basis_raw_stock_countable(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> countable (gi_basis_raw_stock ?B)
+gi_exact_invariant_basis.gi_basis_raw_stock_equivariant(1):
+\<lbrakk>gi_exact_invariant_basis ?B; ?F \<in> gi_basis_raw_stock ?B\<rbrakk> \<Longrightarrow> pp_equivariant_operator ?F
+gi_exact_invariant_basis.gi_basis_raw_stock_classifier(1):
+\<lbrakk>gi_exact_invariant_basis ?B; ?F \<in> gi_basis_raw_stock ?B\<rbrakk> \<Longrightarrow> ?F = pp_classifier (pp_operator_index ?F)
+gi_exact_invariant_basis.gi_basis_classifier_indices_countable(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> countable (gi_basis_classifier_indices ?B)
+gi_exact_invariant_basis.gi_basis_equalizer_indices_countable(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> countable (gi_basis_equalizer_indices ?B)
+gi_exact_invariant_basis.gi_basis_generic_indices_countable(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> countable (gi_basis_generic_indices ?B)
+gi_exact_invariant_basis.gi_basis_raw_seed_exists(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> \<exists>r. \<forall>S\<in>gi_basis_generic_indices ?B. \<forall>i. pp_guarded_unary_QLN_at_world i r S
+gi_exact_invariant_basis.gi_basis_raw_seed_spec(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> \<forall>S\<in>gi_basis_generic_indices ?B. \<forall>i. pp_guarded_unary_QLN_at_world i (gi_basis_raw_seed ?B) S
+gi_exact_invariant_basis.gi_basis_raw_seed_index_condition(1):
+\<lbrakk>gi_exact_invariant_basis ?B; ?S \<in> gi_basis_generic_indices ?B\<rbrakk> \<Longrightarrow> (pp_orbit (gi_basis_raw_seed ?B) \<subseteq> ?S) = (?S = UNIV)
+gi_exact_invariant_basis.gi_basis_raw_seed_classifier_QLN(1):
+\<lbrakk>gi_exact_invariant_basis ?B; ?F \<in> gi_basis_raw_stock ?B\<rbrakk> \<Longrightarrow> pp_root_unary_QLN (pp_operator_index ?F) (gi_basis_raw_seed ?B)
+gi_exact_invariant_basis.gi_basis_raw_seed_separates(1):
+\<lbrakk>gi_exact_invariant_basis ?B; ?F \<in> gi_basis_raw_stock ?B; ?H \<in> gi_basis_raw_stock ?B; ?F (gi_basis_raw_seed ?B) = ?H (gi_basis_raw_seed ?B)\<rbrakk> \<Longrightarrow> ?F = ?H
+gi_exact_invariant_basis.gi_basis_raw_seed_fun_prime(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_stock_fun_prime (gi_basis_raw_stock ?B) (gi_basis_raw_seed ?B)
+gi_exact_invariant_basis.gi_basis_raw_seed_fun_prime_native_predicate(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> gi_stock_fun_prime (gi_basis_raw_stock ?B) (gi_basis_raw_seed ?B)
+gi_exact_invariant_basis.gi_basis_root_seed_member(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> Elem (gi_basis_root_seed ?B) (pp_e_domain Prop)
+gi_exact_invariant_basis.gi_basis_root_seed_extract(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_n_bacon_extract (gi_basis_root_seed ?B) = gi_basis_raw_seed ?B
+gi_exact_invariant_basis.gi_basis_seed_at_member(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> Elem (gi_basis_seed_at ?B ?w) (pp_e_domain Prop)
+gi_exact_invariant_basis.gi_basis_seed_at_action(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_b_action Prop (rev ?w) (gi_basis_seed_at ?B ?w) = gi_basis_root_seed ?B
+gi_exact_invariant_basis.gi_basis_fundamental_admissible(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_predicate_admissible ?\<sigma> (gi_basis_fundamental_at ?B ?\<sigma>)
+gi_exact_invariant_basis.gi_basis_internal_constants_typed(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> Elem (gi_basis_internal_constants ?B ?c ?\<sigma>) (pp_e_domain ?\<sigma>)
+gi_exact_invariant_basis.gi_basis_internal_constants_locale(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_constants (gi_basis_internal_constants ?B)
+gi_exact_invariant_basis.gi_basis_eval_Pure(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> (pp_Pure ?\<sigma>) = pp_e_classifier ?\<sigma> (gi_basis_pure ?B ?\<sigma>)
+gi_exact_invariant_basis.gi_basis_eval_Fun(1):
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> (pp_Fun ?\<sigma>) = pp_e_classifier ?\<sigma> (gi_basis_fundamental_at ?B ?\<sigma>)
+gi_exact_invariant_basis.gi_basis_eval_pure_holds(1):
+\<lbrakk>gi_exact_invariant_basis ?B; ?\<Gamma> \<turnstile> ?M : ?\<sigma>; pp_e_env_typed ?\<Gamma> ?\<rho>\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> (pp_pure ?\<sigma> ?M)) ?w = gi_basis_pure ?B ?\<sigma> ?w (pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> ?M)
+gi_exact_invariant_basis.gi_basis_eval_fun_holds(1):
+\<lbrakk>gi_exact_invariant_basis ?B; ?\<Gamma> \<turnstile> ?M : ?\<sigma>; pp_e_env_typed ?\<Gamma> ?\<rho>\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> (pp_fun ?\<sigma> ?M)) ?w = gi_basis_fundamental_at ?B ?\<sigma> ?w (pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> ?M)

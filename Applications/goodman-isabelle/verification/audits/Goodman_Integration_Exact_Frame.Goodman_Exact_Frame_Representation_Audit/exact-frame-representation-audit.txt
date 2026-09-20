@@ -1,0 +1,23 @@
+EXACT-FRAME-REPRESENTATION-AUDIT: 21 clean endpoints
+SCOPE: Preserved enumeration and frame-completeness snapshots selected (sessions Goodman_Exact_Enumeration, Goodman_Exact_Frame_Completeness) and Bacon's consistency representation transferred to closed named string sentences of the t-generated fragment via the decoder: frame satisfiability (truth at the root of some typed interpretation on the fixed frame) iff truth at some substitution of the glued complete model iff native diamond at its root; companion: frame validity (truth at the root of every typed interpretation) iff truth at every substitution of the complete model iff native box at its root. Consistency here is frame satisfiability, not syntactic H consistency or H completeness. The five pp_e_ rows are the preserved snapshot results now in the selected closure.
+gi_exact_minimal_logical_in_signature(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_named_in_signature_encoding(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_named_in_signature_decode_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_named_in_signature_iff_ssignature(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_named_sentence_decode(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_named_sentence_from_signature(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_named_frame_satisfiable_decode(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_named_frame_consistent_decode(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_named_frame_representation_branch(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_named_frame_representation_diamond(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_named_frame_satisfiable_at_branch(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_named_frame_valid_decode(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_named_frame_completeness_branch(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_named_frame_completeness_box(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_named_frame_valid_iff_negation_unsatisfiable(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_complete_constants_model(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+pp_e_frame_consistent_iff_model(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+pp_e_consistent_sentence_enum_range(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+pp_e_enumerated_sentence_true_at_branch(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+pp_e_Bacon_consistency_representation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+pp_e_Bacon_exact_completeness(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

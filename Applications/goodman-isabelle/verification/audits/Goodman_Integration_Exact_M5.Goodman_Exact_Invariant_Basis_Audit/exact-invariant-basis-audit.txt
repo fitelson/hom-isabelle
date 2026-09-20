@@ -1,0 +1,14 @@
+EXACT-INVARIANT-BASIS-AUDIT: 12 clean endpoints
+SCOPE: Conditional on the explicit typed, invariant, countable, application-closed basis containing all old closed logical denotations. Local-identity saturation is admissible, persistent and application-closed, contains every native closed logical denotation, and equals action-to-basis membership on typed values. Exact carriers and HOL-ZF foundation unchanged. Locale premises are retained, not counted as discharged instantiation obligations; no PP or full-model claim.
+gi_exact_invariant_basis.gi_basis_pure_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_pureI(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_pure_persistent(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_pure_admissible(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_pure_application_closed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_pure_logical_denotation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_contains_logical_eval(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_contains_native_closed_logical(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_pure_classifier_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_pure_iff_action_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_pure_root_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_pure_all_worlds_iff_root(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

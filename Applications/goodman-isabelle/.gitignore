@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.deps/
+verification/runs/
+verification/exports/
+verification/build.lock
+isabelle-kg/
+export/
+*.pdf
+!reports/GOODMAN_VERIFICATION_REPORT_2026-09-20.pdf
+reports/build/
+*.claude-stream.jsonl
+.env

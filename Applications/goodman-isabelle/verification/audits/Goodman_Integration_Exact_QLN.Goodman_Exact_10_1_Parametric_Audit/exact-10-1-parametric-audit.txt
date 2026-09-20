@@ -1,0 +1,30 @@
+EXACT-10-1-PARAMETRIC-AUDIT: 28 clean endpoints
+SCOPE: Bacon's Theorem 10.1 branch gluing for an arbitrary type of constant names: polymorphic evaluator gi_exact_poly_denote (coincides with gi_exact_named_denote at string names), alphabet-independent gluing gi_exact_poly_glued, and the action/truth/existence theorems for every closed named term of the t-generated fragment and every countable (nat-indexed) family typed at t-generated types. Name coding is per term on its finitely many constants; no injection of all names into strings and no countability of the signature is used or asserted. Type e remains excluded.
+gi_named_consts_finite(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_named_consts_map(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_named_fv_map(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_poly_propositional_string(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_poly_propositional_map(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_named_to_pterm_map(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_decode_map(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_has_ptype_map(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_poly_pterm_type(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_renamed_decode_type(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_renamed_decode_fragment(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_decode_consts(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+pp_e_eval_constant_agreement(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_named_denote_constant_agreement(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_finite_string_injection(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_name_code_inj(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_name_decode_code(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+pp_e_eval_pterm_rename(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_named_denote_rename(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_poly_denote_string(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_poly_denote_closed_assignment_independent(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_poly_glued_as_string(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_poly_glued_typed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_poly_glued_action(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_poly_glued_renamed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_Bacon_10_1_parametric_action(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_exact_Bacon_10_1_parametric_truth_branch(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_exact_Bacon_10_1_parametric(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

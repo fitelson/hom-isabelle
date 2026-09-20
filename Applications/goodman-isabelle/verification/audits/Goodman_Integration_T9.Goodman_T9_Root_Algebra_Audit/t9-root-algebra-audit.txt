@@ -1,0 +1,33 @@
+T9-ROOT-ALGEBRA-AUDIT: 31 clean endpoints
+SCOPE: Actual exact-carrier root-pure unary values under a typed interpretation validating the native T6 common core. Composition purity is derived from a closed logical builder and actual application closure. Exact units/associativity, pure reversible group/inverses, right-composition kinds, choice of representatives and injective fibre codes are proved. Locale assumptions and HOL-ZF foundations retained. No PC, L2, subset-selector injection or counting conclusion is asserted here. No free-action premise is used.
+gi_T9_compose_builder_type(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T9_compose_builder_logical(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T9_compose_builder_apply(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_value_identity_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T9_value_compose_apply(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T9_value_identity_left(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T9_value_identity_right(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T9_value_compose_associative(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T9_native_purity.gi_T9_root_pure_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_native_purity.gi_T9_compose_pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T9_native_purity.gi_T9_identity_pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T9_native_purity.gi_T9_identity_left(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_native_purity.gi_T9_identity_right(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_native_purity.gi_T9_compose_associative(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_T9_native_purity.gi_T9_group_pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_native_purity.gi_T9_identity_in_group(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T9_native_purity.gi_T9_group_inverse(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T9_native_purity.gi_T9_group_compose(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T9_native_purity.gi_T9_group_inverse_action(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_native_purity.gi_T9_same_kind_refl(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_native_purity.gi_T9_same_kind_sym(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_T9_native_purity.gi_T9_same_kind_trans(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T9_native_purity.gi_T9_kind_self_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_native_purity.gi_T9_kind_eq_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T9_native_purity.gi_T9_kind_closed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T9_native_purity.gi_T9_kind_represented(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_native_purity.gi_T9_kind_rep_spec(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_native_purity.gi_T9_kind_fibre_orbit(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_T9_native_purity.gi_T9_kind_code_spec(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_T9_native_purity.gi_T9_kind_fibre_code(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_native_purity.gi_T9_kind_fibre_code(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

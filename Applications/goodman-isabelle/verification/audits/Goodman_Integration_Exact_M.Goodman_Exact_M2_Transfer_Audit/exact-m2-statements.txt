@@ -1,0 +1,34 @@
+gi_exact_M2_extract_action(1):
+pp_n_bacon_extract (pp_b_action Prop ?i ?x) = pp_view ?i (pp_n_bacon_extract ?x)
+gi_exact_M2_view_condition_admissible(1):
+pp_e_predicate_admissible Prop (gi_exact_M2_view_condition ?S)
+gi_exact_M2_classifier_member(1):
+Elem (gi_exact_M2_classifier ?S) (pp_e_domain gb_unary)
+gi_exact_M2_classifier_apply(1):
+Elem ?x (pp_e_domain Prop) \<Longrightarrow> gi_exact_M2_classifier ?S \<acute> ?x = pp_e_prop (\<lambda>w. pp_view (rev w) (pp_n_bacon_extract ?x) \<in> ?S)
+gi_exact_M2_classifier_raw(1):
+pp_e_raw_operator (gi_exact_M2_classifier ?S) = pp_classifier ?S
+gi_exact_M2_raw_equivariant_commutes(1):
+\<lbrakk>Elem ?F (pp_e_domain gb_unary); Elem ?p (pp_e_domain Prop); pp_equivariant_operator (pp_e_raw_operator ?F)\<rbrakk> \<Longrightarrow> pp_b_action Prop ?i (?F \<acute> ?p) = ?F \<acute> pp_b_action Prop ?i ?p
+gi_exact_M2_raw_equivariant_invariant(1):
+\<lbrakk>Elem ?F (pp_e_domain gb_unary); pp_equivariant_operator (pp_e_raw_operator ?F)\<rbrakk> \<Longrightarrow> pp_b_action gb_unary ?i ?F = ?F
+gi_exact_M2_classifier_invariant(1):
+pp_b_action gb_unary ?i (gi_exact_M2_classifier ?S) = gi_exact_M2_classifier ?S
+gi_exact_M2_classifier_in_stock(1):
+gi_exact_M2_classifier ?S \<in> gi_exact_M2_invariant_stock
+gi_exact_M2_classifier_injective(1):
+inj gi_exact_M2_classifier
+gi_exact_M2_invariant_representation(1):
+?F \<in> gi_exact_M2_invariant_stock \<Longrightarrow> ?F = gi_exact_M2_classifier (pp_operator_index (pp_e_raw_operator ?F))
+gi_exact_M2_classifier_bijection(1):
+bij_betw gi_exact_M2_classifier UNIV gi_exact_M2_invariant_stock
+gi_exact_M2_proposition_bijection(1):
+bij_betw pp_n_bacon_embed UNIV (gi_exact_domain Prop)
+gi_exact_M2_invariants_outnumber_propositions(1):
+gi_exact_domain Prop \<prec> gi_exact_M2_invariant_stock
+gi_exact_M2_collision(1):
+?R \<in> gi_exact_domain Prop \<Longrightarrow> \<exists>F H. F \<in> gi_exact_M2_invariant_stock \<and> H \<in> gi_exact_M2_invariant_stock \<and> F \<noteq> H \<and> F \<acute> ?R = H \<acute> ?R
+gi_exact_M2_evaluation_not_injective(1):
+?R \<in> gi_exact_domain Prop \<Longrightarrow> \<not> inj_on (\<lambda>F. F \<acute> ?R) gi_exact_M2_invariant_stock
+gi_exact_M2_invariance_QSS_fails(1):
+?R \<in> gi_exact_domain Prop \<Longrightarrow> \<not> (\<forall>F\<in>gi_exact_M2_invariant_stock. \<forall>H\<in>gi_exact_M2_invariant_stock. F \<acute> ?R = H \<acute> ?R \<longrightarrow> F = H)

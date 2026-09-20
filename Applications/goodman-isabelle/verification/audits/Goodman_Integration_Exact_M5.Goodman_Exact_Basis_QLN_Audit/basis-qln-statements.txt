@@ -1,0 +1,38 @@
+gi_exact_invariant_basis.gi_basis_fundamental_raw:
+\<lbrakk>gi_exact_invariant_basis ?B; Elem ?p (pp_e_domain Prop); gi_basis_fundamental_at ?B Prop ?w ?p\<rbrakk> \<Longrightarrow> pp_fundamental_at (rev ?w) (gi_basis_raw_seed ?B) (pp_n_bacon_extract ?p)
+gi_exact_invariant_basis.gi_basis_raw_universal_iff:
+\<lbrakk>gi_exact_invariant_basis ?B; Elem ?D (pp_e_domain gb_unary)\<rbrakk> \<Longrightarrow> (\<forall>P. rev ?w \<in> pp_e_raw_operator ?D P) = (\<forall>p. Elem p (pp_e_domain Prop) \<longrightarrow> pp_e_holds (?D \<acute> p) ?w)
+gi_exact_invariant_basis.gi_basis_value_unary_QLN:
+\<lbrakk>gi_exact_invariant_basis ?B; ?D \<in> ?B gb_unary; Elem ?r (pp_e_domain Prop); gi_basis_fundamental_at ?B Prop ?w ?r\<rbrakk> \<Longrightarrow> (\<forall>v. prefix ?w v \<longrightarrow> pp_e_holds (?D \<acute> ?r) v) = (\<forall>q. Elem q (pp_e_domain Prop) \<longrightarrow> pp_e_holds (?D \<acute> q) ?w)
+gi_exact_invariant_basis.gi_basis_pure_unary_representative:
+\<lbrakk>gi_exact_invariant_basis ?B; gi_basis_pure ?B gb_unary ?w ?X; \<And>D. \<lbrakk>D \<in> ?B gb_unary; pp_e_eqv gb_unary ?w ?X D\<rbrakk> \<Longrightarrow> ?thesis\<rbrakk> \<Longrightarrow> ?thesis
+gi_exact_invariant_basis.gi_basis_related_applications:
+\<lbrakk>gi_exact_invariant_basis ?B; pp_e_eqv gb_unary ?w ?X ?D; Elem ?q (pp_e_domain Prop); prefix ?w ?v\<rbrakk> \<Longrightarrow> pp_e_holds (?X \<acute> ?q) ?v = pp_e_holds (?D \<acute> ?q) ?v
+gi_exact_invariant_basis.gi_basis_pure_unary_QLN:
+\<lbrakk>gi_exact_invariant_basis ?B; gi_basis_pure ?B gb_unary ?w ?X; Elem ?r (pp_e_domain Prop); gi_basis_fundamental_at ?B Prop ?w ?r\<rbrakk> \<Longrightarrow> (\<forall>v. prefix ?w v \<longrightarrow> pp_e_holds (?X \<acute> ?r) v) = (\<forall>q. Elem q (pp_e_domain Prop) \<longrightarrow> pp_e_holds (?X \<acute> q) ?w)
+gi_exact_invariant_basis.gi_basis_proposition_world_constant:
+\<lbrakk>gi_exact_invariant_basis ?B; ?a \<in> ?B Prop\<rbrakk> \<Longrightarrow> pp_e_holds ?a ?v = pp_e_holds ?a []
+gi_exact_invariant_basis.gi_basis_pure_prop_true_imp_box:
+\<lbrakk>gi_exact_invariant_basis ?B; gi_basis_pure ?B Prop ?w ?p; pp_e_holds ?p ?w\<rbrakk> \<Longrightarrow> pp_e_eqv Prop ?w ?p (pp_zf_truth True)
+gi_exact_invariant_basis.gi_basis_unary_recombination_holds_iff:
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_holds (pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> pp_unary_recombination) ?w = (\<forall>X. Elem X (pp_e_domain gb_unary) \<longrightarrow> (\<forall>r. Elem r (pp_e_domain Prop) \<longrightarrow> gi_basis_pure ?B gb_unary ?w X \<and> gi_basis_fundamental_at ?B Prop ?w r \<longrightarrow> (\<forall>v. prefix ?w v \<longrightarrow> pp_e_holds (X \<acute> r) v) \<longrightarrow> (\<forall>q. Elem q (pp_e_domain Prop) \<longrightarrow> pp_e_holds (X \<acute> q) ?w)))
+gi_exact_invariant_basis.gi_basis_unary_recombination_holds:
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_holds (pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> pp_unary_recombination) ?w
+gi_exact_invariant_basis.gi_basis_unary_exhaustion_holds_iff:
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_holds (pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> pp_unary_exhaustion) ?w = (\<forall>X. Elem X (pp_e_domain gb_unary) \<longrightarrow> (\<forall>r. Elem r (pp_e_domain Prop) \<longrightarrow> gi_basis_pure ?B gb_unary ?w X \<and> gi_basis_fundamental_at ?B Prop ?w r \<longrightarrow> (\<forall>q. Elem q (pp_e_domain Prop) \<longrightarrow> pp_e_holds (X \<acute> q) ?w) \<longrightarrow> (\<forall>v. prefix ?w v \<longrightarrow> pp_e_holds (X \<acute> r) v)))
+gi_exact_invariant_basis.gi_basis_unary_exhaustion_holds:
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_holds (pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> pp_unary_exhaustion) ?w
+gi_exact_invariant_basis.gi_basis_zeroary_recombination_holds:
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_holds (pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> pp_zeroary_recombination) ?w
+gi_exact_invariant_basis.gi_basis_zeroary_exhaustion_holds_iff:
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_holds (pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> pp_zeroary_exhaustion) ?w = (\<forall>p. Elem p (pp_e_domain Prop) \<longrightarrow> gi_basis_pure ?B Prop ?w p \<longrightarrow> pp_e_holds p ?w \<longrightarrow> pp_e_eqv Prop ?w p (pp_zf_truth True))
+gi_exact_invariant_basis.gi_basis_zeroary_exhaustion_holds:
+gi_exact_invariant_basis ?B \<Longrightarrow> pp_e_holds (pp_e_eval (gi_basis_internal_constants ?B) ?\<rho> pp_zeroary_exhaustion) ?w
+gi_exact_invariant_basis.gi_basis_native_zeroary_recombination_gvalid:
+\<lbrakk>gi_exact_invariant_basis ?B; sg_rich ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid (gi_basis_internal_constants ?B) ?G (gb_zeroary_recombination ?G)
+gi_exact_invariant_basis.gi_basis_native_unary_recombination_gvalid:
+\<lbrakk>gi_exact_invariant_basis ?B; sg_rich ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid (gi_basis_internal_constants ?B) ?G (gb_unary_recombination ?G)
+gi_exact_invariant_basis.gi_basis_native_zeroary_exhaustion_gvalid:
+\<lbrakk>gi_exact_invariant_basis ?B; sg_rich ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid (gi_basis_internal_constants ?B) ?G (gb_zeroary_exhaustion ?G)
+gi_exact_invariant_basis.gi_basis_native_unary_exhaustion_gvalid:
+\<lbrakk>gi_exact_invariant_basis ?B; sg_rich ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid (gi_basis_internal_constants ?B) ?G (gb_unary_exhaustion ?G)

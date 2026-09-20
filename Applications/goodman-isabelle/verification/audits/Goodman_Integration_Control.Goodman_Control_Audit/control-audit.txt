@@ -1,0 +1,21 @@
+CONTROL-AUDIT: 19 clean endpoints
+SCOPE: native PP core for J/S purity and nonuniformity implication; add zeroary Exhaustion for iteration/range/heredity. Existence and E antecedents retained; targets explicitly translated, no range existence/model claim.
+gi_control_source_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_control_axioms_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_control_axiom_from_native: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_control_native_preservation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_control_J_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_control_S_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_control_square_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_control_E_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_control_classifier_pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_control_operator_pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_control_J_squared_false: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_control_nonuniform_at_fun_prime: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_control_cube: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_control_square_idempotent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_control_range_implies_identity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_control_range_iff_identity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_control_no_range_negative_square: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_control_fun_prime_heredity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_control_reflects_fun_prime: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6

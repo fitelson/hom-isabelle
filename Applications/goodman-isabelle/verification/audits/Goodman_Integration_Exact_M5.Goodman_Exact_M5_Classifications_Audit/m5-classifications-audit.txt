@@ -1,0 +1,16 @@
+M5-CLASSIFICATIONS-AUDIT: 14 clean endpoints
+SCOPE: actual rebuilt Inv root failure; native Inv and WI nonderivability from the explicit no-PP QLN background; WI failure of global validity via checked singleton-WI=>TU consequence. No WI root-falsity, added Persistence/Pure(Fun)/PP, or arbitrary pure-stock claim. HOL-ZF.
+gi_M5_negation_value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_identity_application: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_negation_application_truth: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_identity_at_root_implies_preserving: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_negation_at_root_implies_flipping: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_Inv_root_classifies_group_member: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_M5_rebuilt_Inv_false_at_root: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_Inv_vocabulary: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M5_native_Inv_false_at_root: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_M5_native_Inv_not_global: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M5_Inv_not_derivable_from_QLN_background: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M5_WI_entails_TU: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M5_WI_not_derivable_from_QLN_background: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_M5_native_WI_not_global: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

@@ -1,0 +1,25 @@
+EXACT-M7-AUDIT: 23 clean endpoints
+SCOPE: Explicit natural-branch complement diagonal against every exact closed-logical unary output at a typed R, including native saturated-stock and zeroary cases. Exact invariant reachability iff orbit-map injectivity. Any exact-stock fun-prime raw r has distinct words with equal views, so an explicit singleton target is unreachable even by all exact invariant unary values; this applies to the actual generic root seed. No blanket noninjectivity for arbitrary r, no secondary Boolean model, no arbitrary Theorem-10.1 assignment identification, no enlarged-Pure or PP consistency claim. HOL-ZF foundations retained.
+gi_exact_M7_operator_enum_range(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M7_operator_enum_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M7_diagonal_view(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M7_diagonal_differs(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M7_diagonal_outside_logical_range(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M7_diagonal_value_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M7_diagonal_value_unreachable(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_native_M7_logical_unary_completeness_fails(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_M7_pure_proposition_constant_realization(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_M7_diagonal_not_pure_proposition(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_M7_zeroary_unary_completeness_fails(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_M7_invariant_raw_equivariant(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M7_invariant_reachable_iff_classifier(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_M7_orbit_image_classifier(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M7_all_invariant_reachable_iff_orbit_injective(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M7_fun_prime_orbit_collision(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M7_fun_prime_orbit_not_injective(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M7_collision_blocks_singleton(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_M7_fun_prime_singleton_unreachable(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M7_fun_prime_exact_invariant_unreachable(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_M7_generic_orbit_not_injective(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M7_generic_invariant_unreachable(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M7_generic_fundamental_invariant_incomplete(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

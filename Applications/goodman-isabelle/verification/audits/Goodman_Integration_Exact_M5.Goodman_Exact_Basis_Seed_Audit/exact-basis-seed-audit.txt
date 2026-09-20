@@ -1,0 +1,26 @@
+EXACT-BASIS-SEED-AUDIT: 24 clean endpoints
+SCOPE: Conditional exact invariant-basis construction; the countable classifier/equalizer index union supplies the ACTUAL chosen generic seed and root raw QSS separation. Typed root/moving seeds and admissible Fun yield typed internal Pure/Fun constants and guarded evaluation clauses. Locale premises and HOL-ZF foundations retained. Not a completed global QLN/model certificate or PP construction; no fixed seed all-view freeness assertion.
+gi_exact_invariant_basis.gi_basis_raw_stock_countable(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_raw_stock_equivariant(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_raw_stock_classifier(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_classifier_indices_countable(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_equalizer_indices_countable(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_generic_indices_countable(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_raw_seed_exists(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_raw_seed_spec(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_raw_seed_index_condition(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_raw_seed_classifier_QLN(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_raw_seed_separates(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_exact_invariant_basis.gi_basis_raw_seed_fun_prime(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_raw_seed_fun_prime_native_predicate(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_root_seed_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_root_seed_extract(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_seed_at_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_seed_at_action(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_fundamental_admissible(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_internal_constants_typed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_internal_constants_locale(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_eval_Pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_eval_Fun(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_eval_pure_holds(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_eval_fun_holds(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3

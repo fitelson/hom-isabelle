@@ -1,0 +1,13 @@
+GOODMAN-INTEGRATION-AUDIT: 12 clean endpoints; candidate book extension only
+goodman_book_proves_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+goodman_book_empty_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+goodman_book_cut: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+goodman_book_mono: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+goodman_book_necessitation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+goodman_book_added_axiom_necessitation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+goodman_book_contains_theory_derivation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+goodman_book_contains_C_theory: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+goodman_book_ordinary_consequence_in_extension: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+goodman_book_closure_theory_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+goodman_book_closure_consistency_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+goodman_book_closure_idempotent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

@@ -1,0 +1,19 @@
+EXACT-REBUILT-CONSTANTS-AUDIT: 17 clean endpoints
+SCOPE: Actual rebuilt C interprets fresh k ONLY at t-to-t by K and preserves basis Pure/Fun coordinates. All five invariant-basis fields discharged from the complete expanded stock. Whole typed k-language preserves auxiliary generating denotations, including full closed native-language stock equality. Native Goodman denotations/global validity agree with basis model under its explicit signature guard. No background validity or PP inferred without the separate model theorems; exact HOL-ZF carriers retained.
+gi_M5_eval_constant_agreement: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M5_named_constant_agreement: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_expanded_invariant_basis: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_rebuilt_constants_typed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_rebuilt_constants_locale: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_rebuilt_constant_at: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_rebuilt_Pure_coordinate: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_rebuilt_Fun_coordinate: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_rebuilt_goodman_coordinate: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_rebuilt_basis_coordinate: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_rebuilt_expanded_eval: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_rebuilt_expanded_closed_denotation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_expanded_stock.gi_M5_rebuilt_named_expanded_denotation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_rebuilt_named_basis_equal: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_rebuilt_exotic_constant_denotation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_rebuilt_native_denotation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_rebuilt_native_global_valid_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

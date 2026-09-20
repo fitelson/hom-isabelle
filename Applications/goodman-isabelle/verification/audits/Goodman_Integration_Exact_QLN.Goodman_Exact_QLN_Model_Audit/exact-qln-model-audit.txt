@@ -1,0 +1,9 @@
+EXACT-QLN-MODEL-AUDIT: 7 clean endpoints
+SCOPE: Native complete logical-purity/QLN background instantiated on Bacon exact carriers with generic seed; background consistency relative to HOL-ZF. PP validity remains equivalent to explicit classifier membership, not proved. No identification with a particular Theorem10.1 glued fundamental proposition.
+gi_exact_generic_QLN_background_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_generic_QLN_background_consistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_generic_target_PP_value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_generic_native_PP_holds_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_generic_native_PP_global_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_generic_native_QLN_PP_global_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_generic_native_QLN_PP_consistent_if_classifier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

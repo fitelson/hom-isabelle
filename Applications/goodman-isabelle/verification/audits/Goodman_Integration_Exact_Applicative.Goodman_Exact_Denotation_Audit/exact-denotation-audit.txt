@@ -1,0 +1,13 @@
+EXACT-DENOTATION-AUDIT: 11 clean endpoints
+SCOPE: Exact named evaluator equations, typing, locality, interpretation structure; environment reduction remains conditional on conversion. HOL-ZF foundation and pp_e_constants guards retained.
+gi_exact_named_denote_var: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_named_denote_const: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_named_denote_app: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_assignment_prefix: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+pp_e_constants.gi_exact_named_denote_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_pterm_eval_locality: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_named_denote_locality: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_named_closed_assignment_independent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+pp_e_constants.gi_exact_book_interpretation_structure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_assignment_join_typed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_environment_from_same_assignment_conversion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4

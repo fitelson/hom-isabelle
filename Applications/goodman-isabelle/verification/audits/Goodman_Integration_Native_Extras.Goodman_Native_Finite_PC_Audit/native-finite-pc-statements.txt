@@ -1,0 +1,84 @@
+gi_PC_disj_type(1):
+(\<And>i. i < ?n \<Longrightarrow> lookup ?\<Gamma> i = Some ?\<sigma>) \<Longrightarrow> ?\<sigma> # ?\<Gamma> \<turnstile> gi_PC_disj ?\<sigma> ?n : Prop
+gi_PC_selector_type(1):
+(\<And>i. i < ?n \<Longrightarrow> lookup ?\<Gamma> i = Some ?\<sigma>) \<Longrightarrow> ?\<Gamma> \<turnstile> gi_PC_selector ?\<sigma> ?n : ?\<sigma> \<rightarrow>\<^sub>o Prop
+gi_PC_disj_reindex(1):
+subst0 (Var 0) (rename (lift_ren Suc) (gi_PC_disj ?\<sigma> ?n)) = gi_PC_disj ?\<sigma> ?n
+gi_PC_selector_apply_beta(1):
+compatible_step (\<rightarrow>\<^sub>\<beta>) (App (shift (gi_PC_selector ?\<sigma> ?n)) (Var 0)) (gi_PC_disj ?\<sigma> ?n)
+gi_PC_step_builder_type(1):
+?\<Gamma> \<turnstile> gi_PC_step_builder ?\<sigma> : ?\<sigma> \<rightarrow>\<^sub>o (?\<sigma> \<rightarrow>\<^sub>o Prop) \<rightarrow>\<^sub>o ?\<sigma> \<rightarrow>\<^sub>o Prop
+gi_PC_step_builder_logical(1):
+pp_logical_vocabulary (gi_PC_step_builder ?\<sigma>)
+gi_PC_step_beta1(1):
+compatible_step (\<rightarrow>\<^sub>\<beta>) (App (App (gi_PC_step_builder ?\<sigma>) (Var ?n)) (gi_PC_selector ?\<sigma> ?n)) (App (gi_PC_step_partial ?\<sigma> ?n) (gi_PC_selector ?\<sigma> ?n))
+gi_PC_step_beta2(1):
+compatible_step (\<rightarrow>\<^sub>\<beta>) (App (gi_PC_step_partial ?\<sigma> ?n) (gi_PC_selector ?\<sigma> ?n)) (gi_PC_step_applied ?\<sigma> ?n)
+gi_PC_step_beta3(1):
+compatible_step (\<rightarrow>\<^sub>\<beta>) (gi_PC_step_applied ?\<sigma> ?n) (gi_PC_selector ?\<sigma> (Suc ?n))
+gi_PC_pure_beta_from(1):
+\<lbrakk>?\<Gamma> \<turnstile> ?M : ?\<tau>; ?\<Gamma> \<turnstile> ?N : ?\<tau>; compatible_step (\<rightarrow>\<^sub>\<beta>) ?M ?N; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_pure ?\<tau> ?M\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_pure ?\<tau> ?N
+gi_PC_empty_selector_pure(1):
+gi_finite_PC_axioms \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_pure (?\<sigma> \<rightarrow>\<^sub>o Prop) (gi_PC_selector ?\<sigma> 0)
+gi_PC_selector_pure_from(1):
+\<lbrakk>gi_finite_PC_axioms \<subseteq> ?T; \<And>i. i < ?n \<Longrightarrow> lookup ?\<Gamma> i = Some ?\<sigma>; \<And>i. i < ?n \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_pure ?\<sigma> (Var i)\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_pure (?\<sigma> \<rightarrow>\<^sub>o Prop) (gi_PC_selector ?\<sigma> ?n)
+gi_PC_membership_theorem(1):
+(\<And>i. i < ?n \<Longrightarrow> lookup ?\<Gamma> i = Some ?\<sigma>) \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gi_PC_membership ?\<sigma> ?n
+gi_PC_hyp_elim(1):
+\<lbrakk>?i < ?n; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s gi_PC_hyp ?\<sigma> ?n\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_pure ?\<sigma> (Var ?i)
+gi_PC_matrix_theorem(1):
+\<lbrakk>gi_finite_PC_axioms \<subseteq> ?T; \<And>i. i < ?n \<Longrightarrow> lookup ?\<Gamma> i = Some ?\<sigma>\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gi_PC_matrix ?\<sigma> ?n
+gi_PC_sentence_theorem(1):
+\<lbrakk>gi_finite_PC_axioms \<subseteq> ?T; ?m \<le> ?n; \<And>i. i < ?n - ?m \<Longrightarrow> lookup ?\<Gamma> i = Some ?\<sigma>\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gi_PC_sentence ?\<sigma> ?n ?m
+gi_CEV_finite_PC(1):
+gi_finite_PC_axioms \<subseteq> ?T \<Longrightarrow> [] ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gi_finite_PC ?\<sigma> ?n
+gi_CEV_finite_PC_exact_stock(1):
+[] ; gi_finite_PC_axioms \<turnstile>\<^sub>CEV\<^sup>+ gi_finite_PC ?\<sigma> ?n
+gi_CEV_finite_PC_empty(1):
+[] ; gi_finite_PC_axioms \<turnstile>\<^sub>CEV\<^sup>+ gi_finite_PC ?\<sigma> 0
+gi_finite_PC_typed(1):
+[] \<turnstile> gi_finite_PC ?\<sigma> ?n : Prop
+gi_PC_disj_translation(1):
+gi_to_book ?G ?ns ?k (gi_PC_disj ?\<sigma> ?n) = gb_PC_disj ?G ?\<sigma> 1 ?ns ?n
+gi_PC_disj_shift_translation(1):
+gi_to_book ?G ?ns ?k (rename (lift_ren Suc) (gi_PC_disj ?\<sigma> ?n)) = gb_PC_disj ?G ?\<sigma> 2 ?ns ?n
+gi_PC_selector_translation(1):
+gi_to_book ?G ?ns ?k (gi_PC_selector ?\<sigma> ?n) = gb_PC_selector ?G ?\<sigma> ?ns ?n
+gi_PC_shifted_selector_translation(1):
+gi_to_book ?G ?ns ?k (shift (gi_PC_selector ?\<sigma> ?n)) = gb_PC_shifted_selector ?G ?\<sigma> ?ns ?n
+gi_PC_hyp_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (gi_PC_hyp ?\<sigma> ?n) = gb_PC_hyp ?G ?\<sigma> ?ns ?n
+gi_PC_membership_translation(1):
+gi_to_book ?G ?ns ?k (gi_PC_membership ?\<sigma> ?n) = gb_PC_membership ?G ?\<sigma> ?ns ?n
+gi_PC_matrix_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (gi_PC_matrix ?\<sigma> ?n) = gb_PC_matrix ?G ?\<sigma> ?ns ?n
+gi_PC_sentence_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (gi_PC_sentence ?\<sigma> ?n ?m) = gb_PC_sentence ?G ?\<sigma> ?ns ?n ?m
+gi_finite_PC_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k (gi_finite_PC ?\<sigma> ?n) = gb_finite_PC ?G ?\<sigma> ?n
+gi_finite_PC_admitted(1):
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature (gi_finite_PC ?\<sigma> ?n)
+gb_finite_PC_axioms_language(1):
+\<lbrakk>sg_rich ?G; ?A \<in> gb_finite_PC_axioms ?G\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?A
+gb_finite_PC_axioms_closed(1):
+?A \<in> gb_finite_PC_axioms ?G \<Longrightarrow> named_fv ?A = {}
+gb_finite_PC_axioms_subset_T1(1):
+gb_finite_PC_axioms ?G \<subseteq> gb_T1_axioms ?G
+gi_finite_PC_stock_inclusion(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> gi_to_book ?G [] ?k ` gi_finite_PC_axioms \<subseteq> gb_finite_PC_axioms ?G
+gi_finite_PC_axiom_from_native(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?A \<in> gi_finite_PC_axioms\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gb_finite_PC_axioms ?G) (gi_to_book ?G [] ?k ?A)
+gi_finite_PC_native_preservation(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; gi_finite_PC_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_finite_PC_axioms ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_native_finite_PC(1):
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_finite_PC_axioms ?G) (gb_finite_PC ?G ?\<sigma> ?n)
+gi_native_finite_PC_empty(1):
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_finite_PC_axioms ?G) (gb_finite_PC ?G ?\<sigma> 0)
+gi_native_finite_PC_T1_stock(1):
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T1_axioms ?G) (gb_finite_PC ?G ?\<sigma> ?n)
+gi_native_empty_selector_pure(1):
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_finite_PC_axioms ?G) (gb_pure (?\<sigma> \<rightarrow>\<^sub>o Prop) (gb_PC_selector ?G ?\<sigma> [] 0))
+gb_finite_PC_language_closed(1):
+sg_rich ?G \<Longrightarrow> book_theory_formula gb_signature ?G (gb_finite_PC ?G ?\<sigma> ?n)
+gb_finite_PC_language_closed(2):
+sg_rich ?G \<Longrightarrow> named_fv (gb_finite_PC ?G ?\<sigma> ?n) = {}

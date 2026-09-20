@@ -1,0 +1,24 @@
+gi_M5_identity_value:
+pp_e_eval ?C ?\<rho> pp_identity_operator = pp_e_closed_den pp_identity_operator
+gi_M5_truth_preserving_value:
+pp_e_holds (pp_e_eval ?C (extend_env ?X ?\<rho>) (pp_truth_preserving (Var 0))) ?w = (\<forall>p. Elem p (pp_e_domain Prop) \<longrightarrow> pp_e_holds (?X \<acute> p) ?w = pp_e_holds p ?w)
+gi_M5_truth_flipping_value:
+pp_e_holds (pp_e_eval ?C (extend_env ?X ?\<rho>) (pp_truth_flipping (Var 0))) ?w = (\<forall>p. Elem p (pp_e_domain Prop) \<longrightarrow> pp_e_holds (?X \<acute> p) ?w = (\<not> pp_e_holds p ?w))
+gi_exact_expanded_stock.gi_M5_rebuilt_group_member_value:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; Elem ?X (pp_e_domain gb_unary)\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval (gi_M5_rebuilt_constants ?k ?K) (extend_env ?X ?\<rho>) (pp_group_member (Var 0))) [] = (gi_basis_pure (gi_M5_expanded_basis ?k ?K) gb_unary [] ?X \<and> (\<exists>Y. Elem Y (pp_e_domain gb_unary) \<and> gi_basis_pure (gi_M5_expanded_basis ?k ?K) gb_unary [] Y \<and> pp_e_eqv gb_unary [] (gi_exact_value_compose ?X Y) (pp_e_closed_den pp_identity_operator) \<and> pp_e_eqv gb_unary [] (gi_exact_value_compose Y ?X) (pp_e_closed_den pp_identity_operator)))
+gi_exact_expanded_stock.gi_M5_self_compose_identity:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; \<And>p. Elem p (pp_e_domain Prop) \<Longrightarrow> ?K \<acute> (?K \<acute> p) = p\<rbrakk> \<Longrightarrow> gi_exact_value_compose ?K ?K = pp_e_closed_den pp_identity_operator
+gi_exact_expanded_stock.gi_M5_rebuilt_involution_is_group_member:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; \<And>p. Elem p (pp_e_domain Prop) \<Longrightarrow> ?K \<acute> (?K \<acute> p) = p\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval (gi_M5_rebuilt_constants ?k ?K) (extend_env ?K ?\<rho>) (pp_group_member (Var 0))) []
+gi_exact_expanded_stock.gi_M5_rebuilt_TU_implies_uniform:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; \<And>p. Elem p (pp_e_domain Prop) \<Longrightarrow> ?K \<acute> (?K \<acute> p) = p; pp_e_holds (pp_e_eval (gi_M5_rebuilt_constants ?k ?K) ?\<rho> pp_TU) []\<rbrakk> \<Longrightarrow> (\<forall>p. Elem p (pp_e_domain Prop) \<longrightarrow> pp_e_holds (?K \<acute> p) [] = pp_e_holds p []) \<or> (\<forall>p. Elem p (pp_e_domain Prop) \<longrightarrow> pp_e_holds (?K \<acute> p) [] = (\<not> pp_e_holds p []))
+gi_exact_M5_rebuilt_TU_false_at_root:
+\<not> pp_e_holds (pp_e_eval (gi_M5_exotic_constants ?R) ?\<rho> pp_TU) []
+gi_M5_TU_vocabulary:
+consts_of pp_TU \<subseteq> {pp_pure_name, pp_fun_name}
+gi_exact_M5_native_TU_false_at_root:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> \<not> gi_exact_valuation [] (gi_exact_goodman_denote (gi_M5_exotic_constants ?R) ?G ?g (gi_to_book ?G [] ?cmap pp_TU))
+gi_exact_M5_native_TU_not_global:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap\<rbrakk> \<Longrightarrow> \<not> gi_exact_goodman_global_valid (gi_M5_exotic_constants ?R) ?G (gi_to_book ?G [] ?cmap pp_TU)
+gi_M5_TU_not_derivable_from_QLN_background:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap\<rbrakk> \<Longrightarrow> \<not> goodman_book_proves gb_signature ?G (gi_native_QLN_background ?G) (gi_to_book ?G [] ?cmap pp_TU)

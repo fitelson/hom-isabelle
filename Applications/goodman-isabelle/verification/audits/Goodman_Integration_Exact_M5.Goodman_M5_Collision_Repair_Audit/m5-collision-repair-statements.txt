@@ -1,0 +1,46 @@
+gi_M5_punctured_truth_nonextreme(1):
+gi_M5_punctured_truth \<noteq> {}
+gi_M5_punctured_truth_nonextreme(2):
+gi_M5_punctured_truth \<noteq> UNIV
+gi_M5_punctured_truth_view(1):
+pp_view ?i gi_M5_punctured_truth = (if ?i = [] then gi_M5_punctured_truth else UNIV)
+gi_M5_punctured_truth_NC(1):
+gi_M5_raw_NC gi_M5_punctured_truth = gi_M5_punctured_truth
+gi_M5_raw_corrected_collision(1):
+gi_M5_raw_collision gi_M5_punctured_truth = UNIV
+gi_M5_raw_corrected_collision(2):
+gi_M5_raw_collision UNIV = UNIV
+gi_M5_raw_corrected_collision(3):
+gi_M5_punctured_truth \<noteq> UNIV
+gi_M5_collision_operator_logical(1):
+pp_logical_vocabulary pp_M5_collision_operator
+gi_M5_collision_operator_denotation(1):
+pp_e_eval ?C ?\<rho> pp_M5_collision_operator = pp_e_closed_den pp_M5_collision_operator
+gi_M5_collision_operator_member(1):
+Elem (pp_e_closed_den pp_M5_collision_operator) (pp_e_domain gb_unary)
+gi_M5_collision_application_extract(1):
+Elem ?p (pp_e_domain Prop) \<Longrightarrow> pp_n_bacon_extract (pp_e_closed_den pp_M5_collision_operator \<acute> ?p) = gi_M5_raw_collision (pp_n_bacon_extract ?p)
+gi_M5_collision_operator_raw(1):
+pp_e_raw_operator (pp_e_closed_den pp_M5_collision_operator) = gi_M5_raw_collision
+gi_M5_equal_propositions_from_extract(1):
+\<lbrakk>Elem ?x (pp_e_domain Prop); Elem ?y (pp_e_domain Prop); pp_n_bacon_extract ?x = pp_n_bacon_extract ?y\<rbrakk> \<Longrightarrow> ?x = ?y
+gi_M5_exact_corrected_collision(1):
+pp_n_bacon_embed gi_M5_punctured_truth \<noteq> pp_zf_truth True
+gi_M5_exact_corrected_collision(2):
+pp_e_closed_den pp_M5_collision_operator \<acute> pp_n_bacon_embed gi_M5_punctured_truth = pp_zf_truth True
+gi_M5_exact_corrected_collision(3):
+pp_e_closed_den pp_M5_collision_operator \<acute> pp_zf_truth True = pp_zf_truth True
+gi_M5_exact_operator_not_injective(1):
+\<not> inj_on ((\<acute>) (pp_e_closed_den pp_M5_collision_operator)) (gi_exact_domain Prop)
+gi_M5_corrected_collision_sentence_typed(1):
+[] \<turnstile> gi_M5_corrected_collision_sentence : Prop
+gi_M5_corrected_collision_sentence_root(1):
+pp_e_holds (pp_e_eval ?C ?\<rho> gi_M5_corrected_collision_sentence) []
+gi_M5_raw_collision_no_left_inverse(1):
+\<nexists>W. W \<circ> gi_M5_raw_collision = id
+gi_M5_actual_nonreversibility_at_root(1):
+pp_e_holds (pp_e_eval pp_e_generic_internal_constants ?\<rho> (Neg (pp_reversible pp_M5_collision_operator))) []
+gi_M5_native_corrected_collision_at_root(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_valuation [] (gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g (gi_to_book ?G [] ?cmap gi_M5_corrected_collision_sentence))
+gi_M5_native_actual_nonreversibility_at_root(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_valuation [] (gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g (gi_to_book ?G [] ?cmap (Neg (pp_reversible pp_M5_collision_operator))))

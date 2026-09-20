@@ -1,0 +1,11 @@
+M5-FIXED-PAIR-AUDIT: 9 clean endpoints
+SCOPE: literal fixed[5] pair in actual rebuilt exact QLN/QSS model, pure exact self-inverse operator with nonuniform/nonbiconditional raw action. No arbitrary old-orbit avoidance, PP, or root classification-formula assertion.
+gi_exact_M5_fixed_raw(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M5_fixed_expanded_stock(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M5_fixed_QLN_model(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_M5_fixed_QSS_model(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M5_fixed_operator_pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M5_fixed_operator_denotation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M5_fixed_operator_involution(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M5_fixed_operator_classification_failure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M5_fixed_operator_classification_failure(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0

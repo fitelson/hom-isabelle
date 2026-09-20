@@ -1,0 +1,56 @@
+gi_goodman_names_satisfiable:
+\<exists>k. gi_goodman_names k
+gi_logical_constants_iff:
+gi_constants_admitted ?k (\<lambda>_. {}) ?A = pp_logical_vocabulary ?A
+gi_Pure_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (pp_Pure ?\<sigma>) = gb_Pure ?\<sigma>
+gi_Fun_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (pp_Fun ?\<sigma>) = gb_Fun ?\<sigma>
+gi_pure_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (pp_pure ?\<sigma> ?A) = gb_pure ?\<sigma> (gi_to_book ?G ?ns ?k ?A)
+gi_fun_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (pp_fun ?\<sigma> ?A) = gb_fun ?\<sigma> (gi_to_book ?G ?ns ?k ?A)
+gi_PP_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k pp_target_PP = gb_target_PP
+gi_application_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k (pp_application_closure ?\<sigma> ?\<tau>) = gb_application_closure ?G ?\<sigma> ?\<tau>
+gi_unique_fundamental_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k (pp_unique_fundamental ?\<sigma>) = gb_unique_fundamental ?G ?\<sigma>
+gi_no_fundamentals_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k (pp_no_fundamentals ?\<sigma>) = gb_no_fundamentals ?G ?\<sigma>
+gi_purity_schema_inclusion:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> gi_to_book ?G [] ?k ` pp_purity_schema \<subseteq> gb_purity_schema ?G
+gi_application_schema_equality:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k ` pp_application_closure_schema = gb_application_schema ?G
+gi_no_other_fundamentals_schema_equality:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k ` pp_no_other_fundamentals_schema = gb_no_other_fundamentals_schema ?G
+gi_background_inclusion:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> gi_to_book ?G [] ?k ` pp_background_axioms \<subseteq> gb_background_axioms ?G
+gi_background_closed:
+?A \<in> pp_background_axioms \<Longrightarrow> [] \<turnstile> ?A : Prop
+gi_background_proof_preservation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; pp_background_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gb_background_axioms ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_T6_core_inclusion:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> gi_to_book ?G [] ?k ` pp_T6_core_PP_axioms \<subseteq> gb_T6_core ?G
+gb_T6_core_language:
+\<lbrakk>sg_rich ?G; ?A \<in> gb_T6_core ?G\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?A
+gb_T6_core_closed:
+?A \<in> gb_T6_core ?G \<Longrightarrow> named_fv ?A = {}
+gi_T6_native_core_transfer:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; goodman_book_proves (\<lambda>_. UNIV) ?G (gi_to_book ?G [] ?k ` (pp_T6_core_PP_axioms \<union> ?S)) ?A\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gi_T6_native_core_extension ?G ?k ?S) ?A
+gi_T6_native_core_Inv_refutation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gi_T6_native_core_extension ?G ?k {pp_exists_fun_prime, pp_L2, pp_Inv}) (book_bottom ?G)
+gi_T6_native_core_TU_refutation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gi_T6_native_core_extension ?G ?k {pp_exists_fun_prime, pp_L2, pp_TU}) (book_bottom ?G)
+gi_T6_native_core_WI_refutation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gi_T6_native_core_extension ?G ?k {pp_exists_fun_prime, pp_L2, pp_WI}) (book_bottom ?G)
+gi_T6_native_core_RS_refutation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gi_T6_native_core_extension ?G ?k {pp_strong_L2, pp_RS}) (book_bottom ?G)
+gi_T6_native_core_Inv_inconsistent:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> \<not> goodman_book_consistent (\<lambda>_. UNIV) ?G (gi_T6_native_core_extension ?G ?k {pp_exists_fun_prime, pp_L2, pp_Inv})
+gi_T6_native_core_TU_inconsistent:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> \<not> goodman_book_consistent (\<lambda>_. UNIV) ?G (gi_T6_native_core_extension ?G ?k {pp_exists_fun_prime, pp_L2, pp_TU})
+gi_T6_native_core_WI_inconsistent:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> \<not> goodman_book_consistent (\<lambda>_. UNIV) ?G (gi_T6_native_core_extension ?G ?k {pp_exists_fun_prime, pp_L2, pp_WI})
+gi_T6_native_core_RS_inconsistent:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> \<not> goodman_book_consistent (\<lambda>_. UNIV) ?G (gi_T6_native_core_extension ?G ?k {pp_strong_L2, pp_RS})

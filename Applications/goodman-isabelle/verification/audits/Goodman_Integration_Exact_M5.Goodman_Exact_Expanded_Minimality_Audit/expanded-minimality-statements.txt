@@ -1,0 +1,28 @@
+gi_M5_pconst_subst_eval(1):
+pp_e_eval ?C ?\<rho> (pterm_to_oterm (pconst_subst ?k ?\<sigma> ?N ?M)) = pp_e_eval (\<lambda>c \<tau>. if ?k = c \<and> ?\<sigma> = \<tau> then pp_e_eval ?C ?\<rho> (pterm_to_oterm ?N) else ?C c \<tau>) ?\<rho> (pterm_to_oterm ?M)
+gi_M5_pconst_removes_only_signature(1):
+\<lbrakk>pterm_in_signature (gi_M5_expanded_signature ?k) ?M; pterm_in_signature (\<lambda>_. {}) ?N\<rbrakk> \<Longrightarrow> pterm_in_signature (\<lambda>_. {}) (pconst_subst ?k gb_unary ?N ?M)
+gi_M5_constant_abstractor_type(1):
+[] \<turnstile> ?M : ?\<sigma> \<Longrightarrow> [] \<turnstile> gi_M5_constant_abstractor ?k ?M : gb_unary \<rightarrow>\<^sub>o ?\<sigma>
+gi_M5_constant_abstractor_logical(1):
+oterm_in_string_signature (gi_M5_expanded_signature ?k) ?M \<Longrightarrow> pp_logical_vocabulary (gi_M5_constant_abstractor ?k ?M)
+gi_M5_abstracted_body_eval(1):
+pp_e_eval pp_e_default_constants (extend_env ?K ?\<rho>) (pterm_to_oterm (pabstract_const ?k gb_unary (pterm_of_oterm ?M))) = pp_e_eval (gi_M5_basis_constants ?k ?K) ?\<rho> ?M
+gi_M5_constant_abstractor_application(1):
+Elem ?K (pp_e_domain gb_unary) \<Longrightarrow> pp_e_closed_den (gi_M5_constant_abstractor ?k ?M) \<acute> ?K = gi_M5_expanded_closed_den ?k ?K ?M
+gi_M5_expanded_basis_least(1):
+\<lbrakk>Elem ?K (pp_e_domain gb_unary); \<And>\<sigma> M. \<lbrakk>[] \<turnstile> M : \<sigma>; pp_logical_vocabulary M\<rbrakk> \<Longrightarrow> pp_e_closed_den M \<in> ?D \<sigma>; ?K \<in> ?D gb_unary; \<And>\<sigma> \<tau> F x. \<lbrakk>F \<in> ?D (\<sigma> \<rightarrow>\<^sub>o \<tau>); x \<in> ?D \<sigma>\<rbrakk> \<Longrightarrow> F \<acute> x \<in> ?D \<tau>; ?x \<in> gi_M5_expanded_basis ?k ?K ?\<sigma>\<rbrakk> \<Longrightarrow> ?x \<in> ?D ?\<sigma>
+gi_M5_application_hull_logical(1):
+\<lbrakk>[] \<turnstile> ?M : ?\<sigma>; pp_logical_vocabulary ?M\<rbrakk> \<Longrightarrow> pp_e_closed_den ?M \<in> gi_M5_application_hull ?K ?\<sigma>
+gi_M5_application_hull_K(1):
+?K \<in> gi_M5_application_hull ?K gb_unary
+gi_M5_application_hull_closed(1):
+\<lbrakk>?F \<in> gi_M5_application_hull ?K (?\<sigma> \<rightarrow>\<^sub>o ?\<tau>); ?x \<in> gi_M5_application_hull ?K ?\<sigma>\<rbrakk> \<Longrightarrow> ?F \<acute> ?x \<in> gi_M5_application_hull ?K ?\<tau>
+gi_M5_expanded_basis_subset_application_hull(1):
+Elem ?K (pp_e_domain gb_unary) \<Longrightarrow> gi_M5_expanded_basis ?k ?K ?\<sigma> \<subseteq> gi_M5_application_hull ?K ?\<sigma>
+gi_exact_expanded_stock.gi_M5_generated_in_expanded_basis(1):
+\<lbrakk>gi_exact_expanded_stock ?k ?K; gi_M5_application_generated ?K ?\<sigma> ?x\<rbrakk> \<Longrightarrow> ?x \<in> gi_M5_expanded_basis ?k ?K ?\<sigma>
+gi_exact_expanded_stock.gi_M5_expanded_basis_is_application_hull(1):
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> gi_M5_expanded_basis ?k ?K ?\<sigma> = gi_M5_application_hull ?K ?\<sigma>
+gi_exact_expanded_stock.gi_M5_named_expanded_basis_is_application_hull(1):
+\<lbrakk>gi_exact_expanded_stock ?k ?K; sg_rich ?G\<rbrakk> \<Longrightarrow> gi_M5_named_expanded_basis ?k ?K ?G ?\<sigma> = gi_M5_application_hull ?K ?\<sigma>

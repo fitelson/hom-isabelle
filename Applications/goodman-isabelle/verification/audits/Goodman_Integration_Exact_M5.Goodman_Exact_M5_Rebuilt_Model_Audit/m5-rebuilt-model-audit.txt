@@ -1,0 +1,30 @@
+M5-REBUILT-MODEL-AUDIT: 28 clean endpoints
+SCOPE: actual rebuilt constants preserve exotic k and native Pure/Fun; all closed expanded terms pure; full no-PP zeroary/unary QLN background globally valid; exact exotic value pure and involutive but not truth-uniform; new seed differs from old R. No PP or inferred pp_TU/Inv/WI nonderivability. HOL-ZF.
+gi_M5_native_QLN_background_language(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_basis_native_QLN_background_gvalid(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_expanded_stock.gi_M5_rebuilt_native_QLN_background_gvalid(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_expanded_stock.gi_M5_rebuilt_native_QLN_background_consistent(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_rebuilt_Pure_value(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_rebuilt_pure_clause(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_expanded_stock.gi_M5_rebuilt_closed_term_in_basis(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_expanded_stock.gi_M5_rebuilt_closed_term_pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_expanded_stock.gi_M5_rebuilt_K_pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_rebuilt_K_pure_holds(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_rebuilt_k_named_denotation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_rebuilt_named_closed_term_in_basis(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_exact_expanded_stock.gi_M5_rebuilt_named_closed_term_pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_exact_expanded_stock.gi_M5_identity_in_expanded_raw_stock(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_K_in_expanded_raw_stock(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_rebuilt_seed_changes(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_M5_exotic_expanded_stock(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M5_rebuilt_QLN_model(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_M5_rebuilt_exotic_pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M5_rebuilt_exotic_denotation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M5_rebuilt_complete_purity(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_M5_rebuilt_seed_not_old(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M5_rebuilt_certificate(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M5_rebuilt_certificate(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M5_rebuilt_certificate(3): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M5_rebuilt_certificate(4): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M5_rebuilt_certificate(5): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M5_rebuilt_certificate(6): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

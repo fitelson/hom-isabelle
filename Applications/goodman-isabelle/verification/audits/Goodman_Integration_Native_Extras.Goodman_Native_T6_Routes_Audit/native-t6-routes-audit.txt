@@ -1,0 +1,21 @@
+NATIVE-T6-ROUTES-AUDIT: 19 clean endpoints
+SCOPE: Eight refutations/eight inconsistency corollaries in gb_signature with fully native closed extras and no final translation parameter. Weak-L2 common-core routes retain exists-fun-prime; repaired central stock derives it; RS routes retain strongL2+RS only. Three native classification consequences retain their exact stocks (WI alone for TU, T1 including zeroary Exhaustion for Inv). No PP-alone refutation or deduction-theorem conversion asserted.
+gi_native_T6_Inv_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_T6_TU_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_T6_WI_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_T6_RS_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_central_T6_Inv_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_central_T6_TU_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_central_T6_WI_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_central_T6_RS_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_T6_Inv_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_T6_TU_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_T6_WI_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_T6_RS_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_central_T6_Inv_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_central_T6_TU_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_central_T6_WI_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_central_T6_RS_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_WI_derives_TU: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_T1_WI_derives_Inv: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_T1_TU_derives_Inv: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

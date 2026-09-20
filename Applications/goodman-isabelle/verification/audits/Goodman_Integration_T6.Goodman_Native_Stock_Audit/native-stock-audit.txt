@@ -1,0 +1,31 @@
+GOODMAN-NATIVE-STOCK-AUDIT: 28 clean endpoints
+SCOPE: native nonmodal background; native T6 common core; translated route extras; universal target signature.
+Logical purity: forward syntactic inclusion, NOT denotational equality or a model theorem.
+gi_goodman_names_satisfiable: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_logical_constants_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_Pure_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_Fun_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_pure_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_fun_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_PP_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_application_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_unique_fundamental_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_no_fundamentals_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_purity_schema_inclusion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_application_schema_equality: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_no_other_fundamentals_schema_equality: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_background_inclusion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_background_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_background_proof_preservation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_T6_core_inclusion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gb_T6_core_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gb_T6_core_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T6_native_core_transfer: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T6_native_core_Inv_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T6_native_core_TU_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T6_native_core_WI_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T6_native_core_RS_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T6_native_core_Inv_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T6_native_core_TU_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T6_native_core_WI_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T6_native_core_RS_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

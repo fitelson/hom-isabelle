@@ -1,0 +1,8 @@
+EXACT-FUN-PRIME-ROOT-AUDIT: 6 clean endpoints
+SCOPE: Actual pp_fun_prime evaluation at the root equals the fixed-stock raw semantic property for each typed proposition term/environment in the exact generic interpretation. Complete closed-logical stock and faithful raw representation; not arbitrary enlarged stocks or identity/equality collapse at all worlds. HOL-ZF qualification retained.
+gi_exact_eval_shift_two: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_fun_prime_root_schema: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_fun_prime_root_schema_values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_fun_prime_values_iff_raw: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_fun_prime_root_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_generic_fun_prime_variable_root: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

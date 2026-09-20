@@ -1,0 +1,26 @@
+RS-WITNESS-AUDIT: 24 clean endpoints
+SCOPE: Explicit true-and-fun-prime witness; PP+zeroary Exhaustion+exists fun-prime+TU; no L2/strong L2/T6 explosion. Constructor CEV+ endpoints.
+gi_RS_plus_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_RS_plus_builder_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_RS_plus_builder_logical: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_RS_plus_builder_beta: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_RS_plus_pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_RS_plus_shift: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_RS_plus_subst: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_RS_plus_apply_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_RS_plus_beta: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_RS_plus_apply_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_RS_plus_elim: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_RS_plus_intro: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_RS_plus_only_fun_prime: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_RS_plus_exist_intro: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_RS_plus_instantiated_from_fun_prime: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_RS_plus_instantiated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_RS_standard_same_truth_equal: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7
+gi_RS_plus_rigidity_local: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9
+gi_RS_plus_rigid_parameter: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_RS_plus_rigid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_CEV_TU_RS_explicit_witness: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_CEV_TU_Exhaustion_PP_exists_implies_RS: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_CEV_TU_RS_exact_witness: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_CEV_TU_RS_exact_stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0

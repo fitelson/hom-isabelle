@@ -1,0 +1,16 @@
+EXACT-M1-BOTTOM-AUDIT: 14 clean endpoints
+SCOPE: Proposition-type purity is noncontingency; the explicit closed logical NC term denotes its actual exact-carrier classifier, which belongs to the complete unary logical stock. The generic interpretation globally validates gb_purity_of_pure Prop, NOT the higher gb_target_PP. Exact carriers, rich names where needed, typed constants/assignments, and HOL-ZF retained. No invariant-implies-definable principle.
+gi_M1_exact_closed_truth: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M1_exact_closed_falsity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M1_exact_proposition_stock_noncontingency: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M1_NC_body_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M1_NC_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M1_NC_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M1_NC_closed_logical: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M1_NC_string_rename: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+pp_e_constants.gi_M1_NC_body_holds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+pp_e_constants.gi_M1_NC_denotes_exact_classifier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_M1_NC_native_closed_denotation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M1_exact_bottom_classifier_in_native_stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M1_exact_native_purity_is_noncontingency: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_M1_exact_bottom_PP_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

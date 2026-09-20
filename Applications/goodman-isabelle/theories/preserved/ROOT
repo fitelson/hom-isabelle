@@ -1,0 +1,65 @@
+session Goodman_Legacy_01 in "stage01" = Goodman_Integration_Vector +
+  options [timeout = 60, export_theory = true]
+  sessions Bacon_Classicism
+  theories
+    Bacon_PP_Intensionality
+    Bacon_PP_Question
+    Bacon_CEV_Axiom_Extension
+    Bacon_PP_Diagonal
+    Bacon_PP_Modalized_Functionality
+    Bacon_PP_Modalized_Functionality_Derived
+    Bacon_PP_T6_Encoding
+
+session Goodman_Legacy_02 in "stage02" = Goodman_Legacy_01 +
+  options [timeout = 60, export_theory = true]
+  sessions Bacon_Classicism
+  theories
+    Bacon_PP_Goodman_Composition
+    Bacon_PP_Goodman_Fun_Prime_Closure
+    Bacon_PP_Goodman_Fun_Prime_Nontriviality
+    Bacon_PP_Goodman_Fun_Prime_Attainment
+    Bacon_PP_Goodman_Fun_Prime_Possibly_Pure
+    Bacon_PP_Goodman_Fun_Prime_Noncontingency
+    Bacon_PP_Goodman_Fun_Prime_Six_Distinct
+    Bacon_PP_Goodman_T2f_Operators
+
+session Goodman_Legacy_03 in "stage03" = Goodman_Legacy_02 +
+  options [timeout = 60, export_theory = true]
+  sessions Bacon_Classicism
+  theories
+    Bacon_PP_Goodman_T2f_Separation
+    Bacon_PP_Goodman_T2f_Values
+    Bacon_PP_Goodman_T2f_Pairwise
+    Bacon_PP_Goodman_T2f_Verified
+    Bacon_PP_Goodman_Heredity
+    Bacon_PP_Goodman_Pure_Proposition_Triviality
+    Bacon_PP_Goodman_Biconditional_Classification
+    Bacon_PP_Goodman_WI_Collapse
+    Bacon_PP_Goodman_Heredity_Modal
+    Bacon_PP_Goodman_Heredity_Rigidity
+    Bacon_PP_Goodman_Heredity_Core
+
+session Goodman_Legacy_04 in "stage04" = Goodman_Legacy_03 +
+  options [timeout = 60, export_theory = true]
+  sessions Bacon_Classicism
+  theories
+    Bacon_PP_Goodman_Heredity_Exhaustion
+    Bacon_PP_Goodman_Heredity_Sharp
+    Bacon_PP_Goodman_Fun_Prime_Axiom_Collapse
+    Bacon_PP_Goodman_Higher_Type_Diagonal
+    Bacon_PP_Goodman_Proliferation
+
+session Goodman_Legacy_05 in "stage05" = Goodman_Legacy_04 +
+  options [timeout = 60, export_theory = true]
+  sessions Bacon_Classicism
+  theories
+    Bacon_PP_Goodman_T6_Inv
+    Bacon_PP_Goodman_T6_TU
+    Bacon_PP_Goodman_T6_WI
+    Bacon_PP_Goodman_T6_RS_Encoding
+
+session Goodman_Legacy_06 in "stage06" = Goodman_Legacy_05 +
+  options [timeout = 60, export_theory = true]
+  sessions Bacon_Classicism
+  theories
+    Bacon_PP_Goodman_T6_RS

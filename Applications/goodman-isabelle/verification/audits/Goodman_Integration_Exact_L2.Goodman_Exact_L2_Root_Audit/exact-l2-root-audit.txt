@@ -1,0 +1,12 @@
+EXACT-L2-ROOT-AUDIT: 10 clean endpoints
+SCOPE: Actual equality and literal denotation stock only at the root; faithful raw unary representation and exact composition. Typed carrier premises retained. These helpers alone do not evaluate L2. HOL-ZF foundations retained.
+gi_exact_root_eqv: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_root_logical_stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_root_unary_stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_raw_at_extract: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_raw_operator_injective: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_raw_operator_eq_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_raw_application_eq_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_exact_eval_compose: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_value_compose_member: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_raw_value_compose: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

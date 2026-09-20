@@ -1,0 +1,40 @@
+GOODMAN-T1-QSS-COMPACTNESS-AUDIT: 37 clean endpoints
+SCOPE: T1 minimal stock with zeroary Exhaustion; independent QSS/witness; actual axiom-extension finite support.
+T1 retains source truth/falsity representatives; WI/Inv remain translated. No semantic compactness/model existence asserted.
+gb_QSS_instance_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gb_QSS_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_QSS_instance_fv: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gb_QSS_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_QSS_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_QSS_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_repaired_native_QSS: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_QSS_unique_native_stock_exists: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_exists_fun_prime_from_QSS: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+goodman_book_finite_support: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+goodman_book_proves_iff_finite_support: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+goodman_book_consistent_subset: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+goodman_book_consistent_iff_finite_subsets: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+goodman_book_inconsistent_iff_finite_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+goodman_book_inconsistent_iff_finite_inconsistent_subset: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gb_recombination_PP_consistent_iff_finite_subsets: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gb_recombination_PP_negative_answer_iff_finite_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T1_axioms_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_T1_axioms_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gb_T1_axioms_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T1_axiom_from_native: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_T1_native_preservation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T1_extreme_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T1_pure_propositions_extreme_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T1_extreme_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T1_pure_extreme_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T1_pure_propositions_extreme: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T1_identity_operator_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T1_negation_operator_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T1_biconditional_operator_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T1_biconditional_classification_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T1_biconditional_classification_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T1_biconditional_classification: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T1_WI_axioms_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T1_WI_native_stock_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T1_WI_axiom_from_native: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T1_WI_implies_Inv_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

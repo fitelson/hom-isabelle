@@ -1,0 +1,34 @@
+gi_exact_generic_constants(1):
+pp_e_constants pp_e_generic_internal_constants
+gi_exact_generic_native_denote_type(1):
+\<lbrakk>book_in_language book_minimal_logical_type UNIV gb_signature ?G ?A ?\<sigma>; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g ?A \<in> gi_exact_domain ?\<sigma>
+gi_exact_generic_Pure_denotation(1):
+gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g (gb_Pure ?\<sigma>) = pp_e_classifier ?\<sigma> (pp_e_closed_logical_stock ?\<sigma>)
+gi_exact_generic_Fun_denotation(1):
+gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g (gb_Fun ?\<sigma>) = pp_e_classifier ?\<sigma> (pp_e_generic_fundamental_at ?\<sigma>)
+gi_exact_generic_pure_denotation(1):
+gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g (gb_pure ?\<sigma> ?A) = pp_e_classifier ?\<sigma> (pp_e_closed_logical_stock ?\<sigma>) \<acute> gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g ?A
+gi_exact_generic_fun_denotation(1):
+gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g (gb_fun ?\<sigma> ?A) = pp_e_classifier ?\<sigma> (pp_e_generic_fundamental_at ?\<sigma>) \<acute> gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g ?A
+gi_exact_generic_native_pure_holds(1):
+\<lbrakk>sg_rich ?G; book_in_language book_minimal_logical_type UNIV gb_signature ?G ?A ?\<sigma>; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_valuation ?w (gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g (gb_pure ?\<sigma> ?A)) = gi_exact_native_logical_stock ?G ?\<sigma> ?w (gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g ?A)
+gi_exact_generic_native_fun_holds(1):
+\<lbrakk>book_in_language book_minimal_logical_type UNIV gb_signature ?G ?A ?\<sigma>; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> gi_exact_valuation ?w (gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g (gb_fun ?\<sigma> ?A)) = pp_e_generic_fundamental_at ?\<sigma> ?w (gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g ?A)
+gi_exact_generic_logical_purity_gvalid(1):
+\<lbrakk>sg_rich ?G; gb_closed_logical ?G ?\<sigma> ?A\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G (gb_pure ?\<sigma> ?A)
+gi_exact_generic_purity_schema_gvalid(1):
+\<lbrakk>sg_rich ?G; ?A \<in> gb_purity_schema ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G ?A
+gi_exact_generic_closed_shape_gvalid(1):
+\<lbrakk>sg_rich ?G; [] \<turnstile> ?M : Prop; gi_goodman_names ?k; consts_of ?M \<subseteq> {pp_pure_name, pp_fun_name}; gi_to_book ?G [] ?k ?M = ?A; \<And>w. pp_e_holds (pp_e_eval pp_e_generic_internal_constants pp_e_closed_env ?M) w\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G ?A
+gi_exact_generic_application_gvalid(1):
+sg_rich ?G \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G (gb_application_closure ?G ?\<sigma> ?\<tau>)
+gi_exact_generic_application_schema_gvalid(1):
+\<lbrakk>sg_rich ?G; ?A \<in> gb_application_schema ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G ?A
+gi_exact_generic_unique_fundamental_gvalid(1):
+sg_rich ?G \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G (gb_unique_fundamental ?G Prop)
+gi_exact_generic_no_fundamentals_gvalid(1):
+\<lbrakk>sg_rich ?G; ?\<sigma> \<noteq> Prop\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G (gb_no_fundamentals ?G ?\<sigma>)
+gi_exact_generic_no_other_fundamentals_schema_gvalid(1):
+\<lbrakk>sg_rich ?G; ?A \<in> gb_no_other_fundamentals_schema ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G ?A
+gi_exact_generic_background_gvalid(1):
+\<lbrakk>sg_rich ?G; ?A \<in> gb_background_axioms ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid pp_e_generic_internal_constants ?G ?A

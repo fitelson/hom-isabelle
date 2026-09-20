@@ -1,0 +1,44 @@
+gi_uniform_test_type:
+?\<Gamma> \<turnstile> ?Z : pp_unary_ty \<Longrightarrow> ?\<Gamma> \<turnstile> gi_uniform_test ?b ?Z : Prop
+gi_uniform_operator_type:
+?\<Gamma> \<turnstile> gi_uniform_operator ?b : pp_unary_ty
+gi_uniform_literal_type:
+Prop # ?\<Gamma> \<turnstile> gi_uniform_literal ?b : Prop
+gi_uniform_builder_type:
+?\<Gamma> \<turnstile> gi_uniform_builder ?b : pp_unary_ty \<rightarrow>\<^sub>o Prop
+gi_uniform_builder_logical:
+pp_logical_vocabulary (gi_uniform_builder ?b)
+gi_uniform_builder_beta:
+compatible_step (\<rightarrow>\<^sub>\<beta>) (App (gi_uniform_builder ?b) ?Z) (gi_uniform_test ?b ?Z)
+gi_uniform_builder_equality:
+?\<Gamma> \<turnstile> ?Z : pp_unary_ty \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>CEV Eq Prop (App (gi_uniform_builder ?b) ?Z) (gi_uniform_test ?b ?Z)
+gi_uniform_test_pure_from:
+\<lbrakk>pp_T1_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?Z : pp_unary_ty; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_pure pp_unary_ty ?Z\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_pure Prop (gi_uniform_test ?b ?Z)
+gi_uniform_operator_shift:
+shift (gi_uniform_operator ?b) = gi_uniform_operator ?b
+gi_uniform_operator_beta:
+App (gi_uniform_operator ?b) (Var 0) \<rightarrow>\<^sub>\<beta> gi_uniform_literal ?b
+gi_uniform_test_unfold:
+gi_uniform_test ?b ?Z = Forall Prop (App (shift ?Z) (Var 0) \<longleftrightarrow>\<^sub>o gi_uniform_literal ?b)
+gi_uniform_box_intens_test:
+?\<Gamma> \<turnstile> ?Z : pp_unary_ty \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>CEV (\<box>\<^sub>o intens_condition Prop ?Z (gi_uniform_operator ?b) \<longleftrightarrow>\<^sub>o \<box>\<^sub>o gi_uniform_test ?b ?Z)
+gi_uniform_branch_identity_from:
+\<lbrakk>pp_T1_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?Z : pp_unary_ty; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_pure pp_unary_ty ?Z; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s gi_uniform_test ?b ?Z\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s Eq pp_unary_ty ?Z (gi_uniform_operator ?b)
+gi_TU_Exhaustion_group_classification:
+\<lbrakk>pp_T1_axioms \<subseteq> ?T; pp_TU \<in> ?T; ?\<Gamma> \<turnstile> ?Z : pp_unary_ty\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (pp_group_member ?Z) (Disj (Eq pp_unary_ty ?Z pp_identity_operator) (Eq pp_unary_ty ?Z pp_negation_operator))
+gi_standard_operator_group_from:
+\<lbrakk>pp_T1_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?Z : pp_unary_ty; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s Eq pp_unary_ty ?Z (gi_uniform_operator ?b)\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s pp_group_member ?Z
+gi_standard_operator_classification_converse:
+\<lbrakk>pp_T1_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?Z : pp_unary_ty\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (Disj (Eq pp_unary_ty ?Z pp_identity_operator) (Eq pp_unary_ty ?Z pp_negation_operator)) (pp_group_member ?Z)
+gi_CEV_TU_Exhaustion_implies_Inv:
+\<lbrakk>pp_T1_axioms \<subseteq> ?T; pp_TU \<in> ?T\<rbrakk> \<Longrightarrow> [] ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_Inv
+gi_CEV_TU_Exhaustion_exact_stock:
+[] ; insert pp_TU pp_T1_axioms \<turnstile>\<^sub>CEV\<^sup>+ pp_Inv
+gi_TU_T1_axioms_closed:
+?A \<in> insert pp_TU pp_T1_axioms \<Longrightarrow> [] \<turnstile> ?A : Prop
+gi_TU_T1_native_stock_language:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?A \<in> insert (gi_to_book ?G [] ?k pp_TU) (gb_T1_axioms ?G)\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?A
+gi_TU_T1_axiom_from_native:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?A \<in> insert pp_TU pp_T1_axioms\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (insert (gi_to_book ?G [] ?k pp_TU) (gb_T1_axioms ?G)) (gi_to_book ?G [] ?k ?A)
+gi_TU_Exhaustion_implies_Inv_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (insert (gi_to_book ?G [] ?k pp_TU) (gb_T1_axioms ?G)) (gi_to_book ?G [] ?k pp_Inv)

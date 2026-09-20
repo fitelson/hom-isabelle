@@ -1,0 +1,14 @@
+T9-L2-SEMANTICS-AUDIT: 12 clean endpoints
+SCOPE: Arbitrary typed C on Bacon's exact carriers, not the fixed generic interpretation. Root Pure/reversible/group/same-kind evaluation matches actual root-pure value definitions. The actual L2 formula implies the value-level condition used by the T9 selector; native translated-L2 input has explicit names/environment guards, source vocabulary and derived target-language membership. Pure-inverse existence is not confused with purity of its argument. HOL-ZF and pp_e_constants assumptions retained; no proof of L2 from PP, no PC or consistency claim.
+gi_T9_L2_vocabulary(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T9_native_L2_language(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+pp_e_constants.gi_T9_pure_formula_root_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+pp_e_constants.gi_T9_reversible_body_root(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+pp_e_constants.gi_T9_reversible_formula_root_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+pp_e_constants.gi_T9_group_formula_root_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+pp_e_constants.gi_T9_same_kind_formula_root_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+pp_e_constants.gi_T9_L2_root_instance(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9
+pp_e_constants.gi_T9_native_L2_root_implies_source(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+pp_e_constants.gi_T9_native_L2_root_instance(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=12
+pp_e_constants.gi_T9_L2_formula_implies_root_L2(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+pp_e_constants.gi_T9_native_L2_implies_root_L2(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5

@@ -1,0 +1,22 @@
+T7-AUDIT: 20 clean endpoints
+SCOPE: T7a retains L2 and the purity/application/PP core; the closed result requires fun-prime existence, separately derived for the repaired central stock. No Inv/TU/WI, consistency result, or invented T7b.
+gi_T7_axioms_closed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T7_full_axioms_closed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T7_native_axioms_language(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T7_native_full_axioms_language(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T7_stock_inclusion(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T7_full_stock_inclusion(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T7_liar_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T7_absorbed_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T7_parameter_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T7_result_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T7a_parameter_translated(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T7a_closed_translated(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T7_liar_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T7_absorbed_var_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T7_parameter_claim_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T7_absorption_result_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T7a_parameter(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T7a_closed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T7_native_core_in_repaired(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T7a_repaired_central_stock(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

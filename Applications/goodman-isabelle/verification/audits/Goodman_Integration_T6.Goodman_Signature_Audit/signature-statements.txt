@@ -1,0 +1,90 @@
+gi_extension_retraction_supportI[1]:
+\<lbrakk>finite ?N; named_vars ?A \<subseteq> ?N; \<And>v. \<lbrakk>\<And>\<tau>. ?G (v \<tau>) = \<tau>; \<And>\<tau>. v \<tau> \<notin> ?N\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Omega> ?G ?T (named_retract ?\<Omega> v ?A)\<rbrakk> \<Longrightarrow> gi_extension_retraction_support ?\<Omega> ?G ?T ?A ?N
+gi_extension_retraction_apply[1]:
+\<lbrakk>gi_extension_retraction_support ?\<Omega> ?G ?T ?A ?N; \<And>\<tau>. ?G (?v \<tau>) = \<tau>; \<And>\<tau>. ?v \<tau> \<notin> ?N\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Omega> ?G ?T (named_retract ?\<Omega> ?v ?A)
+gi_extension_retraction_support_exists[1]:
+\<lbrakk>sg_rich ?G; goodman_book_proves ?\<Sigma> ?G ?T ?A; \<And>B. B \<in> ?T \<Longrightarrow> book_theory_formula ?\<Omega> ?G B\<rbrakk> \<Longrightarrow> \<exists>N. gi_extension_retraction_support ?\<Omega> ?G ?T ?A N
+gi_goodman_foreign_constants_eliminate[1]:
+\<lbrakk>sg_rich ?G; goodman_book_proves ?\<Sigma> ?G ?T ?A; \<And>B. B \<in> ?T \<Longrightarrow> book_theory_formula ?\<Omega> ?G B; named_in_signature ?\<Omega> ?A\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Omega> ?G ?T ?A
+gi_goodman_signature_mono[1]:
+\<lbrakk>sg_rich ?G; goodman_book_proves ?\<Sigma> ?G ?T ?A; \<And>\<tau>. ?\<Sigma> \<tau> \<subseteq> ?\<Omega> \<tau>\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Omega> ?G ?T ?A
+gi_goodman_signature_conservativity[1]:
+\<lbrakk>sg_rich ?G; \<And>\<tau>. ?\<Omega> \<tau> \<subseteq> ?\<Sigma> \<tau>; \<And>B. B \<in> ?T \<Longrightarrow> book_theory_formula ?\<Omega> ?G B; named_in_signature ?\<Omega> ?A\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G ?T ?A = goodman_book_proves ?\<Omega> ?G ?T ?A
+gi_goodman_consistency_universal_iff[1]:
+\<lbrakk>sg_rich ?G; \<And>B. B \<in> ?T \<Longrightarrow> book_theory_formula ?\<Omega> ?G B\<rbrakk> \<Longrightarrow> goodman_book_consistent (\<lambda>_. UNIV) ?G ?T = goodman_book_consistent ?\<Omega> ?G ?T
+gi_CEV_conclusion_language[1]:
+\<lbrakk>sg_rich ?G; ?\<Gamma> ; ?S \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; gi_constants_admitted ?k ?\<Sigma> ?A\<rbrakk> \<Longrightarrow> book_theory_formula ?\<Sigma> ?G (gi_to_book ?G ?ns ?k ?A)
+gi_CEV_axiom_preservation_in_signature[1]:
+\<lbrakk>sg_rich ?G; ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ ?A; \<And>B. B \<in> ?T \<Longrightarrow> [] \<turnstile> B : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; \<And>B. B \<in> ?T \<Longrightarrow> gi_constants_admitted ?k ?\<Sigma> B; gi_constants_admitted ?k ?\<Sigma> ?A\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G (gi_to_book ?G [] ?k ` ?T) (gi_to_book ?G ?ns ?k ?A)
+gi_CEV_closed_refutation_in_signature[1]:
+\<lbrakk>sg_rich ?G; [] ; ?T \<turnstile>\<^sub>CEV\<^sup>+ ObjFalse; \<And>B. B \<in> ?T \<Longrightarrow> [] \<turnstile> B : Prop; \<And>B. B \<in> ?T \<Longrightarrow> gi_constants_admitted ?k ?\<Sigma> B\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G (gi_to_book ?G [] ?k ` ?T) (book_bottom ?G)
+gi_native_conclusion_restrict[1]:
+\<lbrakk>sg_rich ?G; ?\<Gamma> ; ?S \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; gi_constants_admitted ?k gb_signature ?A; goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G ?ns ?k ?A); \<And>B. B \<in> ?U \<Longrightarrow> book_theory_formula gb_signature ?G B\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G ?U (gi_to_book ?G ?ns ?k ?A)
+gi_background_preservation_in_signature[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; pp_background_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_background_axioms ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_recombination_PP_preservation_in_signature[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; pp_recombination_PP_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_recombination_PP_axioms ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_QLN_PP_preservation_in_signature[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; pp_zeroary_unary_QLN_PP_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_zeroary_unary_QLN_PP_axioms ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_repaired_PP_preservation_in_signature[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; insert pp_zeroary_exhaustion pp_recombination_PP_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_recombination_PP_zeroary_exhaustion ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_persistent_QLN_language[1]:
+\<lbrakk>sg_rich ?G; ?B \<in> gb_zeroary_unary_QLN_PP_axioms ?G \<union> gb_persistence_schema ?G\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?B
+gi_persistent_QLN_PP_preservation_in_signature[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; pp_zeroary_unary_QLN_PP_persistence_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_zeroary_unary_QLN_PP_axioms ?G \<union> gb_persistence_schema ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_recombination_PP_consistency_in_signature[1]:
+\<lbrakk>sg_rich ?G; goodman_book_consistent gb_signature ?G (gb_recombination_PP_axioms ?G)\<rbrakk> \<Longrightarrow> CEV_axiom_consistent [] pp_recombination_PP_axioms
+gi_QLN_PP_consistency_in_signature[1]:
+\<lbrakk>sg_rich ?G; goodman_book_consistent gb_signature ?G (gb_zeroary_unary_QLN_PP_axioms ?G)\<rbrakk> \<Longrightarrow> CEV_axiom_consistent [] pp_zeroary_unary_QLN_PP_axioms
+gi_repaired_PP_consistency_in_signature[1]:
+\<lbrakk>sg_rich ?G; goodman_book_consistent gb_signature ?G (gb_recombination_PP_zeroary_exhaustion ?G)\<rbrakk> \<Longrightarrow> CEV_axiom_consistent [] (insert pp_zeroary_exhaustion pp_recombination_PP_axioms)
+gi_persistent_QLN_PP_consistency_in_signature[1]:
+\<lbrakk>sg_rich ?G; goodman_book_consistent gb_signature ?G (gb_zeroary_unary_QLN_PP_axioms ?G \<union> gb_persistence_schema ?G)\<rbrakk> \<Longrightarrow> CEV_axiom_consistent [] pp_zeroary_unary_QLN_PP_persistence_axioms
+gi_exists_fun_prime_admitted[1]:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_exists_fun_prime
+gi_L2_admitted[1]:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_L2
+gi_Inv_admitted[1]:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_Inv
+gi_TU_admitted[1]:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_TU
+gi_WI_admitted[1]:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_WI
+gi_strong_L2_admitted[1]:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_strong_L2
+gi_RS_admitted[1]:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_RS
+gi_T6_extra_inventory_typed[1]:
+?A \<in> gi_T6_extra_inventory \<Longrightarrow> [] \<turnstile> ?A : Prop
+gi_T6_extra_inventory_admitted[1]:
+\<lbrakk>gi_goodman_names ?k; ?A \<in> gi_T6_extra_inventory\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature ?A
+gi_T6_signature_support_language[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?A \<in> gi_T6_signature_support ?G ?k\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?A
+gi_T6_image_stocks_in_signature_support[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> gi_to_book ?G [] ?k ` pp_T6_Inv_axioms \<subseteq> gi_T6_signature_support ?G ?k
+gi_T6_image_stocks_in_signature_support[2]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> gi_to_book ?G [] ?k ` pp_T6_TU_axioms \<subseteq> gi_T6_signature_support ?G ?k
+gi_T6_image_stocks_in_signature_support[3]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> gi_to_book ?G [] ?k ` pp_T6_WI_axioms \<subseteq> gi_T6_signature_support ?G ?k
+gi_T6_image_stocks_in_signature_support[4]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> gi_to_book ?G [] ?k ` pp_T6_RS_axioms \<subseteq> gi_T6_signature_support ?G ?k
+gi_T6_native_stock_in_signature_support[1]:
+?S \<subseteq> gi_T6_extra_inventory \<Longrightarrow> gi_T6_native_core_extension ?G ?k ?S \<subseteq> gi_T6_signature_support ?G ?k
+gi_T6_refutation_restrict[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; goodman_book_proves (\<lambda>_. UNIV) ?G ?T (book_bottom ?G); ?T \<subseteq> gi_T6_signature_support ?G ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G ?T (book_bottom ?G)
+gi_T6_Inv_refutation_in_signature[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_to_book ?G [] ?k ` pp_T6_Inv_axioms) (book_bottom ?G)
+gi_T6_TU_refutation_in_signature[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_to_book ?G [] ?k ` pp_T6_TU_axioms) (book_bottom ?G)
+gi_T6_WI_refutation_in_signature[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_to_book ?G [] ?k ` pp_T6_WI_axioms) (book_bottom ?G)
+gi_T6_RS_refutation_in_signature[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_to_book ?G [] ?k ` pp_T6_RS_axioms) (book_bottom ?G)
+gi_T6_native_Inv_refutation_in_signature[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_T6_native_core_extension ?G ?k {pp_exists_fun_prime, pp_L2, pp_Inv}) (book_bottom ?G)
+gi_T6_native_TU_refutation_in_signature[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_T6_native_core_extension ?G ?k {pp_exists_fun_prime, pp_L2, pp_TU}) (book_bottom ?G)
+gi_T6_native_WI_refutation_in_signature[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_T6_native_core_extension ?G ?k {pp_exists_fun_prime, pp_L2, pp_WI}) (book_bottom ?G)
+gi_T6_native_RS_refutation_in_signature[1]:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_T6_native_core_extension ?G ?k {pp_strong_L2, pp_RS}) (book_bottom ?G)

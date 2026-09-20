@@ -1,0 +1,20 @@
+gi_exact_raw_stock_iff(1):
+Elem ?X (pp_e_domain gb_unary) \<Longrightarrow> pp_e_closed_logical_stock gb_unary [] ?X = (pp_e_raw_operator ?X \<in> pp_e_exact_operator_stock)
+gi_exact_identity_denotation(1):
+pp_e_eval ?C ?\<rho> pp_identity_operator = pp_e_closed_den pp_identity_operator
+gi_exact_identity_denotation_member(1):
+Elem (pp_e_closed_den pp_identity_operator) (pp_e_domain gb_unary)
+gi_exact_root_compose_eq_iff(1):
+\<lbrakk>Elem ?X (pp_e_domain gb_unary); Elem ?Y (pp_e_domain gb_unary); Elem ?Z (pp_e_domain gb_unary)\<rbrakk> \<Longrightarrow> pp_e_eqv gb_unary [] ?X (gi_exact_value_compose ?Y ?Z) = (pp_e_raw_operator ?X = pp_e_raw_operator ?Y \<circ> pp_e_raw_operator ?Z)
+gi_exact_root_inverse_eq_iff(1):
+\<lbrakk>Elem ?X (pp_e_domain gb_unary); Elem ?Y (pp_e_domain gb_unary)\<rbrakk> \<Longrightarrow> pp_e_eqv gb_unary [] (gi_exact_value_compose ?X ?Y) (pp_e_closed_den pp_identity_operator) = (pp_e_raw_operator ?X \<circ> pp_e_raw_operator ?Y = id)
+gi_exact_reversible_body_root(1):
+Elem ?W (pp_e_domain gb_unary) \<Longrightarrow> pp_e_holds (pp_e_eval pp_e_generic_internal_constants (extend_env ?W ?\<rho>) (Conj (pp_pure pp_unary_ty (Var 0)) (Conj (Eq pp_unary_ty (pp_compose (shift ?Z) (Var 0)) pp_identity_operator) (Eq pp_unary_ty (pp_compose (Var 0) (shift ?Z)) pp_identity_operator)))) [] = (pp_e_closed_logical_stock gb_unary [] ?W \<and> pp_e_eqv gb_unary [] (gi_exact_value_compose (pp_e_eval pp_e_generic_internal_constants ?\<rho> ?Z) ?W) (pp_e_closed_den pp_identity_operator) \<and> pp_e_eqv gb_unary [] (gi_exact_value_compose ?W (pp_e_eval pp_e_generic_internal_constants ?\<rho> ?Z)) (pp_e_closed_den pp_identity_operator))
+gi_exact_reversible_value_witness(1):
+Elem ?X (pp_e_domain gb_unary) \<Longrightarrow> (\<exists>W. Elem W (pp_e_domain gb_unary) \<and> pp_e_closed_logical_stock gb_unary [] W \<and> pp_e_eqv gb_unary [] (gi_exact_value_compose ?X W) (pp_e_closed_den pp_identity_operator) \<and> pp_e_eqv gb_unary [] (gi_exact_value_compose W ?X) (pp_e_closed_den pp_identity_operator)) = (\<exists>V\<in>pp_e_exact_operator_stock. pp_e_raw_operator ?X \<circ> V = id \<and> V \<circ> pp_e_raw_operator ?X = id)
+gi_exact_reversible_root_iff(1):
+\<lbrakk>?\<Gamma> \<turnstile> ?Z : pp_unary_ty; pp_e_env_typed ?\<Gamma> ?\<rho>\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval pp_e_generic_internal_constants ?\<rho> (pp_reversible ?Z)) [] = (\<exists>W\<in>pp_e_exact_operator_stock. pp_e_raw_operator (pp_e_eval pp_e_generic_internal_constants ?\<rho> ?Z) \<circ> W = id \<and> W \<circ> pp_e_raw_operator (pp_e_eval pp_e_generic_internal_constants ?\<rho> ?Z) = id)
+gi_exact_group_member_root_iff(1):
+\<lbrakk>?\<Gamma> \<turnstile> ?Z : pp_unary_ty; pp_e_env_typed ?\<Gamma> ?\<rho>\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval pp_e_generic_internal_constants ?\<rho> (pp_group_member ?Z)) [] = pp_e_exact_reversible (pp_e_raw_operator (pp_e_eval pp_e_generic_internal_constants ?\<rho> ?Z))
+gi_exact_same_kind_root_iff(1):
+\<lbrakk>?\<Gamma> \<turnstile> ?X : pp_unary_ty; ?\<Gamma> \<turnstile> ?Y : pp_unary_ty; pp_e_env_typed ?\<Gamma> ?\<rho>\<rbrakk> \<Longrightarrow> pp_e_holds (pp_e_eval pp_e_generic_internal_constants ?\<rho> (pp_same_kind ?X ?Y)) [] = pp_e_exact_same_kind (pp_e_raw_operator (pp_e_eval pp_e_generic_internal_constants ?\<rho> ?X)) (pp_e_raw_operator (pp_e_eval pp_e_generic_internal_constants ?\<rho> ?Y))

@@ -1,0 +1,6 @@
+FIXED-FUN-PRIME-AUDIT: 4 clean endpoints
+SCOPE: a fixed fun-prime theorem/axiom collapses T2 minimal stock; no PP used. Native closed image stock refuted under admission guards. Not a refutation of local or existential fun-prime.
+gi_fixed_fun_prime_truth_pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_fixed_fun_prime_theorem_collapses_minimal_stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_fixed_fun_prime_axiom_collapses_minimal_stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_fixed_fun_prime_axiom_native_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6

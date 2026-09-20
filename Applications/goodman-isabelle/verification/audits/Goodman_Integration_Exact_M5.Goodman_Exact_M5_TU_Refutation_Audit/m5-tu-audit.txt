@@ -1,0 +1,14 @@
+M5-TU-AUDIT: 12 clean endpoints
+SCOPE: actual TU formula false at root under rebuilt exact constants; translated native TU not globally valid and not derivable from the explicit no-PP QLN background. No added Persistence, PP countermodel, all-world falsity, or Inv/WI result. HOL-ZF.
+gi_M5_identity_value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_truth_preserving_value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_truth_flipping_value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_expanded_stock.gi_M5_rebuilt_group_member_value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_self_compose_identity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_rebuilt_involution_is_group_member: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_rebuilt_TU_implies_uniform: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_M5_rebuilt_TU_false_at_root: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_TU_vocabulary: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M5_native_TU_false_at_root: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_M5_native_TU_not_global: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M5_TU_not_derivable_from_QLN_background: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

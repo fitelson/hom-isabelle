@@ -1,0 +1,42 @@
+gi_M5_signature_occurrence_iff:
+oterm_in_string_signature (gi_M5_expanded_signature ?k) (Const ?c ?\<tau>) = (?c = ?k \<and> ?\<tau> = gb_unary)
+gi_M5_signature_translation_guard:
+gi_constants_admitted (\<lambda>c \<tau>. c) ?\<Sigma> ?M = oterm_in_string_signature ?\<Sigma> ?M
+gi_M5_logical_in_expanded_signature:
+pp_logical_vocabulary ?M \<Longrightarrow> oterm_in_string_signature (gi_M5_expanded_signature ?k) ?M
+gi_M5_expanded_basisI:
+\<lbrakk>[] \<turnstile> ?M : ?\<sigma>; oterm_in_string_signature (gi_M5_expanded_signature ?k) ?M\<rbrakk> \<Longrightarrow> gi_M5_expanded_closed_den ?k ?K ?M \<in> gi_M5_expanded_basis ?k ?K ?\<sigma>
+gi_M5_expanded_basisE:
+\<lbrakk>?x \<in> gi_M5_expanded_basis ?k ?K ?\<sigma>; \<And>M. \<lbrakk>[] \<turnstile> M : ?\<sigma>; oterm_in_string_signature (gi_M5_expanded_signature ?k) M; ?x = gi_M5_expanded_closed_den ?k ?K M\<rbrakk> \<Longrightarrow> ?thesis\<rbrakk> \<Longrightarrow> ?thesis
+gi_M5_expanded_basis_countable:
+countable (gi_M5_expanded_basis ?k ?K ?\<sigma>)
+gi_exact_expanded_stock.gi_M5_basis_constants_typed:
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> Elem (gi_M5_basis_constants ?k ?K ?c ?\<tau>) (pp_e_domain ?\<tau>)
+gi_exact_expanded_stock.gi_M5_basis_constants_action:
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> pp_b_action ?\<tau> ?i (gi_M5_basis_constants ?k ?K ?c ?\<tau>) = gi_M5_basis_constants ?k ?K ?c ?\<tau>
+gi_exact_expanded_stock.gi_M5_basis_named_constant_value:
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> gi_M5_basis_constants ?k ?K ?k gb_unary = ?K
+gi_exact_expanded_stock.gi_M5_basis_reserved_names_default:
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> gi_M5_basis_constants ?k ?K pp_pure_name ?\<tau> = pp_e_default ?\<tau> \<and> gi_M5_basis_constants ?k ?K pp_fun_name ?\<tau> = pp_e_default ?\<tau>
+gi_exact_expanded_stock.gi_M5_basis_eval_action:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; ?\<Gamma> \<turnstile> ?M : ?\<tau>; pp_e_env_typed ?\<Gamma> ?\<rho>; pp_e_env_action ?\<Gamma> ?i ?\<rho> ?\<eta>\<rbrakk> \<Longrightarrow> pp_b_action ?\<tau> ?i (pp_e_eval (gi_M5_basis_constants ?k ?K) ?\<rho> ?M) = pp_e_eval (gi_M5_basis_constants ?k ?K) ?\<eta> ?M
+gi_exact_expanded_stock.gi_M5_expanded_closed_den_typed:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; [] \<turnstile> ?M : ?\<sigma>\<rbrakk> \<Longrightarrow> Elem (gi_M5_expanded_closed_den ?k ?K ?M) (pp_e_domain ?\<sigma>)
+gi_exact_expanded_stock.gi_M5_expanded_closed_den_invariant:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; [] \<turnstile> ?M : ?\<sigma>\<rbrakk> \<Longrightarrow> pp_b_action ?\<sigma> ?i (gi_M5_expanded_closed_den ?k ?K ?M) = gi_M5_expanded_closed_den ?k ?K ?M
+gi_exact_expanded_stock.gi_M5_expanded_closed_eval_independent:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; [] \<turnstile> ?M : ?\<sigma>\<rbrakk> \<Longrightarrow> pp_e_eval (gi_M5_basis_constants ?k ?K) ?\<rho> ?M = gi_M5_expanded_closed_den ?k ?K ?M
+gi_exact_expanded_stock.gi_M5_expanded_basis_typed:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; ?x \<in> gi_M5_expanded_basis ?k ?K ?\<sigma>\<rbrakk> \<Longrightarrow> Elem ?x (pp_e_domain ?\<sigma>)
+gi_exact_expanded_stock.gi_M5_expanded_basis_invariant:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; ?x \<in> gi_M5_expanded_basis ?k ?K ?\<sigma>\<rbrakk> \<Longrightarrow> pp_b_action ?\<sigma> ?i ?x = ?x
+gi_exact_expanded_stock.gi_M5_expanded_basis_application:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; ?F \<in> gi_M5_expanded_basis ?k ?K (?\<sigma> \<rightarrow>\<^sub>o ?\<tau>); ?x \<in> gi_M5_expanded_basis ?k ?K ?\<sigma>\<rbrakk> \<Longrightarrow> ?F \<acute> ?x \<in> gi_M5_expanded_basis ?k ?K ?\<tau>
+gi_exact_expanded_stock.gi_M5_expanded_basis_contains_logical:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; [] \<turnstile> ?M : ?\<sigma>; pp_logical_vocabulary ?M\<rbrakk> \<Longrightarrow> pp_e_closed_den ?M \<in> gi_M5_expanded_basis ?k ?K ?\<sigma>
+gi_exact_expanded_stock.gi_M5_expanded_basis_contains_K:
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> ?K \<in> gi_M5_expanded_basis ?k ?K gb_unary
+gi_exact_expanded_stock.gi_M5_named_expanded_basis_equal:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; sg_rich ?G\<rbrakk> \<Longrightarrow> gi_M5_named_expanded_basis ?k ?K ?G ?\<sigma> = gi_M5_expanded_basis ?k ?K ?\<sigma>
+gi_exact_expanded_stock.gi_M5_expanded_basis_contains_native_logical:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; gb_closed_logical ?G ?\<sigma> ?A\<rbrakk> \<Longrightarrow> gi_exact_native_closed_den ?G ?A \<in> gi_M5_expanded_basis ?k ?K ?\<sigma>

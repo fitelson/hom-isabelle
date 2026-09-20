@@ -1,0 +1,20 @@
+gi_exact_root_eqv:
+\<lbrakk>Elem ?x (pp_e_domain ?\<sigma>); Elem ?y (pp_e_domain ?\<sigma>)\<rbrakk> \<Longrightarrow> pp_e_eqv ?\<sigma> [] ?x ?y = (?x = ?y)
+gi_exact_root_logical_stock:
+pp_e_closed_logical_stock ?\<sigma> [] ?x = (\<exists>M. [] \<turnstile> M : ?\<sigma> \<and> pp_logical_vocabulary M \<and> ?x = pp_e_closed_den M)
+gi_exact_root_unary_stock:
+pp_e_closed_logical_stock gb_unary [] ?X = (?X \<in> pp_e_closed_unary_denotations)
+gi_exact_raw_at_extract:
+Elem ?p (pp_e_domain Prop) \<Longrightarrow> pp_e_raw_operator ?X (pp_n_bacon_extract ?p) = pp_n_bacon_extract (?X \<acute> ?p)
+gi_exact_raw_operator_injective:
+\<lbrakk>Elem ?X (pp_e_domain gb_unary); Elem ?Y (pp_e_domain gb_unary); pp_e_raw_operator ?X = pp_e_raw_operator ?Y\<rbrakk> \<Longrightarrow> ?X = ?Y
+gi_exact_raw_operator_eq_iff:
+\<lbrakk>Elem ?X (pp_e_domain gb_unary); Elem ?Y (pp_e_domain gb_unary)\<rbrakk> \<Longrightarrow> (pp_e_raw_operator ?X = pp_e_raw_operator ?Y) = (?X = ?Y)
+gi_exact_raw_application_eq_iff:
+\<lbrakk>Elem ?X (pp_e_domain gb_unary); Elem ?Y (pp_e_domain gb_unary); Elem ?p (pp_e_domain Prop); Elem ?q (pp_e_domain Prop)\<rbrakk> \<Longrightarrow> (pp_e_raw_operator ?X (pp_n_bacon_extract ?p) = pp_e_raw_operator ?Y (pp_n_bacon_extract ?q)) = (?X \<acute> ?p = ?Y \<acute> ?q)
+gi_exact_eval_compose:
+pp_e_eval ?C ?\<rho> (pp_compose ?M ?N) = gi_exact_value_compose (pp_e_eval ?C ?\<rho> ?M) (pp_e_eval ?C ?\<rho> ?N)
+gi_exact_value_compose_member:
+\<lbrakk>Elem ?X (pp_e_domain gb_unary); Elem ?Y (pp_e_domain gb_unary)\<rbrakk> \<Longrightarrow> Elem (gi_exact_value_compose ?X ?Y) (pp_e_domain gb_unary)
+gi_exact_raw_value_compose:
+\<lbrakk>Elem ?X (pp_e_domain gb_unary); Elem ?Y (pp_e_domain gb_unary)\<rbrakk> \<Longrightarrow> pp_e_raw_operator (gi_exact_value_compose ?X ?Y) = pp_e_raw_operator ?X \<circ> pp_e_raw_operator ?Y

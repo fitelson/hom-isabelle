@@ -1,0 +1,19 @@
+GOODMAN-EXTENSION-RULES-AUDIT: 18 clean endpoints; no whole-proof CEV+ claim
+gi_H_expanded_iff_to_book: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_goodman_expanded_PE: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_goodman_translated_PE: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7
+gi_goodman_generalize: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_goodman_function_identity_rule: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_goodman_vector_equivalence: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_old_rename_identity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_old_closed_weaken: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_closed_expansion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_closed_chart_alpha: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_goodman_closed_axiom: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_H_quantified_Inst_certificate: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_goodman_Inst: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_goodman_alpha_transport: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_goodman_translated_Gen: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_goodman_translated_Inst: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_PE_added_axiom_regression: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_Inst_added_axiom_regression: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4

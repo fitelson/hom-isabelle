@@ -1,0 +1,22 @@
+T45-AUDIT: 20 clean endpoints
+SCOPE: T4 over logical purity/application only, with explicit higher-type purity antecedent. T5 over purity/application/PP with fun-prime antecedent retained. No consistency or unconditional existence claim.
+gi_T4_source_stock(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T4_fun_prime_at_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T4_parameter_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T4_quantified_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T4_parameter_translated(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_T4_quantified_translated(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gb_T4_fun_prime_at_proposition(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T4_fun_prime_application_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T4_claim_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T4_no_higher_fun_prime(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T5_source_stock(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T5_proliferation_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T5_no_two_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T5_proliferation_translated(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T5_no_two_translated(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T5_fun_prime_head_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T5_claim_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T5_no_two_claim_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T5_proliferation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T5_no_two(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

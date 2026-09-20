@@ -1,0 +1,5 @@
+T9-GRANULARITY-AUDIT: 3 clean endpoints
+SCOPE: actual group/kinds; native PP core, full external PC, L2, exists-fun-prime; additional cardinal ceilings explicit.
+gi_T9_native_purity.gi_T9_kind_sized_group_impossible: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7
+gi_T9_native_purity.gi_T9_kind_bounded_descriptions_impossible: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9
+gi_T9_native_purity.gi_T9_countable_group_impossible: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7

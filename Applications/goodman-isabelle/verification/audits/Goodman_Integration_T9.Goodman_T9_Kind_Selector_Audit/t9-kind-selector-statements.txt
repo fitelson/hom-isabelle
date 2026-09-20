@@ -1,0 +1,12 @@
+gi_T9_native_purity.gi_T9_union_kinds_pure:
+\<lbrakk>gi_T9_native_purity ?C ?G; ?S \<subseteq> gi_T9_kinds ?C\<rbrakk> \<Longrightarrow> \<Union> ?S \<subseteq> gi_T9_root_pure ?C pp_e_unary_type
+gi_T9_native_purity.gi_T9_member_kind_iff:
+\<lbrakk>gi_T9_native_purity ?C ?G; ?k \<in> gi_T9_kinds ?C; ?X \<in> gi_T9_root_pure ?C pp_e_unary_type\<rbrakk> \<Longrightarrow> (?X \<in> ?k) = (gi_T9_kind ?C ?X = ?k)
+gi_T9_native_purity.gi_T9_member_union_kinds_iff:
+\<lbrakk>gi_T9_native_purity ?C ?G; ?S \<subseteq> gi_T9_kinds ?C; ?X \<in> gi_T9_root_pure ?C pp_e_unary_type\<rbrakk> \<Longrightarrow> (?X \<in> \<Union> ?S) = (gi_T9_kind ?C ?X \<in> ?S)
+gi_T9_native_purity.gi_T9_kind_selector_pure:
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C; ?S \<subseteq> gi_T9_kinds ?C\<rbrakk> \<Longrightarrow> gi_T9_kind_selector ?C ?S \<in> gi_T9_root_pure ?C pp_e_unary_type
+gi_T9_native_purity.gi_T9_kind_selector_spec:
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C; gi_T9_root_L2 ?C; Elem ?r (pp_e_domain Prop); pp_e_holds (gi_T9_J_value ?C \<acute> ?r) []; ?S \<subseteq> gi_T9_kinds ?C; ?B \<in> gi_T9_root_pure ?C pp_e_unary_type\<rbrakk> \<Longrightarrow> pp_e_holds (gi_T9_kind_selector ?C ?S \<acute> (?B \<acute> ?r)) [] = (gi_T9_kind ?C ?B \<in> ?S)
+gi_T9_native_purity.gi_T9_kind_selector_injective:
+\<lbrakk>gi_T9_native_purity ?C ?G; gi_T9_full_unary_PC ?C; gi_T9_root_L2 ?C; Elem ?r (pp_e_domain Prop); pp_e_holds (gi_T9_J_value ?C \<acute> ?r) []\<rbrakk> \<Longrightarrow> inj_on (gi_T9_kind_selector ?C) (Pow (gi_T9_kinds ?C))

@@ -1,0 +1,12 @@
+gi_exact_M3_empty_not_fun_prime(1):
+\<not> pp_e_exact_fun_prime {}
+gi_exact_M3_no_all_view_generator(1):
+\<not> (\<forall>i. pp_e_exact_fun_prime (pp_view i ?R))
+gi_exact_M3_some_view_not_fun_prime(1):
+\<exists>i. \<not> pp_e_exact_fun_prime (pp_view i ?R)
+gi_exact_M3_fixed_necessitated_QSS_impossible(1):
+\<not> pp_stock_necessitated_QSS pp_e_exact_operator_stock ?R
+gi_native_M3_no_all_view_generator(1):
+sg_rich ?G \<Longrightarrow> \<not> (\<forall>i. gi_stock_fun_prime (gi_exact_native_operator_stock ?G) (pp_view i ?R))
+gi_exact_generic_root_and_views_differ(1):
+pp_e_exact_fun_prime pp_e_generic_raw_seed \<and> (\<exists>i. \<not> pp_e_exact_fun_prime (pp_view i pp_e_generic_raw_seed))

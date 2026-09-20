@@ -1,0 +1,31 @@
+M5-LOCAL-COLLISION-AUDIT: 29 clean endpoints
+SCOPE: actual historical collision formula fails as a LOCAL implication, in the original exact no-PP QLN model; explicit alternating-branch fun-prime counterexample, native universal implication not derivable from no-PP QLN or T2-min. Does not refute global-fun-prime-axiom theorem, assert operator injectivity, identify input as fundamental, or supply PP model. HOL-ZF.
+gi_M5_view_complement(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_raw_NC_view(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_alternating_views_nonextreme(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_alternating_views_nonextreme(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_alternating_NC_empty(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_counter_input_views(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_counter_input_views(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_counter_input_fun_prime(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_counter_NC_view_empty(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_counter_collision_false_on_branch(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_raw_collision_truth(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_raw_collision_counterexample(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_future_extract_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_eval_box_raw(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_eval_neg_raw(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_eval_disj_raw(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_eval_iff_raw(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_eval_NC_raw(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_eval_truth_raw(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_eval_collision_raw(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_collision_result_typed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_actual_collision_result_false_at_root(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_actual_local_collision_counterexample(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_local_collision_universal_typed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_local_collision_universal_false_at_root(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_local_collision_vocabulary(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_native_local_collision_false_at_root(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_M5_local_collision_not_derivable_from_no_PP_QLN(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M5_local_collision_not_derivable_from_T2_min(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

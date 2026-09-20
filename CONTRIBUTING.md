@@ -4,6 +4,12 @@ This repository is offered to scholars who would like to work on the formal
 foundations of higher-order metaphysics. Contributions may be mathematical,
 formal, or expository. Small, well-verified changes are welcome.
 
+This guide concerns the core. Application-specific work has its own guide:
+see [Applications](Applications/README.md) and
+[Goodman's contributor projects](Applications/goodman-isabelle/CONTRIBUTING.md).
+Keep application sessions out of the core ROOT and verify each project
+with its own checker, serially.
+
 The [standalone repository](https://github.com/fitelson/bacon-dorr-isabelle)
 is private as of 10 September 2026. Ask Branden for collaborator access
 with your GitHub username if you do not already have it.

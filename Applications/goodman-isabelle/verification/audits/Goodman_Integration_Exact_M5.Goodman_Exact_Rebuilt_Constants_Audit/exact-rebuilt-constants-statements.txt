@@ -1,0 +1,34 @@
+gi_M5_eval_constant_agreement:
+\<lbrakk>oterm_in_string_signature ?\<Sigma> ?M; \<And>c \<tau>. c \<in> ?\<Sigma> \<tau> \<Longrightarrow> ?C c \<tau> = ?D c \<tau>\<rbrakk> \<Longrightarrow> pp_e_eval ?C ?\<rho> ?M = pp_e_eval ?D ?\<rho> ?M
+gi_M5_named_constant_agreement:
+\<lbrakk>book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G ?M ?\<tau>; \<And>c \<sigma>. c \<in> ?\<Sigma> \<sigma> \<Longrightarrow> ?C c \<sigma> = ?D c \<sigma>\<rbrakk> \<Longrightarrow> gi_exact_named_denote ?C ?G ?g ?M = gi_exact_named_denote ?D ?G ?g ?M
+gi_exact_expanded_stock.gi_M5_expanded_invariant_basis:
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> gi_exact_invariant_basis (gi_M5_expanded_basis ?k ?K)
+gi_exact_expanded_stock.gi_M5_rebuilt_constants_typed:
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> Elem (gi_M5_rebuilt_constants ?k ?K ?c ?\<tau>) (pp_e_domain ?\<tau>)
+gi_exact_expanded_stock.gi_M5_rebuilt_constants_locale:
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> pp_e_constants (gi_M5_rebuilt_constants ?k ?K)
+gi_exact_expanded_stock.gi_M5_rebuilt_constant_at:
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> gi_M5_rebuilt_constants ?k ?K ?k gb_unary = ?K
+gi_exact_expanded_stock.gi_M5_rebuilt_Pure_coordinate:
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> gi_M5_rebuilt_constants ?k ?K pp_pure_name ?\<tau> = gi_basis_internal_constants (gi_M5_expanded_basis ?k ?K) pp_pure_name ?\<tau>
+gi_exact_expanded_stock.gi_M5_rebuilt_Fun_coordinate:
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> gi_M5_rebuilt_constants ?k ?K pp_fun_name ?\<tau> = gi_basis_internal_constants (gi_M5_expanded_basis ?k ?K) pp_fun_name ?\<tau>
+gi_exact_expanded_stock.gi_M5_rebuilt_goodman_coordinate:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; ?c \<in> gi_goodman_string_signature ?\<tau>\<rbrakk> \<Longrightarrow> gi_M5_rebuilt_constants ?k ?K ?c ?\<tau> = gi_basis_internal_constants (gi_M5_expanded_basis ?k ?K) ?c ?\<tau>
+gi_exact_expanded_stock.gi_M5_rebuilt_basis_coordinate:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; ?c \<in> gi_M5_expanded_signature ?k ?\<tau>\<rbrakk> \<Longrightarrow> gi_M5_rebuilt_constants ?k ?K ?c ?\<tau> = gi_M5_basis_constants ?k ?K ?c ?\<tau>
+gi_exact_expanded_stock.gi_M5_rebuilt_expanded_eval:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; oterm_in_string_signature (gi_M5_expanded_signature ?k) ?M\<rbrakk> \<Longrightarrow> pp_e_eval (gi_M5_rebuilt_constants ?k ?K) ?\<rho> ?M = pp_e_eval (gi_M5_basis_constants ?k ?K) ?\<rho> ?M
+gi_exact_expanded_stock.gi_M5_rebuilt_expanded_closed_denotation:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; [] \<turnstile> ?M : ?\<sigma>; oterm_in_string_signature (gi_M5_expanded_signature ?k) ?M\<rbrakk> \<Longrightarrow> pp_e_eval (gi_M5_rebuilt_constants ?k ?K) ?\<rho> ?M = gi_M5_expanded_closed_den ?k ?K ?M
+gi_exact_expanded_stock.gi_M5_rebuilt_named_expanded_denotation:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; book_in_language book_minimal_logical_type UNIV (gi_M5_expanded_signature ?k) ?G ?A ?\<sigma>\<rbrakk> \<Longrightarrow> gi_exact_named_denote (gi_M5_rebuilt_constants ?k ?K) ?G ?g ?A = gi_exact_named_denote (gi_M5_basis_constants ?k ?K) ?G ?g ?A
+gi_exact_expanded_stock.gi_M5_rebuilt_named_basis_equal:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; sg_rich ?G\<rbrakk> \<Longrightarrow> gi_M5_rebuilt_named_basis ?k ?K ?G ?\<sigma> = gi_M5_expanded_basis ?k ?K ?\<sigma>
+gi_exact_expanded_stock.gi_M5_rebuilt_exotic_constant_denotation:
+gi_exact_expanded_stock ?k ?K \<Longrightarrow> pp_e_eval (gi_M5_rebuilt_constants ?k ?K) ?\<rho> (Const ?k gb_unary) = ?K
+gi_exact_expanded_stock.gi_M5_rebuilt_native_denotation:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; book_in_language book_minimal_logical_type UNIV gb_signature ?G ?A ?\<sigma>\<rbrakk> \<Longrightarrow> gi_exact_goodman_denote (gi_M5_rebuilt_constants ?k ?K) ?G ?g ?A = gi_exact_goodman_denote (gi_basis_internal_constants (gi_M5_expanded_basis ?k ?K)) ?G ?g ?A
+gi_exact_expanded_stock.gi_M5_rebuilt_native_global_valid_iff:
+\<lbrakk>gi_exact_expanded_stock ?k ?K; book_theory_formula gb_signature ?G ?A\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid (gi_M5_rebuilt_constants ?k ?K) ?G ?A = gi_exact_goodman_global_valid (gi_basis_internal_constants (gi_M5_expanded_basis ?k ?K)) ?G ?A

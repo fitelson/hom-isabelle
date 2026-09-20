@@ -1,0 +1,36 @@
+gi_T2_PP_native_preservation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; pp_T6_core_PP_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_T2d_admitted:
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (Imp (pp_fun_prime ?r) (\<diamond>\<^sub>o pp_pure Prop ?r))
+gi_T2d_possibly_pure_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?r : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gi_to_book ?G ?ns ?k (Imp (pp_fun_prime ?r) (\<diamond>\<^sub>o pp_pure Prop ?r)))
+gi_T2d_claim_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [gb_x ?G Prop] ?k (Imp (pp_fun_prime (Var 0)) (\<diamond>\<^sub>o pp_pure Prop (Var 0))) = gb_T2d_claim ?G
+gi_T2d_possibly_pure:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gb_T2d_claim ?G)
+gi_T2_box_translation:
+gi_to_book ?G ?ns ?k (\<box>\<^sub>o ?A) = gb_T2_source_box ?G ?ns (gi_to_book ?G ?ns ?k ?A)
+gi_T2_noncontingent_translation:
+gi_to_book ?G ?ns ?k (pp_noncontingent ?r) = gb_T2_noncontingent ?G ?ns (gi_to_book ?G ?ns ?k ?r)
+gi_T2e_false_but_possible_translation:
+gi_to_book ?G ?ns ?k (pp_T2e_false_but_possible ?r) = gb_T2e_false_but_possible ?G ?ns (gi_to_book ?G ?ns ?k ?r)
+gi_T2_noncontingent_admitted:
+gi_constants_admitted ?k gb_signature ?r \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_noncontingent ?r)
+gi_T2e_admitted:
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (Imp (pp_fun_prime ?r) (pp_T2e_false_but_possible ?r))
+gi_T2e_false_but_possible_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?r : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gi_to_book ?G ?ns ?k (Imp (pp_fun_prime ?r) (pp_T2e_false_but_possible ?r)))
+gi_T2e_claim_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [gb_x ?G Prop] ?k (Imp (pp_fun_prime (Var 0)) (pp_T2e_false_but_possible (Var 0))) = gb_T2e_claim ?G
+gi_T2e_false_but_possible:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gb_T2e_claim ?G)
+gi_T2f_six_distinct_translation:
+gi_to_book ?G ?ns ?k (pp_T2f_six_distinct ?r) = gb_T2f_six_distinct ?G ?ns (gi_to_book ?G ?ns ?k ?r)
+gi_T2f_admitted:
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (Imp (pp_fun_prime ?r) (pp_T2f_six_distinct ?r))
+gi_T2f_six_distinct_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?r : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gi_to_book ?G ?ns ?k (Imp (pp_fun_prime ?r) (pp_T2f_six_distinct ?r)))
+gi_T2f_claim_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [gb_x ?G Prop] ?k (Imp (pp_fun_prime (Var 0)) (pp_T2f_six_distinct (Var 0))) = gb_T2f_claim ?G
+gi_T2f_six_distinct:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gb_T2f_claim ?G)

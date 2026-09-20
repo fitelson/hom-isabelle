@@ -1,0 +1,90 @@
+gi_T8_same_kind_admitted(1):
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?X; gi_constants_admitted ?k gb_signature ?Y\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_same_kind ?X ?Y)
+gi_T8_base_admitted(1):
+?X \<in> set pp_T8_base_operators \<Longrightarrow> gi_constants_admitted ?k gb_signature ?X
+gi_T8_representation_admitted(1):
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?p; gi_constants_admitted ?k gb_signature ?X; gi_constants_admitted ?k gb_signature ?q\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T8_representation ?p ?X ?q)
+gi_T8_not_same_all_admitted(1):
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?X; \<And>Y. Y \<in> set ?Ys \<Longrightarrow> gi_constants_admitted ?k gb_signature Y\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T8_not_same_all ?X ?Ys)
+gi_T8_pairwise_kind_admitted(1):
+\<lbrakk>gi_goodman_names ?k; \<And>X. X \<in> set ?Xs \<Longrightarrow> gi_constants_admitted ?k gb_signature X\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T8_pairwise_kind_distinct ?Xs)
+gi_T8_base_kind_claim_admitted(1):
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_T8_base_kind_claim
+gi_T8_disjoin_admitted(1):
+(\<And>A. A \<in> set ?As \<Longrightarrow> gi_constants_admitted ?k gb_signature A) \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T8_disjoin ?As)
+gi_T8_kind_atom_admitted(1):
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?B\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T8_kind_atom ?B)
+gi_T8_kind_property_admitted(1):
+\<lbrakk>gi_goodman_names ?k; set ?Bs \<subseteq> set pp_T8_base_operators\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T8_kind_property ?Bs)
+gi_T8_growth_operator_admitted(1):
+\<lbrakk>gi_goodman_names ?k; ?X \<in> set pp_T8_growth_operators\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature ?X
+gi_T8_neq_all_admitted(1):
+\<lbrakk>gi_constants_admitted ?k gb_signature ?A; \<And>B. B \<in> set ?Bs \<Longrightarrow> gi_constants_admitted ?k gb_signature B\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T8_neq_all ?\<sigma> ?A ?Bs)
+gi_T8_pairwise_distinct_admitted(1):
+(\<And>A. A \<in> set ?As \<Longrightarrow> gi_constants_admitted ?k gb_signature A) \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T8_pairwise_distinct ?\<sigma> ?As)
+gi_T8_growth_claim_admitted(1):
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T8_growth_claim ?r)
+gi_T8_growth_result_admitted(1):
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_T8_growth_result
+gi_T8b_kind_uniqueness_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?p : Prop; ?\<Gamma> \<turnstile> ?X : pp_unary_ty; ?\<Gamma> \<turnstile> ?q : Prop; ?\<Gamma> \<turnstile> ?Y : pp_unary_ty; ?\<Gamma> \<turnstile> ?s : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?p; gi_constants_admitted ?k gb_signature ?X; gi_constants_admitted ?k gb_signature ?q; gi_constants_admitted ?k gb_signature ?Y; gi_constants_admitted ?k gb_signature ?s\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G {gi_to_book ?G [] ?k pp_L2} (gi_to_book ?G ?ns ?k (Imp (Conj (pp_T8_representation ?p ?X ?q) (pp_T8_representation ?p ?Y ?s)) (pp_same_kind ?X ?Y)))
+gi_T8a_pair_core(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?G ?r = Prop; [Prop] ; pp_T6_core_PP_axioms \<turnstile>\<^sub>CEV\<^sup>+ Imp (pp_fun_prime (Var 0)) (Neg (pp_same_kind ?X ?Y)); ?X \<in> set pp_T8_base_operators; ?Y \<in> set pp_T8_base_operators\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gi_to_book ?G [?r] ?k (Imp (pp_fun_prime (Var 0)) (Neg (pp_same_kind ?X ?Y))))
+gi_T8a_pair_empty(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?G ?r = Prop; [Prop] ; {} \<turnstile>\<^sub>CEV\<^sup>+ Imp (pp_fun_prime (Var 0)) (Neg (pp_same_kind ?X ?Y)); ?X \<in> set pp_T8_base_operators; ?Y \<in> set pp_T8_base_operators\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G {} (gi_to_book ?G [?r] ?k (Imp (pp_fun_prime (Var 0)) (Neg (pp_same_kind ?X ?Y))))
+gi_T8a_Id_Box_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?G ?r = Prop\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gi_to_book ?G [?r] ?k (Imp (pp_fun_prime (Var 0)) (Neg (pp_same_kind pp_identity_operator gd_box_op))))
+gi_T8a_Id_Diamond_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?G ?r = Prop\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gi_to_book ?G [?r] ?k (Imp (pp_fun_prime (Var 0)) (Neg (pp_same_kind pp_identity_operator pp_T8_diamond_operator))))
+gi_T8a_Box_Diamond_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?G ?r = Prop\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gi_to_book ?G [?r] ?k (Imp (pp_fun_prime (Var 0)) (Neg (pp_same_kind gd_box_op pp_T8_diamond_operator))))
+gi_T8a_Id_Ktop_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?G ?r = Prop\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G {} (gi_to_book ?G [?r] ?k (Imp (pp_fun_prime (Var 0)) (Neg (pp_same_kind pp_identity_operator gd_true_op))))
+gi_T8a_Box_Ktop_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?G ?r = Prop\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G {} (gi_to_book ?G [?r] ?k (Imp (pp_fun_prime (Var 0)) (Neg (pp_same_kind gd_box_op gd_true_op))))
+gi_T8a_Diamond_Ktop_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?G ?r = Prop\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G {} (gi_to_book ?G [?r] ?k (Imp (pp_fun_prime (Var 0)) (Neg (pp_same_kind pp_T8_diamond_operator gd_true_op))))
+gi_T8a_Id_Kbot_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?G ?r = Prop\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G {} (gi_to_book ?G [?r] ?k (Imp (pp_fun_prime (Var 0)) (Neg (pp_same_kind pp_identity_operator gd_false_op))))
+gi_T8a_Box_Kbot_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?G ?r = Prop\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G {} (gi_to_book ?G [?r] ?k (Imp (pp_fun_prime (Var 0)) (Neg (pp_same_kind gd_box_op gd_false_op))))
+gi_T8a_Diamond_Kbot_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?G ?r = Prop\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G {} (gi_to_book ?G [?r] ?k (Imp (pp_fun_prime (Var 0)) (Neg (pp_same_kind pp_T8_diamond_operator gd_false_op))))
+gi_T8a_Ktop_Kbot_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?G ?r = Prop\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G {} (gi_to_book ?G [?r] ?k (Imp (pp_fun_prime (Var 0)) (Neg (pp_same_kind gd_true_op gd_false_op))))
+gi_T8a_five_kinds_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?r : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gi_to_book ?G ?ns ?k (Imp (pp_fun_prime ?r) pp_T8_base_kind_claim))
+gi_T8_stocks_as_T7(1):
+pp_T8_axioms = pp_T7_axioms
+gi_T8_stocks_as_T7(2):
+pp_T8_full_axioms = pp_T7_full_axioms
+gi_T8_L2_native_preservation(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; pp_T8_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_T7_native_axioms ?G ?k) (gi_to_book ?G ?ns ?k ?A)
+gi_T8c_growth_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?r : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_T7_native_axioms ?G ?k) (gi_to_book ?G ?ns ?k (Imp (pp_fun_prime ?r) (pp_T8_growth_claim ?r)))
+gi_T8c_operator_purity(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; distinct ?ns; ?X \<in> set pp_T8_growth_operators\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gb_pure gb_unary (gi_to_book ?G ?ns ?k ?X))
+gi_T8_neq_all_translation(1):
+gi_to_book ?G ?ns ?k (pp_T8_neq_all ?\<sigma> ?A ?Bs) = gb_T8_neq_all ?G ?ns ?\<sigma> (gi_to_book ?G ?ns ?k ?A) (map (gi_to_book ?G ?ns ?k) ?Bs)
+gi_T8_pairwise_distinct_translation(1):
+gi_to_book ?G ?ns ?k (pp_T8_pairwise_distinct ?\<sigma> ?As) = gb_T8_pairwise_distinct ?G ?ns ?\<sigma> (map (gi_to_book ?G ?ns ?k) ?As)
+gi_T8c_listed_operators_pure(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; distinct ?ns; ?X \<in> set (gi_T8_growth_terms ?G ?ns ?k)\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gb_pure gb_unary ?X)
+gi_T8_growth_terms_length(1):
+length (gi_T8_growth_terms ?G ?ns ?k) = 31
+gi_T8_growth_values_length(1):
+length (map (\<lambda>X. NApp X ?r) (gi_T8_growth_terms ?G ?ns ?k)) = 31
+gi_T8_growth_claim_translation(1):
+gi_to_book ?G ?ns ?k (pp_T8_growth_claim ?r) = gb_T8_growth_claim ?G ?ns ?k (gi_to_book ?G ?ns ?k ?r)
+gi_T8c_growth(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?G ?r = Prop\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_T7_native_axioms ?G ?k) (book_imp (gb_T2a_fun_prime_on_chart ?G [?r] (NVar ?r)) (gb_T8_growth_claim ?G [?r] ?k (NVar ?r)))
+gi_T8c_closed_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_T7_native_full_axioms ?G ?k) (gi_to_book ?G [] ?k pp_T8_growth_result)
+gi_T8_growth_result_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k pp_T8_growth_result = gb_T8_growth_result ?G ?k
+gi_T8c_closed(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_T7_native_full_axioms ?G ?k) (gb_T8_growth_result ?G ?k)
+gi_T8_full_to_repaired(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; goodman_book_proves gb_signature ?G (gi_T7_native_full_axioms ?G ?k) ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_T7_repaired_native_axioms ?G ?k) ?A
+gi_T8c_repaired_central_stock(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_T7_repaired_native_axioms ?G ?k) (gb_T8_growth_result ?G ?k)

@@ -1,0 +1,20 @@
+gi_goodman_typed_constant_map:
+\<lbrakk>sg_rich ?G; goodman_book_proves ?\<Sigma> ?G ?T ?A; \<And>\<tau> c. c \<in> ?\<Sigma> \<tau> \<Longrightarrow> ?\<rho> \<tau> c \<in> ?\<Omega> \<tau>\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Omega> ?G (book_typed_name_map ?\<rho> ` ?T) (book_typed_name_map ?\<rho> ?A)
+gi_goodman_string_signature_map:
+?c \<in> gb_signature ?\<tau> \<Longrightarrow> gi_goodman_string_name ?c \<in> gi_goodman_string_signature ?\<tau>
+gi_goodman_string_signature_exact:
+gi_goodman_string_name ` gb_signature ?\<tau> = gi_goodman_string_signature ?\<tau>
+gi_goodman_string_signature_predicate:
+gi_goodman_string_signature (?\<sigma> \<rightarrow>\<^sub>o Prop) = {pp_pure_name, pp_fun_name}
+gi_goodman_string_signature_nonpredicate:
+\<nexists>\<sigma>. ?\<tau> = \<sigma> \<rightarrow>\<^sub>o Prop \<Longrightarrow> gi_goodman_string_signature ?\<tau> = {}
+gi_goodman_string_term_language:
+book_in_language book_minimal_logical_type UNIV gb_signature ?G ?A ?\<tau> \<Longrightarrow> book_in_language book_minimal_logical_type UNIV gi_goodman_string_signature ?G (gi_goodman_string_term ?A) ?\<tau>
+gi_goodman_string_term_fv:
+named_fv (gi_goodman_string_term ?A) = named_fv ?A
+gi_goodman_string_term_Pure:
+gi_goodman_string_term (gb_Pure ?\<sigma>) = NConst pp_pure_name (?\<sigma> \<rightarrow>\<^sub>o Prop)
+gi_goodman_string_term_Fun:
+gi_goodman_string_term (gb_Fun ?\<sigma>) = NConst pp_fun_name (?\<sigma> \<rightarrow>\<^sub>o Prop)
+gi_goodman_string_proof_preservation:
+\<lbrakk>sg_rich ?G; goodman_book_proves gb_signature ?G ?T ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gi_goodman_string_signature ?G (gi_goodman_string_term ` ?T) (gi_goodman_string_term ?A)

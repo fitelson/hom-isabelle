@@ -1,0 +1,14 @@
+EXACT-M4-REPAIR-AUDIT: 12 clean endpoints
+SCOPE: For every fun-prime proposition in the complete exact closed-logical stock, a fresh one-letter branch lift is fun-prime but admits no pure recovery of the original proposition, hence is outside its pure reversible orbit. The actual generic seed and complete native stock are included. No fixed-r all-view QSS premise, fixed predetermined branch, multiple-fundamental selection proposal, arbitrary enlarged stock, or PP consistency claim. HOL-ZF foundations retained.
+gi_exact_M4_variation_square_nonzero(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M4_variation_square_in_stock(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M4_nonconstant_proper_view(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M4_fresh_letter(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M4_disjoint_lift_empty_view(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_M4_lift_fun_prime(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M4_no_recovery_from_lift(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_exact_M4_no_recovery_excludes_reversible_image(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M4_lift_witness(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M4_fun_prime_outside_reversible_orbit(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M4_actual_generic_seed_witness(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_native_M4_fun_prime_outside_reversible_orbit(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

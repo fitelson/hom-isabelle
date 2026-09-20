@@ -1,0 +1,62 @@
+gi_T9_compose_builder_type(1):
+[] \<turnstile> gi_T9_compose_builder : pp_e_unary_type \<rightarrow>\<^sub>o pp_e_unary_type \<rightarrow>\<^sub>o pp_e_unary_type
+gi_T9_compose_builder_logical(1):
+pp_logical_vocabulary gi_T9_compose_builder
+gi_T9_compose_builder_apply(1):
+\<lbrakk>Elem ?X (pp_e_domain pp_e_unary_type); Elem ?Y (pp_e_domain pp_e_unary_type)\<rbrakk> \<Longrightarrow> pp_e_closed_den gi_T9_compose_builder \<acute> ?X \<acute> ?Y = gi_exact_value_compose ?X ?Y
+gi_T9_value_identity_member(1):
+Elem gi_T9_identity (pp_e_domain pp_e_unary_type)
+gi_T9_value_compose_apply(1):
+Elem ?p (pp_e_domain Prop) \<Longrightarrow> gi_exact_value_compose ?X ?Y \<acute> ?p = ?X \<acute> (?Y \<acute> ?p)
+gi_T9_value_identity_left(1):
+Elem ?X (pp_e_domain pp_e_unary_type) \<Longrightarrow> gi_exact_value_compose gi_T9_identity ?X = ?X
+gi_T9_value_identity_right(1):
+Elem ?X (pp_e_domain pp_e_unary_type) \<Longrightarrow> gi_exact_value_compose ?X gi_T9_identity = ?X
+gi_T9_value_compose_associative(1):
+\<lbrakk>Elem ?X (pp_e_domain pp_e_unary_type); Elem ?Y (pp_e_domain pp_e_unary_type); Elem ?Z (pp_e_domain pp_e_unary_type)\<rbrakk> \<Longrightarrow> gi_exact_value_compose ?X (gi_exact_value_compose ?Y ?Z) = gi_exact_value_compose (gi_exact_value_compose ?X ?Y) ?Z
+gi_T9_native_purity.gi_T9_root_pure_member(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?X \<in> gi_T9_root_pure ?C ?\<sigma>\<rbrakk> \<Longrightarrow> Elem ?X (pp_e_domain ?\<sigma>)
+gi_T9_native_purity.gi_T9_compose_pure(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?X \<in> gi_T9_root_pure ?C pp_e_unary_type; ?Y \<in> gi_T9_root_pure ?C pp_e_unary_type\<rbrakk> \<Longrightarrow> gi_exact_value_compose ?X ?Y \<in> gi_T9_root_pure ?C pp_e_unary_type
+gi_T9_native_purity.gi_T9_identity_pure(1):
+gi_T9_native_purity ?C ?G \<Longrightarrow> gi_T9_identity \<in> gi_T9_root_pure ?C pp_e_unary_type
+gi_T9_native_purity.gi_T9_identity_left(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?X \<in> gi_T9_root_pure ?C pp_e_unary_type\<rbrakk> \<Longrightarrow> gi_exact_value_compose gi_T9_identity ?X = ?X
+gi_T9_native_purity.gi_T9_identity_right(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?X \<in> gi_T9_root_pure ?C pp_e_unary_type\<rbrakk> \<Longrightarrow> gi_exact_value_compose ?X gi_T9_identity = ?X
+gi_T9_native_purity.gi_T9_compose_associative(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?X \<in> gi_T9_root_pure ?C pp_e_unary_type; ?Y \<in> gi_T9_root_pure ?C pp_e_unary_type; ?Z \<in> gi_T9_root_pure ?C pp_e_unary_type\<rbrakk> \<Longrightarrow> gi_exact_value_compose ?X (gi_exact_value_compose ?Y ?Z) = gi_exact_value_compose (gi_exact_value_compose ?X ?Y) ?Z
+gi_T9_native_purity.gi_T9_group_pure(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?Z \<in> gi_T9_root_group ?C\<rbrakk> \<Longrightarrow> ?Z \<in> gi_T9_root_pure ?C pp_e_unary_type
+gi_T9_native_purity.gi_T9_identity_in_group(1):
+gi_T9_native_purity ?C ?G \<Longrightarrow> gi_T9_identity \<in> gi_T9_root_group ?C
+gi_T9_native_purity.gi_T9_group_inverse(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?Z \<in> gi_T9_root_group ?C; \<And>W. \<lbrakk>W \<in> gi_T9_root_group ?C; gi_exact_value_compose ?Z W = gi_T9_identity; gi_exact_value_compose W ?Z = gi_T9_identity\<rbrakk> \<Longrightarrow> ?thesis\<rbrakk> \<Longrightarrow> ?thesis
+gi_T9_native_purity.gi_T9_group_compose(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?Z \<in> gi_T9_root_group ?C; ?W \<in> gi_T9_root_group ?C\<rbrakk> \<Longrightarrow> gi_exact_value_compose ?Z ?W \<in> gi_T9_root_group ?C
+gi_T9_native_purity.gi_T9_group_inverse_action(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?Z \<in> gi_T9_root_group ?C\<rbrakk> \<Longrightarrow> \<exists>I\<in>gi_T9_root_group ?C. \<forall>X\<in>gi_T9_root_pure ?C pp_e_unary_type. gi_exact_value_compose I (gi_exact_value_compose ?Z X) = X \<and> gi_exact_value_compose ?Z (gi_exact_value_compose I X) = X
+gi_T9_native_purity.gi_T9_same_kind_refl(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?X \<in> gi_T9_root_pure ?C pp_e_unary_type\<rbrakk> \<Longrightarrow> gi_T9_same_kind ?C ?X ?X
+gi_T9_native_purity.gi_T9_same_kind_sym(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?X \<in> gi_T9_root_pure ?C pp_e_unary_type; ?Y \<in> gi_T9_root_pure ?C pp_e_unary_type; gi_T9_same_kind ?C ?X ?Y\<rbrakk> \<Longrightarrow> gi_T9_same_kind ?C ?Y ?X
+gi_T9_native_purity.gi_T9_same_kind_trans(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?X \<in> gi_T9_root_pure ?C pp_e_unary_type; ?Y \<in> gi_T9_root_pure ?C pp_e_unary_type; ?Z \<in> gi_T9_root_pure ?C pp_e_unary_type; gi_T9_same_kind ?C ?X ?Y; gi_T9_same_kind ?C ?Y ?Z\<rbrakk> \<Longrightarrow> gi_T9_same_kind ?C ?X ?Z
+gi_T9_native_purity.gi_T9_kind_self_member(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?X \<in> gi_T9_root_pure ?C pp_e_unary_type\<rbrakk> \<Longrightarrow> ?X \<in> gi_T9_kind ?C ?X
+gi_T9_native_purity.gi_T9_kind_eq_iff(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?X \<in> gi_T9_root_pure ?C pp_e_unary_type; ?Y \<in> gi_T9_root_pure ?C pp_e_unary_type\<rbrakk> \<Longrightarrow> (gi_T9_kind ?C ?X = gi_T9_kind ?C ?Y) = gi_T9_same_kind ?C ?X ?Y
+gi_T9_native_purity.gi_T9_kind_closed(1):
+gi_T9_native_purity ?C ?G \<Longrightarrow> gi_T9_kind ?C ` gi_T9_root_pure ?C pp_e_unary_type \<subseteq> gi_T9_kinds ?C
+gi_T9_native_purity.gi_T9_kind_represented(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?k \<in> gi_T9_kinds ?C\<rbrakk> \<Longrightarrow> \<exists>X\<in>gi_T9_root_pure ?C pp_e_unary_type. gi_T9_kind ?C X = ?k
+gi_T9_native_purity.gi_T9_kind_rep_spec(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?k \<in> gi_T9_kinds ?C\<rbrakk> \<Longrightarrow> gi_T9_kind_rep ?C ?k \<in> gi_T9_root_pure ?C pp_e_unary_type \<and> gi_T9_kind ?C (gi_T9_kind_rep ?C ?k) = ?k
+gi_T9_native_purity.gi_T9_kind_fibre_orbit(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?k \<in> gi_T9_kinds ?C; ?X \<in> gi_T9_root_pure ?C pp_e_unary_type; gi_T9_kind ?C ?X = ?k\<rbrakk> \<Longrightarrow> \<exists>Z\<in>gi_T9_root_group ?C. ?X = gi_exact_value_compose (gi_T9_kind_rep ?C ?k) Z
+gi_T9_native_purity.gi_T9_kind_code_spec(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?k \<in> gi_T9_kinds ?C; ?X \<in> gi_T9_root_pure ?C pp_e_unary_type; gi_T9_kind ?C ?X = ?k\<rbrakk> \<Longrightarrow> gi_T9_kind_code ?C ?k ?X \<in> gi_T9_root_group ?C \<and> gi_exact_value_compose (gi_T9_kind_rep ?C ?k) (gi_T9_kind_code ?C ?k ?X) = ?X
+gi_T9_native_purity.gi_T9_kind_fibre_code(1):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?k \<in> gi_T9_kinds ?C\<rbrakk> \<Longrightarrow> inj_on (gi_T9_kind_code ?C ?k) {X \<in> gi_T9_root_pure ?C pp_e_unary_type. gi_T9_kind ?C X = ?k}
+gi_T9_native_purity.gi_T9_kind_fibre_code(2):
+\<lbrakk>gi_T9_native_purity ?C ?G; ?k \<in> gi_T9_kinds ?C\<rbrakk> \<Longrightarrow> gi_T9_kind_code ?C ?k ` {X \<in> gi_T9_root_pure ?C pp_e_unary_type. gi_T9_kind ?C X = ?k} \<subseteq> gi_T9_root_group ?C

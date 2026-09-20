@@ -1,0 +1,18 @@
+gi_exact_minimal_logical_propositional_fragment:
+pp_e_propositional_term (pterm_to_oterm (book_minimal_logical_translation ?l)) = pp_e_propositional_type (book_minimal_logical_type ?l)
+gi_exact_named_propositional_encoding:
+pp_e_propositional_term (pterm_to_oterm (book_minimal_to_pterm (named_to_source ?G ?ns ?M))) = gi_exact_named_propositional_term ?G ?M
+gi_exact_named_propositional_decode_iff:
+pp_e_propositional_term (gi_exact_decode ?G ?M) = gi_exact_named_propositional_term ?G ?M
+gi_exact_old_propositional_result_type:
+\<lbrakk>?\<Gamma> \<turnstile> ?M : ?\<tau>; pp_e_propositional_term ?M; \<forall>\<sigma>\<in>set ?\<Gamma>. pp_e_propositional_type \<sigma>\<rbrakk> \<Longrightarrow> pp_e_propositional_type ?\<tau>
+gi_exact_closed_named_propositional_result_type:
+\<lbrakk>book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G ?M ?\<tau>; named_fv ?M = {}; gi_exact_named_propositional_term ?G ?M\<rbrakk> \<Longrightarrow> pp_e_propositional_type ?\<tau>
+gi_exact_closed_named_decoder_value:
+named_fv ?M = {} \<Longrightarrow> gi_exact_named_denote ?C ?G ?g ?M = pp_e_eval ?C pp_e_closed_env (gi_exact_decode ?G ?M)
+gi_exact_Bacon_10_1_named_action:
+\<lbrakk>\<And>n c \<sigma>. pp_e_propositional_type \<sigma> \<Longrightarrow> Elem (?A n c \<sigma>) (pp_e_domain \<sigma>); book_in_language book_minimal_logical_type UNIV ?\<Sigma> ?G ?M ?\<tau>; named_fv ?M = {}; gi_exact_named_propositional_term ?G ?M\<rbrakk> \<Longrightarrow> pp_b_action ?\<tau> [?n] (gi_exact_named_denote (pp_e_Bacon_glued_constants ?A) ?G ?g ?M) = gi_exact_named_denote (?A ?n) ?G ?h ?M
+gi_exact_Bacon_10_1_named_truth_branch:
+\<lbrakk>\<And>n c \<sigma>. pp_e_propositional_type \<sigma> \<Longrightarrow> Elem (?A n c \<sigma>) (pp_e_domain \<sigma>); book_theory_formula ?\<Sigma> ?G ?M; named_fv ?M = {}; gi_exact_named_propositional_term ?G ?M\<rbrakk> \<Longrightarrow> pp_e_holds (gi_exact_named_denote (pp_e_Bacon_glued_constants ?A) ?G ?g ?M) [?n] = pp_e_holds (gi_exact_named_denote (?A ?n) ?G ?h ?M) []
+gi_exact_Bacon_10_1_named:
+(\<And>n c \<sigma>. pp_e_propositional_type \<sigma> \<Longrightarrow> Elem (?A n c \<sigma>) (pp_e_domain \<sigma>)) \<Longrightarrow> \<exists>C. (\<forall>c \<sigma>. Elem (C c \<sigma>) (pp_e_domain \<sigma>)) \<and> (\<forall>n c \<sigma>. pp_e_propositional_type \<sigma> \<longrightarrow> pp_b_action \<sigma> [n] (C c \<sigma>) = ?A n c \<sigma>) \<and> (\<forall>n G \<Sigma> M \<tau> g h. book_in_language book_minimal_logical_type UNIV \<Sigma> G M \<tau> \<longrightarrow> named_fv M = {} \<longrightarrow> gi_exact_named_propositional_term G M \<longrightarrow> pp_b_action \<tau> [n] (gi_exact_named_denote C G g M) = gi_exact_named_denote (?A n) G h M)

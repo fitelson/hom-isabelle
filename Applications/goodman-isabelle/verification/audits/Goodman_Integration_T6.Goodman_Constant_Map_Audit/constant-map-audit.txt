@@ -1,0 +1,12 @@
+CONSTANT-MAP-AUDIT: 10 clean endpoints
+SCOPE: Typed constant-map proof preservation in C+[T], with mapped stocks and declared signatures; no reflection inferred.
+gi_goodman_typed_constant_map: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_goodman_string_signature_map: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_goodman_string_signature_exact: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_goodman_string_signature_predicate: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_goodman_string_signature_nonpredicate: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_goodman_string_term_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_goodman_string_term_fv: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_goodman_string_term_Pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_goodman_string_term_Fun: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_goodman_string_proof_preservation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

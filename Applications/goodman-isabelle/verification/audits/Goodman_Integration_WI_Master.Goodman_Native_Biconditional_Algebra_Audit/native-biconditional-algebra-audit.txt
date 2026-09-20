@@ -1,0 +1,28 @@
+NATIVE-BICONDITIONAL-ALGEBRA-AUDIT: 26 clean endpoints
+SCOPE: Biconditional operators B_a = lambda p.(p iff a): self-inverse (B_a o B_a = id) as a C+ theorem over every added stock including the empty one; Pure(a) implies Pure(B_a) and B_a in G over the native T6 PP core (purity, application closure, PP). Group membership reached by alpha transport of the literal translation. No WI, Inv, L2, Exhaustion or fun-prime; not the exact-root T9 algebra.
+gi_CEV_bic_self_inverse(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_CEV_bic_operator_pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_CEV_bic_group_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_bic_self_inverse_typed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_bic_operator_pure_typed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_bic_group_member_typed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_bic_builder_shift(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_bic_self_inverse_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_bic_operator_pure_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_bic_builder_chart_alpha(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_bic_group_member_alpha(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_bic_self_inverse_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_bic_operator_pure_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_bic_group_member_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T6_core_axioms_closed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T6_core_axiom_from_native(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T6_core_native_preservation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_native_bic_self_inverse_empty_stock(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_bic_self_inverse(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_bic_operator_pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_bic_group_member_translated(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_native_bic_group_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_bic_self_inverse_language_closed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_bic_self_inverse_language_closed(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_bic_operator_pure_language_closed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_bic_operator_pure_language_closed(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

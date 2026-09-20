@@ -1,0 +1,27 @@
+T2BC-AUDIT: 25 clean endpoints
+SCOPE: T2b/T2c in the minimal native purity/application stock; fun-prime antecedents retained; source truth/modal representatives explicit.
+gi_T2_min_axioms_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_T2_min_axioms_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gb_T2_min_axioms_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2_min_stock_inclusion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T2_min_axiom_from_native: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T2_min_native_preservation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T2_fun_prime_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T2b_nontriviality_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2c_parameter_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T2c_quantified_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T2b_nontriviality_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T2b_truth_not_fun_prime_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T2b_falsity_not_fun_prime_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T2c_parameter_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_T2c_quantified_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gb_T2_fun_prime_binders: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_T2_fun_prime_at_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_T2_fun_prime_at_fv: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2_fun_prime_var_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2b_claim_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2b_nontriviality: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2_diamond_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gb_T2c_proposition_binders_distinct: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2c_claim_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T2c_attainment: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

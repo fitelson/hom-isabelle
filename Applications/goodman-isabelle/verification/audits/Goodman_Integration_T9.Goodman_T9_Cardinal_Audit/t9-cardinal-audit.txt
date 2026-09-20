@@ -1,0 +1,13 @@
+T9-CARDINAL-AUDIT: 11 clean endpoints
+SCOPE: Actual exact root-pure unary values P, actual right-composition kinds K and actual pure invertible group: |Pow K|<=|P|<=|K times Group|, hence finite K or |Pow K|<=|Group|. Native-purity locale, full external unary PC, semantic root L2 and typed fun-prime witness retained. No abstract fibre-code or selector assumption remains. Infinitude itself is not claimed; last corollary displays it as a premise. No model existence; HOL-ZF foundations retained.
+gi_T9_infinite_product_bound: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T9_product_power_dichotomy: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T9_native_purity.gi_T9_pure_kind_member: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_native_purity.gi_T9_cardinal_code_injective: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T9_native_purity.gi_T9_cardinal_code_range: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T9_native_purity.gi_T9_pure_le_kinds_times_group: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T9_native_purity.gi_T9_kind_selector_range: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_native_purity.gi_T9_powerset_kinds_le_pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_T9_native_purity.gi_T9_native_counting_bound: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_T9_native_purity.gi_T9_native_cardinal_dichotomy: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_T9_native_purity.gi_T9_infinite_kinds_group_bound: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6

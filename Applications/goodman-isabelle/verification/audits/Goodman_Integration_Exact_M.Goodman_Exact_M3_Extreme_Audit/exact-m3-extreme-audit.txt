@@ -1,0 +1,10 @@
+EXACT-M3-EXTREME-AUDIT: 8 clean endpoints
+SCOPE: Necessity/necessity-of-negation actually denoted in complete exact logical stock; every fun-prime input has true and false views. No PP, arbitrary stock, or all-views-free assertion.
+gi_M3_box_term_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M3_box_term_logical: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M3_future_truth_iff_view: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M3_box_raw: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M3_box_in_stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M3_box_nonzero: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M3_fun_prime_has_extreme_views: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_M3_fun_prime_has_extreme_views: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

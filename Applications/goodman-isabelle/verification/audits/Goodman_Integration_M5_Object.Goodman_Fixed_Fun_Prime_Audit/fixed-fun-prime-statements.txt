@@ -1,0 +1,8 @@
+gi_fixed_fun_prime_truth_pure:
+pp_T2_min_axioms \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_pure Prop ObjTrue
+gi_fixed_fun_prime_theorem_collapses_minimal_stock:
+\<lbrakk>pp_T2_min_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop; ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_fun_prime ?r\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ ObjFalse
+gi_fixed_fun_prime_axiom_collapses_minimal_stock:
+\<lbrakk>pp_T2_min_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop; pp_fun_prime ?r \<in> ?T\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ ObjFalse
+gi_fixed_fun_prime_axiom_native_refutation:
+\<lbrakk>sg_rich ?G; pp_T2_min_axioms \<subseteq> ?T; [] \<turnstile> ?r : Prop; pp_fun_prime ?r \<in> ?T; \<And>A. A \<in> ?T \<Longrightarrow> [] \<turnstile> A : Prop; \<And>A. A \<in> ?T \<Longrightarrow> gi_constants_admitted ?k ?\<Sigma> A\<rbrakk> \<Longrightarrow> goodman_book_proves ?\<Sigma> ?G (gi_to_book ?G [] ?k ` ?T) (book_bottom ?G)

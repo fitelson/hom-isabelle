@@ -1,0 +1,22 @@
+gi_exact_domain_member:
+(?x \<in> gi_exact_domain ?\<sigma>) = Elem ?x (pp_e_domain ?\<sigma>)
+gi_exact_app_value:
+gi_exact_app ?\<sigma> ?\<tau> ?f ?x = ?f \<acute> ?x
+gi_exact_app_closed:
+\<lbrakk>?f \<in> gi_exact_domain (?\<sigma> \<rightarrow>\<^sub>o ?\<tau>); ?x \<in> gi_exact_domain ?\<sigma>\<rbrakk> \<Longrightarrow> gi_exact_app ?\<sigma> ?\<tau> ?f ?x \<in> gi_exact_domain ?\<tau>
+gi_exact_book_applicative_structure:
+book_applicative_structure gi_exact_domain gi_exact_app
+gi_exact_default_member:
+pp_e_default ?\<sigma> \<in> gi_exact_domain ?\<sigma>
+gi_exact_domain_nonempty:
+gi_exact_domain ?\<sigma> \<noteq> {}
+gi_exact_book_assignment_iff:
+book_env_typed gi_exact_domain ?G ?g = (\<forall>n. Elem (?g n) (pp_e_domain (?G n)))
+gi_exact_default_assignment_typed:
+book_env_typed gi_exact_domain ?G (gi_exact_default_assignment ?G)
+gi_exact_total_assignment_exists:
+\<exists>g. book_env_typed gi_exact_domain ?G g
+gi_exact_assignment_lookup:
+book_env_typed gi_exact_domain ?G ?g \<Longrightarrow> Elem (?g ?n) (pp_e_domain (?G ?n))
+gi_exact_assignment_update:
+\<lbrakk>book_env_typed gi_exact_domain ?G ?g; Elem ?a (pp_e_domain (?G ?n))\<rbrakk> \<Longrightarrow> book_env_typed gi_exact_domain ?G (?g(?n := ?a))

@@ -1,0 +1,19 @@
+GRANULARITY-AUDIT: 17 clean endpoints
+SCOPE: native logical purity/application/unary QLN with Pure(Z) and Fun(r) as local antecedents. No PP, Persistence or zeroary Exhaustion added. Separate historical HOL cardinal results retain explicit surjectivity, truth/congruence and size premises.
+gi_granularity_logical_builder_pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_granularity_pure_agreement: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_granularity_pure_disagreement: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_granularity_conditional_source: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_granularity_source_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_granularity_axioms_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_granularity_axiom_from_native: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_granularity_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_granularity_iff_truth_uniform: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+pp_surjective_truth_fibre_congruence_imp_uniform: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+pp_bijective_truth_fibre_congruence_imp_uniform: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+pp_fregean_granularity_imp_uniform: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+pp_fregean_granularity_excludes_third_proposition: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+pp_QLN_truth_uniform_iff_agreement_noncontingent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+pp_attack2_kind_sized_group_refutes_attack3: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+pp_attack2_kind_bounded_descriptions_refute_attack3: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+pp_attack2_countable_group_refutes_attack3: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3

@@ -1,0 +1,19 @@
+EXACT-M2-AUDIT: 17 clean endpoints
+SCOPE: Classifiers are proved members of Bacon's exact unary carrier; exact substitution-action invariance and representation yield a bijection from all sets of raw propositions to exact invariant unary values. Exact proposition carriers are compared by their embed/extract bijection. Cantor gives strict cardinal excess, and a concrete pair of distinct exact invariant values agrees at every proposed typed fundamental proposition. HOL-ZF foundations retained. Invariant is not identified with logical purity; no PP/model-consistency claim or blanket native QSS-formula interpretation is asserted.
+gi_exact_M2_extract_action(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M2_view_condition_admissible(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M2_classifier_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M2_classifier_apply(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M2_classifier_raw(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M2_raw_equivariant_commutes(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_M2_raw_equivariant_invariant(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_M2_classifier_invariant(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M2_classifier_in_stock(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M2_classifier_injective(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M2_invariant_representation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M2_classifier_bijection(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M2_proposition_bijection(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M2_invariants_outnumber_propositions(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M2_collision(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M2_evaluation_not_injective(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M2_invariance_QSS_fails(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

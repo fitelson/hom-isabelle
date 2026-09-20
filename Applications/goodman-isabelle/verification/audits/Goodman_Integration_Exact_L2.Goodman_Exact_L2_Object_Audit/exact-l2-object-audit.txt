@@ -1,0 +1,8 @@
+EXACT-L2-OBJECT-AUDIT: 6 clean endpoints
+SCOPE: Actual old and translated native L2 formula false at root under generic exact Pure/Fun; global validity fails and the explicit no-PP QLN background does not derive it. Complete fixed logical stock, typed native assignment and rich names retained. Not all-world falsity, arbitrary enlarged stock, PP model, or PP contradiction. HOL-ZF foundations retained.
+gi_exact_L2_root_instance: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=10
+gi_exact_L2_root_implies_fixed_stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_generic_L2_false_at_root: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_native_L2_formula_false_at_root: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_native_L2_formula_not_global: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_QLN_background_not_proves_L2: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

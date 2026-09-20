@@ -1,0 +1,12 @@
+gi_CEV_axiom_preservation:
+\<lbrakk>sg_rich ?G; ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ ?A; \<And>B. B \<in> ?T \<Longrightarrow> [] \<turnstile> B : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gi_to_book ?G [] ?k ` ?T) (gi_to_book ?G ?ns ?k ?A)
+gi_CEV_closed_refutation:
+\<lbrakk>sg_rich ?G; [] ; ?T \<turnstile>\<^sub>CEV\<^sup>+ ObjFalse; \<And>A. A \<in> ?T \<Longrightarrow> [] \<turnstile> A : Prop\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gi_to_book ?G [] ?k ` ?T) (book_bottom ?G)
+gi_T6_Inv_refutation:
+sg_rich ?G \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gi_to_book ?G [] ?k ` pp_T6_Inv_axioms) (book_bottom ?G)
+gi_T6_TU_refutation:
+sg_rich ?G \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gi_to_book ?G [] ?k ` pp_T6_TU_axioms) (book_bottom ?G)
+gi_T6_WI_refutation:
+sg_rich ?G \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gi_to_book ?G [] ?k ` pp_T6_WI_axioms) (book_bottom ?G)
+gi_T6_RS_refutation:
+sg_rich ?G \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gi_to_book ?G [] ?k ` pp_T6_RS_axioms) (book_bottom ?G)

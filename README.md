@@ -32,6 +32,7 @@ class. Generic full-C soundness and final modal completeness remain open.
 - [Partial source-fidelity audit: 120 files reviewed, 1,260 deferred](docs/PARTIAL_SOURCE_AUDIT_2026-09-10.md)
 - [Formal-correctness audit of those same 120 files](docs/FORMAL_CORRECTNESS_AUDIT_2026-09-10.md)
 - [Sources, credits, and provenance](docs/SOURCES_AND_CREDITS.md)
+- [Applications of the core](Applications/README.md), including [Goodman's Purity of Pure project](Applications/goodman-isabelle/README.md)
 
 For one concrete source-to-code example, the sentence-consequence instance
 of Bacon–Dorr's Theorem 3.2 is
@@ -96,11 +97,31 @@ and how to distinguish included source files from checked session contents.
 | Other `theories/classicism/` subdirectories | Earlier proof presentations and supporting bridges retained as dependencies |
 | `theories/core_audit/` | Explicit theorem catalogs and kernel-object checks |
 | `tools/` | Verification guards and Isabelle-native dependency inspection |
+| `Applications/` | Separately documented applications with independent sessions and checks; currently Goodman's Purity of Pure project |
 
 The theorem names and relative theory paths are preserved from the parent
 development so that source correspondences remain traceable. This repository
-contains no applications of these theories. Source PDFs and private research
-records are not distributed.
+keeps the core theory graph separate from its applications. Source PDFs and
+private research records are not distributed.
+
+## Applications
+
+The [Applications folder](Applications/README.md) contains one application:
+[Goodman's Purity of Pure project](Applications/goodman-isabelle/README.md).
+It includes verified results, a report and a contributor roadmap; Goodman's
+consistency question remains open. It is an ordinary subfolder, not a
+submodule or a separate-access private component.
+
+The default checker above remains a core check. To check Goodman and export
+its audit statements, run the following separately, never concurrently with
+another Isabelle build or export:
+
+```sh
+./Applications/goodman-isabelle/check_isabelle.sh --export
+```
+
+The core's mathematical status and audit coverage are not enlarged merely
+by including an application.
 
 ## Contributing
 

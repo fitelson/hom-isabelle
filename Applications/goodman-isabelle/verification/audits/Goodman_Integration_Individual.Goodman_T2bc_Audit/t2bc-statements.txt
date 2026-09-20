@@ -1,0 +1,50 @@
+gi_T2_min_axioms_closed:
+?A \<in> pp_T2_min_axioms \<Longrightarrow> [] \<turnstile> ?A : Prop
+gb_T2_min_axioms_language:
+\<lbrakk>sg_rich ?G; ?A \<in> gb_T2_min_axioms ?G\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?A
+gb_T2_min_axioms_closed:
+?A \<in> gb_T2_min_axioms ?G \<Longrightarrow> named_fv ?A = {}
+gi_T2_min_stock_inclusion:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> gi_to_book ?G [] ?k ` pp_T2_min_axioms \<subseteq> gb_T2_min_axioms ?G
+gi_T2_min_axiom_from_native:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?A \<in> pp_T2_min_axioms\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gb_T2_min_axioms ?G) (gi_to_book ?G [] ?k ?A)
+gi_T2_min_native_preservation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; pp_T2_min_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_T2_fun_prime_admitted:
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?p\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_fun_prime ?p)
+gi_T2b_nontriviality_admitted:
+gi_constants_admitted ?k gb_signature ?p \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T2b_nontriviality ?p)
+gi_T2c_parameter_admitted:
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?r; gi_constants_admitted ?k gb_signature ?p\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (Imp (pp_fun_prime ?r) (Imp (pp_pure Prop ?p) (\<diamond>\<^sub>o Eq Prop ?r ?p)))
+gi_T2c_quantified_admitted:
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (Imp (pp_fun_prime ?r) (Forall Prop (Imp (pp_pure Prop (Var 0)) (\<diamond>\<^sub>o Eq Prop (shift ?r) (Var 0)))))
+gi_T2b_nontriviality_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?p : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?p\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gi_to_book ?G ?ns ?k (Imp (pp_fun_prime ?p) (pp_T2b_nontriviality ?p)))
+gi_T2b_truth_not_fun_prime_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gi_to_book ?G [] ?k (Neg (pp_fun_prime ObjTrue)))
+gi_T2b_falsity_not_fun_prime_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gi_to_book ?G [] ?k (Neg (pp_fun_prime ObjFalse)))
+gi_T2c_parameter_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?r : Prop; ?\<Gamma> \<turnstile> ?p : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?r; gi_constants_admitted ?k gb_signature ?p\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gi_to_book ?G ?ns ?k (Imp (pp_fun_prime ?r) (Imp (pp_pure Prop ?p) (\<diamond>\<^sub>o Eq Prop ?r ?p))))
+gi_T2c_quantified_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?r : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gi_to_book ?G ?ns ?k (Imp (pp_fun_prime ?r) (Forall Prop (Imp (pp_pure Prop (Var 0)) (\<diamond>\<^sub>o Eq Prop (shift ?r) (Var 0))))))
+gb_T2_fun_prime_binders:
+sg_rich ?G \<Longrightarrow> distinct [gb_x ?G Prop, gb_y ?G Prop gb_unary, gb_z ?G Prop gb_unary gb_unary]
+gb_T2_fun_prime_at_language:
+sg_rich ?G \<Longrightarrow> book_theory_formula gb_signature ?G (gb_T2_fun_prime_at ?G)
+gb_T2_fun_prime_at_fv:
+sg_rich ?G \<Longrightarrow> named_fv (gb_T2_fun_prime_at ?G) = {gb_x ?G Prop}
+gi_T2_fun_prime_var_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [gb_x ?G Prop] ?k (pp_fun_prime (Var 0)) = gb_T2_fun_prime_at ?G
+gi_T2b_claim_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [gb_x ?G Prop] ?k (Imp (pp_fun_prime (Var 0)) (pp_T2b_nontriviality (Var 0))) = gb_T2b_claim ?G
+gi_T2b_nontriviality:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gb_T2b_claim ?G)
+gi_T2_diamond_translation:
+gi_to_book ?G ?ns ?k (\<diamond>\<^sub>o ?A) = gb_T2_source_diamond ?G ?ns (gi_to_book ?G ?ns ?k ?A)
+gb_T2c_proposition_binders_distinct:
+sg_rich ?G \<Longrightarrow> gb_x ?G Prop \<noteq> gb_y ?G Prop Prop
+gi_T2c_claim_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [gb_x ?G Prop] ?k (Imp (pp_fun_prime (Var 0)) (Forall Prop (Imp (pp_pure Prop (Var 0)) (\<diamond>\<^sub>o Eq Prop (shift (Var 0)) (Var 0))))) = gb_T2c_claim ?G
+gi_T2c_attainment:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gb_T2c_claim ?G)

@@ -1,0 +1,425 @@
+session Goodman_Integration_Proof in "theories/axiom_extension" = Bacon_Book_Classicism_Development +
+  description "Separate candidate source-language axiom extension and closure bridge."
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_Book_Axiom_Extension
+    Goodman_Book_Extension_Closure
+    Goodman_Book_Vocabulary
+    Goodman_Book_QLN
+    Goodman_Book_Axiom_Packages
+    Goodman_Constructor_Translation
+    Goodman_Translation_Support
+    Goodman_Logical_Expansion
+    Goodman_Translation_Encoding
+    Goodman_Expansion_Conversion
+    Goodman_Named_Renaming
+    Goodman_Named_Substitution
+    Goodman_Named_Root_Conversion
+    Goodman_Expansion_Language
+    Goodman_Named_Context_Conversion
+    Goodman_Conversion_Derivability
+    Goodman_H_Conversion_Schemas
+    Goodman_H_Universal_Instantiation
+    Goodman_H_Certificate_Interface
+    Goodman_H_Identity_Rules
+    Goodman_H_Propositional_Rule
+    Goodman_H_Quantifier_Certificates
+    Goodman_H_Quantifier_Rules
+    Goodman_H_Proof_Preservation
+    Goodman_H_Preservation_Regression
+    Goodman_Propositional_Equivalence_Bridge
+    Goodman_Book_Vector_Extension
+    Goodman_Closed_Axiom_Transport
+    Goodman_Axiom_Extension_Quantifiers
+    Goodman_Translated_Extension_Rules
+    Goodman_Integration_Audit
+    Goodman_Vocabulary_Translation_Audit
+    Goodman_Binding_Conversion_Audit
+    Goodman_Context_H_Audit
+    Goodman_H_Preservation_Audit
+    Goodman_Extension_Rules_Audit
+
+session Goodman_Integration_Vector in "theories/vector" = Goodman_Integration_Proof +
+  options [timeout = 60, export_theory = true]
+  sessions Bacon_C_Presentation_Development
+  theories
+    Goodman_Vector_Charts
+    Goodman_Vector_Translation
+    Goodman_Classicist_Preservation
+
+session Goodman_Integration_T6 in "theories/replay" = Goodman_Legacy_06 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_CEV_Axiom_Preservation
+    Goodman_T6_Transfer
+    Goodman_T6_Audit
+    Goodman_Native_Stock_Bridge
+    Goodman_Native_Stock_Audit
+    Goodman_Modal_Abbreviation_Bridge
+    Goodman_Theorem_Equivalence_Congruence
+    Goodman_QLN_Translation
+    Goodman_Modal_Package_Preservation
+    Goodman_Modal_Integration_Audit
+    Goodman_Extension_Retraction
+    Goodman_Extension_Constant_Map
+    Goodman_Constant_Map_Audit
+    Goodman_Extension_Finite_Support
+    Goodman_Restricted_Signature_Transfer
+    Goodman_T6_Restricted_Signature
+    Goodman_Signature_Audit
+
+session Goodman_Legacy_Central_Stock in "theories/preserved-additions/central-stock" = Goodman_Integration_T6 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_QSS_Recombination_Bridge
+
+session Goodman_Integration_Central_Stock in "theories/central_stock" = Goodman_Legacy_Central_Stock +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_Native_Fun_Prime
+    Goodman_Native_QSS
+    Goodman_Central_Stock_T6
+    Goodman_Central_Stock_Audit
+
+session Goodman_Integration_Individual in "theories/individual" = Goodman_Integration_Central_Stock +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_T1_Transfer
+    Goodman_T1_QSS_Compactness_Audit
+    Goodman_T2bc_Transfer
+    Goodman_T2bc_Audit
+    Goodman_T2def_Transfer
+    Goodman_T2def_Audit
+    Goodman_T2a_Transfer
+    Goodman_T2a_Audit
+    Goodman_T3_Transfer
+    Goodman_T3_Audit
+    Goodman_T45_Transfer
+    Goodman_T45_Audit
+    Goodman_TU_Inv_Exhaustion
+    Goodman_TU_Inv_Audit
+    Goodman_TU_RS_Witness
+    Goodman_RS_Witness_Audit
+
+session Goodman_Legacy_T7 in "theories/preserved-additions/t7-absorption" = Goodman_Integration_Individual +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Goodman_T7_Absorption
+
+session Goodman_Integration_Numbered in "theories/numbered" = Goodman_Legacy_T7 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_T7_Transfer
+    Goodman_T7_Audit
+
+session Goodman_Legacy_T8_Encoding in "theories/preserved-additions/t8-encoding" = Goodman_Integration_Numbered +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Goodman_T8_Encoding
+
+session Goodman_Legacy_T8_Kind in "theories/preserved-additions/t8-kind" = Goodman_Legacy_T8_Encoding +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Goodman_T8_Kind_Uniqueness
+
+session Goodman_Legacy_T8_Base in "theories/preserved-additions/t8-base" = Goodman_Legacy_T8_Kind +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Goodman_T8_Base_Kinds
+
+session Goodman_Legacy_T8_Growth in "theories/preserved-additions/t8-growth" = Goodman_Legacy_T8_Base +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Goodman_T8_Growth
+
+session Goodman_Integration_T8 in "theories/t8" = Goodman_Legacy_T8_Growth +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_T8_Transfer
+    Goodman_T8_Audit
+
+session Goodman_Integration_Exact_Applicative in "theories/semantics" = Goodman_Exact_Legacy_07 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_Exact_Applicative_Adapter
+    Goodman_Exact_Applicative_Audit
+    Goodman_Exact_Named_Denotation
+    Goodman_Exact_Interpretation_Structure
+    Goodman_Exact_Logical_Values
+    Goodman_Exact_Named_Conversion
+    Goodman_Exact_Minimal_Model
+    Goodman_Exact_Global_Validity
+    Goodman_Exact_Leibniz_Characterization
+    Goodman_Exact_Modal_Functionality
+    Goodman_Exact_Classicist_Soundness
+    Goodman_Exact_Goodman_Soundness
+    Goodman_Exact_Soundness_Audit
+    Goodman_Exact_Denotation_Audit
+    Goodman_Exact_Denotation_Translation
+    Goodman_Exact_Denotation_Translation_Audit
+    Goodman_Exact_Goodman_Translation
+    Goodman_Exact_Goodman_Translation_Audit
+
+session Goodman_Exact_Logical_Stock in "theories/preserved-additions/exact-logical-stock" = Goodman_Integration_Exact_Applicative +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_ZF_Exact_Logical_Stock
+
+session Goodman_Integration_Logical_Stock in "theories/logical_stock" = Goodman_Exact_Logical_Stock +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_Exact_Closed_Decoding
+    Goodman_Exact_Stock_Correspondence
+    Goodman_Exact_Stock_Audit
+
+session Goodman_Exact_Stock_Action in "theories/preserved-additions/exact-stock-action" = Goodman_Integration_Logical_Stock +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_ZF_Exact_Logical_Stock_Action
+
+session Goodman_Exact_Generic_Seed in "theories/preserved-additions/exact-generic-seed" = Goodman_Exact_Stock_Action +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_ZF_Exact_Generic_Seed
+
+session Goodman_Exact_Recombination in "theories/preserved-additions/exact-recombination" = Goodman_Exact_Generic_Seed +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_ZF_Exact_Recombination
+
+session Goodman_Integration_Exact_QLN in "theories/exact_qln" = Goodman_Exact_Recombination +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_Exact_QLN_Transfer
+    Goodman_Exact_QLN_Transfer_Audit
+    Goodman_Exact_Generic_Interpretation
+    Goodman_Exact_Generic_Interpretation_Audit
+    Goodman_Exact_QLN_Model
+    Goodman_Exact_QLN_Model_Audit
+    Goodman_Exact_10_1_Transfer
+    Goodman_Exact_10_1_Transfer_Audit
+    Goodman_Exact_10_1_Parametric
+    Goodman_Exact_10_1_Parametric_Audit
+
+session Goodman_Exact_Enumeration in "theories/preserved-additions/exact-enumeration" = Goodman_Exact_Legacy_07 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_ZF_Exact_Enumeration
+
+session Goodman_Exact_Frame_Completeness in "theories/preserved-additions/exact-completeness" = Goodman_Exact_Enumeration +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_ZF_Exact_Completeness
+
+session Goodman_Integration_Exact_Frame in "theories/exact_frame" = Goodman_Integration_Exact_QLN +
+  options [timeout = 60, export_theory = true]
+  sessions
+    Goodman_Exact_Frame_Completeness
+  theories
+    Goodman_Exact_Frame_Representation
+    Goodman_Exact_Frame_Representation_Audit
+
+session Goodman_Integration_Exact_L2 in "theories/exact_l2" = Goodman_Exact_Stock_Legacy_02 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_Exact_L2_Root_Semantics
+    Goodman_Exact_L2_Root_Audit
+    Goodman_Exact_Fun_Prime_Root
+    Goodman_Exact_Fun_Prime_Root_Audit
+    Goodman_Exact_L2_Transfer
+    Goodman_Exact_L2_Transfer_Audit
+    Goodman_Exact_Kind_Root
+    Goodman_Exact_Kind_Root_Audit
+    Goodman_Exact_L2_Object_Refutation
+    Goodman_Exact_L2_Object_Audit
+
+session Goodman_Legacy_M2 in "theories/preserved-additions/m2-classifiers" = Goodman_Integration_Exact_L2 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Goodman_M2
+
+session Goodman_Integration_Exact_M in "theories/m_claims" = Goodman_Legacy_M2 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_Exact_M1_Bottom
+    Goodman_Exact_M1_Bottom_Audit
+    Goodman_Exact_M2_Transfer
+    Goodman_Exact_M2_Transfer_Audit
+    Goodman_Exact_M3_Algebra
+    Goodman_Exact_M3_Algebra_Audit
+    Goodman_Exact_M3_Extreme_Views
+    Goodman_Exact_M3_Extreme_Audit
+    Goodman_Exact_M3_Topology
+    Goodman_Exact_M3_Topology_Audit
+    Goodman_M1_Fn59_Purity
+    Goodman_M1_Fn59_Purity_Audit
+    Goodman_Exact_M1_Fn59
+    Goodman_Exact_M1_Fn59_Audit
+    Goodman_Exact_Generic_Fun_Prime
+    Goodman_Exact_Generic_Fun_Prime_Audit
+    Goodman_Exact_M3_No_All_View_Generator
+    Goodman_Exact_M3_No_All_View_Generator_Audit
+    Goodman_Exact_M6_Repair
+    Goodman_Exact_M6_Repair_Audit
+    Goodman_Exact_M4_Repair
+    Goodman_Exact_M4_Repair_Audit
+    Goodman_Exact_M7_Transfer
+    Goodman_Exact_M7_Transfer_Audit
+
+session Goodman_Integration_Exact_M5 in "theories/m5" = Goodman_Integration_Exact_M +
+  options [timeout = 60, export_theory = true]
+  sessions
+    Goodman_Integration_M5_Object
+  theories
+    Goodman_Exact_Expanded_Stock
+    Goodman_Exact_Expanded_Stock_Audit
+    Goodman_M5_Exotic_Operators
+    Goodman_M5_Exotic_Operators_Audit
+    Goodman_Exact_Invariant_Basis
+    Goodman_Exact_Invariant_Basis_Audit
+    Goodman_Exact_Basis_Seed
+    Goodman_Exact_Basis_Seed_Audit
+    Goodman_Exact_Fixed_Constant_Gluing
+    Goodman_Exact_Fixed_Constant_Gluing_Audit
+    Goodman_Exact_Basis_Native_Background
+    Goodman_Exact_Basis_Native_Background_Audit
+    Goodman_Exact_Basis_QLN
+    Goodman_Exact_Basis_QLN_Audit
+    Goodman_Exact_Rebuilt_Constants
+    Goodman_Exact_Rebuilt_Constants_Audit
+    Goodman_Exact_M5_Rebuilt_Model
+    Goodman_Exact_M5_Rebuilt_Model_Audit
+    Goodman_Exact_M5_TU_Refutation
+    Goodman_Exact_M5_TU_Refutation_Audit
+    Goodman_Exact_Basis_QSS
+    Goodman_Exact_Basis_QSS_Audit
+    Goodman_Exact_M5_Fixed_Pair_Model
+    Goodman_Exact_M5_Fixed_Pair_Model_Audit
+    Goodman_Exact_Expanded_Minimality
+    Goodman_Exact_Expanded_Minimality_Audit
+    Goodman_Exact_M5_Classifications
+    Goodman_Exact_M5_Classifications_Audit
+    Goodman_M5_Local_Collision_Counterexample
+    Goodman_M5_Local_Collision_Counterexample_Audit
+    Goodman_M5_Collision_Repair
+    Goodman_M5_Collision_Repair_Audit
+
+session Goodman_Integration_T9 in "theories/t9" = Goodman_Integration_Exact_M +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_T9_Selector_Terms
+    Goodman_T9_Native_Purity
+    Goodman_T9_PC_Selector
+    Goodman_T9_Selector_Audit
+    Goodman_T9_Root_Algebra
+    Goodman_T9_Root_Algebra_Audit
+    Goodman_T9_Kind_Selector
+    Goodman_T9_Kind_Selector_Audit
+    Goodman_T9_Cardinal
+    Goodman_T9_Cardinal_Audit
+    Goodman_T9_L2_Semantics
+    Goodman_T9_L2_Semantics_Audit
+    Goodman_T9_Native_Conclusion
+    Goodman_T9_Native_Conclusion_Audit
+    Goodman_T9_Infinitude
+    Goodman_T9_Infinitude_Audit
+    Goodman_T9_Granularity_Bounds
+    Goodman_T9_Granularity_Audit
+
+session Goodman_Legacy_M5_Collision in "theories/preserved-additions/m5-collision" = Goodman_Integration_T8 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Goodman_M5_Collision
+
+session Goodman_Legacy_M5_Invertibles in "theories/preserved-additions/m5-invertibles" = Goodman_Legacy_M5_Collision +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Goodman_M5_Existential_Invertibles
+
+session Goodman_Integration_M5_Object in "theories/m5_object" = Goodman_Legacy_M5_Invertibles +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_M5_Object_Transfer
+    Goodman_M5_Object_Audit
+    Goodman_Fixed_Fun_Prime_Axiom
+    Goodman_Fixed_Fun_Prime_Audit
+    Goodman_M5_Nested_Collision
+    Goodman_M5_Nested_Collision_Audit
+
+session Goodman_Integration_Native_Extras in "theories/native_extras" = Goodman_Integration_T8 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_Native_T6_Extras
+    Goodman_Native_T6_Extras_Audit
+    Goodman_Native_T6_Routes
+    Goodman_Native_T6_Routes_Audit
+    Goodman_Native_TU_RS_Witness
+    Goodman_Native_TU_RS_Witness_Audit
+    Goodman_Native_Finite_PC
+    Goodman_Native_Finite_PC_Audit
+
+session Goodman_Legacy_Control in "theories/preserved-additions/control" = Goodman_Integration_M5_Object +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Fun_Prime_Control
+
+session Goodman_Legacy_Control_Heredity in "theories/preserved-additions/control-heredity" = Goodman_Legacy_Control +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Fun_Prime_Control_Heredity
+
+session Goodman_Legacy_Control_Range in "theories/preserved-additions/control-range" = Goodman_Legacy_Control_Heredity +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Control_Range
+
+session Goodman_Integration_Control in "theories/control" = Goodman_Legacy_Control_Range +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_Control_Transfer
+    Goodman_Control_Audit
+
+session Goodman_Legacy_T9_Cardinal in "theories/preserved-additions/t9-cardinal" = Goodman_Integration_Control +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Goodman_T9
+
+session Goodman_Legacy_T9_Infinitude in "theories/preserved-additions/t9-infinitude" = Goodman_Legacy_T9_Cardinal +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Goodman_T9_Infinitude
+
+session Goodman_Legacy_Granularity in "theories/preserved-additions/granularity" = Goodman_Legacy_T9_Infinitude +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Goodman_Granularity
+
+session Goodman_Legacy_Granularity_QLN in "theories/preserved-additions/granularity-qln" = Goodman_Legacy_Granularity +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Goodman_Granularity_QLN
+
+session Goodman_Integration_Granularity in "theories/granularity" = Goodman_Legacy_Granularity_QLN +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_Granularity_Transfer
+    Goodman_Granularity_Audit
+
+session Goodman_Legacy_WI_Master in "theories/preserved-additions/wi-master" = Goodman_Integration_Native_Extras +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Goodman_T6_WI_Master
+
+session Goodman_Integration_WI_Master in "theories/wi_master" = Goodman_Legacy_WI_Master +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_WI_Master_Transfer
+    Goodman_WI_Master_Transfer_Audit
+    Goodman_Native_Biconditional_Algebra
+    Goodman_Native_Biconditional_Algebra_Audit
+
+session Goodman_Integration_General_M1 in "theories/general_m1" = Goodman_Integration_Exact_M +
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_General_M1_Native_Semantics
+    Goodman_General_M1_Native_Semantics_Audit

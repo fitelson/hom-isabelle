@@ -1,0 +1,16 @@
+BASIS-QSS-AUDIT: 14 clean endpoints
+SCOPE: actual worldwise QSS for the invariant-basis interpretation from proved equalizer-seed separation; moving witness fun-prime at its own world; native global QSS/existence under actual rebuilt constants. Not all views of one fixed seed. No PP, Pure(Fun), or assumed QSS.
+gi_exact_invariant_basis.gi_basis_fundamental_action: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_QSS_at_world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_exact_invariant_basis.gi_basis_QSS_holds_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_QSS_holds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_fun_prime_holds_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_fundamental_fun_prime_holds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_moving_seed_fun_prime_at_world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_exists_fun_prime_holds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_native_QSS_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_native_exists_fun_prime_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_rebuilt_native_QSS_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_rebuilt_native_exists_fun_prime_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_M5_rebuilt_QSS_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_M5_rebuilt_exists_fun_prime_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

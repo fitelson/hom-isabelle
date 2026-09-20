@@ -1,0 +1,42 @@
+gi_M5_nested_input_type:
+?\<Gamma> \<turnstile> ?r : Prop \<Longrightarrow> ?\<Gamma> \<turnstile> gi_M5_nested_input ?r : Prop
+gi_M5_PC1:
+\<lbrakk>?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ ?A; ?\<Gamma> \<turnstile> ?C : Prop; \<forall>v. prop_eval v ?A \<longrightarrow> prop_eval v ?C\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ ?C
+gi_M5_PC2:
+\<lbrakk>?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ ?A; ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ ?B; ?\<Gamma> \<turnstile> ?C : Prop; \<forall>v. prop_eval v ?A \<longrightarrow> prop_eval v ?B \<longrightarrow> prop_eval v ?C\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ ?C
+gi_M5_PC3:
+\<lbrakk>?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ ?A; ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ ?B; ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ ?C; ?\<Gamma> \<turnstile> ?D : Prop; \<forall>v. prop_eval v ?A \<longrightarrow> prop_eval v ?B \<longrightarrow> prop_eval v ?C \<longrightarrow> prop_eval v ?D\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ ?D
+gi_M5_local_PC2:
+\<lbrakk>?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s ?A; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s ?B; ?\<Gamma> \<turnstile> ?C : Prop; \<forall>v. prop_eval v ?A \<longrightarrow> prop_eval v ?B \<longrightarrow> prop_eval v ?C\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s ?C
+gi_M5_local_PC3:
+\<lbrakk>?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s ?A; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s ?B; ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s ?C; ?\<Gamma> \<turnstile> ?D : Prop; \<forall>v. prop_eval v ?A \<longrightarrow> prop_eval v ?B \<longrightarrow> prop_eval v ?C \<longrightarrow> prop_eval v ?D\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; ?S \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s ?D
+gi_M5_box_mono:
+\<lbrakk>?\<Gamma> \<turnstile> ?A : Prop; ?\<Gamma> \<turnstile> ?B : Prop; ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp ?A ?B\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (\<box>\<^sub>o ?A) (\<box>\<^sub>o ?B)
+gi_M5_modal_T:
+?\<Gamma> \<turnstile> ?A : Prop \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (\<box>\<^sub>o ?A) ?A
+gi_M5_modal_four:
+?\<Gamma> \<turnstile> ?A : Prop \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (\<box>\<^sub>o ?A) (\<box>\<^sub>o \<box>\<^sub>o ?A)
+gi_M5_box_branch_stable:
+\<lbrakk>?\<Gamma> \<turnstile> ?A : Prop; ?\<Gamma> \<turnstile> ?Q : Prop; ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (\<box>\<^sub>o ?A) ?Q\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (\<box>\<^sub>o ?A) (\<box>\<^sub>o ?Q)
+gi_M5_nested_stable:
+?\<Gamma> \<turnstile> ?r : Prop \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (gi_M5_nested_input ?r) (\<box>\<^sub>o gi_M5_nested_input ?r)
+gi_M5_nested_dense:
+?\<Gamma> \<turnstile> ?r : Prop \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Neg (\<box>\<^sub>o Neg (gi_M5_nested_input ?r))
+gi_M5_nested_NC_equivalent:
+?\<Gamma> \<turnstile> ?r : Prop \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ (gi_M5_nested_input ?r \<longleftrightarrow>\<^sub>o pp_noncontingent (gi_M5_nested_input ?r))
+gi_M5_nested_F_true:
+?\<Gamma> \<turnstile> ?r : Prop \<Longrightarrow> ?\<Gamma> ; {} \<turnstile>\<^sub>CEV\<^sup>+ App pp_M5_collision_operator (gi_M5_nested_input ?r)
+gi_M5_F_truth_true:
+?\<Gamma> ; {} \<turnstile>\<^sub>CEV\<^sup>+ App pp_M5_collision_operator ObjTrue
+gi_M5_nested_outputs_equal:
+?\<Gamma> \<turnstile> ?r : Prop \<Longrightarrow> ?\<Gamma> ; {} \<turnstile>\<^sub>CEV\<^sup>+ Eq Prop (App pp_M5_collision_operator (gi_M5_nested_input ?r)) (App pp_M5_collision_operator ObjTrue)
+gi_M5_nested_input_false_locally:
+\<lbrakk>pp_T2_min_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T ; {pp_fun_prime ?r} \<turnstile>\<^sub>CEV\<^sup>+\<^sub>s Neg (gi_M5_nested_input ?r)
+gi_M5_nested_local_collision:
+\<lbrakk>pp_T2_min_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (pp_fun_prime ?r) (gi_M5_nested_result ?r)
+gi_M5_nested_local_nonreversibility:
+\<lbrakk>pp_T2_min_axioms \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (pp_fun_prime ?r) (Neg (pp_reversible pp_M5_collision_operator))
+gi_M5_nested_native_collision_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap; ?\<Gamma> \<turnstile> ?r : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?cmap gb_signature (Imp (pp_fun_prime ?r) (gi_M5_nested_result ?r))\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gi_to_book ?G ?ns ?cmap (Imp (pp_fun_prime ?r) (gi_M5_nested_result ?r)))
+gi_M5_nested_native_nonreversibility_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap; ?\<Gamma> \<turnstile> ?r : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?cmap gb_signature (Imp (pp_fun_prime ?r) (Neg (pp_reversible pp_M5_collision_operator)))\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gi_to_book ?G ?ns ?cmap (Imp (pp_fun_prime ?r) (Neg (pp_reversible pp_M5_collision_operator))))

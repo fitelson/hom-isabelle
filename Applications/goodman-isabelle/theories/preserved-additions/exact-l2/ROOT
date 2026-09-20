@@ -1,0 +1,19 @@
+session Goodman_Exact_Stock_Legacy_01 in "stage01" = Goodman_Integration_Exact_QLN +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Heredity_Semantics
+    Bacon_PP_ZF_Exact_L2_Model
+    Bacon_PP_ZF_Exact_L2_Generic_Prelim
+    Bacon_PP_ZF_Exact_L2_Generic
+    Bacon_PP_ZF_Exact_L2_Reduction
+    Bacon_PP_ZF_Exact_L2_Cancellation
+    Bacon_PP_ZF_Exact_L2_Obstruction
+    Bacon_PP_ZF_Exact_L2_Refutation
+    Bacon_PP_ZF_Exact_L2_Child_Atom
+    Bacon_PP_ZF_Exact_L2_Immediate_Successor
+    Bacon_PP_ZF_Exact_L2_Child_Variation_Semantics
+
+session Goodman_Exact_Stock_Legacy_02 in "stage02" = Goodman_Exact_Stock_Legacy_01 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_ZF_Exact_L2_Child_Variation

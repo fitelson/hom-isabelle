@@ -1,0 +1,604 @@
+\documentclass[12pt,leqno]{article}
+\usepackage{amsmath,amssymb,amsthm,colortbl,xcolor,nicefrac,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[expert,seriftt,lucidasmallscale]{lucidabr}
+\usepackage{mathrsfs,hyperref,color,graphicx}
+\usepackage{longtable,booktabs,array}
+\DeclareMathSymbol{\Dashv}{\mathrel}{symbols}{239}
+\DeclareMathSymbol{\eqdef}{\mathrel}{symbols}{214}
+\DeclareMathSymbol{\sentails}{\mathrel}{symbols}{240}
+\DeclareSymbolFont{stmry}{U}{stmry}{m}{n}
+\DeclareMathDelimiter{\llbracket}{\mathopen}{stmry}{"4A}{stmry}{"71}
+\DeclareMathDelimiter{\rrbracket}{\mathclose}{stmry}{"4B}{stmry}{"79}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+\setlength{\topmargin}{0mm}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+\setlength{\topskip}{0mm}
+\setlength{\hoffset}{0in}
+\setlength{\voffset}{0in}
+\newcommand{\AND}{\ensuremath{\mathbin{\&}}}
+\newcommand{\OR}{\ensuremath{\vee}}
+\newcommand{\IFF}{\ensuremath{\leftrightarrow}}
+\newcommand{\IC}{\ensuremath{\rightarrow}}
+\newcommand{\NOT}{\ensuremath{\text{$\thicksim$}}}
+\newcommand{\sem}[1]{\ensuremath{\llbracket #1\rrbracket}}
+\newcommand{\Pure}{\mathsf{Pure}}
+\newcommand{\Fun}{\mathsf{Fun}}
+\newcommand{\funp}{\mathsf{fun}'}
+\newcommand{\PP}{\mathsf{PP}}
+\newcommand{\QSS}{\mathsf{QSS}}
+\newcommand{\QLN}{\mathsf{QLN}}
+\newcommand{\Ltwo}{\mathsf{L2}}
+\newcommand{\Inv}{\mathsf{Inv}}
+\newcommand{\WI}{\mathsf{WI}}
+\newcommand{\TU}{\mathsf{TU}}
+\newcommand{\RS}{\mathsf{RS}}
+\newcommand{\PC}{\mathsf{PC}}
+\newcommand{\NC}{\mathsf{NC}}
+\newcommand{\id}{\mathsf{id}}
+\newcommand{\Pow}{\mathcal P}
+\newcommand{\Bmin}{\mathcal B_0}
+\newcommand{\BR}{\mathcal B_R}
+\newcommand{\BQ}{\mathcal B_Q}
+\newtheorem{proposition}{Proposition}
+\onehalfspacing
+\setlength{\emergencystretch}{2em}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,
+  pdftitle={Goodman's Purity of Pure Project: Verified Results and Open Problems},
+  pdfauthor={},pdfsubject={Verified results, corrections, and open contributor problems}}
+
+\begin{document}
+\begin{center}
+{\Large\bfseries Goodman's Purity of Pure Project\par}
+\vspace{4pt}
+{\large Verification, Corrections, and Remaining Problems\par}
+\vspace{6pt}
+20 September 2026
+\end{center}
+
+\noindent
+This report describes an Isabelle formalization of Jeremy Goodman's
+project notes on Purity of Pure in higher-order metaphysics. It presents
+the verified object-language results and model constructions, explains
+corrections and qualifications to the arguments in the notes, and identifies
+the open problems. The formalization builds on the independently maintained
+Bacon--Dorr development of higher-order logic and Classicism.
+
+Goodman's consistency question remains open. We have verified substantial
+object-language arguments and exact-model constructions, including the
+failure of L2 for the complete closed-logical stock, the rebuilt M5 model,
+and a corrected M5 collision argument. We have not constructed a model of
+the full background with the required instance of Purity of Pure, or
+derived a contradiction from that background. The remaining mathematical
+obligations are explicitly retained as contributor projects.
+
+The software, source correspondence, and detailed claim ledger are
+in the \href{https://github.com/fitelson/bacon-dorr-isabelle/tree/main/Applications/goodman-isabelle}{Goodman application folder},
+with the background logic supplied by
+the \href{https://github.com/fitelson/bacon-dorr-isabelle}{Bacon--Dorr core repository}
+\cite{book,classic}.
+The application shares the main repository's visibility and access permissions.
+The report gives the mathematics rather than duplicating
+the repository's implementation guide. Source labels T1--T9 and M1--M7
+refer to Goodman's July 2026 notes \cite{goodman}.
+
+\section{The question and the relevant distinctions}
+
+Let $t$ be proposition type and put $u=t\to t$. For each type $\sigma$,
+$\Pure_\sigma$ and $\Fun_\sigma$ have type $\sigma\to t$. The instance of
+Purity of Pure used in the central arguments is
+\[
+ \PP_u := \Pure_{u\to t}(\Pure_u).
+\]
+It is one type-indexed instance, not the assertion of PP at every type.
+Purity of Fun is a different principle and is not assumed in the question.
+
+For pure operators $X,Y:u$, define
+\[
+ \funp(p) := \forall X\,Y\,
+ ((\Pure(X)\AND\Pure(Y)\AND Xp=Yp)\IC X=Y).
+\]
+Thus evaluation at $p$ separates pure unary operators. This is not a
+definition of $\Fun(p)$. Let $G$ be the pure operators with a pure
+two-sided inverse, and define
+\[
+ X\approx Y := \exists Z\in G\;(X=Y\circ Z).
+\]
+Composition is on the input side. Identity at each type is the
+object-language identity, not merely agreement of truth values.
+
+For clarity, let $\Bmin$ denote the added logical-purity and
+application-closure schemas over the represented CEV+ calculus. Logical
+purity says that every closed term containing only logical vocabulary
+denotes a pure entity; application closure says that applying a pure
+function to a pure argument yields something pure. Let $\BR$ additionally
+include exactly one fundamental proposition, no fundamentals at other
+types, and zeroary and unary Recombination. Let $\BQ$ add the corresponding
+Exhaustion principles. These distinguish the Recombination-only variant
+from the full QLN version of the question. In the latter, the target is
+consistency of $\BQ+\PP_u$, without Purity of Fun. Results for the weaker
+variant must be identified separately.
+
+Only zeroary and unary QLN are nonvacuous when there is exactly one
+fundamental entity and fundamental arguments must be pairwise distinct.
+This reduction of higher-arity instances is a mathematical observation
+about the stipulated setting, not an additional cataloged theorem.
+
+The implementation distinguishes ordinary consequence from an axiom
+extension in which theorem-level rules operate above the added axioms.
+In particular, a temporary assumption $\funp(r)$ cannot simply be promoted
+to a permanent axiom. Nor may a biconditional established under a
+temporary hypothesis automatically be converted to an identity by the
+theorem-level Rule of Equivalence. The M5 correction below depends on this
+distinction.
+
+Proposition-valued Modalized Functionality, for $X,Y:\sigma\to t$, is
+derived in the represented CEV development. Its arbitrary-result-type
+extension is verified in the exact semantics but must not thereby be
+called redundant over bare CEV. Likewise, model validity and
+object-language derivability remain different claims.
+
+\section{Scope of the formal verification}
+
+The development establishes whole-proof forward preservation into the
+named axiom-extension calculus, with its typing, signature, and closed-axiom
+conditions explicit. This is not an unqualified two-way identification of
+every presentation. The exact-model development proves the requisite
+interpretation and global soundness conditions, including preservation
+of the complete closed-logical denotational stock. Truth preservation of
+sentences alone would not establish that stock correspondence.
+
+All 303 supplied theory files are selected in the verified build. There are
+1,708 integration catalog entries in 87 audit catalogs, with nine historical
+replay entries counted separately. The audits check for oracle dependencies,
+residual kernel hypotheses, and unresolved unification pairs. These counts
+are not counts of independent mathematical results, and a clean audit does
+not erase explicit theorem premises. Source fidelity requires the separate
+comparison of those premises and definitions with the publications.
+
+The semantic results use Isabelle/HOL with HOL--ZF. Their consistency
+consequences are relative to that foundational setting. The exact appendix
+construction is Bacon's finite-natural-word instance, with its constrained
+function domains and the chosen singleton individual domain, not a theorem
+about every monoid or every individual carrier. Its function domains satisfy
+Bacon's stated action-compatibility condition. More general core completeness
+questions are documented in the core's own source guide.
+
+\subsection{The object-language results}
+
+The following table summarizes the main numbered claims. The claim
+ledger supplies their exact endpoints and axiom packages.
+
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.65in}
+  >{\raggedright\arraybackslash}p{5.65in}@{}}
+\toprule
+Item & Verified content and qualification\\
+\midrule
+\endhead
+T1 & With zeroary Exhaustion, pure propositions are truth or falsity.
+The associated collapse of biconditional operators is verified.\\
+T2a--c & Closure of $\funp$ under pure reversibles, nontriviality of
+$\funp$ propositions, and attainment of each pure proposition are verified.
+The displayed $\funp$ antecedents remain explicit.\\
+T2d--f & Possible purity, false-but-possible noncontingency, and the six
+pairwise-distinct propositions are verified in their stated scopes.
+Possible purity has a proof not requiring Persistence; the six-distinctness
+claim retains $\funp(r)$.\\
+T3 & The advertised modal argument reaches possible identity where identity
+is needed. The repaired heredity claims with zeroary Exhaustion or the
+specified pure-identity rigidity principle are verified, retaining the
+stated QSS and purity/persistence conditions. A defect in the
+modal argument is not a countermodel to the whole CEV+ theory.\\
+T4 & For the stated pure $C:t\to(t\to t)$, the higher-type failure of
+$\funp$ at $C(r)$ is verified. The represented result needs logical purity
+and application closure, not PP or $\funp(r)$.\\
+T5 & The proliferation conclusion is verified as a conditional theorem
+with the required $\funp(r)$ antecedent. It is not an existence or
+consistency proof for that antecedent.\\
+T6 & All four contradiction routes are verified with their L2 and
+classification assumptions retained. Native formulations of the extra
+principles and the repaired fundamental-witness routes are included.\\
+T7 & T7a's absorption result is verified with its L2 assumptions.
+T7b remains underspecified: the kind-level term, binders, and fixed/shifted
+relations are not uniquely supplied by the notes.\\
+T8 & The five base kinds, kind uniqueness under L2, and the stated
+31-element growth bounds are verified. This is not by itself an unbounded
+iteration proving infinitely many kinds.\\
+T9 & The abstract conditional counting theorem and a substantive
+exact-carrier instantiation, including conditional infinitude, are verified.
+The arbitrary-model connection remains open; see Section~\ref{sec:attacks}.\\
+\bottomrule
+\end{longtable}
+
+There are two further completed results concerning the notes' preliminary
+claims. First, for each type $\sigma$ and each finite length $n$, pure
+parameters $a_1,\ldots,a_n$ determine a pure predicate
+\[
+ P_n=\lambda x.\,(x=a_1\OR\cdots\OR x=a_n),
+ \qquad P_0=\lambda x.\bot,
+\]
+with the expected material membership biconditional. The proof is an
+explicit induction, using the closed logical function
+$\lambda a.\lambda Q.\lambda x.(x=a\OR Qx)$ and application closure.
+The empty case is separately verified. Neither PP nor Exhaustion is needed.
+This proves finite pure comprehension, not comprehension for arbitrary
+infinite external subsets. Its weaker axiom package inherits relative
+consistency from the verified stronger no-PP QLN background.
+
+Second, for $B_a=\lambda p.(p\IFF a)$, the identity
+$B_a\circ B_a=\id$ is verified with no added axioms. The companion
+purity and group-membership implications from $\Pure(a)$ are separately
+packaged over the PP core. That is the package used in those proofs, not
+a claim that PP is necessary.
+
+The witness $R_+=\lambda p.(p\AND\funp(p))$ has a native proof of
+purity, instantiation, and rigid specification. Consequently TU yields RS
+over $\Bmin+\PP_u+\mathrm{Exhaustion}_0+\exists p\,\funp(p)+\TU$.
+The contradiction between the notes' assertion that TU entails RS and their
+assertion of incomparability remains a source question. Our theorem does
+not establish that Goodman intended one assertion only in the weaker
+setting without Exhaustion.
+
+\section{The L2 principles and the open consistency question}
+\label{sec:l2}
+
+The notes have one L-principle in weak and strong forms, not a separate L1.
+Weak L2 says
+\[
+ \Pure(X)\AND\Pure(Y)\AND\funp(p)\AND\funp(q)\AND Xp=Yq
+ \quad\IC\quad X\approx Y.
+\]
+Strong L2 requires the same $Z\in G$ also to satisfy $q=Zp$.
+The verified T6 consequences, writing the minimal added schemas explicitly,
+are
+\[
+\begin{array}{l}
+ \Bmin+\PP_u+\exists\funp+\Ltwo+\Inv\ \vdash\ \bot,\\
+ \Bmin+\PP_u+\exists\funp+\Ltwo+\WI\ \vdash\ \bot,\\
+ \Bmin+\PP_u+\exists\funp+\Ltwo+\TU\ \vdash\ \bot,\\
+ \Bmin+\PP_u+\text{strong L2}+\RS\ \vdash\ \bot.
+\end{array}
+\]
+Here $\exists\funp$ abbreviates $\exists p\,\funp(p)$. These are
+axiom-extension derivations, not unrestricted uses of a deduction theorem.
+
+The repaired route from fundamentality derives $\exists\funp$ using
+Recombination, zeroary Exhaustion, and unique fundamentality. Recombination
+supplies the unboxed identity information, but the available QSS argument
+needs the further modal step supplied by zeroary Exhaustion. We do not
+infer nonderivability of QSS from Recombination alone merely from that gap.
+The T6 derivations that assume $\exists\funp$ directly require no QLN axiom.
+
+For a model sound for the relevant axiom extension and globally validating
+the repaired background with PP, T6 excludes simultaneous global validity
+of L2 and TU. This is not automatically the claim that one of those formulas
+is false at the distinguished root. Nor does failure of one make the
+remaining axioms consistent.
+
+\subsection{L2 fails for Bacon's complete closed-logical stock}
+
+In the prefix presentation of the finite-natural-word frame, put
+\[
+ Z(P)=\{w:(\exists n\;w^\frown\langle n\rangle\in P)
+             \AND(\exists n\;w^\frown\langle n\rangle\notin P)\}.
+\]
+Word reversal relates this presentation to Bacon's division action.
+Isabelle identifies $Z$ with the denotation of a closed logical term in
+the exact carriers. It proves that $Z$ is surjective, is not injective,
+and is right-cancellative for composition in the complete closed-logical
+stock. The definition tests variation among all immediate successors of a
+world, not just two distinguished children.
+
+For example, taking
+$P_S=\{w^\frown\langle0\rangle:w\in S\}$ gives $Z(P_S)=S$.
+Also $Z(P)=Z(\NOT P)$, so $Z$ is not reversible. Composition closure and
+right-cancellation ensure that if $p$ separates the pure operators, so
+does $Zp$. A verified generic construction supplies such a $p$. But
+\[
+ \id(Zp)=Z(p).
+\]
+L2 would make $\id\approx Z$. Since the witnessing input transformation
+is reversible, this would make $Z$ reversible, a contradiction. The
+formalization connects this calculation to actual root falsity of the
+quantified L2 formula in the specified no-PP interpretation. Strong L2
+fails there as well.
+
+This answers Goodman's first model-calibration question for the complete
+fixed logical stock. It does not show that L2 fails in every enlargement
+of Pure, or that PP cannot imply L2. Enlarging Pure changes both L2 and
+$\funp$. Historical bounded Vampire searches for L2 and sufficient
+intermediate claims returned no proof in the reported runs. Those failures
+are not underivability results, were not rerun for this report, and add no
+Isabelle certificates to the present verification.
+
+\section{The exact model claims and their repairs}
+
+\paragraph{M1.}
+At proposition type, the classifier of the complete logical stock is
+the noncontingency operator. Bottom-type PP is verified. At the next
+relevant type, the classifier exists in the exact domain and PP is
+equivalent to its membership in the next pure stock. Its unconditional
+nonmembership has not been proved. This part of M1 remains open.
+
+Bacon's footnote-59 diagonal is separately verified, both on the exact
+carriers and through an arbitrary-carrier compositional interpretation
+with the explicit CEV+ soundness conditions. The obstruction retains
+Purity of Fun, QSS, and the fundamental witness with the stipulated
+uniqueness. A bare H model does not automatically provide that soundness
+interface. Since Purity of Fun is absent from Goodman's question, this
+obstruction is not a negative answer to it.
+
+\paragraph{M2.}
+For each set $T$ of propositions, the classifier
+$G_T(P)=\{i:i\cdot P\in T\}$ is an invariant unary value, and the
+construction gives a bijection with the invariant unary values. Cantor's
+theorem and explicit collisions show why interpreting all invariants as
+pure is incompatible with QSS at a fundamental proposition. This rejects
+that interpretation of purity, not logical purity itself.
+
+\paragraph{M3, M4, and M6.}
+Freeness relative to the complete logical stock, both extreme views of a
+$\funp$ proposition, and the product-meagerness result are instantiated
+on the exact carriers. M4 has an actual suitable branch-lift witness
+for each exact-stock $\funp$ input. M6 has actual separation and
+nonindependence results, including a strict-inclusion pair whose relation
+is preserved by substitutions. The required premises concerning the
+complete logical stock are instantiated in these exact-model results.
+
+The condition that every view of one fixed $r$ be $\funp$ is proved
+impossible and is not assumed in the M4/M6 proofs. It must not
+be confused with the correctly guarded modal QSS principle. The branch
+in M4 must be chosen suitably; the arbitrary missing target in the
+countability part of M6 is not asserted to be $\funp$.
+
+\paragraph{M5's rebuilt model.}
+The rebuilt interpretation uses Bacon's exact carriers.
+Its expanded pure stock includes denotations of all closed terms over
+the additional operator, including abstraction and higher-order
+quantification, not merely a finite list of applications. The rebuilt
+fundamental proposition supports the explicitly verified no-PP QLN
+background and QSS. The displayed exotic operator is pure, self-inverse,
+and neither uniformly truth-preserving nor uniformly truth-flipping.
+TU and Inv have root failures; WI nonderivability is established by its
+theorem-level relation to TU, not an unproved root implication.
+
+Two source qualifications matter. For the displayed no-echo argument,
+the claim that the only prefixes are the empty word and the word itself
+uses a word of length one. Further, there are only countably many
+world-indexed displayed pairs, so countability alone cannot select one
+outside a countable orbit. A uniform diagonal pair construction supplies
+the needed pre-rebuild obstruction. The later rebuilt interpretation
+changes the fundamental proposition rather than leaving an old witness
+fixed while enlarging Pure. No PP model is obtained.
+
+\subsection{The corrected M5 collision}
+
+The source also proposes that $F(p)=(p\IFF\NC(p))$, where
+$\NC(p)=\Box p\OR\Box\NOT p$, has equal values at $\NC(r)$ and
+$\top$ whenever $\funp(r)$. That local assertion is false in the
+verified exact model. Adding $\funp(r)$ as a permanent axiom does not
+justify this local claim: the resulting stock is already inconsistent.
+Nontriviality gives $r\neq\top$ as
+a theorem and hence its necessitation, whereas attainment gives
+$\Diamond(r=\top)$. These conflict without PP. A local assumption or
+the existential sentence $\exists\funp$ is a different matter.
+
+The repaired input is $q=\NC(\Box r)$. The following is an actual
+object-language derivation, not merely a semantic collision calculation.
+
+\begin{proposition}
+Over $\Bmin$, CEV+ proves
+\[
+ \funp(r)\IC(q\neq\top\AND Fq=F\top),
+ \qquad
+ \funp(r)\IC\NOT\mathrm{Reversible}(F).
+\]
+\end{proposition}
+
+\begin{proof}
+Write $q=\Box\Box r\OR\Box\NOT\Box r$. S4 proves $q\IC\Box q$.
+It also proves $\NOT\Box\NOT q$: axiom 4 gives
+$\NOT q\IC\NOT\Box r$, so normality gives
+$\Box\NOT q\IC\Box\NOT\Box r$, hence $q$. Axiom T simultaneously
+gives $\Box\NOT q\IC\NOT q$. Thus $q\IFF\NC(q)$ is a theorem.
+Both $Fq$ and $F\top$ are therefore theorems, and theorem-level
+Equivalence gives $Fq=F\top$ with no added axioms.
+
+Now assume $\funp(r)$ temporarily. Nontriviality gives $\NOT\Box r$;
+attainment at pure truth gives $\Diamond\Box r$. Hence both disjuncts
+of $q$ are false. By T, $\NOT q$ implies $\NOT\Box q$, that is,
+$q\neq\top$. Combine this with the previously established output
+identity and discharge the temporary assumption. Reversibility implies
+injectivity, yielding the second conclusion.
+\end{proof}
+
+The independent audit checks that this proof does not depend on collision
+theorems using a fixed $\funp$ axiom or on the resulting collapse. The separate semantic
+collision at the proposition true everywhere except the root remains
+valid, but is not substituted for this proof. No general collision method
+can refute reversibility merely because a candidate fails TU: the rebuilt
+M5 model has a nonuniform involution with no collision. A PP-specific
+argument would require further premises.
+
+\paragraph{M7.}
+The complete-stock diagonal is verified on the exact carriers for
+every typed input $R$: a proposition exists that is neither pure nor the
+value of a pure unary operator at $R$. Reachability by all invariant
+operators is equivalent to injectivity of $i\mapsto i\cdot R$.
+For every exact-stock $\funp$ input that orbit map is noninjective, with
+an explicit unreachable singleton; this includes the verified generic
+fundamental seed. Identifying a particular intended Theorem-10.1 gluing
+with such a seed is still a separate contributor problem. No claim about
+every arbitrary gluing is made.
+
+\section{Bacon's appendix metatheory}
+
+Proposition 8 and Theorem 10.1 here refer to the appendix of
+\emph{Logical Combinatorialism} \cite{bacon}, not the introductory book.
+The exact recursion's all-type closure, action laws, and surjectivity are
+verified for the represented construction. Native global soundness and
+the exact complete-stock correspondence are also verified. The supplied
+QLN interpretation is the specified unique-fundamental-proposition
+construction; it must not be silently identified with every gluing of
+constant assignments.
+
+The name-parametric Theorem 10.1 provides, for each countable family
+$(A_n)_{n\in\mathbb N}$ of suitably typed interpretations over an
+arbitrary type of constant names, one glued interpretation $C$ such that
+\[
+ \langle n\rangle\cdot\sem{M}_C=\sem{M}_{A_n}
+\]
+for every closed named term $M$ of the $t$-generated fragment. The same
+$C$ works for all such $M$. The proof codes each term's finitely many
+constant names into strings; it does not inject the entire signature
+into strings or infer that the signature is countable. On string names
+the polymorphic evaluator agrees with the string evaluator. The family of branches
+remains countable. Open-term transport and types involving $e$ are not
+included in this extension.
+
+The enumeration and frame-representation proofs are selected,
+audited, and transferred to named sentences. For a fixed string signature
+and a closed sentence $M$ in the fragment, the one complete interpretation
+$C$ satisfies
+\[
+\begin{aligned}
+ M\text{ is frame-satisfiable}
+     &\IFF C,\langle\rangle\models\Diamond M,\\
+ M\text{ is frame-valid}
+     &\IFF C,\langle\rangle\models\Box M.
+\end{aligned}
+\]
+Frame satisfiability means root truth under some typed interpretation of
+the constants on the fixed frame; validity means root truth under every
+such interpretation. The modal forms retain the rich-variable and typed-
+assignment conditions. This is not syntactic H completeness or an effective
+decision procedure. The new arbitrary-name gluing theorem does not
+automatically generalize the countable sentence-enumeration theorem.
+
+\section{Goodman's suggested attacks}
+\label{sec:attacks}
+
+\paragraph{1. Calibrate L2.}
+The fixed complete closed-logical stock has been calibrated negatively,
+as explained in Section~\ref{sec:l2}. Whether PP forces L2 in the intended
+full theory remains open.
+
+\paragraph{2. Cap or characterize $G$.}
+The classification principles and their T6 uses are verified, as are the
+M5 counterexamples without PP. The granularity analysis supplies a precise
+sufficient condition: a surjective proposition operator that preserves
+sameness of truth value is truth-preserving or truth-flipping, assuming
+there are both true and false propositions. Reversibility alone does not
+give this condition.
+
+With unary QLN, logical purity and application closure, the locally
+guarded agreement test for pure $Z$ and fundamental $r$ gives
+\[
+ \NC(Zr\IFF r)
+ \quad\IFF\quad
+ \bigl(\forall p\,(Zp\IFF p)\bigr)
+ \OR \bigl(\forall p\,\NOT(Zp\IFF p)\bigr).
+\]
+This is an equivalence to the corresponding truth-uniformity condition,
+not a weaker principle already derived from PP. Unary Exhaustion is part
+of the reduction. The TU-to-RS result above also retains its stated
+Exhaustion and existence assumptions.
+
+\paragraph{3. Exclude finitely many kinds under PC.}
+Let $K$ be the kinds and $P$ the pure unary values. The checked exact-carrier
+interpretation, with its global purity axioms, root L2 and $\exists\funp$,
+and full external unary PC, gives
+\[
+ |\Pow(K)|\leq |P|\leq |K\times G|.
+\]
+The additional verified separation argument excludes finite $K$: if
+$|K|=n$, classifiers selecting subsets of sizes $0,\ldots,n$ occupy
+different kinds, since the induced reversible action preserves those
+cardinalities. Thus $K$ is infinite and $2^{|K|}\leq|G|$.
+
+This is real progress beyond the notes' finite-or-exponentially-large
+dichotomy, but under explicit semantic hypotheses. Full external PC
+ranges over every external subset of the relevant pure values; it is not
+silently supplied by an internal comprehension formula. The transfer to
+arbitrary suitable Henkin models, including the necessary quotient and
+selector constructions, remains open. No bound $|G|\leq|K|$ has been
+derived from Goodman's central theory. Such a bound would conflict with
+the displayed inequality, but the cardinal argument does not supply it.
+
+\paragraph{4. Prove consistency.}
+No model of the full target has been verified. The exact no-PP models
+show that failures of L2 or TU are possible in specified interpretations;
+they do not discharge PP's self-classification requirement. The verified
+finite-support theorem says that inconsistency of the axiom extension
+would already be witnessed by a finite set of added axioms. It is a
+proof-theoretic finiteness result, not a construction of models for every
+finite set or a semantic compactness proof. Exploratory models and
+unfinished search programs are not included among this report's results.
+
+Goodman's PC also must not be conflated with Bacon's stronger identity
+premise in the Melianism discussion. Coextension with a pure property
+does not by itself identify that property with $\Pure_\sigma$.
+The relevant infinite-disjunction argument is in Bacon's main text
+with notes 57--58; note 60 points to the appendix. We retain the
+classifier-extension result without claiming an independently verified
+general complete-Boolean-algebra or unconditional classifier-nonpurity
+theorem.
+
+\section{What remains for contributors}
+
+The verified development includes the native TU--RS transfer, finite PC at
+every type, biconditional-operator algebra, named frame representation and
+necessity, and arbitrary-name closed-term Theorem 10.1. These results do not
+finish the entire formalization. The following four projects remain open.
+
+\begin{enumerate}
+\item Resolve unconditional higher-type classifier nonmembership in M1.
+The existing equivalence with PP does not decide either side.
+\item Supply the arbitrary-model T9 construction, retaining the distinction
+between full external PC and internally represented subsets.
+\item Specify the intended glued fundamental proposition and prove the
+freeness or $\funp$ property needed for its M3/M7 application.
+\item Obtain precise formulations of T7b and the multiple-fundamental M4
+proposal, and clarify the conflicting TU/RS source passages.
+\end{enumerate}
+
+The repository gives bounded starting points for these projects. Further
+algebra, open-term transport, and broader model constructions are separate
+extensions, not accomplishments implied by the completed tasks. In
+particular, the verified scope does not encompass every determinate source
+claim, and not every theory file has received an exhaustive fidelity audit.
+
+\section{Logical distinctions and verification safeguards}
+
+The corrected results address the main dangers identified at the end of
+Goodman's notes. Input negation and output negation are distinct; local
+truth is not identity; a theorem of a model is not automatically a theorem
+of the object calculus; substitutions form a monoid, not a group; and
+$\funp$ expresses separation, not surjectivity of an orbit. The M5
+countability error and the global-versus-local collision error are concrete
+instances, not merely hypothetical warnings.
+
+The present contribution is therefore a verified collection of arguments,
+repairs, and precise limitations. It gives Goodman exact evidence about
+which proposed routes work and where further mathematics is needed. It
+does not favor either answer to the consistency question by itself.
+
+\begin{thebibliography}{9}
+\bibitem{goodman} Jeremy Goodman. \emph{Is Purity of Pure consistent with
+Bacon's Logical Combinatorialism?} Project notes, July 2026.
+\bibitem{bacon} Andrew Bacon. Logical Combinatorialism.
+\emph{The Philosophical Review}, 2020. Appendix numbering follows the
+source copy identified in the repository.
+\bibitem{book} Andrew Bacon. \emph{A Philosophical Introduction to
+Higher-Order Logics}. Routledge, 2024.
+\bibitem{classic} Andrew Bacon and Cian Dorr. \emph{Classicism}.
+Draft dated 1 July 2022; the core formalization's source numbering refers
+to this draft.
+\end{thebibliography}
+\end{document}

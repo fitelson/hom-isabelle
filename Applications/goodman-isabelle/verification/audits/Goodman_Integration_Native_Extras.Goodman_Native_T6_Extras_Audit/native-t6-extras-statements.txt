@@ -1,0 +1,74 @@
+gi_T6_identity_native_translation(1):
+gi_to_book ?G ?ns ?k pp_identity_operator = gb_T6_identity (named_chart_fresh ?G ?ns Prop)
+gi_T6_negation_native_translation(1):
+gi_to_book ?G ?ns ?k pp_negation_operator = gb_T6_negation ?G (named_chart_fresh ?G ?ns Prop)
+gi_T6_compose_variables_native_translation(1):
+gi_to_book ?G ?ns ?k (pp_compose (Var ?i) (Var ?j)) = gb_T6_compose (named_chart_fresh ?G ?ns Prop) (NVar (?ns ! ?i)) (NVar (?ns ! ?j))
+gi_T6_fun_prime_variable_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (pp_fun_prime (Var ?i)) = gb_fun_prime_on_chart ?G ?ns (NVar (?ns ! ?i))
+gi_T6_reversible_variable_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (pp_reversible (Var ?i)) = gb_reversible_on_chart ?G ?ns (NVar (?ns ! ?i))
+gi_T6_group_variable_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (pp_group_member (Var ?i)) = gb_group_member_on_chart ?G ?ns (NVar (?ns ! ?i))
+gi_T6_same_kind_variables_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (pp_same_kind (Var ?i) (Var ?j)) = gb_same_kind_on_chart ?G ?ns (NVar (?ns ! ?i)) (NVar (?ns ! ?j))
+gi_T6_strong_kind_variables_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (pp_strong_same_kind (Var ?i) (Var ?j) (Var ?a) (Var ?b)) = gb_strong_same_kind_on_chart ?G ?ns (NVar (?ns ! ?i)) (NVar (?ns ! ?j)) (NVar (?ns ! ?a)) (NVar (?ns ! ?b))
+gi_T6_truth_preserving_variable_native_translation(1):
+gi_to_book ?G ?ns ?k (pp_truth_preserving (Var ?i)) = gb_truth_preserving_on_chart ?G ?ns (NVar (?ns ! ?i))
+gi_T6_truth_flipping_variable_native_translation(1):
+gi_to_book ?G ?ns ?k (pp_truth_flipping (Var ?i)) = gb_truth_flipping_on_chart ?G ?ns (NVar (?ns ! ?i))
+gi_T6_biconditional_builder_native_translation(1):
+gi_to_book ?G ?ns ?k pp_biconditional_builder = gb_biconditional_builder_on_chart ?G ?ns
+gi_T6_biconditional_operator_variable_native_translation(1):
+gi_to_book ?G ?ns ?k (pp_biconditional_operator (Var ?i)) = gb_biconditional_operator_on_chart ?G ?ns (NVar (?ns ! ?i))
+gi_T6_biconditional_member_variable_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (pp_biconditional_member (Var ?i)) = gb_biconditional_member_on_chart ?G ?ns (NVar (?ns ! ?i))
+gi_T6_spec_instantiated_variable_native_translation(1):
+gi_to_book ?G ?ns ?k (pp_spec_instantiated (Var ?i)) = gb_spec_instantiated_on_chart ?G ?ns (NVar (?ns ! ?i))
+gi_T6_spec_only_fun_prime_variable_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (pp_spec_only_fun_prime (Var ?i)) = gb_spec_only_fun_prime_on_chart ?G ?ns (NVar (?ns ! ?i))
+gi_T6_spec_rigid_variable_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (pp_spec_rigid (Var ?i)) = gb_spec_rigid_on_chart ?G ?ns (NVar (?ns ! ?i))
+gi_T6_rigid_specification_variable_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k (pp_rigid_specification (Var ?i)) = gb_rigid_specification_on_chart ?G ?ns (NVar (?ns ! ?i))
+gi_L2_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k pp_L2 = gb_L2 ?G
+gi_strong_L2_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k pp_strong_L2 = gb_strong_L2 ?G
+gi_Inv_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k pp_Inv = gb_Inv ?G
+gi_WI_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k pp_WI = gb_WI ?G
+gi_TU_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k pp_TU = gb_TU ?G
+gi_RS_native_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k pp_RS = gb_RS ?G
+gi_native_T6_extra_language_closed(1):
+\<lbrakk>sg_rich ?G; [] \<turnstile> ?M : Prop; \<And>k. gi_goodman_names k \<Longrightarrow> gi_constants_admitted k gb_signature ?M; \<And>k. gi_goodman_names k \<Longrightarrow> gi_to_book ?G [] k ?M = ?B\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?B
+gi_native_T6_extra_language_closed(2):
+\<lbrakk>sg_rich ?G; [] \<turnstile> ?M : Prop; \<And>k. gi_goodman_names k \<Longrightarrow> gi_constants_admitted k gb_signature ?M; \<And>k. gi_goodman_names k \<Longrightarrow> gi_to_book ?G [] k ?M = ?B\<rbrakk> \<Longrightarrow> named_fv ?B = {}
+gb_L2_language_closed(1):
+sg_rich ?G \<Longrightarrow> book_theory_formula gb_signature ?G (gb_L2 ?G)
+gb_L2_language_closed(2):
+sg_rich ?G \<Longrightarrow> named_fv (gb_L2 ?G) = {}
+gb_strong_L2_language_closed(1):
+sg_rich ?G \<Longrightarrow> book_theory_formula gb_signature ?G (gb_strong_L2 ?G)
+gb_strong_L2_language_closed(2):
+sg_rich ?G \<Longrightarrow> named_fv (gb_strong_L2 ?G) = {}
+gb_Inv_language_closed(1):
+sg_rich ?G \<Longrightarrow> book_theory_formula gb_signature ?G (gb_Inv ?G)
+gb_Inv_language_closed(2):
+sg_rich ?G \<Longrightarrow> named_fv (gb_Inv ?G) = {}
+gb_WI_language_closed(1):
+sg_rich ?G \<Longrightarrow> book_theory_formula gb_signature ?G (gb_WI ?G)
+gb_WI_language_closed(2):
+sg_rich ?G \<Longrightarrow> named_fv (gb_WI ?G) = {}
+gb_TU_language_closed(1):
+sg_rich ?G \<Longrightarrow> book_theory_formula gb_signature ?G (gb_TU ?G)
+gb_TU_language_closed(2):
+sg_rich ?G \<Longrightarrow> named_fv (gb_TU ?G) = {}
+gb_RS_language_closed(1):
+sg_rich ?G \<Longrightarrow> book_theory_formula gb_signature ?G (gb_RS ?G)
+gb_RS_language_closed(2):
+sg_rich ?G \<Longrightarrow> named_fv (gb_RS ?G) = {}

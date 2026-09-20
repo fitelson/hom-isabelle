@@ -1,0 +1,1282 @@
+{
+  "description": "82 preserved historical theory bodies; only import headers were adapted before extraction.",
+  "source_head": "3bb580368083a97f1e387df6b77d8819bbb8c079",
+  "source_includes_uncommitted_work": true,
+  "source_repository": "https://github.com/fitelson/higher-order-metaphysics-in-isabelle",
+  "theories": [
+    {
+      "frozen": "theories/preserved/stage01/Bacon_PP_Intensionality.thy",
+      "frozen_sha256": "964cd48a0c633252abc15e3d7eb9b595719d8ffa4b42f2069e5144fb94ff04c5",
+      "original_imports": [
+        "Bacon_Classicism.Bacon_S4"
+      ],
+      "replay_imports": [
+        "Bacon_Classicism.Bacon_S4"
+      ],
+      "session": "Goodman_Legacy_01",
+      "source": "theories/goodman/notes/Bacon_PP_Intensionality.thy",
+      "source_sha256": "336e8c1480a3143fb0e53ee1fb86d784658497c7028e8276e8868bda12e18020",
+      "theory": "Bacon_PP_Intensionality",
+      "unchanged_suffix_sha256": "79d0fb87e60acfcc5d2c04f0f5824113f53a74bbbbda29f554a6fd63641b3b1b"
+    },
+    {
+      "frozen": "theories/preserved/stage01/Bacon_PP_Question.thy",
+      "frozen_sha256": "0b725daf34601bfa4d330516380caedef71d56d7630bf4f22dcaedff0f8a1644",
+      "original_imports": [
+        "Bacon_Classicism.Bacon_Finite_CEV_Model"
+      ],
+      "replay_imports": [
+        "Bacon_Classicism.Bacon_Finite_CEV_Model"
+      ],
+      "session": "Goodman_Legacy_01",
+      "source": "theories/goodman/Bacon_PP_Question.thy",
+      "source_sha256": "e7b4a6abd8ccf15ef0c8963e3641e03d0630cbd8ddf17afc313b3ff0152661d9",
+      "theory": "Bacon_PP_Question",
+      "unchanged_suffix_sha256": "6d8ae7392c008549edd1a98eb439cc095d688e881d07768858e18f7d898d263b"
+    },
+    {
+      "frozen": "theories/preserved/stage01/Bacon_CEV_Axiom_Extension.thy",
+      "frozen_sha256": "665a4d1f5a436d5f6fc68e561f33a3f082085c24a07764679135860bc6dae2c7",
+      "original_imports": [
+        "Bacon_PP_Question"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_01.Bacon_PP_Question"
+      ],
+      "session": "Goodman_Legacy_01",
+      "source": "theories/goodman/Bacon_CEV_Axiom_Extension.thy",
+      "source_sha256": "b1f1be49b72a3ade66c3128c572fe7c58c89be9263541eb58dc3c989fddd63d8",
+      "theory": "Bacon_CEV_Axiom_Extension",
+      "unchanged_suffix_sha256": "19b8c77465703878e01b4083cd5094f1e4024f5f6d4527573284cf688d2d2207"
+    },
+    {
+      "frozen": "theories/preserved/stage01/Bacon_PP_Diagonal.thy",
+      "frozen_sha256": "3a9356f62275357c60acb4901e16dee5fd0760f18e8b1d3eee14a9c1ce27fd3d",
+      "original_imports": [
+        "Goodman_CEVplus.Bacon_CEV_Axiom_Extension"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_01.Bacon_CEV_Axiom_Extension"
+      ],
+      "session": "Goodman_Legacy_01",
+      "source": "theories/goodman/core/Bacon_PP_Diagonal.thy",
+      "source_sha256": "9a5ee739fcaaef3915ffe2b07d3a6d59d94f05a30c543dc0448ab35d3026e6f4",
+      "theory": "Bacon_PP_Diagonal",
+      "unchanged_suffix_sha256": "ea88dac892c76161aec4fdc092b8e16f972571945b8356dbd68646fc44c29b10"
+    },
+    {
+      "frozen": "theories/preserved/stage01/Bacon_PP_Modalized_Functionality.thy",
+      "frozen_sha256": "faa1082a96c8a3e81ef87d36f75cef63c522e1eea6a1b1fe07a7ee6db6c75def",
+      "original_imports": [
+        "Higher_Order_Metaphysics_PP.Bacon_PP_Diagonal"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_01.Bacon_PP_Diagonal"
+      ],
+      "session": "Goodman_Legacy_01",
+      "source": "theories/goodman/notes/Bacon_PP_Modalized_Functionality.thy",
+      "source_sha256": "86d125e037b79da92d73cf11cbd553fa665efcfb7d58a81461da8bbc8cec175e",
+      "theory": "Bacon_PP_Modalized_Functionality",
+      "unchanged_suffix_sha256": "74bb51ca5aed91ca68da2eebcee2f724b14f23b38e26534874ac24ca12e76562"
+    },
+    {
+      "frozen": "theories/preserved/stage01/Bacon_PP_Modalized_Functionality_Derived.thy",
+      "frozen_sha256": "ffed2da9aaa3f87d4044f651ad9ac420af133b9db36ba00e61da125c42482080",
+      "original_imports": [
+        "Bacon_PP_Intensionality",
+        "Bacon_PP_Modalized_Functionality"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_01.Bacon_PP_Intensionality",
+        "Goodman_Legacy_01.Bacon_PP_Modalized_Functionality"
+      ],
+      "session": "Goodman_Legacy_01",
+      "source": "theories/goodman/notes/Bacon_PP_Modalized_Functionality_Derived.thy",
+      "source_sha256": "2b08edafad5309512a6af262273d96a7e55f015fa1f4cd4f649d99e541d16049",
+      "theory": "Bacon_PP_Modalized_Functionality_Derived",
+      "unchanged_suffix_sha256": "be15cdcd3057a14476ae8eb2592098140bb83291b81482e57c0b4907d102e0b0"
+    },
+    {
+      "frozen": "theories/preserved/stage01/Bacon_PP_T6_Encoding.thy",
+      "frozen_sha256": "1f73a2ce9bf337c1a075475ed3ebcafdd9b0e0cdbabc011057b311c350c982df",
+      "original_imports": [
+        "Bacon_PP_Modalized_Functionality_Derived"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_01.Bacon_PP_Modalized_Functionality_Derived"
+      ],
+      "session": "Goodman_Legacy_01",
+      "source": "theories/goodman/notes/Bacon_PP_T6_Encoding.thy",
+      "source_sha256": "9ff96b148d1afc4215649bdec71b7686032f09685fc1c7c235f28f4018ff84b5",
+      "theory": "Bacon_PP_T6_Encoding",
+      "unchanged_suffix_sha256": "19cf8028313a3cea1a13c5c39dd2f2be6656a161b9bbc620606162dbcb2e0435"
+    },
+    {
+      "frozen": "theories/preserved/stage02/Bacon_PP_Goodman_Composition.thy",
+      "frozen_sha256": "a45960af9568b27e427e2e047cd838836f87b809e505d082225f463f4052a69a",
+      "original_imports": [
+        "Bacon_PP_T6_Encoding"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_01.Bacon_PP_T6_Encoding"
+      ],
+      "session": "Goodman_Legacy_02",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Composition.thy",
+      "source_sha256": "b2f44d3f47ff57303c7cb29c7135f28bea898f22f81c570172f0667d6bd56b95",
+      "theory": "Bacon_PP_Goodman_Composition",
+      "unchanged_suffix_sha256": "0483c37d1c4d9fb9d9677780570ed3297c192e3d0ac3581aec20243e6cea22b9"
+    },
+    {
+      "frozen": "theories/preserved/stage02/Bacon_PP_Goodman_Fun_Prime_Closure.thy",
+      "frozen_sha256": "07ffacff1bed01dd25086cd6e94ba772d1b0541b07f53fefa7557ed65cb31150",
+      "original_imports": [
+        "Bacon_PP_Goodman_Composition"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_02.Bacon_PP_Goodman_Composition"
+      ],
+      "session": "Goodman_Legacy_02",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Fun_Prime_Closure.thy",
+      "source_sha256": "de6434cdd4e6ba17c6b8a8054273fad562377d08c84bd645ffdedeceb98bf4f3",
+      "theory": "Bacon_PP_Goodman_Fun_Prime_Closure",
+      "unchanged_suffix_sha256": "c3e4dcef529d17a69258b61f077d4fc9a6d7e81af2e9fd2e2d646d5e0d0b2338"
+    },
+    {
+      "frozen": "theories/preserved/stage02/Bacon_PP_Goodman_Fun_Prime_Nontriviality.thy",
+      "frozen_sha256": "621bf28481b99f78c9804717f7f7560307aa384c0add6ad006c139d1f2b62bf4",
+      "original_imports": [
+        "Bacon_PP_Goodman_Fun_Prime_Closure"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_02.Bacon_PP_Goodman_Fun_Prime_Closure"
+      ],
+      "session": "Goodman_Legacy_02",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Fun_Prime_Nontriviality.thy",
+      "source_sha256": "48185fb686e45d9ccee7d1c4ac989169b0909d521eca1b23e5d5a177a77e54b2",
+      "theory": "Bacon_PP_Goodman_Fun_Prime_Nontriviality",
+      "unchanged_suffix_sha256": "8e5c782dc6a67db95f00e780d17d2adef2980bdcde23136c7c9245f6b864840b"
+    },
+    {
+      "frozen": "theories/preserved/stage02/Bacon_PP_Goodman_Fun_Prime_Attainment.thy",
+      "frozen_sha256": "df3ac0c6ce752c9694db6fb7df4cf297953a5d3f5794b66b030ff1400e84596e",
+      "original_imports": [
+        "Bacon_PP_Goodman_Fun_Prime_Nontriviality"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_02.Bacon_PP_Goodman_Fun_Prime_Nontriviality"
+      ],
+      "session": "Goodman_Legacy_02",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Fun_Prime_Attainment.thy",
+      "source_sha256": "2c13ffc7c26d326da126d4e42002c435d12946aab7c25ad21ad943596f9232d9",
+      "theory": "Bacon_PP_Goodman_Fun_Prime_Attainment",
+      "unchanged_suffix_sha256": "a0abbb3daf775084e6c7ae8d218617fdd54892f77be13b907cefe7b7d2625395"
+    },
+    {
+      "frozen": "theories/preserved/stage02/Bacon_PP_Goodman_Fun_Prime_Possibly_Pure.thy",
+      "frozen_sha256": "a1fa0878099d6b3c861d9f4437dcbe666e7ebaa676cfddd252d44e19c93b0ee5",
+      "original_imports": [
+        "Bacon_PP_Goodman_Fun_Prime_Attainment"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_02.Bacon_PP_Goodman_Fun_Prime_Attainment"
+      ],
+      "session": "Goodman_Legacy_02",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Fun_Prime_Possibly_Pure.thy",
+      "source_sha256": "713b92211afef41679d9374ddaacfafb6dcff00531707e00eb6e7de8735f3228",
+      "theory": "Bacon_PP_Goodman_Fun_Prime_Possibly_Pure",
+      "unchanged_suffix_sha256": "af1d5c481336da99695adc73bf4c82eebe7d5a0a9481b49ccf32f85b11206c24"
+    },
+    {
+      "frozen": "theories/preserved/stage02/Bacon_PP_Goodman_Fun_Prime_Noncontingency.thy",
+      "frozen_sha256": "0860be4cfb8e1fc64ca42f78fc4097fba85c5848648f962a49dc7abc19572274",
+      "original_imports": [
+        "Bacon_PP_Goodman_Fun_Prime_Possibly_Pure"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_02.Bacon_PP_Goodman_Fun_Prime_Possibly_Pure"
+      ],
+      "session": "Goodman_Legacy_02",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Fun_Prime_Noncontingency.thy",
+      "source_sha256": "b6a8b4831ac4dbec819c97525e3fb856244f8fb988228904fa9d977142da427f",
+      "theory": "Bacon_PP_Goodman_Fun_Prime_Noncontingency",
+      "unchanged_suffix_sha256": "146d1f713700d55db11fb4400b039e27cfa5e603722a04819aef822ea61b8635"
+    },
+    {
+      "frozen": "theories/preserved/stage02/Bacon_PP_Goodman_Fun_Prime_Six_Distinct.thy",
+      "frozen_sha256": "d10735a80fa0a6d823248417b525843265c086de43277a0b09daf58dce7e5030",
+      "original_imports": [
+        "Bacon_PP_Goodman_Fun_Prime_Noncontingency"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_02.Bacon_PP_Goodman_Fun_Prime_Noncontingency"
+      ],
+      "session": "Goodman_Legacy_02",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Fun_Prime_Six_Distinct.thy",
+      "source_sha256": "45decf3710566ce736b70d13de6665a0a368b9c92367ac9802b0f9213d13db32",
+      "theory": "Bacon_PP_Goodman_Fun_Prime_Six_Distinct",
+      "unchanged_suffix_sha256": "eff3ec1b5b67fc1a0cf0997b9318c8d7191e3d8a1dc0886d0638dd3983a50893"
+    },
+    {
+      "frozen": "theories/preserved/stage02/Bacon_PP_Goodman_T2f_Operators.thy",
+      "frozen_sha256": "f9afa82cc80d139da3cd3a58db17fab8b09cbfedd13637bcfbff54c068be12d2",
+      "original_imports": [
+        "Bacon_PP_Goodman_Fun_Prime_Six_Distinct"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_02.Bacon_PP_Goodman_Fun_Prime_Six_Distinct"
+      ],
+      "session": "Goodman_Legacy_02",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T2f_Operators.thy",
+      "source_sha256": "9d6b0c9d3137e4eadfc0c1e7f772b3f28e5da941296721f8c5df3b9a42fe771f",
+      "theory": "Bacon_PP_Goodman_T2f_Operators",
+      "unchanged_suffix_sha256": "ec6886711dbf1827ef4aac1e7a0d1379e5bd540fe47031d6c19ec9abb289bc79"
+    },
+    {
+      "frozen": "theories/preserved/stage03/Bacon_PP_Goodman_T2f_Separation.thy",
+      "frozen_sha256": "4a9f0b7cb1f812bb3e5085acacca0ddb52c13c03936624cdb323b2d19bcabed4",
+      "original_imports": [
+        "Bacon_PP_Goodman_T2f_Operators"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_02.Bacon_PP_Goodman_T2f_Operators"
+      ],
+      "session": "Goodman_Legacy_03",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T2f_Separation.thy",
+      "source_sha256": "167e393777a4c0330e0abd729707aac41f28ce7367e77fc8efb220aaef08b8bf",
+      "theory": "Bacon_PP_Goodman_T2f_Separation",
+      "unchanged_suffix_sha256": "13621f98e57ef572357523a836f087aff2fd58c1fd91538918443e1f3b62bb28"
+    },
+    {
+      "frozen": "theories/preserved/stage03/Bacon_PP_Goodman_T2f_Values.thy",
+      "frozen_sha256": "06bdd29ab572562d7a35e31940edc69fdfda137952802029533605d6be9809d6",
+      "original_imports": [
+        "Bacon_PP_Goodman_T2f_Separation"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_03.Bacon_PP_Goodman_T2f_Separation"
+      ],
+      "session": "Goodman_Legacy_03",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T2f_Values.thy",
+      "source_sha256": "720b723031544097454da5ae5cdc63a1f2993bd5de94c1a6816ef42c8b7cac02",
+      "theory": "Bacon_PP_Goodman_T2f_Values",
+      "unchanged_suffix_sha256": "c4903b5e48aaf884aa9460d9b2acaa46d7118414e42f4d7cd7c883c7c617a3ab"
+    },
+    {
+      "frozen": "theories/preserved/stage03/Bacon_PP_Goodman_T2f_Pairwise.thy",
+      "frozen_sha256": "bc3e000af0c4bde0c3ddb25c0b44ea6766f58778a318ec4927d002066e7325e7",
+      "original_imports": [
+        "Bacon_PP_Goodman_T2f_Values"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_03.Bacon_PP_Goodman_T2f_Values"
+      ],
+      "session": "Goodman_Legacy_03",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T2f_Pairwise.thy",
+      "source_sha256": "72834c042d34e4b75c55a7cb4327f90564e7256d3f2cc15093a133ca04827eca",
+      "theory": "Bacon_PP_Goodman_T2f_Pairwise",
+      "unchanged_suffix_sha256": "7ab4b7a749ef9b1c43201f1eea4d836233e1dec14f544fd76cdd1bee272ccb98"
+    },
+    {
+      "frozen": "theories/preserved/stage03/Bacon_PP_Goodman_T2f_Verified.thy",
+      "frozen_sha256": "27e3aab5d5499b4fe31be7a34f3e23b2354d4cd31bc1597742f1144fd3a02020",
+      "original_imports": [
+        "Bacon_PP_Goodman_T2f_Pairwise"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_03.Bacon_PP_Goodman_T2f_Pairwise"
+      ],
+      "session": "Goodman_Legacy_03",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T2f_Verified.thy",
+      "source_sha256": "7d6123fb514ef1909039badefc0822590efe5381a0a0b71f9f134f41429e7207",
+      "theory": "Bacon_PP_Goodman_T2f_Verified",
+      "unchanged_suffix_sha256": "5e506c34256d8891a6eda87441858cf56b585c6b4202c76342b511c475f8c679"
+    },
+    {
+      "frozen": "theories/preserved/stage03/Bacon_PP_Goodman_Heredity.thy",
+      "frozen_sha256": "fc9ea94272e7864058a21dda3e922bb8876c75148c4b71377275c7c1972e4083",
+      "original_imports": [
+        "Bacon_PP_Goodman_T2f_Verified"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_03.Bacon_PP_Goodman_T2f_Verified"
+      ],
+      "session": "Goodman_Legacy_03",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Heredity.thy",
+      "source_sha256": "8262eb294030d503e408cb3b64f8d9662001314ef491bc586bd1deb72de560d8",
+      "theory": "Bacon_PP_Goodman_Heredity",
+      "unchanged_suffix_sha256": "32fe375a659dd8bb21aa87e6d9667e7bcccbcec2ad207318fd46cdc989748bd3"
+    },
+    {
+      "frozen": "theories/preserved/stage03/Bacon_PP_Goodman_Pure_Proposition_Triviality.thy",
+      "frozen_sha256": "f767b63ee4f102d4654382aa3879c2f9293691f06cd96565e283a29e15d64212",
+      "original_imports": [
+        "Bacon_PP_Goodman_Fun_Prime_Noncontingency"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_02.Bacon_PP_Goodman_Fun_Prime_Noncontingency"
+      ],
+      "session": "Goodman_Legacy_03",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Pure_Proposition_Triviality.thy",
+      "source_sha256": "1f68f75fdcc756a7e9f0020ab83147b98472a090a1d2e648831186dca163869a",
+      "theory": "Bacon_PP_Goodman_Pure_Proposition_Triviality",
+      "unchanged_suffix_sha256": "48b01332f2aa6c19b0540372f1d05e08da79a5df525a3d531d4b59c43dddf519"
+    },
+    {
+      "frozen": "theories/preserved/stage03/Bacon_PP_Goodman_Biconditional_Classification.thy",
+      "frozen_sha256": "01d4e50a50ed563917fc07d329a3cb4a5fd4fb40e195fc94d2fe2fcc28935716",
+      "original_imports": [
+        "Bacon_PP_Goodman_Pure_Proposition_Triviality"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_03.Bacon_PP_Goodman_Pure_Proposition_Triviality"
+      ],
+      "session": "Goodman_Legacy_03",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Biconditional_Classification.thy",
+      "source_sha256": "43b62152b4eb306b845d1bc898b1aadc00f5521d2e525bcf1cb1688fdaccb521",
+      "theory": "Bacon_PP_Goodman_Biconditional_Classification",
+      "unchanged_suffix_sha256": "3a9940ad37cca186ba47ba27e1d3b8932c4076f2020cf14038d1213acb3269dc"
+    },
+    {
+      "frozen": "theories/preserved/stage03/Bacon_PP_Goodman_WI_Collapse.thy",
+      "frozen_sha256": "5695d83d3fa01609785dc84f1df89ad14e80e45b6c57dae8a7ece58d3af1fda2",
+      "original_imports": [
+        "Bacon_PP_Goodman_Biconditional_Classification"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_03.Bacon_PP_Goodman_Biconditional_Classification"
+      ],
+      "session": "Goodman_Legacy_03",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_WI_Collapse.thy",
+      "source_sha256": "8f9fc8d88b5990799aa5daf0da5128ddb3ca97087a289ad2d67cd933ee2a6226",
+      "theory": "Bacon_PP_Goodman_WI_Collapse",
+      "unchanged_suffix_sha256": "57cf5ac8db7978bc0be0e261779e32074505813bee9b0cb6668252f0213a19f8"
+    },
+    {
+      "frozen": "theories/preserved/stage03/Bacon_PP_Goodman_Heredity_Modal.thy",
+      "frozen_sha256": "44c534b5e4d79d15f3be93008e7f02d503e0a00bafd4ebd653bf565db4293f83",
+      "original_imports": [
+        "Bacon_PP_Goodman_Heredity",
+        "Bacon_PP_Goodman_WI_Collapse"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_03.Bacon_PP_Goodman_Heredity",
+        "Goodman_Legacy_03.Bacon_PP_Goodman_WI_Collapse"
+      ],
+      "session": "Goodman_Legacy_03",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Heredity_Modal.thy",
+      "source_sha256": "bbcf86a3a31be34187ceb3a30e0e00f2784369722f77c54cfe253d43304b152d",
+      "theory": "Bacon_PP_Goodman_Heredity_Modal",
+      "unchanged_suffix_sha256": "4b74b1393d8c5350b964499f411f62471d1ea7dd59afbec5a87ead7c188eaa5b"
+    },
+    {
+      "frozen": "theories/preserved/stage03/Bacon_PP_Goodman_Heredity_Rigidity.thy",
+      "frozen_sha256": "d7af106c64515b6b493cedde94f2f410913b13ded4039efe6600d310577f8e75",
+      "original_imports": [
+        "Bacon_PP_Goodman_Heredity_Modal"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_03.Bacon_PP_Goodman_Heredity_Modal"
+      ],
+      "session": "Goodman_Legacy_03",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Heredity_Rigidity.thy",
+      "source_sha256": "56786465cb0e0f771e015b96d0f6b5a983ef73d841bee9f6b467651c79b22705",
+      "theory": "Bacon_PP_Goodman_Heredity_Rigidity",
+      "unchanged_suffix_sha256": "e63fec07248ec72ef06f9ee6622dc549e57c63516009758cc69838efc4e7efc7"
+    },
+    {
+      "frozen": "theories/preserved/stage03/Bacon_PP_Goodman_Heredity_Core.thy",
+      "frozen_sha256": "6b707c9c150b935c4b832327e29a85487158886f2b23a74894f5db4d215cff4f",
+      "original_imports": [
+        "Bacon_PP_Goodman_Heredity_Rigidity"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_03.Bacon_PP_Goodman_Heredity_Rigidity"
+      ],
+      "session": "Goodman_Legacy_03",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Heredity_Core.thy",
+      "source_sha256": "4665ee286b75e6488aa21359fb66d333d6981d619422b7b6b225bd56c1c084e6",
+      "theory": "Bacon_PP_Goodman_Heredity_Core",
+      "unchanged_suffix_sha256": "94f10e839e0878a19d66972624793a277ca36681e38422ddc1d9e53c491273c8"
+    },
+    {
+      "frozen": "theories/preserved/stage04/Bacon_PP_Goodman_Heredity_Exhaustion.thy",
+      "frozen_sha256": "5ac7ea597953c95ea8695efaee792471a182619711f27362081a15156cebc8ea",
+      "original_imports": [
+        "Bacon_PP_Goodman_Heredity_Core"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_03.Bacon_PP_Goodman_Heredity_Core"
+      ],
+      "session": "Goodman_Legacy_04",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Heredity_Exhaustion.thy",
+      "source_sha256": "8a21af5ee51759c568737058e36f7fd0e35921b5047290ead6f2ab0e38705ad7",
+      "theory": "Bacon_PP_Goodman_Heredity_Exhaustion",
+      "unchanged_suffix_sha256": "14702aa55bcc107cfb124e75a527001f26d8301e8bb4483d637be4497a2385b2"
+    },
+    {
+      "frozen": "theories/preserved/stage04/Bacon_PP_Goodman_Heredity_Sharp.thy",
+      "frozen_sha256": "3635207c2f5b577a78b21df0d05dc3a74f292fd16096fb225a924e7043797cca",
+      "original_imports": [
+        "Bacon_PP_Goodman_Heredity_Exhaustion"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_04.Bacon_PP_Goodman_Heredity_Exhaustion"
+      ],
+      "session": "Goodman_Legacy_04",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Heredity_Sharp.thy",
+      "source_sha256": "aa8b6173df388a5ce3a45fba12664308a5040cfb998a29bd92b136a75afa6485",
+      "theory": "Bacon_PP_Goodman_Heredity_Sharp",
+      "unchanged_suffix_sha256": "75f7327bc1373c3ea4098189e11d2cafbafe606354a5b64b56ec88200352eecd"
+    },
+    {
+      "frozen": "theories/preserved/stage04/Bacon_PP_Goodman_Fun_Prime_Axiom_Collapse.thy",
+      "frozen_sha256": "07748c3e432123a45ab1625d96842d0f47a0a64e1490630c1db6876177553cb8",
+      "original_imports": [
+        "Bacon_PP_Goodman_Fun_Prime_Six_Distinct"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_02.Bacon_PP_Goodman_Fun_Prime_Six_Distinct"
+      ],
+      "session": "Goodman_Legacy_04",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Fun_Prime_Axiom_Collapse.thy",
+      "source_sha256": "91b10dcae8b7215d38c97f230cb8d34cff7ca26cd8c2577d287d42caeab72650",
+      "theory": "Bacon_PP_Goodman_Fun_Prime_Axiom_Collapse",
+      "unchanged_suffix_sha256": "91a206a49ce681c49969f6c6366814bbfc9f82eb71d61753992be81dfb832518"
+    },
+    {
+      "frozen": "theories/preserved/stage04/Bacon_PP_Goodman_Higher_Type_Diagonal.thy",
+      "frozen_sha256": "b9334a8ffce471aff5992743cac8090220318cca743e7b94e391875dc4ebdcb4",
+      "original_imports": [
+        "Bacon_PP_Goodman_Heredity_Sharp",
+        "Bacon_PP_Goodman_Fun_Prime_Axiom_Collapse"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_04.Bacon_PP_Goodman_Heredity_Sharp",
+        "Goodman_Legacy_04.Bacon_PP_Goodman_Fun_Prime_Axiom_Collapse"
+      ],
+      "session": "Goodman_Legacy_04",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Higher_Type_Diagonal.thy",
+      "source_sha256": "272b46ff6f11cd21281a24fcd9ff32c529e3f374769df3640947c7f64dee7a58",
+      "theory": "Bacon_PP_Goodman_Higher_Type_Diagonal",
+      "unchanged_suffix_sha256": "d03dd54d8fe8880588b37a68ca56df92d6cd56c4bb0902f662766fd0d1bb8777"
+    },
+    {
+      "frozen": "theories/preserved/stage04/Bacon_PP_Goodman_Proliferation.thy",
+      "frozen_sha256": "f0f5ab2acdb58140ff02b5dddfc84bb4c73bef53eaf324ebe72bbfd04e738765",
+      "original_imports": [
+        "Bacon_PP_Goodman_Higher_Type_Diagonal"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_04.Bacon_PP_Goodman_Higher_Type_Diagonal"
+      ],
+      "session": "Goodman_Legacy_04",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Proliferation.thy",
+      "source_sha256": "d0b0e28f000f47d1631b6cb6c28ca812e999f2e0a7f1914b2b15542fa7a63f93",
+      "theory": "Bacon_PP_Goodman_Proliferation",
+      "unchanged_suffix_sha256": "64e5fdb9ab0a57c6b0496383e083e26e0841101e8606cc07032302a8d88709d8"
+    },
+    {
+      "frozen": "theories/preserved/stage05/Bacon_PP_Goodman_T6_Inv.thy",
+      "frozen_sha256": "9b9f4d494dd649095b8b46887aa60f9f1a597f132234647b515e01c16a3c0dce",
+      "original_imports": [
+        "Bacon_PP_Goodman_Proliferation"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_04.Bacon_PP_Goodman_Proliferation"
+      ],
+      "session": "Goodman_Legacy_05",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T6_Inv.thy",
+      "source_sha256": "8c708591f5d781181be04e9b55463c580254f79275a1841c51cddedd84060c9d",
+      "theory": "Bacon_PP_Goodman_T6_Inv",
+      "unchanged_suffix_sha256": "698243c32528f36d4471d84ca61f1ef3104860a6f3c3ab9320c9afa9cc5a46bb"
+    },
+    {
+      "frozen": "theories/preserved/stage05/Bacon_PP_Goodman_T6_TU.thy",
+      "frozen_sha256": "11d5164a83aac733e616c4c879ff1fdf2b84e8c0f6ce2695df93614387f5e0ea",
+      "original_imports": [
+        "Bacon_PP_Goodman_T6_Inv"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_05.Bacon_PP_Goodman_T6_Inv"
+      ],
+      "session": "Goodman_Legacy_05",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T6_TU.thy",
+      "source_sha256": "a7056238abbffb03210c946d820d9c2dd1e31e93b57937d402e610a733001d2a",
+      "theory": "Bacon_PP_Goodman_T6_TU",
+      "unchanged_suffix_sha256": "8dbe29a152bb81e5a2eaa1a9844511b9f0204383dbb69809a529f9a2691f7475"
+    },
+    {
+      "frozen": "theories/preserved/stage05/Bacon_PP_Goodman_T6_WI.thy",
+      "frozen_sha256": "c943d12cff26c00ab2c649b66e25fd6e0bf46ff3fa3906863facc0a299a3cd9b",
+      "original_imports": [
+        "Bacon_PP_Goodman_T6_TU",
+        "Bacon_PP_Goodman_WI_Collapse"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_05.Bacon_PP_Goodman_T6_TU",
+        "Goodman_Legacy_03.Bacon_PP_Goodman_WI_Collapse"
+      ],
+      "session": "Goodman_Legacy_05",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T6_WI.thy",
+      "source_sha256": "016384f621a1baa4d078b2a45f17343c628a782279046a4692820901eef10f04",
+      "theory": "Bacon_PP_Goodman_T6_WI",
+      "unchanged_suffix_sha256": "8fd9174f75254307855a8a9f8121ba2dba4f767231ce2be58109aa42b0f84ac3"
+    },
+    {
+      "frozen": "theories/preserved/stage05/Bacon_PP_Goodman_T6_RS_Encoding.thy",
+      "frozen_sha256": "9e8d9c702955a9d2768f106b04913a4ff0789f3b2226f42b299421aebff7e2ad",
+      "original_imports": [
+        "Bacon_PP_Goodman_T6_WI"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_05.Bacon_PP_Goodman_T6_WI"
+      ],
+      "session": "Goodman_Legacy_05",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T6_RS_Encoding.thy",
+      "source_sha256": "479173cc41f4a545d86c9f773300e92343472a1e2cd59169101b8d5381015200",
+      "theory": "Bacon_PP_Goodman_T6_RS_Encoding",
+      "unchanged_suffix_sha256": "4d6aca8ab92955b444b6a66cdcc58e6fa519ad6ad94be0850be28c5cfa05a48f"
+    },
+    {
+      "frozen": "theories/preserved/stage06/Bacon_PP_Goodman_T6_RS.thy",
+      "frozen_sha256": "16d44ded06941051f27fb7bc6141211d163546b0130932fc8474a45237606a87",
+      "original_imports": [
+        "Bacon_PP_Goodman_T6_RS_Encoding"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_05.Bacon_PP_Goodman_T6_RS_Encoding"
+      ],
+      "session": "Goodman_Legacy_06",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T6_RS.thy",
+      "source_sha256": "2531a674ae008dd4050e6c503fa4382d442ade3e7b2fb9c7998fc5455ac6d563",
+      "theory": "Bacon_PP_Goodman_T6_RS",
+      "unchanged_suffix_sha256": "63d84da00a2d5d6a6b37c679abf149804e86603bd49b232a9b3d0ed56c818e1f"
+    },
+    {
+      "frozen": "theories/preserved-additions/central-stock/Bacon_PP_QSS_Recombination_Bridge.thy",
+      "frozen_sha256": "cf08b551c7bad6af55bc5e6b8eeb8cccfa74c26a97ce74ef8434ddd2f53fd98f",
+      "original_imports": [
+        "Bacon_PP_Goodman_T6_RS",
+        "Bacon_PP_Goodman_Heredity_Exhaustion"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_06.Bacon_PP_Goodman_T6_RS",
+        "Goodman_Legacy_04.Bacon_PP_Goodman_Heredity_Exhaustion"
+      ],
+      "session": "Goodman_Legacy_Central_Stock",
+      "source": "theories/goodman/notes/Bacon_PP_QSS_Recombination_Bridge.thy",
+      "source_sha256": "d1eba4c080fac882b59c43488bd77ca6f72aa3c7220467dc6a33313dd233df22",
+      "theory": "Bacon_PP_QSS_Recombination_Bridge",
+      "unchanged_suffix_sha256": "0bfa771470d80030f922de0fe19fdfecc97f9f3259355c33f9ea898de5ee0325"
+    },
+    {
+      "frozen": "theories/preserved-additions/control/Bacon_PP_Fun_Prime_Control.thy",
+      "frozen_sha256": "fbdb3865aa77ce4e397a00ee36778393804f925314e3f0bca58859418fe301a4",
+      "original_imports": [
+        "Bacon_PP_Goodman_T6_TU",
+        "Bacon_PP_Goodman_Fun_Prime_Axiom_Collapse"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_05.Bacon_PP_Goodman_T6_TU",
+        "Goodman_Legacy_04.Bacon_PP_Goodman_Fun_Prime_Axiom_Collapse"
+      ],
+      "session": "Goodman_Legacy_Control",
+      "source": "theories/goodman/notes/Bacon_PP_Fun_Prime_Control.thy",
+      "source_sha256": "b3ac841c70453cd3f19aa3a4619b0dc535446767fdcb59003b7b2e3f06f6551a",
+      "theory": "Bacon_PP_Fun_Prime_Control",
+      "unchanged_suffix_sha256": "b7f0d7517df56022fda8bb8728b2f2780a1ff7486d8d03db49a340330d1af06e"
+    },
+    {
+      "frozen": "theories/preserved-additions/control-heredity/Bacon_PP_Fun_Prime_Control_Heredity.thy",
+      "frozen_sha256": "e669522b658fee56141743ff42c6e366289bbd6034fd18357e06e728512cb366",
+      "original_imports": [
+        "Bacon_PP_Fun_Prime_Control",
+        "Bacon_PP_Goodman_Heredity_Exhaustion"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_Control.Bacon_PP_Fun_Prime_Control",
+        "Goodman_Legacy_04.Bacon_PP_Goodman_Heredity_Exhaustion"
+      ],
+      "session": "Goodman_Legacy_Control_Heredity",
+      "source": "theories/goodman/notes/Bacon_PP_Fun_Prime_Control_Heredity.thy",
+      "source_sha256": "f71d4bb87c488006c87d26cb07a0810c0b6acf357d9fb18edf0793802fdbae9e",
+      "theory": "Bacon_PP_Fun_Prime_Control_Heredity",
+      "unchanged_suffix_sha256": "f5e796df52fb413cb103db67851d87d5b63d07182650574ec14659cc72951e10"
+    },
+    {
+      "frozen": "theories/preserved-additions/control-range/Bacon_PP_Control_Range.thy",
+      "frozen_sha256": "3eabe85395d8716b54d9118797d1b0ffaf2336a679eec525cb4a570ef0cfd58f",
+      "original_imports": [
+        "Bacon_PP_Fun_Prime_Control_Heredity"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_Control_Heredity.Bacon_PP_Fun_Prime_Control_Heredity"
+      ],
+      "session": "Goodman_Legacy_Control_Range",
+      "source": "theories/goodman/notes/Bacon_PP_Control_Range.thy",
+      "source_sha256": "995001f6301e98b8ef3207371e7014f91cd2245eb812062b76aa0b7ac8d24137",
+      "theory": "Bacon_PP_Control_Range",
+      "unchanged_suffix_sha256": "5c6170da0ee298811e51b19bd47d87343446a2c14a00847812ae2ac565074cfb"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-completeness/Bacon_PP_ZF_Exact_Completeness.thy",
+      "frozen_sha256": "8ddb0b004e1b74f9084797c6078703b021625c0d983db2b42bad3e2e5404cb35",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_Enumeration"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Enumeration.Bacon_PP_ZF_Exact_Enumeration"
+      ],
+      "session": "Goodman_Exact_Frame_Completeness",
+      "source": "theories/goodman/models/hol_zf/canonical/Bacon_PP_ZF_Exact_Completeness.thy",
+      "source_sha256": "a2945525edfde562de3ea3c09b86edaf429e2ce39867bf6141a550aa52396ebb",
+      "theory": "Bacon_PP_ZF_Exact_Completeness",
+      "unchanged_suffix_sha256": "5017bdaae458bac8ba3298393db026d590b80f220fa601ebe17ad465476cad3b"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-enumeration/Bacon_PP_ZF_Exact_Enumeration.thy",
+      "frozen_sha256": "090cac712b9208ca2e42a2caae8f71e89672124b4efaf51082a38fdd4a332033",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_CEV_Soundness"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Legacy_07.Bacon_PP_ZF_Exact_CEV_Soundness"
+      ],
+      "session": "Goodman_Exact_Enumeration",
+      "source": "theories/goodman/models/hol_zf/canonical/Bacon_PP_ZF_Exact_Enumeration.thy",
+      "source_sha256": "bbc3ab220f0dc3fa7d1341b6a33f59a19ecec6db49e58febfed6fad0daf2c95f",
+      "theory": "Bacon_PP_ZF_Exact_Enumeration",
+      "unchanged_suffix_sha256": "5c5f3f51dc647499556537ec05c9cbc87ab30ca6b30b955e132c76b03ac5078a"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-first/stage01/Bacon_PP_Generic_Witness.thy",
+      "frozen_sha256": "7b31fca6de5496f33d1a931ba02f57ecfc9dcde8b3fc40d69c3e61ae91cb00f0",
+      "original_imports": [
+        "Bacon_PP_Diagonal",
+        "HOL-Library.Countable_Set"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_01.Bacon_PP_Diagonal",
+        "HOL-Library.Countable_Set"
+      ],
+      "session": "Goodman_Exact_Legacy_01",
+      "source": "theories/goodman/core/Bacon_PP_Generic_Witness.thy",
+      "source_sha256": "0a0268ee6f8e4fe4afc7d65d46ca1124d873cbea5f707bf30fef0924e59cfcfd",
+      "theory": "Bacon_PP_Generic_Witness",
+      "unchanged_suffix_sha256": "18666c20ef4a56287c9ee1c025029a2056ecaffa99b8eb90ca71e014f7ea439f"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-first/stage01/Bacon_PP_MSet.thy",
+      "frozen_sha256": "8392837145471dad3fe0d3263129c9bcbd86d7d6ff65f043cb9f11b680e38955",
+      "original_imports": [
+        "Bacon_PP_Generic_Witness"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Legacy_01.Bacon_PP_Generic_Witness"
+      ],
+      "session": "Goodman_Exact_Legacy_01",
+      "source": "theories/goodman/core/Bacon_PP_MSet.thy",
+      "source_sha256": "c94ef915e9a28eb367416991abd8f2b2a32556157e93b9aa81052adee7e8059f",
+      "theory": "Bacon_PP_MSet",
+      "unchanged_suffix_sha256": "c671b0e8ca28751ef7d893e6cf5fdd58117842fad378c6a8c58b39978f6e17b9"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-first/stage01/Bacon_PP_Appendix_Model.thy",
+      "frozen_sha256": "f6318dea162e5c4f2918b08ffefebce3a05499caca212a7503a3a2d1fe196033",
+      "original_imports": [
+        "Bacon_PP_MSet",
+        "HOL-Library.Sublist"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Legacy_01.Bacon_PP_MSet",
+        "HOL-Library.Sublist"
+      ],
+      "session": "Goodman_Exact_Legacy_01",
+      "source": "theories/goodman/core/Bacon_PP_Appendix_Model.thy",
+      "source_sha256": "6fe9e19ebd40bf766934f751b6aa997f8c475651041d5f823a2ef8c4d9df488e",
+      "theory": "Bacon_PP_Appendix_Model",
+      "unchanged_suffix_sha256": "5b5dcb9bae3d7a6b090a3e36ba1746f88fcbe3b5e094f8c048231c75e28cd5f8"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-first/stage01/Bacon_PP_ZF_Word_Propositions.thy",
+      "frozen_sha256": "d1b745b8e69cdfcbd7da3e13bfbaccecd6bb78663e4446c7546b449864278418",
+      "original_imports": [
+        "Higher_Order_Metaphysics_PP.Bacon_PP_Appendix_Model",
+        "HOL-ZF.MainZF",
+        "HOL-Library.Countable_Set",
+        "HOL-Library.More_List"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Legacy_01.Bacon_PP_Appendix_Model",
+        "HOL-ZF.MainZF",
+        "HOL-Library.Countable_Set",
+        "HOL-Library.More_List"
+      ],
+      "session": "Goodman_Exact_Legacy_01",
+      "source": "theories/goodman/models/hol_zf/canonical/Bacon_PP_ZF_Word_Propositions.thy",
+      "source_sha256": "1569f7c7f2f66055945993545910913fbcd212de036f58defe18ffbea627c41f",
+      "theory": "Bacon_PP_ZF_Word_Propositions",
+      "unchanged_suffix_sha256": "dbb8317c742caa954d2f0ffa5fda84467c7c8a3f2740d410a0901e4a9ad80a50"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-first/stage02/Bacon_PP_ZF_Full_MSet.thy",
+      "frozen_sha256": "f52dee7e007c2804130bd6dd79629b082dabf784cd49c75eb228c6694bf80df9",
+      "original_imports": [
+        "Bacon_PP_ZF_Word_Propositions"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Legacy_01.Bacon_PP_ZF_Word_Propositions"
+      ],
+      "session": "Goodman_Exact_Legacy_02",
+      "source": "theories/goodman/models/hol_zf/canonical/Bacon_PP_ZF_Full_MSet.thy",
+      "source_sha256": "4e324451cc06dff3406b2b65fc4184be75ff226de37367d6ef670a9557fb8ec0",
+      "theory": "Bacon_PP_ZF_Full_MSet",
+      "unchanged_suffix_sha256": "92c3fb6d884a35bdb3fb224a9684e9154b48f9b63cfd5e87d69e78fd4cda19cc"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-first/stage03/Bacon_PP_Axiom_Soundness.thy",
+      "frozen_sha256": "d336dfe920472091926623d11183b02da4ee0dc35fa67a766f719bbed4f9ff22",
+      "original_imports": [
+        "Goodman_CEVplus.Bacon_CEV_Axiom_Extension"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_01.Bacon_CEV_Axiom_Extension"
+      ],
+      "session": "Goodman_Exact_Legacy_03",
+      "source": "theories/goodman/notes/Bacon_PP_Axiom_Soundness.thy",
+      "source_sha256": "4dd334170d48ddfdcdc7fe46b27f1867612baeed756b0373855ebaa2e291499c",
+      "theory": "Bacon_PP_Axiom_Soundness",
+      "unchanged_suffix_sha256": "04c1b4ad8cbf1b61920fd3e1f86390cc4b29ab50e6940eab7c32f523b9441622"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-first/stage03/Bacon_PP_Purity_Operator.thy",
+      "frozen_sha256": "40cfe6ed9070f46328ac8deafbe6ab4ac063c13b181c4ca93834b76c78a062a7",
+      "original_imports": [
+        "Bacon_PP_MSet"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Legacy_01.Bacon_PP_MSet"
+      ],
+      "session": "Goodman_Exact_Legacy_03",
+      "source": "theories/goodman/core/Bacon_PP_Purity_Operator.thy",
+      "source_sha256": "928eda392bf09b18d31f703b87fffd86b0e551428e2e6c8c1fd5899b9788a3de",
+      "theory": "Bacon_PP_Purity_Operator",
+      "unchanged_suffix_sha256": "96262cb20ead7b8ea2c9e7e9880c6e86d7907059e544ce18979ddd5f0a653bd3"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-first/stage04/Bacon_PP_ZF_Exact_Frame.thy",
+      "frozen_sha256": "dbc88cd95fd0446b5cbf65e48de66297104332892917b5d1b29932e8ffe40826",
+      "original_imports": [
+        "Bacon_PP_ZF_Full_MSet",
+        "Higher_Order_Metaphysics_PP_Frontier.Bacon_PP_Axiom_Soundness",
+        "Higher_Order_Metaphysics_PP.Bacon_PP_Purity_Operator"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Legacy_02.Bacon_PP_ZF_Full_MSet",
+        "Goodman_Exact_Legacy_03.Bacon_PP_Axiom_Soundness",
+        "Goodman_Exact_Legacy_03.Bacon_PP_Purity_Operator"
+      ],
+      "session": "Goodman_Exact_Legacy_04",
+      "source": "theories/goodman/models/hol_zf/canonical/Bacon_PP_ZF_Exact_Frame.thy",
+      "source_sha256": "23320e3195f575f4e13bc4bedd747d16be0b5cb03eee9aa9be8c9e846743b97c",
+      "theory": "Bacon_PP_ZF_Exact_Frame",
+      "unchanged_suffix_sha256": "aa5f424d7b644831dddb9b675c4c9043bb58c8df5d3790cbb5ccb491ce574898"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-first/stage05/Bacon_PP_ZF_Exact_Substitution.thy",
+      "frozen_sha256": "b82255c9c4ba8084256fa626f20ca2a6b78a0fd3c323217f3581a90edb4aed35",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_Frame"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Legacy_04.Bacon_PP_ZF_Exact_Frame"
+      ],
+      "session": "Goodman_Exact_Legacy_05",
+      "source": "theories/goodman/models/hol_zf/canonical/Bacon_PP_ZF_Exact_Substitution.thy",
+      "source_sha256": "159cfe620286f9ffce437382582c9ddfd5a5b8ebea36d73d2459e5cd1968928b",
+      "theory": "Bacon_PP_ZF_Exact_Substitution",
+      "unchanged_suffix_sha256": "27005d8fc912af744c0463e789c1b98af6cc05380ac8bcee2a4e2d65f4324e6a"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-first/stage06/Bacon_PP_ZF_Exact_10_1.thy",
+      "frozen_sha256": "92eb771b4b723fb9c7b6596529653a6c4b4431a584362df6ee7ea583c7f29f86",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_Substitution"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Legacy_05.Bacon_PP_ZF_Exact_Substitution"
+      ],
+      "session": "Goodman_Exact_Legacy_06",
+      "source": "theories/goodman/models/hol_zf/canonical/Bacon_PP_ZF_Exact_10_1.thy",
+      "source_sha256": "b6df9e4cdc50f6aa632ab36a62b3217f33d99ce3760c70e5e93103754ea9dd99",
+      "theory": "Bacon_PP_ZF_Exact_10_1",
+      "unchanged_suffix_sha256": "0e85f7cb0f60c821a7d7e6338360c4d727f9ed960520ef3a4e0f1370d8063e37"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-first/stage07/Bacon_PP_ZF_Exact_CEV_Soundness.thy",
+      "frozen_sha256": "530db47d6f08abfa4b3ddcd39b8b770d2e054d338c0bc904b3374d4e6557dc06",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_10_1"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Legacy_06.Bacon_PP_ZF_Exact_10_1"
+      ],
+      "session": "Goodman_Exact_Legacy_07",
+      "source": "theories/goodman/models/hol_zf/canonical/Bacon_PP_ZF_Exact_CEV_Soundness.thy",
+      "source_sha256": "e1a3f8b63267a2bb9c3ad0c8b0395f715160b00798ef2c13502f5e3ae95ab203",
+      "theory": "Bacon_PP_ZF_Exact_CEV_Soundness",
+      "unchanged_suffix_sha256": "0bc52d5e333eec9ad53b0bdd13000110b89e8e5957592475c7cca25022c30db6"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-generic-seed/Bacon_PP_ZF_Exact_Generic_Seed.thy",
+      "frozen_sha256": "64503288481a06cb3d72ab7e2618d35528777efa386df9288976aee8ecc4bd68",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_Logical_Stock_Action"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Stock_Action.Bacon_PP_ZF_Exact_Logical_Stock_Action"
+      ],
+      "session": "Goodman_Exact_Generic_Seed",
+      "source": "theories/goodman/models/hol_zf/extensions/Bacon_PP_ZF_Exact_Generic_Seed.thy",
+      "source_sha256": "4a034eca849f0bca728f708e23f372fc404bed70f9417a1d61c48b7e7652fbaf",
+      "theory": "Bacon_PP_ZF_Exact_Generic_Seed",
+      "unchanged_suffix_sha256": "398d642674591c4b237ed7ac1d062db3214c37d0c90b686cd6c826642cccf7fa"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_Heredity_Semantics.thy",
+      "frozen_sha256": "b9081bbfbd3a641bed9baf2bc04d3be2da5be37108150ecfde6da8aed8c818f4",
+      "original_imports": [
+        "Bacon_PP_MSet"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Legacy_01.Bacon_PP_MSet"
+      ],
+      "session": "Goodman_Exact_Stock_Legacy_01",
+      "source": "theories/goodman/core/Bacon_PP_Heredity_Semantics.thy",
+      "source_sha256": "eb9a61cee56bb24b23e800c9d2fb1bb9d3210d9ee68b18556d53b8da27e9a353",
+      "theory": "Bacon_PP_Heredity_Semantics",
+      "unchanged_suffix_sha256": "f82b54274d8e72f692a842db231e83ecaf9c43370e654fbd928634e4f96ca8e1"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Model.thy",
+      "frozen_sha256": "03a6a4efb14f6b920de1e2430bbe014a9de97d4f6f073afcced7de2e00755fbd",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_Generic_Seed",
+        "Higher_Order_Metaphysics_PP.Bacon_PP_Heredity_Semantics",
+        "Higher_Order_Metaphysics_PP_Frontier.Bacon_PP_T6_Encoding"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Generic_Seed.Bacon_PP_ZF_Exact_Generic_Seed",
+        "Goodman_Exact_Stock_Legacy_01.Bacon_PP_Heredity_Semantics",
+        "Goodman_Legacy_01.Bacon_PP_T6_Encoding"
+      ],
+      "session": "Goodman_Exact_Stock_Legacy_01",
+      "source": "theories/goodman/models/hol_zf/extensions/Bacon_PP_ZF_Exact_L2_Model.thy",
+      "source_sha256": "bae37624d9d0011bad88c23707b38f9dcf6dfd712afa70621dd6263d20fb07a3",
+      "theory": "Bacon_PP_ZF_Exact_L2_Model",
+      "unchanged_suffix_sha256": "a723a5c5f8bff8891b1012926cf07f8def7f67f15dfa5809609ce52e8afbbe88"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Generic_Prelim.thy",
+      "frozen_sha256": "fabd301ac89ce8db9d33bc9c18c74edbebfc55f3bc73c1481a339ca2933c575f",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_L2_Model"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Stock_Legacy_01.Bacon_PP_ZF_Exact_L2_Model"
+      ],
+      "session": "Goodman_Exact_Stock_Legacy_01",
+      "source": "theories/goodman/models/hol_zf/extensions/Bacon_PP_ZF_Exact_L2_Generic_Prelim.thy",
+      "source_sha256": "7b45e6aa5e8fb9ecd48f61d72245cd1148933d53c5e78b214478f233031cefe1",
+      "theory": "Bacon_PP_ZF_Exact_L2_Generic_Prelim",
+      "unchanged_suffix_sha256": "6ab0e142cebe80e9a657029e472d92204494842b8449d7580ab9b84ccd2f87e7"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Generic.thy",
+      "frozen_sha256": "4bfc4dd81a805f0a14245675fcaed6aea9128d03a17d3e14aa9c74712913cec5",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_L2_Generic_Prelim"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Stock_Legacy_01.Bacon_PP_ZF_Exact_L2_Generic_Prelim"
+      ],
+      "session": "Goodman_Exact_Stock_Legacy_01",
+      "source": "theories/goodman/models/hol_zf/extensions/Bacon_PP_ZF_Exact_L2_Generic.thy",
+      "source_sha256": "2805fb298a15197a611329f245b29df59752d71c0c85ddac066dfd60162fcb3a",
+      "theory": "Bacon_PP_ZF_Exact_L2_Generic",
+      "unchanged_suffix_sha256": "6df7c4bd26a28af6d6e807f293938f4f82324cc68d7b610cf1b76bd5987d0df1"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Reduction.thy",
+      "frozen_sha256": "d79056d73b5249b59d6a5a97837569fcb52d0af750077fecf50c5ea0752a7afa",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_L2_Generic"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Stock_Legacy_01.Bacon_PP_ZF_Exact_L2_Generic"
+      ],
+      "session": "Goodman_Exact_Stock_Legacy_01",
+      "source": "theories/goodman/models/hol_zf/extensions/Bacon_PP_ZF_Exact_L2_Reduction.thy",
+      "source_sha256": "a7f0b579f485b270c51429fb9bd957ad68f8d6e5f18673f7d23368010513961a",
+      "theory": "Bacon_PP_ZF_Exact_L2_Reduction",
+      "unchanged_suffix_sha256": "73c7fbd95c94877f93ee83b0b92d8ccf7931d43b15959fd2ae27d99c52071b77"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Cancellation.thy",
+      "frozen_sha256": "c0f40a5967f548cbbbc94ff2cc445b7d3ce92283c574c2aa24e1bb47468bdb94",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_L2_Reduction"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Stock_Legacy_01.Bacon_PP_ZF_Exact_L2_Reduction"
+      ],
+      "session": "Goodman_Exact_Stock_Legacy_01",
+      "source": "theories/goodman/models/hol_zf/extensions/Bacon_PP_ZF_Exact_L2_Cancellation.thy",
+      "source_sha256": "51a8128866f9eb84c6cf2d714226aa5d5f25280ca35e25c11f8f69addee87049",
+      "theory": "Bacon_PP_ZF_Exact_L2_Cancellation",
+      "unchanged_suffix_sha256": "6f5362729d415442a253b251664692f5116f3c794b32b9a4b0e46c75ed6aa735"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Obstruction.thy",
+      "frozen_sha256": "29edd4e82926d3b35efc797b9cf3053d7342cf9fc7644e182ea2e077590cfc11",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_L2_Cancellation"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Stock_Legacy_01.Bacon_PP_ZF_Exact_L2_Cancellation"
+      ],
+      "session": "Goodman_Exact_Stock_Legacy_01",
+      "source": "theories/goodman/models/hol_zf/extensions/Bacon_PP_ZF_Exact_L2_Obstruction.thy",
+      "source_sha256": "801760a86928430c7f9a57e80ba64981f236916020bd2bc5232844199a5a6577",
+      "theory": "Bacon_PP_ZF_Exact_L2_Obstruction",
+      "unchanged_suffix_sha256": "14deb58a93672f31040fc3dee6f075fb05f329ec161010ce2f9be95b5374c852"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Refutation.thy",
+      "frozen_sha256": "6900356d3c4e16feb06c90305bbe6eaeaed9829a23c5d3476adafc0618fe04b3",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_L2_Obstruction"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Stock_Legacy_01.Bacon_PP_ZF_Exact_L2_Obstruction"
+      ],
+      "session": "Goodman_Exact_Stock_Legacy_01",
+      "source": "theories/goodman/models/hol_zf/extensions/Bacon_PP_ZF_Exact_L2_Refutation.thy",
+      "source_sha256": "7a762363c5341a632b812afa7dd8fdfffd0ce787c40e978044e36d29b456b3f2",
+      "theory": "Bacon_PP_ZF_Exact_L2_Refutation",
+      "unchanged_suffix_sha256": "73f57359e9368702b993b9f0cadb118067383bba3f7a6deeffafaddfa0f39450"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Child_Atom.thy",
+      "frozen_sha256": "877d466728eea94727222c9bea5bae86e6b77477792bd272ad0dda56357de886",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_L2_Refutation"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Stock_Legacy_01.Bacon_PP_ZF_Exact_L2_Refutation"
+      ],
+      "session": "Goodman_Exact_Stock_Legacy_01",
+      "source": "theories/goodman/models/hol_zf/extensions/Bacon_PP_ZF_Exact_L2_Child_Atom.thy",
+      "source_sha256": "4a403418a15600304287e226402e9acb6e8709d603d4bd0005ef942f75c513f1",
+      "theory": "Bacon_PP_ZF_Exact_L2_Child_Atom",
+      "unchanged_suffix_sha256": "4e2279eded75bbc0bc45b82e8b09ba54f76cc4aeed773a37f3bfd883fd21509e"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Immediate_Successor.thy",
+      "frozen_sha256": "da7eb0b8e7511fe4de1e1493d8a58d446f2a04d6a361eaecc16c3a0a2b7618a7",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_L2_Child_Atom"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Stock_Legacy_01.Bacon_PP_ZF_Exact_L2_Child_Atom"
+      ],
+      "session": "Goodman_Exact_Stock_Legacy_01",
+      "source": "theories/goodman/models/hol_zf/extensions/Bacon_PP_ZF_Exact_L2_Immediate_Successor.thy",
+      "source_sha256": "8763437a4f2311c84a21c052e898fdf9cab37e4a77bfc828a78f0d3785152cfb",
+      "theory": "Bacon_PP_ZF_Exact_L2_Immediate_Successor",
+      "unchanged_suffix_sha256": "ec90180a7574832219e8ed05eff80056019ae630039e8c037450014e493af226"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-l2/stage01/Bacon_PP_ZF_Exact_L2_Child_Variation_Semantics.thy",
+      "frozen_sha256": "4a1a67259cd782e93d5dada46675e533d5dd50b6e8caedf764d449cf157083cb",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_L2_Immediate_Successor"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Stock_Legacy_01.Bacon_PP_ZF_Exact_L2_Immediate_Successor"
+      ],
+      "session": "Goodman_Exact_Stock_Legacy_01",
+      "source": "theories/goodman/models/hol_zf/extensions/Bacon_PP_ZF_Exact_L2_Child_Variation_Semantics.thy",
+      "source_sha256": "5ba4f472928c170bd2710a167183b2d49d1f2d3f0f9bd2623254a982469c5f9d",
+      "theory": "Bacon_PP_ZF_Exact_L2_Child_Variation_Semantics",
+      "unchanged_suffix_sha256": "56ac99978f312c046ce0484583aceca93c72dfc4dad6e9837ac49a8782438d30"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-l2/stage02/Bacon_PP_ZF_Exact_L2_Child_Variation.thy",
+      "frozen_sha256": "6ec7f577d7b3cff39be0e9d0622581e68348aa22508a18803715b6b558de46da",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_L2_Child_Variation_Semantics"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Stock_Legacy_01.Bacon_PP_ZF_Exact_L2_Child_Variation_Semantics"
+      ],
+      "session": "Goodman_Exact_Stock_Legacy_02",
+      "source": "theories/goodman/models/hol_zf/extensions/Bacon_PP_ZF_Exact_L2_Child_Variation.thy",
+      "source_sha256": "35293972e41451232eb4617652b6ba61b5cd11182b37924b547ea44dac87a145",
+      "theory": "Bacon_PP_ZF_Exact_L2_Child_Variation",
+      "unchanged_suffix_sha256": "4e8174cc55eff24c08cbdc9f7425588809dd4ca00fc30fbc0473911f0139b8cf"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-logical-stock/Bacon_PP_ZF_Exact_Logical_Stock.thy",
+      "frozen_sha256": "7bd4c6f2c490d971b959541973cba5ffc6b89daba2c06b0f836f79425d41c35b",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_Frame"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Legacy_04.Bacon_PP_ZF_Exact_Frame"
+      ],
+      "session": "Goodman_Exact_Logical_Stock",
+      "source": "theories/goodman/models/hol_zf/extensions/Bacon_PP_ZF_Exact_Logical_Stock.thy",
+      "source_sha256": "a85f87f6b979ea30840ccbb0a3099cde64810a3a83e8d76c94bdbc91cee993eb",
+      "theory": "Bacon_PP_ZF_Exact_Logical_Stock",
+      "unchanged_suffix_sha256": "1a1549cc571b5bb39ab141c2f9dfa599a968a83a1376f5c959161622127ce23e"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-recombination/Bacon_PP_ZF_Exact_Recombination.thy",
+      "frozen_sha256": "0ddf4dc0dae258f972bac92a68303c38ef1fbc4571c9e58dae051440f80c1e54",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_Generic_Seed"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Generic_Seed.Bacon_PP_ZF_Exact_Generic_Seed"
+      ],
+      "session": "Goodman_Exact_Recombination",
+      "source": "theories/goodman/models/hol_zf/extensions/Bacon_PP_ZF_Exact_Recombination.thy",
+      "source_sha256": "4fa459ca313ea8f2734f702b8282cd1c6f0209a44b5279cfcd568771da49d875",
+      "theory": "Bacon_PP_ZF_Exact_Recombination",
+      "unchanged_suffix_sha256": "11493aff925207af57c5dcd42d33128336def07247d7279b1e5bcbc6ff01c147"
+    },
+    {
+      "frozen": "theories/preserved-additions/exact-stock-action/Bacon_PP_ZF_Exact_Logical_Stock_Action.thy",
+      "frozen_sha256": "ac01854c0a279d425c0ca03eaef3f10f5d0b94d3c076f93185b0186ef10d301d",
+      "original_imports": [
+        "Bacon_PP_ZF_Exact_Substitution",
+        "Bacon_PP_ZF_Exact_Logical_Stock"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Legacy_05.Bacon_PP_ZF_Exact_Substitution",
+        "Goodman_Exact_Logical_Stock.Bacon_PP_ZF_Exact_Logical_Stock"
+      ],
+      "session": "Goodman_Exact_Stock_Action",
+      "source": "theories/goodman/models/hol_zf/extensions/Bacon_PP_ZF_Exact_Logical_Stock_Action.thy",
+      "source_sha256": "dba2dd73f8228fe78980d6f74db27725bd2a30df88a46ccead243d8cb5230921",
+      "theory": "Bacon_PP_ZF_Exact_Logical_Stock_Action",
+      "unchanged_suffix_sha256": "7b34de5e6890ea473014d2088eadb0b340c2cdb6ad92a0e4e7edf7f87b25881e"
+    },
+    {
+      "frozen": "theories/preserved-additions/granularity/Bacon_PP_Goodman_Granularity.thy",
+      "frozen_sha256": "bf7e3618568e7cc7eda60a8af58966be55b1abdc9f18fa7483b4b71033ee8b8d",
+      "original_imports": [
+        "Bacon_PP_Goodman_T9_Infinitude",
+        "HOL-Library.Countable_Set_Type"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_T9_Infinitude.Bacon_PP_Goodman_T9_Infinitude",
+        "HOL-Library.Countable_Set_Type"
+      ],
+      "session": "Goodman_Legacy_Granularity",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Granularity.thy",
+      "source_sha256": "f8302db1a4331d41535dc9dc73c5e151a59eca13bb7b80f091de2960607695a0",
+      "theory": "Bacon_PP_Goodman_Granularity",
+      "unchanged_suffix_sha256": "14dab9c1d4b23ceba546cfab20f79719a2262da883bba7a736ea4dc12ff774a7"
+    },
+    {
+      "frozen": "theories/preserved-additions/granularity-qln/Bacon_PP_Goodman_Granularity_QLN.thy",
+      "frozen_sha256": "7944153ba48120b0c8184d2d802b9eadc4de9cf0c90de2012414f6fd928e6608",
+      "original_imports": [
+        "Bacon_PP_Goodman_Granularity",
+        "Bacon_PP_QSS_Recombination_Bridge"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_Granularity.Bacon_PP_Goodman_Granularity",
+        "Goodman_Legacy_Central_Stock.Bacon_PP_QSS_Recombination_Bridge"
+      ],
+      "session": "Goodman_Legacy_Granularity_QLN",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_Granularity_QLN.thy",
+      "source_sha256": "4e4fdf83ea9f21b66a6233a7301fc7c433bbad9ec7d0f2eaa7334b41575bc195",
+      "theory": "Bacon_PP_Goodman_Granularity_QLN",
+      "unchanged_suffix_sha256": "f6cded9159cb725ca5c1252f56d3616f9feb7ade449d2b97b0794f301eaceec6"
+    },
+    {
+      "frozen": "theories/preserved-additions/m2-classifiers/Bacon_PP_Goodman_M2.thy",
+      "frozen_sha256": "2969b2e4a2a8aa5cceab6217efd3c54839a1305182758dcc262ce192c4a6ff54",
+      "original_imports": [
+        "Higher_Order_Metaphysics_PP.Bacon_PP_Heredity_Semantics",
+        "HOL-Library.Equipollence"
+      ],
+      "replay_imports": [
+        "Goodman_Exact_Stock_Legacy_01.Bacon_PP_Heredity_Semantics",
+        "HOL-Library.Equipollence"
+      ],
+      "session": "Goodman_Legacy_M2",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_M2.thy",
+      "source_sha256": "9486bf01cfaead37c7ea055bfe49a7c3020cc112b4f7691d87b5d46f47da29d5",
+      "theory": "Bacon_PP_Goodman_M2",
+      "unchanged_suffix_sha256": "f43d229d67b2e9855d74cf3f5439ec08c630ac20866d830ca7fb8e6ef6d99fcf"
+    },
+    {
+      "frozen": "theories/preserved-additions/m5-collision/Bacon_PP_Goodman_M5_Collision.thy",
+      "frozen_sha256": "65799d66f36a5f308b048dbe706159f8d6f9b1bfbb022aa9a0fdf0636b8de888",
+      "original_imports": [
+        "Bacon_PP_Goodman_Fun_Prime_Noncontingency",
+        "Bacon_PP_Goodman_T2f_Values"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_02.Bacon_PP_Goodman_Fun_Prime_Noncontingency",
+        "Goodman_Legacy_03.Bacon_PP_Goodman_T2f_Values"
+      ],
+      "session": "Goodman_Legacy_M5_Collision",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_M5_Collision.thy",
+      "source_sha256": "61d4099360662bba3875bd7f0d371705c772a103f85b3d15a806ff0c5b23d244",
+      "theory": "Bacon_PP_Goodman_M5_Collision",
+      "unchanged_suffix_sha256": "8924d69666f6328e6ef158881094c61d66cfc6766a92397db3f522fa0fcf5086"
+    },
+    {
+      "frozen": "theories/preserved-additions/m5-invertibles/Bacon_PP_Goodman_M5_Existential_Invertibles.thy",
+      "frozen_sha256": "da45c6ea5ae86e75df38552b7e09211ff78652a97c34958deacc94d70c75a53b",
+      "original_imports": [
+        "Bacon_PP_Goodman_M5_Collision",
+        "Bacon_PP_Goodman_T6_TU"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_M5_Collision.Bacon_PP_Goodman_M5_Collision",
+        "Goodman_Legacy_05.Bacon_PP_Goodman_T6_TU"
+      ],
+      "session": "Goodman_Legacy_M5_Invertibles",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_M5_Existential_Invertibles.thy",
+      "source_sha256": "b6f0462069d41c4a0f54d1e0819eb9140eee9d52201be357a6d459751429881d",
+      "theory": "Bacon_PP_Goodman_M5_Existential_Invertibles",
+      "unchanged_suffix_sha256": "1f18bf0f3d9fb6189871a8bf13e6e550846cb5c7e40ed783932ff8174cbee2c0"
+    },
+    {
+      "frozen": "theories/preserved-additions/t7-absorption/Bacon_PP_Goodman_T7_Absorption.thy",
+      "frozen_sha256": "80554c92a81bf830281015870d7fff70cdcbd91583388ad5a4fcaf1b4325160f",
+      "original_imports": [
+        "Bacon_PP_Goodman_T6_TU"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_05.Bacon_PP_Goodman_T6_TU"
+      ],
+      "session": "Goodman_Legacy_T7",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T7_Absorption.thy",
+      "source_sha256": "15e10c5870d45895d52f9c028d9686e85e231d2e4ea1152394112023b1b78bbb",
+      "theory": "Bacon_PP_Goodman_T7_Absorption",
+      "unchanged_suffix_sha256": "d01fff9fc82d114c5439fed84f629e1389708a74dbaf8d51c42a67bcb2e788f3"
+    },
+    {
+      "frozen": "theories/preserved-additions/t8-base/Bacon_PP_Goodman_T8_Base_Kinds.thy",
+      "frozen_sha256": "6a853eeeada8a22701a09a26f51190df10577e29b2133d21c8c4ab8ba4467433",
+      "original_imports": [
+        "Bacon_PP_Goodman_T8_Kind_Uniqueness"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_T8_Kind.Bacon_PP_Goodman_T8_Kind_Uniqueness"
+      ],
+      "session": "Goodman_Legacy_T8_Base",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T8_Base_Kinds.thy",
+      "source_sha256": "dd3479addc60b10b3b5f90fa6bf79538f037a9759ca151f6c7b4a91364087159",
+      "theory": "Bacon_PP_Goodman_T8_Base_Kinds",
+      "unchanged_suffix_sha256": "ba82b80d122984fcae726119ac32e1b8ca34e1186399f87746305240f30af044"
+    },
+    {
+      "frozen": "theories/preserved-additions/t8-encoding/Bacon_PP_Goodman_T8_Encoding.thy",
+      "frozen_sha256": "4733e0661cf43e4f59031af77154af2553003bdc260a45df338c261d82b9548d",
+      "original_imports": [
+        "Bacon_PP_Goodman_T7_Absorption"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_T7.Bacon_PP_Goodman_T7_Absorption"
+      ],
+      "session": "Goodman_Legacy_T8_Encoding",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T8_Encoding.thy",
+      "source_sha256": "879b00fc7ab5341735a4c8d709e32f10c067487c9ce0f8f4bf501751f7598c5e",
+      "theory": "Bacon_PP_Goodman_T8_Encoding",
+      "unchanged_suffix_sha256": "8b3c072cd91b6a2e88bc07bfabc879e71f0416fbebf3cfb9aaf6e3de02e7b44a"
+    },
+    {
+      "frozen": "theories/preserved-additions/t8-growth/Bacon_PP_Goodman_T8_Growth.thy",
+      "frozen_sha256": "91a3a263a1dbac8df55ed0ab79ac74d979072a4b234c08bd6b2c572c957ed882",
+      "original_imports": [
+        "Bacon_PP_Goodman_T8_Base_Kinds"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_T8_Base.Bacon_PP_Goodman_T8_Base_Kinds"
+      ],
+      "session": "Goodman_Legacy_T8_Growth",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T8_Growth.thy",
+      "source_sha256": "12432a212c23f0360e28297b0abc39df776295b1af246ca4853529502716bc7b",
+      "theory": "Bacon_PP_Goodman_T8_Growth",
+      "unchanged_suffix_sha256": "b9ddeea11a57c5a5c67e7b6914737fdab088b926b2e38217c8cbfd696b162eca"
+    },
+    {
+      "frozen": "theories/preserved-additions/t8-kind/Bacon_PP_Goodman_T8_Kind_Uniqueness.thy",
+      "frozen_sha256": "05aaf1f2b2586da42876edc05f09bb579b557ddb7aa2fd56fa5f3d1e346ed46c",
+      "original_imports": [
+        "Bacon_PP_Goodman_T8_Encoding"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_T8_Encoding.Bacon_PP_Goodman_T8_Encoding"
+      ],
+      "session": "Goodman_Legacy_T8_Kind",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T8_Kind_Uniqueness.thy",
+      "source_sha256": "edf3d421b54995783bdbba4eccb6b15523a1fbcd0f810af1a4cd38ebfee41697",
+      "theory": "Bacon_PP_Goodman_T8_Kind_Uniqueness",
+      "unchanged_suffix_sha256": "0885a8f3851490e9388431bcebdd5f4fb3292d196a262530efd075458760b0d2"
+    },
+    {
+      "frozen": "theories/preserved-additions/t9-cardinal/Bacon_PP_Goodman_T9.thy",
+      "frozen_sha256": "a6daad9b3e33ebddec9d30eaba0f96b95f2bd72fd6056fb9cbb297d2c961c5f3",
+      "original_imports": [
+        "Bacon_PP_Goodman_T8_Growth"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_T8_Growth.Bacon_PP_Goodman_T8_Growth"
+      ],
+      "session": "Goodman_Legacy_T9_Cardinal",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T9.thy",
+      "source_sha256": "0445bff25dfff379c0047e20c6c3321a10e34060d774876c2c205e2ca7feacfb",
+      "theory": "Bacon_PP_Goodman_T9",
+      "unchanged_suffix_sha256": "da358ebd1bf49105995fb3695db4d6fdd81db262f60f6aa62a253f1d5bd8b661"
+    },
+    {
+      "frozen": "theories/preserved-additions/t9-infinitude/Bacon_PP_Goodman_T9_Infinitude.thy",
+      "frozen_sha256": "8331e0f28e4a8427c656b8bda6d4058db95a752ac5aa10e897d25dc65f8fca88",
+      "original_imports": [
+        "Bacon_PP_Goodman_T9"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_T9_Cardinal.Bacon_PP_Goodman_T9"
+      ],
+      "session": "Goodman_Legacy_T9_Infinitude",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T9_Infinitude.thy",
+      "source_sha256": "11de3683edb5fa2b18fdb3760c0a20162be46909663b53220aa07e758566f529",
+      "theory": "Bacon_PP_Goodman_T9_Infinitude",
+      "unchanged_suffix_sha256": "228f2ed032e853cb7125cc985020c2a62ebd01eb951021c6d2e908d0d755075a"
+    },
+    {
+      "frozen": "theories/preserved-additions/wi-master/Bacon_PP_Goodman_T6_WI_Master.thy",
+      "frozen_sha256": "5d6f1c00aaa5b1b8899f23d515fac6915b57e45cd38d3f1f37fbb90afeb8ea90",
+      "original_imports": [
+        "Bacon_PP_Goodman_T6_WI"
+      ],
+      "replay_imports": [
+        "Goodman_Legacy_05.Bacon_PP_Goodman_T6_WI"
+      ],
+      "session": "Goodman_Legacy_WI_Master",
+      "source": "theories/goodman/notes/Bacon_PP_Goodman_T6_WI_Master.thy",
+      "source_sha256": "1a912ba69df538d7b0778fd0ce14e03033dfc39188c83a8d9b2f6d9eda2e8668",
+      "theory": "Bacon_PP_Goodman_T6_WI_Master",
+      "unchanged_suffix_sha256": "fb945e9b0b21cfe15a73fc8415a000f7fdafb259f4d579a2f4a5146fab4742ef"
+    }
+  ]
+}

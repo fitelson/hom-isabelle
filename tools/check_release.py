@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Check core-only packaging and enumerate the local ROOT/import closure.
+"""Check core session packaging and enumerate its ROOT/import closure.
 
 This is a packaging check, not an Isabelle parser or a proof checker.
 The Isabelle build is the authoritative check of imports and proofs.
+Applications are separate ordinary subfolders with independent ROOT/checkers;
+they must never enter the core theory-import closure.
 """
 import argparse
 import json

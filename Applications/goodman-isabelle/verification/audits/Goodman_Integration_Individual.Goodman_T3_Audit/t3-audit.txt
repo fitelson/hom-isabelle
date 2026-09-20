@@ -1,0 +1,23 @@
+T3-AUDIT: 21 clean endpoints
+SCOPE: possible identity from QSS and unary Persistence; native Heredity only with zeroary Exhaustion or pure-unary-identity rigidity. The stronger older all-unary rigidity repair retains an explicit image stock. No uncorrected Heredity derivation, full-theory countermodel, or consistency claim.
+gi_T3_modal_source_closed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T3_min_source_closed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_T3_modal_axioms_language(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gb_T3_exhaustion_axioms_language(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T3_modal_axiom_from_native(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_T3_exhaustion_axiom_from_native(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T3_modal_result_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_T3_modal_core(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=10
+gi_T3_heredity_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T3_heredity_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T3_heredity_with_exhaustion(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T3_pure_eq_rigidity_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T3_pure_eq_rigidity_translation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_T3_pure_eq_rigidity_language(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_T3_rigid_axioms_language(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T3_rigid_source_closed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T3_rigid_axiom_from_native(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T3_heredity_with_pure_rigidity(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T3_possible_identity_source_closed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T3_possible_identity_source_admitted(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T3_heredity_with_all_unary_rigidity_image_stock(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

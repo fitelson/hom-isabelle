@@ -1,0 +1,42 @@
+gi_exact_minimal_logical_in_signature(1):
+pp_e_term_in_signature ?S (pterm_to_oterm (book_minimal_logical_translation ?l))
+gi_exact_named_in_signature_encoding(1):
+pp_e_term_in_signature ?S (pterm_to_oterm (book_minimal_to_pterm (named_to_source ?G ?ns ?M))) = gi_exact_named_in_signature ?S ?M
+gi_exact_named_in_signature_decode_iff(1):
+pp_e_term_in_signature ?S (gi_exact_decode ?G ?M) = gi_exact_named_in_signature ?S ?M
+gi_exact_named_in_signature_iff_ssignature(1):
+gi_exact_named_in_signature (\<lambda>c \<sigma>. c \<in> ?\<Sigma> \<sigma>) ?M = named_in_signature ?\<Sigma> ?M
+gi_exact_named_sentence_decode(1):
+gi_exact_named_sentence ?S ?G ?M \<Longrightarrow> pp_e_sentence ?S (gi_exact_decode ?G ?M)
+gi_exact_named_sentence_from_signature(1):
+\<lbrakk>book_theory_formula ?\<Sigma> ?G ?M; named_fv ?M = {}; gi_exact_named_propositional_term ?G ?M\<rbrakk> \<Longrightarrow> gi_exact_named_sentence (\<lambda>c \<sigma>. c \<in> ?\<Sigma> \<sigma>) ?G ?M
+gi_exact_named_frame_satisfiable_decode(1):
+named_fv ?M = {} \<Longrightarrow> gi_exact_named_frame_satisfiable ?G ?g ?M = (\<exists>C. pp_e_constants C \<and> pp_e_true_in C (gi_exact_decode ?G ?M))
+gi_exact_named_frame_consistent_decode(1):
+gi_exact_named_sentence ?S ?G ?M \<Longrightarrow> gi_exact_named_frame_satisfiable ?G ?g ?M = pp_e_frame_consistent ?S (gi_exact_decode ?G ?M)
+gi_exact_named_frame_representation_branch(1):
+gi_exact_named_sentence ?S ?G ?M \<Longrightarrow> gi_exact_named_frame_satisfiable ?G ?g ?M = (\<exists>w. pp_e_holds (gi_exact_named_denote (pp_e_complete_constants ?S) ?G ?h ?M) w)
+gi_exact_named_frame_representation_diamond(1):
+\<lbrakk>sg_rich ?G; book_env_typed gi_exact_domain ?G ?h; gi_exact_named_sentence ?S ?G ?M\<rbrakk> \<Longrightarrow> gi_exact_named_frame_satisfiable ?G ?g ?M = pp_e_holds (gi_exact_named_denote (pp_e_complete_constants ?S) ?G ?h (book_not ?G (book_box ?G (book_not ?G ?M)))) []
+gi_exact_named_frame_satisfiable_at_branch(1):
+\<lbrakk>gi_exact_named_sentence ?S ?G ?M; gi_exact_named_frame_satisfiable ?G ?g ?M\<rbrakk> \<Longrightarrow> \<exists>n. pp_e_holds (gi_exact_named_denote (pp_e_complete_constants ?S) ?G ?h ?M) [n]
+gi_exact_named_frame_valid_decode(1):
+gi_exact_named_sentence ?S ?G ?M \<Longrightarrow> gi_exact_named_frame_valid ?G ?g ?M = (gi_exact_decode ?G ?M \<in> pp_e_frame_theory ?S)
+gi_exact_named_frame_completeness_branch(1):
+gi_exact_named_sentence ?S ?G ?M \<Longrightarrow> gi_exact_named_frame_valid ?G ?g ?M = (\<forall>w. pp_e_holds (gi_exact_named_denote (pp_e_complete_constants ?S) ?G ?h ?M) w)
+gi_exact_named_frame_completeness_box(1):
+\<lbrakk>sg_rich ?G; book_env_typed gi_exact_domain ?G ?h; gi_exact_named_sentence ?S ?G ?M\<rbrakk> \<Longrightarrow> gi_exact_named_frame_valid ?G ?g ?M = pp_e_holds (gi_exact_named_denote (pp_e_complete_constants ?S) ?G ?h (book_box ?G ?M)) []
+gi_exact_named_frame_valid_iff_negation_unsatisfiable(1):
+\<lbrakk>sg_rich ?G; book_env_typed gi_exact_domain ?G ?g; gi_exact_named_sentence ?S ?G ?M\<rbrakk> \<Longrightarrow> gi_exact_named_frame_valid ?G ?g ?M = (\<not> gi_exact_named_frame_satisfiable ?G ?g (book_not ?G ?M))
+gi_exact_complete_constants_model(1):
+pp_e_constants (pp_e_complete_constants ?S)
+pp_e_frame_consistent_iff_model(1):
+pp_e_frame_consistent ?S ?A = (pp_e_sentence ?S ?A \<and> (\<exists>C. pp_e_constants C \<and> pp_e_true_in C ?A))
+pp_e_consistent_sentence_enum_range(1):
+range (pp_e_consistent_sentence_enum ?S) = pp_e_frame_consistent_sentences ?S
+pp_e_enumerated_sentence_true_at_branch(1):
+pp_e_holds (pp_e_eval (pp_e_complete_constants ?S) pp_e_closed_env (pp_e_consistent_sentence_enum ?S ?n)) [?n]
+pp_e_Bacon_consistency_representation(1):
+pp_e_sentence ?S ?A \<Longrightarrow> pp_e_frame_consistent ?S ?A = pp_e_true_in (pp_e_complete_constants ?S) (\<diamond>\<^sub>o ?A)
+pp_e_Bacon_exact_completeness(1):
+pp_e_sentence ?S ?A \<Longrightarrow> (?A \<in> pp_e_frame_theory ?S) = pp_e_true_in (pp_e_complete_constants ?S) (\<box>\<^sub>o ?A)

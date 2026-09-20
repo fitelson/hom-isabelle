@@ -1,0 +1,14 @@
+EXACT-DENOTATION-TRANSLATION-AUDIT: 12 clean endpoints
+SCOPE: Value equality at every represented type for the original constructor-to-named translation; typed constants, rich variable stock, typed distinct chart and total typed assignment retained. Proposition extensionality ranges over every word; lambda equality uses Bacon's exact restricted function graphs. HOL-ZF foundation retained. No PP model or consistency conclusion.
+gi_exact_chart_assignment_typed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_chart_update_lookup: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+pp_e_constants.gi_exact_eval_agrees_on_context: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+pp_e_constants.gi_exact_chart_body_eval: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+pp_e_constants.gi_exact_translation_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+pp_e_constants.gi_exact_translated_member: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+pp_e_constants.gi_exact_translation_prop_ext: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+pp_e_constants.gi_exact_named_not_holds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+pp_e_constants.gi_exact_named_and_holds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+pp_e_constants.gi_exact_named_or_holds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+pp_e_constants.gi_exact_named_exists_holds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+pp_e_constants.gi_exact_denotation_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6

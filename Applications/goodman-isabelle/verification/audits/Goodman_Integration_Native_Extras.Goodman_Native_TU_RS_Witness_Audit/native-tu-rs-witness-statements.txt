@@ -1,0 +1,34 @@
+gb_TU_RS_axioms_T1_form:
+gb_TU_RS_axioms ?G = gb_T1_axioms ?G \<union> {gb_target_PP, gb_exists_fun_prime ?G, gb_TU ?G}
+gb_TU_RS_axioms_language:
+\<lbrakk>sg_rich ?G; ?A \<in> gb_TU_RS_axioms ?G\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?A
+gb_TU_RS_axioms_closed:
+\<lbrakk>sg_rich ?G; ?A \<in> gb_TU_RS_axioms ?G\<rbrakk> \<Longrightarrow> named_fv ?A = {}
+gi_TU_RS_axioms_closed:
+?A \<in> gi_TU_RS_axioms \<Longrightarrow> [] \<turnstile> ?A : Prop
+gi_TU_RS_literal_stock_inclusion:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> gi_to_book ?G [] ?k ` (pp_T6_core_PP_axioms \<union> {pp_exists_fun_prime, pp_TU}) \<subseteq> gb_TU_RS_axioms ?G
+gi_TU_RS_axiom_from_native:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?A \<in> gi_TU_RS_axioms\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gb_TU_RS_axioms ?G) (gi_to_book ?G [] ?k ?A)
+gi_TU_RS_native_preservation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; gi_TU_RS_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_TU_RS_axioms ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_native_TU_RS_derives_RS:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_TU_RS_axioms ?G) (gb_RS ?G)
+gi_RS_plus_native_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G ?ns ?k gi_RS_plus = gb_RS_plus_on_chart ?G ?ns
+gi_RS_plus_shift_by:
+shift_by ?n gi_RS_plus = gi_RS_plus
+gi_RS_plus_purity_admitted:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_pure pp_unary_ty gi_RS_plus)
+gi_RS_plus_specification_admitted:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_rigid_specification gi_RS_plus)
+gi_native_TU_RS_witness_pure:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_TU_RS_axioms ?G) (gb_pure gb_unary (gb_RS_plus ?G))
+gi_native_TU_RS_witness_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_TU_RS_axioms ?G) (gi_to_book ?G [] ?k (pp_rigid_specification gi_RS_plus))
+gi_RS_plus_chart_alpha:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; distinct ?ns\<rbrakk> \<Longrightarrow> named_alpha ?G (gi_to_book ?G ?ns ?k gi_RS_plus) (gb_RS_plus ?G)
+gi_RS_plus_specification_alpha:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> named_alpha ?G (gi_to_book ?G [] ?k (pp_rigid_specification gi_RS_plus)) (gb_rigid_specification_on_chart ?G [] (gb_RS_plus ?G))
+gi_native_TU_RS_witness_specification:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_TU_RS_axioms ?G) (gb_rigid_specification_on_chart ?G [] (gb_RS_plus ?G))

@@ -1,0 +1,58 @@
+gi_M5_view_complement(1):
+pp_view ?i (- ?P) = - pp_view ?i ?P
+gi_M5_raw_NC_view(1):
+pp_view ?i (gi_M5_raw_NC ?P) = gi_M5_raw_NC (pp_view ?i ?P)
+gi_M5_alternating_views_nonextreme(1):
+pp_view ?i gi_M5_alternating \<noteq> {}
+gi_M5_alternating_views_nonextreme(2):
+pp_view ?i gi_M5_alternating \<noteq> UNIV
+gi_M5_alternating_NC_empty(1):
+gi_M5_raw_NC gi_M5_alternating = {}
+gi_M5_counter_input_views(1):
+pp_view [0] (gi_M5_counter_input ?r) = ?r
+gi_M5_counter_input_views(2):
+pp_view [1] (gi_M5_counter_input ?r) = gi_M5_alternating
+gi_M5_counter_input_fun_prime(1):
+pp_e_exact_fun_prime ?r \<Longrightarrow> pp_e_exact_fun_prime (gi_M5_counter_input ?r)
+gi_M5_counter_NC_view_empty(1):
+pp_view [1] (gi_M5_raw_NC (gi_M5_counter_input ?r)) = {}
+gi_M5_counter_collision_false_on_branch(1):
+[1] \<notin> gi_M5_raw_collision (gi_M5_raw_NC (gi_M5_counter_input ?r))
+gi_M5_raw_collision_truth(1):
+gi_M5_raw_collision UNIV = UNIV
+gi_M5_raw_collision_counterexample(1):
+gi_M5_raw_collision (gi_M5_raw_NC (gi_M5_counter_input ?r)) \<noteq> gi_M5_raw_collision UNIV
+gi_M5_future_extract_iff(1):
+(\<forall>v. prefix (rev ?i) v \<longrightarrow> pp_e_holds ?p v) = (pp_view ?i (pp_n_bacon_extract ?p) = UNIV)
+gi_M5_eval_box_raw(1):
+pp_n_bacon_extract (pp_e_eval ?C ?\<rho> (\<box>\<^sub>o ?M)) = pp_sem_box (pp_n_bacon_extract (pp_e_eval ?C ?\<rho> ?M))
+gi_M5_eval_neg_raw(1):
+pp_n_bacon_extract (pp_e_eval ?C ?\<rho> (Neg ?M)) = - pp_n_bacon_extract (pp_e_eval ?C ?\<rho> ?M)
+gi_M5_eval_disj_raw(1):
+pp_n_bacon_extract (pp_e_eval ?C ?\<rho> (Disj ?M ?N)) = pp_n_bacon_extract (pp_e_eval ?C ?\<rho> ?M) \<union> pp_n_bacon_extract (pp_e_eval ?C ?\<rho> ?N)
+gi_M5_eval_iff_raw(1):
+pp_n_bacon_extract (pp_e_eval ?C ?\<rho> (?M \<longleftrightarrow>\<^sub>o ?N)) = {i. (i \<in> pp_n_bacon_extract (pp_e_eval ?C ?\<rho> ?M)) = (i \<in> pp_n_bacon_extract (pp_e_eval ?C ?\<rho> ?N))}
+gi_M5_eval_NC_raw(1):
+pp_n_bacon_extract (pp_e_eval ?C ?\<rho> (pp_noncontingent ?M)) = gi_M5_raw_NC (pp_n_bacon_extract (pp_e_eval ?C ?\<rho> ?M))
+gi_M5_eval_truth_raw(1):
+pp_n_bacon_extract (pp_e_eval ?C ?\<rho> ObjTrue) = UNIV
+gi_M5_eval_collision_raw(1):
+Elem (pp_e_eval ?C ?\<rho> ?M) (pp_e_domain Prop) \<Longrightarrow> pp_n_bacon_extract (pp_e_eval ?C ?\<rho> (App pp_M5_collision_operator ?M)) = gi_M5_raw_collision (pp_n_bacon_extract (pp_e_eval ?C ?\<rho> ?M))
+gi_M5_collision_result_typed(1):
+?\<Gamma> \<turnstile> ?r : Prop \<Longrightarrow> ?\<Gamma> \<turnstile> gi_M5_collision_result ?r : Prop
+gi_M5_actual_collision_result_false_at_root(1):
+\<not> pp_e_holds (pp_e_eval pp_e_generic_internal_constants (extend_env (pp_n_bacon_embed (gi_M5_counter_input ?r)) ?\<rho>) (gi_M5_collision_result (Var 0))) []
+gi_M5_actual_local_collision_counterexample(1):
+pp_e_exact_fun_prime ?r \<Longrightarrow> pp_e_holds (pp_e_eval pp_e_generic_internal_constants (extend_env (pp_n_bacon_embed (gi_M5_counter_input ?r)) ?\<rho>) (pp_fun_prime (Var 0))) [] \<and> \<not> pp_e_holds (pp_e_eval pp_e_generic_internal_constants (extend_env (pp_n_bacon_embed (gi_M5_counter_input ?r)) ?\<rho>) (gi_M5_collision_result (Var 0))) []
+gi_M5_local_collision_universal_typed(1):
+[] \<turnstile> gi_M5_local_collision_universal : Prop
+gi_M5_local_collision_universal_false_at_root(1):
+\<not> pp_e_holds (pp_e_eval pp_e_generic_internal_constants ?\<rho> gi_M5_local_collision_universal) []
+gi_M5_local_collision_vocabulary(1):
+consts_of gi_M5_local_collision_universal \<subseteq> {pp_pure_name, pp_fun_name}
+gi_M5_native_local_collision_false_at_root(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap; book_env_typed gi_exact_domain ?G ?g\<rbrakk> \<Longrightarrow> \<not> gi_exact_valuation [] (gi_exact_goodman_denote pp_e_generic_internal_constants ?G ?g (gi_to_book ?G [] ?cmap gi_M5_local_collision_universal))
+gi_M5_local_collision_not_derivable_from_no_PP_QLN(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap\<rbrakk> \<Longrightarrow> \<not> goodman_book_proves gb_signature ?G (gi_native_QLN_background ?G) (gi_to_book ?G [] ?cmap gi_M5_local_collision_universal)
+gi_M5_local_collision_not_derivable_from_T2_min(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?cmap\<rbrakk> \<Longrightarrow> \<not> goodman_book_proves gb_signature ?G (gb_T2_min_axioms ?G) (gi_to_book ?G [] ?cmap gi_M5_local_collision_universal)

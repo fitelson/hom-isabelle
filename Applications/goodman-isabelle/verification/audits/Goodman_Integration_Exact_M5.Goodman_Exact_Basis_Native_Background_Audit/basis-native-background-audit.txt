@@ -1,0 +1,20 @@
+BASIS-NATIVE-BACKGROUND-AUDIT: 18 clean endpoints
+SCOPE: Under the explicit invariant-basis locale, native Pure/Fun truth and global validity of every native closed-logical purity instance, application closure at all represented types, one fundamental proposition, no fundamentals elsewhere, and gb_background_axioms. The basis is not identified with the old closed-logical stock. Locale, language, environment and richness premises retained. Native Pure/Fun language only: fresh k still needs its intended value assigned separately. No QLN, PP, or unqualified completed expanded-language model claim. HOL-ZF foundations retained.
+gi_exact_invariant_basis.gi_basis_native_denote_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_native_pure_denotation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_native_fun_denotation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_native_pure_holds(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_native_fun_holds(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_native_logical_purity_gvalid(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_native_purity_schema_gvalid(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_application_holds_iff(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_application_holds(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_unique_fundamental_holds(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_no_fundamentals_holds(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_native_closed_shape_gvalid(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7
+gi_exact_invariant_basis.gi_basis_native_application_gvalid(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_native_application_schema_gvalid(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_native_unique_fundamental_gvalid(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_native_no_fundamentals_gvalid(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_native_no_other_fundamentals_schema_gvalid(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_native_background_gvalid(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3

@@ -1,0 +1,18 @@
+EXACT-QLN-TRANSFER-AUDIT: 16 clean endpoints
+SCOPE: Native zeroary/unary Recombination and Exhaustion globally valid in the exact generic-seed interpretation, at every world and typed assignment; declared Goodman signature and source-name guards checked. HOL-ZF qualification retained. Not the distinct theorem-10.1 glued model, not a full-background assembly, and not PP.
+pp_e_constants.gi_exact_goodman_closed_global_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+pp_e_constants.gi_exact_goodman_empty_equivalence_transport: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+pp_e_constants.gi_exact_goodman_closed_equivalence_transfer: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9
+gi_exact_zeroary_recombination_vocabulary: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_unary_recombination_vocabulary: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_zeroary_exhaustion_vocabulary: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_unary_exhaustion_vocabulary: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_zeroary_recombination_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_unary_recombination_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_zeroary_exhaustion_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_unary_exhaustion_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_QLN_constants: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_generic_zeroary_recombination_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_generic_unary_recombination_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_generic_zeroary_exhaustion_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_generic_unary_exhaustion_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

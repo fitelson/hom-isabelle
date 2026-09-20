@@ -1,0 +1,13 @@
+EXACT-APPLICATIVE-AUDIT: 11 clean endpoints
+SCOPE: Exact HOL-ZF carriers, application closure, inhabited domains and total typed assignments only; NOT yet named denotation or global soundness. Relative to the imported HOL-ZF assumptions.
+gi_exact_domain_member: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_app_value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_app_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_book_applicative_structure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_default_member: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_domain_nonempty: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_book_assignment_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_default_assignment_typed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_total_assignment_exists: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_assignment_lookup: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_assignment_update: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

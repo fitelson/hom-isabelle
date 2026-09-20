@@ -1,0 +1,23 @@
+EXACT-EXPANDED-STOCK-AUDIT: 21 clean endpoints
+SCOPE: All closed typed terms over one fresh constant declared ONLY at t-to-t, interpreted by an exact typed action-invariant K. Countability, typing, invariance, application closure, old logical inclusion and K membership; equality with the complete closed native string-language denotation set. The auxiliary C_K is NOT a Goodman Pure/Fun interpretation. No rebuilt model, saturation countability, or PP conclusion; HOL-ZF qualifications retained.
+gi_M5_signature_occurrence_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_signature_translation_guard: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M5_logical_in_expanded_signature: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M5_expanded_basisI: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M5_expanded_basisE: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M5_expanded_basis_countable: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_expanded_stock.gi_M5_basis_constants_typed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_basis_constants_action: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_basis_named_constant_value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_basis_reserved_names_default: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_basis_eval_action: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_exact_expanded_stock.gi_M5_expanded_closed_den_typed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_expanded_closed_den_invariant: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_expanded_closed_eval_independent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_expanded_basis_typed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_expanded_basis_invariant: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_expanded_basis_application: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_expanded_stock.gi_M5_expanded_basis_contains_logical: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_expanded_stock.gi_M5_expanded_basis_contains_K: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_expanded_stock.gi_M5_named_expanded_basis_equal: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_expanded_stock.gi_M5_expanded_basis_contains_native_logical: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

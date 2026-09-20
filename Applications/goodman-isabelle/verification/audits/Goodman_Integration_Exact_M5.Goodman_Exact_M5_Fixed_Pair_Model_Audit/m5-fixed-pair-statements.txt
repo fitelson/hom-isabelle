@@ -1,0 +1,18 @@
+gi_exact_M5_fixed_raw(1):
+pp_e_raw_operator gi_exact_M5_fixed_value = gi_M5_exotic {[5]}
+gi_exact_M5_fixed_expanded_stock(1):
+gi_exact_expanded_stock gi_M5_exotic_name gi_exact_M5_fixed_value
+gi_exact_M5_fixed_QLN_model(1):
+\<lbrakk>sg_rich ?G; ?A \<in> gi_native_QLN_background ?G\<rbrakk> \<Longrightarrow> gi_exact_goodman_global_valid gi_M5_fixed_constants ?G ?A
+gi_exact_M5_fixed_QSS_model(1):
+sg_rich ?G \<Longrightarrow> gi_exact_goodman_global_valid gi_M5_fixed_constants ?G (gb_QSS ?G)
+gi_exact_M5_fixed_operator_pure(1):
+pp_e_holds (pp_e_eval gi_M5_fixed_constants ?\<rho> (pp_pure gb_unary (Const gi_M5_exotic_name gb_unary))) ?w
+gi_exact_M5_fixed_operator_denotation(1):
+pp_e_eval gi_M5_fixed_constants ?\<rho> (Const gi_M5_exotic_name gb_unary) = gi_exact_M5_fixed_value
+gi_exact_M5_fixed_operator_involution(1):
+Elem ?p (pp_e_domain Prop) \<Longrightarrow> gi_exact_M5_fixed_value \<acute> (gi_exact_M5_fixed_value \<acute> ?p) = ?p
+gi_exact_M5_fixed_operator_classification_failure(1):
+\<not> gi_M5_truth_preserving (pp_e_raw_operator gi_exact_M5_fixed_value) \<and> \<not> gi_M5_truth_flipping (pp_e_raw_operator gi_exact_M5_fixed_value)
+gi_exact_M5_fixed_operator_classification_failure(2):
+\<nexists>A. pp_e_raw_operator gi_exact_M5_fixed_value = gi_M5_biconditional_operator A

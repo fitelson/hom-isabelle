@@ -1,0 +1,21 @@
+EXACT-STOCK-AUDIT: 19 clean endpoints from 16 named facts
+SCOPE: Every closed logical native term decodes to a closed constant-free old term; literal denotation-set equality and local-Leibniz-saturated stock equality at every represented type and world. Richness is retained where stated. HOL-ZF foundations retained. No generic Pure/Fun interpretation, QLN instance, L2 transfer, arbitrary enlarged stock, or PP consistency is certified by these endpoints alone.
+gi_pterm_empty_signature_const_free(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_closed_named_decode_type(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_closed_logical_decode(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_closed_logical_decode(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_old_closed_evaluation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_closed_logical_decode_denotation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_empty_signature_name_map_language(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_empty_signature_name_map_closed_logical(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_logical_string_roundtrip(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_goodman_closed_logical_decode_denotation(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_goodman_closed_logical_decode_denotation(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_goodman_closed_logical_decode_denotation(3): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_closed_den_decoded(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_closed_den_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_closed_den_independent(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_old_closed_logical_native_witness(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_logical_denotation_sets_equal(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_stock_iff_original(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_native_stock_independent_of_rich_names(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

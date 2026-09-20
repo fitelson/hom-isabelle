@@ -1,0 +1,52 @@
+gi_CEV_bic_self_inverse(1):
+[] ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gi_bic_self_inverse
+gi_CEV_bic_operator_pure(1):
+pp_T6_core_PP_axioms \<subseteq> ?T \<Longrightarrow> [] ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gi_bic_operator_pure
+gi_CEV_bic_group_member(1):
+pp_T6_core_PP_axioms \<subseteq> ?T \<Longrightarrow> [] ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gi_bic_group_member
+gi_bic_self_inverse_typed(1):
+[] \<turnstile> gi_bic_self_inverse : Prop
+gi_bic_operator_pure_typed(1):
+[] \<turnstile> gi_bic_operator_pure : Prop
+gi_bic_group_member_typed(1):
+[] \<turnstile> gi_bic_group_member : Prop
+gi_bic_builder_shift(1):
+rename Suc pp_biconditional_builder = pp_biconditional_builder
+gi_bic_self_inverse_translation(1):
+gi_to_book ?G [] ?k gi_bic_self_inverse = gb_bic_self_inverse ?G
+gi_bic_operator_pure_translation(1):
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k gi_bic_operator_pure = gb_bic_operator_pure ?G
+gb_bic_builder_chart_alpha(1):
+\<lbrakk>sg_rich ?G; distinct ?ns; distinct ?ms\<rbrakk> \<Longrightarrow> named_alpha ?G (gb_biconditional_builder_on_chart ?G ?ns) (gb_biconditional_builder_on_chart ?G ?ms)
+gi_bic_group_member_alpha(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> named_alpha ?G (gi_to_book ?G [] ?k gi_bic_group_member) (gb_bic_group_member ?G)
+gi_bic_self_inverse_admitted(1):
+gi_constants_admitted ?k ?\<Sigma> gi_bic_self_inverse
+gi_bic_operator_pure_admitted(1):
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature gi_bic_operator_pure
+gi_bic_group_member_admitted(1):
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature gi_bic_group_member
+gi_T6_core_axioms_closed(1):
+?A \<in> pp_T6_core_PP_axioms \<Longrightarrow> [] \<turnstile> ?A : Prop
+gi_T6_core_axiom_from_native(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?A \<in> pp_T6_core_PP_axioms\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gb_T6_core ?G) (gi_to_book ?G [] ?k ?A)
+gi_T6_core_native_preservation(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; pp_T6_core_PP_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_native_bic_self_inverse_empty_stock(1):
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G {} (gb_bic_self_inverse ?G)
+gi_native_bic_self_inverse(1):
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G ?U (gb_bic_self_inverse ?G)
+gi_native_bic_operator_pure(1):
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gb_bic_operator_pure ?G)
+gi_native_bic_group_member_translated(1):
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gi_to_book ?G [] ?k gi_bic_group_member)
+gi_native_bic_group_member(1):
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (gb_bic_group_member ?G)
+gb_bic_self_inverse_language_closed(1):
+sg_rich ?G \<Longrightarrow> book_theory_formula gb_signature ?G (gb_bic_self_inverse ?G)
+gb_bic_self_inverse_language_closed(2):
+sg_rich ?G \<Longrightarrow> named_fv (gb_bic_self_inverse ?G) = {}
+gb_bic_operator_pure_language_closed(1):
+sg_rich ?G \<Longrightarrow> book_theory_formula gb_signature ?G (gb_bic_operator_pure ?G)
+gb_bic_operator_pure_language_closed(2):
+sg_rich ?G \<Longrightarrow> named_fv (gb_bic_operator_pure ?G) = {}

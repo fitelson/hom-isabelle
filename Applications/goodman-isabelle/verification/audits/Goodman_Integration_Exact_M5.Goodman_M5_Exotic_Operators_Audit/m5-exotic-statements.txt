@@ -1,0 +1,110 @@
+gi_M5_exotic_equivariant(1):
+pp_equivariant_operator (gi_M5_exotic ?s)
+gi_M5_exotic_view(1):
+pp_view ?i (gi_M5_exotic ?s ?P) = gi_M5_exotic ?s (pp_view ?i ?P)
+gi_M5_no_echo_pair.pair_distinct(1):
+gi_M5_no_echo_pair ?s \<Longrightarrow> ?s \<noteq> insert [] ?s
+gi_M5_no_echo_pair.flip_rule(1):
+gi_M5_no_echo_pair ?s \<Longrightarrow> (?i \<in> gi_M5_exotic ?s ?P) = (if pp_view ?i ?P \<in> gi_M5_pair ?s then ?i \<notin> ?P else ?i \<in> ?P)
+gi_M5_no_echo_pair.swaps_false(1):
+gi_M5_no_echo_pair ?s \<Longrightarrow> gi_M5_exotic ?s ?s = insert [] ?s
+gi_M5_no_echo_pair.swaps_true(1):
+gi_M5_no_echo_pair ?s \<Longrightarrow> gi_M5_exotic ?s (insert [] ?s) = ?s
+gi_M5_no_echo_pair.preserves_pair(1):
+\<lbrakk>gi_M5_no_echo_pair ?s; ?P \<in> gi_M5_pair ?s\<rbrakk> \<Longrightarrow> gi_M5_exotic ?s ?P \<in> gi_M5_pair ?s
+gi_M5_no_echo_pair.preimage_pair_only_at_root(1):
+\<lbrakk>gi_M5_no_echo_pair ?s; gi_M5_exotic ?s ?P \<in> gi_M5_pair ?s; pp_view ?i ?P \<in> gi_M5_pair ?s\<rbrakk> \<Longrightarrow> ?i = []
+gi_M5_no_echo_pair.no_outsider_enters_pair(1):
+\<lbrakk>gi_M5_no_echo_pair ?s; gi_M5_exotic ?s ?P \<in> gi_M5_pair ?s\<rbrakk> \<Longrightarrow> ?P \<in> gi_M5_pair ?s
+gi_M5_no_echo_pair.pair_iff(1):
+gi_M5_no_echo_pair ?s \<Longrightarrow> (gi_M5_exotic ?s ?P \<in> gi_M5_pair ?s) = (?P \<in> gi_M5_pair ?s)
+gi_M5_no_echo_pair.involution(1):
+gi_M5_no_echo_pair ?s \<Longrightarrow> gi_M5_exotic ?s (gi_M5_exotic ?s ?P) = ?P
+gi_M5_no_echo_pair.bijective(1):
+gi_M5_no_echo_pair ?s \<Longrightarrow> bij (gi_M5_exotic ?s)
+gi_M5_no_echo_pair.pair_nonextreme(1):
+gi_M5_no_echo_pair ?s \<Longrightarrow> {} \<notin> gi_M5_pair ?s
+gi_M5_no_echo_pair.pair_nonextreme(2):
+gi_M5_no_echo_pair ?s \<Longrightarrow> UNIV \<notin> gi_M5_pair ?s
+gi_M5_no_echo_pair.fixes_extremes(1):
+gi_M5_no_echo_pair ?s \<Longrightarrow> gi_M5_exotic ?s {} = {}
+gi_M5_no_echo_pair.fixes_extremes(2):
+gi_M5_no_echo_pair ?s \<Longrightarrow> gi_M5_exotic ?s UNIV = UNIV
+gi_M5_no_echo_pair.not_identity(1):
+gi_M5_no_echo_pair ?s \<Longrightarrow> gi_M5_exotic ?s \<noteq> id
+gi_M5_no_echo_pair.not_truth_uniform(1):
+gi_M5_no_echo_pair ?s \<Longrightarrow> \<not> gi_M5_truth_preserving (gi_M5_exotic ?s) \<and> \<not> gi_M5_truth_flipping (gi_M5_exotic ?s)
+gi_M5_no_echo_pair.not_biconditional(1):
+gi_M5_no_echo_pair ?s \<Longrightarrow> \<nexists>A. gi_M5_exotic ?s = gi_M5_biconditional_operator A
+gi_M5_no_echo_pair.fixes_avoiding_orbit(1):
+\<lbrakk>gi_M5_no_echo_pair ?s; gi_M5_pair ?s \<inter> pp_orbit ?R = {}\<rbrakk> \<Longrightarrow> gi_M5_exotic ?s ?R = ?R
+gi_M5_fixed_pair(1):
+gi_M5_no_echo_pair {[5]}
+gi_M5_fixed_exotic_involution(1):
+gi_M5_exotic {[5]} (gi_M5_exotic {[5]} ?P) = ?P
+gi_M5_selector_zero(1):
+0 \<in> gi_M5_diagonal_selector ?R
+gi_M5_selector_one(1):
+1 \<notin> gi_M5_diagonal_selector ?R
+gi_M5_diagonal_singleton(1):
+([?n + 2] \<in> gi_M5_diagonal_s ?R) = ([?n + 2] \<notin> pp_view (from_nat ?n) ?R)
+gi_M5_diagonal_false(1):
+[] \<notin> gi_M5_diagonal_s ?R
+gi_M5_diagonal_nonextreme(1):
+gi_M5_diagonal_s ?R \<noteq> {}
+gi_M5_diagonal_nonextreme(2):
+gi_M5_diagonal_s ?R \<noteq> UNIV
+gi_M5_diagonal_nonextreme(3):
+insert [] (gi_M5_diagonal_s ?R) \<noteq> {}
+gi_M5_diagonal_nonextreme(4):
+insert [] (gi_M5_diagonal_s ?R) \<noteq> UNIV
+gi_M5_diagonal_avoids_view(1):
+gi_M5_diagonal_s ?R \<noteq> pp_view ?i ?R
+gi_M5_diagonal_avoids_view(2):
+insert [] (gi_M5_diagonal_s ?R) \<noteq> pp_view ?i ?R
+gi_M5_diagonal_pair_avoids_orbit(1):
+gi_M5_pair (gi_M5_diagonal_s ?R) \<inter> pp_orbit ?R = {}
+gi_M5_diagonal_view(1):
+?i \<noteq> [] \<Longrightarrow> pp_view ?i (gi_M5_diagonal_s ?R) = (if last ?i \<in> gi_M5_diagonal_selector ?R then UNIV else {})
+gi_M5_insert_root_view(1):
+?i \<noteq> [] \<Longrightarrow> pp_view ?i (insert [] ?P) = pp_view ?i ?P
+gi_M5_diagonal_no_echo_pair(1):
+gi_M5_no_echo_pair (gi_M5_diagonal_s ?R)
+gi_M5_repaired_exotic_involution(1):
+gi_M5_repaired_exotic ?R (gi_M5_repaired_exotic ?R ?P) = ?P
+gi_M5_repaired_exotic_equivariant(1):
+pp_equivariant_operator (gi_M5_repaired_exotic ?R)
+gi_M5_repaired_exotic_bijective(1):
+bij (gi_M5_repaired_exotic ?R)
+gi_M5_repaired_exotic_swaps(1):
+gi_M5_repaired_exotic ?R (gi_M5_diagonal_s ?R) = insert [] (gi_M5_diagonal_s ?R)
+gi_M5_repaired_exotic_swaps(2):
+gi_M5_repaired_exotic ?R (insert [] (gi_M5_diagonal_s ?R)) = gi_M5_diagonal_s ?R
+gi_M5_repaired_exotic_fixes_R(1):
+gi_M5_repaired_exotic ?R ?R = ?R
+gi_M5_repaired_exotic_not_identity(1):
+gi_M5_repaired_exotic ?R \<noteq> id
+gi_M5_repaired_exotic_not_truth_uniform(1):
+\<not> gi_M5_truth_preserving (gi_M5_repaired_exotic ?R) \<and> \<not> gi_M5_truth_flipping (gi_M5_repaired_exotic ?R)
+gi_M5_repaired_exotic_not_biconditional(1):
+\<nexists>A. gi_M5_repaired_exotic ?R = gi_M5_biconditional_operator A
+gi_M5_old_seed_QSS_obstruction(1):
+\<lbrakk>gi_M5_repaired_exotic ?R \<in> ?S; id \<in> ?S\<rbrakk> \<Longrightarrow> \<not> gi_stock_fun_prime ?S ?R
+gi_exact_M5_exotic_member(1):
+Elem (gi_exact_M5_exotic ?R) (pp_e_domain gb_unary)
+gi_exact_M5_exotic_invariant(1):
+pp_b_action gb_unary ?i (gi_exact_M5_exotic ?R) = gi_exact_M5_exotic ?R
+gi_exact_M5_exotic_raw(1):
+pp_e_raw_operator (gi_exact_M5_exotic ?R) = gi_M5_repaired_exotic ?R
+gi_exact_M5_application_extract(1):
+Elem ?p (pp_e_domain Prop) \<Longrightarrow> pp_n_bacon_extract (gi_exact_M5_exotic ?R \<acute> ?p) = gi_M5_repaired_exotic ?R (pp_n_bacon_extract ?p)
+gi_exact_M5_exotic_involution(1):
+Elem ?p (pp_e_domain Prop) \<Longrightarrow> gi_exact_M5_exotic ?R \<acute> (gi_exact_M5_exotic ?R \<acute> ?p) = ?p
+gi_exact_M5_application_root(1):
+pp_e_holds (gi_exact_M5_exotic ?R \<acute> pp_n_bacon_embed ?P) [] = ([] \<in> gi_M5_repaired_exotic ?R ?P)
+gi_exact_M5_exotic_not_truth_uniform(1):
+\<not> (\<forall>p. Elem p (pp_e_domain Prop) \<longrightarrow> pp_e_holds (gi_exact_M5_exotic ?R \<acute> p) [] = pp_e_holds p []) \<and> \<not> (\<forall>p. Elem p (pp_e_domain Prop) \<longrightarrow> pp_e_holds (gi_exact_M5_exotic ?R \<acute> p) [] = (\<not> pp_e_holds p []))
+gi_exact_M5_old_seed_collision(1):
+gi_exact_M5_exotic ?R \<noteq> pp_e_closed_den pp_identity_operator \<and> gi_exact_M5_exotic ?R \<acute> pp_n_bacon_embed ?R = pp_e_closed_den pp_identity_operator \<acute> pp_n_bacon_embed ?R
+gi_exact_M5_exotic_fixes_seed(1):
+gi_exact_M5_exotic ?R \<acute> pp_n_bacon_embed ?R = pp_n_bacon_embed ?R

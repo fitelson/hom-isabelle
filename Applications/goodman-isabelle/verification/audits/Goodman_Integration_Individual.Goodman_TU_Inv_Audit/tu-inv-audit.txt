@@ -1,0 +1,24 @@
+TU-INV-AUDIT: 22 clean endpoints
+SCOPE: Direct TU plus zeroary Exhaustion implies Inv over native T1; no PP, L2, or fun-prime witness. RS not established.
+gi_uniform_test_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_uniform_operator_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_uniform_literal_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_uniform_builder_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_uniform_builder_logical: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_uniform_builder_beta: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_uniform_builder_equality: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_uniform_test_pure_from: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_uniform_operator_shift: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_uniform_operator_beta: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_uniform_test_unfold: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_uniform_box_intens_test: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_uniform_branch_identity_from: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_TU_Exhaustion_group_classification: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_standard_operator_group_from: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_standard_operator_classification_converse: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_CEV_TU_Exhaustion_implies_Inv: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_CEV_TU_Exhaustion_exact_stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_TU_T1_axioms_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_TU_T1_native_stock_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_TU_T1_axiom_from_native: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_TU_Exhaustion_implies_Inv_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

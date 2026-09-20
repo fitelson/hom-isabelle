@@ -1,0 +1,24 @@
+gi_M3_zero_term_type:
+[] \<turnstile> gi_M3_zero_term : gb_unary
+gi_M3_zero_term_logical:
+pp_logical_vocabulary gi_M3_zero_term
+gi_M3_difference_term_type:
+\<lbrakk>[] \<turnstile> ?M : gb_unary; [] \<turnstile> ?N : gb_unary\<rbrakk> \<Longrightarrow> [] \<turnstile> gi_M3_difference_term ?M ?N : gb_unary
+gi_M3_difference_term_logical:
+\<lbrakk>pp_logical_vocabulary ?M; pp_logical_vocabulary ?N\<rbrakk> \<Longrightarrow> pp_logical_vocabulary (gi_M3_difference_term ?M ?N)
+gi_M3_zero_raw:
+pp_e_raw_operator (pp_e_closed_den gi_M3_zero_term) = (\<lambda>P. {})
+gi_M3_difference_raw:
+\<lbrakk>[] \<turnstile> ?M : gb_unary; [] \<turnstile> ?N : gb_unary\<rbrakk> \<Longrightarrow> pp_e_raw_operator (pp_e_closed_den (gi_M3_difference_term ?M ?N)) = gi_M3_difference (pp_e_raw_operator (pp_e_closed_den ?M)) (pp_e_raw_operator (pp_e_closed_den ?N))
+gi_exact_M3_zero_in_stock:
+(\<lambda>P. {}) \<in> pp_e_exact_operator_stock
+gi_exact_M3_difference_closed:
+\<lbrakk>?F \<in> pp_e_exact_operator_stock; ?H \<in> pp_e_exact_operator_stock\<rbrakk> \<Longrightarrow> gi_M3_difference ?F ?H \<in> pp_e_exact_operator_stock
+gi_M3_difference_zero_iff:
+(gi_M3_difference ?F ?H = (\<lambda>P. {})) = (?F = ?H)
+gi_exact_M3_fun_prime_iff_free:
+pp_e_exact_fun_prime ?p = gi_M3_free_for_stock pp_e_exact_operator_stock ?p
+gi_native_M3_fun_prime_iff_free:
+sg_rich ?G \<Longrightarrow> gi_stock_fun_prime (gi_exact_native_operator_stock ?G) ?p = gi_M3_free_for_stock (gi_exact_native_operator_stock ?G) ?p
+gi_native_M3_free_generator_exists:
+sg_rich ?G \<Longrightarrow> \<exists>p. gi_M3_free_for_stock (gi_exact_native_operator_stock ?G) p

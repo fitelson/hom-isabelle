@@ -1,0 +1,74 @@
+gb_QSS_instance_language:
+\<lbrakk>sg_rich ?G; book_in_language book_minimal_logical_type UNIV gb_signature ?G ?X gb_unary; book_in_language book_minimal_logical_type UNIV gb_signature ?G ?Y gb_unary; book_theory_formula gb_signature ?G ?r\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G (gb_QSS_instance ?G ?X ?Y ?r)
+gb_QSS_language:
+sg_rich ?G \<Longrightarrow> book_theory_formula gb_signature ?G (gb_QSS ?G)
+gb_QSS_instance_fv:
+named_fv (gb_QSS_instance ?G ?X ?Y ?r) = named_fv ?X \<union> named_fv ?Y \<union> named_fv ?r
+gb_QSS_closed:
+named_fv (gb_QSS ?G) = {}
+gi_QSS_admitted:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_QSS
+gi_QSS_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k pp_QSS = gb_QSS ?G
+gi_repaired_native_QSS:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_recombination_PP_zeroary_exhaustion ?G) (gb_QSS ?G)
+gi_QSS_unique_native_stock_exists:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G {gb_QSS ?G, gb_unique_fundamental ?G Prop} (gb_exists_fun_prime ?G)
+gi_native_exists_fun_prime_from_QSS:
+\<lbrakk>sg_rich ?G; goodman_book_proves gb_signature ?G ?T (gb_QSS ?G); goodman_book_proves gb_signature ?G ?T (gb_unique_fundamental ?G Prop)\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G ?T (gb_exists_fun_prime ?G)
+goodman_book_finite_support:
+goodman_book_proves ?\<Sigma> ?G ?T ?A \<Longrightarrow> \<exists>U. finite U \<and> U \<subseteq> ?T \<and> goodman_book_proves ?\<Sigma> ?G U ?A
+goodman_book_proves_iff_finite_support:
+goodman_book_proves ?\<Sigma> ?G ?T ?A = (\<exists>U. finite U \<and> U \<subseteq> ?T \<and> goodman_book_proves ?\<Sigma> ?G U ?A)
+goodman_book_consistent_subset:
+\<lbrakk>goodman_book_consistent ?\<Sigma> ?G ?T; ?U \<subseteq> ?T\<rbrakk> \<Longrightarrow> goodman_book_consistent ?\<Sigma> ?G ?U
+goodman_book_consistent_iff_finite_subsets:
+goodman_book_consistent ?\<Sigma> ?G ?T = (\<forall>U. finite U \<longrightarrow> U \<subseteq> ?T \<longrightarrow> goodman_book_consistent ?\<Sigma> ?G U)
+goodman_book_inconsistent_iff_finite_refutation:
+(\<not> goodman_book_consistent ?\<Sigma> ?G ?T) = (\<exists>U. finite U \<and> U \<subseteq> ?T \<and> goodman_book_proves ?\<Sigma> ?G U (book_bottom ?G))
+goodman_book_inconsistent_iff_finite_inconsistent_subset:
+(\<not> goodman_book_consistent ?\<Sigma> ?G ?T) = (\<exists>U. finite U \<and> U \<subseteq> ?T \<and> \<not> goodman_book_consistent ?\<Sigma> ?G U)
+gb_recombination_PP_consistent_iff_finite_subsets:
+goodman_book_consistent gb_signature ?G (gb_recombination_PP_axioms ?G) = (\<forall>U. finite U \<longrightarrow> U \<subseteq> gb_recombination_PP_axioms ?G \<longrightarrow> goodman_book_consistent gb_signature ?G U)
+gb_recombination_PP_negative_answer_iff_finite_refutation:
+(\<not> goodman_book_consistent gb_signature ?G (gb_recombination_PP_axioms ?G)) = (\<exists>U. finite U \<and> U \<subseteq> gb_recombination_PP_axioms ?G \<and> goodman_book_proves gb_signature ?G U (book_bottom ?G))
+gi_T1_axioms_closed:
+?A \<in> pp_T1_axioms \<Longrightarrow> [] \<turnstile> ?A : Prop
+gb_T1_axioms_language:
+\<lbrakk>sg_rich ?G; ?A \<in> gb_T1_axioms ?G\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?A
+gb_T1_axioms_closed:
+?A \<in> gb_T1_axioms ?G \<Longrightarrow> named_fv ?A = {}
+gi_T1_axiom_from_native:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; gb_T1_axioms ?G \<subseteq> ?U; ?A \<in> pp_T1_axioms\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G ?U (gi_to_book ?G [] ?k ?A)
+gi_T1_native_preservation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; pp_T1_axioms \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T1_axioms ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_T1_extreme_admitted:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_T1_pure_propositions_extreme
+gi_T1_pure_propositions_extreme_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T1_axioms ?G) (gi_to_book ?G [] ?k pp_T1_pure_propositions_extreme)
+gi_T1_extreme_translation:
+gi_to_book ?G ?ns ?k (pp_proposition_extreme ?p) = gb_T1_extreme_at ?G ?ns (gi_to_book ?G ?ns ?k ?p)
+gi_T1_pure_extreme_translation:
+gi_goodman_names ?k \<Longrightarrow> gi_to_book ?G [] ?k pp_T1_pure_propositions_extreme = gb_T1_pure_propositions_extreme ?G
+gi_T1_pure_propositions_extreme:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T1_axioms ?G) (gb_T1_pure_propositions_extreme ?G)
+gi_T1_identity_operator_translation:
+gi_to_book ?G ?ns ?k pp_identity_operator = gb_T1_identity_operator ?G ?ns
+gi_T1_negation_operator_translation:
+gi_to_book ?G ?ns ?k pp_negation_operator = gb_T1_negation_operator ?G ?ns
+gi_T1_biconditional_operator_translation:
+gi_to_book ?G ?ns ?k (pp_biconditional_operator ?A) = gb_T1_biconditional_operator ?G ?ns (gi_to_book ?G ?ns ?k ?A)
+gi_T1_biconditional_classification_admitted:
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (Imp (pp_pure Prop ?A) (Disj (Eq pp_unary_ty (pp_biconditional_operator ?A) pp_identity_operator) (Eq pp_unary_ty (pp_biconditional_operator ?A) pp_negation_operator)))
+gi_T1_biconditional_classification_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?A : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T1_axioms ?G) (gi_to_book ?G ?ns ?k (Imp (pp_pure Prop ?A) (Disj (Eq pp_unary_ty (pp_biconditional_operator ?A) pp_identity_operator) (Eq pp_unary_ty (pp_biconditional_operator ?A) pp_negation_operator))))
+gi_T1_biconditional_classification:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?A : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T1_axioms ?G) (gb_T1_biconditional_classification ?G ?ns (gi_to_book ?G ?ns ?k ?A))
+gi_T1_WI_axioms_closed:
+?A \<in> pp_T1_WI_axioms \<Longrightarrow> [] \<turnstile> ?A : Prop
+gi_T1_WI_native_stock_language:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?A \<in> gi_T1_WI_native_stock ?G ?k\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?A
+gi_T1_WI_axiom_from_native:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?A \<in> pp_T1_WI_axioms\<rbrakk> \<Longrightarrow> goodman_book_proves (\<lambda>_. UNIV) ?G (gi_T1_WI_native_stock ?G ?k) (gi_to_book ?G [] ?k ?A)
+gi_T1_WI_implies_Inv_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_T1_WI_native_stock ?G ?k) (gi_to_book ?G [] ?k pp_Inv)

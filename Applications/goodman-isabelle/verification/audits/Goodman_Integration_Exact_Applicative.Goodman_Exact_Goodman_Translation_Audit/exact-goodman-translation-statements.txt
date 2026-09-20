@@ -1,0 +1,16 @@
+gi_typed_name_map_or:
+book_typed_name_map ?\<rho> (book_or ?G ?A ?B) = book_or ?G (book_typed_name_map ?\<rho> ?A) (book_typed_name_map ?\<rho> ?B)
+gi_typed_name_map_exists:
+book_typed_name_map ?\<rho> (book_exists ?G ?n ?A) = book_exists ?G ?n (book_typed_name_map ?\<rho> ?A)
+gi_typed_name_map_translation:
+book_typed_name_map ?\<rho> (gi_to_book ?G ?ns ?k ?M) = gi_to_book ?G ?ns (\<lambda>c \<tau>. ?\<rho> \<tau> (?k c \<tau>)) ?M
+gi_translation_constant_agreement:
+(\<And>c \<tau>. c \<in> consts_of ?M \<Longrightarrow> ?k c \<tau> = ?j c \<tau>) \<Longrightarrow> gi_to_book ?G ?ns ?k ?M = gi_to_book ?G ?ns ?j ?M
+gi_goodman_string_name_recovers:
+\<lbrakk>gi_goodman_names ?k; ?c \<in> {pp_pure_name, pp_fun_name}\<rbrakk> \<Longrightarrow> gi_goodman_string_name (?k ?c ?\<tau>) = ?c
+gi_goodman_translation_string_roundtrip:
+\<lbrakk>gi_goodman_names ?k; consts_of ?M \<subseteq> {pp_pure_name, pp_fun_name}\<rbrakk> \<Longrightarrow> gi_goodman_string_term (gi_to_book ?G ?ns ?k ?M) = gi_to_book ?G ?ns (\<lambda>c \<tau>. c) ?M
+pp_e_constants.gi_exact_goodman_denotation_translation:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; ?\<Gamma> \<turnstile> ?M : ?\<tau>; map ?G ?ns = ?\<Gamma>; distinct ?ns; book_env_typed gi_exact_domain ?G ?g; gi_goodman_names ?k; consts_of ?M \<subseteq> {pp_pure_name, pp_fun_name}\<rbrakk> \<Longrightarrow> gi_exact_goodman_denote ?C ?G ?g (gi_to_book ?G ?ns ?k ?M) = pp_e_eval ?C (\<lambda>i. ?g (?ns ! i)) ?M
+pp_e_constants.gi_exact_goodman_closed_denotation_translation:
+\<lbrakk>pp_e_constants ?C; sg_rich ?G; [] \<turnstile> ?M : ?\<tau>; book_env_typed gi_exact_domain ?G ?g; gi_goodman_names ?k; consts_of ?M \<subseteq> {pp_pure_name, pp_fun_name}\<rbrakk> \<Longrightarrow> gi_exact_goodman_denote ?C ?G ?g (gi_to_book ?G [] ?k ?M) = pp_e_eval ?C pp_e_closed_env ?M

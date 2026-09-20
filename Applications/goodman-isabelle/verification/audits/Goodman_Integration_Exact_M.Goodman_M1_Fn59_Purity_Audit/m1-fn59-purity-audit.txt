@@ -1,0 +1,26 @@
+M1-FN59-PURITY-AUDIT: 24 clean endpoints
+SCOPE: Typed footnote59 liar and constant-free builder, two beta contractions, constructor CEV+ purity derivation, independent native liar/stock and source-language purity derivation in gb_signature. Stock retains logical purity, application closure, unary-classifier PP, AND Purity of Fun at t. No QSS/unique-fundamentality assumption is used in this purity proof; diagonal contradiction and model instantiation are separate.
+typed_gi_M1_fn59_liar: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M1_fn59_builder_constant_free: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+typed_gi_M1_fn59_builder: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+typed_gi_M1_fn59_instance: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+typed_gi_M1_fn59_after_pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M1_fn59_first_beta: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M1_fn59_second_beta: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M1_fn59_instance_beta_eta: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M1_fn59_builder_purity_axiom: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M1_fn59_application_closure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M1_fn59_PP: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M1_fn59_purity_of_fun: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M1_fn59_liar_pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M1_fn59_liar_vocabulary: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M1_fn59_liar_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M1_fn59_native_shape: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M1_native_fn59_liar_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M1_native_fn59_liar_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M1_fn59_purity_of_fun_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M1_fn59_axioms_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M1_fn59_native_stock_inclusion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M1_fn59_native_axioms_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M1_native_fn59_liar_pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_M1_fn59_translated_liar_pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

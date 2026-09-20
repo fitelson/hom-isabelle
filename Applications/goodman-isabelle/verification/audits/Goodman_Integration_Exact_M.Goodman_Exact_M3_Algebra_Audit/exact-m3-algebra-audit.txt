@@ -1,0 +1,14 @@
+EXACT-M3-ALGEBRA-AUDIT: 12 clean endpoints
+SCOPE: Exact complete logical stock contains zero and is Boolean-difference closed by actual closed logical witnesses; fun-prime iff absence of nonzero unary law and free-generator existence. No PP, particular glued-r identification, extreme-view or topological conclusion. HOL-ZF foundations retained.
+gi_M3_zero_term_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M3_zero_term_logical: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M3_difference_term_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M3_difference_term_logical: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M3_zero_raw: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_M3_difference_raw: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_M3_zero_in_stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M3_difference_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_M3_difference_zero_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_exact_M3_fun_prime_iff_free: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_native_M3_fun_prime_iff_free: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_M3_free_generator_exists: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1

@@ -1,0 +1,21 @@
+BASIS-QLN-AUDIT: 19 clean endpoints
+SCOPE: countable invariant typed application-closed basis containing all logical denotations; QLN is derived from the proved generic seed, not assumed. Four source directions at every world and four native global-validity endpoints; zeroary/unary only, unchanged exact carriers, no PP or assembled-model claim.
+gi_exact_invariant_basis.gi_basis_fundamental_raw: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_raw_universal_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_value_unary_QLN: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_exact_invariant_basis.gi_basis_pure_unary_representative: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_related_applications: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_exact_invariant_basis.gi_basis_pure_unary_QLN: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gi_exact_invariant_basis.gi_basis_proposition_world_constant: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_pure_prop_true_imp_box: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_exact_invariant_basis.gi_basis_unary_recombination_holds_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_unary_recombination_holds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_unary_exhaustion_holds_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_unary_exhaustion_holds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_zeroary_recombination_holds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_zeroary_exhaustion_holds_iff: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_zeroary_exhaustion_holds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_exact_invariant_basis.gi_basis_native_zeroary_recombination_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_native_unary_recombination_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_native_zeroary_exhaustion_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_exact_invariant_basis.gi_basis_native_unary_exhaustion_gvalid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

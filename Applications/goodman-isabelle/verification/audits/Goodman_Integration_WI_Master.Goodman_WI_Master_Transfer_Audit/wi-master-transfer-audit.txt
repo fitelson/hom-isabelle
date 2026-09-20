@@ -1,0 +1,19 @@
+WI-MASTER-TRANSFER-AUDIT: 16 clean endpoints
+SCOPE: Direct parameter equations use native core+L2+WI and explicit fun-prime/purity antecedents, typed charts and occurrence-sensitive signature guards. The closed advertised theorem retains its exact original existence-augmented stock. Conclusions are translated, not independently native master definitions. The separate closed arbitrary-operator family contradiction has only Pure(top) and the full family as axioms.
+DIRECT-PROVENANCE: 46574 proof nodes traversed; no completed WI refutation, master-family contradiction, or ex-falso endpoint used.
+gi_WI_master_source_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gb_WI_master_stock_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_WI_master_stock_inclusion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_WI_master_preservation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_WI_master_a_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_WI_master_operator_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_WI_master_at_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_WI_master_family_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_WI_advertised_master_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_WI_advertised_claim_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_WI_master_pointwise_direct_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_WI_master_operator_pointwise_direct_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_WI_master_family_direct_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_WI_advertised_family_direct_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_WI_advertised_closed_claim_direct_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_WI_master_family_inconsistent_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4

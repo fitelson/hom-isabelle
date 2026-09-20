@@ -1,0 +1,24 @@
+gi_exact_M4_variation_square_nonzero(1):
+pp_e_child_variation \<circ> pp_e_child_variation \<noteq> (\<lambda>P. {})
+gi_exact_M4_variation_square_in_stock(1):
+pp_e_child_variation \<circ> pp_e_child_variation \<in> pp_e_exact_operator_stock
+gi_exact_M4_nonconstant_proper_view(1):
+pp_e_exact_fun_prime ?r \<Longrightarrow> \<exists>w. w \<noteq> [] \<and> pp_view w ?r \<noteq> {} \<and> pp_view w ?r \<noteq> UNIV
+gi_exact_M4_fresh_letter(1):
+(\<And>b. b \<notin> set ?w \<Longrightarrow> ?thesis) \<Longrightarrow> ?thesis
+gi_exact_M4_disjoint_lift_empty_view(1):
+\<lbrakk>?w \<noteq> []; ?b \<notin> set ?w\<rbrakk> \<Longrightarrow> pp_view ?w (pp_lift [?b] ?r) = {}
+gi_exact_M4_lift_fun_prime(1):
+pp_e_exact_fun_prime ?r \<Longrightarrow> pp_e_exact_fun_prime (pp_lift [?b] ?r)
+gi_exact_M4_no_recovery_from_lift(1):
+\<lbrakk>?w \<noteq> []; ?b \<notin> set ?w; pp_view ?w ?r \<noteq> {}; pp_view ?w ?r \<noteq> UNIV; ?F \<in> pp_e_exact_operator_stock\<rbrakk> \<Longrightarrow> ?F (pp_lift [?b] ?r) \<noteq> ?r
+gi_exact_M4_no_recovery_excludes_reversible_image(1):
+(\<And>F. F \<in> pp_e_exact_operator_stock \<Longrightarrow> F ?p \<noteq> ?r) \<Longrightarrow> \<not> (\<exists>Z\<in>pp_e_exact_G. ?p = Z ?r)
+gi_exact_M4_lift_witness(1):
+pp_e_exact_fun_prime ?r \<Longrightarrow> \<exists>b. pp_e_exact_fun_prime (pp_lift [b] ?r) \<and> (\<forall>F\<in>pp_e_exact_operator_stock. F (pp_lift [b] ?r) \<noteq> ?r) \<and> \<not> (\<exists>Z\<in>pp_e_exact_G. pp_lift [b] ?r = Z ?r)
+gi_exact_M4_fun_prime_outside_reversible_orbit(1):
+pp_e_exact_fun_prime ?r \<Longrightarrow> \<exists>p. pp_e_exact_fun_prime p \<and> (\<forall>F\<in>pp_e_exact_operator_stock. F p \<noteq> ?r) \<and> \<not> (\<exists>Z\<in>pp_e_exact_G. p = Z ?r)
+gi_exact_M4_actual_generic_seed_witness(1):
+\<exists>b. pp_e_exact_fun_prime (pp_lift [b] pp_e_generic_raw_seed) \<and> (\<forall>F\<in>pp_e_exact_operator_stock. F (pp_lift [b] pp_e_generic_raw_seed) \<noteq> pp_e_generic_raw_seed) \<and> \<not> (\<exists>Z\<in>pp_e_exact_G. pp_lift [b] pp_e_generic_raw_seed = Z pp_e_generic_raw_seed)
+gi_native_M4_fun_prime_outside_reversible_orbit(1):
+\<lbrakk>sg_rich ?G; gi_stock_fun_prime (gi_exact_native_operator_stock ?G) ?r\<rbrakk> \<Longrightarrow> \<exists>p. gi_stock_fun_prime (gi_exact_native_operator_stock ?G) p \<and> (\<forall>F\<in>gi_exact_native_operator_stock ?G. F p \<noteq> ?r) \<and> \<not> (\<exists>Z\<in>gi_stock_group (gi_exact_native_operator_stock ?G). p = Z ?r)

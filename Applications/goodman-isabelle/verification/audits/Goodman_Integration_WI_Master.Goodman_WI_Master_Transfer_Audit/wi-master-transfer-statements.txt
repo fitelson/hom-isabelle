@@ -1,0 +1,32 @@
+gi_WI_master_source_closed:
+?B \<in> gi_WI_master_source_stock \<Longrightarrow> [] \<turnstile> ?B : Prop
+gb_WI_master_stock_language:
+\<lbrakk>sg_rich ?G; ?B \<in> gb_WI_master_stock ?G\<rbrakk> \<Longrightarrow> book_theory_formula gb_signature ?G ?B
+gi_WI_master_stock_inclusion:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> gi_to_book ?G [] ?k ` gi_WI_master_source_stock \<subseteq> gb_WI_master_stock ?G
+gi_WI_master_preservation:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> ; gi_WI_master_source_stock \<turnstile>\<^sub>CEV\<^sup>+ ?A; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_WI_master_stock ?G) (gi_to_book ?G ?ns ?k ?A)
+gi_WI_master_a_admitted:
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?r; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T6_WI_a ?r ?A)
+gi_WI_master_operator_admitted:
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T6_WI_a_operator ?r)
+gi_WI_master_at_admitted:
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?a; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T6_WI_master_at ?a ?A)
+gi_WI_master_family_admitted:
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?a\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T6_WI_master_family ?a)
+gi_WI_advertised_master_admitted:
+\<lbrakk>gi_goodman_names ?k; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> gi_constants_admitted ?k gb_signature (pp_T6_WI_advertised_master ?r)
+gi_WI_advertised_claim_admitted:
+gi_goodman_names ?k \<Longrightarrow> gi_constants_admitted ?k gb_signature pp_T6_WI_advertised_master_claim
+gi_WI_master_pointwise_direct_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?r : Prop; ?\<Gamma> \<turnstile> ?A : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?r; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_WI_master_stock ?G) (gi_to_book ?G ?ns ?k (Imp (Conj (pp_fun_prime ?r) (pp_pure Prop ?A)) (pp_T6_WI_a ?r ?A \<longleftrightarrow>\<^sub>o Forall Prop (Imp (pp_pure Prop (Var 0)) (pp_T6_WI_a (shift ?r) (Var 0) \<longleftrightarrow>\<^sub>o Neg (shift ?A))))))
+gi_WI_master_operator_pointwise_direct_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?r : Prop; ?\<Gamma> \<turnstile> ?A : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?r; gi_constants_admitted ?k gb_signature ?A\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_WI_master_stock ?G) (gi_to_book ?G ?ns ?k (Imp (Conj (pp_fun_prime ?r) (pp_pure Prop ?A)) (pp_T6_WI_master_at (pp_T6_WI_a_operator ?r) ?A)))
+gi_WI_master_family_direct_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?r : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_WI_master_stock ?G) (gi_to_book ?G ?ns ?k (Imp (pp_fun_prime ?r) (Forall Prop (Imp (pp_pure Prop (Var 0)) (pp_T6_WI_a (shift ?r) (Var 0) \<longleftrightarrow>\<^sub>o Forall Prop (Imp (pp_pure Prop (Var 0)) (pp_T6_WI_a (shift (shift ?r)) (Var 0) \<longleftrightarrow>\<^sub>o Neg (Var 1))))))))
+gi_WI_advertised_family_direct_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; ?\<Gamma> \<turnstile> ?r : Prop; map ?G ?ns = ?\<Gamma>; distinct ?ns; gi_constants_admitted ?k gb_signature ?r\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_WI_master_stock ?G) (gi_to_book ?G ?ns ?k (Imp (pp_fun_prime ?r) (pp_T6_WI_advertised_master ?r)))
+gi_WI_advertised_closed_claim_direct_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G \<union> {gb_exists_fun_prime ?G, gb_L2 ?G, gb_WI ?G}) (gi_to_book ?G [] ?k pp_T6_WI_advertised_master_claim)
+gi_WI_master_family_inconsistent_translated:
+\<lbrakk>sg_rich ?G; gi_goodman_names ?k; [] \<turnstile> ?a : gb_unary; gi_constants_admitted ?k gb_signature ?a\<rbrakk> \<Longrightarrow> goodman_book_proves gb_signature ?G (gi_to_book ?G [] ?k ` {pp_pure Prop ObjTrue, pp_T6_WI_master_family ?a}) (book_bottom ?G)

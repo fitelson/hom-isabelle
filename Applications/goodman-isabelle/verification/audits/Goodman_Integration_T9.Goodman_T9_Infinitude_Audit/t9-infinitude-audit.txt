@@ -1,0 +1,12 @@
+T9-INFINITUDE-AUDIT: 10 clean endpoints
+SCOPE: Actual typed left composition permutes actual kinds; selector collisions preserve selected-set cardinality; finite actual kinds excluded; exponential lower bound on actual pure invertible group. Native purity locale and full external unary PC retained. Final two corollaries derive semantic root L2 and typed fun-prime witness from actual translated native formula inputs, not abstract postulates. Composition application uses explicitly typed r and B applied to r, not an unrestricted meta-domain law. No group-size/classification premise or model existence; HOL-ZF retained.
+gi_T9_cardinality_subset_spec: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T9_native_purity.gi_T9_left_composition_respects_kind: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_T9_native_purity.gi_T9_left_action_member: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T9_native_purity.gi_T9_left_action_bijective: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_native_purity.gi_T9_selector_collision_covariance: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9
+gi_T9_native_purity.gi_T9_selector_collision_preserves_card: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8
+gi_T9_native_purity.gi_T9_native_PC_L2_infinitely_many_kinds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_T9_native_purity.gi_T9_native_PC_L2_exponential_group_bound: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_T9_native_purity.gi_T9_native_formula_infinitely_many_kinds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_T9_native_purity.gi_T9_native_formula_exponential_group_bound: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6

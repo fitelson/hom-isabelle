@@ -1,0 +1,39 @@
+session Goodman_Exact_Legacy_01 in "stage01" = Goodman_Integration_Central_Stock +
+  options [timeout = 60, export_theory = true]
+  sessions "HOL-ZF" "HOL-Library"
+  theories
+    Bacon_PP_Generic_Witness
+    Bacon_PP_MSet
+    Bacon_PP_Appendix_Model
+    Bacon_PP_ZF_Word_Propositions
+
+session Goodman_Exact_Legacy_02 in "stage02" = Goodman_Exact_Legacy_01 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_ZF_Full_MSet
+
+session Goodman_Exact_Legacy_03 in "stage03" = Goodman_Exact_Legacy_02 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_Axiom_Soundness
+    Bacon_PP_Purity_Operator
+
+session Goodman_Exact_Legacy_04 in "stage04" = Goodman_Exact_Legacy_03 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_ZF_Exact_Frame
+
+session Goodman_Exact_Legacy_05 in "stage05" = Goodman_Exact_Legacy_04 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_ZF_Exact_Substitution
+
+session Goodman_Exact_Legacy_06 in "stage06" = Goodman_Exact_Legacy_05 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_ZF_Exact_10_1
+
+session Goodman_Exact_Legacy_07 in "stage07" = Goodman_Exact_Legacy_06 +
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_PP_ZF_Exact_CEV_Soundness

@@ -1,0 +1,22 @@
+T9-SELECTOR-AUDIT: 20 clean endpoints
+SCOPE: actual exact carriers and native PP core; full external unary PC retained; typed higher-order selector lowered to a pure unary value. No cardinal bound or model existence claimed.
+gi_T9_J_builder_type(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T9_lower_builder_type(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T9_builders_logical(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_T9_builders_logical(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+pp_e_constants.gi_T9_J_value_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+pp_e_constants.gi_T9_lower_value_member(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+pp_e_constants.gi_T9_J_value_holds(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+pp_e_constants.gi_T9_fun_prime_formula_holds(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+pp_e_constants.gi_T9_lower_value_holds(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T9_native_purity.gi_T9_core_at_root(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_native_purity.gi_T9_closed_logical_value_pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T9_native_purity.gi_T9_closed_source_axiom_at_root(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5
+gi_T9_native_purity.gi_T9_root_application_closed(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T9_native_purity.gi_T9_root_Pure_pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T9_native_purity.gi_T9_J_value_pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_T9_native_purity.gi_T9_lower_value_pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_PC_witness_spec(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_T9_PC_witness_spec(2): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T9_native_purity.gi_T9_PC_lowered_pure(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_T9_native_purity.gi_T9_PC_lowered_spec(1): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4

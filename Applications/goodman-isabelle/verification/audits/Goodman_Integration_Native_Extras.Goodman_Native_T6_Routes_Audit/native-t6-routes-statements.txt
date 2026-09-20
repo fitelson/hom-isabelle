@@ -1,0 +1,38 @@
+gi_native_T6_Inv_refutation:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G \<union> {gb_exists_fun_prime ?G, gb_L2 ?G, gb_Inv ?G}) (book_bottom ?G)
+gi_native_T6_TU_refutation:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G \<union> {gb_exists_fun_prime ?G, gb_L2 ?G, gb_TU ?G}) (book_bottom ?G)
+gi_native_T6_WI_refutation:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G \<union> {gb_exists_fun_prime ?G, gb_L2 ?G, gb_WI ?G}) (book_bottom ?G)
+gi_native_T6_RS_refutation:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G \<union> {gb_strong_L2 ?G, gb_RS ?G}) (book_bottom ?G)
+gi_native_central_T6_Inv_refutation:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_recombination_PP_zeroary_exhaustion ?G \<union> {gb_L2 ?G, gb_Inv ?G}) (book_bottom ?G)
+gi_native_central_T6_TU_refutation:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_recombination_PP_zeroary_exhaustion ?G \<union> {gb_L2 ?G, gb_TU ?G}) (book_bottom ?G)
+gi_native_central_T6_WI_refutation:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_recombination_PP_zeroary_exhaustion ?G \<union> {gb_L2 ?G, gb_WI ?G}) (book_bottom ?G)
+gi_native_central_T6_RS_refutation:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_recombination_PP_zeroary_exhaustion ?G \<union> {gb_strong_L2 ?G, gb_RS ?G}) (book_bottom ?G)
+gi_native_T6_Inv_inconsistent:
+sg_rich ?G \<Longrightarrow> \<not> goodman_book_consistent gb_signature ?G (gb_T6_core ?G \<union> {gb_exists_fun_prime ?G, gb_L2 ?G, gb_Inv ?G})
+gi_native_T6_TU_inconsistent:
+sg_rich ?G \<Longrightarrow> \<not> goodman_book_consistent gb_signature ?G (gb_T6_core ?G \<union> {gb_exists_fun_prime ?G, gb_L2 ?G, gb_TU ?G})
+gi_native_T6_WI_inconsistent:
+sg_rich ?G \<Longrightarrow> \<not> goodman_book_consistent gb_signature ?G (gb_T6_core ?G \<union> {gb_exists_fun_prime ?G, gb_L2 ?G, gb_WI ?G})
+gi_native_T6_RS_inconsistent:
+sg_rich ?G \<Longrightarrow> \<not> goodman_book_consistent gb_signature ?G (gb_T6_core ?G \<union> {gb_strong_L2 ?G, gb_RS ?G})
+gi_native_central_T6_Inv_inconsistent:
+sg_rich ?G \<Longrightarrow> \<not> goodman_book_consistent gb_signature ?G (gb_recombination_PP_zeroary_exhaustion ?G \<union> {gb_L2 ?G, gb_Inv ?G})
+gi_native_central_T6_TU_inconsistent:
+sg_rich ?G \<Longrightarrow> \<not> goodman_book_consistent gb_signature ?G (gb_recombination_PP_zeroary_exhaustion ?G \<union> {gb_L2 ?G, gb_TU ?G})
+gi_native_central_T6_WI_inconsistent:
+sg_rich ?G \<Longrightarrow> \<not> goodman_book_consistent gb_signature ?G (gb_recombination_PP_zeroary_exhaustion ?G \<union> {gb_L2 ?G, gb_WI ?G})
+gi_native_central_T6_RS_inconsistent:
+sg_rich ?G \<Longrightarrow> \<not> goodman_book_consistent gb_signature ?G (gb_recombination_PP_zeroary_exhaustion ?G \<union> {gb_strong_L2 ?G, gb_RS ?G})
+gi_native_WI_derives_TU:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G {gb_WI ?G} (gb_TU ?G)
+gi_native_T1_WI_derives_Inv:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (insert (gb_WI ?G) (gb_T1_axioms ?G)) (gb_Inv ?G)
+gi_native_T1_TU_derives_Inv:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (insert (gb_TU ?G) (gb_T1_axioms ?G)) (gb_Inv ?G)

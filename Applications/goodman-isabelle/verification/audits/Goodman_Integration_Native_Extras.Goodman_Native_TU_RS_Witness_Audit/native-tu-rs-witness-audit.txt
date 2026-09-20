@@ -1,0 +1,19 @@
+NATIVE-TU-RS-WITNESS-AUDIT: 17 clean endpoints
+SCOPE: Native stock gb_TU_RS_axioms = T6 PP core + zeroary Exhaustion + exists fun-prime + TU, in gb_signature. Endpoints: gb_RS, purity of the named witness gb_RS_plus, and its uniform rigid specification (via alpha transport of the translated witness). Exhaustion and exists fun-prime are retained; no weaker-scope TU implies RS claim, no deduction-theorem conversion, no consistency claim.
+gb_TU_RS_axioms_T1_form: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gb_TU_RS_axioms_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gb_TU_RS_axioms_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_TU_RS_axioms_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_TU_RS_literal_stock_inclusion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_TU_RS_axiom_from_native: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_TU_RS_native_preservation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6
+gi_native_TU_RS_derives_RS: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_RS_plus_native_translation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_RS_plus_shift_by: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gi_RS_plus_purity_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_RS_plus_specification_admitted: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_TU_RS_witness_pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gi_native_TU_RS_witness_translated: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_RS_plus_chart_alpha: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gi_RS_plus_specification_alpha: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gi_native_TU_RS_witness_specification: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
