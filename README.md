@@ -1,4 +1,4 @@
-# Higher-Order Logic and Classicism in Isabelle
+# Higher-Order Metaphysics in Isabelle
 
 This is an open formalization of the higher-order logic H and Classicism C
 developed by Andrew Bacon and Cian Dorr. It is offered as a resource for
