@@ -44,18 +44,16 @@ correspondence qualifications.
 ## Access and contributions
 
 The standalone repository is
-[fitelson/bacon-dorr-isabelle](https://github.com/fitelson/bacon-dorr-isabelle).
-As of 10 September 2026 it is private. Workshop invitees should ask Branden
-for collaborator access, supplying their GitHub username. Once access is
-granted:
+[fitelson/hom-isabelle](https://github.com/fitelson/hom-isabelle).
+As of 22 September 2026 it is public. To work on it locally:
 
 ```sh
-git clone https://github.com/fitelson/bacon-dorr-isabelle.git
-cd bacon-dorr-isabelle
+git clone https://github.com/fitelson/hom-isabelle.git
+cd hom-isabelle
 ```
 
-Use [issues](https://github.com/fitelson/bacon-dorr-isabelle/issues) to agree
-the scope of a contribution and [pull requests](https://github.com/fitelson/bacon-dorr-isabelle/pulls)
+Use [issues](https://github.com/fitelson/hom-isabelle/issues) to agree
+the scope of a contribution and [pull requests](https://github.com/fitelson/hom-isabelle/pulls)
 to submit it for review. See the contributor guide before changing a theorem.
 
 ## Check the development

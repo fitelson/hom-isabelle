@@ -1,6 +1,6 @@
 {
   "embedded_revision_policy": "Exact ROOT/ROOTS and theory/ML source hashes are authoritative in Applications layout; parent commits may change application/docs without changing core sources.",
-  "repository": "https://github.com/fitelson/bacon-dorr-isabelle.git",
+  "repository": "https://github.com/fitelson/hom-isabelle.git",
   "revision": "8dc5940a664172459da3bddaba3d72b067b359c3",
   "sha256": {
     "ROOT": "c4c875dc5caaf6ad3f8e5e609ea518ef6b112115463c3acdafceb3a527c7768d",

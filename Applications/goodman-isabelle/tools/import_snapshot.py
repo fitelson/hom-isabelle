@@ -62,7 +62,7 @@ def main():
                             for p in (source / "ROOTS").read_text().splitlines()) + "\n")
     inputs = json.loads((source / "verification/inputs.json").read_text())
     save_json(ROOT / "dependencies/bacon-dorr.json", {
-        "repository": "https://github.com/fitelson/bacon-dorr-isabelle.git",
+        "repository": "https://github.com/fitelson/hom-isabelle.git",
         "revision": inputs["core"]["head"], "sha256": inputs["core"]["sha256"]})
     frozen = []
     for path in [source / "legacy/manifest.json",

@@ -10,11 +10,11 @@ see [Applications](Applications/README.md) and
 Keep application sessions out of the core ROOT and verify each project
 with its own checker, serially.
 
-The [standalone repository](https://github.com/fitelson/bacon-dorr-isabelle)
+The [standalone repository](https://github.com/fitelson/hom-isabelle)
 is private as of 10 September 2026. Ask Branden for collaborator access
 with your GitHub username if you do not already have it.
 
-Please start by [opening an issue](https://github.com/fitelson/bacon-dorr-isabelle/issues) describing the source statement, its exact
+Please start by [opening an issue](https://github.com/fitelson/hom-isabelle/issues) describing the source statement, its exact
 scope, and the proposed change. Existing theorem names are useful anchors,
 not evidence that a broader source result has already been formalized.
 Submit the agreed contribution as a pull request, including its source

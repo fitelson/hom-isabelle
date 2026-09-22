@@ -57,8 +57,8 @@ or second clone is needed. If the repository is private, ask Branden
 Fitelson for access, supplying your GitHub username.
 
 ```sh
-git clone https://github.com/fitelson/bacon-dorr-isabelle.git
-cd bacon-dorr-isabelle/Applications/goodman-isabelle
+git clone https://github.com/fitelson/hom-isabelle.git
+cd hom-isabelle/Applications/goodman-isabelle
 ./check_isabelle.sh --export
 ```
 
@@ -109,8 +109,8 @@ Contributions can be a source comparison, an explanatory comment, a small
 missing theorem, or a larger model-theoretic argument. The
 [contributor guide](CONTRIBUTING.md) separates bounded tasks from genuine
 open mathematics and specifies what counts as completing each task.
-Agree a scope in an [issue](https://github.com/fitelson/bacon-dorr-isabelle/issues)
-and submit a [pull request](https://github.com/fitelson/bacon-dorr-isabelle/pulls)
+Agree a scope in an [issue](https://github.com/fitelson/hom-isabelle/issues)
+and submit a [pull request](https://github.com/fitelson/hom-isabelle/pulls)
 with source references, exact hypotheses and verification evidence.
 
 Branden Fitelson developed the implementation with AI assistance. Goodman,
