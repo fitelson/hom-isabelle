@@ -1,0 +1,18 @@
+FOUNDATION: pure HOL
+SCOPE: the older represented H--BBK development (exact H, the represented BBK model class with universal signature, canonical closed-term carrier h_bbk_value and its natural-number transport, closed theoremhood and closed-context theories); distinct from the parametric pH_BBK_* and paper_named_* endpoints of the core catalog; no Classicism or modal claim
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 15 checked endpoints
+exact H derivations at the universal signature are valid in context in every BBK model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+exact H theorems are closed-valid in every BBK model on every carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+closed non-theorems of H have a BBK countermodel on the canonical closed-term carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=0
+closed BBK validity on the canonical carrier is exactly H theoremhood: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+closed validity on the canonical carrier gives closed validity on every carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+every consistent typed theory has a Henkin extension containing its renamed premises: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=0
+every consistent closed-context typed theory has a BBK model on the canonical carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=0
+renaming the original constants preserves and reflects H consistency: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+the natural-number transport of the closed Henkin canonical structure is a BBK model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
+closed non-theorems of H have a BBK countermodel on subsets of the natural numbers: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=0
+closed BBK validity on the natural numbers is exactly H theoremhood: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+closed validity on the natural numbers gives closed validity on every carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+every consistent closed-context typed theory has a BBK model on subsets of the natural numbers: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=0
+simultaneous substitution is a congruence for H term equality: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=0
+simultaneous substitution is a congruence for H term classes: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=0

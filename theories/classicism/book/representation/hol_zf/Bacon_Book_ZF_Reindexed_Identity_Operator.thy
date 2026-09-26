@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_Reindexed_Identity_Operator
   imports Bacon_Book_ZF_Reindexed_Logical_Operators
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 theorem full_ZF_identity_identification:
@@ -12,7 +12,7 @@ proof -
   interpret S: book_ZF_modal_structure full_world_set full_ZF_R full_ZF_root full_ZF_D_at full_ZF_i_at
     by (rule full_ZF_reindexed_structure)
   have et: "full_ZF_equality_value actual \<sigma> \<in> explode (full_ZF_D_at (Arr \<sigma> (Arr \<sigma> Prop)) full_ZF_root)"
-    by (simp only: full_ZF_D_at_root; rule full_ZF_equality_value_type)
+    by (simp only: full_ZF_D_at_root; rule full_ZF_equality_value_type[OF root_admitted])
   show ?thesis
   proof (unfold book_ZF_eq_def, rule S.function_as_two_lambdas[OF full_ZF_root_member et])
     fix v a u b

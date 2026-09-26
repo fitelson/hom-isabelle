@@ -1,0 +1,45 @@
+FOUNDATION: standard HOL-ZF; not pure HOL
+SCOPE: generic full-type C soundness for nontrivial book modal models with no signature-size restriction; completeness for signatures whose declared-name union has an injective code bounded by a ZF set, on an arbitrary carrier including the type ZF with set-bounded declared names, subsuming the retained countably declared and ZF-small-carrier scopes; rich stock, full minimal language, root consequence; declared unions with no bounded injection are outside this construction
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 42 checked endpoints
+denotations are natural under counterparts: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+denotations depend only on free variables: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+future membership is future truth under the moved assignment: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+implication clause (future-restricted complement): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+universal quantifier clause over the current domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+bottom clause: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+classical negation where bottom is false: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+unconditional biconditional clause: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+quantifier clause for an arbitrary predicate term: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the model's equality operation is an available predicate: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the model's equality operation separates values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+Leibniz identity is value identity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+the literal box is truth at every future world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+semantic substitution under the free-for guard: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+beta steps preserve denotation in every context: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+eta steps preserve denotation in every context: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+H theory derivations preserve validity at a world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+every H theorem is valid at every world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+iterated quantification varies exactly the listed variables: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+semantic universal closure is validity at the world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+bottom is false at every world of a nontrivial model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+Modalized Functionality is valid at every world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+Propositional Equivalence preserves validity everywhere: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+every full-C theorem is valid at every world: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+full-C theory derivations are valid at the root: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+satisfiable theories are consistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+full-C theory soundness over the nontrivial class: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+satisfiable theories are consistent (external form): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+full-C theory completeness from model existence: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+full-C theory completeness for countably declared signatures: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+full-C derivability iff modal consequence: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+full-C consistency iff satisfiability: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+full-C theory completeness for ZF-small name carriers: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+full-C derivability iff modal consequence for ZF-small name carriers: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+full-C consistency iff satisfiability for ZF-small name carriers: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+full-C derivability iff modal consequence over the uncountable carrier nat set: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=0
+full-C consistency iff satisfiability over the uncountable carrier nat set: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=0
+full-C theory completeness for ZF-small declared names on an arbitrary carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+full-C derivability iff modal consequence for ZF-small declared names on an arbitrary carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+full-C consistency iff satisfiability for ZF-small declared names on an arbitrary carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+full-C derivability iff modal consequence on carrier ZF with set-bounded declared names: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=0
+full-C consistency iff satisfiability on carrier ZF with set-bounded declared names: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=0

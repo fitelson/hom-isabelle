@@ -475,6 +475,37 @@ BOOK_PRINTED_INDEPENDENT_FORBIDDEN = (
 )
 
 
+# λI development (design amendment 9): λI consistency, witness, valuation
+# and completeness proofs must be discharged inside the λI calculus. Reused
+# syntax facts and generic semantics helpers are allowed; the full-H proof
+# judgments, the printed calculus, the full minimal model class and the
+# full-environment locales are not. The intentional one-way bridges
+# (book_lambda_I_derivable_embeds, book_lambda_I_consistent_of_theory,
+# book_full_minimal_model_lambda_I) are not roots.
+BOOK_LAMBDA_I_ROOTS = (
+    "theorem:Bacon_Book_Lambda_I_Theory_Signature_Conservativity.book_lambda_I_signature_conservativity",
+    "theorem:Bacon_Book_Lambda_I_Theory_Retraction.book_lambda_I_retraction",
+    "theorem:Bacon_Book_Lambda_I_Closed_Maximal_Extension.book_lambda_I_closed_maximal_extension_exists",
+    "theorem:Bacon_Book_Lambda_I_Infinite_Witness_Family.book_lambda_I_consistent_witness_family",
+    "theorem:Bacon_Book_Lambda_I_Henkin_Union.book_lambda_I_henkin_full_premises_consistent",
+    "theorem:Bacon_Book_Lambda_I_Closed_Henkin_Extension.book_lambda_I_closed_henkin_extension_exists",
+    "theorem:Bacon_Book_Lambda_I_Conversion_Valuation.book_lambda_I_conversion_valuation_class",
+    "theorem:Bacon_Book_Lambda_I_Conversion_Model.book_lambda_I_henkin_conversion_model",
+    "theorem:Bacon_Book_Lambda_I_Canonical_Model_Existence.book_lambda_I_canonical_model_existence",
+    "theorem:Bacon_Book_Lambda_I_Canonical_Completeness.book_lambda_I_canonical_strong_completeness",
+)
+BOOK_LAMBDA_I_FORBIDDEN = (
+    (BOOK_CONVERSION_FOREIGN_PREDICATES - {"book_formula_valid"})
+    | BOOK_CONVERSION_NATIVE_PROOF_PREDICATES
+    | {
+        "book_printed_theory_derivable",
+        "book_full_environment", "book_full_environment_axioms",
+        "book_environment_conditions", "book_environment_conditions_axioms",
+        "book_environment_separated", "book_environment_separated_axioms",
+    }
+)
+
+
 def book_conversion_forbidden(root):
     """Predicates excluded from all reached theorem propositions for a root.
 
@@ -1516,8 +1547,17 @@ SIGNATURE_TRANSPORT_PROOF_ALLOWLIST = {
 }
 
 
+# Native C generic-validity wrapper, catalogued as the documented soundness
+# endpoint (26 September 2026 audit): it may mention only its own validity
+# predicate from the transport namespace.
+ZF_NATIVE_R_C_VALIDITY_ALLOWLIST = {
+    "theorem:Bacon_Source_ZF_Action_Validity_On.paper_ZF_classicism_valid_on": {"paper_ZF_action_valid_on"},
+}
+
+
 def signature_transport_forbidden(root, model_predicates):
-    new_data = SIGNATURE_TRANSPORT_NAMESPACE_CONSTANTS - SIGNATURE_TRANSPORT_DATA_ALLOWLIST.get(root, set())
+    new_data = (SIGNATURE_TRANSPORT_NAMESPACE_CONSTANTS - SIGNATURE_TRANSPORT_DATA_ALLOWLIST.get(root, set())
+                - ZF_NATIVE_R_C_VALIDITY_ALLOWLIST.get(root, set()))
     if root not in SIGNATURE_ACTION_TRANSPORT_ROOTS:
         return new_data
     models = SIGNATURE_TRANSPORT_MODEL_ALLOWLIST[root]
@@ -2609,11 +2649,13 @@ ZF_NATIVE_R_C_MODEL_ROOTS = (
     "theorem:Bacon_Source_ZF_Action_Classicism_Soundness.paper_ZF_action_classicism_BBK_valid",
     "theorem:Bacon_Source_ZF_Action_Classicism_Soundness.paper_ZF_action_classicism_truth",
     "theorem:Bacon_Source_ZF_Action_Classicism_Soundness.paper_ZF_action_classicism_soundness",
+    "theorem:Bacon_Source_ZF_Action_Validity_On.paper_ZF_classicism_valid_on",
 )
 ZF_NATIVE_R_C_PROOF_ALLOWLIST = {
     "theorem:Bacon_Source_ZF_Action_Classicism_Soundness.paper_ZF_action_classicism_BBK_valid": {"paper_R_named_H", "paper_R_classicism_proves"},
     "theorem:Bacon_Source_ZF_Action_Classicism_Soundness.paper_ZF_action_classicism_truth": {"paper_R_named_H", "paper_R_classicism_proves"},
     "theorem:Bacon_Source_ZF_Action_Classicism_Soundness.paper_ZF_action_classicism_soundness": {"paper_R_named_H", "paper_R_classicism_proves"},
+    "theorem:Bacon_Source_ZF_Action_Validity_On.paper_ZF_classicism_valid_on": {"paper_R_named_H", "paper_R_classicism_proves"},
 }
 
 ZF_SOURCE_R_MODEL_ROOTS = (
@@ -2949,6 +2991,7 @@ SOURCE_PROOF_ROOTS = (
     *BOOK_INHABITATION_ROOTS,
     *BOOK_CONVERSION_ROOTS,
     *BOOK_PRINTED_INDEPENDENT_ROOTS,
+    *BOOK_LAMBDA_I_ROOTS,
     # Existing primitive syntax roots already occur in BOOK_CONVERSION_ROOTS;
     # strengthen their policy without checking or reporting them twice.
     *(root for root in BOOK_CONJUNCTION_ROOTS if root not in BOOK_CONVERSION_ROOTS),
@@ -3087,7 +3130,8 @@ def check_zf_action_policy_controls():
         "theorem:Bacon_Source_ZF_Action_Classicism_Soundness.paper_ZF_action_classicism_BBK_valid",
         "theorem:Bacon_Source_ZF_Action_Classicism_Soundness.paper_ZF_action_classicism_truth",
         "theorem:Bacon_Source_ZF_Action_Classicism_Soundness.paper_ZF_action_classicism_soundness",
-    }
+        "theorem:Bacon_Source_ZF_Action_Validity_On.paper_ZF_classicism_valid_on",
+        }
     if set(ZF_NATIVE_R_C_MODEL_ROOTS) != expected_c_roots:
         raise SystemExit("Unexpected native R-C action-model root")
     if set(ZF_NATIVE_R_C_PROOF_ALLOWLIST) != expected_c_roots:
@@ -5128,6 +5172,10 @@ def check_signature_transport_policy_controls():
         "paper_R_closed_BBK_consequence", "paper_R_nat_BBK_consequence"}
     for root in ROOTS + H_ONLY_ROOTS + SOURCE_PROOF_ROOTS:
         blocked = signature_transport_forbidden(root, probes)
+        if root in ZF_NATIVE_R_C_VALIDITY_ALLOWLIST:
+            if not (namespace - ZF_NATIVE_R_C_VALIDITY_ALLOWLIST[root]) <= blocked:
+                raise SystemExit("Native C validity wrapper gained more than its own validity predicate")
+            continue
         if root not in expected:
             if not namespace <= blocked:
                 raise SystemExit("Older root gained typed compression or generic world validity")
@@ -5475,6 +5523,8 @@ def main():
         forbidden = forbidden | zf_action_stage_forbidden(root)
         if root in BOOK_PRINTED_INDEPENDENT_ROOTS:
             forbidden = forbidden | BOOK_PRINTED_INDEPENDENT_FORBIDDEN
+        if root in BOOK_LAMBDA_I_ROOTS:
+            forbidden = forbidden | BOOK_LAMBDA_I_FORBIDDEN
         if root.endswith(("paper_db_bbk_structure.paper_db_rename_derived",
                           "paper_db_bbk_structure.paper_db_imp_truth")):
             forbidden = forbidden | {"pbbk_model", "paper_db_bbk_model", "paper_db_bbk_model_axioms"}

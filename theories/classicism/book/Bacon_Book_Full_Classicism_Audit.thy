@@ -1,5 +1,6 @@
 theory Bacon_Book_Full_Classicism_Audit
   imports Bacon_Book_Full_Classicism_Name_Inverse Bacon_Book_Full_Classicism_Base_Bridge
+    Bacon_Book_Full_Canonical_World_Existence
     Bacon_Book_Full_MF_Fresh_Instances Bacon_Book_Full_Ambient_Henkin_Extension
     Bacon_Book_Full_Proposition_Representation Bacon_Book_Full_Term_Quasi_Functionality
 begin
@@ -58,12 +59,13 @@ local
     ("a full-C closed maximal extension retains full-C consistency", "book_full_C_closed_maximal_consistent"),
     ("full-C consistency yields an actual closed maximal constant-witness-complete Henkin extension", "book_full_C_closed_henkin_extension_exists"),
     ("old-name-fixing image transport yields an actual full-C Henkin extension", "book_full_C_henkin_image_extension_exists"),
-    ("full-C Henkin completion is realized inside the fixed countable ambient language", "book_countable_ambient_signature.book_full_C_ambient_henkin_extension_exists"),
+    ("full-C Henkin completion is realized inside an ambient signature with infinite reserves", "book_ambient_signature.book_full_C_ambient_henkin_extension_exists"),
+    ("on countable carriers the canonical worlds are exactly the reserve, maximal-closed, witness-complete pairs", "book_full_C_countable_canonical_world_iff"),
     ("full-C closed maximal sets satisfy the base maximal condition in the same language", "book_full_C_closed_maximal_is_base"),
     ("finite boxed consequence is derived over the full-C background", "book_full_C_theory_box_lift"),
     ("an absent boxed consequence has a full-C-consistent negative successor seed", "book_full_C_successor_seed_consistent"),
     ("full-C closed maximal sets have actual negative successors", "book_full_C_closed_successor_exists"),
-    ("full-C successors gain all closed-predicate witnesses inside the fixed ambient language", "book_countable_ambient_signature.book_full_C_ambient_henkin_successor_exists"),
+    ("full-C successors gain all closed-predicate witnesses inside the fixed ambient language", "book_ambient_signature.book_full_C_ambient_henkin_successor_exists"),
     ("the full-C canonical world set is proved included in the base world set", "book_full_C_canonical_world_is_base"),
     ("full-C accessibility implies language inclusion", "book_full_C_canonical_le_language"),
     ("full-C canonical accessibility is reflexive", "book_full_C_canonical_le_refl"),
@@ -71,7 +73,7 @@ local
     ("countably declared signatures have consistency-equivalent full-C natural-name recodings", "book_full_C_countable_signature_consistency_iff"),
     ("countably declared full-C-consistent premises have an actual canonical world", "book_full_C_countable_canonical_world_exists"),
     ("the actual full-C world set has a witness-complete successor for an absent Box", "book_full_C_canonical_successor_exists"),
-    ("full-C-consistent premises yield an actual rooted canonical frame", "book_countable_ambient_signature.book_full_C_canonical_frame_exists"),
+    ("full-C-consistent premises yield an actual rooted canonical frame", "book_ambient_signature.book_full_C_canonical_frame_exists"),
     ("Bacon Proposition 18.3 holds over the actual full-C rooted frame", "book_full_C_canonical_frame.book_proposition_18_3"),
     ("the per-world identity-class algebra is interpreted at every full-C canonical world", "book_full_C_world_identity_algebra"),
     ("all identity-class domains are nonempty at every full-C canonical world", "book_full_C_canonical_identity_domain_nonempty"),

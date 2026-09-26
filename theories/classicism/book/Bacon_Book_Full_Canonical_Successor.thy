@@ -3,15 +3,15 @@ theory Bacon_Book_Full_Canonical_Successor
 begin
 
 theorem book_full_C_canonical_successor_exists:
-  fixes w :: "('c::countable) book_C_world"
+  fixes w :: "'c book_C_world"
   assumes rich: "sg_rich G" and world: "w \<in> book_full_C_canonical_worlds \<Sigma> B G"
     and pl: "book_theory_formula (fst w) G P" and closed: "named_fv P = {}"
     and missing: "book_box G P \<notin> snd w"
   shows "\<exists>v\<in>book_full_C_canonical_worlds \<Sigma> B G.
     book_C_canonical_le G w v \<and> book_not G P \<in> snd v \<and> P \<notin> snd v"
 proof -
-  interpret names: book_countable_ambient_signature "fst w" B
-    by (unfold_locales; rule book_full_C_canonical_world_data(2,3)[OF world])
+  interpret names: book_ambient_signature "fst w" B
+    by (unfold_locales; rule book_full_C_canonical_world_data(2,3,6)[OF world])
   let ?\<Omega> = "names.book_ambient_henkin_signature G"
   obtain M where maximal: "book_full_C_closed_maximal_extension ?\<Omega> G {} M"
     and witnesses: "book_closed_constant_witness_complete ?\<Omega> G M"
@@ -24,7 +24,8 @@ proof -
   have target: "(?\<Omega>, M) \<in> book_full_C_canonical_worlds \<Sigma> B G"
     unfolding book_full_C_canonical_worlds_def
     by (simp only: mem_Collect_eq fst_conv snd_conv; intro conjI allI;
-      rule base names.book_ambient_henkin_signature_inside names.book_ambient_henkin_signature_reserve maximal witnesses)
+      rule base names.book_ambient_henkin_signature_inside names.book_ambient_henkin_signature_reserve
+        names.book_ambient_henkin_signature_large maximal witnesses)
   have accessible: "book_C_canonical_le G w (?\<Omega>, M)"
   proof (unfold book_C_canonical_le_def, intro allI impI)
     fix A

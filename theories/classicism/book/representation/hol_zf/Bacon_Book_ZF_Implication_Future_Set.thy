@@ -2,11 +2,11 @@ theory Bacon_Book_ZF_Implication_Future_Set
   imports Bacon_Book_ZF_Logical_Future_Values
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 lemma full_ZF_future_implication_set:
-  assumes qm: "q \<in> explode (full_ZF_D Prop w)"
+  assumes admitted: "full_ZF_admitted w" and qm: "q \<in> explode (full_ZF_D Prop w)"
   shows "explode (full_ZF_future_collect w (\<lambda>v. \<not> Elem (book_ZF_world_code v) p \<or> Elem (book_ZF_world_code v) q)) =
     (explode (full_ZF_future w) - explode p) \<union> explode q"
 proof (rule set_eqI)
@@ -20,7 +20,7 @@ proof (rule set_eqI)
     show ?thesis using True by (auto simp: full_ZF_future_collect_def Sep explode_Elem code)
   next
     case False
-    have outside: "z \<notin> explode q" using full_ZF_proposition_future[OF qm] False by blast
+    have outside: "z \<notin> explode q" using full_ZF_proposition_future[OF admitted qm] False by blast
     show ?thesis using False outside by (auto simp: full_ZF_future_collect_def Sep explode_Elem)
   qed
 qed
@@ -31,7 +31,7 @@ theorem full_ZF_implication_future_set:
   shows "explode (app (app (full_ZF_logical_value actual SImp) (Opair (book_ZF_world_code w) p))
       (Opair (book_ZF_world_code v) q)) =
     (explode (full_ZF_future v) - explode (full_ZF_i Prop w v p)) \<union> explode q"
-  by (simp only: full_ZF_implication_future_value[OF ww vw access pm qm]; rule full_ZF_future_implication_set[OF qm])
+  by (simp only: full_ZF_implication_future_value[OF ww vw access pm qm]; rule full_ZF_future_implication_set[OF worlds_admitted[OF vw] qm])
 
 end
 

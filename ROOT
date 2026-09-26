@@ -1,6 +1,8 @@
 session Bacon_Base in "theories/base" = HOL +
   description "
-    Bacon's base higher-order language and proof theory H.
+    Bacon's base higher-order language and the context-indexed proof
+    theory H_proves with IndividualExistence (an intermediate variant; the
+    exact source calculi are in the source-vocabulary session).
   "
   sessions
     "HOL-Library"
@@ -101,9 +103,11 @@ session Bacon_Book_Environment_Development in "theories/base/book_models" = Baco
   description "
     Source-first book language, typed applicative structures, total named
     assignments, exact environment condition, and the full minimal-basis
-    Leibnizian quotient with witnessed logical values. General-language
-    scope, H substitution admissibility and completeness remain separate;
-    the exact book theory calculus is sound in the full minimal profile.
+    Leibnizian quotient with witnessed logical values; the exact book
+    theory calculus, substitution admissibility (Bacon_Book_Logic), general
+    models, the Henkin construction and printed completeness
+    (Bacon_Book_Printed_Completeness). General-language scope remains
+    separate; the relevant (λI) language has its own session.
   "
   options [timeout = 60, export_theory = true]
   theories
@@ -309,10 +313,103 @@ session Bacon_Book_Environment_Development in "theories/base/book_models" = Baco
     Bacon_Book_Primitive_Disjunction_Model
     Bacon_Book_Disjunction_Raw_Conversion_Transport
 
+session Bacon_Book_Lambda_I_Development in "theories/base/book_lambda_I" = Bacon_Book_Environment_Development +
+  description "
+    Bacon's relevant (λI) language as an instance of Definition 9.1, the
+    independently defined λI theory calculus with both Gen presentations,
+    internal βη/α conversion with derivability transport, λI models under
+    the internal conversion clause with soundness, λI retraction and
+    signature conservativity, Henkin witness stages over closed λI
+    predicates, the term model on internal conversion classes of closed λI
+    terms, and original-signature model existence and global strong
+    completeness for the internal-clause model class, under the minimal
+    logical basis, a rich variable stock for the main endpoints, and an
+    actual typed assignment required of every model. Still open and
+    separate: identification with HJ (Definitions 9.9–9.10), conservativity
+    of full H over the fragment, the λI printed/exact β correspondence, and
+    internalization of raw βη-conversion (completeness for the raw-invariant
+    subclass).
+  "
+  options [timeout = 60, export_theory = true]
+  theories
+    Bacon_Book_Lambda_I_Syntax
+    Bacon_Book_Lambda_I_Calculus
+    Bacon_Book_Lambda_I_Conversion
+    Bacon_Book_Lambda_I_Presentations
+    Bacon_Book_Lambda_I_Models
+    Bacon_Book_Lambda_I_Henkin_Name_Stages
+    Bacon_Book_Lambda_I_Henkin_Full_Signature
+    Bacon_Book_Lambda_I_Theory_Retraction
+    Bacon_Book_Lambda_I_Theory_Variable_Substitution
+    Bacon_Book_Lambda_I_Fresh_Constant_Generalization
+    Bacon_Book_Lambda_I_Existential_Conversion
+    Bacon_Book_Lambda_I_Negation_Conversion
+    Bacon_Book_Lambda_I_Open_Propositional_Decision
+    Bacon_Book_Lambda_I_Negative_Predicate_Generalization
+    Bacon_Book_Lambda_I_Propositional_Certificates
+    Bacon_Book_Lambda_I_Propositional_Negation
+    Bacon_Book_Lambda_I_Propositional_Explosion
+    Bacon_Book_Lambda_I_Conjunction_Certificates
+    Bacon_Book_Lambda_I_Conjunction_Currying
+    Bacon_Book_Lambda_I_Closed_Deduction
+    Bacon_Book_Lambda_I_Finite_Support
+    Bacon_Book_Lambda_I_Theory_Closure
+    Bacon_Book_Lambda_I_Universal_Closure
+    Bacon_Book_Lambda_I_Theory_Consistency
+    Bacon_Book_Lambda_I_Theory_Signature_Monotonicity
+    Bacon_Book_Lambda_I_Theory_Signature_Conservativity
+    Bacon_Book_Lambda_I_Closed_Witness_Choice
+    Bacon_Book_Lambda_I_Consistency_Unions
+    Bacon_Book_Lambda_I_Closed_Maximal_Extension
+    Bacon_Book_Lambda_I_Closed_Negation_Complete
+    Bacon_Book_Lambda_I_Conditional_Witness
+    Bacon_Book_Lambda_I_Witness_Family_Syntax
+    Bacon_Book_Lambda_I_Henkin_Stage_Witnesses
+    Bacon_Book_Lambda_I_Finite_Witness_Family
+    Bacon_Book_Lambda_I_Finite_Image_Cover
+    Bacon_Book_Lambda_I_Infinite_Witness_Family
+    Bacon_Book_Lambda_I_Henkin_Stage_Consistency
+    Bacon_Book_Lambda_I_Theory_Constant_Renaming
+    Bacon_Book_Lambda_I_Constant_Renaming_Reflection
+    Bacon_Book_Lambda_I_Henkin_Premise_Stages
+    Bacon_Book_Lambda_I_Henkin_Witness_Coverage
+    Bacon_Book_Lambda_I_Henkin_Union
+    Bacon_Book_Lambda_I_Universal_Closure_Theories
+    Bacon_Book_Lambda_I_Universal_Closure_Consistency
+    Bacon_Book_Lambda_I_Closed_Witness_Completeness
+    Bacon_Book_Lambda_I_Closed_Henkin_Extension
+    Bacon_Book_Lambda_I_Conversion_Classes
+    Bacon_Book_Lambda_I_Conversion_Application
+    Bacon_Book_Lambda_I_Conversion_Denotation
+    Bacon_Book_Lambda_I_Henkin_Closed_Terms
+    Bacon_Book_Lambda_I_Conversion_Domain_Inhabitation
+    Bacon_Book_Lambda_I_Closed_Maximal_Truth
+    Bacon_Book_Lambda_I_Conversion_Valuation
+    Bacon_Book_Lambda_I_Conversion_Logical_Values
+    Bacon_Book_Lambda_I_Environment_Substitution_Conversion
+    Bacon_Book_Lambda_I_Conversion_Environment
+    Bacon_Book_Lambda_I_Conversion_Closed_Values
+    Bacon_Book_Lambda_I_Closed_Universal_Instances
+    Bacon_Book_Lambda_I_Quantifier_Proof_Basics
+    Bacon_Book_Lambda_I_Closed_Quantifier_Duality
+    Bacon_Book_Lambda_I_Closed_Universal_Truth
+    Bacon_Book_Lambda_I_Conversion_Universal_Valuation
+    Bacon_Book_Lambda_I_Conversion_Model
+    Bacon_Book_Lambda_I_Conversion_Truth_Projection
+    Bacon_Book_Lambda_I_Universal_Closure_Truth
+    Bacon_Book_Lambda_I_Conversion_Expanded_Model_Existence
+    Bacon_Book_Lambda_I_Constant_Renaming_Conversion
+    Bacon_Book_Lambda_I_Constant_Model_Pullback
+    Bacon_Book_Lambda_I_Canonical_Model_Existence
+    Bacon_Book_Lambda_I_Canonical_Countermodel
+    Bacon_Book_Lambda_I_Canonical_Completeness
+    Bacon_Book_Lambda_I_Audit
+
 session Bacon_Source_Model_Development in "theories/base/source_models" = Bacon_Source_Vocabulary_Development +
   description "
-    Models for the independently defined first-class paper language;
-    named-variable representation bridges remain explicit obligations.
+    Models for the independently defined first-class paper language,
+    with the proved named-variable representation bridges
+    (Bacon_Source_Named_Tagged_Model, Bacon_Source_Named_Reverse_Model).
   "
   options [timeout = 60, export_theory = true]
   sessions
@@ -411,6 +508,7 @@ session Bacon_Parametric_Countable_Development in "theories/base/parametric_coun
 session Bacon_Book_Classicism_Development in "theories/classicism/book" = Bacon_Book_Environment_Development +
   description "Native full-F minimal-basis Classicism for the book canonical completeness construction."
   options [timeout = 60, export_theory = true]
+  sessions "HOL-Cardinals"
   theories
     Bacon_Book_Classicism_Syntax
     Bacon_Book_Classicism_Derivation
@@ -459,6 +557,8 @@ session Bacon_Book_Classicism_Development in "theories/classicism/book" = Bacon_
     Bacon_Book_C_Theory_Typed_Name_Map
     Bacon_Book_Typed_Name_Inverse
     Bacon_Book_Name_Countability
+    Bacon_Book_Named_Syntax_Cardinal
+    Bacon_Book_Ambient_Signature
     Bacon_Book_Ambient_Name_Embedding
     Bacon_Book_Typed_Witness_Transport
     Bacon_Book_Henkin_Image_Premises
@@ -619,12 +719,29 @@ session Bacon_Book_ZF_Model_Regressions in "theories/classicism/book/modal_seman
   theories
     Bacon_Book_ZF_Singleton_Regression
 
+session Bacon_Book_ZF_Modal_Soundness in "theories/classicism/book/modal_semantics/soundness" = Bacon_Book_ZF_Modal_Interpretation +
+  description "Generic soundness of full-type Classicism for the independent book modal models, and the completeness assembly."
+  options [timeout = 60, export_theory = true]
+  sessions Bacon_Book_Environment_Development Bacon_Book_Classicism_Development Bacon_Book_ZF_Modal_Representation
+  theories
+    Bacon_Book_ZF_Modal_Naturality
+    Bacon_Book_ZF_Modal_Truth_Clauses
+    Bacon_Book_ZF_Modal_Identity_Clauses
+    Bacon_Book_ZF_Modal_Conversion
+    Bacon_Book_ZF_Modal_H_Soundness
+    Bacon_Book_ZF_Full_C_Soundness
+    Bacon_Book_ZF_Full_C_Completeness
+    Bacon_Book_ZF_Full_C_Small_Carrier_Completeness
+    Bacon_Book_ZF_Full_C_Declared_Names_Completeness
+    Bacon_Book_ZF_Modal_Soundness_Audit
+
 session Bacon_Book_ZF_Modal_Representation in "theories/classicism/book/representation/hol_zf" = Bacon_Book_Modal_Representation +
   description "Explicit HOL-ZF universe assembly for the source-faithful full-C canonical modal model."
   options [timeout = 60, export_theory = true]
   sessions Bacon_Classicism_ZF_Representation "HOL-ZF" Bacon_Book_ZF_Modal_Semantics Bacon_Book_ZF_Modal_Interpretation
   theories
     Bacon_Book_ZF_Countable_Codes
+    Bacon_Book_ZF_Coded_Frame
     Bacon_Book_ZF_World_Codes
     Bacon_Book_ZF_Term_Class_Codes
     Bacon_Book_ZF_Represented_Images
@@ -684,6 +801,10 @@ session Bacon_Book_ZF_Modal_Representation in "theories/classicism/book/represen
     Bacon_Book_ZF_Ambient_Nontrivial_Existence
     Bacon_Book_ZF_Countable_Nontrivial_Existence
     Bacon_Book_ZF_Nontrivial_Audit
+    Bacon_Book_ZF_Small_Carrier_Existence
+    Bacon_Book_ZF_Small_Carrier_Audit
+    Bacon_Book_ZF_Declared_Names_Existence
+    Bacon_Book_ZF_Declared_Names_Audit
 
 session Bacon_Classicism_Action_Development in "theories/classicism/action_models" = Bacon_Source_Model_Development +
   description "
@@ -1345,7 +1466,9 @@ session Bacon_BBK_Semantics_Development in "theories/classicism/bbk_semantics_de
 session Bacon_Auxiliary_Bridge_Development in "theories/classicism/auxiliary_bridges" = Bacon_BBK_Semantics_Development +
   description "
     Checked bridges from useful earlier semantic infrastructure to the exact
-    Bacon--Dorr BBK interface; no converse or source-fidelity claim is implied.
+    Bacon--Dorr BBK interface, including the audited signature
+    reconciliation equivalence H_signature_parametric_iff; no source-fidelity
+    claim is implied.
   "
   options [timeout = 60, export_theory = true]
   sessions
@@ -1357,6 +1480,18 @@ session Bacon_Auxiliary_Bridge_Development in "theories/classicism/auxiliary_bri
     Bacon_H_Signature_Reconciliation
     Bacon_Finite_Calibration_BBK_Inhabitation
     Bacon_Book_Model_Inhabitation
+
+session Bacon_Book_Lambda_I_Regressions in "theories/base/book_lambda_I_regressions" = Bacon_Auxiliary_Bridge_Development +
+  description "
+    Regression outside the core λI session: an actual λI model with a typed
+    assignment satisfying ⊥ → ⊥, obtained from the auxiliary-bridge full
+    minimal model existence theorem and the restriction of full minimal
+    models to λI models; {⊥ → ⊥} is λI-consistent.
+  "
+  options [timeout = 60, export_theory = true]
+  sessions Bacon_Book_Lambda_I_Development
+  theories
+    Bacon_Book_Lambda_I_Model_Regression
 
 session Bacon_General_Model_Development in "theories/classicism/general_model_development" = Bacon_BBK_Semantics_Development +
   description "
@@ -1376,11 +1511,17 @@ session Bacon_H_BBK_Canonical_Development in "theories/classicism/h_bbk_canonica
 
 session Bacon_H_BBK_Countable_Development in "theories/classicism/h_bbk_countable" = Bacon_H_BBK_Strong_Completeness_Development +
   description "
-    Transport of the canonical BBK model to subsets of the natural numbers.
+    Transport of the canonical BBK model to subsets of the natural numbers,
+    and the theorem-object audit of the older represented H--BBK
+    development (exact H soundness, canonical closed-term completeness,
+    arbitrary-theory model existence, natural-number transport, Henkin
+    substitution congruences).
   "
   options [timeout = 60, export_theory = true]
+  sessions Bacon_H_Henkin_Substitution_Development
   theories
     Bacon_H_BBK_Countable_Arbitrary_Model
+    Bacon_H_BBK_Audit
 
 session Bacon_H_BBK_Strong_Completeness_Development in "theories/classicism/h_bbk_strong_completeness" = Bacon_H_BBK_Canonical_Development +
   description "

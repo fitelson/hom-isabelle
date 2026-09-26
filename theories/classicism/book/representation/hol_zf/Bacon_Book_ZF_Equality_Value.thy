@@ -2,13 +2,13 @@ theory Bacon_Book_ZF_Equality_Value
   imports Bacon_Book_ZF_Application_Naturality
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 lemma full_ZF_closed_value_representation:
-  assumes member: "a \<in> explode (full_ZF_D \<sigma> w)"
+  assumes admitted: "full_ZF_admitted w" and member: "a \<in> explode (full_ZF_D \<sigma> w)"
   shows "\<exists>A\<in>book_closed_terms (fst w) G \<sigma>. a = full_ZF_closed_value w \<sigma> A"
-  using member unfolding full_ZF_D_elements book_C_identity_domain_def full_ZF_closed_value_def by auto
+  using member unfolding full_ZF_D_elements[OF admitted] book_C_identity_domain_def full_ZF_closed_value_def by auto
 
 definition full_ZF_equality_value where
   "full_ZF_equality_value w \<sigma> = full_ZF_closed_value w (Arr \<sigma> (Arr \<sigma> Prop)) (book_leibniz_const G \<sigma>)"
@@ -18,8 +18,9 @@ lemma full_ZF_equality_closed_term:
   by (rule book_closed_termsI[OF book_leibniz_const_language[OF rich] book_leibniz_const_closed])
 
 theorem full_ZF_equality_value_type:
-  "full_ZF_equality_value w \<sigma> \<in> explode (full_ZF_D (Arr \<sigma> (Arr \<sigma> Prop)) w)"
-  unfolding full_ZF_equality_value_def by (rule full_ZF_closed_value_type[OF full_ZF_equality_closed_term])
+  assumes admitted: "full_ZF_admitted w"
+  shows "full_ZF_equality_value w \<sigma> \<in> explode (full_ZF_D (Arr \<sigma> (Arr \<sigma> Prop)) w)"
+  unfolding full_ZF_equality_value_def by (rule full_ZF_closed_value_type[OF admitted full_ZF_equality_closed_term])
 
 theorem full_ZF_equality_value_natural:
   assumes ww: "w \<in> worlds" and vw: "v \<in> worlds" and access: "le w v"
@@ -34,9 +35,9 @@ theorem full_ZF_equality_value_truth:
     (full_ZF_app w \<sigma> Prop (full_ZF_app w \<sigma> (Arr \<sigma> Prop) (full_ZF_equality_value w \<sigma>) a) b) = (a = b)"
 proof -
   obtain A where ac: "A \<in> book_closed_terms (fst w) G \<sigma>" and ae: "a = full_ZF_closed_value w \<sigma> A"
-    using full_ZF_closed_value_representation[OF am] by blast
+    using full_ZF_closed_value_representation[OF worlds_admitted[OF ww] am] by blast
   obtain C where cc: "C \<in> book_closed_terms (fst w) G \<sigma>" and ce: "b = full_ZF_closed_value w \<sigma> C"
-    using full_ZF_closed_value_representation[OF bm] by blast
+    using full_ZF_closed_value_representation[OF worlds_admitted[OF ww] bm] by blast
   let ?E = "book_leibniz_const G \<sigma>"
   let ?R = "book_leibniz G \<sigma> A C"
   have ec: "?E \<in> book_closed_terms (fst w) G (Arr \<sigma> (Arr \<sigma> Prop))"

@@ -2,16 +2,16 @@ theory Bacon_Book_ZF_Closed_Values
   imports Bacon_Book_ZF_Future_Truth_Sets
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 definition full_ZF_closed_value where
   "full_ZF_closed_value w \<sigma> A = full_ZF_h \<sigma> w (book_C_identity_class (fst w) G (snd w) \<sigma> A)"
 
 lemma full_ZF_closed_value_type:
-  assumes member: "A \<in> book_closed_terms (fst w) G \<sigma>"
+  assumes admitted: "full_ZF_admitted w" and member: "A \<in> book_closed_terms (fst w) G \<sigma>"
   shows "full_ZF_closed_value w \<sigma> A \<in> explode (full_ZF_D \<sigma> w)"
-  unfolding full_ZF_closed_value_def by (rule full_ZF_h_type[OF book_C_identity_domainI[OF member]])
+  unfolding full_ZF_closed_value_def by (rule full_ZF_h_type[OF admitted book_C_identity_domainI[OF member]])
 
 lemma full_ZF_denote_closed_value:
   assumes member: "A \<in> book_closed_terms (fst w) G \<sigma>"

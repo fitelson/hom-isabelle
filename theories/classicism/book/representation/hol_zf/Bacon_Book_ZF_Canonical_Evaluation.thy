@@ -3,7 +3,7 @@ theory Bacon_Book_ZF_Canonical_Evaluation
     Bacon_Book_ZF_Modal_Interpretation.Bacon_Book_ZF_Model_Interpretation_Uniqueness
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 definition full_ZF_J where "full_ZF_J w g A = full_ZF_denote (full_world_decode w) g A"

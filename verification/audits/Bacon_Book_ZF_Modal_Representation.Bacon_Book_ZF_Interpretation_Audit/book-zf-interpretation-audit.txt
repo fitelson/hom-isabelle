@@ -1,7 +1,7 @@
 FOUNDATION: standard HOL-ZF; distinct from the pure-HOL term interpretation audit
-SCOPE: actual represented interpretation over the countable-name full-C canonical frame, including all-future abstraction; no complete modal-model or completeness claim
+SCOPE: actual represented interpretation over the coded full-C canonical frame (arbitrary name carrier), including all-future abstraction; no complete modal-model or completeness claim
 CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 13 checked endpoints
-inverse maps decode typed assignments: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+inverse maps decode typed assignments: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
 actual counterparts transport typed assignments: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
 assignment decoding commutes with actual counterpart transport: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
 assignment decoding commutes with variable update: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1

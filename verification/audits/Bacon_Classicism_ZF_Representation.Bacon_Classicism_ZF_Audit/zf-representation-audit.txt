@@ -1,5 +1,5 @@
 FOUNDATION: standard HOL-ZF set axioms, not pure HOL
-CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 257 checked endpoints
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 259 checked endpoints
 graph encoding has the specified function-space type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
 graph decoding has the specified normalized-function type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
 function decode after encode is identity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
@@ -257,3 +257,5 @@ pulling back only constants preserves an actual independent action model: oracle
 old record-indexed validity is exactly generic validity at its original world-label type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
 arbitrary-signature C non-theorems have actual action countermodels on the explicit padded label carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
 arbitrary-signature C equals validity in all independent action models on the padded label carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+native R Classicism theorems are valid in every independent action model on every world-label type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+native R Classicism theorems are valid in every record-indexed action model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1

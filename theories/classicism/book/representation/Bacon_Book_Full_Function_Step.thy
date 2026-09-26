@@ -5,7 +5,7 @@ begin
 section \<open>The canonical function step at arbitrary full types\<close>
 
 locale book_full_function_step = Frame: book_full_C_canonical_frame \<Sigma> B G actual
-  for \<Sigma> :: "('c::countable) ssignature" and B :: "'c ssignature" and G :: sgcontext and actual :: "'c book_C_world" +
+  for \<Sigma> :: "'c ssignature" and B :: "'c ssignature" and G :: sgcontext and actual :: "'c book_C_world" +
   fixes \<sigma> \<tau> :: otype
     and DA :: "'c book_C_world \<Rightarrow> 'a set"
     and dA :: "'c book_C_world \<Rightarrow> 'c book_C_world \<Rightarrow> 'a \<Rightarrow> 'a"

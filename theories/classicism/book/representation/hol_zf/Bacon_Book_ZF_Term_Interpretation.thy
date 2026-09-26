@@ -4,7 +4,7 @@ begin
 
 section \<open>The actual interpretation on the represented domains\<close>
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 definition full_ZF_denote where
@@ -27,8 +27,8 @@ proof -
     by (rule book_full_C_world_identity_algebra[OF rich book_full_C_rooted_world_data(1)[OF ww]])
   have source: "book_C_term_denote (fst w) G (snd w) (full_ZF_assignment_decode w g) A \<in>
     book_C_identity_domain (fst w) G (snd w) \<tau>"
-    by (rule T.book_C_term_denote_type[OF language full_ZF_assignment_decode_typed[OF typed]])
-  show ?thesis by (simp only: full_ZF_denote_eq[OF book_language_type[OF language]]; rule full_ZF_h_type[OF source])
+    by (rule T.book_C_term_denote_type[OF language full_ZF_assignment_decode_typed[OF worlds_admitted[OF ww] typed]])
+  show ?thesis by (simp only: full_ZF_denote_eq[OF book_language_type[OF language]]; rule full_ZF_h_type[OF worlds_admitted[OF ww] source])
 qed
 
 theorem full_ZF_denote_var:
@@ -41,9 +41,9 @@ proof -
   have nt: "has_ntype book_minimal_logical_type G (NVar n) (G n)" by (rule has_ntype.Var)
   have decoded: "book_C_term_denote (fst w) G (snd w) (full_ZF_assignment_decode w g) (NVar n) =
     full_ZF_j (G n) w (g n)"
-    using T.book_C_term_denote_var[OF full_ZF_assignment_decode_typed[OF typed], of n]
+    using T.book_C_term_denote_var[OF full_ZF_assignment_decode_typed[OF worlds_admitted[OF ww] typed], of n]
     by (simp only: full_ZF_assignment_decode_def)
-  show ?thesis by (simp only: full_ZF_denote_eq[OF nt] decoded; rule full_ZF_hj; rule book_env_at[OF typed])
+  show ?thesis by (simp only: full_ZF_denote_eq[OF nt] decoded; rule full_ZF_hj[OF worlds_admitted[OF ww]]; rule book_env_at[OF typed])
 qed
 
 theorem full_ZF_denote_closed:
@@ -77,7 +77,7 @@ proof -
   let ?k = "full_ZF_assignment_decode w g"
   let ?J = "book_C_term_denote (fst w) G (snd w) ?k"
   have kt: "book_env_typed (book_C_identity_domain (fst w) G (snd w)) G ?k"
-    by (rule full_ZF_assignment_decode_typed[OF typed])
+    by (rule full_ZF_assignment_decode_typed[OF worlds_admitted[OF ww] typed])
   have fm: "?J F \<in> book_C_identity_domain (fst w) G (snd w) (Arr \<sigma> \<tau>)"
     by (rule T.book_C_term_denote_type[OF fl kt])
   have am: "?J A \<in> book_C_identity_domain (fst w) G (snd w) \<sigma>"

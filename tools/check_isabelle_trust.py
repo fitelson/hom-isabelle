@@ -196,6 +196,16 @@ def inspect_theory(source):
                                and index + 1 < len(tokens) and tokens[index + 1].value == ":")
                 if token.value in FORBIDDEN_OUTER and not (qualified or axiom_label):
                     findings.append((token.start, f"forbidden Isabelle trust token: {token.value}"))
+                # The symbol \<proof> is an alias of sorry (Pure); it lexes as
+                # the adjacent tokens \ < proof >, so it is caught here.
+                proof_symbol = (token.value == "proof" and index >= 2 and index + 1 < len(tokens)
+                                and tokens[index - 1].value == "<" and tokens[index - 2].value == "\\"
+                                and tokens[index - 2].end == tokens[index - 1].start
+                                and tokens[index - 1].end == token.start
+                                and tokens[index + 1].value == ">"
+                                and token.end == tokens[index + 1].start)
+                if proof_symbol:
+                    findings.append((tokens[index - 2].start, "forbidden Isabelle trust token: \\<proof>"))
                 if pending == "file":
                     findings.append((token.start, "ML_file requires a quoted literal local .ML path"))
                     pending = None

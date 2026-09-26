@@ -47,6 +47,7 @@
 \newtheorem{proposition}{Proposition}
 \onehalfspacing
 \setlength{\emergencystretch}{2em}
+\brokenpenalty=10000
 \hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,
   pdftitle={Goodman's Purity of Pure Project: Verified Results and Open Problems},
   pdfauthor={},pdfsubject={Verified results, corrections, and open contributor problems}}
@@ -57,7 +58,7 @@
 \vspace{4pt}
 {\large Verification, Corrections, and Remaining Problems\par}
 \vspace{6pt}
-20 September 2026
+20 September 2026; background updated 26 September 2026
 \end{center}
 
 \noindent
@@ -165,8 +166,27 @@ consequences are relative to that foundational setting. The exact appendix
 construction is Bacon's finite-natural-word instance, with its constrained
 function domains and the chosen singleton individual domain, not a theorem
 about every monoid or every individual carrier. Its function domains satisfy
-Bacon's stated action-compatibility condition. More general core completeness
-questions are documented in the core's own source guide.
+Bacon's stated action-compatibility condition.
+
+\paragraph{The completed background metatheory.}
+As of 26 September 2026, the core also verifies soundness of Bacon's
+full-type Classicism for the nontrivial modal models and completeness
+for signatures with countably many declared constants at each type.
+The latter covers open formulas and infinite premise sets: derivability
+is equivalent to consequence at the root, and consistency to
+satisfiability. The results retain a rich variable stock, the minimal
+logical vocabulary, inhabited domains, and a false proposition at every
+world, with the documented future-restricted implication clause.
+Soundness itself does not require countability.
+
+These results strengthen the available background metatheory without
+settling Goodman's question. Ordinary root consequence must still be
+distinguished from the axiom extension used here, where theorem-level
+rules operate above the added axioms. The existing closure result permits
+the new completeness theorem to be applied to the full deductive closure
+of the added stock; it does not establish that closure's consistency or
+replace the global-validity conditions of the model results below.
+No claim about $\Pure$ or $\Fun$ is strengthened merely by this update.
 
 \subsection{The object-language results}
 

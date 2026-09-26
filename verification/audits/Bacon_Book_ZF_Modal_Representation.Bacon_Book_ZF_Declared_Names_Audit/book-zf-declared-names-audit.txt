@@ -1,0 +1,34 @@
+FOUNDATION: standard HOL-ZF; not pure HOL
+SCOPE: original-signature nontrivial model existence for signatures whose declared-name union has an injective code bounded by a ZF set, on an arbitrary HOL name carrier, including the type ZF with set-bounded declared names; the countable and whole-carrier theorems are subsumed and retained; term codes are total, bounded and injective on terms admitted by the ambient signature; declared unions with no bounded injection are outside this construction
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 31 checked endpoints
+term-set codes are injective on admitted term sets: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+term-set codes have exact element sets: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the class decoder inverts admitted term-set codes: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+Replacement images are exact on admitted term-set families: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+canonical-world sentence sets are admitted term sets: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+identity classes at pairs inside the ambient signature are admitted term sets: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the class decoder is typed on coded identity domains at admitted pairs: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+world codes are injective on the rooted worlds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+domain elements are exactly the coded identity classes at admitted pairs: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the recursive inverse is a right inverse at admitted pairs: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+assignment decoding is typed at admitted pairs: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+individual coding is injective at admitted pairs: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the declared-name reserve contains the recoded declared signature: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+the declared-name reserve leaves an infinite unused part at every type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+the declared-name reserve dominates the whole recoded declared union: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+the recoded declared signature is an ambient signature inside the declared-name reserve: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+the tagged name code is injective on declared-or-reserve names: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the tagged name code is bounded on declared-or-reserve names: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the tagged carrier bound is infinite without whole-carrier smallness: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+the default code lies in the tagged carrier bound: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+terms admitted by the declared-name reserve have a total bounded code injective on them: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the recoded declared signature is a coded ambient signature: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+whole-carrier smallness gives small declared names: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+countably declared names give small declared names: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+consistent theories with small declared names have nontrivial original-signature models: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+consistent theories on carrier ZF with set-bounded declared names have nontrivial models: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=0
+the small-carrier existence theorem follows from the declared-names theorem: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the countably declared existence theorem follows from the declared-names theorem: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the countably declared existence theorem is retained: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the small-carrier existence theorem is retained: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the nat set existence theorem is retained: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=0

@@ -51,8 +51,9 @@ text \<open>
   model definition. Its clauses specify the literal typed extension
   to named λ-terms, including the whole future Lambda graph.
   No conversion, locality or naturality field is added: those
-  properties must be derived. Existence of a J for every model
-  remains a theorem to prove from the supplied combinators.
+  properties must be derived. Existence of a J for every model is
+  proved from the supplied combinators as generic_interpretation_exists
+  in Bacon_Book_ZF_Generic_Interpretation_Existence.
 \<close>
 
 end

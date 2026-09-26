@@ -7,6 +7,7 @@ cd "$PROJECT_ROOT"
 OUTPUT_DIR="$PROJECT_ROOT/isabelle-kg/bacon"
 mkdir -p "$OUTPUT_DIR"
 CLASSES_DIR="$(mktemp -d "$OUTPUT_DIR/classes.XXXXXX")"
+trap 'rm -rf "$CLASSES_DIR"' EXIT
 ISABELLE_SCALA_JAR="$(isabelle getenv -b ISABELLE_SCALA_JAR)"
 ISABELLE_CLASSPATH="$(isabelle getenv -b ISABELLE_CLASSPATH)"
 isabelle scalac -classpath "$ISABELLE_SCALA_JAR:$ISABELLE_CLASSPATH" \

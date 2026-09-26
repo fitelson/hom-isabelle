@@ -21,8 +21,13 @@ text \<open>
 
   This is a proof-rule presentation, not semantic validity and not
   an alias for the existing F or axiom-based C judgment. No α,
-  Existence or Classicist-identity constructor is added. Equality
-  with the printed identity-axiom presentation remains to be proved.
+  Existence or Classicist-identity constructor is added. Its
+  coincidence with the p.12 Logical-Equivalence-axiom definition of C
+  (paper_R_classicism_proves) is proved downstream, under an R-rich
+  stock, as paper_R_classicism_equivalence_iff in
+  Bacon_Source_Relational_Classicism_Equivalence_Iff. Correspondence
+  with the finite Boolean and Classicist identity axioms of Figures 3–4
+  remains a separate obligation.
 \<close>
 
 lemma paper_R_equivalence_identity_language:

@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_Ambient_Nontrivial_Existence
   imports Bacon_Book_ZF_Original_Theory_Truth Bacon_Book_ZF_Canonical_Nontrivial_Model
 begin
 
-context book_countable_ambient_signature
+context book_coded_ambient_signature
 begin
 
 theorem book_full_C_ambient_nontrivial_modal_model_exists:
@@ -17,8 +17,8 @@ proof -
   obtain actual where world: "actual \<in> book_full_C_canonical_worlds \<Sigma> B G"
     and originals: "\<forall>A\<in>S. book_universal_closure G A \<in> snd actual"
     using book_full_C_canonical_world_exists[OF rich language consistent] by blast
-  interpret C: book_full_C_canonical_frame \<Sigma> B G actual
-    by (unfold_locales; rule rich world)
+  interpret C: book_full_C_coded_frame \<Sigma> B G actual term_code term_bound
+    by (unfold_locales; rule rich world term_code_injective term_code_bound)
   have contained: "\<And>A. A \<in> S \<Longrightarrow> book_universal_closure G A \<in> snd actual"
     by (rule bspec[OF originals]; assumption)
   have satisfied: "book_ZF_satisfies C.full_ZF_D_at G C.full_ZF_J C.full_ZF_root S"
@@ -42,9 +42,12 @@ text \<open>
   The same canonical construction now yields the explicit nontrivial
   refinement: every type domain is inhabited and a false proposition
   exists at every world. These are proved properties of the constructed
-  data, not extra hypotheses on the original theory. The fixed countable
-  ambient-signature and rich-stock conditions remain. This is forward
-  existence, not generic soundness or a consistency equivalence.
+  data, not extra hypotheses on the original theory. The coded
+  ambient-signature (book_coded_ambient_signature) and rich-stock
+  conditions remain; countable coding is one instance. This is forward
+  existence only; generic soundness is Bacon_Book_ZF_Full_C_Soundness
+  and the consistency equivalences are Bacon_Book_ZF_Full_C_Completeness
+  and Bacon_Book_ZF_Full_C_Declared_Names_Completeness.
 \<close>
 
 end

@@ -6,20 +6,45 @@ research and teaching, and as an invitation to graduate students and other
 scholars to help complete the formalization.
 
 There is a substantial checked development here, but **the project is not
-finished**. In particular, the paper's relational-type Classicism results
-must not be confused with the still unfinished full-type modal completeness
-development for Bacon's book.
+finished**. The paper's relational-type Classicism results and the book's
+full-type modal results are distinct developments with distinct scopes;
+read each theorem's hypotheses, not its name.
 
 H soundness and completeness are proved in the scopes described in the
-[source guide](docs/SOURCE_CORRESPONDENCE.md). For the book's full-type C,
-we now have both original-signature model existence for countably declared
-signatures and an admissible interpretation for every independent
-full-minimal modal model. The latter includes the exact future-function
-interpretation of abstraction, without adding model assumptions. The
-canonical existence result now also supplies inhabited domains and a false
-proposition at every world. An [audited source clarification](docs/MODAL_NONTRIVIALITY.md)
-explains why those conditions are explicit in a separately named model
-class. Generic full-C soundness and final modal completeness remain open.
+[source guide](docs/SOURCE_CORRESPONDENCE.md). For the book's full-type
+Classicism C, generic modal soundness is proved for every independent
+nontrivial modal model with an admissible interpretation. Original-signature
+model existence and completeness are proved under one signature-size
+hypothesis: the union of the declared constants admits an injective code
+into the elements of some ZF set, on an arbitrary name carrier. This covers
+countably declared signatures, ZF-small carriers such as `nat set` with
+every constant declared, and the type `ZF` itself with a set-bounded
+declared union; those earlier scopes remain available as retained theorems
+and as corollaries.
+
+For a rich variable stock and well-formed formulas in the full minimal
+language, derivability from a theory is equivalent to root consequence
+over the nontrivial class, and consistency is equivalent to satisfiability
+([`Bacon_Book_ZF_Full_C_Declared_Names_Completeness.thy`](theories/classicism/book/modal_semantics/soundness/Bacon_Book_ZF_Full_C_Declared_Names_Completeness.thy)
+for the declared-union scope; the retained countable and small-carrier
+versions are in
+[`Bacon_Book_ZF_Full_C_Completeness.thy`](theories/classicism/book/modal_semantics/soundness/Bacon_Book_ZF_Full_C_Completeness.thy) and
+[`Bacon_Book_ZF_Full_C_Small_Carrier_Completeness.thy`](theories/classicism/book/modal_semantics/soundness/Bacon_Book_ZF_Full_C_Small_Carrier_Completeness.thy)).
+Open formulas and arbitrary premise sets are allowed. The constructed
+models have inhabited domains and a false proposition at every world;
+the [nontriviality clarification](docs/MODAL_NONTRIVIALITY.md) explains
+why this class is distinguished from the broader structural definition.
+Generic interpretation existence also remains available for the structural
+class, with exact future abstraction and uniqueness on typed inputs.
+
+This is not unrestricted completeness for every signature: declared
+unions with no injection bounded by a ZF set are outside the construction
+(a limitation of the injective syntax coding, not a proof that such
+theories lack models). Other general λ-sublanguages (beyond the checked
+relevant (λI) instance) and richer primitive profiles remain open. The results use HOL–ZF representation, root
+consequence, the documented future-restricted implication and the literal
+box `λp.(p =ₜ ⊤)`; see [STATUS.md](STATUS.md) for verification evidence
+and exact boundaries.
 
 ## Start here
 
@@ -89,13 +114,14 @@ and how to distinguish included source files from checked session contents.
 
 | Directory | Role |
 |---|---|
-| `theories/base/` | Types, syntax, H, BBK/general models, and source-language bridges |
+| `theories/base/` | Types, syntax, H, BBK/general models, the relevant (λI) language development (`book_lambda_I/`), and source-language bridges |
 | `theories/classicism/action_models/` | Bacon–Dorr's relational-type C, categories, actions, and semantic results |
-| `theories/classicism/book/` | Bacon's full-type C and the unfinished Chapter 18 modal development |
-| Other `theories/classicism/` subdirectories | Earlier proof presentations and supporting bridges retained as dependencies |
+| `theories/classicism/book/` | Bacon's full-type C and the Chapter 18 modal development, including generic soundness and completeness |
+| `theories/classicism/presentation_reconciliation/`, `h_only_presentations/`, `equivalence_development/`, `auxiliary_bridges/` and the top-level `theories/classicism/*.thy` | Represented full-F C: the Appendix A reconstruction, the proved presentation correspondences (Theorem 6.1, `Bacon_Theorem_6_1_represented`), the S4 package and auxiliary semantic bridges; their principal results are audited endpoints in the core catalog, not merely dependencies |
+| `theories/classicism/h_bbk_canonical/`, `h_bbk_strong_completeness/`, `h_bbk_countable/`, `general_model_development/` and the remaining `theories/classicism/` subdirectories | Earlier H-BBK canonical/countable and general-model developments (leaf sessions superseded by the parametric and named endpoints, retained for reference) and supporting developments retained as dependencies |
 | `theories/core_audit/` | Explicit theorem catalogs and kernel-object checks |
 | `tools/` | Verification guards and Isabelle-native dependency inspection |
-| `Applications/` | Separately documented applications with independent sessions and checks; currently Goodman's Purity of Pure project |
+| `Applications/` | Separately documented applications with independent sessions and checks |
 
 The theorem names and relative theory paths are preserved from the parent
 development so that source correspondences remain traceable. This repository
@@ -104,7 +130,7 @@ private research records are not distributed.
 
 ## Applications
 
-The [Applications folder](Applications/README.md) contains one application:
+The [Applications folder](Applications/README.md) includes
 [Goodman's Purity of Pure project](Applications/goodman-isabelle/README.md).
 It includes verified results, a report and a contributor roadmap; Goodman's
 consistency question remains open. It is an ordinary subfolder, not a

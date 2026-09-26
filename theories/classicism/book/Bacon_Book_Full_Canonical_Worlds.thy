@@ -7,7 +7,8 @@ section \<open>Canonical worlds with the full MF+PE background\<close>
 
 definition book_full_C_canonical_worlds :: "'c ssignature \<Rightarrow> 'c ssignature \<Rightarrow> sgcontext \<Rightarrow> 'c book_C_world set" where
   "book_full_C_canonical_worlds \<Sigma> B G = {w.
-    (\<forall>\<sigma>. \<Sigma> \<sigma> \<subseteq> fst w \<sigma> \<and> fst w \<sigma> \<subseteq> B \<sigma> \<and> infinite (B \<sigma> - fst w \<sigma>)) \<and>
+    (\<forall>\<sigma>. \<Sigma> \<sigma> \<subseteq> fst w \<sigma> \<and> fst w \<sigma> \<subseteq> B \<sigma> \<and> infinite (B \<sigma> - fst w \<sigma>) \<and>
+      card_of (\<Union>\<rho>. fst w \<rho>) \<le>o card_of (B \<sigma> - fst w \<sigma>)) \<and>
     book_full_C_closed_maximal_extension (fst w) G {} (snd w) \<and>
     book_closed_constant_witness_complete (fst w) G (snd w)}"
 
@@ -17,7 +18,10 @@ lemma book_full_C_canonical_world_data:
     and "infinite (B \<sigma> - fst w \<sigma>)"
     and "book_full_C_closed_maximal_extension (fst w) G {} (snd w)"
     and "book_closed_constant_witness_complete (fst w) G (snd w)"
+    and "card_of (\<Union>\<rho>. fst w \<rho>) \<le>o card_of (B \<sigma> - fst w \<sigma>)"
   using world unfolding book_full_C_canonical_worlds_def by blast+
+
+lemmas book_full_C_canonical_world_reserve_large = book_full_C_canonical_world_data(6)
 
 theorem book_full_C_canonical_world_is_base:
   assumes rich: "sg_rich G" and world: "w \<in> book_full_C_canonical_worlds \<Sigma> B G"

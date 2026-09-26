@@ -1,5 +1,5 @@
 SCOPE: book full-F/minimal MF plus PE and MF plus vector Equivalence; base proof embedding; no modal completeness claim
-CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 72 checked endpoints
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 73 checked endpoints
 the three MF binders are distinct in a rich typed stock: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=0
 the literal all-type MF axiom is a formula: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
 the literal all-type MF axiom is closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
@@ -47,7 +47,8 @@ consistent closed full-C premises have actual maximal extensions: oracles=0 resi
 a full-C closed maximal extension retains full-C consistency: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
 full-C consistency yields an actual closed maximal constant-witness-complete Henkin extension: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
 old-name-fixing image transport yields an actual full-C Henkin extension: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
-full-C Henkin completion is realized inside the fixed countable ambient language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+full-C Henkin completion is realized inside an ambient signature with infinite reserves: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+on countable carriers the canonical worlds are exactly the reserve, maximal-closed, witness-complete pairs: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
 full-C closed maximal sets satisfy the base maximal condition in the same language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
 finite boxed consequence is derived over the full-C background: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
 an absent boxed consequence has a full-C-consistent negative successor seed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1

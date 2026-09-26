@@ -1,5 +1,75 @@
 # Standalone release verification
 
+## Core update — 26 September 2026 (third pin refresh; full build passed)
+
+After the core's comprehensive repository audit and its fixes (the
+relevant-language (λI) development through completeness with its regression
+session, new audit coverage for the older H–BBK endpoints and the generic
+action-validity endpoint, comment and documentation corrections), the pin
+was refreshed to that checkpoint: 1,473 entries (77 added core files, 70
+changed, none removed; base revision unchanged). No Goodman theory imports
+any changed or added core theory directly. Input checks passed (all
+hashes, 82 preserved files, packaging tests). `./check_isabelle.sh --export`
+then passed: build exit **0**, 4 minutes 9 seconds, 60 sessions; exports in
+`exports/2026-09-26T16-32-53-749032/`, **87 catalogs**, **1,708 integration
+entries and 9 replay entries** (1,717 clean rows), every entry identical to
+the retained certificates. Of the 169 exported files, 167 are byte-identical
+to the retained copies; `m5-nested-collision-audit.txt` and
+`wi-master-transfer-audit.txt` differ only in their DIRECT-PROVENANCE
+proof-node counts (45,189→45,179 and 46,578→46,568), because the core proof
+terms they traverse changed; their endpoint lists and kernel fields are
+unchanged. Those two retained files were refreshed to the new export. No
+Goodman `.thy`, ROOT or catalog manifest changed.
+
+## Core update — 26 September 2026 (second pin refresh; full build passed)
+
+Later the same day the core's ZF-small-carrier development was
+independently reviewed (an implementation review and a follow-up pass)
+and its complete serial check passed. The pin was refreshed again to that
+checkpoint: 1,396 entries (six added core theories, 70 changed files, none
+removed; base revision unchanged). No Goodman theory imports any changed or
+added core theory directly. Input checks passed (all hashes, 82 preserved
+files, 10 packaging tests). `./check_isabelle.sh --export` then passed:
+build exit **0**, 3 minutes 51 seconds, 60 sessions, log
+`build-2026-09-26T12-34-38-334323.log`; exports in
+`exports/2026-09-26T12-34-38-334323/`, **87 catalogs**, **1,708 integration
+entries and 9 replay entries** (1,717 clean rows), every entry identical to
+the retained certificates. Of the 168 exported files, 166 are byte-identical
+to the retained copies; `m5-nested-collision-audit.txt` and
+`wi-master-transfer-audit.txt` differ only in their DIRECT-PROVENANCE
+proof-node counts (45,185→45,189 and 46,574→46,578), because the core
+proof terms they traverse changed; their endpoint lists and kernel fields
+are unchanged. Those two retained files were refreshed to the new export.
+No Goodman `.thy`, ROOT or catalog manifest changed.
+
+## Core update — 26 September 2026, earlier (first pin refresh; build then pending)
+
+The dependency manifest was explicitly reviewed and refreshed for the
+completed full-C soundness/completeness checkpoint: eight new core files,
+one ROOT selection and two comment-only edits, with no prior proof-body
+changes. The 1,390-entry input check passed, all 82 preserved Goodman
+files matched, and all ten packaging tests passed.
+
+The requested full check/export did **not** start an Isabelle build.
+The first attempt was refused by the conservative active-process guard
+while a concurrent core review command was running. A later attempt was
+refused for genuine source drift: another core theory
+`Bacon_Book_Named_Syntax_Cardinal.thy` and an additional ROOT edit had
+appeared. No guard was disabled, no other job was interrupted, and these
+unfinished changes were not automatically accepted into the pin.
+The previous 87-catalog certificates remain intact; there are no fresh
+Goodman audit exports for this maintenance checkpoint yet.
+
+That resumption is recorded in the section above: the additional delta was
+reviewed, the pin adjusted, and the full check/export passed.
+See [the scope review](../docs/CORE_UPDATE_2026-09-26.md).
+
+The report's background section was updated without changing its Goodman
+theorem claims. Its 12-page PDF compiled with TeX Live/Lucida and was
+visually inspected; references and unequal signs are clean. The previous
+PDF is preserved locally in `reports/build/core-update-2026-09-26/`.
+No Goodman `.thy`, ROOT, catalog or historical source file was changed.
+
 ## Applications-folder verification — 20 September 2026
 
 Goodman is now an ordinary tracked folder in the main repository, not a

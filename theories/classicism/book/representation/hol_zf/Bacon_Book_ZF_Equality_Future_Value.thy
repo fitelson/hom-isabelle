@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_Equality_Future_Value
   imports Bacon_Book_ZF_Equality_Value
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 theorem full_ZF_equality_result:
@@ -14,10 +14,10 @@ proof -
   let ?F = "full_ZF_app w \<sigma> (Arr \<sigma> Prop) ?E a"
   let ?p = "full_ZF_app w \<sigma> Prop ?F b"
   have ft: "?F \<in> explode (full_ZF_D (Arr \<sigma> Prop) w)"
-    by (rule full_ZF_app_type[OF ww full_ZF_equality_value_type am])
+    by (rule full_ZF_app_type[OF ww full_ZF_equality_value_type[OF worlds_admitted[OF ww]] am])
   have pt: "?p \<in> explode (full_ZF_D Prop w)" by (rule full_ZF_app_type[OF ww ft bm])
   show ?thesis
-  proof (rule full_ZF_proposition_eq_collect[OF pt])
+  proof (rule full_ZF_proposition_eq_collect[OF worlds_admitted[OF ww] pt])
     fix v
     assume vw: "v \<in> worlds" and access: "le w v"
     have av: "full_ZF_i \<sigma> w v a \<in> explode (full_ZF_D \<sigma> v)" by (rule full_ZF_i_type[OF ww vw access am])
@@ -27,7 +27,7 @@ proof -
         (full_ZF_app v \<sigma> (Arr \<sigma> Prop) (full_ZF_equality_value v \<sigma>) (full_ZF_i \<sigma> w v a))
         (full_ZF_i \<sigma> w v b)"
       by (simp only: full_ZF_app_natural[OF ww vw access ft bm]
-        full_ZF_app_natural[OF ww vw access full_ZF_equality_value_type am] full_ZF_equality_value_natural[OF ww vw access])
+        full_ZF_app_natural[OF ww vw access full_ZF_equality_value_type[OF worlds_admitted[OF ww]] am] full_ZF_equality_value_natural[OF ww vw access])
     have truth: "full_ZF_value_truth v (full_ZF_i Prop w v ?p) =
       (full_ZF_i \<sigma> w v a = full_ZF_i \<sigma> w v b)"
       by (simp only: natural; rule full_ZF_equality_value_truth[OF vw av bv])
@@ -49,20 +49,20 @@ proof -
   have root: "actual \<in> worlds" by (rule book_full_C_root_is_world)
   have reach: "le actual w" by (rule book_full_C_rooted_world_data(2)[OF ww])
   have first: "?F = full_ZF_app w \<sigma> (Arr \<sigma> Prop) (full_ZF_equality_value w \<sigma>) a"
-    by (simp only: full_ZF_future_application[OF root ww reach full_ZF_equality_value_type am]
+    by (simp only: full_ZF_future_application[OF root ww reach full_ZF_equality_value_type[OF root_admitted] am]
       full_ZF_equality_value_natural[OF root ww reach])
   have ft: "?F \<in> explode (full_ZF_D (Arr \<sigma> Prop) w)"
-    by (simp only: first; rule full_ZF_app_type[OF ww full_ZF_equality_value_type am])
+    by (simp only: first; rule full_ZF_app_type[OF ww full_ZF_equality_value_type[OF worlds_admitted[OF ww]] am])
   have av: "?a \<in> explode (full_ZF_D \<sigma> v)" by (rule full_ZF_i_type[OF ww vw access am])
   have second: "?p = full_ZF_app v \<sigma> Prop (full_ZF_app v \<sigma> (Arr \<sigma> Prop) (full_ZF_equality_value v \<sigma>) ?a) b"
     by (subst full_ZF_future_application[OF ww vw access ft bm]; simp only: first
-      full_ZF_app_natural[OF ww vw access full_ZF_equality_value_type am] full_ZF_equality_value_natural[OF ww vw access])
+      full_ZF_app_natural[OF ww vw access full_ZF_equality_value_type[OF worlds_admitted[OF ww]] am] full_ZF_equality_value_natural[OF ww vw access])
   have pt: "?p \<in> explode (full_ZF_D Prop v)"
     by (rule full_ZF_future_application_type[OF ww vw access ft bm])
   have represented: "?p = full_ZF_future_collect v (\<lambda>u. full_ZF_i \<sigma> v u ?a = full_ZF_i \<sigma> v u b)"
     by (simp only: second; rule full_ZF_equality_result[OF vw av bm])
   show ?thesis
-  proof (rule full_ZF_proposition_eq_collect[OF pt])
+  proof (rule full_ZF_proposition_eq_collect[OF worlds_admitted[OF vw] pt])
     fix u
     assume uw: "u \<in> worlds" and vu: "le v u"
     have composition: "full_ZF_i \<sigma> v u ?a = full_ZF_i \<sigma> w u a"

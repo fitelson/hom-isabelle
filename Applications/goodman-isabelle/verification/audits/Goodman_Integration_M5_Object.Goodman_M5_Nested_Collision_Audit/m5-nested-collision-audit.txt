@@ -1,6 +1,6 @@
 M5-NESTED-COLLISION-AUDIT: 21 clean endpoints
 SCOPE: actual object-language repair using q=NC(Box r), not NC(r). Output identity proved over EMPTY added stock before local fun-prime assumption; only input inequality uses T2-min and MP-only local reasoning. Repaired collision/nonreversibility implications and scoped native transfer; no global-fun-prime axiom or PP model.
-DIRECT-PROVENANCE: 45185 proof nodes traversed; no historical axiom-stock collision or fixed-fun-prime collapse endpoint used.
+DIRECT-PROVENANCE: 45179 proof nodes traversed; no historical axiom-stock collision or fixed-fun-prime collapse endpoint used.
 gi_M5_nested_input_type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
 gi_M5_PC1: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
 gi_M5_PC2: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4

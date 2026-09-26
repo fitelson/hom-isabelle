@@ -10,6 +10,13 @@ The earlier report remains unchanged outside this repository.
 
 ## Completion boundary
 
+**26 September addendum:** core generic full-C soundness and countably
+declared-signature completeness are complete in their explicit nontrivial-
+model/minimal-language scope. The application adopts the reviewed source
+checkpoint; no Goodman claim classification below changes. Root
+consequence does not replace the added-axiom extension. See
+[the compatibility review](CORE_UPDATE_2026-09-26.md).
+
 **Task 10's agreed reporting checkpoint is completed; the entire original
 formalization goal is not.** Branden explicitly left contributor tasks 6–9
 open. Resolving their missing premises by relabeling a conditional theorem

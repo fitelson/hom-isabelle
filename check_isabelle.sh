@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-if [[ $# -gt 1 || ( $# == 1 && "$1" != "--core" ) ]]; then
-  echo "Usage: $0 [--core]" >&2
+if [[ $# -gt 0 ]]; then
+  echo "Usage: $0" >&2
   exit 2
 fi
 python3 -m unittest discover -s "$ROOT_DIR/tools/tests" -p 'test_*.py'
@@ -11,10 +11,13 @@ python3 "$ROOT_DIR/tools/check_core_source_boundary.py"
 python3 "$ROOT_DIR/tools/check_release.py"
 # The selected core sessions are declared in ROOT; applications are absent.
 # One build job at a time. Do not run another build/export concurrently.
-exec isabelle build -j 1 -d "$ROOT_DIR" -o timeout=60 -o export_theory=true \
+# skip_proofs=false is the default; it is pinned so that no configuration can
+# replace proofs by the implicit skip_proof oracle.
+exec isabelle build -j 1 -d "$ROOT_DIR" -o timeout=60 -o export_theory=true -o skip_proofs=false \
   Bacon_Base \
   Bacon_Source_Vocabulary_Development \
   Bacon_Book_Environment_Development \
+  Bacon_Book_Lambda_I_Development \
   Bacon_Source_Model_Development \
   Bacon_Parametric_Signature_Development \
   Bacon_Parametric_Canonical_Development \
@@ -25,6 +28,7 @@ exec isabelle build -j 1 -d "$ROOT_DIR" -o timeout=60 -o export_theory=true \
   Bacon_Book_ZF_Modal_Interpretation \
   Bacon_Book_ZF_Model_Regressions \
   Bacon_Book_ZF_Modal_Representation \
+  Bacon_Book_ZF_Modal_Soundness \
   Bacon_Classicism_Action_Development \
   Bacon_Classicism_ZF_Representation \
   Bacon_Core_Audit_Catalog \
@@ -38,6 +42,7 @@ exec isabelle build -j 1 -d "$ROOT_DIR" -o timeout=60 -o export_theory=true \
   Bacon_H_Henkin_Substitution_Development \
   Bacon_BBK_Semantics_Development \
   Bacon_Auxiliary_Bridge_Development \
+  Bacon_Book_Lambda_I_Regressions \
   Bacon_General_Model_Development \
   Bacon_H_BBK_Canonical_Development \
   Bacon_H_BBK_Countable_Development \

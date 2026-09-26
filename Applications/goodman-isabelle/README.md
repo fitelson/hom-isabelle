@@ -18,6 +18,7 @@ one must not be silently attributed to another.
 
 ## Start here
 
+- [26 September core compatibility updates](docs/CORE_UPDATE_2026-09-26.md)
 - [What is checked and what remains](STATUS.md)
 - [Goodman verification report (PDF)](reports/GOODMAN_VERIFICATION_REPORT_2026-09-20.pdf)
 - [Detailed claim reconciliation](docs/RECONCILIATION_2026-09-20.md)
@@ -72,6 +73,11 @@ the limit is 60 seconds **per session**, not for the whole project.
 The checker uses the enclosing core and verifies its exact recorded source
 hashes (including its source ML). Application/documentation commits may
 change the main repository's HEAD without changing that core baseline.
+The reviewed 26 September baseline includes generic full-C modal soundness
+and countably declared-signature completeness. This does not settle PP
+consistency or turn root truth of the added stock into global extension
+validity. See the compatibility note for the scope and the currently
+uncommitted source checkpoint.
 It will still refuse actual core source drift. For a separate dependency
 checkout, use:
 

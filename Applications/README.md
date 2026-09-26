@@ -1,9 +1,10 @@
 # Applications
 
 Applications use the Bacon–Dorr core while retaining their own mathematical
-scope, documentation, Isabelle sessions and verification commands. These are
-ordinary tracked subfolders of this repository, not submodules. They share
-the repository's access permissions and visibility.
+scope, documentation, Isabelle sessions and verification commands. Goodman is
+the only application distributed with this repository; it is an ordinary
+tracked subfolder, not a submodule, and shares the repository's access
+permissions and visibility.
 
 ## Goodman: Purity of Pure
 

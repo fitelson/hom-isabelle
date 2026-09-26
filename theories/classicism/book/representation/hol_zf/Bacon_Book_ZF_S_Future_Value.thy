@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_S_Future_Value
   imports Bacon_Book_ZF_S_Body
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 theorem full_ZF_S_future_value:

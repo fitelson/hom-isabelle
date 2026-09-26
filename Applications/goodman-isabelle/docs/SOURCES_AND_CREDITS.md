@@ -3,7 +3,7 @@
 ## Current location
 
 Goodman is maintained as the ordinary subfolder `Applications/goodman-isabelle/`
-of [bacon-dorr-isabelle](https://github.com/fitelson/hom-isabelle).
+of the core repository [hom-isabelle](https://github.com/fitelson/hom-isabelle).
 It is not a submodule and shares the main repository's visibility. The
 standalone GitHub repository remains as an earlier checkpoint; its local
 Git metadata and working artifacts were preserved during the move.

@@ -4,7 +4,7 @@ theory Bacon_Book_ZF_Original_Theory_Truth
     Bacon_Book_Environment_Development.Bacon_Book_Universal_Closure_Truth
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 lemma full_ZF_root_validity_bridge:

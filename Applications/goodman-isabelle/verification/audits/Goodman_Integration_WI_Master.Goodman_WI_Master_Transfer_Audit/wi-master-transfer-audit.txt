@@ -1,6 +1,6 @@
 WI-MASTER-TRANSFER-AUDIT: 16 clean endpoints
 SCOPE: Direct parameter equations use native core+L2+WI and explicit fun-prime/purity antecedents, typed charts and occurrence-sensitive signature guards. The closed advertised theorem retains its exact original existence-augmented stock. Conclusions are translated, not independently native master definitions. The separate closed arbitrary-operator family contradiction has only Pure(top) and the full family as axioms.
-DIRECT-PROVENANCE: 46574 proof nodes traversed; no completed WI refutation, master-family contradiction, or ex-falso endpoint used.
+DIRECT-PROVENANCE: 46568 proof nodes traversed; no completed WI refutation, master-family contradiction, or ex-falso endpoint used.
 gi_WI_master_source_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
 gb_WI_master_stock_language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
 gi_WI_master_stock_inclusion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2

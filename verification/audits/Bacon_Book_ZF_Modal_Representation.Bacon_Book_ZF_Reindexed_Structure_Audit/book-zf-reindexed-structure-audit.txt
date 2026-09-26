@@ -1,5 +1,5 @@
 FOUNDATION: standard HOL-ZF; not pure HOL
-SCOPE: actual countable-name canonical frame reindexed into the independent exact modalized-structure predicate; not the complete modal-model or completeness certificate
+SCOPE: actual coded canonical frame (arbitrary name carrier) reindexed into the independent exact modalized-structure predicate; not the complete modal-model or completeness certificate
 CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 13 checked endpoints
 the actual world codes instantiate the independent pointed frame: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
 all actual reindexed domains are modalized sets: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
@@ -7,10 +7,10 @@ the independent future set is the actual canonical future set: oracles=0 residua
 the independent pair domain is the actual canonical pair domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
 the independent restriction is the actual canonical restriction: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
 the actual graph functions satisfy the full future homomorphism equation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
-every actual reindexed function is exactly its Lambda graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+every actual reindexed function is exactly its Lambda graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
 every actual reindexed function has typed future outputs: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
 actual reindexed functions commute with counterparts: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
 actual reindexed function counterparts are restrictions: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
-actual reindexed propositions are future subsets: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+actual reindexed propositions are future subsets: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
 actual reindexed proposition counterparts are truncations: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
 the construction instantiates every independent modalized-structure field: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1

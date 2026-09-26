@@ -19,6 +19,12 @@ command automatically fetches, resets, or changes a dependency checkout.
 
 ## Commands
 
+The baseline is now the 26 September repository-audit checkpoint (1,473
+source entries, third refresh that day); see
+[the update review](CORE_UPDATE_2026-09-26.md).
+The base revision and working-tree checkpoint are explicit: checking out
+the base commit alone is insufficient. Exact hash checks remain in force.
+
 From this repository root:
 
 ```sh

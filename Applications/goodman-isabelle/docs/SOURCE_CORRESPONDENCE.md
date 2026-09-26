@@ -12,6 +12,13 @@ premises and enclosing locale before reusing it.
 
 ## Object-language claims
 
+The 26 September core update supplies generic full-C modal soundness and
+countably declared-signature completeness in the nontrivial model class.
+These results concern root consequence. Goodman's PE rule operates above
+added axioms; its existing closure bridge concerns the full deductive
+closure of the stock. Global-validity premises of the model claims below
+remain essential. See [the compatibility review](CORE_UPDATE_2026-09-26.md).
+
 | Source item | Entry point | Scope or correction |
 |---|---|---|
 | H and CEV+ background | [Whole-proof preservation](../theories/replay/Goodman_CEV_Axiom_Preservation.thy) | Forward transfer into the independent named axiom extension; closed source axioms, typing and signature conditions remain. |
@@ -79,10 +86,9 @@ consistency. See [STATUS.md](../STATUS.md#formerly-included-but-not-selected).
 
 The retained [object audit](FINAL_OBJECT_CLAIM_AUDIT.md) and
 [model audit](FINAL_MODEL_CLAIM_AUDIT.md) reviewed the integration against
-the seven-page notes and the historical report
-`GOODMAN_VERIFICATION_AND_PROGRESS_REPORT_2026-07-27.tex`.
-The latter remains a private reference outside this repository. Ask the
-maintainer for the relevant authorized material when reconciling its claims.
+the seven-page notes and an earlier historical progress report that is
+not distributed with this repository. Ask the maintainer for the relevant
+authorized material when reconciling its claims.
 The audits contain dated baselines, followed by the M5 completion notice;
 they are not evidence that every theory file received a complete review.
 

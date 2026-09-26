@@ -4,7 +4,7 @@ begin
 
 section \<open>All-domain truth clauses for the actual primitive values\<close>
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 theorem full_ZF_implication_truth:
@@ -21,8 +21,8 @@ proof -
   let ?K = "book_C_term_logical_value (fst w) G (snd w) SImp"
   let ?app = "book_C_term_app (fst w) G (snd w)"
   let ?V = "book_C_term_valuation (snd w)"
-  have pt: "?P \<in> book_C_identity_domain (fst w) G (snd w) Prop" by (rule full_ZF_j_type[OF pm])
-  have qt: "?Q \<in> book_C_identity_domain (fst w) G (snd w) Prop" by (rule full_ZF_j_type[OF qm])
+  have pt: "?P \<in> book_C_identity_domain (fst w) G (snd w) Prop" by (rule full_ZF_j_type[OF worlds_admitted[OF ww] pm])
+  have qt: "?Q \<in> book_C_identity_domain (fst w) G (snd w) Prop" by (rule full_ZF_j_type[OF worlds_admitted[OF ww] qm])
   have kt: "?K \<in> book_C_identity_domain (fst w) G (snd w) (Arr Prop (Arr Prop Prop))"
     using T.term_logical_value_typed[of SImp] by simp
   have partial: "?app Prop (Arr Prop Prop) ?K ?P \<in> book_C_identity_domain (fst w) G (snd w) (Arr Prop Prop)"
@@ -30,14 +30,14 @@ proof -
   have first: "full_ZF_app w Prop (Arr Prop Prop) (full_ZF_logical_value w SImp) p =
     full_ZF_h (Arr Prop Prop) w (?app Prop (Arr Prop Prop) ?K ?P)"
     using full_ZF_app_h[OF ww kt pt]
-    by (simp only: full_ZF_logical_value_def book_minimal_logical_type.simps full_ZF_hj[OF pm])
+    by (simp only: full_ZF_logical_value_def book_minimal_logical_type.simps full_ZF_hj[OF worlds_admitted[OF ww] pm])
   have second: "full_ZF_app w Prop Prop (full_ZF_app w Prop (Arr Prop Prop) (full_ZF_logical_value w SImp) p) q =
     full_ZF_h Prop w (?app Prop Prop (?app Prop (Arr Prop Prop) ?K ?P) ?Q)"
-    using full_ZF_app_h[OF ww partial qt] by (simp only: first full_ZF_hj[OF qm])
+    using full_ZF_app_h[OF ww partial qt] by (simp only: first full_ZF_hj[OF worlds_admitted[OF ww] qm])
   have ptruth: "full_ZF_value_truth w p = ?V ?P"
-    using full_ZF_h_proposition_truth[OF ww, of ?P] by (simp only: full_ZF_hj[OF pm])
+    using full_ZF_h_proposition_truth[OF ww, of ?P] by (simp only: full_ZF_hj[OF worlds_admitted[OF ww] pm])
   have qtruth: "full_ZF_value_truth w q = ?V ?Q"
-    using full_ZF_h_proposition_truth[OF ww, of ?Q] by (simp only: full_ZF_hj[OF qm])
+    using full_ZF_h_proposition_truth[OF ww, of ?Q] by (simp only: full_ZF_hj[OF worlds_admitted[OF ww] qm])
   show ?thesis by (simp only: second full_ZF_h_proposition_truth[OF ww] ptruth qtruth;
     rule T.term_implication_truth[OF pt qt])
 qed
@@ -55,23 +55,23 @@ proof -
   let ?app = "book_C_term_app (fst w) G (snd w)"
   let ?V = "book_C_term_valuation (snd w)"
   let ?D = "book_C_identity_domain (fst w) G (snd w)"
-  have ft: "?F \<in> ?D (Arr \<sigma> Prop)" by (rule full_ZF_j_type[OF fm])
+  have ft: "?F \<in> ?D (Arr \<sigma> Prop)" by (rule full_ZF_j_type[OF worlds_admitted[OF ww] fm])
   have kt: "?K \<in> ?D (Arr (Arr \<sigma> Prop) Prop)"
     using T.term_logical_value_typed[of "SBAll \<sigma>"] by simp
   have application: "full_ZF_app w (Arr \<sigma> Prop) Prop (full_ZF_logical_value w (SBAll \<sigma>)) f =
     full_ZF_h Prop w (?app (Arr \<sigma> Prop) Prop ?K ?F)"
     using full_ZF_app_h[OF ww kt ft]
-    by (simp only: full_ZF_logical_value_def book_minimal_logical_type.simps full_ZF_hj[OF fm])
+    by (simp only: full_ZF_logical_value_def book_minimal_logical_type.simps full_ZF_hj[OF worlds_admitted[OF ww] fm])
   have pointwise: "full_ZF_value_truth w (full_ZF_app w \<sigma> Prop f (full_ZF_h \<sigma> w A)) =
     ?V (?app \<sigma> Prop ?F A)" if am: "A \<in> ?D \<sigma>" for A
   proof -
     have evaluated: "full_ZF_app w \<sigma> Prop f (full_ZF_h \<sigma> w A) = full_ZF_h Prop w (?app \<sigma> Prop ?F A)"
-      using full_ZF_app_h[OF ww ft am] by (simp only: full_ZF_hj[OF fm])
+      using full_ZF_app_h[OF ww ft am] by (simp only: full_ZF_hj[OF worlds_admitted[OF ww] fm])
     show ?thesis by (simp only: evaluated full_ZF_h_proposition_truth[OF ww])
   qed
   have all_values: "(\<forall>a\<in>explode (full_ZF_D \<sigma> w). full_ZF_value_truth w (full_ZF_app w \<sigma> Prop f a)) =
     (\<forall>A\<in>?D \<sigma>. ?V (?app \<sigma> Prop ?F A))"
-    by (simp add: full_ZF_D_elements pointwise)
+    by (simp add: full_ZF_D_elements[OF worlds_admitted[OF ww]] pointwise)
   have witnesses: "book_closed_constant_witness_complete (fst w) G (snd w)"
     by (rule book_full_C_canonical_world_data(5)[OF wf])
   show ?thesis by (simp only: application full_ZF_h_proposition_truth[OF ww] all_values;

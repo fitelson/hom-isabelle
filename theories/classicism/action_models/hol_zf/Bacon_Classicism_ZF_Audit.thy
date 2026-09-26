@@ -1,5 +1,6 @@
 theory Bacon_Classicism_ZF_Audit
   imports Bacon_Source_ZF_Subset_Carriers
+    Bacon_Source_ZF_Action_Validity_On Bacon_Source_ZF_Action_Completeness
     Bacon_Source_ZF_Exponential_Action Bacon_Source_ZF_Powerset_Action
     Bacon_Source_ZF_Individual_Action Bacon_Source_ZF_Reindexed_Action
     Bacon_Source_ZF_Identity_Individual_Base Bacon_Source_ZF_R_Proposition_Range
@@ -387,7 +388,9 @@ local
     ("pulling back only constants preserves an actual independent action model", "paper_ZF_action_model_typed_constant_pullback"),
     ("old record-indexed validity is exactly generic validity at its original world-label type", "paper_ZF_record_action_valid_as_valid_on"),
     ("arbitrary-signature C non-theorems have actual action countermodels on the explicit padded label carrier", "paper_ZF_arbitrary_signature_action_countermodel"),
-    ("arbitrary-signature C equals validity in all independent action models on the padded label carrier", "paper_ZF_arbitrary_signature_action_iff")
+    ("arbitrary-signature C equals validity in all independent action models on the padded label carrier", "paper_ZF_arbitrary_signature_action_iff"),
+    ("native R Classicism theorems are valid in every independent action model on every world-label type", "paper_ZF_classicism_valid_on"),
+    ("native R Classicism theorems are valid in every record-indexed action model", "paper_ZF_classicism_action_valid")
   ]
   val checked = Bacon_Core_Audit_Check.run @{context} "HOL-ZF-representation"
     (map_index (fn (i, (label, fact)) => (i, label, fact)) targets)

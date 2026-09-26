@@ -1,0 +1,76 @@
+FOUNDATION: pure HOL
+SCOPE: Bacon's relevant (λI) language of Definition 9.2 as an instance of Definition 9.1; the independently defined λI theory calculus (Definition 9.8 restricted, binder Gen with occurrence guard, exact-capture β) and its constant-form presentation; internal βη/α conversion with derivability transport; λI models with the internal conversion clause (Definition 14.13 read through Proposition 9.1), soundness, retraction and signature conservativity, λI Henkin witness stages, the term model on internal conversion classes of closed λI terms, original-signature model existence and global strong completeness for arbitrary well-formed λI premise sets over the internal-clause model class on the canonical carrier; minimal logical basis, rich variable stock for the main endpoints, and an actual typed assignment required of every model; one-way embedding into full H. Open and distinct: identification of the λI calculus with HJ (the least relevant-language logic of Definitions 9.9–9.10, whose substitution closure is not proved), conservativity of full H over the λI calculus (the restriction of H to λI formulas), the λI printed/exact β correspondence (the calculus uses exact-capture β only), and internalization of raw βη-conversion between λI endpoints, hence no completeness claim for the raw-invariant model subclass; the actual {⊥ → ⊥} model witness is the separate regression session
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 73 checked endpoints
+the λI language satisfies every clause of Definition 9.1: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+λI is closed under substitution of λI terms for variables: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+λI is closed under α-inclusive directed βη-reduction: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+λI is closed under relettering of free variables: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+a vacuous abstraction is not a λI term: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+every λI derivation has a λI formula conclusion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+λI derivability is monotone in the premises: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+every λI derivation is a full-H derivation (one-way embedding): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+full consistency gives λI consistency: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+internal λI conversion is ambient in-language βη-conversion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+internal λI conversion preserves free variables: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+internal λI conversion lifts through application: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+internal λI conversion lifts through relevant abstraction: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+renaming a binder is an internal λI conversion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+α-conversion between λI terms is internal: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+internal conversion at Prop derives both implications: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+internal conversion transports λI derivability: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+α-variants are inter-derivable in the λI calculus: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the constant-form Gen of Definition 9.8 is derivable from binder Gen: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+the constant-form calculus embeds into the binder calculus: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the binder calculus embeds into the constant-form calculus: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the two Gen presentations derive the same formulas: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+applications of a predicate to two α-variants of the identity are inter-derivable: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+nothing λI reaches the vacuous abstraction by an immediate β step: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+nothing λI reaches the vacuous abstraction by an immediate η step: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+λI models satisfy the implication truth clause: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+λI models satisfy the relevant abstraction application law: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+λI models satisfy the universal truth clause for relevant binders: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+bottom is false in every λI model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the literal negation operator negates in every λI model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the λI calculus is sound for every λI model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+satisfiable λI premise sets are λI-consistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+every full minimal model restricts to a λI model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+nonvacuous generalization is derived in the λI calculus: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+variable substitution with a λI replacement, split on occurrence: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+λI derivations retract foreign constants to fresh variables: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+foreign constants are eliminated from λI derivations: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+λI signature extension is conservative: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+a fresh-constant negative instance generalizes at a relevant binder: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+adjoining one conditional witness for a λI predicate preserves λI consistency: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+an arbitrary family of fresh conditional witnesses preserves λI consistency: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=8 sort_hyps=1
+each λI Henkin stage is consistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the union of all λI Henkin stages is consistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+every closed λI predicate of the full signature has a declared witness constant: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the closed λI Henkin extension exists and is witness complete: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+conditional witnesses and closed maximality give λI witness completeness: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+membership in the maximal set respects internal conversion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=7 sort_hyps=1
+membership in the maximal set interprets implication materially: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
+membership in the maximal set interprets the universal quantifier over closed λI terms: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+every full-signature domain of closed λI classes is inhabited: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the full λI witness signature has a typed total assignment: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+closed substitution of λI representatives preserves internal conversion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the constructed denotation satisfies the internal environment clause: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+the constructed valuation has a false propositional class: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the closed λI conversion classes form a λI model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+truth of a closed λI formula in the term model is membership: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+universal closure preserves all-assignment truth in λI models: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the BookOriginal-renamed premises hold in the expanded term model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
+the unrenamed original premises hold after the original-signature pullback: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+constant renaming preserves internal conversion: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+a λI model pulls back along a constant renaming: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+λI original-signature model existence (Theorem 15.3, λI instance): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the least λI theory over S is the set of λI consequences of S: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+injective constant renaming reflects λI consistency: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+a finite family of fresh conditional witnesses preserves λI consistency: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=9 sort_hyps=1
+the stage-one inhabitation predicate is a closed λI predicate of every type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the full λI witness signature has a closed λI term of every type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+a nonderivable λI formula has a countermodel with a falsifying assignment: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+λI soundness over the canonical carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+λI completeness over the canonical carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+λI global strong completeness (Corollary 15.2, λI instance): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+λI theoremhood is validity over the canonical carrier: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+in any λI model a typed assignment satisfies ⊥ → ⊥ (conditional truth lemma): oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1

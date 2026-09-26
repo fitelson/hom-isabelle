@@ -1,5 +1,44 @@
 # Verification status
 
+## Core compatibility update — 26 September 2026 (third pin refresh)
+
+The core completed a comprehensive repository audit and its fixes, and added
+the relevant-language (λI) development (independently defined λI calculus,
+internal-conversion models, soundness, original-signature model existence
+and global strong completeness) with a regression session. The dependency
+pin was refreshed to that checkpoint (1,473 entries: 77 added core files,
+70 changed, none removed; base revision unchanged; full core check exit 0).
+Goodman's 303 theories, 87 catalogs and mathematical conclusions are
+unchanged; the full serial build/export against the refreshed pin
+**passed** (exit 0, 4 minutes 9 seconds, 60 sessions), all 87 catalogs
+matching the retained certificates entry for entry, with the same two
+provenance summary lines changing only in proof-node counts. See
+[verification](verification/README.md).
+
+## Core compatibility update — 26 September 2026 (earlier)
+
+The core now proves generic full-C modal soundness and completeness for
+countably declared signatures on arbitrary name carriers and for ZF-small
+whole name carriers, in the nontrivial book model class, with rich stock
+and the minimal primitive language. The dependency pin was reviewed and
+refreshed twice the same day: first for the eight soundness/completeness
+theories, then for the ZF-small-carrier development (six added core
+theories, 70 changed files, 1,396 entries; independently reviewed; full
+core check exit 0). See
+[the review](docs/CORE_UPDATE_2026-09-26.md).
+
+Goodman's 303 theories, 87 catalogs and mathematical conclusions are
+unchanged. The PP question and tasks 6–9 remain open. Ordinary root
+consequence is not the added-axiom extension: the new theorem applies
+through the existing full-deductive-closure bridge, not by silently
+replacing the extension with root assumptions. The full serial
+build/export against the refreshed pin **passed** (exit 0, 3 minutes 51
+seconds, 60 sessions): all 87 catalogs and statement files match the
+retained certificates entry for entry, with 1,708 integration entries and
+nine replay entries; two provenance summary lines changed only in their
+proof-node counts because core proof terms changed. See
+[verification](verification/README.md).
+
 Location: ordinary folder `Applications/goodman-isabelle/` in the
 Bacon–Dorr repository, with the same visibility. The core and application
 session graphs and checks remain separate. Relocation did not change any

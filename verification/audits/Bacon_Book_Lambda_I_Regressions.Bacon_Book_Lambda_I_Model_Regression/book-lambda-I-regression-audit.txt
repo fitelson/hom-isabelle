@@ -1,0 +1,5 @@
+FOUNDATION: pure HOL
+SCOPE: satisfiability regression for the λI model class on an actual model obtained from the auxiliary-bridge full minimal model existence theorem (finite calibration of H plus its canonical construction) and the restriction of full minimal models to λI models; this is a witness outside the core λI session and is not used by the λI completeness pipeline
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 2 checked endpoints
+an actual λI model and typed assignment satisfy ⊥ → ⊥, globally: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+{⊥ → ⊥} is λI-consistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1

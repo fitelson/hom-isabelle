@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_Reindexed_Functions
   imports Bacon_Book_ZF_Reindexed_Frame
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 lemma full_ZF_arrow_decode_on:
@@ -27,20 +27,24 @@ proof -
 qed
 
 theorem full_ZF_reindexed_function_graph:
-  assumes member: "F \<in> explode (full_ZF_D_at (Arr \<sigma> \<tau>) w)"
+  assumes wz: "w \<in> explode full_world_set"
+    and member: "F \<in> explode (full_ZF_D_at (Arr \<sigma> \<tau>) w)"
   shows "isFun F \<and> Domain F = book_ZF_pairs full_world_set full_ZF_R (full_ZF_D_at \<sigma>) w"
 proof -
   obtain X where shape: "F = full_ZF_h (Arr \<sigma> \<tau>) (full_world_decode w) X"
-    using member unfolding full_ZF_D_at_def full_ZF_D_elements by blast
+    using member unfolding full_ZF_D_at_def
+      full_ZF_D_elements[OF worlds_admitted[OF full_world_decode_type[OF wz]]] by blast
   show ?thesis by (simp only: shape full_ZF_reindexed_pairs; rule full_ZF_arrow_domain)
 qed
 
 theorem full_ZF_reindexed_graph_exact:
-  assumes member: "F \<in> explode (full_ZF_D_at (Arr \<sigma> \<tau>) w)"
+  assumes wz: "w \<in> explode full_world_set"
+    and member: "F \<in> explode (full_ZF_D_at (Arr \<sigma> \<tau>) w)"
   shows "F = Lambda (book_ZF_pairs full_world_set full_ZF_R (full_ZF_D_at \<sigma>) w) (app F)"
 proof -
   obtain X where shape: "F = full_ZF_h (Arr \<sigma> \<tau>) (full_world_decode w) X"
-    using member unfolding full_ZF_D_at_def full_ZF_D_elements by blast
+    using member unfolding full_ZF_D_at_def
+      full_ZF_D_elements[OF worlds_admitted[OF full_world_decode_type[OF wz]]] by blast
   show ?thesis by (simp only: full_ZF_reindexed_pairs shape full_ZF_h.simps; rule book_ZF_graph_eta[symmetric])
 qed
 

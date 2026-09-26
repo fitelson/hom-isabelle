@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_Application_Naturality
   imports Bacon_Book_ZF_Closed_Values
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 theorem full_ZF_future_application:
@@ -41,15 +41,15 @@ proof -
   let ?Xv = "book_C_term_counterpart G w v (Arr \<sigma> \<tau>) ?X"
   let ?bv = "book_C_term_counterpart G w v \<sigma> ?b"
   let ?R = "book_C_term_app (fst w) G (snd w) \<sigma> \<tau> ?X ?b"
-  have xt: "?X \<in> book_C_identity_domain (fst w) G (snd w) (Arr \<sigma> \<tau>)" by (rule full_ZF_j_type[OF fm])
-  have bt: "?b \<in> book_C_identity_domain (fst w) G (snd w) \<sigma>" by (rule full_ZF_j_type[OF am])
+  have xt: "?X \<in> book_C_identity_domain (fst w) G (snd w) (Arr \<sigma> \<tau>)" by (rule full_ZF_j_type[OF worlds_admitted[OF ww] fm])
+  have bt: "?b \<in> book_C_identity_domain (fst w) G (snd w) \<sigma>" by (rule full_ZF_j_type[OF worlds_admitted[OF ww] am])
   have rt: "?R \<in> book_C_identity_domain (fst w) G (snd w) \<tau>" by (rule T.term_app_typed[OF xt bt])
   have xv: "?Xv \<in> book_C_identity_domain (fst v) G (snd v) (Arr \<sigma> \<tau>)"
     by (rule book_C_term_counterpart_typed[OF rich full_rooted_base_world[OF ww] full_rooted_base_world[OF vw] access xt])
   have bv: "?bv \<in> book_C_identity_domain (fst v) G (snd v) \<sigma>"
     by (rule book_C_term_counterpart_typed[OF rich full_rooted_base_world[OF ww] full_rooted_base_world[OF vw] access bt])
   have application: "full_ZF_app w \<sigma> \<tau> F a = full_ZF_h \<tau> w ?R"
-    using full_ZF_app_h[OF ww xt bt] by (simp only: full_ZF_hj[OF fm] full_ZF_hj[OF am])
+    using full_ZF_app_h[OF ww xt bt] by (simp only: full_ZF_hj[OF worlds_admitted[OF ww] fm] full_ZF_hj[OF worlds_admitted[OF ww] am])
   have natural: "book_C_term_counterpart G w v \<tau> ?R = book_C_term_app (fst v) G (snd v) \<sigma> \<tau> ?Xv ?bv"
     by (rule book_C_term_application_naturality[OF rich full_rooted_base_world[OF ww] full_rooted_base_world[OF vw] access xt bt])
   have target: "full_ZF_app v \<sigma> \<tau> (full_ZF_i (Arr \<sigma> \<tau>) w v F) (full_ZF_i \<sigma> w v a) =

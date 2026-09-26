@@ -41,7 +41,11 @@ text \<open>
   The all-true singleton regression shows why it cannot by itself
   characterize consistency. The explicit worldwise nontrivial refinement
   is book_ZF_nontrivial_modal_model. Generic interpretation is proved
-  separately; generic full-C soundness remains a further obligation.
+  separately (generic_interpretation_exists in
+  Bacon_Book_ZF_Generic_Interpretation_Existence); generic full-C
+  soundness for the nontrivial refinement is proved in
+  Bacon_Book_ZF_Full_C_Soundness (full_C_valid_everywhere and
+  satisfiable_theory_consistent). Neither is used by this definition.
 \<close>
 
 end

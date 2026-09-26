@@ -3,7 +3,7 @@ theory Bacon_Book_ZF_Actual_Identity
     Bacon_Book_Modal_Representation.Bacon_Book_Term_Actual_Identity
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 theorem full_ZF_leibniz_h_iff:
@@ -22,7 +22,7 @@ proof -
       full_ZF_value_truth w (full_ZF_app w \<sigma> Prop f (full_ZF_h \<sigma> w X)) =
       full_ZF_value_truth w (full_ZF_app w \<sigma> Prop f (full_ZF_h \<sigma> w Y))) =
     (\<forall>F\<in>?D (Arr \<sigma> Prop). ?V (?app \<sigma> Prop F X) = ?V (?app \<sigma> Prop F Y))"
-  proof (simp only: full_ZF_D_elements ball_simps(9), rule ball_cong[OF refl])
+  proof (simp only: full_ZF_D_elements[OF worlds_admitted[OF ww]] ball_simps(9), rule ball_cong[OF refl])
     fix F
     assume fm: "F \<in> ?D (Arr \<sigma> Prop)"
     show "(full_ZF_value_truth w (full_ZF_app w \<sigma> Prop (full_ZF_h (Arr \<sigma> Prop) w F) (full_ZF_h \<sigma> w X)) =
@@ -31,7 +31,7 @@ proof -
       by (simp only: full_ZF_app_h[OF ww fm xm] full_ZF_app_h[OF ww fm ym] full_ZF_h_proposition_truth[OF ww])
   qed
   show ?thesis unfolding book_leibniz_equiv_def
-    using tests full_ZF_h_type[OF xm] full_ZF_h_type[OF ym] xm ym by blast
+    using tests full_ZF_h_type[OF worlds_admitted[OF ww] xm] full_ZF_h_type[OF worlds_admitted[OF ww] ym] xm ym by blast
 qed
 
 theorem full_ZF_leibniz_iff_equal:
@@ -42,17 +42,17 @@ theorem full_ZF_leibniz_iff_equal:
 proof -
   let ?X = "full_ZF_j \<sigma> w a"
   let ?Y = "full_ZF_j \<sigma> w b"
-  have xm: "?X \<in> book_C_identity_domain (fst w) G (snd w) \<sigma>" by (rule full_ZF_j_type[OF am])
-  have ym: "?Y \<in> book_C_identity_domain (fst w) G (snd w) \<sigma>" by (rule full_ZF_j_type[OF bm])
+  have xm: "?X \<in> book_C_identity_domain (fst w) G (snd w) \<sigma>" by (rule full_ZF_j_type[OF worlds_admitted[OF ww] am])
+  have ym: "?Y \<in> book_C_identity_domain (fst w) G (snd w) \<sigma>" by (rule full_ZF_j_type[OF worlds_admitted[OF ww] bm])
   have source: "book_leibniz_equiv (\<lambda>\<tau>. explode (full_ZF_D \<tau> w)) (full_ZF_app w) (full_ZF_value_truth w)
     \<sigma> a b \<longleftrightarrow> ?X = ?Y"
     using full_ZF_leibniz_h_iff[OF ww xm ym]
-    by (simp only: full_ZF_hj[OF am] full_ZF_hj[OF bm] full_term_leibniz_iff_equal[OF ww xm ym])
+    by (simp only: full_ZF_hj[OF worlds_admitted[OF ww] am] full_ZF_hj[OF worlds_admitted[OF ww] bm] full_term_leibniz_iff_equal[OF ww xm ym])
   have equal: "?X = ?Y \<longleftrightarrow> a = b"
   proof
     assume same: "?X = ?Y"
     have "full_ZF_h \<sigma> w ?X = full_ZF_h \<sigma> w ?Y" by (simp only: same)
-    then show "a = b" by (simp only: full_ZF_hj[OF am] full_ZF_hj[OF bm])
+    then show "a = b" by (simp only: full_ZF_hj[OF worlds_admitted[OF ww] am] full_ZF_hj[OF worlds_admitted[OF ww] bm])
   next
     assume "a = b"
     then show "?X = ?Y" by simp

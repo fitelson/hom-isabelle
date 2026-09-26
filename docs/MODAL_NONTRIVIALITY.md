@@ -42,10 +42,12 @@ book's raw applicative structures allow arbitrary sets as domains
 witnessed closed denotations supply typed-assignment existence.
 
 The worldwise formulation is deliberate: the same conditions remain
-available at each future world when considering it as a new root.
-The actual rerooted model and its interpretation still need their own
-construction and preservation proofs. We do not claim that merely
-adding these fields finishes generic soundness.
+available at each future world. Generic soundness turned out not to need
+a rerooting construction: the invariant "valid at every world under every
+typed assignment" is proved directly for every full-C theorem, and the
+identity, box and H clauses hold even in the broad structural class. The
+false proposition is used exactly where it must be: to turn a derivable
+bottom into a falsehood at the root (satisfiable ⇒ consistent).
 
 ## What is now checked
 
@@ -58,16 +60,38 @@ adding these fields finishes generic soundness.
 | Countably declared consistent theories have nontrivial original-signature models | `book_full_C_countable_nontrivial_modal_model_exists` |
 | An actual inconsistent theory has a structural modal model | `probe_inconsistent_theory_has_model` |
 | That model fails the nontrivial refinement | `probe_not_nontrivial` |
+| Every full-C theorem is valid at every world of every nontrivial model | `book_ZF_nontrivial_modal_interpretation.full_C_valid_everywhere` |
+| Satisfiable theories are full-C consistent | `book_ZF_nontrivial_modal_interpretation.satisfiable_theory_consistent` |
+| Consistency iff satisfiability, countably declared signatures | `book_full_C_theory_consistent_iff_satisfiable` |
+| Consistency iff satisfiability, ZF-small name carriers | `book_full_C_theory_consistent_iff_satisfiable_small_carrier` |
+| Consistent theories on ZF-small whole name carriers have nontrivial original-signature models | `book_full_C_small_carrier_nontrivial_modal_model_exists` |
+| The same existence result on the uncountable carrier `nat set` | `book_full_C_nat_set_carrier_nontrivial_modal_model_exists` |
+| Derivability iff root consequence for ZF-small whole name carriers | `book_full_C_theory_derivable_iff_consequence_small_carrier` |
+| Consistent theories with a ZF-bounded declared-name union have nontrivial original-signature models, on any carrier | `book_full_C_small_declared_nontrivial_modal_model_exists` |
+| The same on the carrier ZF with a set-bounded declared union | `book_full_C_ZF_carrier_nontrivial_modal_model_exists` |
+| Consistency iff satisfiability for ZF-bounded declared names | `book_full_C_theory_consistent_iff_satisfiable_small_declared` |
+| Derivability iff root consequence for ZF-bounded declared names | `book_full_C_theory_derivable_iff_consequence_small_declared` |
 
-The stronger existence theorem retains the same four input premises:
-rich variable stock, countably many declared constants per type,
-well-formed premises, and full-C consistency. It does not assume the
-extra semantic conditions of the input; it proves them of the constructed
-model. Open formulas and infinite premise sets remain allowed.
+The countably declared nontrivial existence theorem retains its four
+original input premises: rich stock, countably many declared constants
+per type, well-formed premises and full-C consistency. Its original
+carrier remains arbitrary. The additional small-carrier theorem replaces
+the declaration-countability hypothesis with a total injection of the
+whole name carrier into the elements of an actual ZF set. It permits
+all names of that carrier to be declared, including on the uncountable
+carrier `nat set`. The declared-names theorem replaces both by a single
+hypothesis: an injective code of the declared-name union into the elements
+of an actual ZF set, on an arbitrary carrier; the earlier two follow from
+it. All prove the extra semantic conditions of their constructed models;
+they do not assume them of the input theory. Open formulas and arbitrary
+premise sets remain allowed.
 
-The earlier forward existence theorems and the more general interpretation
-existence theorem remain available with their original statements.
-There is no PER substitution or alternative canonical carrier.
+The old external existence statements and generic interpretation-existence
+result remain available. Internal canonical worlds now carry a cardinal
+reserve condition, and the HOL–ZF representation is parameterized by a
+bounded total term code. These are construction/interface changes, not
+changes to the independent structural or nontrivial model definitions.
+There is no PER substitution or replacement by full function spaces.
 
 ## Maintained regression and remaining work
 
@@ -78,7 +102,17 @@ assignment, an admissible interpretation, and the inconsistency witness.
 The regression and the new nontrivial-model results have separate
 theorem-object audits.
 
-Still open: generic full-C soundness, the exact final completeness/
-consistency characterization for the refined class, and the uncountably
-declared-signature existence extension. The [contributor guide](../CONTRIBUTING.md)
-breaks the semantic work into smaller tasks.
+Generic full-C soundness for the refined class is proved without a
+cardinality restriction (26 September 2026). The root-consequence and
+consistency characterizations are proved both for countably declared
+signatures on arbitrary carriers and for ZF-small whole name carriers.
+They are subsumed by the declared-names versions, which cover the type
+`ZF` itself whenever the declared union is contained in a ZF set. Declared
+unions with no ZF-bounded injection are outside this construction (a
+limitation of the injective syntax coding, not a proof that such theories
+lack models); the broader λ-sublanguage and primitive-profile variants
+remain open. All these
+statements retain the full minimal language, rich stock where stated, the
+explicit nontrivial class, root consequence, future-restricted implication
+and literal box conventions. See [STATUS.md](../STATUS.md) and the
+[contributor guide](../CONTRIBUTING.md).

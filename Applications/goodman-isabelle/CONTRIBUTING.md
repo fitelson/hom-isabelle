@@ -1,5 +1,11 @@
 # Contributing to the Goodman formalization
 
+The [26 September core update](docs/CORE_UPDATE_2026-09-26.md) completes
+generic full-C modal soundness and countably declared-signature completeness.
+This is useful infrastructure, not completion of the open Goodman tasks.
+Any new model adapter must still distinguish root consequence from the
+axiom extension and retain its actual Pure/Fun stock premises.
+
 This application is an ordinary folder in the Bacon–Dorr repository and
 shares its visibility and access permissions. Ask Branden for collaborator
 access with your GitHub username when needed. Contributions may be mathematical, formal, or

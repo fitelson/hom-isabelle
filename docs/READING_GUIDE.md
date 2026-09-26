@@ -21,6 +21,12 @@ For the book's own minimal language, use
 `theories/base/book_models/Bacon_Book_Printed_Completeness.thy` and follow
 its imports to the independent calculus, model class and canonical construction.
 
+The relevant (λI) language of Definition 9.2 has its own session,
+`Bacon_Book_Lambda_I_Development` under `theories/base/book_lambda_I/`,
+which replays the same route inside the fragment and ends in
+`Bacon_Book_Lambda_I_Canonical_Completeness.thy`; its audit theory lists the
+checked endpoints and the open identification questions.
+
 ## One small checked proof
 
 Open
@@ -97,12 +103,16 @@ Equivalence. The older `book_C_proves` is a separately defined base.
 Do not transfer consistency merely by adding axioms.
 
 The source-directed model-existence endpoint is
-[`book_full_C_countable_nontrivial_modal_model_exists`](../theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Countable_Nontrivial_Existence.thy).
+[`book_full_C_small_declared_nontrivial_modal_model_exists`](../theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Declared_Names_Existence.thy).
 It constructs an original-signature model satisfying the consistent theory,
 with every type domain inhabited at every world and a proposition false at
-each world. Countability applies to the declared constants at each type;
-the rich-stock and full-minimal-language conditions remain. Follow its
-imports to the fixed-ambient and canonical nontrivial constructions.
+each world. Its signature hypothesis is that the union of the declared
+constants admits an injective code into the elements of some ZF set, on an
+arbitrary name carrier; the countably declared instance
+[`book_full_C_countable_nontrivial_modal_model_exists`](../theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Countable_Nontrivial_Existence.thy)
+is retained and re-derived from it. The rich-stock and
+full-minimal-language conditions remain. Follow its imports to the
+small-carrier, fixed-ambient and canonical nontrivial constructions.
 
 Compare the explicit refinement
 [`book_ZF_nontrivial_modal_model`](../theories/classicism/book/modal_semantics/hol_zf/Bacon_Book_ZF_Nontrivial_Model.thy)
@@ -116,8 +126,11 @@ For generic interpretation existence, start with
 Its imports separate typed combinatory translation, generic evaluation,
 and the proof that abstraction has the exact future Lambda graph. It uses
 the weaker independent model fields, not the canonical construction, and
-therefore also applies to the nontrivial subclass. Generic connective
-truth clauses, rerooting, and full-C soundness remain separate tasks.
+therefore also applies to the nontrivial subclass. The generic connective
+truth clauses and full-C soundness are proved in
+`theories/classicism/book/modal_semantics/soundness/`
+(`Bacon_Book_ZF_Modal_Truth_Clauses.thy`, `Bacon_Book_ZF_Full_C_Soundness.thy`;
+see [STATUS.md](../STATUS.md)); rerooting remains a separate task.
 
 ## Reading a theorem
 

@@ -9,7 +9,7 @@ definition book_full_C_rooted_worlds where
     {w \<in> book_full_C_canonical_worlds \<Sigma> B G. book_C_canonical_le G actual w}"
 
 locale book_full_C_canonical_frame =
-  fixes \<Sigma> :: "('c::countable) ssignature" and B :: "'c ssignature"
+  fixes \<Sigma> :: "'c ssignature" and B :: "'c ssignature"
     and G :: sgcontext and actual :: "'c book_C_world"
   assumes rich: "sg_rich G"
     and root_world: "actual \<in> book_full_C_canonical_worlds \<Sigma> B G"
@@ -77,7 +77,7 @@ qed
 
 end
 
-context book_countable_ambient_signature
+context book_ambient_signature
 begin
 
 theorem book_full_C_canonical_frame_exists:
@@ -96,14 +96,14 @@ qed
 end
 
 text \<open>
-  Definition 18.8 is now assembled over the fixed countable ambient
-  carrier. The root exists for each well-formed C-consistent premise
+  Definition 18.8 is now assembled over a fixed ambient signature whose
+  reserves are infinite and at least as large as the declared names. The root exists for each well-formed C-consistent premise
   set; open premises enter by universal closure. Reflexivity, transitivity
   and the root condition are proved, with no antisymmetry requirement.
 
   Proposition 18.3 uses actual witness-complete successors within the
   root's future. It does not presuppose the term model or its truth lemma.
-  The countable-carrier restriction and rich variable stock remain
+  The ambient-reserve conditions and rich variable stock remain
   explicit. Definition 18.9 and Propositions 18.4–18.6 still require the
   identity-class domains and their all-type semantic representation.
 \<close>

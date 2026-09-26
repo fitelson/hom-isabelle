@@ -4,7 +4,7 @@ begin
 
 section \<open>Every represented world satisfies the general-model clauses\<close>
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 theorem full_ZF_separated_environment:
@@ -43,7 +43,7 @@ proof -
   let ?X = "book_C_identity_class (fst w) G (snd w) Prop (book_bottom G)"
   have source: "?X \<in> book_C_identity_domain (fst w) G (snd w) Prop"
     by (rule book_C_identity_domainI[OF book_closed_termsI[OF book_bottom_language[OF rich] book_bottom_closed]])
-  have member: "full_ZF_h Prop w ?X \<in> explode (full_ZF_D Prop w)" by (rule full_ZF_h_type[OF source])
+  have member: "full_ZF_h Prop w ?X \<in> explode (full_ZF_D Prop w)" by (rule full_ZF_h_type[OF worlds_admitted[OF ww] source])
   have false_value: "\<not> full_ZF_value_truth w (full_ZF_h Prop w ?X)"
     by (simp only: full_ZF_h_proposition_truth[OF ww]; rule T.term_valuation_bottom)
   show ?thesis by (rule bexI[where x="full_ZF_h Prop w ?X"]; rule false_value member)

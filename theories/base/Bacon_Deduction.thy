@@ -34,10 +34,13 @@ text \<open>
 
   The source's Figure 2 has the PC, UI, EG, Ref, LL, beta, eta, MP, Gen, and
   Inst principles represented below.  \<open>IndividualExistence\<close> adds
-  \<open>\<exists>x\<^sub>e. x =\<^sub>e x\<close>: Bacon and Dorr explain that this restores H when
-  working in the named-variable-free presentation analogous to the present
-  context-indexed calculus.  It is a rule of the represented object calculus,
-  not an additional axiom of Isabelle/HOL.
+  \<open>\<exists>x\<^sub>e. x =\<^sub>e x\<close>.  Bacon and Dorr (p.9 with n.9) observe that
+  adding \<open>\<exists>x\<^sub>e. x =\<^sub>e x\<close> to their free-variable-indexed variant
+  H-minus and closing under MP recovers H; the project takes this as the
+  analogue for its context-indexed calculus, so the analogy between
+  H-minus and the present presentation is the repository's, not the paper's.
+  It is a rule of the represented object calculus, not an additional axiom
+  of Isabelle/HOL.
 \<close>
 
 subsection \<open>Propositional tautologies\<close>

@@ -5,7 +5,7 @@ begin
 
 section \<open>The recursive graph values are future homomorphisms\<close>
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 definition full_ZF_arrow_decode where
@@ -54,7 +54,7 @@ theorem full_ZF_arrow_domain_homomorphisms:
 proof -
   obtain X where xm: "X \<in> book_C_identity_domain (fst w) G (snd w) (Arr \<sigma> \<tau>)"
     and shape: "F = full_ZF_h (Arr \<sigma> \<tau>) w X"
-    using member unfolding full_ZF_D_elements by blast
+    using member unfolding full_ZF_D_elements[OF worlds_admitted[OF ww]] by blast
   show ?thesis by (simp only: shape; rule full_ZF_h_arrow_homomorphism[OF ww xm])
 qed
 

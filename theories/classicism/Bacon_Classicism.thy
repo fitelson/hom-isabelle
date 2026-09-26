@@ -20,13 +20,20 @@ text \<open>
   the Rule of Equivalence, and Theorem 6.1 proves that this agrees with the
   displayed axiom presentation.  The present repository represents the
   propositional and vector forms of that rule in the later CE and CEV calculi.
-  The downstream Bacon_C_Presentation_Development session now proves the
+  The downstream Bacon_C_Presentation_Development session proves the
   converse reductions CE_proves_to_C and CEV_proves_to_C, using the independent
-  C-only Appendix A reconstruction. This foundational definition does not
-  import those later theorems. Transfer an earlier CEV result through the
-  checked bridge; do not substitute a stronger calculus during the C-only
-  proof of that bridge. Literal source-language correspondence and semantic
-  completeness remain separate obligations.
+  C-only Appendix A reconstruction.  The closest formal counterpart of the
+  Definition 6.1 characterization is the H-only presentations HE_proves (H
+  closed under the Rule of Equivalence) and HLE_proves (H plus H-certified
+  Logical Equivalence) of h_only_presentations/Bacon_H_Equivalence_Presentations;
+  presentation_reconciliation/Bacon_H_Only_Classicism_Equivalence proves
+  HE_proves_iff_C_proves, HLE_proves_iff_C_proves and
+  Bacon_Theorem_6_1_represented, the represented form of Theorem 6.1.  This
+  foundational definition does not import those later theorems. Transfer an
+  earlier CEV result through the checked bridge; do not substitute a
+  stronger calculus during the C-only proof of that bridge. Literal
+  source-language correspondence and semantic completeness remain separate
+  obligations.
 \<close>
 
 inductive C_proves :: "ctx \<Rightarrow> oterm \<Rightarrow> bool" ("_ \<turnstile>\<^sub>C _" [50, 50] 50) where

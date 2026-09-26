@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_Logical_Future_Results
   imports Bacon_Book_ZF_Equality_Future_Value
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 lemma full_ZF_implication_value_type:
@@ -34,7 +34,7 @@ proof -
   have ft: "?F \<in> explode (full_ZF_D (Arr Prop Prop) w)" by (rule full_ZF_app_type[OF ww full_ZF_implication_value_type[OF ww] pm])
   have rt: "?r \<in> explode (full_ZF_D Prop w)" by (rule full_ZF_app_type[OF ww ft qm])
   show ?thesis
-  proof (rule full_ZF_proposition_eq_collect[OF rt])
+  proof (rule full_ZF_proposition_eq_collect[OF worlds_admitted[OF ww] rt])
     fix v
     assume vw: "v \<in> worlds" and access: "le w v"
     have pv: "full_ZF_i Prop w v p \<in> explode (full_ZF_D Prop v)" by (rule full_ZF_i_type[OF ww vw access pm])
@@ -64,7 +64,7 @@ proof -
   have rt: "?r \<in> explode (full_ZF_D Prop w)"
     by (rule full_ZF_app_type[OF ww full_ZF_forall_value_type[OF ww] fm])
   show ?thesis
-  proof (rule full_ZF_proposition_eq_collect[OF rt])
+  proof (rule full_ZF_proposition_eq_collect[OF worlds_admitted[OF ww] rt])
     fix v
     assume vw: "v \<in> worlds" and access: "le w v"
     let ?F = "full_ZF_i (Arr \<sigma> Prop) w v f"

@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_Canonical_Interpretation
   imports Bacon_Book_ZF_Canonical_Evaluation
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 theorem full_ZF_J_abstraction:

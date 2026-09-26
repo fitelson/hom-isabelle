@@ -4,7 +4,7 @@ begin
 
 section \<open>Proposition 18.5: the constructed data form an independent modal model\<close>
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 theorem full_ZF_logical_root_identification:
@@ -18,12 +18,12 @@ proof (rule book_ZF_modal_model.intro[OF full_ZF_reindexed_structure], rule book
   fix \<sigma> \<tau>
   show "book_ZF_k full_world_set full_ZF_R full_ZF_D_at full_ZF_i_at full_ZF_root \<sigma> \<tau> \<in>
     explode (full_ZF_D_at (Arr \<sigma> (Arr \<tau> \<sigma>)) full_ZF_root)"
-    by (simp only: full_ZF_K_identification[symmetric] full_ZF_D_at_root; rule full_ZF_K_value_type)
+    by (simp only: full_ZF_K_identification[symmetric] full_ZF_D_at_root; rule full_ZF_K_value_type[OF root_admitted])
 next
   fix \<sigma> \<tau> \<rho>
   show "book_ZF_s full_world_set full_ZF_R full_ZF_D_at full_ZF_root \<sigma> \<tau> \<rho> \<in>
     explode (full_ZF_D_at (Arr (Arr \<sigma> (Arr \<tau> \<rho>)) (Arr (Arr \<sigma> \<tau>) (Arr \<sigma> \<rho>))) full_ZF_root)"
-    by (simp only: full_ZF_S_identification[symmetric] full_ZF_D_at_root; rule full_ZF_S_value_type)
+    by (simp only: full_ZF_S_identification[symmetric] full_ZF_D_at_root; rule full_ZF_S_value_type[OF root_admitted])
 next
   show "book_ZF_if_future full_world_set full_ZF_R full_ZF_D_at full_ZF_i_at full_ZF_root \<in>
     explode (full_ZF_D_at (Arr Prop (Arr Prop Prop)) full_ZF_root)"
@@ -39,7 +39,7 @@ next
   fix \<sigma>
   show "book_ZF_eq full_world_set full_ZF_R full_ZF_D_at full_ZF_i_at full_ZF_root \<sigma> \<in>
     explode (full_ZF_D_at (Arr \<sigma> (Arr \<sigma> Prop)) full_ZF_root)"
-    by (simp only: full_ZF_identity_identification[symmetric] full_ZF_D_at_root; rule full_ZF_equality_value_type)
+    by (simp only: full_ZF_identity_identification[symmetric] full_ZF_D_at_root; rule full_ZF_equality_value_type[OF root_admitted])
 next
   fix c \<sigma>
   assume declared: "c \<in> \<Sigma> \<sigma>"
@@ -62,12 +62,16 @@ text \<open>
   graphs are identified before their domain membership is transferred,
   and the constant interpretation covers the original signature.
 
-  Scope: the countable-name full-C canonical frame, relative to
-  standard HOL–ZF and the documented future-domain implication
-  convention. This is Proposition 18.5's model certificate, not
-  yet Theorem 18.4's theory-level existence/completeness result.
-  Generic interpretation, source soundness and original-theory
-  satisfaction remain separate proof obligations.
+  Scope: the coded full-C canonical frame book_full_C_coded_frame,
+  whose assumptions are a bounded term code injective on admitted
+  terms (countable coding is one instance), relative to standard
+  HOL–ZF and the documented future-domain implication convention. This
+  is Proposition 18.5's model certificate, not itself Theorem 18.4's
+  theory-level existence/completeness result. Generic interpretation
+  (Bacon_Book_ZF_Generic_Interpretation_Existence), source soundness
+  (Bacon_Book_ZF_Full_C_Soundness) and original-theory satisfaction
+  (full_ZF_original_theory_satisfied in
+  Bacon_Book_ZF_Original_Theory_Truth) are proved in separate theories.
 \<close>
 
 end

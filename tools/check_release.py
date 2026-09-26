@@ -70,7 +70,12 @@ def main():
     required = {"Bacon_Book_ZF_Countable_Model_Existence.thy", "Bacon_Book_ZF_Model_Existence_Audit.thy",
                 "Bacon_Book_ZF_Generic_Interpretation_Existence.thy", "Bacon_Book_ZF_Interpretation_Existence_Audit.thy",
                 "Bacon_Book_ZF_Nontrivial_Model.thy", "Bacon_Book_ZF_Countable_Nontrivial_Existence.thy",
-                "Bacon_Book_ZF_Nontrivial_Audit.thy", "Bacon_Book_ZF_Singleton_Regression.thy"}
+                "Bacon_Book_ZF_Nontrivial_Audit.thy", "Bacon_Book_ZF_Singleton_Regression.thy",
+                "Bacon_Book_ZF_Small_Carrier_Existence.thy", "Bacon_Book_ZF_Small_Carrier_Audit.thy",
+                "Bacon_Book_ZF_Declared_Names_Existence.thy", "Bacon_Book_ZF_Declared_Names_Audit.thy",
+                "Bacon_Book_ZF_Full_C_Declared_Names_Completeness.thy", "Bacon_Book_ZF_Modal_Soundness_Audit.thy",
+                "Bacon_Book_Lambda_I_Canonical_Completeness.thy", "Bacon_Book_Lambda_I_Audit.thy",
+                "Bacon_Book_Lambda_I_Model_Regression.thy", "Bacon_H_BBK_Audit.thy", "Bacon_Classicism_ZF_Audit.thy"}
     assert required <= {Path(x).name for x in data["checked_source_closure"]}
     assert not any(Path(x).name in required for x in data["unselected_source_files"])
     if args.inventory:

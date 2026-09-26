@@ -5,7 +5,7 @@ begin
 
 section \<open>The canonical model satisfies the nontriviality refinement\<close>
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 lemma full_ZF_reindexed_domains_nonempty:
@@ -31,7 +31,8 @@ text \<open>
   Both additional conditions are proved of the SAME constructed data,
   using the already verified per-world domains and false propositions.
   No new model premise, alternate carrier or new constant interpretation
-  is inserted. The countable-ambient frame assumptions remain explicit.
+  is inserted. The coded-frame assumptions of book_full_C_coded_frame
+  remain explicit; countable coding is one instance.
 \<close>
 
 end

@@ -85,10 +85,10 @@ def main() -> int:
     require("theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Operators_Audit.thy", [
         "FOUNDATION: standard HOL-ZF; distinct from the pure-HOL combinator-syntax audit",
         "Bacon_Core_Audit_Check.run", "book-zf-operators-audit.txt", "explicit future restriction",
-        "book_full_C_canonical_frame.full_ZF_implication_future_set",
-        "book_full_C_canonical_frame.full_ZF_forall_future_value",
-        "book_full_C_canonical_frame.full_ZF_K_future_value",
-        "book_full_C_canonical_frame.full_ZF_S_future_value",
+        "book_full_C_coded_frame.full_ZF_implication_future_set",
+        "book_full_C_coded_frame.full_ZF_forall_future_value",
+        "book_full_C_coded_frame.full_ZF_K_future_value",
+        "book_full_C_coded_frame.full_ZF_S_future_value",
     ])
     require("theories/classicism/book/representation/Bacon_Book_Term_Identity_Audit.thy", [
         "FOUNDATION: pure HOL; no HOL-ZF import",
@@ -98,7 +98,7 @@ def main() -> int:
     require("theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Identity_Audit.thy", [
         "FOUNDATION: standard HOL-ZF; distinct from the pure-HOL term-identity audit",
         "Bacon_Core_Audit_Check.run", "book-zf-identity-audit.txt",
-        "book_full_C_canonical_frame.full_ZF_equality_future_value",
+        "book_full_C_coded_frame.full_ZF_equality_future_value",
     ])
     require("theories/classicism/book/representation/Bacon_Book_Term_Logical_Audit.thy", [
         "FOUNDATION: pure HOL; no HOL-ZF import", "Bacon_Core_Audit_Check.run",
@@ -108,8 +108,8 @@ def main() -> int:
     require("theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Logical_Audit.thy", [
         "FOUNDATION: standard HOL-ZF; distinct from the pure-HOL term-model audit",
         "Bacon_Core_Audit_Check.run", "book-zf-logical-audit.txt",
-        "book_full_C_canonical_frame.full_ZF_general_model",
-        "book_full_C_canonical_frame.full_ZF_forall_truth",
+        "book_full_C_coded_frame.full_ZF_general_model",
+        "book_full_C_coded_frame.full_ZF_forall_truth",
     ])
     require("theories/classicism/book/representation/Bacon_Book_Term_Interpretation_Audit.thy", [
         "FOUNDATION: pure HOL; no HOL-ZF import",
@@ -120,7 +120,7 @@ def main() -> int:
     require("theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Interpretation_Audit.thy", [
         "FOUNDATION: standard HOL-ZF; distinct from the pure-HOL term interpretation audit",
         "Bacon_Core_Audit_Check.run", "book-zf-interpretation-audit.txt",
-        "book_full_C_canonical_frame.full_ZF_denote_lambda_future",
+        "book_full_C_coded_frame.full_ZF_denote_lambda_future",
     ])
     for path in (ROOT / "theories/classicism/book/representation").glob("*.thy"):
         forbid(str(path.relative_to(ROOT)), [FOUNDATION_IMPORT, r"^\s*(?:axiomatization|axioms)\b"])
@@ -135,10 +135,26 @@ def main() -> int:
         "Bacon_Book_ZF_Model_Definition_Audit", "Bacon_Book_ZF_Reindexed_Structure_Audit",
     ])
     require("check_isabelle.sh", ["Bacon_Book_ZF_Modal_Semantics"])
+    require("ROOT", [
+        'session Bacon_Book_ZF_Modal_Soundness in "theories/classicism/book/modal_semantics/soundness" = Bacon_Book_ZF_Modal_Interpretation +',
+        "Bacon_Book_ZF_Full_C_Completeness", "Bacon_Book_ZF_Full_C_Small_Carrier_Completeness", "Bacon_Book_ZF_Modal_Soundness_Audit",
+    ])
+    require("check_isabelle.sh", ["Bacon_Book_ZF_Modal_Soundness"])
+    require("theories/classicism/book/modal_semantics/soundness/Bacon_Book_ZF_Modal_Soundness_Audit.thy", [
+        "Bacon_Core_Audit_Check.run", "book-zf-modal-soundness-audit.txt",
+        "book_full_C_theory_derivable_iff_consequence", "book_full_C_theory_consistent_iff_satisfiable",
+        "book_full_C_theory_derivable_iff_consequence_small_carrier",
+    ])
+    require("ROOT", ["Bacon_Book_ZF_Small_Carrier_Existence", "Bacon_Book_ZF_Small_Carrier_Audit", "Bacon_Book_Ambient_Signature",
+        "Bacon_Book_Named_Syntax_Cardinal", "Bacon_Book_ZF_Coded_Frame"])
+    require("theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Small_Carrier_Audit.thy", [
+        "Bacon_Core_Audit_Check.run", "book-zf-small-carrier-audit.txt",
+        "book_full_C_small_carrier_nontrivial_modal_model_exists", "book_full_C_countable_nontrivial_modal_model_exists",
+    ])
     require("ROOT", ["Bacon_Book_ZF_Canonical_Modal_Model", "Bacon_Book_ZF_Canonical_Model_Audit"])
     require("theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Canonical_Model_Audit.thy", [
         "Bacon_Core_Audit_Check.run", "book-zf-canonical-model-audit.txt",
-        "book_full_C_canonical_frame.full_ZF_canonical_modal_model",
+        "book_full_C_coded_frame.full_ZF_canonical_modal_model",
     ])
     canonical_model_source = (ROOT / "theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Canonical_Modal_Model.thy").read_text(encoding="utf-8")
     canonical_model_statement = canonical_model_source.split("theorem full_ZF_canonical_modal_model:", 1)[1].split("\nproof ", 1)[0]
@@ -162,8 +178,8 @@ def main() -> int:
     ])
     require("theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Reindexed_Structure_Audit.thy", [
         "Bacon_Core_Audit_Check.run", "book-zf-reindexed-structure-audit.txt",
-        "book_full_C_canonical_frame.full_ZF_reindexed_graph_exact",
-        "book_full_C_canonical_frame.full_ZF_reindexed_structure",
+        "book_full_C_coded_frame.full_ZF_reindexed_graph_exact",
+        "book_full_C_coded_frame.full_ZF_reindexed_structure",
     ])
     require("theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Representation_Audit.thy", [
         "FOUNDATION: standard HOL-ZF; distinct from the pure-HOL core audit",

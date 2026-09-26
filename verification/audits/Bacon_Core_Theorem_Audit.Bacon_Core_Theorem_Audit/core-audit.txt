@@ -272,10 +272,10 @@ book literal top is true: oracles=0 residual_hyps=0 flex_flex=0 statement_premis
 book theory derivations stay in language: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
 book theory derivations have finite assumption support: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
 book derivability iff membership in every containing theory: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
-book theory definition matches the exact printed rules: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+book theory definition matches the exact-capture rule schemas: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
 book arbitrary guarded intersections are theories: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
-book printed PC3 is valid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
-book printed universal instantiation is valid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+book exact-calculus PC3 is valid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+book exact-calculus universal instantiation is valid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
 book antecedent-guarded Gen is valid: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
 book exact theory calculus soundness in full minimal models: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
 book model truths form a higher-order theory: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1

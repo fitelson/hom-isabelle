@@ -62,8 +62,15 @@ text \<open>
   constants in that original carrier, supplied canonical world, supplied
   model or finite/closed-premise restriction remains. The model uses
   standard HOL–ZF carriers and the documented future-restricted
-  implication convention. Generic soundness, arbitrary uncountably
-  declared signatures and the final completeness iff are separate tasks.
+  implication convention. Generic soundness is proved separately in
+  Bacon_Book_ZF_Full_C_Soundness. The general existence endpoint is
+  book_full_C_small_declared_nontrivial_modal_model_exists in
+  Bacon_Book_ZF_Declared_Names_Existence (ZF-small declared unions on an
+  arbitrary carrier, which include uncountably declared signatures); its
+  corollary book_full_C_countable_nontrivial_modal_model_exists_from_small_declared
+  recovers the nontrivial form of this countable instance. The completeness
+  equivalences are in Bacon_Book_ZF_Full_C_Completeness (countable
+  instance) and Bacon_Book_ZF_Full_C_Declared_Names_Completeness.
 \<close>
 
 end

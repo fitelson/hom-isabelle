@@ -4,7 +4,7 @@ begin
 
 section \<open>Abstraction denotes its function on every future world\<close>
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 theorem full_ZF_denote_lambda_future:
@@ -22,7 +22,7 @@ proof -
   let ?Jw = "book_C_term_denote (fst w) G (snd w)"
   let ?Jv = "book_C_term_denote (fst v) G (snd v)"
   have kt: "book_env_typed (book_C_identity_domain (fst w) G (snd w)) G ?k"
-    by (rule full_ZF_assignment_decode_typed[OF typed])
+    by (rule full_ZF_assignment_decode_typed[OF worlds_admitted[OF ww] typed])
   have ht: "book_env_typed (book_C_identity_domain (fst v) G (snd v)) G ?h"
     by (rule full_term_assignment_move_typed[OF ww vw access kt])
   have inclusion: "\<And>\<sigma>. fst w \<sigma> \<subseteq> fst v \<sigma>"
@@ -34,7 +34,7 @@ proof -
   have natural: "book_C_term_counterpart G w v (Arr (G n) \<tau>) (?Jw ?k (NLam n A)) = ?Jv ?h (NLam n A)"
     by (rule full_term_denote_natural[OF ww vw access lambda_language kt])
   have inverse: "full_ZF_j (G n) v a \<in> book_C_identity_domain (fst v) G (snd v) (G n)"
-    by (rule full_ZF_j_type[OF am])
+    by (rule full_ZF_j_type[OF worlds_admitted[OF vw] am])
   have body: "book_C_term_app (fst v) G (snd v) (G n) \<tau> (?Jv ?h (NLam n A)) (full_ZF_j (G n) v a) =
     ?Jv (?h(n := full_ZF_j (G n) v a)) A"
     by (rule V.book_C_term_lambda_application[OF target_language ht inverse])

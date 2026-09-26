@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_Logical_Values
   imports Bacon_Book_ZF_Characteristic_Truth
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 definition full_ZF_app :: "'c book_C_world \<Rightarrow> otype \<Rightarrow> otype \<Rightarrow> ZF \<Rightarrow> ZF \<Rightarrow> ZF" where
@@ -29,12 +29,12 @@ proof -
     by (rule book_full_C_world_identity_algebra[OF rich book_full_C_rooted_world_data(1)[OF ww]])
   let ?F = "full_ZF_j (Arr \<sigma> \<tau>) w F"
   let ?a = "full_ZF_j \<sigma> w a"
-  have ft: "?F \<in> book_C_identity_domain (fst w) G (snd w) (Arr \<sigma> \<tau>)" by (rule full_ZF_j_type[OF fm])
-  have at: "?a \<in> book_C_identity_domain (fst w) G (snd w) \<sigma>" by (rule full_ZF_j_type[OF am])
+  have ft: "?F \<in> book_C_identity_domain (fst w) G (snd w) (Arr \<sigma> \<tau>)" by (rule full_ZF_j_type[OF worlds_admitted[OF ww] fm])
+  have at: "?a \<in> book_C_identity_domain (fst w) G (snd w) \<sigma>" by (rule full_ZF_j_type[OF worlds_admitted[OF ww] am])
   have evaluated: "full_ZF_app w \<sigma> \<tau> F a =
     full_ZF_h \<tau> w (book_C_term_app (fst w) G (snd w) \<sigma> \<tau> ?F ?a)"
-    using full_ZF_app_h[OF ww ft at] by (simp only: full_ZF_hj[OF fm] full_ZF_hj[OF am])
-  show ?thesis by (simp only: evaluated; rule full_ZF_h_type[OF T.term_app_typed[OF ft at]])
+    using full_ZF_app_h[OF ww ft at] by (simp only: full_ZF_hj[OF worlds_admitted[OF ww] fm] full_ZF_hj[OF worlds_admitted[OF ww] am])
+  show ?thesis by (simp only: evaluated; rule full_ZF_h_type[OF worlds_admitted[OF ww] T.term_app_typed[OF ft at]])
 qed
 
 theorem full_ZF_logical_value_type:
@@ -43,7 +43,7 @@ theorem full_ZF_logical_value_type:
 proof -
   interpret T: book_C_identity_world "fst w" G "snd w"
     by (rule book_full_C_world_identity_algebra[OF rich book_full_C_rooted_world_data(1)[OF ww]])
-  show ?thesis unfolding full_ZF_logical_value_def by (rule full_ZF_h_type[OF T.term_logical_value_typed])
+  show ?thesis unfolding full_ZF_logical_value_def by (rule full_ZF_h_type[OF worlds_admitted[OF ww] T.term_logical_value_typed])
 qed
 
 theorem full_ZF_logical_denote:

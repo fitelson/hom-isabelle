@@ -2,7 +2,7 @@ theory Bacon_Book_Full_Ambient_Henkin_Successor
   imports Bacon_Book_Full_Ambient_Henkin_Extension Bacon_Book_Full_Classicism_Closed_Successor
 begin
 
-context book_countable_ambient_signature
+context book_ambient_signature
 begin
 
 section \<open>A witness-complete successor inside the fixed ambient language\<close>
@@ -56,7 +56,7 @@ qed
 end
 
 text \<open>
-  Proposition 18.3's successor construction, with explicit countable
+  Proposition 18.3's successor construction, with explicit general
   ambient-language hypotheses: when □P is absent, first obtain a
   consistent closed successor seed, then take its old-name-preserving
   Henkin completion. The resulting v contains ¬P and every old A with

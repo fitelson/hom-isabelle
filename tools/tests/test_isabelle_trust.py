@@ -28,6 +28,11 @@ class OuterSyntaxTests(unittest.TestCase):
         self.assert_rejected('declare [[quick_and_dirty = true]]', "quick_and_dirty")
         self.assert_rejected('session X = HOL + options [quick_and_dirty = true]', "quick_and_dirty")
 
+    def test_proof_symbol_alias_of_sorry(self):
+        self.assert_rejected(r'lemma x: "True" \<proof>', r"\<proof>")
+        self.assert_clean('lemma x: "True" proof - show ?thesis by simp qed')
+        self.assert_clean(r'text \<open>\<proof>\<close> lemma x: "True" by simp')
+
     def test_real_proofs_and_similar_identifiers(self):
         self.assert_clean('lemma sorry_free: "True" by simp\nlemmas oracle_free = sorry_free')
         self.assert_clean('lemma sample: ‹True› by simp')

@@ -33,8 +33,11 @@ dependencies distributed under their own terms.
 ## Extraction provenance
 
 This standalone repository was extracted from the core directories of
-[Higher-Order Metaphysics in Isabelle](https://github.com/fitelson/higher-order-metaphysics-in-isabelle)
-on 9 September 2026. The parent checkout's HEAD was
+the parent working repository
+[`fitelson/higher-order-metaphysics-in-isabelle`](https://github.com/fitelson/higher-order-metaphysics-in-isabelle)
+on 9 September 2026. (This repository has since adopted the title
+"Higher-Order Metaphysics in Isabelle"; the two are distinguished by
+repository name and URL, not by title.) The parent checkout's HEAD was
 `3bb580368083a97f1e387df6b77d8819bbb8c079`, but the extraction includes
 substantial **uncommitted core work** present at that date. It is not a
 snapshot of that commit alone. The new repository's initial commit is the

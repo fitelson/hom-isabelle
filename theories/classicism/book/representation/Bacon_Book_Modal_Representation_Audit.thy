@@ -48,8 +48,10 @@ text \<open>
   proof/frame audits. The generic function step retains its lower-type
   representation hypotheses; the canonical step discharges source
   application and quasi-functionality, and e→e is fully instantiated.
-  A uniform set-universe realization, λ interpretation and complete
-  modal-model/truth theorem remain obligations of the overall goal.
+  The uniform set-universe realization, λ interpretation and the complete
+  modal-model/truth theorems are established in the hol_zf child sessions
+  (Bacon_Book_ZF_Modal_Representation, Bacon_Book_ZF_Modal_Interpretation,
+  Bacon_Book_ZF_Modal_Soundness); this audit covers the pure-HOL layer.
 \<close>
 
 end

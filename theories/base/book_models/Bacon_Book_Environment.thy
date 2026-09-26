@@ -42,7 +42,7 @@ section \<open>The environment condition uses the intersection of free names\<cl
 text \<open>
   Jg(M) = Jh(N) when M ≡βη N and g,h agree on FV(M) ∩ FV(N).
   Source: the displayed third clause of Definition 14.13, p.302,
-  checked visually. Earlier planning prose incorrectly said union.
+  checked visually.
 
   Both interpreted endpoints belong to the chosen term collection and
   signature. Raw typed βη is the ambient conversion relation; no extra

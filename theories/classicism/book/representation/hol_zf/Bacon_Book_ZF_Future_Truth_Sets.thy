@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_Future_Truth_Sets
   imports Bacon_Book_ZF_Actual_Identity
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 lemma full_ZF_future_member_data:
@@ -52,11 +52,11 @@ lemma full_ZF_future_collect_member:
   by (simp only: full_ZF_future_collect_def Sep full_ZF_future_world_member[OF vw] full_world_decode_code[OF vw])
 
 theorem full_ZF_proposition_eq_collect:
-  assumes member: "p \<in> explode (full_ZF_D Prop w)"
+  assumes admitted: "full_ZF_admitted w" and member: "p \<in> explode (full_ZF_D Prop w)"
     and agree: "\<And>v. v \<in> worlds \<Longrightarrow> le w v \<Longrightarrow>
       Elem (book_ZF_world_code v) p = P v"
   shows "p = full_ZF_future_collect w P"
-proof (rule full_ZF_future_set_extensional[OF full_ZF_proposition_future[OF member] full_ZF_future_collect_subset])
+proof (rule full_ZF_future_set_extensional[OF full_ZF_proposition_future[OF admitted member] full_ZF_future_collect_subset])
   fix v
   assume vw: "v \<in> worlds" and access: "le w v"
   show "Elem (book_ZF_world_code v) p = Elem (book_ZF_world_code v) (full_ZF_future_collect w P)"

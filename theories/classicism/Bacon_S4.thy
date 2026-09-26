@@ -14,8 +14,14 @@ text \<open>
   assumption, CEV theorems, and modus ponens.  Its deduction theorem therefore
   does not apply Equivalence or necessitation beneath an undischarged
   assumption.  The final package does not prove the converse source claim that
-  the propositional modal fragment is exactly S4, nor does it yet reduce CEV
-  derivations to the axiom presentation \<open>C_proves\<close>.
+  the propositional modal fragment is exactly S4.  The reduction of CEV
+  derivations to the axiom presentation \<open>C_proves\<close> is proved
+  downstream, in the separate \<open>Bacon_C_Presentation_Development\<close>
+  session: \<open>CEV_proves_to_C\<close> and \<open>CEV_proves_iff_C_proves\<close>
+  (\<open>presentation_reconciliation/Bacon_C_Vector_Presentation\<close>), and the
+  S4 package is transported to \<open>C_proves\<close> as \<open>C_public_necessitation\<close>
+  and \<open>C_public_modal_T/K/4\<close> (\<open>Bacon_C_Modal_Reconciliation\<close>).
+  This theory does not import those results.
 \<close>
 
 lemma subst_rename_inverse:

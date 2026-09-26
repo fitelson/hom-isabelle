@@ -13,5 +13,5 @@ root validity agrees with the established per-world interpretation: oracles=0 re
 membership of a universal closure ensures original formula validity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
 the canonical model satisfies every original premise: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
 every admissible canonical interpretation satisfies the original theory: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
-full-C consistency constructs an actual model in a fixed countable ambient signature: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+full-C consistency constructs an actual model in a coded ambient signature with infinite reserves: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
 countably declared full-C consistent theories have original-signature modal models: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1

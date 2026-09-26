@@ -3,7 +3,7 @@ theory Bacon_Book_ZF_Reindexed_Collect
     Bacon_Book_ZF_Modal_Semantics.Bacon_Book_ZF_Model_Curried_Graphs
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 lemma full_ZF_root_member:

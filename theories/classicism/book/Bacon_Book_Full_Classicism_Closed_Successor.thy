@@ -44,7 +44,8 @@ text \<open>
   negation-complete part of Proposition 18.3, not yet that proposition
   for the book's witness-complete varying-language canonical worlds.
   No missing witness or fresh-name-reserve condition is silently added
-  to the constructed set. Full modal completeness remains open.
+  to the constructed set. Full modal completeness is assembled separately
+  in Bacon_Book_ZF_Full_C_Completeness for countably declared signatures.
 \<close>
 
 end

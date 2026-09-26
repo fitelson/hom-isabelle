@@ -1,0 +1,30 @@
+FOUNDATION: standard HOL-ZF; not pure HOL
+SCOPE: cardinal name reserves, bounded term codes and original-signature nontrivial model existence for ZF-small name carriers, with no restriction on declared-name cardinality; the countably declared theorem on arbitrary carriers, including ZF, is retained, and the generalized coded-frame class and world codes agree with the earlier countable codes on countable carriers; the whole HOL type ZF does not satisfy the small-carrier hypothesis
+CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 27 checked endpoints
+the finite syntax code of book terms is injective: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+terms over a bounded signature are cardinally bounded: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+all terms over a bounded carrier are cardinally bounded: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+each Henkin stage signature is cardinally bounded: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the full Henkin signature is cardinally bounded: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the general ambient name map is injective on the used Henkin names: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the general ambient name map fixes declared names: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the enlarged signature contains the declared signature: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the enlarged signature stays inside the ambient signature: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the enlarged signature leaves an infinite reserve: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the enlarged signature leaves a reserve at least as large as itself: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the enlarged signature is again an ambient signature: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+full-C canonical worlds carry the cardinal reserve condition: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+term-set codes of the coded frame are injective on admitted term sets: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+term-set codes of the coded frame are bounded: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+countable carriers are ZF-small: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+powersets of ZF-small carriers are ZF-small: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the uncountable carrier nat set is ZF-small: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=0
+the recoded carrier is ZF-small: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+terms over the recoded carrier have a bounded injective code: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the recoded signature is a coded ambient signature: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+coded ambient consistency constructs a nontrivial model: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+consistent theories over ZF-small carriers have nontrivial original-signature models: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+consistent theories over nat set have nontrivial original-signature models: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=0
+countably declared consistent theories on arbitrary carriers still have nontrivial models: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+on countable carriers the coded-frame class code is the earlier countable set code: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+on countable carriers the coded-frame world code is the earlier countable world code: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1

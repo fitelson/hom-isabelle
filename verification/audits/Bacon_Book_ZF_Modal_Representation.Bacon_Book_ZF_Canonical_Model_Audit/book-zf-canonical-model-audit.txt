@@ -1,5 +1,5 @@
 FOUNDATION: standard HOL-ZF; not pure HOL
-SCOPE: Proposition 18.5 canonical modal-model certificate for the countable-name full-C frame, with the explicit future-domain implication convention; not generic interpretation, soundness or Theorem 18.4 completeness
+SCOPE: Proposition 18.5 canonical modal-model certificate for the coded full-C frame (arbitrary name carrier, bounded term code injective on admitted terms), with the explicit future-domain implication convention; not generic interpretation, soundness or Theorem 18.4 completeness
 CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 14 checked endpoints
 typed two-stage future behavior identifies the prescribed curried graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=0
 typed three-stage future behavior identifies the prescribed curried graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=0

@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_Interpretation_Naturality
   imports Bacon_Book_ZF_Term_Interpretation
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 theorem full_ZF_denote_natural:
@@ -17,7 +17,7 @@ proof -
   let ?k = "full_ZF_assignment_decode w g"
   let ?J = "book_C_term_denote (fst w) G (snd w)"
   have kt: "book_env_typed (book_C_identity_domain (fst w) G (snd w)) G ?k"
-    by (rule full_ZF_assignment_decode_typed[OF typed])
+    by (rule full_ZF_assignment_decode_typed[OF worlds_admitted[OF ww] typed])
   have member: "?J ?k A \<in> book_C_identity_domain (fst w) G (snd w) \<tau>"
     by (rule T.book_C_term_denote_type[OF language kt])
   have natural: "book_C_term_counterpart G w v \<tau> (?J ?k A) =
@@ -39,7 +39,7 @@ proof -
     by (rule book_full_C_world_identity_algebra[OF rich book_full_C_rooted_world_data(1)[OF ww]])
   have same: "book_C_term_denote (fst w) G (snd w) (full_ZF_assignment_decode w g) A =
     book_C_term_denote (fst w) G (snd w) (full_ZF_assignment_decode w g) C"
-    by (rule T.book_C_term_denote_conversion[OF al bl conversion full_ZF_assignment_decode_typed[OF typed]])
+    by (rule T.book_C_term_denote_conversion[OF al bl conversion full_ZF_assignment_decode_typed[OF worlds_admitted[OF ww] typed]])
   show ?thesis by (simp only: full_ZF_denote_eq[OF book_language_type[OF al]]
     full_ZF_denote_eq[OF book_language_type[OF bl]] same)
 qed

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; object-src 'none'; base-uri 'none'">
+<title>Isabelle core dependency graph</title>
+<style>
+:root {color-scheme:light dark; --bg:#fff; --fg:#202124; --muted:#595f67; --line:#c8cdd3; --node:#f5f6f8; --active:#174c83; --on-active:#fff; --link:#387cb9;}
+@media(prefers-color-scheme:dark) {:root {--bg:#171a1f; --fg:#edf0f4; --muted:#b3bbc5; --line:#505963; --node:#252b33; --active:#a3cef4; --on-active:#10283c; --link:#a3cef4;}}
+* {box-sizing:border-box;}
+body {margin:0; padding:24px; background:var(--bg); color:var(--fg); font:15px/1.5 system-ui,sans-serif;}
+main {max-width:1180px; margin:auto;}
+h1 {font-size:22px; font-weight:600; margin:0 0 4px;}
+h2 {font-size:18px; margin:12px 0 4px;}
+p {margin:6px 0;}
+.muted {color:var(--muted); font-size:13px;}
+button {font:inherit; color:var(--fg); background:var(--node); border:1px solid var(--line); border-radius:7px; padding:9px 11px; cursor:pointer; white-space:normal; overflow-wrap:anywhere;}
+button:hover {border-color:var(--link);}
+button[aria-pressed="true"] {background:var(--active); color:var(--on-active); border-color:var(--active);}
+button:focus-visible {outline:3px solid var(--link); outline-offset:3px;}
+[hidden] {display:none !important;}
+.toolbar {display:flex; align-items:center; flex-wrap:wrap; gap:12px; margin:16px 0 8px;}
+#stage {position:relative; width:100%; margin:18px 0;}
+.node {position:absolute; display:flex; flex-direction:column; gap:3px; text-align:center;}
+.node button {width:100%; min-height:44px;}
+.lines {position:absolute; inset:0; pointer-events:none; overflow:visible;}
+.edge {fill:none; stroke:var(--line); stroke-width:1.5;}
+.edge.focused {stroke:var(--link);}
+#exact, #digest {overflow-wrap:anywhere;}
+#relations {display:flex; flex-wrap:wrap; gap:24px; margin-top:12px;}
+#relations section {flex:1 1 260px;}
+#relations h3 {font-size:14px; margin:0;}
+#relations ul {padding-left:22px;}
+#relations li {margin:7px 0;}
+#relations button {text-align:left;}
+footer {border-top:1px solid var(--line); padding-top:12px; margin-top:20px;}
+@media(max-width:480px) {body {padding:12px;}}
+</style>
+</head>
+<body>
+<main>
+  <h1>Isabelle core dependency graph</h1>
+  <p id="summary" class="muted"></p>
+  <div class="toolbar"><button id="overview" hidden>All sessions</button><span id="selection" aria-live="polite">Select a session to explore its direct connections.</span></div>
+  <p class="muted">Arrows run from a dependency to the importing session. Each line aggregates direct theory imports, not proof dependencies.</p>
+  <p id="warning" role="alert" hidden></p>
+  <div id="stage" role="group" aria-label="Mathematical session import graph"></div>
+  <section id="detail" hidden><h2 id="name"></h2><div id="exact"></div><p id="totals" class="muted"></p><div id="relations"></div></section>
+  <footer class="muted">
+    <p>Audit/catalog theories and their import edges are excluded. Paths through excluded theories are not replaced with inferred links. Mathematical regression examples remain.</p>
+    <p>Applications and external Isabelle theories are omitted. Session ownership follows qualified theory names. This is a saved export, not live build status or a source-fidelity certificate.</p>
+    <details><summary>Source export SHA-256</summary><code id="digest"></code></details>
+  </footer>
+  <noscript>JavaScript is needed to explore this self-contained local graph.</noscript>
+</main>
+<script type="application/json" id="graph-data">__ISABELLE_GRAPH_DATA__</script>
+<script>
+(() => {
+  'use strict';
+  const data=JSON.parse(document.getElementById('graph-data').textContent);
+  const $=id=>document.getElementById(id), stage=$('stage');
+  const quantity=(n,one,many)=>n+' '+(n===1?one:many);
+  const svgNS='http://www.w3.org/2000/svg';
+  let chosen=null, lastWidth=0;
+  $('summary').textContent=data.names.length+' sessions · '+data.theories.toLocaleString()+' mathematical theories · '+data.excluded_audit_theories+' audit/catalog theories excluded';
+  $('digest').textContent=data.source_sha256;
+  const rank=Array(data.names.length).fill(0);
+  let cyclic=false;
+  for(let pass=0;pass<data.names.length;pass++) {
+    let changed=false;
+    for(const [user,dep] of data.edges) if(rank[user]<=rank[dep]) {rank[user]=rank[dep]+1; changed=true;}
+    if(!changed) break;
+    if(pass===data.names.length-1) cyclic=true;
+  }
+  if(cyclic) {$('warning').hidden=false; $('warning').textContent='Session projection contains a cycle; overview uses a grid rather than a dependency layering.';}
+  function svg(tag,attrs) {const el=document.createElementNS(svgNS,tag); for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v); return el;}
+  function choose(id) {chosen=id; draw();}
+  function relationList(title,edges,other) {
+    const section=document.createElement('section'),heading=document.createElement('h3'),list=document.createElement('ul');
+    heading.textContent=title; section.append(heading,list);
+    if(!edges.length) {const li=document.createElement('li');li.textContent='None in this filtered export';list.append(li);}
+    for(const e of edges) {const id=e[other],li=document.createElement('li'),button=document.createElement('button');button.textContent=data.labels[id]+' · '+quantity(e[2],'theory import','theory imports');button.title=data.names[id];button.onclick=()=>choose(id);li.append(button);list.append(li);}
+    return section;
+  }
+  function draw() {
+    const width=stage.clientWidth;if(!width)return;lastWidth=width;
+    stage.replaceChildren();$('overview').hidden=chosen===null;$('detail').hidden=chosen===null;
+    const dependencies=data.edges.filter(e=>e[0]===chosen),consumers=data.edges.filter(e=>e[1]===chosen);
+    $('selection').textContent=chosen===null?'Select a session to explore its direct connections.':data.labels[chosen]+' · direct connections';
+    if(chosen!==null) {
+      $('name').textContent=data.labels[chosen];$('exact').textContent=data.names[chosen];
+      $('totals').textContent=quantity(data.counts[chosen],'owned theory','owned theories')+' · imports from '+quantity(dependencies.length,'session','sessions')+' · imported by '+quantity(consumers.length,'session','sessions');
+      $('relations').replaceChildren(relationList('Imports from',dependencies,1),relationList('Imported by',consumers,0));
+    }
+    const all=data.names.map((_,i)=>i);let rows=[];
+    if(chosen===null) {
+      if(cyclic)rows=[all];else for(let r=0;r<=Math.max(...rank);r++)rows.push(all.filter(i=>rank[i]===r));
+    } else rows=[dependencies.map(e=>e[1]),[chosen],consumers.map(e=>e[0])].filter(r=>r.length);
+    const maxCols=Math.max(1,Math.floor(width/190)),laid=[];
+    for(const row of rows)for(let i=0;i<row.length;i+=maxCols)laid.push(row.slice(i,i+maxCols));
+    const nodeWidth=Math.min(215,(width-16)/Math.min(maxCols,Math.max(...laid.map(r=>r.length)))-12);
+    const positions=new Map();let y=0;
+    for(const row of laid) {
+      let rowHeight=0;
+      row.forEach((id,col)=>{
+        const x=(width-row.length*(nodeWidth+16)+16)/2+col*(nodeWidth+16);
+        const wrap=document.createElement('div');wrap.className='node';wrap.style.left=x+'px';wrap.style.top=y+'px';wrap.style.width=nodeWidth+'px';
+        const button=document.createElement('button');button.textContent=data.labels[id];button.title=data.names[id];button.dataset.session=data.names[id];button.setAttribute('aria-pressed',String(chosen===id));button.onclick=()=>choose(id);
+        const count=document.createElement('span');count.className='muted';count.textContent=quantity(data.counts[id],'theory','theories');wrap.append(button,count);stage.append(wrap);
+        const height=wrap.getBoundingClientRect().height;rowHeight=Math.max(rowHeight,height);positions.set(id,{x:x+nodeWidth/2,top:y,bottom:y+height});
+      });
+      y+=rowHeight+45;
+    }
+    stage.style.height=(y-24)+'px';const lines=svg('svg',{class:'lines',width,height:y-24,'aria-hidden':'true'}),defs=svg('defs',{}),marker=svg('marker',{id:'arrow',markerWidth:7,markerHeight:7,refX:6,refY:3.5,orient:'auto',markerUnits:'userSpaceOnUse'});
+    marker.append(svg('path',{d:'M0,0 L7,3.5 L0,7 Z',fill:'var(--muted)'}));defs.append(marker);lines.append(defs);
+    for(const [user,dep] of data.edges) {
+      if(chosen!==null&&user!==chosen&&dep!==chosen)continue;
+      if(!positions.has(user)||!positions.has(dep))continue;
+      const a=positions.get(dep),b=positions.get(user),start=a.bottom+2,end=b.top-5,mid=(start+end)/2;
+      lines.append(svg('path',{d:`M${a.x},${start} C${a.x},${mid} ${b.x},${mid} ${b.x},${end}`,class:'edge'+(chosen!==null?' focused':''),'marker-end':'url(#arrow)'}));
+    }
+    stage.prepend(lines);
+  }
+  $('overview').onclick=()=>choose(null);
+  new ResizeObserver(()=>{if(Math.abs(stage.clientWidth-lastWidth)>1)draw();}).observe(stage);
+  draw();
+})();
+</script>
+</body>
+</html>

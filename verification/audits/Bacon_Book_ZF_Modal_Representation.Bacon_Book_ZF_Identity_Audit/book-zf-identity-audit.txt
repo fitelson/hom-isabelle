@@ -1,20 +1,20 @@
 FOUNDATION: standard HOL-ZF; distinct from the pure-HOL term-identity audit
-SCOPE: actual all-type equality and Definition 18.1(3.5) future equality operator on the countable-name full-C frame; no complete modal-model or completeness claim
+SCOPE: actual all-type equality and Definition 18.1(3.5) future equality operator on the coded full-C frame (arbitrary name carrier); no complete modal-model or completeness claim
 CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 18 checked endpoints
 Leibniz equivalence is preserved and reflected by the representation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
 Leibniz equivalence is actual equality at every represented full type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
 the literal Leibniz formula expresses actual equality under typed assignments: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
 coded future truth sets are extensional on their actual worlds: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
-a typed proposition is identified with its complete future comprehension: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+a typed proposition is identified with its complete future comprehension: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
 future truth agrees with membership in the original proposition: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
-closed canonical values belong to their represented domains: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+closed canonical values belong to their represented domains: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
 closed canonical values commute with counterparts: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
 closed canonical values preserve application: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
 literal primitive values commute with counterparts: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
 future application agrees with application of the restricted graph: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
 future graph application has the correct result type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
 pointwise graph application commutes with counterparts: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=6 sort_hyps=1
-the actual closed equality operator belongs to its function domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the actual closed equality operator belongs to its function domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
 the actual equality operator commutes with counterparts: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
 the actual equality operator tests every typed pair: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
 the actual equality result is the whole future equality set: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1

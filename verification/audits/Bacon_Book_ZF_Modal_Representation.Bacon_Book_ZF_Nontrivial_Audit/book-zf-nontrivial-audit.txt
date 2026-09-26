@@ -1,5 +1,5 @@
 FOUNDATION: standard HOL-ZF; not pure HOL
-SCOPE: explicit nontrivial-model refinement and actual canonical/countable-signature existence; not generic soundness or final completeness
+SCOPE: explicit nontrivial-model refinement and actual canonical and countably declared existence on arbitrary name carriers; generic soundness and completeness are certified by the modal soundness audit, not here
 CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 9 checked endpoints
 every nontrivial world has actual typed assignments: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
 nontriviality survives semantic signature pullback: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1

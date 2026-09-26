@@ -20,7 +20,7 @@ the actual e-to-e forward map recovers each represented function: oracles=0 resi
 represented e-to-e values are actual future homomorphisms: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
 actual full-C proposition domains satisfy the modalized-set interface: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
 the actual full-C proposition map satisfies the modalized-bijection interface: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
-the canonical function step constructs a modalized bijection at arbitrary full types from lower representations: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=2
-the canonical function step produces actual future homomorphisms: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=2
+the canonical function step constructs a modalized bijection at arbitrary full types from lower representations: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the canonical function step produces actual future homomorphisms: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
 the constructed function satisfies exactly the source defining-behavior equation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
 the constructed image domain equals the future homomorphisms represented by source values: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1

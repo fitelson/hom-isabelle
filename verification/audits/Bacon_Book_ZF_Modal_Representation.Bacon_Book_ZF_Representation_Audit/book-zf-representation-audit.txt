@@ -1,19 +1,19 @@
 FOUNDATION: standard HOL-ZF; distinct from the pure-HOL core audit
-SCOPE: one all-full-type recursive family on the countable-name full-C canonical frame; inverse, modalized-set, exact restriction, application and future-homomorphism laws; no complete modal-model or completeness claim
+SCOPE: one all-full-type recursive family on the coded full-C canonical frame; inverse, modalized-set, exact restriction, application and future-homomorphism laws; no complete modal-model or completeness claim
 CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 23 checked endpoints
-countable set codes have exact elements: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
-countable set codes have a proved powerset bound: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+term-set codes have exact elements: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+term-set codes have a proved powerset bound: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
 actual world codes are bijective on the canonical frame: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
-actual term-class domains have exact coded carriers: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
-Replacement constructs each represented image as an actual set: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0 sort_hyps=1
+actual term-class domains have exact coded carriers: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+Replacement constructs each represented image as an actual set: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
 future pairs have the exact world and argument membership condition: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
-the all-type range sets have their exact elements: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+the all-type range sets have their exact elements: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
 every represented arrow is a function graph on its exact pair domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
 graph evaluation agrees with transported term application: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
 the single recursive representation is injective at every full type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
 the single recursive representation is bijective at every full type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
 the inverse recovers every source class: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
-the forward map recovers every represented value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
+the forward map recovers every represented value: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
 all recursively represented domains form modalized sets: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
 all recursive representation maps are modalized bijections: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
 every recursively represented domain is nonempty: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
@@ -21,6 +21,6 @@ the arrow representation commutes with literal graph restriction: oracles=0 resi
 arrow counterparts are literal graph restrictions: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
 actual graph application preserves term application: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
 proposition counterparts are literal future truncations: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=5 sort_hyps=1
-every proposition value is a subset of its future: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
-the individual domain equals the coded term domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1 sort_hyps=1
+every proposition value is a subset of its future: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
+the individual domain equals the coded term domain: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2 sort_hyps=1
 every recursive arrow value decodes to a genuine future homomorphism: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1

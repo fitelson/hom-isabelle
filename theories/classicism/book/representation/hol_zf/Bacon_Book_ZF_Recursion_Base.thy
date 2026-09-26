@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_Recursion_Base
   imports Bacon_Book_ZF_Type_Recursion
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 lemma full_world_subset_code_elements:
@@ -30,8 +30,9 @@ next
 qed
 
 lemma full_ZF_individual_injective:
-  "inj_on (full_ZF_h Ind w) (book_C_identity_domain (fst w) G (snd w) Ind)"
-  by (simp only: full_ZF_h.simps; rule inj_on_subset[OF book_ZF_countable_set_code_injective subset_UNIV])
+  assumes admitted: "full_ZF_admitted w"
+  shows "inj_on (full_ZF_h Ind w) (book_C_identity_domain (fst w) G (snd w) Ind)"
+  by (simp only: full_ZF_h.simps; rule inj_on_subset[OF class_code_injective identity_domain_admitted[OF admitted]])
 
 theorem full_ZF_proposition_injective:
   assumes ww: "w \<in> worlds"

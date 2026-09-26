@@ -96,8 +96,13 @@ qed
 end
 
 text \<open>
-  Definition 18.8 is now assembled over the fixed countable ambient
-  carrier. The root exists for each well-formed C-consistent premise
+  Definition 18.8 is assembled here for the base Equivalence calculus in
+  the countable ambient-signature locale book_countable_ambient_signature,
+  which book_C_canonical_frame_exists inherits from
+  book_C_canonical_world_exists; the full-C analogue
+  book_full_C_canonical_world_exists (Bacon_Book_Full_Canonical_World_Existence)
+  is stated in the general book_ambient_signature locale.
+  The root exists for each well-formed C-consistent premise
   set; open premises enter by universal closure. Reflexivity, transitivity
   and the root condition are proved, with no antisymmetry requirement.
 

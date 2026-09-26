@@ -26,11 +26,17 @@ text \<open>
   their presentation inductions and CEV's variable-order bridge are separate.
 \<close>
 
-subsection \<open>Next obligations\<close>
+subsection \<open>Downstream use and remaining obligations\<close>
 
 text \<open>
-  Next targets: connect the existing CE/CEV presentation judgments to
-  these C-only theorems, then complete literal source proof correspondence.
+  The connection of the existing CE/CEV presentation judgments to these
+  C-only theorems is done in the separate Bacon_C_Presentation_Development
+  session: CE_proves_to_C and CE_proves_iff_C_proves
+  (presentation_reconciliation/Bacon_C_Propositional_Presentation) and
+  CEV_proves_to_C and CEV_proves_iff_C_proves
+  (presentation_reconciliation/Bacon_C_Vector_Presentation) use the
+  Equivalence theorem A.3 gathered here.  What remains is literal source
+  proof correspondence.
   Locators: Bacon--Dorr A.2, pp.65–67, and A.3, p.67.
 
   Representation and status. A.1–A.3 are statements in the represented

@@ -10,9 +10,9 @@ see [Applications](Applications/README.md) and
 Keep application sessions out of the core ROOT and verify each project
 with its own checker, serially.
 
-The [standalone repository](https://github.com/fitelson/hom-isabelle)
-is private as of 10 September 2026. Ask Branden for collaborator access
-with your GitHub username if you do not already have it.
+The standalone repository is
+[fitelson/hom-isabelle](https://github.com/fitelson/hom-isabelle).
+Use its issues and pull requests to propose and review contributions.
 
 Please start by [opening an issue](https://github.com/fitelson/hom-isabelle/issues) describing the source statement, its exact
 scope, and the proposed change. Existing theorem names are useful anchors,
@@ -51,36 +51,18 @@ This is suitable for a contributor new to Isabelle. Its focused check is:
 isabelle build -j 1 -d . -o timeout=60 -o export_theory=true Bacon_Source_Vocabulary_Development
 ```
 
-### 2. Prove one generic connective truth clause
+### 2. Explain a proved generic connective truth clause
 
-Start with `book_ZF_if_future_value` or `book_ZF_all_value` in
-[Bacon_Book_ZF_Model_Operations.thy](theories/classicism/book/modal_semantics/hol_zf/Bacon_Book_ZF_Model_Operations.thy),
-`implication_member_at` or `universal_member_at` in
-[Bacon_Book_ZF_Model_Operator_Restriction.thy](theories/classicism/book/modal_semantics/hol_zf/Bacon_Book_ZF_Model_Operator_Restriction.thy),
-and `denote_logical`, `denote_application`, `denote_abstraction` in
-[Bacon_Book_ZF_Interpretation_Clauses.thy](theories/classicism/book/modal_semantics/interpretation/Bacon_Book_ZF_Interpretation_Clauses.thy).
-
-Choose just implication or universal quantification. Derive its truth-at-w
-iff statement for an admissible generic interpretation using
-`book_ZF_truth_at` from
-[Bacon_Book_ZF_Model_Truth.thy](theories/classicism/book/modal_semantics/interpretation/Bacon_Book_ZF_Model_Truth.thy).
-For implication, the target relates truth of `book_imp A B` at w to truth
-of A and B at w. For `book_all G n A`, the target quantifies the values of
-the variable n in the domain at w. Retain world, language and assignment
-guards, and justify assignment updates. The existing operation-value
-lemmas alone are not yet these interpreted-formula truth clauses.
-
-Completion means a named theorem, its exact hypotheses, a source comment
-for Definitions 17.13 and 18.1, and audit coverage. Use the model-class
-qualifications in [STATUS.md](STATUS.md): the source-directed class is
-`book_ZF_nontrivial_modal_model`, which extends the unchanged
-`book_ZF_modal_model` with inhabited domains and a false proposition at
-every world. Record if a particular truth clause needs only the weaker
-predicate; do not silently add or remove these conditions. Focused check:
-
-```sh
-isabelle build -j 1 -d . -o timeout=60 -o export_theory=true Bacon_Book_ZF_Modal_Interpretation
-```
+The implication and universal-quantifier clauses are already proved as
+`book_ZF_modal_interpretation.truth_imp` and `truth_all` in
+[Bacon_Book_ZF_Modal_Truth_Clauses.thy](theories/classicism/book/modal_semantics/soundness/Bacon_Book_ZF_Modal_Truth_Clauses.thy).
+Choose one and contribute a worked explanation connecting the operation
+clause to interpreted-formula truth. Display every world, language and
+assignment guard; for quantification, explain the typed assignment update.
+For implication, retain the future-restricted complement convention.
+Completion means a source-located explanation whose stated hypotheses
+match the existing theorem. This is an exposition task, not a missing
+truth lemma or a new soundness claim.
 
 ### 3. Reroot one modal model at a future world
 
@@ -113,27 +95,16 @@ future-cone guards, a source explanation, and audited proofs. Focused check:
 isabelle build -j 1 -d . -o timeout=60 -o export_theory=true Bacon_Book_ZF_Modal_Interpretation
 ```
 
-### 4. Supply the modal soundness lemma for one H rule
+### 4. Explain the universal-instantiation case of modal H soundness
 
-After the needed truth clause in item 2, choose the UI case of the book's
-Chapter 5 calculus. Start with `book_theory_derivable.UI` in
-[Bacon_Book_Theory_Derivation.thy](theories/base/book_models/Bacon_Book_Theory_Derivation.thy)
-and the UI case of `book_theory_soundness` in
-[Bacon_Book_Theory_Soundness.thy](theories/base/book_models/Bacon_Book_Theory_Soundness.thy).
-The latter is already proved for general models; it is not a theorem
-about the modal-model interface merely because both developments use H.
-
-Prove that the UI instance is true in the intended generic modal model,
-with an admissible interpretation and typed assignment. Record whether
-the weaker modal predicate suffices or the stronger source-directed
-assumptions are used. Finish with one named modal validity lemma, a
-Chapter 5 source locator, all typing guards, and an audit entry. Do not
-claim the entire H induction, full-C soundness, or completeness from
-this single case. Focused check:
-
-```sh
-isabelle build -j 1 -d . -o timeout=60 -o export_theory=true Bacon_Book_ZF_Modal_Interpretation
-```
+`UI_valid` and the full H induction are already proved in
+[Bacon_Book_ZF_Modal_H_Soundness.thy](theories/classicism/book/modal_semantics/soundness/Bacon_Book_ZF_Modal_H_Soundness.thy).
+Write a worked derivation from the arbitrary-predicate quantifier clause,
+showing that the argument denotes an element of the current typed domain
+and that application evaluates at the appropriate pair. Explain why the
+displayed structural interpretation guards suffice. Completion means an
+accurate annotated proof and a Chapter 5/Chapter 18 source locator; do not
+present this existing result as an open formalization problem.
 
 ## Completed work and larger open problems
 
@@ -190,24 +161,99 @@ Both tasks need a precise statement, source explanation, maintained audit
 coverage and serial verification. The partial audit's mathematical sketches
 are not additional Isabelle theorems.
 
-Original-signature model existence for countably declared signatures now
-also has the stronger endpoint `book_full_C_countable_nontrivial_modal_model_exists`
-in [Bacon_Book_ZF_Countable_Nontrivial_Existence.thy](theories/classicism/book/representation/hol_zf/Bacon_Book_ZF_Countable_Nontrivial_Existence.thy).
-It constructs inhabited domains at every type and world and a proposition
-false at each world, as well as an admissible interpretation satisfying
-the original consistent theory. The canonical and fixed-ambient stronger
-endpoints are ingredients of this result. Generic interpretation existence
-already holds for the weaker structural class and hence applies to this
-subclass. See [STATUS.md](STATUS.md) for exact hypotheses and source
-qualifications; none of these constructions is a first-contribution TODO.
+Original-signature nontrivial model existence, generic full-C soundness,
+and the root-consequence and consistency equivalences are established
+for countably declared signatures on arbitrary name carriers. A second
+route now covers ZF-small whole name carriers with no restriction on the
+number of declared constants, including `nat set`. Both routes retain
+rich stock, the full minimal language and the explicit nontrivial model
+class, and allow open formulas and arbitrary premise sets. Soundness
+itself has no carrier-cardinality restriction. Items 2 and 4 above are
+therefore exposition tasks, and item 3's rerooting construction was not
+needed for soundness, though it remains an open structural exercise.
+These completed endpoints are not first-contribution TODOs; see
+[STATUS.md](STATUS.md) for their verification evidence and remaining
+compatibility work.
 
-The larger program still includes generic full-C soundness and the final
-modal consequence theorem. Uncountably declared signatures require a
-separate argument: finite compression of one formula is not compression
-of an arbitrary theory. Other substantive source-scope questions include
-the book's general λ-sublanguages and richer primitive profiles, and the
-paper's finite presentations. Propose a precise statement before beginning
-one of these larger projects.
+The extension to ZF-small declared unions on arbitrary carriers is now
+completed by the declared-names endpoints
+(`Bacon_Book_ZF_Declared_Names_Existence.thy`,
+`Bacon_Book_ZF_Full_C_Declared_Names_Completeness.thy`): only an injective
+code of the declared-name union into the elements of a ZF set is assumed,
+on an arbitrary carrier, and the earlier countable and whole-carrier
+results follow. Declared unions with no ZF-bounded injection are outside
+the injective syntax-coding construction; whether every theory in such a
+signature has a set-valued model is not settled either way.
+
+### Three larger open projects
+
+With the extension to ZF-small declared unions completed (larger signatures remain open, as stated above), three substantive projects remain.
+Each is research, not a filled-in template; agree a precise theorem
+statement in an issue before starting, and preserve the distinctions
+between the book's full-type C and the paper's relational R, HOL and
+HOL–ZF, root and all-world consequence, and the structural and nontrivial
+model classes. The future-restricted implication and literal box
+`λp.(p =ₜ ⊤)` remain explicit conventions.
+
+**1. General λ-sublanguages (Bacon, Chapter 9).** The general H results
+are proved for the full minimal language; the relevant (λI) language has
+its own internal-class treatment (below); the general-sublanguage problem
+remains. Definition 9.1 is already
+transcribed (`book_general_lambda_language`, with the full language as an
+instance) and Definition 14.13's interpretation interface exists
+(`book_general_interpretation`). Missing are the general higher-order
+theory and logic of Definitions 9.8–9.10 restricted to a sublanguage,
+general models of the sublanguage (Definition 15.1 over such an
+interpretation), soundness, and model existence/completeness for closed
+premises. A design for this was drafted and independently reviewed
+(the records are kept by the maintainer); the decisive obstacle is that
+α-conversion inside a proper sublanguage can fail to be derivable from
+literal β/η steps (the applicative-plus-identity language gives a concrete
+counterexample, while the λI development proves exactly such derivability
+in another proper sublanguage), so the calculus's treatment of α-variants and of the
+negation encoding must be settled before any Henkin argument. The
+relevant (λI) language of Definition 9.2 is treated separately
+(`theories/base/book_lambda_I/`, session `Bacon_Book_Lambda_I_Development`):
+its calculus, internal-conversion models, soundness, and original-signature
+model existence and completeness are checked, under the minimal logical
+basis, a rich variable stock for the main endpoints, and an actual typed
+assignment required of every model. What that treatment leaves
+open, and what a general-sublanguage project would have to settle, are
+four distinct questions: identification of the independently defined λI
+calculus with HJ (the least relevant-language logic of Definitions
+9.9–9.10); conservativity of full H over the λI calculus (identification
+with the restriction of H to λI formulas); the λI printed/exact β
+correspondence; and completeness for the raw-invariant model subclass (the
+internalization of raw βη-conversion between λI endpoints).
+
+**2. Richer primitive profiles.** All modal results use the minimal
+primitive basis (implication and typed universal quantification).
+Definition 15.1 lists the book's full logical signature, and §9.4 adds
+hatted quantifiers for general languages. The preserved conjunction and
+disjunction developments under `theories/base/book_models/`
+(`Bacon_Book_Primitive_Conjunction_*`, `…_Disjunction_*`) show the
+encoding/decoding pattern for one extra primitive at the H level (note that
+four disjunction theories, `Bacon_Book_Disjunction_{Decoded_Model,
+Decoding_Environment, Encoding_Environment, Model_From_Background}.thy`, are
+preserved but outside the checked ROOT closure); the
+project is to state and prove soundness and completeness for a richer
+profile, first for H and then for the modal C endpoints, without changing
+the independent model predicates.
+
+**3. A Kirchner-style shallow embedding.** This repository is a deep
+embedding: syntax, calculi and models are inductive objects, and
+metatheorems are proved about them. The complementary approach of
+Benzmüller and Kirchner embeds higher-order modal logic shallowly in HOL,
+so that object-level reasoning runs on Isabelle's own automation. The
+project is to build a shallow embedding of the book's full-type Classicism
+(worlds, the modalized domains and the literal box), reprove a selection of
+the object-level theorems checked here (for example the modal K, T and 4
+facts and the SL_t → □Actuality argument, which the core's relational
+C calculus can express), and state precisely how the shallow validity notion relates
+to this repository's root consequence over the nontrivial class. The
+value is a second, independently checkable route to the same object-level
+results and much faster experimentation; it is not a replacement for the
+metatheory proved here, and the two must not be silently identified.
 
 For a new theory file, ensure ROOT or a selected theory imports it before
 treating a focused build as verification. Add the relevant theorem to the

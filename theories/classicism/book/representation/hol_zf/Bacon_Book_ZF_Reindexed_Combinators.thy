@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_Reindexed_Combinators
   imports Bacon_Book_ZF_Reindexed_Collect
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 theorem full_ZF_K_identification:
@@ -12,7 +12,7 @@ proof -
   interpret S: book_ZF_modal_structure full_world_set full_ZF_R full_ZF_root full_ZF_D_at full_ZF_i_at
     by (rule full_ZF_reindexed_structure)
   have kt: "full_ZF_K_value actual \<sigma> \<tau> \<in> explode (full_ZF_D_at (Arr \<sigma> (Arr \<tau> \<sigma>)) full_ZF_root)"
-    by (simp only: full_ZF_D_at_root; rule full_ZF_K_value_type)
+    by (simp only: full_ZF_D_at_root; rule full_ZF_K_value_type[OF root_admitted])
   show ?thesis
   proof (unfold book_ZF_k_def, rule S.function_as_two_lambdas[OF full_ZF_root_member kt])
     fix v a u b
@@ -39,7 +39,7 @@ proof -
     by (rule full_ZF_reindexed_structure)
   have st: "full_ZF_S_value actual \<sigma> \<tau> \<rho> \<in>
     explode (full_ZF_D_at (Arr (Arr \<sigma> (Arr \<tau> \<rho>)) (Arr (Arr \<sigma> \<tau>) (Arr \<sigma> \<rho>))) full_ZF_root)"
-    by (simp only: full_ZF_D_at_root; rule full_ZF_S_value_type)
+    by (simp only: full_ZF_D_at_root; rule full_ZF_S_value_type[OF root_admitted])
   show ?thesis
   proof (unfold book_ZF_s_def, rule S.function_as_three_lambdas[OF full_ZF_root_member st])
     fix v f u g t a

@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_Root_Constants
   imports Bacon_Book_ZF_Reindexed_Identity_Operator
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 definition full_ZF_constant_value where
@@ -23,7 +23,7 @@ qed
 theorem full_ZF_constant_value_type:
   "c \<in> \<Sigma> \<sigma> \<Longrightarrow> full_ZF_constant_value c \<sigma> \<in> explode (full_ZF_D_at \<sigma> full_ZF_root)"
   by (simp only: full_ZF_D_at_root full_ZF_constant_value_def;
-    rule full_ZF_closed_value_type[OF full_ZF_original_constant_closed]; assumption)
+    rule full_ZF_closed_value_type[OF root_admitted full_ZF_original_constant_closed]; assumption)
 
 theorem full_ZF_original_constant_denote:
   assumes ww: "w \<in> worlds" and declared: "c \<in> \<Sigma> \<sigma>"

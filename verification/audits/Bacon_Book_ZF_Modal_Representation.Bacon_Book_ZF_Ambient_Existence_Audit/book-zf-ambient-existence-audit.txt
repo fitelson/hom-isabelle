@@ -1,5 +1,5 @@
 FOUNDATION: standard HOL-ZF; not pure HOL
-SCOPE: Canonical independent interpretation and original-theory truth; actual full-C model existence in a fixed countable ambient signature with infinite reserves. Explicit future-restricted implication convention; not generic soundness or unrestricted completeness.
+SCOPE: Canonical independent interpretation and original-theory truth; actual full-C model existence in a coded ambient signature (bounded term code injective on admitted terms) with infinite reserves. Explicit future-restricted implication convention; not generic soundness or unrestricted completeness.
 CORE-PRINCIPAL-THEOREMS-KERNEL-CLEAN: 13 checked endpoints
 canonical independent interpretation clause: type: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
 canonical independent interpretation clause: variable: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
@@ -13,4 +13,4 @@ root validity agrees with the established per-world interpretation: oracles=0 re
 membership of a universal closure ensures original formula validity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
 the canonical model satisfies every original premise: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3 sort_hyps=1
 every admissible canonical interpretation satisfies the original theory: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
-full-C consistency constructs an actual model in a fixed countable ambient signature: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1
+full-C consistency constructs an actual model in a coded ambient signature with infinite reserves: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4 sort_hyps=1

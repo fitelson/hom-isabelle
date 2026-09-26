@@ -4,7 +4,7 @@ begin
 
 section \<open>Function counterparts are restrictions of actual graphs\<close>
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 definition full_ZF_arrow_restrict where
@@ -66,9 +66,9 @@ theorem full_ZF_i_arrow_restriction:
   shows "full_ZF_i (Arr \<sigma> \<tau>) w v F = full_ZF_arrow_restrict \<sigma> v F"
 proof -
   have inverse: "full_ZF_j (Arr \<sigma> \<tau>) w F \<in> book_C_identity_domain (fst w) G (snd w) (Arr \<sigma> \<tau>)"
-    by (rule full_ZF_j_type[OF member])
+    by (rule full_ZF_j_type[OF worlds_admitted[OF ww] member])
   show ?thesis unfolding full_ZF_i_def
-    by (simp only: full_ZF_h_arrow_restriction[OF ww vw wv inverse] full_ZF_hj[OF member])
+    by (simp only: full_ZF_h_arrow_restriction[OF ww vw wv inverse] full_ZF_hj[OF worlds_admitted[OF ww] member])
 qed
 
 theorem full_ZF_application_preserved:
@@ -77,7 +77,7 @@ theorem full_ZF_application_preserved:
     and fm: "X \<in> book_C_identity_domain (fst w) G (snd w) (Arr \<sigma> \<tau>)"
   shows "app (full_ZF_h (Arr \<sigma> \<tau>) w X) (Opair (book_ZF_world_code w) (full_ZF_h \<sigma> w a)) =
     full_ZF_h \<tau> w (book_C_term_app (fst w) G (snd w) \<sigma> \<tau> X a)"
-  using full_ZF_arrow_value[OF ww book_full_C_rooted_refl[OF ww] full_ZF_h_type[OF member], of \<tau> X]
+  using full_ZF_arrow_value[OF ww book_full_C_rooted_refl[OF ww] full_ZF_h_type[OF worlds_admitted[OF ww] member], of \<tau> X]
   by (simp only: full_ZF_jh[OF ww member]
     book_C_term_counterpart_identity[OF rich full_rooted_base_world[OF ww] fm])
 

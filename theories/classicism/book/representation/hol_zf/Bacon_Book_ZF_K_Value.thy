@@ -3,15 +3,16 @@ theory Bacon_Book_ZF_K_Value
     Bacon_Book_Modal_Representation.Bacon_Book_Canonical_Combinator_Syntax
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 definition full_ZF_K_value where
   "full_ZF_K_value w \<sigma> \<tau> = full_ZF_closed_value w (Arr \<sigma> (Arr \<tau> \<sigma>)) (book_canonical_K G \<sigma> \<tau>)"
 
 theorem full_ZF_K_value_type:
-  "full_ZF_K_value w \<sigma> \<tau> \<in> explode (full_ZF_D (Arr \<sigma> (Arr \<tau> \<sigma>)) w)"
-  unfolding full_ZF_K_value_def by (rule full_ZF_closed_value_type[OF book_canonical_K_closed_terms[OF rich]])
+  assumes admitted: "full_ZF_admitted w"
+  shows "full_ZF_K_value w \<sigma> \<tau> \<in> explode (full_ZF_D (Arr \<sigma> (Arr \<tau> \<sigma>)) w)"
+  unfolding full_ZF_K_value_def by (rule full_ZF_closed_value_type[OF admitted book_canonical_K_closed_terms[OF rich]])
 
 theorem full_ZF_K_value_natural:
   "w \<in> worlds \<Longrightarrow> v \<in> worlds \<Longrightarrow> le w v \<Longrightarrow>

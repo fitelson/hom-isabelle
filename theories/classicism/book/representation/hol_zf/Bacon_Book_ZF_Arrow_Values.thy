@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_Arrow_Values
   imports Bacon_Book_ZF_Recursion_Base
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 theorem full_ZF_arrow_value:

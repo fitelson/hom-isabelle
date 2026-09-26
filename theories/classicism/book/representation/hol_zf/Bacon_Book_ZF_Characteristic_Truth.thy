@@ -5,7 +5,7 @@ begin
 
 section \<open>Truth is membership of the current world in a proposition\<close>
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 definition full_ZF_value_truth where
@@ -59,7 +59,7 @@ proof -
     by (rule book_full_C_world_identity_algebra[OF rich book_full_C_rooted_world_data(1)[OF ww]])
   have closed_instance: "book_environment_subst {} (book_C_term_representatives (full_ZF_assignment_decode w g)) A \<in>
     book_closed_terms (fst w) G Prop"
-    by (rule T.book_C_term_substituted_closed_terms[OF language full_ZF_assignment_decode_typed[OF typed]])
+    by (rule T.book_C_term_substituted_closed_terms[OF language full_ZF_assignment_decode_typed[OF worlds_admitted[OF ww] typed]])
   show ?thesis by (simp only: full_ZF_denote_truth_correspondence[OF ww language]
     book_C_term_denote_eq[OF book_language_type[OF language]] T.term_valuation_class[OF closed_instance])
 qed

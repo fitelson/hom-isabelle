@@ -2,13 +2,14 @@ theory Bacon_Book_ZF_Reindexed_Structure
   imports Bacon_Book_ZF_Reindexed_Functions
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 lemma full_ZF_reindexed_propositions:
-  "p \<in> explode (full_ZF_D_at Prop w) \<Longrightarrow>
+  "w \<in> explode full_world_set \<Longrightarrow> p \<in> explode (full_ZF_D_at Prop w) \<Longrightarrow>
     explode p \<subseteq> explode (book_ZF_future full_world_set full_ZF_R w)"
-  by (simp only: full_ZF_reindexed_future full_ZF_D_at_def; rule full_ZF_proposition_future; assumption)
+  by (simp only: full_ZF_reindexed_future full_ZF_D_at_def;
+    rule full_ZF_proposition_future[OF worlds_admitted[OF full_world_decode_type]]; assumption)
 
 lemma full_ZF_reindexed_proposition_restriction:
   assumes ww: "w \<in> explode full_world_set" and vw: "v \<in> explode full_world_set" and access: "full_ZF_R w v"

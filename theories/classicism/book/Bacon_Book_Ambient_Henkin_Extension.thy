@@ -1,67 +1,31 @@
 theory Bacon_Book_Ambient_Henkin_Extension
-  imports Bacon_Book_Ambient_Name_Embedding Bacon_Book_Henkin_Image_Extension
+  imports Bacon_Book_Ambient_Name_Embedding Bacon_Book_Ambient_Signature Bacon_Book_Henkin_Image_Extension
 begin
 
-section \<open>Henkin completion within one countable ambient language\<close>
+section \<open>Henkin completion within one ambient language, with its countable instance\<close>
 
 locale book_countable_ambient_signature =
   fixes \<Sigma> :: "'c::countable ssignature" and B :: "'c ssignature"
   assumes included: "\<And>\<tau>. \<Sigma> \<tau> \<subseteq> B \<tau>"
     and reserve: "\<And>\<tau>. infinite (B \<tau> - \<Sigma> \<tau>)"
 begin
+end
 
-definition book_ambient_name_map where
-  "book_ambient_name_map \<tau> = book_reserve_name_map (\<Sigma> \<tau>) (B \<tau>)"
-
-definition book_ambient_henkin_signature where
-  "book_ambient_henkin_signature G = book_typed_image_signature book_ambient_name_map (book_henkin_full_signature \<Sigma> G)"
-
-lemma book_ambient_name_map_injective:
-  "inj (book_ambient_name_map \<tau>)"
-proof -
-  interpret names: book_countable_name_reserve "\<Sigma> \<tau>" "B \<tau>"
-    by (unfold_locales; rule included reserve)
-  show ?thesis unfolding book_ambient_name_map_def by (rule names.book_reserve_embedding_injective)
+sublocale book_countable_ambient_signature \<subseteq> book_ambient_signature \<Sigma> B
+proof (unfold_locales)
+  fix \<tau>
+  show "\<Sigma> \<tau> \<subseteq> B \<tau>" by (rule included)
+  show "infinite (B \<tau> - \<Sigma> \<tau>)" by (rule reserve)
+  have countable_names: "card_of (\<Union>\<rho>. \<Sigma> \<rho>) \<le>o card_of (UNIV :: nat set)"
+    by (rule card_of_ordLeqI[where f=to_nat]; simp add: inj_on_def)
+  have naturals: "card_of (UNIV :: nat set) \<le>o card_of (B \<tau> - \<Sigma> \<tau>)"
+    using reserve infinite_iff_card_of_nat by blast
+  show "card_of (\<Union>\<rho>. \<Sigma> \<rho>) \<le>o card_of (B \<tau> - \<Sigma> \<tau>)"
+    by (rule ordLeq_transitive[OF countable_names naturals])
 qed
 
-lemma book_ambient_name_map_fixes:
-  "c \<in> \<Sigma> \<tau> \<Longrightarrow> book_ambient_name_map \<tau> (BookOriginal c) = c"
-  unfolding book_ambient_name_map_def by (rule book_reserve_name_map_original; assumption)
-
-lemma book_ambient_henkin_signature_contains:
-  "\<Sigma> \<tau> \<subseteq> book_ambient_henkin_signature G \<tau>"
-proof
-  fix c
-  assume member: "c \<in> \<Sigma> \<tau>"
-  have original: "BookOriginal c \<in> book_henkin_full_signature \<Sigma> G \<tau>"
-    by (simp only: book_henkin_full_original_iff; rule member)
-  have mapped: "book_ambient_name_map \<tau> (BookOriginal c) \<in>
-    book_typed_image_signature book_ambient_name_map (book_henkin_full_signature \<Sigma> G) \<tau>"
-    by (rule book_typed_image_maps; rule original)
-  show "c \<in> book_ambient_henkin_signature G \<tau>"
-    using mapped by (simp only: book_ambient_henkin_signature_def book_ambient_name_map_fixes[OF member])
-qed
-
-lemma book_ambient_henkin_signature_inside:
-  "book_ambient_henkin_signature G \<tau> \<subseteq> B \<tau>"
-proof -
-  interpret names: book_countable_name_reserve "\<Sigma> \<tau>" "B \<tau>"
-    by (unfold_locales; rule included reserve)
-  show ?thesis using names.book_reserve_embedding_range
-    unfolding book_ambient_henkin_signature_def book_typed_image_signature_def book_ambient_name_map_def by blast
-qed
-
-lemma book_ambient_henkin_signature_reserve:
-  "infinite (B \<tau> - book_ambient_henkin_signature G \<tau>)"
-proof -
-  interpret names: book_countable_name_reserve "\<Sigma> \<tau>" "B \<tau>"
-    by (unfold_locales; rule included reserve)
-  have small: "B \<tau> - range (book_ambient_name_map \<tau>) \<subseteq> B \<tau> - book_ambient_henkin_signature G \<tau>"
-    unfolding book_ambient_henkin_signature_def book_typed_image_signature_def by blast
-  have infinite_small: "infinite (B \<tau> - range (book_ambient_name_map \<tau>))"
-    unfolding book_ambient_name_map_def by (rule names.book_reserve_embedding_leaves_infinite)
-  show ?thesis using infinite_small small finite_subset by blast
-qed
+context book_ambient_signature
+begin
 
 theorem book_C_ambient_henkin_extension_exists:
   assumes rich: "sg_rich G" and language: "\<And>A. A \<in> S \<Longrightarrow> book_theory_formula \<Sigma> G A"
@@ -71,10 +35,9 @@ theorem book_C_ambient_henkin_extension_exists:
     (\<forall>A\<in>S. book_universal_closure G A \<in> M) \<and>
     book_closed_constant_witness_complete (book_ambient_henkin_signature G) G M"
 proof -
-  have injective: "inj_on (book_ambient_name_map \<tau>) (book_henkin_full_signature \<Sigma> G \<tau>)" for \<tau>
-    by (rule inj_on_subset[OF book_ambient_name_map_injective subset_UNIV])
   show ?thesis unfolding book_ambient_henkin_signature_def
-    by (rule book_C_henkin_image_extension_exists[OF rich language consistent injective book_ambient_name_map_fixes])
+    by (rule book_C_henkin_image_extension_exists[OF rich language consistent book_ambient_name_map_injective
+      book_ambient_name_map_fixes])
 qed
 
 end
@@ -87,10 +50,18 @@ text \<open>
   closed predicates of Ω. Neither witness completeness nor preservation
   of the full enlarged C background is assumed.
 
-  This theorem states countability of the ambient name carrier. The
-  map can be chosen independently at different types. It does not yet
-  supply the initial transport of a countable declared signature from
-  an arbitrary carrier, or the modal term-model representation.
+  The theorem is now stated for the general ambient locale (reserves
+  infinite and at least as large as the declared signature). The
+  countable locale is a sublocale, so the external existence results
+  proved here are preserved on countable carriers with their earlier
+  statements. The internal interface has changed: book_ambient_name_map
+  now takes the context G, and its injectivity is proved only on the
+  Henkin names actually used, not globally as the earlier countable map's
+  was. Interpreting the countable locale does not identify the new map
+  with the earlier independently chosen one. The map can be chosen
+  independently at different types. It does not yet supply the initial
+  transport of a declared signature from an arbitrary carrier, or the
+  modal term-model representation.
 \<close>
 
 end

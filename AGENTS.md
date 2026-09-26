@@ -7,6 +7,26 @@ The core must not import an application or the parent research checkout.
 Goodman is an ordinary subfolder at Applications/goodman-isabelle, not a
 submodule. Its presence does not expand the core's formal or audit scope.
 
+## Public application boundary — user instruction, 26 September 2026
+
+Goodman is the ONLY application authorized for the public repository.
+Every non-Goodman application must remain local, including future ones.
+Keep their sources, reports, notes, audits, exports and generated artifacts
+out of public commits, pushes, releases and pull requests. Never force-add
+an ignored application or treat a generic "commit and push" instruction
+as permission to publish it. A change to this boundary requires the user's
+explicit authorization for that application.
+
+Before staging or publishing, inspect the exact staged paths AND shared
+documentation changes: do not publish local-only application content or
+links through README, STATUS, source guides, graphs or release artifacts.
+The Applications allowlist in .gitignore is a safeguard, not a substitute
+for that review (tracked files are unaffected by ignore rules).
+Preserve local work; do not delete, move or untrack anything merely to
+enforce this policy without the user's specific approval.
+
+## Formalization and verification
+
 Use the source book and paper, with the editions recorded in
 docs/SOURCES_AND_CREDITS.md. Preserve source notation in Unicode comments.
 Do not conflate F/R, local/global consequence, conditional/model-existence
@@ -21,10 +41,14 @@ No sorry, oops, admitted facts, quick_and_dirty, new oracles, or unexplained
 axiomatizations. Check the actual theorem statement before reporting scope.
 
 Do not delete or move files without explicit user approval. Preserve
-unrelated edits. The countable-signature model-existence and generic
-interpretation-existence theorems, with their audits, are selected in ROOT.
-Neither result establishes generic full-C soundness or unrestricted modal
-completeness. Interpretation uniqueness is on typed inputs, not on arbitrary
+unrelated edits. The model-existence theorems (countably declared,
+ZF-small carrier, and ZF-small declared names on an arbitrary carrier), the
+generic interpretation-existence theorem, generic full-C soundness
+(`full_C_valid_everywhere`) and full-C modal completeness
+(`book_full_C_theory_derivable_iff_consequence` and its declared-names
+form), with their audits, are selected in ROOT. Completeness is relative to
+the declared-name smallness hypothesis; no unrestricted modal completeness
+is claimed. Interpretation uniqueness is on typed inputs, not on arbitrary
 off-language values of the total evaluator.
 
 The unchanged `book_ZF_modal_model` is the broad STRUCTURAL class.

@@ -2,7 +2,7 @@ theory Bacon_Book_ZF_S_Body
   imports Bacon_Book_ZF_K_Value
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 definition full_ZF_S_value where
@@ -11,9 +11,10 @@ definition full_ZF_S_value where
       (book_canonical_S G \<sigma> \<tau> \<rho>)"
 
 theorem full_ZF_S_value_type:
-  "full_ZF_S_value w \<sigma> \<tau> \<rho> \<in>
+  assumes admitted: "full_ZF_admitted w"
+  shows "full_ZF_S_value w \<sigma> \<tau> \<rho> \<in>
     explode (full_ZF_D (Arr (Arr \<sigma> (Arr \<tau> \<rho>)) (Arr (Arr \<sigma> \<tau>) (Arr \<sigma> \<rho>))) w)"
-  unfolding full_ZF_S_value_def by (rule full_ZF_closed_value_type[OF book_canonical_S_closed_terms[OF rich]])
+  unfolding full_ZF_S_value_def by (rule full_ZF_closed_value_type[OF admitted book_canonical_S_closed_terms[OF rich]])
 
 theorem full_ZF_S_value_natural:
   "w \<in> worlds \<Longrightarrow> v \<in> worlds \<Longrightarrow> le w v \<Longrightarrow>

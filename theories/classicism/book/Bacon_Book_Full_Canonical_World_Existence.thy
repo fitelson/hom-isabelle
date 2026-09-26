@@ -2,7 +2,7 @@ theory Bacon_Book_Full_Canonical_World_Existence
   imports Bacon_Book_Full_Canonical_Worlds Bacon_Book_Full_Countable_Signature_Recoding
 begin
 
-context book_countable_ambient_signature
+context book_ambient_signature
 begin
 
 theorem book_full_C_canonical_world_exists:
@@ -19,12 +19,37 @@ proof -
     unfolding book_full_C_canonical_worlds_def
     by (simp only: mem_Collect_eq fst_conv snd_conv; intro conjI allI;
       rule book_ambient_henkin_signature_contains book_ambient_henkin_signature_inside
-        book_ambient_henkin_signature_reserve maximal witnesses)
+        book_ambient_henkin_signature_reserve book_ambient_henkin_signature_large maximal witnesses)
   have keeps: "\<forall>A\<in>S. book_universal_closure G A \<in> snd (?\<Omega>, M)" using originals by simp
   show ?thesis by (rule bexI[where x="(?\<Omega>, M)"], rule keeps, rule world)
 qed
 
 end
+
+theorem book_full_C_countable_canonical_world_iff:
+  fixes w :: "'c::countable book_C_world"
+  shows "w \<in> book_full_C_canonical_worlds \<Sigma> B G \<longleftrightarrow>
+    (\<forall>\<sigma>. \<Sigma> \<sigma> \<subseteq> fst w \<sigma> \<and> fst w \<sigma> \<subseteq> B \<sigma> \<and> infinite (B \<sigma> - fst w \<sigma>)) \<and>
+    book_full_C_closed_maximal_extension (fst w) G {} (snd w) \<and>
+    book_closed_constant_witness_complete (fst w) G (snd w)"
+proof
+  assume world: "w \<in> book_full_C_canonical_worlds \<Sigma> B G"
+  show "(\<forall>\<sigma>. \<Sigma> \<sigma> \<subseteq> fst w \<sigma> \<and> fst w \<sigma> \<subseteq> B \<sigma> \<and> infinite (B \<sigma> - fst w \<sigma>)) \<and>
+    book_full_C_closed_maximal_extension (fst w) G {} (snd w) \<and>
+    book_closed_constant_witness_complete (fst w) G (snd w)"
+    using book_full_C_canonical_world_data[OF world] by blast
+next
+  assume old: "(\<forall>\<sigma>. \<Sigma> \<sigma> \<subseteq> fst w \<sigma> \<and> fst w \<sigma> \<subseteq> B \<sigma> \<and> infinite (B \<sigma> - fst w \<sigma>)) \<and>
+    book_full_C_closed_maximal_extension (fst w) G {} (snd w) \<and>
+    book_closed_constant_witness_complete (fst w) G (snd w)"
+  have included: "\<And>\<tau>. fst w \<tau> \<subseteq> B \<tau>" and reserve: "\<And>\<tau>. infinite (B \<tau> - fst w \<tau>)"
+    using old by blast+
+  interpret names: book_countable_ambient_signature "fst w" B
+    by (unfold_locales; rule included reserve)
+  show "w \<in> book_full_C_canonical_worlds \<Sigma> B G"
+    unfolding book_full_C_canonical_worlds_def mem_Collect_eq
+    using old names.ambient_large by blast
+qed
 
 theorem book_full_C_countable_canonical_world_exists:
   assumes rich: "sg_rich G" and small: "\<And>\<sigma>. countable (\<Sigma> \<sigma>)"
@@ -56,6 +81,15 @@ text \<open>
   recoded into ℕ; only that initial step changes the carrier. Every
   subsequent world uses a sublanguage of the same ambient ℕ signature.
   The theorem is existence of a sentence set, not a modal-model theorem.
+
+  Compatibility: on a countable name carrier the cardinal reserve clause
+  of the full world set is redundant, since the countable ambient locale
+  is a sublocale of the general one. The named equivalence
+  book_full_C_countable_canonical_world_iff records that membership in
+  the full world set coincides with the earlier displayed conjunction
+  (inclusion, ambient inclusion, infinite reserves, full maximality and
+  witness completeness) on such carriers. It is not an equivalence with
+  the base world set book_C_canonical_worlds, whose background differs.
 \<close>
 
 end

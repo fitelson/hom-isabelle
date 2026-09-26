@@ -3,7 +3,7 @@ theory Bacon_Book_ZF_All_Type_Inverses
     Bacon_Book_Modal_Representation.Bacon_Book_Full_Term_Modalized_Sets
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 lemma full_ZF_jh_from_injective:
@@ -18,7 +18,7 @@ theorem full_ZF_h_injective:
   using ww
 proof (induction \<sigma> arbitrary: w)
   case Ind
-  show ?case by (rule full_ZF_individual_injective)
+  show ?case by (rule full_ZF_individual_injective[OF worlds_admitted[OF Ind.prems]])
 next
   case Prop
   show ?case by (rule full_ZF_proposition_injective[OF Prop.prems])
@@ -35,7 +35,7 @@ next
       fix v a
       assume vw: "v \<in> worlds" and access: "le w v" and ad: "a \<in> book_C_identity_domain (fst v) G (snd v) \<sigma>"
       let ?a = "full_ZF_h \<sigma> v a"
-      have at: "?a \<in> explode (full_ZF_D \<sigma> v)" by (rule full_ZF_h_type[OF ad])
+      have at: "?a \<in> explode (full_ZF_D \<sigma> v)" by (rule full_ZF_h_type[OF worlds_admitted[OF vw] ad])
       have inverse: "full_ZF_j \<sigma> v ?a = a" by (rule full_ZF_jh_from_injective[OF Arr.IH(1)[OF vw] ad])
       have equal_values: "app (full_ZF_h (Arr \<sigma> \<tau>) w X) (Opair (book_ZF_world_code v) ?a) =
         app (full_ZF_h (Arr \<sigma> \<tau>) w Y) (Opair (book_ZF_world_code v) ?a)"
@@ -61,7 +61,7 @@ qed
 theorem full_ZF_h_bijection:
   assumes ww: "w \<in> worlds"
   shows "bij_betw (full_ZF_h \<sigma> w) (book_C_identity_domain (fst w) G (snd w) \<sigma>) (explode (full_ZF_D \<sigma> w))"
-  unfolding bij_betw_def by (rule conjI[OF full_ZF_h_injective[OF ww] full_ZF_D_elements[symmetric]])
+  unfolding bij_betw_def by (rule conjI[OF full_ZF_h_injective[OF ww] full_ZF_D_elements[OF worlds_admitted[OF ww], symmetric]])
 
 theorem full_ZF_jh:
   "w \<in> worlds \<Longrightarrow> X \<in> book_C_identity_domain (fst w) G (snd w) \<sigma> \<Longrightarrow>

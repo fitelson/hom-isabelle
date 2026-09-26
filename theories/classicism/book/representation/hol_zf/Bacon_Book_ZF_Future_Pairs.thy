@@ -3,7 +3,7 @@ theory Bacon_Book_ZF_Future_Pairs
     Bacon_Classicism_ZF_Representation.Bacon_Source_ZF_Dependent_Pairs
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 definition full_ZF_domain :: "otype \<Rightarrow> ('c book_C_world \<Rightarrow> 'c book_named_term set \<Rightarrow> ZF) \<Rightarrow> 'c book_C_world \<Rightarrow> ZF" where
@@ -13,13 +13,16 @@ definition full_ZF_inverse :: "otype \<Rightarrow> ('c book_C_world \<Rightarrow
   "full_ZF_inverse \<sigma> h w = inv_into (book_C_identity_domain (fst w) G (snd w) \<sigma>) (h w)"
 
 lemma full_ZF_domain_elements:
-  "explode (full_ZF_domain \<sigma> h w) = h w ` book_C_identity_domain (fst w) G (snd w) \<sigma>"
-  unfolding full_ZF_domain_def by (rule book_ZF_powerset_image_elements)
+  assumes admitted: "full_ZF_admitted w"
+  shows "explode (full_ZF_domain \<sigma> h w) = h w ` book_C_identity_domain (fst w) G (snd w) \<sigma>"
+  unfolding full_ZF_domain_def
+  by (rule book_ZF_powerset_image_elements[OF identity_domain_admitted[OF admitted]])
 
 lemma full_ZF_inverse_type:
-  "a \<in> explode (full_ZF_domain \<sigma> h w) \<Longrightarrow>
-    full_ZF_inverse \<sigma> h w a \<in> book_C_identity_domain (fst w) G (snd w) \<sigma>"
-  unfolding full_ZF_inverse_def full_ZF_domain_elements by (rule inv_into_into; assumption)
+  assumes admitted: "full_ZF_admitted w" and member: "a \<in> explode (full_ZF_domain \<sigma> h w)"
+  shows "full_ZF_inverse \<sigma> h w a \<in> book_C_identity_domain (fst w) G (snd w) \<sigma>"
+  using member unfolding full_ZF_inverse_def full_ZF_domain_elements[OF admitted]
+  by (rule inv_into_into)
 
 definition full_ZF_future :: "'c book_C_world \<Rightarrow> ZF" where
   "full_ZF_future w = Sep full_world_set (\<lambda>z. le w (full_world_decode z))"

@@ -63,8 +63,15 @@ text \<open>
   are unchanged: only the declared constants at each type are countable;
   open formulas and arbitrary premise sets remain allowed. The same
   signature pullback preserves all worldwise nontriviality conditions.
-  Generic soundness, unrestricted signatures and final modal completeness
-  remain separate obligations. No claim is made that the added conditions
+  This theorem is retained as an independent proof of the countable
+  instance; it is also a corollary
+  (book_full_C_countable_nontrivial_modal_model_exists_from_small_declared)
+  of the general endpoint book_full_C_small_declared_nontrivial_modal_model_exists
+  in Bacon_Book_ZF_Declared_Names_Existence, which covers ZF-small declared
+  unions on an arbitrary carrier. Generic soundness is
+  Bacon_Book_ZF_Full_C_Soundness and the completeness equivalences are
+  Bacon_Book_ZF_Full_C_Completeness and
+  Bacon_Book_ZF_Full_C_Declared_Names_Completeness. No claim is made that the added conditions
   are a literal transcription of every printed Definition 18.1 clause.
 \<close>
 

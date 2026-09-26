@@ -3,7 +3,7 @@ theory Bacon_Book_ZF_Reindexed_Frame
     Bacon_Book_ZF_Modal_Semantics.Bacon_Book_ZF_Model_Operator_Restriction
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 definition full_ZF_R where "full_ZF_R w v = le (full_world_decode w) (full_world_decode v)"

@@ -3,7 +3,7 @@ theory Bacon_Book_ZF_Interpretation_Assignments
     Bacon_Book_Modal_Representation.Bacon_Book_Term_Interpretation_Naturality
 begin
 
-context book_full_C_canonical_frame
+context book_full_C_coded_frame
 begin
 
 definition full_ZF_assignment_decode where
@@ -13,10 +13,11 @@ definition full_ZF_assignment_move where
   "full_ZF_assignment_move w v g = (\<lambda>n. full_ZF_i (G n) w v (g n))"
 
 theorem full_ZF_assignment_decode_typed:
-  assumes typed: "book_env_typed (\<lambda>\<sigma>. explode (full_ZF_D \<sigma> w)) G g"
+  assumes admitted: "full_ZF_admitted w"
+    and typed: "book_env_typed (\<lambda>\<sigma>. explode (full_ZF_D \<sigma> w)) G g"
   shows "book_env_typed (book_C_identity_domain (fst w) G (snd w)) G (full_ZF_assignment_decode w g)"
   unfolding book_env_typed_def full_ZF_assignment_decode_def
-  by (intro allI; rule full_ZF_j_type[OF book_env_at[OF typed]])
+  by (intro allI; rule full_ZF_j_type[OF admitted book_env_at[OF typed]])
 
 theorem full_ZF_assignment_move_typed:
   assumes ww: "w \<in> worlds" and vw: "v \<in> worlds" and access: "le w v"
