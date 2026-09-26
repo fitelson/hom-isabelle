@@ -41,6 +41,7 @@ footer {border-top:1px solid var(--line); padding-top:12px; margin-top:20px;}
 <body>
 <main>
   <h1>Isabelle core dependency graph</h1>
+  <p id="graph-statistics"></p>
   <p id="summary" class="muted"></p>
   <div class="toolbar"><button id="overview" hidden>All sessions</button><span id="selection" aria-live="polite">Select a session to explore its direct connections.</span></div>
   <p class="muted">Arrows run from a dependency to the importing session. Each line aggregates direct theory imports, not proof dependencies.</p>
@@ -63,7 +64,8 @@ footer {border-top:1px solid var(--line); padding-top:12px; margin-top:20px;}
   const quantity=(n,one,many)=>n+' '+(n===1?one:many);
   const svgNS='http://www.w3.org/2000/svg';
   let chosen=null, lastWidth=0;
-  $('summary').textContent=data.names.length+' sessions · '+data.theories.toLocaleString()+' mathematical theories · '+data.excluded_audit_theories+' audit/catalog theories excluded';
+  $('graph-statistics').textContent='Mathematical graph: '+data.mathematical_nodes.toLocaleString()+' nodes · '+data.mathematical_connections.toLocaleString()+' connections';
+  $('summary').textContent='Session view: '+data.names.length+' nodes · '+data.edges.length+' import connections · '+data.theories.toLocaleString()+' theories · audits excluded';
   $('digest').textContent=data.source_sha256;
   const rank=Array(data.names.length).fill(0);
   let cyclic=false;
@@ -75,7 +77,7 @@ footer {border-top:1px solid var(--line); padding-top:12px; margin-top:20px;}
   }
   if(cyclic) {$('warning').hidden=false; $('warning').textContent='Session projection contains a cycle; overview uses a grid rather than a dependency layering.';}
   function svg(tag,attrs) {const el=document.createElementNS(svgNS,tag); for(const [k,v] of Object.entries(attrs))el.setAttribute(k,v); return el;}
-  function choose(id) {chosen=id; draw();}
+  function choose(id) {chosen=id; draw();document.querySelector('main').scrollIntoView({block:'start'});}
   function relationList(title,edges,other) {
     const section=document.createElement('section'),heading=document.createElement('h3'),list=document.createElement('ul');
     heading.textContent=title; section.append(heading,list);

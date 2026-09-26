@@ -13,7 +13,6 @@ from collections import Counter
 import hashlib
 import json
 from pathlib import Path
-import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -76,6 +75,18 @@ def project_graph(graph: dict) -> dict:
         and owners[edge["source"]] != owners[edge["target"]]
     }
     links = Counter((index[owners[a]], index[owners[b]]) for a, b in imports)
+    theory_names = {node["name"] for node in graph["nodes"] if node["id"] in owners}
+    retained = {
+        node["id"] for node in graph["nodes"]
+        if not node.get("external", False) and (
+            node["id"] in owners
+            or (node["kind"] == "session" and node["name"] in counts)
+            or (node["kind"] not in ("session", "theory")
+                and node.get("theory") in theory_names)
+        )
+    }
+    connections = sum(edge["source"] in retained and edge["target"] in retained
+                      for edge in graph["edges"])
     return {
         "names": names,
         "labels": [session_label(name) for name in names],
@@ -83,6 +94,8 @@ def project_graph(graph: dict) -> dict:
         "edges": [[a, b, n] for (a, b), n in sorted(links.items())],
         "excluded_audit_theories": excluded,
         "theories": len(owners),
+        "mathematical_nodes": len(retained),
+        "mathematical_connections": connections,
     }
 
 
