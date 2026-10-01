@@ -16,6 +16,12 @@ The paper's numbering refers to the **1 July 2022 draft** of Bacon–Dorr's
 in the book or paper has been formalized. “Proved” refers to the maintained,
 checked development; ongoing unverified work is not counted.
 
+Application-specific results are mapped separately. The
+[Proposition 2.11 application](../Applications/2.11/docs/SOURCE_CORRESPONDENCE.md)
+certifies, end to end, that Proposition 2.11 fails for Boolean Completeness
+with its intended lower-bound clause (the Rigid Comprehension instance at
+type t→t is not derivable). It does not enlarge the core results or source-audit coverage in this table.
+
 The [partial source audit](PARTIAL_SOURCE_AUDIT_2026-09-10.md) covers 120
 of 1,380 theory files, not this whole table. It distinguishes the source
 language from the constructor-based intermediate calculus and records

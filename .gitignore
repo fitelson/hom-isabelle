@@ -10,11 +10,12 @@ isabelle-kg/
 # Optional cache-only ROOT from the parent checkout, not a release session.
 theories/classicism/prefix/
 
-# Public application allowlist: user instruction, 26 September 2026.
+# Public application allowlist: user instructions, 26 and 30 September 2026.
 # Other applications stay local; never force-add them without explicit approval.
 /Applications/*
 !/Applications/README.md
 !/Applications/goodman-isabelle/
+!/Applications/2.11/
 
 # Local design/review records (not distributed).
 verification/reviews/

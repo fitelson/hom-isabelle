@@ -7,10 +7,12 @@ The core must not import an application or the parent research checkout.
 Goodman is an ordinary subfolder at Applications/goodman-isabelle, not a
 submodule. Its presence does not expand the core's formal or audit scope.
 
-## Public application boundary — user instruction, 26 September 2026
+## Public application boundary — user instructions, 26 and 30 September 2026
 
-Goodman is the ONLY application authorized for the public repository.
-Every non-Goodman application must remain local, including future ones.
+Goodman and `Applications/2.11/` are the ONLY applications authorized for
+the public repository. The latter was specifically authorized on
+30 September 2026, including a technical version of the note.
+Every other application must remain local, including future ones.
 Keep their sources, reports, notes, audits, exports and generated artifacts
 out of public commits, pushes, releases and pull requests. Never force-add
 an ignored application or treat a generic "commit and push" instruction
@@ -34,6 +36,10 @@ claims, or HOL/HOL-ZF foundations.
 
 Use ./check_isabelle.sh. Every Isabelle build, export and graph extraction
 must be serialized. Sessions retain timeout=60; split slow proofs.
+Do not use fresh/force/clean rebuild flags (including `isabelle build -f`)
+or remove heap databases without explicit user approval. They can invalidate
+Pure/HOL and unrelated applications. Ordinary checks already rebuild changed
+sources and their dependents.
 The root checker selects the core. Check Goodman separately with
 ./Applications/goodman-isabelle/check_isabelle.sh --export, also serially.
 Do not change the core ROOT merely to include an application in its build.

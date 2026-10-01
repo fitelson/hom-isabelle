@@ -1,0 +1,103 @@
+session Classicism_2_11 in "theories" = Bacon_Book_ZF_Modal_Interpretation +
+  options [timeout = 60, threads = 2, export_theory = true]
+  sessions
+    "HOL-Nonstandard_Analysis"
+    Bacon_Base
+    Bacon_Book_ZF_Modal_Soundness
+  theories
+    Classicism_Normalization_Core
+    Classicism_Rigidity_Component
+    Normalization_Witness_Setup
+    Finite_Ultralimit
+    Typed_Finite_Hierarchy
+    Typed_Compatible_Lifts
+    Typed_Root_Lifts
+    Typed_Root_Hierarchy
+    Typed_Proposition_Bridge
+    Typed_Equality
+    Typed_Quantifier
+    Typed_Combinators
+    Typed_Implication
+    Verification_Checkpoint
+    Typed_Source_Frame
+    Typed_Source_Encoding
+    Typed_Raw_Operations
+    Typed_Source_Operations
+    Typed_Source_Binary
+    Typed_Source_Model
+    Typed_Source_Soundness
+    Typed_Paper_Category
+    Typed_Paper_Encoding
+    Typed_Paper_Premodel
+    Typed_Paper_Translation
+    Typed_Paper_Primitives_Binary
+    Typed_Paper_Primitives_Existential
+    Typed_Paper_Primitives_Raw
+    Typed_Paper_Primitives
+    Typed_Paper_Primitives_Binary_Bridge
+    Typed_Paper_Primitives_Complete
+    Typed_Paper_Interpretation
+    Typed_Paper_Evaluation
+    Typed_Paper_Model
+    Classicism_2_11_Audit
+
+session Classicism_2_11_Formulas in "theories/refutation/formulas" = Classicism_2_11 +
+  options [timeout = 60, threads = 2, export_theory = true]
+  theories
+    Classicism_2_11_Syntax
+    Classicism_2_11_Hypotheses_Def
+    Classicism_2_11_Order_Defs
+    Classicism_2_11_Extension
+    Classicism_2_11_World_Cases
+
+session Classicism_2_11_Lattice in "theories/refutation/lattice" = Classicism_2_11_Formulas +
+  options [timeout = 60, threads = 2, export_theory = true]
+  theories
+    Classicism_2_11_Currents
+    Classicism_2_11_Raw_Order
+    Classicism_2_11_Realization
+
+session Classicism_2_11_Semantics in "theories/refutation/semantics" = Classicism_2_11_Formulas +
+  options [timeout = 60, threads = 2, export_theory = true]
+  theories
+    Classicism_2_11_Order_Semantics
+    Classicism_2_11_Rigid_Semantics
+
+session Classicism_2_11_Transfer in "theories/refutation/transfer" = Classicism_2_11_Formulas +
+  options [timeout = 60, threads = 2, export_theory = true]
+  theories
+    Classicism_2_11_Transfer
+
+session Classicism_2_11_Raw_Lattice in "theories/refutation/raw_lattice" = Classicism_2_11_Lattice +
+  options [timeout = 60, threads = 2, export_theory = true]
+  theories
+    Classicism_2_11_Raw_Lattice
+
+session Classicism_2_11_Raw_Rigidity in "theories/refutation/raw_rigidity" = Classicism_2_11_Lattice +
+  options [timeout = 60, threads = 2, export_theory = true]
+  theories
+    Classicism_2_11_Raw_Rigidity
+
+session Classicism_2_11_Barcan in "theories/refutation/bf" = Classicism_2_11_Formulas +
+  options [timeout = 60, threads = 2, export_theory = true]
+  theories
+    Classicism_2_11_BF
+
+session Classicism_2_11_Rigidity in "theories/refutation/rigidity" = Classicism_2_11_Raw_Rigidity +
+  options [timeout = 60, threads = 2, export_theory = true]
+  sessions
+    Classicism_2_11_Transfer
+  theories
+    Classicism_2_11_Rigidity_Transfer
+
+session Classicism_2_11_Refutation in "theories/refutation/assembly" = Classicism_2_11_Semantics +
+  options [timeout = 60, threads = 2, export_theory = true]
+  sessions
+    Classicism_2_11_Transfer
+    Classicism_2_11_Raw_Lattice
+    Classicism_2_11_Barcan
+    Classicism_2_11_Rigidity
+  theories
+    Classicism_2_11_Hypotheses
+    Classicism_2_11_Refutation
+    Classicism_2_11_Refutation_Audit

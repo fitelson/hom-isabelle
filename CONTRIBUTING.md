@@ -5,8 +5,9 @@ foundations of higher-order metaphysics. Contributions may be mathematical,
 formal, or expository. Small, well-verified changes are welcome.
 
 This guide concerns the core. Application-specific work has its own guide:
-see [Applications](Applications/README.md) and
-[Goodman's contributor projects](Applications/goodman-isabelle/CONTRIBUTING.md).
+see [Applications](Applications/README.md),
+[Goodman's contributor projects](Applications/goodman-isabelle/CONTRIBUTING.md),
+and [the Proposition 2.11 projects](Applications/2.11/CONTRIBUTING.md).
 Keep application sessions out of the core ROOT and verify each project
 with its own checker, serially.
 

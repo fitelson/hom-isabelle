@@ -57,7 +57,7 @@ and exact boundaries.
 - [Partial source-fidelity audit: 120 files reviewed, 1,260 deferred](docs/PARTIAL_SOURCE_AUDIT_2026-09-10.md)
 - [Formal-correctness audit of those same 120 files](docs/FORMAL_CORRECTNESS_AUDIT_2026-09-10.md)
 - [Sources, credits, and provenance](docs/SOURCES_AND_CREDITS.md)
-- [Applications of the core](Applications/README.md), including [Goodman's Purity of Pure project](Applications/goodman-isabelle/README.md)
+- [Applications of the core](Applications/README.md), including [Goodman's Purity of Pure project](Applications/goodman-isabelle/README.md) and [the Proposition 2.11 investigation](Applications/2.11/README.md)
 
 For one concrete source-to-code example, the sentence-consequence instance
 of Bacon–Dorr's Theorem 3.2 is
@@ -146,6 +146,13 @@ another Isabelle build or export:
 
 The core's mathematical status and audit coverage are not enlarged merely
 by including an application.
+
+The [Proposition 2.11 application](Applications/2.11/README.md) constructs
+a model in the paper's literal action-model semantics and certifies end to
+end that Proposition 2.11 fails, for Boolean Completeness with its intended
+lower-bound clause (with the clause as printed, Boolean Completeness
+contradicts Booleanism).
+Check it independently with `./Applications/2.11/check_isabelle.sh`.
 
 ## Contributing
 

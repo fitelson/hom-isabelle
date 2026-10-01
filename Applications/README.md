@@ -1,10 +1,28 @@
 # Applications
 
 Applications use the Bacon–Dorr core while retaining their own mathematical
-scope, documentation, Isabelle sessions and verification commands. Goodman is
-the only application distributed with this repository; it is an ordinary
-tracked subfolder, not a submodule, and shares the repository's access
-permissions and visibility.
+scope, documentation, Isabelle sessions and verification commands. Goodman
+and the Proposition 2.11 investigation are the applications distributed
+with this repository; both are ordinary tracked subfolders, not submodules.
+Other local applications are not authorized for redistribution.
+
+## Classicism Proposition 2.11
+
+[2.11](2.11/README.md) contains an all-type model construction, exact
+source-model bridges, and calculations concerning the normalization in
+footnote 42 of the 1 July 2022 *Classicism* draft. Its
+[technical note](2.11/reports/NOTE_ON_PROPOSITION_2_11.pdf) presents a
+counterexample. Isabelle certifies the refutation end to end for Boolean
+Completeness with its intended lower-bound clause: every hypothesis
+instance is valid in the model, the Rigid Comprehension instance at type
+t→t is not, so it is not derivable (`proposition_2_11_refuted`). See its
+[status](2.11/STATUS.md) and [contributor projects](2.11/CONTRIBUTING.md).
+
+```sh
+./Applications/2.11/check_isabelle.sh
+```
+
+Run this separately from every other Isabelle check or export.
 
 ## Goodman: Purity of Pure
 

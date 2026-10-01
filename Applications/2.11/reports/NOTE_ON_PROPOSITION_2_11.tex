@@ -1,0 +1,399 @@
+\documentclass[12pt,leqno]{article}
+\usepackage{amsmath,amssymb,amsthm,colortbl,xcolor,nicefrac,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[expert,seriftt,lucidasmallscale]{lucidabr}
+\usepackage{mathrsfs,hyperref,color,graphicx}
+\hypersetup{hidelinks}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+\setlength{\topmargin}{0mm}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+\setlength{\topskip}{0mm}
+\setlength{\hoffset}{0in}
+\setlength{\voffset}{0in}
+\newcommand{\AND}{\ensuremath{\mathbin{\&}}}
+\newcommand{\OR}{\ensuremath{\vee}}
+\newcommand{\IFF}{\ensuremath{\leftrightarrow}}
+\newcommand{\IC}{\ensuremath{\rightarrow}}
+\newcommand{\IF}{\ensuremath{\supset}}
+\newcommand{\NOT}{\ensuremath{\text{$\thicksim$}}}
+\newcommand{\U}{\mathcal U}
+\newcommand{\two}{\{0,1\}}
+\newcommand{\Atom}{\operatorname{Atom}}
+\onehalfspacing
+\begin{document}
+\begin{center}
+{\large A proposed counterexample to Proposition 2.11}\par
+\small \emph{Classicism}, 1 July 2022 draft, p.~30 and footnote~42
+\end{center}
+
+The following construction appears to refute Proposition 2.11, not just
+the normalization in footnote~42. It satisfies Classicism and, at every
+world, BF, Boolean Completeness, and Atomicity. Nevertheless, Rigid
+Comprehension fails for properties of propositions. We use ordinary
+Boolean completeness, as intended in the prose and GLB/LUB argument.
+
+The construction uses a nonprincipal ultrafilter, but only ultralimits
+in fixed finite sets. We give the carriers and action maps, verify
+closure and the hypotheses, and exhibit the failed comprehension instance.
+
+\medskip
+\noindent\textbf{1. The typed model.}
+Work in ZFC with a nonprincipal ultrafilter $\U$ on the positive integers.
+Take one full extensional simple-type model $M$, with $M_e=\{*\}$,
+$M_t=\two$, and full function spaces. Each fixed type carrier is finite.
+For a sequence $(a_n)$ in a finite nonempty set $A$, define
+$\lim_\U a_n=a$ when $\{n:a_n=a\}\in\U$. Exactly one cell of a finite
+partition belongs to an ultrafilter, so this value exists and is unique.
+If $f_n:A\to B$ and $a_n\in A$, with $A,B$ finite, then
+\begin{equation}\label{eq:limit}
+ \lim_\U f_n(a_n)=(\lim_\U f_n)(\lim_\U a_n).
+\end{equation}
+Intersect the two $\U$-large sets on which $f_n$ and $a_n$ take their
+limiting values to obtain this identity. The same argument applies to
+each operation on fixed finite sets. Changing finitely many terms does
+not change a limit, since $\U$ contains every cofinite set.
+
+Use worlds and arrows
+\[
+o\longrightarrow s\longrightarrow u,\qquad
+o\longrightarrow n\quad(n\geq1),
+\]
+including identities and the composite $o\to u$. Put $M$ at every $n$
+and at $u$. At $s$, take $D_s(e)=\{*\}$ and $D_s(t)=\two^2$, with
+$j_e=\mathrm{id}$ and $j_t(b_s,b_u)=b_u$. Recursively, $D_s(\alpha\to\beta)$
+contains all pairs $(g_s,g_u)$ with
+$g_s:D_s(\alpha)\to D_s(\beta)$, $g_u\in M_{\alpha\to\beta}$, and
+$j_\beta g_s=g_u j_\alpha$. Define
+$\operatorname{app}_s((g_s,g_u),x)=g_s(x)$; the action
+$j_{\alpha\to\beta}$ returns $g_u$.
+
+At $o$, take $D_o(e)=\{*\}$ and
+\[
+ D_o(t)=\two\times\two\times\two^{\mathbb N_{>0}},\qquad
+ \pi_s(b_o,b_s,(b_n))=(b_s,\lim_\U b_n),\quad \pi_n(b)=b_n.
+\]
+A proposition is true at its current world exactly when its current bit
+is 1. A root object of type $\alpha\to\beta$ is a triple
+$(f_o,F_s,(f_n))$, where
+\[
+ f_o:D_o(\alpha)\to D_o(\beta),\quad
+ F_s\in D_s(\alpha\to\beta),\quad f_n\in M_{\alpha\to\beta}.
+\]
+For every $x\in D_o(\alpha)$ it satisfies
+\[
+ \pi_s(f_o(x))=\operatorname{app}_s(F_s,\pi_s x),\quad
+ \pi_n(f_o(x))=f_n(\pi_n x),\quad j(F_s)=\lim_\U f_n.
+\]
+Application uses the current function component. The maps to $s$ and $n$
+return the corresponding future components; the map to $u$ is $j\pi_s$.
+
+
+\medskip
+\noindent\textbf{2. Surjectivity and application.}
+We prove by induction on types that every carrier is nonempty,
+each $D_s(\alpha)$ is finite, $j_\alpha$ is onto, and
+\[
+ x\longmapsto(\pi_sx,(\pi_nx)_n)
+\]
+maps $D_o(\alpha)$ onto
+\[
+ E_\alpha=
+ \{(a_s,(a_n)):a_s\in D_s(\alpha),\ a_n\in M_\alpha,\
+                         j_\alpha a_s=\lim_\U a_n\}.
+\]
+For $e$ these claims follow from the singleton definitions. For $t$,
+a compatible pair consists of $a_s=(b_s,b_u)$ and a sequence $(b_n)$
+with $b_u=\lim_\U b_n$; the root proposition $(0,b_s,(b_n))$ lifts it.
+The map $j_t$ is onto.
+
+Suppose the assertions hold for $\alpha,\beta$.
+The intermediate carrier at $\alpha\to\beta$ is a subset of a product
+of finite function spaces. Given $g_u\in M_{\alpha\to\beta}$, choose,
+for each $x\in D_s(\alpha)$, a preimage under $j_\beta$ of
+$g_u(j_\alpha x)$. These choices define $g_s$, so $(g_s,g_u)$
+belongs to $D_s(\alpha\to\beta)$ and maps to $g_u$.
+
+For root joint surjectivity, let $(F_s,(f_n))\in E_{\alpha\to\beta}$.
+For each $x\in D_o(\alpha)$ the desired outputs are
+\[
+ y_s=\operatorname{app}_s(F_s,\pi_sx),\qquad y_n=f_n(\pi_nx).
+\]
+They are compatible, since
+\[
+ j_\beta y_s
+ =j_{\alpha\to\beta}(F_s)(j_\alpha\pi_sx)
+ =(\lim_\U f_n)(\lim_\U\pi_nx)
+ =\lim_\U y_n.
+\]
+The induction hypothesis at $\beta$ supplies a root preimage of this
+tuple. Choose one for each $x$; these choices give the required $f_o$.
+This uses ordinary metatheoretic choice in ZFC. Nonemptiness follows
+at the same step by taking constant functions between inhabited carriers.
+
+Every individual root action is onto. To lift $a_s$, take the constant
+sequence $a_n=j_\alpha a_s$ and use joint surjectivity. To prescribe
+a value at one terminal world $n$, start with such a constant sequence
+and change its $n$th entry. The limit is unchanged. The action to $u$
+is onto because it is the composite $j_\alpha\pi_s$.
+Application commutes with every action by the defining equations.
+
+The current application function determines each function object.
+At $s$, surjectivity of $j_\alpha$ determines $g_u$ from $g_s$.
+At $o$, surjectivity of $\pi_s$ and each $\pi_n$ determines $F_s$
+and $f_n$ from $f_o$, using the intermediate result for $F_s$.
+Equality here is equality of whole objects, not mere agreement of
+their current truth extensions.
+
+\medskip
+\noindent\textbf{3. Logical operations and abstraction.}
+For an arrow $h:v\to w$, write $h_\alpha$ for its action at type
+$\alpha$. The truth bit at $w$ of equality at $v$ is
+\[
+ [\,h_\alpha a=h_\alpha b\,],
+\]
+where brackets denote $1$ if the statement is true and $0$ otherwise.
+Negation, conjunction and disjunction act on the truth bits at each
+world. For $F\in D_v(\alpha\to t)$, the truth bit at $w$ of
+$\forall_\alpha F$ is
+\[
+ [\,\operatorname{app}_w(h_{\alpha\to t}F,a)
+       \text{ is true at }w\text{ for every }a\in D_w(\alpha)\,].
+\]
+Existential quantification uses \emph{some} in place of \emph{every}.
+
+These prescriptions define admissible objects. At $s$, their future
+components are the corresponding operations in $M$. At the root,
+the required $u$-bit is the ultralimit of the terminal bits.
+For equality this follows from the finite-set limit identity applied
+to the equality test. For quantification, the terminal predicate
+functions range over the finite set $M_{\alpha\to t}$; on a
+$\U$-large set the entire function equals its limit. Universal and
+existential quantification over the fixed finite $M_\alpha$ therefore
+give the same limiting bit. The Boolean cases follow from
+\eqref{eq:limit}. Their curried function components at future worlds
+are specified by the same prescriptions, so application naturality and
+the higher-type compatibility equations hold as well.
+
+Interpret a variable by its assigned object, application by the current
+application function, and a constant at a future world by transporting
+its root value. At $v$, interpret $\lambda x.A$ by its current function
+\[
+ a\longmapsto\lbrack\!\lbrack A\rbrack\!\rbrack_v^{g[x\mapsto a]}
+\]
+together with the corresponding future functions. Simultaneous
+induction on terms proves membership in the prescribed carriers and
+\begin{equation}\label{eq:naturality}
+ h_\alpha\lbrack\!\lbrack A\rbrack\!\rbrack_v^g
+       =\lbrack\!\lbrack A\rbrack\!\rbrack_w^{hg}
+       \qquad(A:\alpha,\ h:v\to w).
+\end{equation}
+For abstraction, apply the induction hypothesis for the body
+to $g[x\mapsto a]$; its transported assignment is
+$(hg)[x\mapsto h_\sigma a]$, where $x:\sigma$. This is the
+compatibility equation for the current and future functions.
+Application uses its defining naturality equation, and logical
+constants use the preceding paragraph.
+
+At the root one must also check the ultralimit condition between
+the terminal functions and the $u$-function. Each term involves only
+finitely many free variables and nonlogical constants. Intersect the
+$\U$-large sets on which their terminal values equal their $u$-values.
+On this intersection the interpretations in the identical full model
+$M$ agree. This proves the limit condition for the whole denotation,
+including function-valued terms. Thus the abstraction functions above
+belong to the required carriers.
+
+For comparison with Definitions 3.18--3.20, encode $p\in D_v(t)$
+as the set of outgoing arrows $h:v\to w$ for which $h_t p$ is
+true at $w$. Recursively encode a function $F$ by the graph
+\[
+ (h,a)\longmapsto\operatorname{app}_w(h_{\alpha\to\beta}F,a)
+       \qquad(a\in D_w(\alpha)).
+\]
+Arguments and outputs are encoded at their respective types.
+The proposition encoding is injective: it records every free bit.
+The function encoding is injective by induction, since it includes
+current application and all future application. Transport becomes
+the paper's inverse-image action on propositions and precomposition
+action on graphs. The truth clauses above are its six primitive
+clauses, and \eqref{eq:naturality} supplies its abstraction clause.
+We therefore obtain an action model in the paper's sense.
+Theorem~3.23 gives Classicism.
+
+In this model $\Box p$, defined as $p=\top$, is true at $v$ just when
+$p$ is true at every world accessible from $v$: equality with $\top$
+compares the whole outgoing truth profile.
+
+\medskip
+\noindent\textbf{4. BF, Boolean Completeness, and Atomicity.}
+For BF, suppose $\forall x\Box P(x)$ holds at $v$.
+Given $h:v\to w$ and $a\in D_w(\alpha)$, choose $b\in D_v(\alpha)$
+with $h_\alpha b=a$. The assumption at $b$ gives $P(a)$ at $w$,
+with the other parameters transported along $h$. Since $a$ and $h$
+were arbitrary, $\Box\forall xP(x)$ holds at $v$. This is the
+argument in Proposition~3.24(ii); it works at every world and type.
+
+For a relational type $\tau=\sigma_1\to\cdots\to\sigma_k\to t$, put
+$T_v=\prod_iD_v(\sigma_i)$. Simultaneous induction on the curried result
+type gives
+\[
+ M_\tau\cong 2^{T_u},\qquad D_s(\tau)\cong 2^{T_s}\times2^{T_u},
+\]
+\[
+ D_o(\tau)\cong 2^{T_o}\times
+ \{(S,(N_n)):S\in D_s(\tau),\ N_n\in M_\tau,\ jS=\lim_\U N_n\}.
+\]
+The case $k=0$ is the specified proposition carrier. At the arrow step,
+choose a current truth relation and compatible future operators. For each
+current argument, the result-type induction supplies the unique output
+with that truth section and those future components; ultralimit
+commutation with application gives compatibility. Conversely, application
+recovers these data uniquely. This also shows that the current relation
+at $s$ is independent of its terminal operator.
+
+All $T_n$ equal the fixed finite $T_u$. Thus $(N_n)$ determines the
+terminal component of $S$, leaving its current relation free, and
+\[
+ D_o(\tau)\cong 2^{T_o}\times2^{T_s}\times\prod_{n\geq1}2^{T_n}.
+\]
+The Boolean operations act coordinatewise. The source order
+$A\leq B$, meaning $B=A\OR B$ as whole objects, is therefore the product
+order. The root algebra is complete and atomic; at the other worlds the
+corresponding algebras are finite. Each factor is the powerset algebra of its tuple
+set. Arbitrary meets and joins are intersections and unions in each
+free coordinate. Each nonzero element contains a tuple in one of
+those coordinates; the element supported on that one tuple in that
+one coordinate is an atom below it. The empty tuple is used when
+$k=0$, so this includes propositions.
+
+To check the source formulas, let $Q\in D_v(\tau\to t)$ and form
+$S_Q=\{a\in D_v(\tau):Qa\text{ is true at }v\}$.
+Its internal meet $m$ belongs to $D_v(\tau)$. For each $z$ in that
+carrier,
+\[
+  (\text{for every }a\in S_Q,\ z\leq a)
+        \quad\Longleftrightarrow\quad z\leq m.
+\]
+This is the intended $\mathrm{GLB}_\tau(m,Q)$ clause, including
+when $S_Q$ is empty. The source formula
+\[
+ \mathrm{Atom}_\tau(y)\ \equiv\
+ \forall z\bigl((z\leq y\AND z\neq y)\IFF z\leq\NOT_\tau z\bigr)
+\]
+says that the strict lower elements of $y$ are precisely bottom.
+It excludes $y=\bot$ and holds exactly at the ordinary nonzero
+atoms. Hence Boolean Completeness and Atomicity hold at every
+world and every relational type, as do their boxed forms and
+$\Box\mathrm{BF}$. A GLB is chosen separately at the world where
+its existence is asserted. Neither Boolean Completeness nor its
+necessitation requires the transport of that GLB to be the GLB
+of the transported family.
+
+\medskip
+\noindent\textbf{5. The normalization loses its witness.}
+Put $w=(0,1,(0)_n)$ and $q=(0,0,(1)_n)$.
+The proposition $w$ is a root Boolean atom selecting $s$ (not a true
+root-world proposition). Since $\pi_s(q)=(0,1)$ is an atom of $\two^2$,
+$w\leq\Atom(q)$. But the actual extension of
+$F(p):=(w\leq(p=q))$ is
+\[
+ \{p:p_s=0\ \text{and}\ \{n:p_n=1\}\in\U\}.
+\]
+Its meet is $\bot$: the root bit can be zero, the $s$-bit is always zero,
+and each fixed $n$-bit can be zero in a member, using a cofinite set
+omitting $n$. Every member maps at $s$ to $(0,1)$, whereas its meet maps
+to $(0,0)$. Thus $w\not\leq(q=\bigwedge F)$, and the replacement is not
+possibly atomic. Completeness of both algebras does not make the
+surjective Boolean homomorphism $\pi_s$ preserve infinite meets.
+Indeed, the ambient intersection of the equality fiber, as sets of
+outgoing arrows, is $\{o\to u\}$. This is not a root proposition:
+zero terminal bits force a zero $u$-bit. Its greatest available lower
+bound is empty. The internal meet is not the ambient intersection.
+
+\medskip
+\noindent\textbf{6. Rigid Comprehension itself fails.}
+For a unary property the source definitions are
+\begin{align*}
+ \mathrm{Persistent}(Z)&\ \equiv\ Z\leq(\lambda x.\Box Zx),\\
+ \mathrm{Inextensible}(Z)&\ \equiv\
+ \Box\forall Y\bigl(\forall x(Zx\IC\Box Yx)\IC Z\leq Y\bigr).
+\end{align*}
+A rigid property satisfies both. Persistence says that at every
+accessible world, each instance remains an instance along every
+further arrow. The order $Z\leq Y$ at $v$ means inclusion of their
+extensions at every world accessible from $v$, not just at $v$.
+Write $Z_v$ for the current extension of the transported property.
+
+Write $a_0=(0,0)\in D_s(t)$ and set
+$A_0=\pi_s^{-1}(\{a_0\})$.
+Its $s$-image is $\{a_0\}$ and its $u$-image is $\{0\}$, but each
+$n$-image is all of $\two$: a sequence supported at a single $n$ still
+has ultralimit zero. Choose $X:t\to t$ with root extension $A_0$ and
+all future extensions empty. The displayed Boolean decomposition
+admits this property.
+
+Suppose that a rigid property $Z$ is coextensive with $X$ at $o$.
+Persistence forces $Z_n=\two$ for every $n$ and $a_0\in Z_s$.
+Carrier compatibility then forces $Z_u=\two$: its extension is the
+ultralimit of the $Z_n$, not the image along an arrow from a leaf to $u$.
+Now choose $B:t\to t$ with extensions
+\[
+ B_o=A_0,\qquad B_s=\{a_0\},\qquad B_n=B_u=\two.
+\]
+Every actual $Z$-instance necessarily satisfies $B$. Root
+inextensibility gives $Z\leq B$, hence $Z_s\subseteq\{a_0\}$;
+persistence gives the reverse inclusion.
+At $s$, however, the haecceity $Y$ of $a_0$ has extensions
+$Y_s=\{a_0\}$ and $Y_u=\{0\}$.
+Every $s$-instance of $Z$ necessarily satisfies $Y$, but $Z\leq Y$
+fails at $s$: the element $1\in Z_u$ is not in $Y_u$.
+This contradicts the $s$-instance of the \emph{outer-boxed}
+inextensibility condition. No rigid property is root-coextensive with
+$X$. The individual sort can remain a singleton throughout.
+The outer box is essential: $B$ satisfies persistence and the unboxed
+inextensibility clause at $o$, but fails source-defined inextensibility
+because that clause must also hold at $s$.
+
+\medskip
+\noindent\textbf{7. The full setup of footnote~42 is realized.}
+For $a\in A_0$, its haecceity has extension $\{a\}$ at $o$,
+$\{a_0\}$ at $s$, and $\{\pi_n a\}$ at each $n$.
+Let $X^*$ be the actual LUB of these haecceities.
+The root Boolean join is coordinatewise in the $o,s,n$ extensions;
+its $u$-extension is then determined by the ultrafilter. This gives
+\[
+ X^*_o=A_0,\qquad X^*_s=\{a_0\},\qquad X^*_n=X^*_u=\two.
+\]
+Take $z=q$ as a proposition-input object, and take a root property $Y$
+with $Y_o=\varnothing$, $Y_s=\{a_0\}$, and $Y_n=Y_u=\{0\}$.
+At $s$, every $X^*$-instance necessarily satisfies $Y$, while
+$X^*(z)\AND\NOT Y(z)$ has $s/u$-profile $(0,1)$. Thus
+\[
+ w\leq\bigl[\forall x(X^*(x)\IC\Box Y(x))\AND\Atom(q)
+        \AND q\leq(X^*(z)\AND\NOT Y(z))\bigr].
+\]
+These are the preceding witness conditions, with $q$ playing the role
+of the footnote's $w'$. Its equality-fiber meet is still bottom.
+
+\medskip
+\noindent\textbf{8. Source-text corrections.}
+On p.~24 the lower-bound clause reads
+$\forall y(Xy\IC y\leq z)$; the intended inequality is $z\leq y$.
+With the printed clause, Boolean Completeness contradicts Booleanism:
+for the singleton property of $\top$, the GLB condition at $z=\bot$
+equates the false $\top\leq\bot$ with the true $\bot\leq g$.
+We therefore use the ordinary intended lower-bound clause.
+Separately, footnote~42(ii) should cite Proposition~2.7 rather than~2.6,
+which presupposes $C5$. Neither correction supplies the meet-preservation
+step at issue.
+
+\medskip
+So the issue seems to be the assumed preservation of this meet, rather
+than a missing necessity operator on Boolean Completeness. The distinction is between existence of internal meets and their
+preservation under the action maps. The construction has the former,
+even at every world, but not the latter.
+\end{document}
