@@ -21,8 +21,7 @@ text \<open>
   Consequences: ≤τ is the pointwise order c211_pleq; x ≤ ¬x is
   c211_pempty; Atom and Atomicity are c211_patom and c211_patomic;
   □P quantifies over every outgoing arrow; c211_pcomplete suffices
-  for Boolean Completeness with the intended lower-bound clause
-  (pp.23–24). The printed LB clause is not used.
+  for Boolean Completeness (pp.23–24).
 \<close>
 
 subsection \<open>Order facts that need no model\<close>
@@ -1391,7 +1390,7 @@ lemmas c211_BC_valid = c211_sem.BC_valid[unfolded c211_sem_def]
 
 text \<open>
   Sources: Figure 1, p.6 (lifted ∨, ¬, ≤ and □); Boolean Completeness,
-  GLB and the intended LB, pp.23–24; Atom and Atomicity, p.24;
+  GLB and LB, pp.23–24; Atom and Atomicity, p.24;
   Definitions 3.18–3.20, pp.55–56. Every endpoint is generic: it holds
   in every action model over the standard stock. c211_pcomplete is only
   a sufficient condition for Boolean Completeness. None of these

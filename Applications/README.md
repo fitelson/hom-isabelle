@@ -12,8 +12,7 @@ Other local applications are not authorized for redistribution.
 source-model bridges, and calculations concerning the normalization in
 footnote 42 of the 1 July 2022 *Classicism* draft. Its
 [technical note](2.11/reports/NOTE_ON_PROPOSITION_2_11.pdf) presents a
-counterexample. Isabelle certifies the refutation end to end for Boolean
-Completeness with its intended lower-bound clause: every hypothesis
+counterexample. Isabelle certifies the refutation end to end: every hypothesis
 instance is valid in the model, the Rigid Comprehension instance at type
 t→t is not, so it is not derivable (`proposition_2_11_refuted`). See its
 [status](2.11/STATUS.md) and [contributor projects](2.11/CONTRIBUTING.md).

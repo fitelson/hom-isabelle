@@ -36,7 +36,7 @@ local
        else error ("2.11 refutation: premises in " ^ name) end)
   val report = "CLASSICISM-2.11-REFUTATION-AUDIT: " ^ string_of_int (length facts) ^
     " clean endpoints\n" ^
-    "SCOPE: Proposition 2.11 with the intended LB clause is refuted: in the concrete action model every Classicism theorem and every instance of □Atomicity, Boolean Completeness and BF is valid, the Rigid Comprehension instance at type t→t is not, hence it is not derivable in the smallest H-theory containing C and the hypotheses. Main theorem premise-free. HOL-ZF foundations.\n" ^
+    "SCOPE: Proposition 2.11 is refuted: in the concrete action model every Classicism theorem and every instance of □Atomicity, Boolean Completeness and BF is valid, the Rigid Comprehension instance at type t→t is not, hence it is not derivable in the smallest H-theory containing C and the hypotheses. Main theorem premise-free. HOL-ZF foundations.\n" ^
     cat_lines (map check (names ~~ facts)) ^ "\n"
   val statements = cat_lines (map (fn (name, thm) => name ^ ":\n" ^
     XML.content_of (YXML.parse_body (Syntax.string_of_term @{context} (Thm.prop_of thm))))

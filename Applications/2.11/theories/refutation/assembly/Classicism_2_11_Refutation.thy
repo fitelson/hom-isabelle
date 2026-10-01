@@ -4,7 +4,7 @@ theory Classicism_2_11_Refutation
     "Classicism_2_11_Rigidity.Classicism_2_11_Rigidity_Transfer"
 begin
 
-section \<open>Proposition 2.11 does not hold (with the intended lower-bound clause)\<close>
+section \<open>Proposition 2.11 does not hold\<close>
 
 text \<open>
   Proposition 2.11 (Classicism, 1 July 2022 draft, p.30): □Atomicity,
@@ -17,10 +17,6 @@ text \<open>
   relational type, BF at every R type and formula), but the Rigid
   Comprehension instance for properties of propositions is false at its
   root. By soundness of c211_proves, that instance is not derivable.
-
-  Boolean Completeness uses the intended LB clause ∀y(Xy → z ≤ y). With
-  the clause as printed on p.24, Boolean Completeness contradicts
-  Booleanism, so no countermodel to the literal text exists.
 \<close>
 
 abbreviation c211_model :: "'c ssignature \<Rightarrow> bool" where

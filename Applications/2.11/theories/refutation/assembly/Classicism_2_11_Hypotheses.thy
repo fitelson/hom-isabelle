@@ -9,8 +9,7 @@ begin
 section \<open>Every hypothesis of Proposition 2.11 holds in the concrete model\<close>
 
 text \<open>
-  □Atomicity and Boolean Completeness (with the intended lower-bound
-  clause) at every relational type, and every BF instance, are valid in
+  □Atomicity and Boolean Completeness at every relational type, and every BF instance, are valid in
   the concrete action model in the sense of Definition 3.20: true at the
   root identity arrow under every typed adequate assignment.
   The order-theoretic content comes from the raw lattice theorems at

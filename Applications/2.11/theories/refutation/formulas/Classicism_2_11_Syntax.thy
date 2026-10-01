@@ -12,11 +12,6 @@ text \<open>
   Atomicity and Atom, p.24; BF, p.20; Rigid and Rigid Comprehension,
   pp.27–28; Proposition 2.11, p.30.
 
-  LB is the intended lower-bound clause ∀y(Xy → z ≤ y). The printed
-  clause ∀y(Xy → y ≤ z) is kept separately as c211_LB_printed; with it,
-  Boolean Completeness contradicts Booleanism (see the technical note).
-  Every refutation endpoint below therefore concerns the corrected LB.
-
   All terms use the standard rich stock. Operators are closed λ-terms,
   applied by NApp, so no substitution or capture-avoidance is needed to
   form a formula. Within each defining body, binders that need
@@ -122,21 +117,13 @@ definition c211_box_atomicity :: "otype \<Rightarrow> 'c paper_named_term" where
 
 subsection \<open>Boolean Completeness, pp.23–24\<close>
 
-text \<open>LBτ := λz X.∀y(Xy → z ≤τ y), the intended clause.\<close>
+text \<open>LBτ := λz X.∀y(Xy → z ≤τ y).\<close>
 
 definition c211_LB :: "otype \<Rightarrow> 'c paper_named_term" where
   "c211_LB \<tau> = NLam (c211_v \<tau> 9) (NLam (c211_v (Arr \<tau> Prop) 0)
     (named_paper_all \<tau> (NLam (c211_v \<tau> 10)
       (c211_imp (NApp (NVar (c211_v (Arr \<tau> Prop) 0)) (NVar (c211_v \<tau> 10)))
         (c211_le \<tau> (NVar (c211_v \<tau> 9)) (NVar (c211_v \<tau> 10)))))))"
-
-text \<open>The clause as printed on p.24 (inequality reversed); not used below.\<close>
-
-definition c211_LB_printed :: "otype \<Rightarrow> 'c paper_named_term" where
-  "c211_LB_printed \<tau> = NLam (c211_v \<tau> 9) (NLam (c211_v (Arr \<tau> Prop) 0)
-    (named_paper_all \<tau> (NLam (c211_v \<tau> 10)
-      (c211_imp (NApp (NVar (c211_v (Arr \<tau> Prop) 0)) (NVar (c211_v \<tau> 10)))
-        (c211_le \<tau> (NVar (c211_v \<tau> 10)) (NVar (c211_v \<tau> 9)))))))"
 
 text \<open>GLBτ := λy X.∀z(LBτ z X ↔ z ≤τ y).\<close>
 
@@ -411,21 +398,6 @@ proof -
     by (intro c211_all_language[OF tt] c211_connective_language c211_le_language[OF rt]
         paper_R_language_App[OF c211_lang_Var[OF pt]] c211_lang_Var[OF tt])
   show ?thesis unfolding c211_LB_def
-    by (rule c211_lang_Lam[OF c211_lang_Lam[OF body pt] tt]) simp_all
-qed
-
-lemma c211_LB_printed_language:
-  assumes rt: "paper_R_relational \<tau>"
-  shows "paper_R_in_language \<Sigma> c211_G (c211_LB_printed \<tau>) (Arr \<tau> (Arr (Arr \<tau> Prop) Prop))"
-proof -
-  have tt: "paper_R_type \<tau>" by (rule c211_relational_type[OF rt])
-  have pt: "paper_R_type (Arr \<tau> Prop)" by (rule c211_pred_type[OF rt])
-  have body: "paper_R_in_language \<Sigma> c211_G (named_paper_all \<tau> (NLam (c211_v \<tau> 10)
-      (c211_imp (NApp (NVar (c211_v (Arr \<tau> Prop) 0)) (NVar (c211_v \<tau> 10)))
-        (c211_le \<tau> (NVar (c211_v \<tau> 10)) (NVar (c211_v \<tau> 9)))))) Prop"
-    by (intro c211_all_language[OF tt] c211_connective_language c211_le_language[OF rt]
-        paper_R_language_App[OF c211_lang_Var[OF pt]] c211_lang_Var[OF tt])
-  show ?thesis unfolding c211_LB_printed_def
     by (rule c211_lang_Lam[OF c211_lang_Lam[OF body pt] tt]) simp_all
 qed
 

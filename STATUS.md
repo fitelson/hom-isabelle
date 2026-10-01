@@ -4,8 +4,7 @@
 
 The separately checked [2.11 application](Applications/2.11/README.md)
 constructs a literal paper action model and certifies, end to end, that
-Proposition 2.11 fails for Boolean Completeness with its intended
-lower-bound clause: the Rigid Comprehension instance at type t→t is not
+Proposition 2.11 fails: the Rigid Comprehension instance at type t→t is not
 derivable from Classicism, □Atomicity, Boolean Completeness and BF. Its
 [status](Applications/2.11/STATUS.md) records the exact scope. This
 addition changes no core theorem or core ROOT selection, and does not

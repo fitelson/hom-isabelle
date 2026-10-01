@@ -19,7 +19,7 @@ claim that Bacon or Dorr supplied this particular model.
 | Definition 3.20, term-level totality | `concrete_paper_term_totality` | Every R-language term, legitimate root arrow, typed adequate partial assignment |
 | Theorem 3.23, soundness corollary | `concrete_paper_classicism_truth` | Every paper-R C theorem is true at every root arrow under a typed adequate assignment in the constructed model |
 | Figure 1, p.6: lifted ¬, ∧, ∨; □; ≤ | `c211_not`, `c211_and`, `c211_or`, `paper_R_named_box`, `c211_leq` | Closed named-syntax λ-terms over the standard stock |
-| Boolean Completeness, GLB, LB, pp.23–24 | `c211_BC`, `c211_GLB`, `c211_LB` (`c211_LB_printed`) | Intended LB clause ∀y(Xy → z ≤ y); the printed clause is kept separately and unused |
+| Boolean Completeness, GLB, LB, pp.23–24 | `c211_BC`, `c211_GLB`, `c211_LB` | LB is ∀y(Xy → z ≤ y) |
 | Atom, Atomicity, p.24; □Atomicity | `c211_atom`, `c211_atomicity`, `c211_box_atomicity` | Literal biconditional and disjunction |
 | BF, p.20 | `c211_BF` | Every R type σ, binder, formula P (open or closed) |
 | Rigid, Rigid Comprehension, pp.27–28 | `c211_rigid`, `c211_RC` | Vector form; refuted instance `c211_RC [Prop]` (type t→t) |
@@ -29,7 +29,7 @@ claim that Bacon or Dorr supplied this particular model.
 | Proposition 3.24(ii), p.58 and fn.80 | `c211_BF_valid`, `c211_BF_concrete` | Root-arrow surjectivity gives every BF instance |
 | Complete atomic relational algebras (note §4) | `c211_root_realize_ex1`, `c211_rleq_root`, `c211_rcur_limit_ulim`, `c211_raw_complete`, `c211_raw_atomic`, `c211_transfer_complete`, `c211_transfer_atomic` | Every world; limit coordinate rebuilt by ultralimit |
 | Failure of Rigid Comprehension (note §6) | `c211_raw_rigid_A0_fails`, `c211_prigid_transfer`, `c211_concrete_pRC_false`, `c211_conclusion_not_valid` | Outer □ instance at the intermediate world |
-| **Proposition 2.11 refuted** | **`proposition_2_11_refuted`** | Premise-free; intended LB clause |
+| **Proposition 2.11 refuted** | **`proposition_2_11_refuted`** | Premise-free |
 
 The three representations must not be conflated. `Typed_*` first constructs
 compatible tuples and graphs; `Typed_Source_*` encodes them as the book's

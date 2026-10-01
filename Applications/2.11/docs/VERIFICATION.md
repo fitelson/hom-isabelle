@@ -85,10 +85,9 @@ SOME-selected witnesses whose specifications are proved) and the standard
 library's free-ultrafilter existence theorem are foundational dependencies;
 the application introduces no additional axioms.
 
-The refutation uses the intended lower-bound clause of Boolean
-Completeness. It does not certify the boxed forms □Boolean Completeness or
-□BF, the footnote's actual-LUB identification, or the inconsistency of the
-printed clause; none of these is needed for the refutation.
+The refutation does not certify the boxed forms □Boolean Completeness or
+□BF, or the footnote's actual-LUB identification; neither is needed for
+the refutation.
 
 ## Recorded checkpoint
 

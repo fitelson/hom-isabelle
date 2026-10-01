@@ -10,8 +10,7 @@ text \<open>
   instances themselves, unnecessitated except for □Atomicity:
   □Atomicity and Boolean Completeness at every relational type
   (including t), BF at every R type σ (including e), every binder of
-  type σ, and every R formula P, open or closed. Boolean Completeness
-  uses the intended lower-bound clause (c211_LB).
+  type σ, and every R formula P, open or closed.
 
   The conclusion refuted is the Rigid Comprehension instance for
   monadic properties of propositions, type t→t.

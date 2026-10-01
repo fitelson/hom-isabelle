@@ -1,7 +1,7 @@
 # Checked scope
 
-30 September 2026. **Proposition 2.11, with its intended lower-bound
-clause, is refuted by an end-to-end Isabelle certificate.** The main theorem
+30 September 2026. **Proposition 2.11 is refuted by an end-to-end
+Isabelle certificate.** The main theorem
 
 ```
 proposition_2_11_refuted:
@@ -29,19 +29,14 @@ direction.
 | Concrete relational carriers: realization (existence and uniqueness from free coordinates), coordinate order, ultralimit of relations, GLB-completeness and atomicity at every world | Checked; the limit coordinate is always rebuilt by ultralimit, never intersected |
 | Every instance of □Atomicity and Boolean Completeness (all relational types) and BF (all R types, all formulas) is valid in the concrete model | Checked (`c211_hypotheses_valid`) |
 | The Rigid Comprehension instance at t→t is false at the root | Checked (`c211_conclusion_not_valid`) |
-| **Proposition 2.11 (corrected LB) does not hold** | **Checked (`proposition_2_11_refuted`)** |
+| **Proposition 2.11 does not hold** | **Checked (`proposition_2_11_refuted`)** |
 
-The refutation concerns the intended lower-bound clause ∀y(Xy → z ≤ y).
-The printed clause on p. 24 has the inequality reversed; with it Boolean
-Completeness contradicts Booleanism, so no countermodel to the literal text
-exists. The printed clause is kept in the sources as `c211_LB_printed` but is
-not used. The reference to Proposition 2.6 in footnote 42(ii) should be to
-2.7. Neither repair supplies the meet preservation used by the normalization.
+The reference to Proposition 2.6 in footnote 42(ii) should be to 2.7.
+This does not supply the meet preservation used by the normalization.
 
 Not machine-checked, and not needed for the refutation: the boxed forms
-□Boolean Completeness and □BF, the identification of the footnote's X* with
-an actual LUB, and an object-language proof that the printed LB clause is
-inconsistent. The note's mathematical argument for these remains review
+□Boolean Completeness and □BF, and the identification of the footnote's X*
+with an actual LUB. The note's mathematical argument for these remains review
 evidence only.
 
 Independent review: the joint Opus 5.5 High / Astra High audit of the note

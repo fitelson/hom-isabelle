@@ -17,7 +17,7 @@ estimates are not used as timing evidence.
 ## Agreed result and limits
 
 Both participants independently accepted the mathematical counterexample
-under the intended ordinary GLB/LUB reading. They checked the arbitrary-type
+under the ordinary GLB/LUB reading. They checked the arbitrary-type
 construction, complete atomic relational algebras, surjective maps and BF,
 the full normalization witness, and the failure of Rigid Comprehension for
 every proposed rigid property with the designated current extension.
@@ -49,7 +49,7 @@ Consensus is review evidence, not a replacement for kernel checking.
 | The relational Boolean decomposition was stated too tersely | Added the simultaneous induction, the compatibility condition, and the identification of the source order with product order |
 | Internal meet could be confused with ambient intersection | Added the unavailable singleton outgoing-arrow set {o→u} and explained why its internal lower bound is empty |
 | The role of the outer □ needed sharper wording | Explained that carrier compatibility forces the u-extension; distinguished the unboxed clause at o from source-defined inextensibility |
-| Source editorial corrections needed precise logical scope | Qualified the printed LB problem by Booleanism; did not introduce the audit's withdrawn H-only assertion; recorded the 2.6→2.7 citation correction |
+| Source editorial corrections needed precise logical scope | Did not introduce the audit's withdrawn H-only assertion; recorded the 2.6→2.7 citation correction |
 | Audit inspection via build_log returned no text | Replaced it with the tested export command and actual build evidence |
 | The C-validity consequence was only implicit in the application | Added and checked `concrete_paper_classicism_truth`, a direct instance of the existing generic soundness theorem |
 | Leaf numbering differs between note and implementation | Documented the harmless index renaming |

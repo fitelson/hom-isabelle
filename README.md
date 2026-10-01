@@ -149,9 +149,7 @@ by including an application.
 
 The [Proposition 2.11 application](Applications/2.11/README.md) constructs
 a model in the paper's literal action-model semantics and certifies end to
-end that Proposition 2.11 fails, for Boolean Completeness with its intended
-lower-bound clause (with the clause as printed, Boolean Completeness
-contradicts Booleanism).
+end that Proposition 2.11 fails.
 Check it independently with `./Applications/2.11/check_isabelle.sh`.
 
 ## Contributing

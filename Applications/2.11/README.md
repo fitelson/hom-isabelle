@@ -7,15 +7,12 @@ Comprehension**, in the 1 July 2022 draft of Bacon and Dorr's *Classicism*
 
 The [technical note](reports/NOTE_ON_PROPOSITION_2_11.pdf) gives the
 counterexample and its mathematical argument. **Isabelle now certifies the
-refutation end to end**, for Boolean Completeness with its intended
-lower-bound clause: in the concrete action model every Classicism theorem
+refutation end to end**: in the concrete action model every Classicism theorem
 and every instance of □Atomicity, Boolean Completeness and BF is valid,
 while the Rigid Comprehension instance for properties of propositions is
 false, so that instance is not derivable in the smallest H-theory
 containing Classicism and the hypotheses (`proposition_2_11_refuted`, with
-no premises). With the lower-bound clause exactly as printed, Boolean
-Completeness contradicts Booleanism, so no countermodel to the literal text
-exists.
+no premises).
 
 ## The idea
 

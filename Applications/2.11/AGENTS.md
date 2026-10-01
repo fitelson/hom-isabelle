@@ -20,15 +20,12 @@ and operator closure; the book's exact model and interpretation; the paper's
 literal Definitions 3.18–3.20; and the refutation layer under
 `theories/refutation/` (object-language formulas, the consequence relation
 `c211_proves`, generic semantics, concrete lattice and rigidity results).
-The end-to-end refutation `proposition_2_11_refuted` is checked for the
-intended lower-bound clause; always state that qualification. Do not claim
-the boxed hypotheses, the footnote's actual-LUB identification or the
-printed-clause inconsistency as machine-checked; they are not.
+The end-to-end refutation `proposition_2_11_refuted` is checked. Do not
+claim the boxed hypotheses or the footnote's actual-LUB identification as
+machine-checked; they are not.
 
 Use published terminology and readable Unicode prose. Do not confuse
 the atom selecting the intermediate world with an atom true at the root.
-The paper's displayed LB inequality is reversed; the mathematical note
-uses ordinary intended lower bounds, not that malformed literal formula.
 
 Only this application and Goodman are authorized for public inclusion.
 Do not publish other local applications, source PDFs, private research

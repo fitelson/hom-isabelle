@@ -1,8 +1,7 @@
 # Contributor projects
 
 Start with the technical note and the exact scope in STATUS.md. The
-end-to-end refutation of Proposition 2.11 (intended lower-bound clause) is
-checked. The following are genuine optional extensions, not obligations of
+end-to-end refutation of Proposition 2.11 is checked. The following are genuine optional extensions, not obligations of
 that refutation.
 
 1. **Boxed hypotheses.** Certify □Boolean Completeness and □BF in the
@@ -13,10 +12,7 @@ that refutation.
 2. **Footnote 42 in full.** Identify the footnote's X* with an actual LUB of
    the designated haecceities and certify the witness conditions as source
    formulas; relate them to the checked normalization calculations.
-3. **The printed lower-bound clause.** Prove in the object language (or
-   semantically in every action model) that Boolean Completeness with the
-   printed clause `c211_LB_printed` contradicts Booleanism.
-4. **The repair condition.** Isolate a sufficient meet-preservation or
+3. **The repair condition.** Isolate a sufficient meet-preservation or
    principal-fiber condition under which the normalization is valid, and
    check exactly which additional principles imply it. Do not assume that
    surjective Boolean homomorphisms between complete algebras preserve
