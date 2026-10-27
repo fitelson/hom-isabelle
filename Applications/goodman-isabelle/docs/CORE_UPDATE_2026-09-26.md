@@ -134,3 +134,16 @@ Goodman check and export passed (exit 0, 4 minutes 9 seconds, 60 sessions,
 87 catalogs, 1,708 integration entries and 9 replay entries, all identical
 to the retained certificates; two provenance proof-node counts changed).
 
+
+## Isabelle2026 refresh, 27 October 2026
+
+The development moved from Isabelle2025-2 to Isabelle2026. One core change
+was needed: Isabelle2026 reserves `options` as an outer-syntax keyword, so
+the proof-local fact `options` in `sclose_lookup`
+(`theories/base/source_vocabulary/Bacon_Source_Closing_Structure.thy`) was
+renamed `some_eq`. No theorem statement, definition or proof step changed.
+The pin was refreshed for that file only: 1,473 entries, one changed, none
+added or removed, base revision unchanged. Under Isabelle2026 the full core
+check passed (exit 0, 33 sessions), and the full serial Goodman check and
+export passed (exit 0, 5 minutes 18 seconds, 87 catalogs, 1,708 integration
+entries and 9 replay entries, all identical to the retained certificates).

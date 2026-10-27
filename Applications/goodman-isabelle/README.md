@@ -63,7 +63,7 @@ cd hom-isabelle/Applications/goodman-isabelle
 ./check_isabelle.sh --export
 ```
 
-Use **Isabelle2025-2**, Python **3.9 or newer**, Git, and a Unix environment
+Use **Isabelle2026**, Python **3.9 or newer**, Git, and a Unix environment
 (macOS or Linux; Windows users can use a suitable Linux environment).
 Put `isabelle` on PATH. The build itself needs no AI account, Vampire,
 source PDFs, or access to the old research checkout. First builds take

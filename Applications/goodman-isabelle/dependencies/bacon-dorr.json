@@ -2,7 +2,7 @@
   "embedded_revision_policy": "Exact ROOT/ROOTS and theory/ML source hashes are authoritative in Applications layout; parent commits may change application/docs without changing core sources.",
   "repository": "https://github.com/fitelson/hom-isabelle.git",
   "revision": "57ccf8e43b01f1431b195ae279bb0d4257abc194",
-  "source_checkpoint": "2026-09-26 comprehensive repository audit checkpoint (λI development through completeness with its regression session, H-BBK and ZF audit-coverage additions, comment/documentation corrections; independently reviewed; full core check exit 0, 33 sessions, 1,462 theories)",
+  "source_checkpoint": "2026-09-26 comprehensive repository audit checkpoint (λI development through completeness with its regression session, H-BBK and ZF audit-coverage additions, comment/documentation corrections; independently reviewed; full core check exit 0, 33 sessions, 1,462 theories); 2026-10-27 Isabelle2026 compatibility rename of one proof-local fact (full core check exit 0 under Isabelle2026)",
   "review": "docs/CORE_UPDATE_2026-09-26.md",
   "sha256": {
     "ROOT": "ccfb80dbd4e7b905f595e14f9959075e9942b474bcc6f698f44850a71dcce413",
@@ -449,7 +449,7 @@
     "theories/base/source_vocabulary/Bacon_Source_Closed_Proof_Preservation.thy": "6649337d865838496c43a3e6d27f0935f26b525422cbb36a93cdf56a231381ce",
     "theories/base/source_vocabulary/Bacon_Source_Closed_Set_Preservation.thy": "d205e8461e81106fe879869bcfb5725dc64f79ee428f37e4d0542d10bca46e56",
     "theories/base/source_vocabulary/Bacon_Source_Closing_Proof_Transport.thy": "3ebaa041c8dd1136789356d49fdf00a96194ec4dd773d52332cb7246011b60cd",
-    "theories/base/source_vocabulary/Bacon_Source_Closing_Structure.thy": "13402c0b835a69a203b1307d7eb7f0db2b86215f2b620e48b87f7df91eb35554",
+    "theories/base/source_vocabulary/Bacon_Source_Closing_Structure.thy": "f7114390981f90f32d3ed90eab5a71c6cae534a826e26d16c0275a11ce09d401",
     "theories/base/source_vocabulary/Bacon_Source_Consistency_Basics.thy": "29ec5a17d033de652941965d4875d523248fbfc1288370a42b6e44601d29582d",
     "theories/base/source_vocabulary/Bacon_Source_Consistency_Correspondence.thy": "3612bbbd1d05756a3ac7f82d11e7f5f57c1c7d5333ff5441635c7e6ab50b49a5",
     "theories/base/source_vocabulary/Bacon_Source_Conversion.thy": "46da9ee761676dd56782b568febe319830a82d75f07d143885058abe3db2f0d7",

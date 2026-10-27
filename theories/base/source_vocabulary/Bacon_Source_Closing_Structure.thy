@@ -90,8 +90,8 @@ lemma sclose_lookup:
 proof (cases "k = n")
   case True
   have at_n: "lookup \<Gamma> n = Some \<rho>" using index by (simp only: True)
-  have options: "Some \<sigma> = Some \<rho>" by (rule trans[OF sym[OF variable] at_n])
-  have same_type: "\<sigma> = \<rho>" using options by (simp only: option.inject)
+  have some_eq: "Some \<sigma> = Some \<rho>" by (rule trans[OF sym[OF variable] at_n])
+  have same_type: "\<sigma> = \<rho>" using some_eq by (simp only: option.inject)
   show ?thesis by (simp add: True same_type)
 next
   case False

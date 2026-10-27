@@ -2,7 +2,7 @@
 
 ## Requirements and dependency
 
-Use Isabelle2025-2, Python 3.9+, Git, and a Unix environment. The checker
+Use Isabelle2026, Python 3.9+, Git, and a Unix environment. The checker
 uses `fcntl` locking and `pgrep` (provided on macOS; normally by procps on
 Linux). The core sources must match the baseline in
 [bacon-dorr.json](../dependencies/bacon-dorr.json), including ROOT, any ROOTS,

@@ -83,7 +83,7 @@ to submit it for review. See the contributor guide before changing a theorem.
 
 ## Check the development
 
-Install **Isabelle2025-2**, put its `bin` directory on your PATH, and install
+Install **Isabelle2026**, put its `bin` directory on your PATH, and install
 Python **3.9 or newer**. This is the required API floor, not a tested
 compatibility matrix for every Python version and platform. Run from the
 repository root:
