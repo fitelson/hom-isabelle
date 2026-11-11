@@ -132,14 +132,9 @@ private research records are not distributed.
 
 The [Applications folder](Applications/README.md) includes
 [Goodman's Purity of Pure project](Applications/goodman-isabelle/README.md).
-It includes verified results, a report and a contributor roadmap. Goodman's
-consistency question was answered negatively on 11 November 2026: Purity of
-Pure at type t→t is inconsistent with unary Recombination and a fundamental
-proposition. The application has the
-[proof note](Applications/goodman-isabelle/reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.pdf),
-its Isabelle derivation, and the
-[exact scope](Applications/goodman-isabelle/STATUS.md). It is an ordinary
-subfolder, not a submodule or a separate-access private component.
+It includes verified results, a report and a contributor roadmap; Goodman's
+consistency question remains open. It is an ordinary subfolder, not a
+submodule or a separate-access private component.
 
 The default checker above remains a core check. To check Goodman and export
 its audit statements, run the following separately, never concurrently with

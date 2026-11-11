@@ -10,7 +10,6 @@ isabelle-kg/
 export/
 *.pdf
 !reports/GOODMAN_VERIFICATION_REPORT_2026-09-20.pdf
-!reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.pdf
 reports/build/
 *.claude-stream.jsonl
 .env

@@ -1,16 +1,5 @@
 # Source claims and Isabelle entry points
 
-## The Question (notes p.1), answered 11 November 2026
-
-| Source item | Entry point | Scope |
-|---|---|---|
-| The Question: is PP consistent with the theory and a fundamental proposition? | [Theorem 1](../theories/pp_refutation/theorem1/Goodman_PP_Refutation_Theorem1.thy): `gr_Theorem1_R`, `gr_Theorem1_funp`, `gr_Theorem1_Fun`; [packaging](../theories/pp_refutation/packaging/Goodman_PP_Refutation_Packaging.thy): `gr_native_recombination_PP_refutation`, `gr_native_QLN_PP_inconsistent` | No. The Purity schema, Application closure and PP at t→t refute every fun′ proposition; with unary Recombination they refute a fundamental proposition. Both the Recombination-only and the full-QLN packages are inconsistent. Axiom extension only; native endpoints assume `sg_rich G`. |
-| Standing assumption of notes §4 (PP at t→t and a fun′ proposition) | `gr_native_T6_core_no_fun_prime` | Inconsistent. T5 and the T6 routes below remain theorems but are vacuous. |
-| The hand proof | [Note (PDF)](../reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.pdf), [item-by-item correspondence](PP_REFUTATION_CORRESPONDENCE.md) | Lemmas 1–6 and Theorem 1 each have a theory; every numbered formula has a named theorem. |
-
-The rows below predate this result. They describe what was verified about
-Goodman's notes and are unchanged.
-
 Current detailed ledger: [20 September reconciliation](RECONCILIATION_2026-09-20.md).
 The [report](../reports/GOODMAN_VERIFICATION_REPORT_2026-09-20.pdf) incorporates
 accepted tasks 1–5; tasks 6–9 remain open contributor projects.

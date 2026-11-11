@@ -10,19 +10,6 @@ The earlier report remains unchanged outside this repository.
 
 ## Completion boundary
 
-**11 November addendum:** Goodman's consistency question has since been
-answered negatively. The Purity schema, Application closure and PP at t→t
-refute the existence of a fun′ proposition, and with unary Recombination the
-existence of a fundamental proposition; the Recombination-only and full-QLN
-packages with PP are inconsistent. See [STATUS.md](../STATUS.md), the
-[note](../reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.pdf) and its
-[correspondence table](PP_REFUTATION_CORRESPONDENCE.md). The classifications
-below are a dated record and are not rewritten. Read them with three changes:
-every statement that the consistency question is open is superseded; T5, the
-four T6 routes and "Attack 4" concern stocks now known to be inconsistent, so
-those results are vacuous; and the M1 classifier question of task 6 has an
-indirect negative answer that is not yet a cataloged theorem.
-
 **26 September addendum:** core generic full-C soundness and countably
 declared-signature completeness are complete in their explicit nontrivial-
 model/minimal-language scope. The application adopts the reviewed source

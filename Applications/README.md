@@ -31,9 +31,7 @@ a [report](goodman-isabelle/reports/GOODMAN_VERIFICATION_REPORT_2026-09-20.pdf),
 [source ledger](goodman-isabelle/docs/RECONCILIATION_2026-09-20.md), and
 [contributor projects](goodman-isabelle/CONTRIBUTING.md). Tasks 1–5 are
 accepted; tasks 6–9 remain open for contributors. The consistency question
-itself was answered negatively on 11 November 2026: see the application's
-[status](goodman-isabelle/STATUS.md) and the
-[proof note](goodman-isabelle/reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.pdf).
+itself is open.
 
 From the repository root, run checks **serially**:
 

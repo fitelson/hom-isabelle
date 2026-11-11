@@ -423,38 +423,3 @@ session Goodman_Integration_General_M1 in "theories/general_m1" = Goodman_Integr
   theories
     Goodman_General_M1_Native_Semantics
     Goodman_General_M1_Native_Semantics_Audit
-
-session Goodman_Integration_PP_Refutation_Kit in "theories/pp_refutation/kit" = Goodman_Integration_M5_Object +
-  options [timeout = 60, export_theory = true]
-  theories
-    Goodman_PP_Refutation_Kit
-
-session Goodman_Integration_PP_Refutation_Logic in "theories/pp_refutation/logic" = Goodman_Integration_PP_Refutation_Kit +
-  options [timeout = 60, export_theory = true]
-  theories
-    Goodman_PP_Refutation_Objects_Logic
-    Goodman_PP_Refutation_Lemma1
-    Goodman_PP_Refutation_Lemma2
-    Goodman_PP_Refutation_Lemma3
-
-session Goodman_Integration_PP_Refutation_Stages in "theories/pp_refutation/stages" = Goodman_Integration_PP_Refutation_Logic +
-  options [timeout = 60, export_theory = true]
-  theories
-    Goodman_PP_Refutation_Objects_Stage
-    Goodman_PP_Refutation_Objects_Induction
-    Goodman_PP_Refutation_Lemma4
-    Goodman_PP_Refutation_Objects_Lemma5
-    Goodman_PP_Refutation_Lemma5
-    Goodman_PP_Refutation_Lemma6
-
-session Goodman_Integration_PP_Refutation_Theorem1 in "theories/pp_refutation/theorem1" = Goodman_Integration_PP_Refutation_Stages +
-  options [timeout = 60, export_theory = true]
-  theories
-    Goodman_PP_Refutation_Objects_Theorem1
-    Goodman_PP_Refutation_Theorem1
-
-session Goodman_Integration_PP_Refutation_Packaging in "theories/pp_refutation/packaging" = Goodman_Integration_PP_Refutation_Theorem1 +
-  options [timeout = 60, export_theory = true]
-  theories
-    Goodman_PP_Refutation_Packaging
-    Goodman_PP_Refutation_Audit

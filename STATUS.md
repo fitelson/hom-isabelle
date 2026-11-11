@@ -1,21 +1,5 @@
 # Verification status
 
-## Goodman application, 11 November 2026
-
-The separately checked [Goodman application](Applications/goodman-isabelle/README.md)
-now answers Goodman's consistency question negatively. The background theory
-with the Purity schema, Application closure and Purity of Pure at type t→t
-proves that there is no fun′ proposition; with unary Recombination it proves
-that there is no fundamental proposition. The Recombination-only and full-QLN
-packages with PP are therefore inconsistent. The application contains the
-[proof note](Applications/goodman-isabelle/reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.pdf),
-an Isabelle derivation that follows it item by item, and a
-[status](Applications/goodman-isabelle/STATUS.md) recording the exact scope:
-the result concerns the axiom extension, is checked with Isabelle2026, and has
-not yet been independently refereed. This
-addition changes no core theorem or core ROOT selection, and does not extend
-the core audit coverage.
-
 ## Proposition 2.11 application, 30 September 2026
 
 The separately checked [2.11 application](Applications/2.11/README.md)

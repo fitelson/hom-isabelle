@@ -105,14 +105,6 @@ audit in session `Goodman_Integration_Exact_QLN`). The `unselected_theories` lis
 The main core's own selected dependency sessions are built as needed; this
 does not run every unrelated session in the core repository.
 
-The five PP refutation sessions under `theories/pp_refutation/` were added
-on 11 November 2026 and are selected. Their audit theory checks more than
-the kernel fields: the build fails if any endpoint of the note depends on an
-imported theorem that refutes a stock outright, or if the recorded use of
-the added axioms does not hold. They were first checked with Isabelle2025-2
-and have since passed the full build with Isabelle2026; see
-[verification/README.md](../verification/README.md).
-
 The current catalog count excludes nine historical central-stock replay
 entries from the integration total. `audit_summary` in `tools/check.py`
 reports both counts rather than silently folding them together. Exports
