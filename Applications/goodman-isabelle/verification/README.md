@@ -41,8 +41,11 @@ Of the 170 exported files, 168 are byte-identical to the retained copies.
 `m5-nested-collision-audit.txt` and `wi-master-transfer-audit.txt` differ
 only in their DIRECT-PROVENANCE proof-node counts under Isabelle2026
 (45,179→39,854 and 46,568→41,201); their endpoint lists and kernel fields are
-unchanged. Those two retained files were left as they were. No commit, push
-or upload was performed for this checkpoint.
+unchanged. Those two retained files were then refreshed from this export, so
+all 170 retained files match the Isabelle2026 export. The proof-node counts
+change because Isabelle2026 produces different proof terms; the provenance
+verdicts (no historical collision, collapse, refutation or ex-falso endpoint
+used) are the same.
 
 ## Core update — 26 September 2026 (third pin refresh; full build passed)
 
