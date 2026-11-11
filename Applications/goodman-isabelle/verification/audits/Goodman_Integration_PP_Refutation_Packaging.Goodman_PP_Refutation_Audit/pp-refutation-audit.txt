@@ -1,0 +1,187 @@
+PP-REFUTATION-AUDIT: 78 clean endpoints
+SCOPE: formalization of the note Purity of Pure and Recombination (11 November 2026), in the note's order: 66 endpoints for its objects, Lemmas 1-6 and Theorem 1 (stock T0 = purity schema + application closure; T = T0 + PP at type Prop->Prop; Lemmas 1-3 use no added axiom), then 12 packaging endpoints BEYOND THE NOTE (refutation of pp_recombination_PP_axioms and pp_full_QLN_PP_axioms in the constructor calculus; native transfer to gb_recombination_PP_axioms and gb_zeroary_unary_QLN_PP_axioms under sg_rich; native fun-prime statement over gb_T6_core).
+DIRECT-PROVENANCE: note endpoints: 7218 proof nodes traversed, 1351 named theorems; stock-refuting (explosive) theorems reached: NONE.
+DIRECT-PROVENANCE: packaging endpoints: 26722 proof nodes traversed, 3651 named theorems; stock-refuting (explosive) theorems reached: gr_full_QLN_PP_refutation, gr_native_recombination_PP_refutation, gr_recombination_PP_refutation (all proved in Goodman_PP_Refutation_Packaging; no imported one).
+STOCK-USE: Lemmas 1-3 (and objects): does not depend on CEV_axiom_proves.Axiom
+STOCK-USE: Lemmas 4-5: does not depend on gr_Th_PP
+STOCK-USE: Lemmas 4-5: depends on CEV_axiom_proves.Axiom
+STOCK-USE: gr_Theorem1_R, gr_Theorem1_funp: depends on gr_Th_PP
+STOCK-USE: gr_Theorem1_R, gr_Theorem1_funp: depends on CEV_axiom_necessitation
+STOCK-USE: gr_Theorem1_R, gr_Theorem1_funp: does not depend on gr_unary_recombination_inst
+STOCK-USE: gr_Theorem1_Fun: depends on gr_unary_recombination_inst
+STOCK-USE: gr_native_recombination_PP_refutation: depends on gr_Theorem1_Fun
+== OBJECTS (1)-(3), g: closed logical terms
+gr_Sigma_logical: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_L_logical: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_g_logical: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+
+== LEMMA 1: (4), (5), (6), (7)
+gr_Lemma1_4: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gr_Lemma1_5: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gr_Lemma1_6: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gr_Lemma1_7: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gr_Lemma1_7_closure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+
+== LEMMA 2: (8), (9), (10), (11); Pre(L), Pre(Sigma L)
+gr_Lemma2_8: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma2_9: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma2_10: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma2_11: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma2_inst: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma2_SigmaL_sub_L: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_Lemma2_Pre_L: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_Lemma2_Pre_SigmaL: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_Lemma2_L_sub_SigmaL: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+
+== LEMMA 3: closure of q -> Lq; Lq; g(~q) = ~q; g r = q
+gr_Lemma3_closure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_Lemma3_Lq: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma3_Lnq: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma3_Lnq_top: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma3_g_neg_q: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma3_g_r: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+
+== STAGE OBJECTS: M closed and logical; the stock
+gr_M_logical: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_T0_purity: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=4
+gr_T0_application: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gr_Th_PP: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+
+== LEMMA 4: Stage is closed; induction
+gr_Lemma4_Stage_Kbot: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma4_Stage_Sigma: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gr_Lemma4_Stage_union: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma4_Stage_closed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma4_Cl_W: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gr_Lemma4_induction: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gr_Lemma4_induction_forall: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+
+== LEMMA 5: (14), (15)
+gr_Lemma5_14: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gr_Lemma5_14_at: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gr_Lemma5_15: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+
+== LEMMA 6: M(Pure) = P; Pure(P); Stage(P); (16); box (16); L sub P
+gr_Lemma6_M_Pure_eq_P: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_Lemma6_Pure_M: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma6_Pure_P: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma6_Stage_sub_P: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma6_SCov_P: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_Lemma6_Stage_P: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma6_Stage_SigmaP: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma6_16: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma6_box_16: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma6_Pre_P: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma6_L_sub_P: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_Lemma6_L_in_P: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+
+== THEOREM 1, objects: D+, D- closed and logical; instances of fun' and of unary Recombination
+gr_Dplus_logical: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_Dminus_logical: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_fun_prime_inst: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gr_unary_recombination_inst: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+
+== THEOREM 1: purity of X+, X-; the two cases; no r satisfies (R)
+gr_Theorem1_Pure_Xplus: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gr_Theorem1_Pure_Xminus: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gr_Theorem1_case1: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gr_Theorem1_case2: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gr_Theorem1_cases: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gr_Theorem1_R_at: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gr_Theorem1_R: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+
+== THEOREM 1, first consequence: no fun' proposition
+gr_Theorem1_funp_R: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gr_Theorem1_funp_at: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gr_Theorem1_funp: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+
+== THEOREM 1, second consequence: with unary Recombination, no fundamental proposition
+gr_Theorem1_Fun_R: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+gr_Theorem1_Fun_at: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+gr_Theorem1_Fun: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+
+== PACKAGING (BEYOND THE NOTE): stocks
+gr_Th_eq_T6_core: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_Th_sub_recombination: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+
+== PACKAGING (BEYOND THE NOTE): constructor calculus
+gr_T6_core_no_fun_prime: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_recombination_PP_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_full_QLN_PP_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_recombination_question_negative: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+gr_full_QLN_question_negative: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+
+== PACKAGING (BEYOND THE NOTE): native Goodman book calculus
+gr_native_recombination_PP_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_native_recombination_PP_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_native_QLN_PP_refutation: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_native_QLN_PP_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+gr_native_T6_core_no_fun_prime: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+
+== IMPORTED APPLICATION-LEVEL THEOREMS USED BY THE NOTE ENDPOINTS (theories Bacon_PP*, Bacon_CEV_Axiom*, Goodman*)
+Bacon_CEV_Axiom_Extension.CEV_axiom_UI
+Bacon_CEV_Axiom_Extension.CEV_axiom_UI_typed
+Bacon_CEV_Axiom_Extension.CEV_axiom_biconditional_of_theorems
+Bacon_CEV_Axiom_Extension.CEV_axiom_conj_intro
+Bacon_CEV_Axiom_Extension.CEV_axiom_from.Assumption
+Bacon_CEV_Axiom_Extension.CEV_axiom_from.MP
+Bacon_CEV_Axiom_Extension.CEV_axiom_from.Theorem
+Bacon_CEV_Axiom_Extension.CEV_axiom_from.induct
+Bacon_CEV_Axiom_Extension.CEV_axiom_from_UI
+Bacon_CEV_Axiom_Extension.CEV_axiom_from_UI_typed
+Bacon_CEV_Axiom_Extension.CEV_axiom_from_conj_intro
+Bacon_CEV_Axiom_Extension.CEV_axiom_from_deduction
+Bacon_CEV_Axiom_Extension.CEV_axiom_from_empty_iff
+Bacon_CEV_Axiom_Extension.CEV_axiom_from_formula
+Bacon_CEV_Axiom_Extension.CEV_axiom_from_singleton_imp
+Bacon_CEV_Axiom_Extension.CEV_axiom_imp_of_right
+Bacon_CEV_Axiom_Extension.CEV_axiom_necessitation
+Bacon_CEV_Axiom_Extension.CEV_axiom_proves.Axiom
+Bacon_CEV_Axiom_Extension.CEV_axiom_proves.Base
+Bacon_CEV_Axiom_Extension.CEV_axiom_proves.Gen
+Bacon_CEV_Axiom_Extension.CEV_axiom_proves.Inst
+Bacon_CEV_Axiom_Extension.CEV_axiom_proves.MP
+Bacon_CEV_Axiom_Extension.CEV_axiom_proves.VectorEquivalence
+Bacon_CEV_Axiom_Extension.CEV_axiom_proves.induct
+Bacon_CEV_Axiom_Extension.CEV_axiom_proves_ObjTrue
+Bacon_CEV_Axiom_Extension.CEV_axiom_proves_formula
+Bacon_CEV_Axiom_Extension.CEV_axiom_zeroary_equivalence
+Bacon_PP_Diagonal.pp_unary_ty_def
+Bacon_PP_Goodman_Composition.CEV_eq_app_right
+Bacon_PP_Goodman_Composition.pp_axiom_application_closed_imp
+Bacon_PP_Goodman_Fun_Prime_Closure.CEV_axiom_from_fun_prime
+Bacon_PP_Goodman_Fun_Prime_Closure.CEV_unary_eq_of_beta_step
+Bacon_PP_Goodman_Fun_Prime_Closure.shift_App_term
+Bacon_PP_Goodman_Fun_Prime_Closure.shift_Conj_term
+Bacon_PP_Goodman_Fun_Prime_Closure.shift_Eq_term
+Bacon_PP_Goodman_Fun_Prime_Closure.shift_Imp_term
+Bacon_PP_Goodman_Fun_Prime_Closure.shift_pp_fun_prime_term
+Bacon_PP_Goodman_M5_Collision.CEVp_M5_propositional
+Bacon_PP_Goodman_T6_RS_Encoding.shift_pp_Pure_RS
+Bacon_PP_Goodman_T6_TU.shift_Neg_term_TU
+Bacon_PP_Intensionality.shift_ObjTrue
+Bacon_PP_Intensionality.subst_lift_shift_by_2
+Bacon_PP_Intensionality.subst_rename_to_rename
+Bacon_PP_Intensionality.typed_shift_ctx
+Bacon_PP_Intensionality.typed_var0
+Bacon_PP_Question.pp_Fun_def
+Bacon_PP_Question.pp_Pure_def
+Bacon_PP_Question.pp_application_closure_def
+Bacon_PP_Question.pp_application_closure_schema_def
+Bacon_PP_Question.pp_fun_def
+Bacon_PP_Question.pp_logical_vocabulary_def
+Bacon_PP_Question.pp_pure_def
+Bacon_PP_Question.pp_purity_of_pure_def
+Bacon_PP_Question.pp_purity_schema_def
+Bacon_PP_Question.pp_target_PP_def
+Bacon_PP_Question.pp_unary_recombination_def
+Bacon_PP_Question.typed_pp_Fun
+Bacon_PP_Question.typed_pp_Pure
+Bacon_PP_Question.typed_pp_fun
+Bacon_PP_Question.typed_pp_pure
+Bacon_PP_T6_Encoding.pp_exists_fun_prime_def
+Bacon_PP_T6_Encoding.pp_fun_prime_def
+Bacon_PP_T6_Encoding.typed_pp_fun_prime
+Goodman_M5_Nested_Collision.gi_M5_box_mono
+Goodman_M5_Nested_Collision.gi_M5_modal_T
+Goodman_M5_Nested_Collision.gi_M5_modal_four

@@ -1,4 +1,21 @@
-# Goodman verification report
+# Goodman reports
+
+## Purity of Pure and Recombination, 11 November 2026
+
+- [Note PDF](PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.pdf)
+- [Self-contained LaTeX](PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.tex)
+- [Item-by-item Isabelle correspondence](../docs/PP_REFUTATION_CORRESPONDENCE.md)
+
+This eight-page note proves that Purity of Pure at type t→t is inconsistent
+with unary Recombination and a fundamental proposition, and that the
+background theory with that instance of PP has no fun′ proposition. It
+answers Goodman's consistency question negatively. The note is fixed: the
+Isabelle development in `theories/pp_refutation/` was aligned with exactly
+this text, whose checksum is recorded in the correspondence table. Do not
+edit or recompile it in place; a corrected or extended account belongs in a
+new file.
+
+## Verification report, 20 September 2026
 
 - [Report PDF](GOODMAN_VERIFICATION_REPORT_2026-09-20.pdf)
 - [Editable, self-contained LaTeX](GOODMAN_VERIFICATION_REPORT_2026-09-20.tex)
@@ -7,8 +24,9 @@
 This self-contained report describes the verified object-language results,
 exact-model constructions, corrections to Goodman's notes, and remaining
 contributor problems. It does not claim that every mathematical obligation
-or file-level fidelity audit is complete, or that Goodman's consistency
-question has been settled.
+or file-level fidelity audit is complete. It predates the result above and
+says that Goodman's consistency question is open; that statement is
+superseded, and the report has not been revised.
 
 The report uses Branden's self-contained Lucida/Forbes LaTeX setup and has
 no automatic byline. Compiling it requires TeX Live and the licensed Lucida

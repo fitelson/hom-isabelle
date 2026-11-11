@@ -1,0 +1,185 @@
+== OBJECTS (1)-(3), g: closed logical terms
+gr_Sigma_logical:
+[] \<turnstile> gr_Sigma : gr_u \<rightarrow>\<^sub>o gr_u \<and> pp_logical_vocabulary gr_Sigma
+gr_L_logical:
+[] \<turnstile> gr_L : gr_u \<and> pp_logical_vocabulary gr_L
+gr_g_logical:
+[] \<turnstile> gr_g : gr_u \<and> pp_logical_vocabulary gr_g
+
+== LEMMA 1: (4), (5), (6), (7)
+gr_Lemma1_4:
+\<lbrakk>?\<Gamma> \<turnstile> ?Y : gr_u; ?\<Gamma> \<turnstile> ?p : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ (App (App gr_Sigma ?Y) (Neg ?p) \<longleftrightarrow>\<^sub>o App (App gr_Sigma ?Y) ?p)
+gr_Lemma1_5:
+\<lbrakk>?\<Gamma> \<turnstile> ?Y : gr_u; ?\<Gamma> \<turnstile> ?p : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (App (App gr_Sigma ?Y) ?p) (\<box>\<^sub>o App (App gr_Sigma ?Y) ?p)
+gr_Lemma1_6:
+\<lbrakk>?\<Gamma> \<turnstile> ?V : gr_u; ?\<Gamma> \<turnstile> ?W : gr_u\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (\<box>\<^sub>o gr_sub ?V ?W) (\<box>\<^sub>o gr_sub (App gr_Sigma ?V) (App gr_Sigma ?W))
+gr_Lemma1_7:
+\<lbrakk>?\<Gamma> \<turnstile> ?V : gr_u; ?\<Gamma> \<turnstile> ?W : gr_u\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (\<box>\<^sub>o gr_sub ?V ?W) (gr_sub (App gr_Sigma ?V) (App gr_Sigma ?W))
+gr_Lemma1_7_closure:
+?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Forall gr_u (Forall gr_u (Imp (\<box>\<^sub>o gr_sub (Var (Suc 0)) (Var 0)) (gr_sub (App gr_Sigma (Var (Suc 0))) (App gr_Sigma (Var 0)))))
+
+== LEMMA 2: (8), (9), (10), (11); Pre(L), Pre(Sigma L)
+gr_Lemma2_8:
+?\<Gamma> \<turnstile> ?p : Prop \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ (App gr_L ?p \<longleftrightarrow>\<^sub>o App (App gr_Sigma gr_L) ?p)
+gr_Lemma2_9:
+?\<Gamma> \<turnstile> ?p : Prop \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (App gr_L ?p) (\<box>\<^sub>o App gr_L ?p)
+gr_Lemma2_10:
+?\<Gamma> \<turnstile> ?p : Prop \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ (App gr_L (Neg ?p) \<longleftrightarrow>\<^sub>o App gr_L ?p)
+gr_Lemma2_11:
+?\<Gamma> \<turnstile> ?W : gr_u \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (gr_Pre ?W) (\<box>\<^sub>o gr_sub gr_L ?W)
+gr_Lemma2_inst:
+?\<Gamma> \<turnstile> ?W : gr_u \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (gr_Pre ?W) (gr_sub gr_L ?W)
+gr_Lemma2_SigmaL_sub_L:
+?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gr_sub (App gr_Sigma gr_L) gr_L
+gr_Lemma2_Pre_L:
+?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gr_Pre gr_L
+gr_Lemma2_Pre_SigmaL:
+?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gr_Pre (App gr_Sigma gr_L)
+gr_Lemma2_L_sub_SigmaL:
+?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gr_sub gr_L (App gr_Sigma gr_L)
+
+== LEMMA 3: closure of q -> Lq; Lq; g(~q) = ~q; g r = q
+gr_Lemma3_closure:
+?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Forall Prop (Imp (gr_q (Var 0)) (App gr_L (gr_q (Var 0))))
+gr_Lemma3_Lq:
+?\<Gamma> \<turnstile> ?r : Prop \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ App gr_L (gr_q ?r)
+gr_Lemma3_Lnq:
+?\<Gamma> \<turnstile> ?r : Prop \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ App gr_L (Neg (gr_q ?r))
+gr_Lemma3_Lnq_top:
+?\<Gamma> \<turnstile> ?r : Prop \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Eq Prop (App gr_L (Neg (gr_q ?r))) ObjTrue
+gr_Lemma3_g_neg_q:
+?\<Gamma> \<turnstile> ?r : Prop \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Eq Prop (App gr_g (Neg (gr_q ?r))) (Neg (gr_q ?r))
+gr_Lemma3_g_r:
+?\<Gamma> \<turnstile> ?r : Prop \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Eq Prop (App gr_g ?r) (gr_q ?r)
+
+== STAGE OBJECTS: M closed and logical; the stock
+gr_M_logical:
+[] \<turnstile> gr_M : gr_cls \<rightarrow>\<^sub>o gr_u \<and> pp_logical_vocabulary gr_M
+gr_T0_purity:
+\<lbrakk>gr_T0 \<subseteq> ?T; [] \<turnstile> ?M : ?\<sigma>; consts_of ?M = {}; ?\<Gamma> \<turnstile> ?M : ?\<sigma>\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_pure ?\<sigma> ?M
+gr_T0_application:
+\<lbrakk>gr_T0 \<subseteq> ?T; ?\<Gamma> \<turnstile> ?F : ?\<sigma> \<rightarrow>\<^sub>o ?\<tau>; ?\<Gamma> \<turnstile> ?X : ?\<sigma>\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (Conj (pp_pure (?\<sigma> \<rightarrow>\<^sub>o ?\<tau>) ?F) (pp_pure ?\<sigma> ?X)) (pp_pure ?\<tau> (App ?F ?X))
+gr_Th_PP:
+gr_Th \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_pure gr_cls gr_Pure
+
+== LEMMA 4: Stage is closed; induction
+gr_Lemma4_Stage_Kbot:
+gr_T0 \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gr_Stage gr_Pure gr_Kbot
+gr_Lemma4_Stage_Sigma:
+\<lbrakk>gr_T0 \<subseteq> ?T; ?\<Gamma> \<turnstile> ?Y : gr_u\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (gr_Stage gr_Pure ?Y) (gr_Stage gr_Pure (App gr_Sigma ?Y))
+gr_Lemma4_Stage_union:
+?\<Gamma> \<turnstile> ?B : gr_u \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (Conj (App gr_Pure ?B) (gr_SCov gr_Pure ?B)) (gr_Stage gr_Pure ?B)
+gr_Lemma4_Stage_closed:
+gr_T0 \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gr_Cl gr_Pure (gr_StageP gr_Pure)
+gr_Lemma4_Cl_W:
+\<lbrakk>gr_T0 \<subseteq> ?T; ?\<Gamma> \<turnstile> ?\<Psi> : gr_cls\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (Conj (gr_Ind1 ?\<Psi>) (Conj (gr_Ind2 gr_Pure ?\<Psi>) (gr_Ind3 gr_Pure ?\<Psi>))) (gr_Cl gr_Pure (gr_W gr_Pure ?\<Psi>))
+gr_Lemma4_induction:
+\<lbrakk>gr_T0 \<subseteq> ?T; ?\<Gamma> \<turnstile> ?\<Psi> : gr_cls; ?\<Gamma> \<turnstile> ?Y : gr_u\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (gr_Ind1 ?\<Psi>) (Imp (gr_Ind2 gr_Pure ?\<Psi>) (Imp (gr_Ind3 gr_Pure ?\<Psi>) (Imp (gr_Stage gr_Pure ?Y) (App ?\<Psi> ?Y))))
+gr_Lemma4_induction_forall:
+\<lbrakk>gr_T0 \<subseteq> ?T; ?\<Gamma> \<turnstile> ?\<Psi> : gr_cls\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (Conj (gr_Ind1 ?\<Psi>) (Conj (gr_Ind2 gr_Pure ?\<Psi>) (gr_Ind3 gr_Pure ?\<Psi>))) (Forall gr_u (Imp (gr_Stage gr_Pure (Var 0)) (App (shift ?\<Psi>) (Var 0))))
+
+== LEMMA 5: (14), (15)
+gr_Lemma5_14:
+\<lbrakk>gr_T0 \<subseteq> ?T; ?\<Gamma> \<turnstile> ?Y : gr_u\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (gr_Stage gr_Pure ?Y) (gr_SymF ?Y)
+gr_Lemma5_14_at:
+\<lbrakk>gr_T0 \<subseteq> ?T; ?\<Gamma> \<turnstile> ?Y : gr_u; ?\<Gamma> \<turnstile> ?p : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (gr_Stage gr_Pure ?Y) (App ?Y (Neg ?p) \<longleftrightarrow>\<^sub>o App ?Y ?p)
+gr_Lemma5_15:
+\<lbrakk>gr_T0 \<subseteq> ?T; ?\<Gamma> \<turnstile> ?Y : gr_u; ?\<Gamma> \<turnstile> ?p : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (gr_Stage gr_Pure ?Y) (Imp (App ?Y ?p) (gr_PredEx gr_Pure ?p))
+
+== LEMMA 6: M(Pure) = P; Pure(P); Stage(P); (16); box (16); L sub P
+gr_Lemma6_M_Pure_eq_P:
+?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Eq gr_u (App gr_M gr_Pure) gr_P
+gr_Lemma6_Pure_M:
+gr_Th \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_pure (gr_cls \<rightarrow>\<^sub>o gr_u) gr_M
+gr_Lemma6_Pure_P:
+gr_Th \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ pp_pure gr_u gr_P
+gr_Lemma6_Stage_sub_P:
+?\<Gamma> \<turnstile> ?Y : gr_u \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (gr_Stage gr_Pure ?Y) (gr_sub ?Y gr_P)
+gr_Lemma6_SCov_P:
+?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gr_SCov gr_Pure gr_P
+gr_Lemma6_Stage_P:
+gr_Th \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gr_Stage gr_Pure gr_P
+gr_Lemma6_Stage_SigmaP:
+gr_Th \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gr_Stage gr_Pure (App gr_Sigma gr_P)
+gr_Lemma6_16:
+gr_Th \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gr_sub (App gr_Sigma gr_P) gr_P
+gr_Lemma6_box_16:
+gr_Th \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ \<box>\<^sub>o gr_sub (App gr_Sigma gr_P) gr_P
+gr_Lemma6_Pre_P:
+gr_Th \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gr_Pre gr_P
+gr_Lemma6_L_sub_P:
+gr_Th \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ gr_sub gr_L gr_P
+gr_Lemma6_L_in_P:
+\<lbrakk>gr_Th \<subseteq> ?T; ?\<Gamma> \<turnstile> ?p : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (App gr_L ?p) (App gr_P ?p)
+
+== THEOREM 1, objects: D+, D- closed and logical; instances of fun' and of unary Recombination
+gr_Dplus_logical:
+[] \<turnstile> gr_Dplus : gr_u \<rightarrow>\<^sub>o gr_u \<and> pp_logical_vocabulary gr_Dplus
+gr_Dminus_logical:
+[] \<turnstile> gr_Dminus : gr_u \<rightarrow>\<^sub>o gr_u \<and> pp_logical_vocabulary gr_Dminus
+gr_fun_prime_inst:
+\<lbrakk>?\<Gamma> \<turnstile> ?r : Prop; ?\<Gamma> \<turnstile> ?X : gr_u; ?\<Gamma> \<turnstile> ?Y : gr_u\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (pp_fun_prime ?r) (Imp (pp_pure gr_u ?X) (Imp (pp_pure gr_u ?Y) (Imp (Eq Prop (App ?X ?r) (App ?Y ?r)) (Eq gr_u ?X ?Y))))
+gr_unary_recombination_inst:
+\<lbrakk>pp_unary_recombination \<in> ?T; ?\<Gamma> \<turnstile> ?X : gr_u; ?\<Gamma> \<turnstile> ?r : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (Conj (pp_pure gr_u ?X) (pp_fun Prop ?r)) (Imp (\<box>\<^sub>o App ?X ?r) (gr_AllP ?X))
+
+== THEOREM 1: purity of X+, X-; the two cases; no r satisfies (R)
+gr_Theorem1_Pure_Xplus:
+\<lbrakk>gr_T0 \<subseteq> ?T; ?\<Gamma> \<turnstile> ?Y0.0 : gr_u\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (App gr_Pure ?Y0.0) (App gr_Pure (gr_Xplus ?Y0.0))
+gr_Theorem1_Pure_Xminus:
+\<lbrakk>gr_T0 \<subseteq> ?T; ?\<Gamma> \<turnstile> ?Y0.0 : gr_u\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (App gr_Pure ?Y0.0) (App gr_Pure (gr_Xminus ?Y0.0))
+gr_Theorem1_case1:
+\<lbrakk>gr_T0 \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop; ?\<Gamma> \<turnstile> ?Y0.0 : gr_u\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (gr_R gr_Pure ?r) (Imp (gr_Stage gr_Pure ?Y0.0) (Imp (Neg (App ?Y0.0 (gr_q ?r))) (Imp (\<box>\<^sub>o gr_sgA ?Y0.0 (gr_q ?r)) ObjFalse)))
+gr_Theorem1_case2:
+\<lbrakk>gr_T0 \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop; ?\<Gamma> \<turnstile> ?Y0.0 : gr_u\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (gr_R gr_Pure ?r) (Imp (gr_Stage gr_Pure ?Y0.0) (Imp (Neg (App ?Y0.0 (gr_q ?r))) (Imp (\<box>\<^sub>o gr_sgB ?Y0.0 (gr_q ?r)) ObjFalse)))
+gr_Theorem1_cases:
+\<lbrakk>gr_T0 \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop; ?\<Gamma> \<turnstile> ?Y0.0 : gr_u\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (gr_R gr_Pure ?r) (Imp (Conj (gr_Stage gr_Pure ?Y0.0) (Conj (Neg (App ?Y0.0 (gr_q ?r))) (App (App gr_Sigma ?Y0.0) (gr_q ?r)))) ObjFalse)
+gr_Theorem1_R_at:
+\<lbrakk>gr_Th \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Neg (gr_R gr_Pure ?r)
+gr_Theorem1_R:
+gr_Th \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Neg (ObjExists Prop (gr_R gr_Pure (Var 0)))
+
+== THEOREM 1, first consequence: no fun' proposition
+gr_Theorem1_funp_R:
+\<lbrakk>gr_T0 \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (pp_fun_prime ?r) (gr_R gr_Pure ?r)
+gr_Theorem1_funp_at:
+\<lbrakk>gr_Th \<subseteq> ?T; ?\<Gamma> \<turnstile> ?r : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Neg (pp_fun_prime ?r)
+gr_Theorem1_funp:
+gr_Th \<subseteq> ?T \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Neg pp_exists_fun_prime
+
+== THEOREM 1, second consequence: with unary Recombination, no fundamental proposition
+gr_Theorem1_Fun_R:
+\<lbrakk>pp_unary_recombination \<in> ?T; ?\<Gamma> \<turnstile> ?r : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Imp (pp_fun Prop ?r) (gr_R gr_Pure ?r)
+gr_Theorem1_Fun_at:
+\<lbrakk>gr_Th \<subseteq> ?T; pp_unary_recombination \<in> ?T; ?\<Gamma> \<turnstile> ?r : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Neg (pp_fun Prop ?r)
+gr_Theorem1_Fun:
+\<lbrakk>gr_Th \<subseteq> ?T; pp_unary_recombination \<in> ?T\<rbrakk> \<Longrightarrow> ?\<Gamma> ; ?T \<turnstile>\<^sub>CEV\<^sup>+ Neg (ObjExists Prop (pp_fun Prop (Var 0)))
+
+== PACKAGING (BEYOND THE NOTE): stocks
+gr_Th_eq_T6_core:
+gr_Th = pp_T6_core_PP_axioms
+gr_Th_sub_recombination:
+gr_Th \<subseteq> pp_recombination_PP_axioms
+
+== PACKAGING (BEYOND THE NOTE): constructor calculus
+gr_T6_core_no_fun_prime:
+[] ; pp_T6_core_PP_axioms \<turnstile>\<^sub>CEV\<^sup>+ Neg pp_exists_fun_prime
+gr_recombination_PP_refutation:
+[] ; pp_recombination_PP_axioms \<turnstile>\<^sub>CEV\<^sup>+ ObjFalse
+gr_full_QLN_PP_refutation:
+[] ; pp_zeroary_unary_QLN_PP_axioms \<turnstile>\<^sub>CEV\<^sup>+ ObjFalse
+gr_recombination_question_negative:
+\<not> pp_recombination_axiom_consistency_question
+gr_full_QLN_question_negative:
+\<not> pp_full_QLN_axiom_consistency_question
+
+== PACKAGING (BEYOND THE NOTE): native Goodman book calculus
+gr_native_recombination_PP_refutation:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_recombination_PP_axioms ?G) (book_bottom ?G)
+gr_native_recombination_PP_inconsistent:
+sg_rich ?G \<Longrightarrow> \<not> goodman_book_consistent gb_signature ?G (gb_recombination_PP_axioms ?G)
+gr_native_QLN_PP_refutation:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_zeroary_unary_QLN_PP_axioms ?G) (book_bottom ?G)
+gr_native_QLN_PP_inconsistent:
+sg_rich ?G \<Longrightarrow> \<not> goodman_book_consistent gb_signature ?G (gb_zeroary_unary_QLN_PP_axioms ?G)
+gr_native_T6_core_no_fun_prime:
+sg_rich ?G \<Longrightarrow> goodman_book_proves gb_signature ?G (gb_T6_core ?G) (book_not ?G (gb_exists_fun_prime ?G))

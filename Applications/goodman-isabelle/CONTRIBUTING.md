@@ -18,7 +18,16 @@ Propose an issue identifying the source page or result, the exact proposed
 statement, and the files affected. Agree the scope before undertaking a
 large proof or changing an existing model interface.
 
-Goodman's PP question remains open. The completed 20 September M5 repair
+Goodman's PP question was answered negatively on 11 November 2026: the
+Recombination-only and full-QLN packages with PP at t→t are inconsistent.
+Read the [status](STATUS.md), the
+[hand proof](reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.pdf) and
+its [Isabelle correspondence](docs/PP_REFUTATION_CORRESPONDENCE.md) first.
+Item 11 below lists the review and follow-up work this creates. The counts in
+the rest of this paragraph describe the September baseline; the refutation
+added one catalog of 78 entries.
+
+The completed 20 September M5 repair
 is not an unfinished task: its 21 audited endpoints establish the corrected
 local collision and nonreversibility implications. The integration baseline
 contained 1,574 cataloged objects in 82 catalogs, with nine historical replay
@@ -338,6 +347,32 @@ build is necessary for formal repairs but does not establish source fidelity.
 Source PDFs and the historical report are reference inputs, not permission
 to redistribute private research material.
 
+### 11. Review the PP refutation and work out its consequences
+
+Added 11 November 2026. The refutation in `theories/pp_refutation/` follows
+the note [Purity of Pure and Recombination](reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.pdf)
+item by item. The note is fixed; do not edit it. Useful contributions:
+
+- **Independent review.** Read the note and the corresponding theorems,
+  starting with Lemma 6 (the only use of PP, and the one application of
+  Necessitation above the added axioms) and Lemma 2 (the logical fixed point).
+  Report any step whose Isabelle statement does not say what the note says.
+- **Rebuild under Isabelle2026.** The five sessions were checked with
+  Isabelle2025-2. Run the full checker with Isabelle2026 and record the result.
+- **Package the corollaries.** State and prove, as cataloged theorems, that PP
+  at t→t is not valid in the exact generic interpretation, and the
+  unconditional classifier nonmembership asked for in item 6.
+- **Mark vacuity.** List the existing endpoints whose stock contains a refuted
+  package, or the T6 PP core together with the existence of a fun′
+  proposition, and say so in the source map. Do not delete them.
+- **Locate the boundary.** The proof needs the Purity schema, Application
+  closure and PP to be axioms. Determine what survives for weaker readings,
+  for example purity principles that are not necessitated, or restricted
+  purity schemas that omit some of the six closed logical terms the proof uses.
+
+Completion of any of these means a precise statement, a checked proof or a
+documented obstruction, and updated audit coverage.
+
 ## Verification and working rules
 
 1. Use Isabelle2025-2 and the enclosing Bacon–Dorr core with its pinned source hashes.
@@ -365,5 +400,6 @@ to redistribute private research material.
    are not contribution artifacts.
 
 The open items above are an invitation to agreed, bounded contributions,
-not instructions to resume all paused research or to claim the full PP
-problem has been solved.
+not instructions to resume all paused research. Describe the PP refutation
+with its stated scope: an inconsistency of the axiom extension, checked in
+this repository, not yet independently refereed.

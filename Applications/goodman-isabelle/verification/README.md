@@ -1,5 +1,53 @@
 # Standalone release verification
 
+## PP refutation sessions — 11 November 2026 (full build passed under Isabelle2025-2)
+
+The formalization of the note "Purity of Pure and Recombination"
+(`reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.tex`, SHA-256
+`feae0c1547ce942343cc63791bcc39b829c20d2336f805b16f87b495f6d433fe`) was
+added as five sessions under `theories/pp_refutation/`
+(`Goodman_Integration_PP_Refutation_Kit`, `_Logic`, `_Stages`, `_Theorem1`,
+`_Packaging`): 15 new theory files, so the tree now has 318 theory files
+and 64 sessions. `ROOT` gained the five session entries. No existing
+theory, preserved file, proof or catalog entry was changed. The item-by-item
+map to the note is
+[docs/PP_REFUTATION_CORRESPONDENCE.md](../docs/PP_REFUTATION_CORRESPONDENCE.md).
+
+Input checks passed (core hashes equal to the pin, 82 preserved files, 10
+packaging tests). `./check_isabelle.sh --export` then passed with
+**Isabelle2025-2**, the version on the checking machine's PATH: build exit
+**0**, 2 minutes 29 seconds, log `build-2026-11-11T09-32-23-177592.log`.
+All 64 sessions were selected; 37 were built in this invocation and 27 were
+current from builds made earlier the same day with the same Isabelle and the
+same sources. Exports in `exports/2026-11-11T09-32-23-177592/`: **88
+catalogs**, **1,786 integration entries and 9 replay entries** (1,795 clean
+rows). The 87 earlier catalogs match their certificates entry for entry. The
+new catalog
+`Goodman_Integration_PP_Refutation_Packaging.Goodman_PP_Refutation_Audit/pp-refutation-audit.txt`
+has 78 entries: 66 for the note's objects, Lemmas 1–6 and Theorem 1, in the
+note's order, and 12 packaging endpoints that are beyond the note. Its
+certificate and statement file are retained under `audits/`.
+
+Of the 170 exported files, 168 are byte-identical to the retained copies.
+`m5-nested-collision-audit.txt` and `wi-master-transfer-audit.txt` differ
+only in their DIRECT-PROVENANCE proof-node counts (45,179→45,181 and
+46,568→46,570); their endpoint lists and kernel fields are unchanged. Those
+two retained files were left as they were.
+
+Besides the kernel fields, the new audit theory fails the build unless no
+endpoint of the note depends on an imported theorem that refutes a stock
+outright, and unless the recorded stock use holds (Lemmas 1–3 use no added
+axiom; Lemmas 4–5 do not use PP; the first two assertions of Theorem 1 use
+PP and Necessitation and not unary Recombination). The certificate records
+these checks and the imported application-level theorems the note endpoints
+use.
+
+The repository has since been moved to Isabelle2026. These five sessions,
+and this run as a whole, have not yet been checked with Isabelle2026; the
+audit theory uses the same proof-dependency ML interface as the M5 and WI
+audits, plus `Proofterm.thm_node_prop`. No commit, push or upload was
+performed for this checkpoint.
+
 ## Core update — 26 September 2026 (third pin refresh; full build passed)
 
 After the core's comprehensive repository audit and its fixes (the

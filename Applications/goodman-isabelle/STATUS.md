@@ -1,5 +1,77 @@
 # Verification status
 
+## Goodman's consistency question answered negatively, 11 November 2026
+
+**Result.** Let 𝒯 be the background theory (full Classicism with the Purity
+schema and Application closure) extended by Purity of Pure at type t→t. Then 𝒯
+proves that no proposition r satisfies
+
+    (R)  for every pure X of type t→t:  □Xr → ∀p.Xp.
+
+Consequently 𝒯 proves that there is no fun′ proposition, and 𝒯 with unary
+Recombination proves that there is no fundamental proposition. The
+Recombination-only package with PP is inconsistent, and so is the full-QLN
+package, which contains it. Not used: Exhaustion, zeroary Recombination,
+uniqueness of the fundamental proposition, Modalized Functionality,
+Persistence, Purity of Fun, L2, TU, RS, Inv, WI and Pure Completeness.
+
+**Sources.** The hand proof is the note
+[Purity of Pure and Recombination](reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.pdf)
+(with its [LaTeX source](reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.tex)).
+The Isabelle development in `theories/pp_refutation/` follows it lemma by
+lemma; [the correspondence table](docs/PP_REFUTATION_CORRESPONDENCE.md) maps
+each lemma and numbered formula to its theorem and records the unavoidable
+differences (de Bruijn syntax and typing bookkeeping).
+
+**Checked endpoints.**
+
+| Statement | Theorem | Hypotheses |
+|---|---|---|
+| 𝒯 ⊢ ¬∃r.(R) | `gr_Theorem1_R` | stock contains the Purity schema, Application closure and PP at t→t |
+| 𝒯 ⊢ ¬∃r.fun′(r) | `gr_Theorem1_funp` | the same |
+| 𝒯 + unary Recombination ⊢ ¬∃r.Fun(r) | `gr_Theorem1_Fun` | the same, with unary Recombination |
+| Recombination-only package refuted, constructor calculus | `gr_recombination_PP_refutation` | none |
+| Full-QLN package refuted, constructor calculus | `gr_full_QLN_PP_refutation` | none |
+| `goodman_book_proves gb_signature G (gb_recombination_PP_axioms G) (book_bottom G)` | `gr_native_recombination_PP_refutation` | `sg_rich G` |
+| `¬ goodman_book_consistent gb_signature G (gb_recombination_PP_axioms G)` | `gr_native_recombination_PP_inconsistent` | `sg_rich G` |
+| The same for `gb_zeroary_unary_QLN_PP_axioms G` | `gr_native_QLN_PP_inconsistent`, `gr_native_QLN_PP_refutation` | `sg_rich G` |
+| `gb_T6_core G` proves `¬ gb_exists_fun_prime G` | `gr_native_T6_core_no_fun_prime` | `sg_rich G` |
+
+The first three rows are the note's Theorem 1. The remaining rows are
+repository packaging and are kept in a separate theory.
+
+**Scope and limits.**
+
+- The result concerns the **axiom extension**: the Purity schema, Application
+  closure and PP are axioms, so the Rule of Equivalence, and hence
+  Necessitation, applies to theorems that depend on them. One step
+  necessitates such a theorem. Nothing follows for a theory in which these
+  principles are merely true at a root.
+- PP is used once, to show that the union of the pure stages is pure. Without
+  PP the argument does not go through, and the verified PP-free models below
+  are untouched.
+- Existing results stated over `gb_recombination_PP_axioms`, over
+  `gb_zeroary_unary_QLN_PP_axioms`, or over the T6 PP core together with the
+  existence of a fun′ proposition remain theorems but are now vacuous. This
+  includes T5 and the four T6 routes. Results that do not assume PP, such as
+  T2 and T4, are unaffected.
+- Since the exact generic interpretation validates the PP-free background,
+  the refutation implies that PP at t→t is not valid there. No cataloged
+  theorem yet states that corollary or the unconditional M1 classifier
+  nonmembership of task 6.
+- **Verification record.** `./check_isabelle.sh --export` passed with
+  Isabelle2025-2 (exit 0, 64 sessions, 88 catalogs, 1,786 integration entries
+  and 9 replay entries; the 87 earlier catalogs unchanged entry for entry).
+  The new catalog has 78 entries with zero oracles, residual hypotheses and
+  flex-flex pairs, and its audit fails the build if any endpoint of the note
+  depends on an imported theorem that refutes a stock outright. The sessions
+  have **not yet been rebuilt with Isabelle2026**, which the rest of this
+  repository now expects. See [verification](verification/README.md).
+- The argument has not yet been independently refereed.
+
+The dated sections below are retained as the record of earlier checkpoints.
+Their statements that the PP question is open are superseded by this section.
+
 ## Core compatibility update — 26 September 2026 (third pin refresh)
 
 The core completed a comprehensive repository audit and its fixes, and added
@@ -142,8 +214,10 @@ not a reason to mark that completed task unfinished.
 
 The [contributor guide](CONTRIBUTING.md) supplies bounded deliverables and
 completion criteria. M5's nested collision is **completed**, not a TODO.
-Goodman's original PP consistency question remains an additional open
-research question, not an implied deliverable of a passing repository build.
+Goodman's original PP consistency question was answered negatively on
+11 November 2026; see the first section of this file. Tasks 6–9 are
+unaffected in their own terms, although task 6 now has the indirect answer
+recorded there.
 
 ## Formerly included but not selected
 

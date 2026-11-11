@@ -12,6 +12,20 @@ Packaging is not authority to resume proof research or call another model.
 Follow the user's current scoped task. The M5 nested collision is complete;
 do not revive historical TODOs saying otherwise.
 
+PP refutation, 11 November 2026: Goodman's consistency question is answered
+negatively. theories/pp_refutation/ derives, lemma by lemma, the note
+reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11 (.tex and .pdf), and
+transfers the refutation to gb_recombination_PP_axioms and the full-QLN
+package. Read the first section of STATUS.md and
+docs/PP_REFUTATION_CORRESPONDENCE.md before describing the question's status.
+The note is FIXED: it has been circulated, so never edit it; its
+checksum is in the correspondence table, and the Isabelle theorems must stay
+aligned with it item by item. State the scope every time: an inconsistency of
+the axiom extension (purity principles and PP as necessitable axioms),
+checked with Isabelle2025-2, not yet rebuilt with Isabelle2026, not yet
+independently refereed. Endpoints over a refuted package are vacuous; say so
+when citing them, and do not delete them.
+
 Current handoff: tasks 1–5 are accepted, and the agreed task-10 report/ledger
 checkpoint is complete. Branden explicitly left tasks 6–9 open for
 contributors. Do not resume them automatically. Read the current ledger

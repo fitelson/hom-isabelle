@@ -6,10 +6,32 @@ It is an ordinary subfolder of the
 [Bacon–Dorr repository](../../README.md), not a
 replacement for that development.
 
-**Goodman's consistency question remains open.** We have verified substantial
-parts of his notes, corrected several arguments, and connected the results
-to the new core. We have neither constructed a model of the full background
-plus the required PP instance nor derived a contradiction from that target.
+**Goodman's consistency question is answered negatively (11 November 2026).**
+The background theory with the Purity schema, Application closure and Purity
+of Pure at type t→t proves that no proposition r satisfies the condition that
+unary Recombination imposes on a fundamental proposition: for every pure X,
+□Xr → ∀p.Xp. Hence that theory has no fun′ proposition, and with unary
+Recombination it has no fundamental proposition. Both the Recombination-only
+package and the full-QLN package with PP are therefore inconsistent. Purity
+of Fun, Exhaustion, L2 and the classification principles are not used.
+
+The proof is given in a short note,
+[Purity of Pure and Recombination](reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.pdf),
+and is derived in Isabelle item by item in `theories/pp_refutation/`; the
+[correspondence table](docs/PP_REFUTATION_CORRESPONDENCE.md) maps each lemma
+and numbered formula of the note to its theorem. The native endpoint is
+`gr_native_recombination_PP_refutation`: for a rich variable supply `G`,
+`goodman_book_proves gb_signature G (gb_recombination_PP_axioms G) (book_bottom G)`.
+The result depends on the added principles being axioms, so that the Rule of
+Equivalence applies above them; it does not concern theories in which they
+are merely true. It was checked with Isabelle2025-2 and has not yet been
+rebuilt with Isabelle2026 or independently refereed. See
+[STATUS.md](STATUS.md) for the exact scope.
+
+Before this result we had verified substantial parts of Goodman's notes,
+corrected several arguments, and connected the results to the new core.
+That material is unchanged. Results stated over the refuted packages remain
+theorems but are now vacuous.
 
 The source question asks whether Purity of Pure is compatible with the
 background theory and exactly one fundamental proposition, without assuming
@@ -18,6 +40,8 @@ one must not be silently attributed to another.
 
 ## Start here
 
+- [The PP refutation: hand proof (PDF)](reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.pdf)
+  and [its Isabelle correspondence](docs/PP_REFUTATION_CORRESPONDENCE.md)
 - [26 September core compatibility updates](docs/CORE_UPDATE_2026-09-26.md)
 - [What is checked and what remains](STATUS.md)
 - [Goodman verification report (PDF)](reports/GOODMAN_VERIFICATION_REPORT_2026-09-20.pdf)
@@ -44,6 +68,9 @@ Theorem 10.1 (task 5, **independently checked and accepted**). The integration
 catalogs now contain **1,708 entries in 87 catalogs**, plus nine separately
 counted historical replay entries. These counts are not a count of independent mathematical
 results and do not certify complete fidelity to every sentence in the notes.
+The PP refutation of 11 November 2026 added fifteen theories in five sessions
+and one catalog of 78 entries, giving **318 theory files** and **1,786 entries
+in 88 catalogs**.
 
 One concrete correction is M5. For F(p) = (p ↔ NC(p)), the proposed collision
 at NC(r) and ⊤ fails under a local fun′(r) assumption. Replacing NC(r) by
@@ -99,6 +126,7 @@ statement, and a source-fidelity review.
 | `theories/semantics/`, `logical_stock/`, `exact_qln/`, `exact_l2/` | Exact Bacon carriers, denotation correspondence, QLN and L2 |
 | `theories/m_claims/`, `m5/`, `m5_object/`, `general_m1/`, `t9/` | Model claims, corrections and counting arguments |
 | `theories/control/`, `granularity/`, `wi_master/` | Further consequences and suggested-attack reductions |
+| `theories/pp_refutation/` | The refutation of PP with Recombination, following the note lemma by lemma; packaging and native transfer |
 | `theories/preserved/`, `preserved-additions/` | Required historical proof dependencies, with immutable provenance |
 | `dependencies/` | Core revision and source hashes, not a second copy of the core |
 | `verification/` | Audit certificates and extraction provenance |
