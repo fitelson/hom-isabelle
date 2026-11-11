@@ -6,10 +6,16 @@
 - [Self-contained LaTeX](LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11.tex)
 - [Item-by-item Isabelle correspondence](../docs/LETTIE_PP_CORRESPONDENCE.md)
 
-A five-page proof, written for this repository in Goodman's notation, of
+An explanatory proof, written for this repository in Goodman's notation, of
 Jacob Lettie's theorem that ten ordinary premises over H + PE refute Purity
-of Pure at type t→t. Each lemma names the theorem of Lettie's Isabelle
-development that states it. The result and its proof are Lettie's.
+of Pure at type t→t. The revised nine-page note starts with the connection to
+Goodman's question, explains the construction before proving its properties,
+and isolates the uses of the purity premises and Exhaustion. Its appendix
+maps the lemmas to Lettie's unchanged Isabelle development. The result and
+its proof are Lettie's; this is an expository revision, not a new theorem.
+
+The original five-page TeX and PDF are preserved byte-for-byte in the
+[pre-revision archive](archive/2026-11-11_pre_explanatory_revision/README.md).
 
 ## Verification report, 20 September 2026
 

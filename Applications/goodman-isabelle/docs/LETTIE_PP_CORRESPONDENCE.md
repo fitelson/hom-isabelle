@@ -9,8 +9,13 @@ Metamath file are not included in this repository.
 
 **Hand proof.** [`reports/LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11.pdf`](../reports/LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11.pdf)
 (LaTeX source beside it): a self-contained proof written for this repository in
-Goodman's notation, following Lettie's proof of No Universal Proposition. Each lemma
-names its Isabelle theorem.
+Goodman's notation, following Lettie's proof of No Universal Proposition. The
+explanatory revision starts with the reduction from fundamentality to universality,
+motivates the operators, and separates the base-logical argument from the use of
+the purity premises. Its appendix maps Lemmas A–G to their Isabelle theorems.
+The original TeX and PDF are preserved in
+[`reports/archive/2026-11-11_pre_explanatory_revision/`](../reports/archive/2026-11-11_pre_explanatory_revision/README.md).
+The definitions, finite premises and formalization are unchanged.
 
 **Isabelle.** [`theories/lettie_pp/`](../theories/lettie_pp/): Lettie's theories,
 byte-identical to his distributed files, in their own sessions `PoP_Main`, `PoP_W`,
@@ -54,10 +59,10 @@ question. `w_not_pp_C` is the same statement in the application's `⊢CEV`.
 | Lemma E | □¬P(Q(x)) | `nup_cor` | `PoP_G100_NUP` |
 | Lemma F | □π(P) ∧ □π(P′) → F(Q(x)) | `nup_step2` | `PoP_G100_NUP` |
 | Lemma G | PPᵤ and W1–W9 give □π(P), □π(P′), ∀x F(Q(x)) and ∀Y(π(Y) → π(Y∘Q)) | `nup_step3` | `PoP_G100_NUP` |
-| Proof of the Theorem, steps 1–3 | ∀x F(Q(x)) and ∀Y(π(Y) → π(Y∘Q)) give ¬∃x Uni(x) | `nup_step4` | `PoP_G100_NUP` |
+| Final argument, Section 6 | ∀x F(Q(x)) and ∀Y(π(Y) → π(Y∘Q)) give ¬∃x Uni(x) | `nup_step4` | `PoP_G100_NUP` |
 | No Universal Proposition | PPᵤ and W1–W9 give ¬∃x Uni(x) | `nup_NUP_U`, `u_S` | `PoP_G100_NUP`, `PoP_G100_Kernel` |
 | **Theorem** | W ⊢ ¬PPᵤ | **`w_not_pp`** (in `⊢CEV`: `w_not_pp_C`) | `PoP_G100_W_Not_PP` |
-| Remark, W10 | ∃r Fun(r), Logical Purity of λW.λz.¬W(z), App(u,u) and unary Recombination give ∃x Uni(x) | `u_fun_ExUni` | `PoP_G100_Kernel` |
+| Proposition, Section 1; its existential consequence W10 | Logical Purity of λW.λz.¬W(z), App(u,u) and unary Recombination give Fun(r) → Uni(r); with ∃r Fun(r), they give ∃x Uni(x) | `u_uni_ctx`, `u_fun_ExUni` | `PoP_G100_Kernel` |
 
 Lettie's further theorems, not restated in the hand proof:
 
