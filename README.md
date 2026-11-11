@@ -135,8 +135,12 @@ The [Applications folder](Applications/README.md) includes
 It includes verified results, a report and a contributor roadmap. Goodman's
 consistency question is answered negatively in its full-QLN reading by Jacob
 Lettie's theorem, verified there in Isabelle with a
-[hand proof](Applications/goodman-isabelle/reports/LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11.pdf);
-the Recombination-only reading remains open. It is an ordinary subfolder, not
+[hand proof](Applications/goodman-isabelle/reports/LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11.pdf).
+Shortly after Lettie found his result, a strengthening was found that drops
+Exhaustion; it answers the Recombination-only reading negatively as well,
+with an Isabelle proof and an aligned
+[hand proof](Applications/goodman-isabelle/reports/RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11.pdf),
+pending independent human review. It is an ordinary subfolder, not
 a submodule or a separate-access private component.
 
 The default checker above remains a core check. To check Goodman and export

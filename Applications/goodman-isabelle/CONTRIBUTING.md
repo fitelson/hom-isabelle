@@ -20,10 +20,15 @@ large proof or changing an existing model interface.
 
 Goodman's PP question is answered negatively in its full-QLN reading, by
 Jacob Lettie's theorem (see [STATUS.md](STATUS.md) and
-[the correspondence](docs/LETTIE_PP_CORRESPONDENCE.md)). The
-Recombination-only reading, without Exhaustion or Persistence and with the
-added principles as ordinary premises, remains open; it is the main open
-question here. Keep ordinary premises distinct from an axiom extension closed
+[the correspondence](docs/LETTIE_PP_CORRESPONDENCE.md)). Shortly after
+Lettie found his result, a strengthening was found that drops Exhaustion:
+the Recombination-only reading, without Exhaustion or Persistence and with
+the added principles as ordinary premises, is answered negatively by an
+Isabelle-checked proof
+([correspondence](docs/RECOMBINATION_ONLY_CORRESPONDENCE.md)). It awaits
+independent human review; checking the
+[hand proof](reports/RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11.pdf)
+against its theorems is a welcome contribution. Keep ordinary premises distinct from an axiom extension closed
 under Equivalence and Necessitation: a result for the latter does not answer
 the question. The completed 20 September M5 repair
 is not an unfinished task: its 21 audited endpoints establish the corrected

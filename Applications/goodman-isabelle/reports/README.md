@@ -1,5 +1,21 @@
 # Goodman reports
 
+## Recombination without Exhaustion, 11 November 2026
+
+- [Hand proof PDF](RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11.pdf)
+- [Self-contained LaTeX](RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11.tex)
+- [Item-by-item Isabelle correspondence](../docs/RECOMBINATION_ONLY_CORRESPONDENCE.md)
+
+Shortly after Lettie found his result, a strengthening was found that drops
+Exhaustion. This eleven-page note proves that Logical Purity, Application
+and Purity of Pure at type t→t, as ordinary premises over H + PE, refute the
+existence of a universal proposition, and hence, with unary Recombination
+and a fundamental proposition, refute Purity of Pure. Every numbered step
+names its theorem in the session `Goodman_Integration_Recombination_Only`,
+and every use of Logical Purity or Application names its instance. The
+proof is Isabelle-checked and pending independent human review. It is
+compiled the same way as the verification report below.
+
 ## Lettie's refutation of Purity of Pure, 11 November 2026
 
 - [Hand proof PDF](LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11.pdf)

@@ -16,8 +16,12 @@ ordinary premises, by Jacob Lettie's theorem; see [STATUS.md](../STATUS.md)
 and [the correspondence](LETTIE_PP_CORRESPONDENCE.md). The classifications
 below are a dated record and are not rewritten. Results over stocks that
 contain both directions of zeroary and unary QLN, PP and a fundamental
-proposition are now vacuous. The Recombination-only reading remains open,
-so results over that stock are not affected.
+proposition are now vacuous. The Recombination-only reading was still open
+at that point. Shortly afterwards a strengthening that drops Exhaustion
+answered it negatively as well (Isabelle-checked, pending independent human
+review; [correspondence](RECOMBINATION_ONLY_CORRESPONDENCE.md)), so results
+over a stock with Logical Purity, Application, PP, unary Recombination and a
+fundamental proposition are vacuous too.
 
 **26 September addendum:** core generic full-C soundness and countably
 declared-signature completeness are complete in their explicit nontrivial-

@@ -8,10 +8,16 @@ over H + PE refute PP at type t→t, and so does Bacon's theory with a
 fundamental proposition and both directions of QLN, taken as ordinary
 premises. His Isabelle theories are included unmodified, with his
 permission, together with an audit catalog and a hand proof written for
-the repository. The Recombination-only reading of Goodman's question
-remains open; see the application's [status](Applications/goodman-isabelle/STATUS.md).
-This addition changes no core theorem or core ROOT selection, and does not
-extend the core audit coverage.
+the repository. Shortly after Lettie found his result, a strengthening was
+found that drops Exhaustion: Logical Purity, Application and PP at type t→t,
+as ordinary premises over H + PE, refute the existence of a universal
+proposition, so the Recombination-only reading of Goodman's question is
+answered negatively too. Its Isabelle session (on Lettie's kernel, with an
+audit catalog) and an aligned hand proof are in the application; it is
+pending independent human review. See the application's
+[status](Applications/goodman-isabelle/STATUS.md). These additions change no
+core theorem or core ROOT selection, and do not extend the core audit
+coverage.
 
 ## Proposition 2.11 application, 30 September 2026
 

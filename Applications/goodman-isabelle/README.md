@@ -24,9 +24,18 @@ theories, included here unmodified with his permission, verify this
 (`w_not_pp`); a [hand proof written for this repository](reports/LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11.pdf)
 follows them lemma by lemma ([correspondence](docs/LETTIE_PP_CORRESPONDENCE.md)).
 
-**Still open:** the Recombination-only reading, without Exhaustion (or
-Persistence), with the added principles as ordinary premises. See
-[STATUS.md](STATUS.md) for the exact scope.
+**Recombination-only reading: Isabelle-checked, pending review.** Shortly
+after Lettie found his result, a strengthening was found that drops
+Exhaustion. Logical Purity, Application and Purity of Pure at type t→t, as
+ordinary premises over H + PE, refute the existence of a universal
+proposition outright. With unary Recombination and a fundamental
+proposition, Purity of Pure is therefore refuted without Exhaustion or
+Persistence. The proof is checked in Isabelle on top of Lettie's kernel
+(`ro_thm1_U`, `ro_recombination_refutes_PP`), with a
+[hand proof](reports/RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11.pdf)
+aligned step by step ([correspondence](docs/RECOMBINATION_ONLY_CORRESPONDENCE.md)).
+It has not yet had independent human review. See [STATUS.md](STATUS.md)
+for the exact scope.
 
 The rest of the application verifies substantial parts of Goodman's notes,
 corrects several arguments, and connects the results to the new core.
@@ -35,6 +44,8 @@ corrects several arguments, and connects the results to the new core.
 
 - [Lettie's refutation: hand proof (PDF)](reports/LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11.pdf)
   and [its Isabelle correspondence](docs/LETTIE_PP_CORRESPONDENCE.md)
+- [Recombination without Exhaustion: hand proof (PDF)](reports/RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11.pdf)
+  and [its Isabelle correspondence](docs/RECOMBINATION_ONLY_CORRESPONDENCE.md)
 - [26 September core compatibility updates](docs/CORE_UPDATE_2026-09-26.md)
 - [What is checked and what remains](STATUS.md)
 - [Goodman verification report (PDF)](reports/GOODMAN_VERIFICATION_REPORT_2026-09-20.pdf)
@@ -62,7 +73,10 @@ catalogs now contain **1,708 entries in 87 catalogs**, plus nine separately
 counted historical replay entries. These counts are not a count of independent mathematical
 results and do not certify complete fidelity to every sentence in the notes.
 On 11 November 2026 Lettie's seven theories and one audit theory were added,
-giving **311 theory files** and **1,725 entries in 88 catalogs**.
+giving **311 theory files** and **1,725 entries in 88 catalogs**. The
+Recombination-without-Exhaustion session added three theories and one audit
+theory the same day, giving **315 theory files** and **1,756 entries in 89
+catalogs**.
 
 One concrete correction is M5. For F(p) = (p ↔ NC(p)), the proposed collision
 at NC(r) and ⊤ fails under a local fun′(r) assumption. Replacing NC(r) by
@@ -119,6 +133,7 @@ statement, and a source-fidelity review.
 | `theories/m_claims/`, `m5/`, `m5_object/`, `general_m1/`, `t9/` | Model claims, corrections and counting arguments |
 | `theories/control/`, `granularity/`, `wi_master/` | Further consequences and suggested-attack reductions |
 | `theories/lettie_pp/`, `lettie_audit/` | Jacob Lettie's refutation of Purity of Pure (his files, unmodified) and its audit catalog |
+| `theories/recombination_only/` | Recombination without Exhaustion, on Lettie's kernel, with its audit catalog |
 | `theories/preserved/`, `preserved-additions/` | Required historical proof dependencies, with immutable provenance |
 | `dependencies/` | Core revision and source hashes, not a second copy of the core |
 | `verification/` | Audit certificates and extraction provenance |

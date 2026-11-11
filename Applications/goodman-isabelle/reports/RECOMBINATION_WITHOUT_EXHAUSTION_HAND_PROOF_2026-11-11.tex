@@ -1,0 +1,669 @@
+\documentclass[12pt,leqno]{article}
+
+\usepackage{amsmath,amssymb,amsthm,colortbl,xcolor,nicefrac,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[expert,seriftt,lucidasmallscale]{lucidabr}
+\usepackage{mathrsfs,hyperref,color,graphicx}
+\usepackage{booktabs,tabularx,array,needspace}
+\hypersetup{hidelinks,hypertexnames=false,
+  pdftitle={Recombination without Exhaustion},
+  pdfsubject={Hand proof aligned item by item with the Isabelle session Goodman_Integration_Recombination_Only}}
+
+% Self-contained Forbes / Phil-211 / Lucida setup.
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+\setlength{\topmargin}{0mm}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+\setlength{\topskip}{0mm}
+\setlength{\hoffset}{0in}
+\setlength{\voffset}{0in}
+
+\newcommand{\AND}{\ensuremath{\mathbin{\&}}}
+\newcommand{\OR}{\ensuremath{\vee}}
+\newcommand{\IFF}{\ensuremath{\leftrightarrow}}
+\newcommand{\IC}{\ensuremath{\rightarrow}}
+\newcommand{\NOT}{\ensuremath{\text{$\thicksim$}}}
+\newcommand{\dentails}{\ensuremath{\vdash}}
+\newcommand{\Pure}{\ensuremath{\mathrm{Pure}}}
+\newcommand{\Fun}{\ensuremath{\mathrm{Fun}}}
+\newcommand{\Uni}{\ensuremath{\mathrm{Uni}}}
+\newcommand{\Cl}{\ensuremath{\mathrm{Cl}}}
+\newcommand{\Pres}{\ensuremath{\mathrm{Pres}}}
+\newcommand{\PPu}{\ensuremath{\mathrm{PP}_u}}
+\newcommand{\HPE}{\ensuremath{\mathrm{H}+\mathrm{PE}}}
+\newcommand{\App}{\ensuremath{\mathrm{App}}}
+\newcommand{\Rec}{\ensuremath{\mathrm{Rec}_1}}
+\newcommand{\hW}{\ensuremath{\widehat{W}}}
+\newcommand{\hCl}{\ensuremath{\widehat{\Cl}}}
+\newcommand{\hR}{\ensuremath{\widehat{R}}}
+\newcommand{\hF}{\ensuremath{\widehat{F}}}
+\newcommand{\hQ}{\ensuremath{\widehat{Q}}}
+\newcommand{\hP}{\ensuremath{\widehat{P}}}
+\newcommand{\hPp}{\ensuremath{\widehat{P}'}}
+\newcommand{\hPhi}{\ensuremath{\widehat{\Phi}}}
+\newcommand{\conj}{\ensuremath{\mathsf{and}}}
+\newcommand{\cmp}{\ensuremath{\mathsf{comp}}}
+\newcommand{\negop}{\ensuremath{\mathsf{neg}}}
+\newcommand{\isa}[1]{\textup{\texttt{#1}}}
+% Flush-right Isabelle name that ends the paragraph (TeXbook-style \signed).
+\newcommand{\by}[1]{{\unskip\nobreak\hfil\penalty50\hskip1.5em\hbox{}\nobreak\hfil
+  \textup{[\isa{#1}]}\parfillskip=0pt\finalhyphendemerits=0\par}}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{proposition}{Proposition}
+\renewcommand{\qedsymbol}{\(\blacksquare\)}
+\onehalfspacing
+
+\begin{document}
+
+\begin{center}
+{\Large Recombination without Exhaustion}
+
+\smallskip
+The hand proof, aligned item by item with its Isabelle verification\\
+11 November 2026
+\end{center}
+
+\noindent
+\textbf{Background.} Shortly after Jacob Lettie found his refutation of
+Purity of Pure at type \(t\IC t\) (see his hand proof in this folder), a
+strengthening was found that drops Exhaustion. Lettie's ten premises
+include zeroary Exhaustion at two propositions and the existence of a
+universal proposition. Here Logical Purity, Application and \(\PPu\),
+all ordinary premises over \HPE, refute the existence of a universal
+proposition outright (Theorem~\ref{thm:main}). Since a fundamental
+proposition is universal by unary Recombination, \(\PPu\) is refuted by
+Logical Purity, Application, unary Recombination and a fundamental
+proposition, with no Exhaustion or Persistence (the Corollary). This is
+the Recombination-only reading of Goodman's question.
+
+\medskip
+\noindent
+\textbf{Status.} Each result below carries, in brackets, the name of its
+theorem in the Isabelle session
+\isa{Goodman\_Integration\_Recombination\_Only} or in Lettie's kernel on
+which it builds. The sub-steps (b1)--(b5), (d5) and (i)--(vii) of (2.7)
+are intermediate facts inside the proof of the cited theorem. The
+session builds under Isabelle2026 on Lettie's unmodified kernel
+\isa{PoP\_Main}, with no oracles; see Appendix~A. The proof has been
+checked in Isabelle and against the theory files, but it has not yet had
+an independent human review.
+
+\section{Setting}
+
+\paragraph{Types and notation.}
+Propositions have type \(t\). Put \(u:=t\IC t\) and \(c:=u\IC t\), and
+write \(\pi:=\Pure_u\), a constant of type \(c\) (\isa{rc\_p}). Letters
+\(p,q,x,y,z,r,b\) range over type \(t\), and \(S,X,Y\) over type \(u\). Put
+\[
+ \top:=\forall p(p\IC p),\qquad \Box A:=(A=\top),\qquad
+ \Diamond A:=\NOT\Box\NOT A .
+\]
+
+\paragraph{Base logic.}
+The base logic is \HPE, formalized as Lettie's calculus
+\isa{U\_proves}. Its theorems are those of H (classical simple type
+theory with \(\beta\eta\)-conversion, Leibniz identity, propositional
+tautologies, universal instantiation and existential generalization),
+closed under four rules: Propositional Equivalence (from a theorem
+\(A\IFF B\) at type \(t\), infer \(A=B\)), modus ponens, Generalization,
+and Instantiation (\(\exists\)-elimination). We use the following derived
+facts:
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+Necessitation: from \(\dentails A\) infer \(\dentails\Box A\) & \isa{U\_nec}\\
+K-rule: from \(\dentails A\IC B\) infer \(\dentails\Box A\IC\Box B\) & \isa{u\_rc\_K}\\
+T: \(\Box A\IC A\);\quad 4: \(\Box A\IC\Box\Box A\) & \isa{U\_modal\_T}, \isa{U\_modal\_4}\\
+\(\Box(A\IFF B)\IC A=B\) & \isa{u\_rc\_box\_iff\_eq}\\
+Leibniz: \(a=b\IC(Fa\IC Fb)\); congruence for \(=\) at type \(t\) & \isa{u\_rc\_LL}, \isa{u\_rc\_congr}\\
+\(\beta\eta\)-convertible formulas are equivalent & \isa{U\_beta\_eta\_equiv}
+\end{tabular}
+\end{center}
+Below, ``by \(\beta\)'' cites the last fact.
+
+\paragraph{Ordinary premises.}
+The calculus has no rule for premises. An added principle can therefore
+occur only as the antecedent of an implication that is a theorem of the
+base logic. Propositional Equivalence and Necessitation then apply only
+to such premise-free theorems, never to a premise. ``Under premises
+\(\Pi\), \(A\)'' means that \(\bigwedge\Pi\IC A\) is a theorem of \HPE.
+
+\paragraph{The added principles.}
+\emph{Logical Purity} is the schema \(\Pure_\sigma(M)\) for closed terms
+\(M:\sigma\) that contain no constants (\isa{pp\_purity\_schema}). Since
+\(\Pure\) is itself a constant (\isa{pp\_Pure}), Logical Purity says
+nothing about \(\pi\); this is immediate from the definitions.
+\emph{Application} at \((\sigma,\tau)\) is
+\[
+ \App_{\sigma,\tau}:=\forall X^{\sigma\IC\tau}\forall y^{\sigma}
+   \bigl((\Pure_{\sigma\IC\tau}(X)\AND\Pure_\sigma(y))\IC
+     \Pure_\tau(Xy)\bigr).
+\]
+This is \isa{pp\_application\_closure}~\(\sigma\)~\(\tau\), used through
+\isa{u\_rc\_ac}. The target is
+\(\PPu:=\Pure_c(\pi)\) (\isa{pp\_target\_PP}).
+
+The proof uses exactly twenty instances of Logical Purity and
+Application, together with \(\PPu\). They are listed in
+Table~\ref{tab:premises} with the steps that use them. The closed terms
+named there are defined in Sections~\ref{sec:closure}--\ref{sec:final}.
+
+\begin{table}[ht]
+\centering
+\begin{singlespace}
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Premise & Instance & Used in\\
+\midrule
+L1 & \(\Pure_t(\top)\) & (Cl1) for \(G\)\\
+L2 & \(\Pure(\conj)\), \(\conj:=\lambda p\lambda q.(p\AND q)\) & (Cl2) for \(G\); \(\Pure_t(a)\)\\
+L3 & \(\Pure(m)\), \(m:=\lambda S.\forall p(Sp\IC p)\) & (Cl5) for \(G\); \(\Pure_t(a)\)\\
+L4 & \(\Pure(\hW)\) & \(\pi(W)\)\\
+L5 & \(\Pure(\hPhi)\) & \(\Pure_u(\Phi)\)\\
+L6, L7 & \(\Pure(\hP)\), \(\Pure(\hPp)\) & \(\Phi\) preserves pure truths\\
+L8 & \(\Pure(\hQ)\) & \(Q_a\) pure (Step 6.2)\\
+L9 & \(\Pure(Z)\), \(Z:=\lambda a\lambda Y\lambda x.(a\AND Yx)\) & Step 6.1\\
+L10 & \(\Pure(\cmp)\), \(\cmp:=\lambda Y\lambda S\lambda x.Y(Sx)\) & Step 6.2\\
+\midrule
+A1 & \(\App_{t,t\IC t}\) & (Cl2) for \(G\); \(\Pure_t(a)\)\\
+A2 & \(\App_{t,t}\) & (Cl2), (Cl3) for \(G\); \(\Pure_t(a)\)\\
+A3 & \(\App_{u,t}\) & (Cl4), (Cl5) for \(G\); \(\Pure_t(a)\)\\
+A4, A5 & \(\App_{c,u\IC u}\), \(\App_{u,u}\) & \(\pi(W)\); A5 also in Steps 6.1, 6.2\\
+A6 & \(\App_{c,u}\) & \(\Pure_u(\Phi)\)\\
+A7, A8 & \(\App_{c,t\IC u}\), \(\App_{t,u}\) & \(\Phi\) preserves pure truths; Step 6.2\\
+A9 & \(\App_{t,u\IC u}\) & Step 6.1\\
+A10 & \(\App_{u,u\IC u}\) & Step 6.2\\
+\midrule
+\(\PPu\) & \(\Pure_c(\pi)\) & (Cl4); \(\pi(W)\); \(\Pure_t(a)\); \(\Pure_u(\Phi)\); \(\kappa\); Step 6.2\\
+\bottomrule
+\end{tabular}
+\end{singlespace}
+\caption{The premises. L1--L4 with A1--A5 form \isa{roHC0}; L5--L10 with
+A6--A10 form \isa{roHF}; their conjunction \(\mathrm{LA}\) is
+\isa{roLA}.}
+\label{tab:premises}
+\end{table}
+
+\section{The results}
+
+Following Lettie, put (\isa{rcR}, \isa{rcUni}, \isa{rcExUni})
+\[
+ R(x,y):=\forall Y^u\bigl(\pi(Y)\IC(Yy\IC\Diamond Yx)\bigr),\qquad
+ \Uni(x):=\forall y\,R(x,y).
+\]
+A proposition \(x\) is \emph{universal} if \(\Uni(x)\).
+
+\begin{theorem}\label{thm:main}
+\(\HPE\dentails \mathrm{LA}\IC\bigl(\PPu\IC\NOT\exists r\,\Uni(r)\bigr)\).
+\by{ro\_thm1\_U}
+In the repository's ordinary-premise relation \(\dentails_{\mathrm{CEV}_s}\)
+over C, the premise set consisting of \(\PPu\) and the full Logical Purity
+and Application schemas derives \(\NOT\exists r\,\Uni(r)\).
+\by{ro\_thm1\_CEVs}
+\end{theorem}
+
+\begin{corollary}
+With \(\mathrm{EF}:=\exists r\,\Fun_t(r)\) and Lettie's \(\mathrm{H5}\)
+(Section~\ref{sec:cor}),
+\(\HPE\dentails\mathrm{LA}\IC(\mathrm{EF}\IC(\mathrm{H5}\IC\NOT\PPu))\).
+\by{ro\_cor\_EF\_U}
+In \(\dentails_{\mathrm{CEV}_s}\), the repository's Recombination
+package for the question derives \(\NOT\PPu\).
+\by{ro\_recombination\_refutes\_PP}
+\end{corollary}
+
+No Exhaustion, Persistence, or Purity of Fun is used.
+
+\section{The closure lemma}\label{sec:closure}
+
+Fix a closed term \(\Theta:u\). It may contain constants.
+Section~\ref{sec:truth} takes \(\Theta:=\Phi\).
+
+\paragraph{Definitions.}
+The closure condition with its two parameters abstracted is
+\[
+ \hCl:=\lambda c'\lambda T\lambda X.\,
+ \bigl(\text{Cl1}\AND\text{Cl2}\AND\text{Cl3}\AND\text{Cl4}\AND\text{Cl5}\bigr)
+ \qquad(\isa{ro\_Cl}),
+\]
+where, writing \(\pi\) for \(c'\) and \(\Theta\) for \(T\),
+\begin{align}
+ &X\top; \tag{Cl1}\\
+ &\forall p\forall q\bigl((Xp\AND Xq)\IC X(p\AND q)\bigr); \tag{Cl2}\\
+ &\forall p\bigl(Xp\IC X(\Theta p)\bigr); \tag{Cl3}\\
+ &\forall S\bigl(\pi(S)\IC X(\pi(S))\bigr); \tag{Cl4}\\
+ &\forall S\bigl((\pi(S)\AND\forall p(Sp\IC Xp))\IC X(m(S))\bigr). \tag{Cl5}
+\end{align}
+Put
+\begin{align*}
+ \Cl(X)&:=\hCl\,\pi\,\Theta\,X
+   && (\isa{roCl}),\\
+ \hW&:=\lambda c'\lambda T\lambda q.\,\forall X(\hCl\,c'\,T\,X\IC Xq)
+   && (\isa{ro\_W}),\\
+ W&:=\hW\,\pi\,\Theta
+   && (\isa{roW}),\\
+ a&:=m(W)\AND\pi(W)
+   && (\isa{roa}),\\
+ G&:=\lambda p.(\Pure_t(p)\AND p)
+   && (\isa{ro\_G}),\\
+ \Pres(\Theta)&:=\forall p\bigl((\Pure_t(p)\AND p)\IC\Theta p\bigr)
+   && (\isa{roPres}).
+\end{align*}
+The terms \(\conj\), \(m\), \(\hCl\), \(\hW\) are closed and contain no
+constants (\isa{ro\_closed}, \isa{ro\_consts}). By \(\beta\), \(\Cl(X)\)
+is the conjunction (Cl1)--(Cl5) (\isa{ro\_Cl\_iff}), and
+\[
+ Wq\IFF\forall X(\Cl(X)\IC Xq)\quad(\isa{ro\_W\_iff}),\qquad
+ m(S)\IFF\forall p(Sp\IC p)\quad(\isa{ro\_m\_iff}).
+\]
+We use \(W\) in two ways:
+\begin{itemize}
+\item[] Elimination: \(Wq\IC(\Cl(X)\IC Xq)\).\by{ro\_W\_elim}
+\item[] Introduction: from \(P\IC(\Cl(X)\IC Xq)\), with \(X\) fresh,
+  infer \(P\IC Wq\).\by{ro\_W\_intro}
+\end{itemize}
+The predicate \(G\) contains the constant \(\Pure_t\). It is only used to
+instantiate \(\forall X\), and its purity is never asserted.
+
+\begin{lemma}[Closure]\label{lem:closure}
+The following hold.
+\begin{enumerate}
+\item[(a)] \(\dentails\Cl(W)\). \by{ro\_ClW}
+\item[(b)] \(\dentails a\IC\Theta a\). \by{ro\_base}
+\item[(c)] \(\dentails\Box(a\IC\Theta a)\). \by{ro\_boxed}
+\item[(d)] Under L1--L4, A1--A5, and \(\PPu\):
+  \(\Pure_u(\Theta)\IC\bigl(\Pres(\Theta)\IC(\Pure_t(a)\AND a)\bigr)\).
+  \by{ro\_closure\_true}
+\end{enumerate}
+Parts (a)--(c) use no added principle.
+\end{lemma}
+
+\begin{proof}
+\emph{(a)} Each clause is proved by introduction for \(W\), from the same
+clause for an arbitrary \(X\) with \(\Cl(X)\).
+\begin{itemize}
+\item (Cl1): \(\Cl(X)\IC X\top\), so \(W\top\).\by{ro\_ClW\_1}
+\item (Cl2): elimination at \(p\) and at \(q\) gives \(Xp\) and \(Xq\) from
+  \(Wp\AND Wq\) and \(\Cl(X)\). Then (Cl2) for \(X\) gives
+  \(X(p\AND q)\). Generalize \(p,q\).\by{ro\_ClW\_2}
+\item (Cl3): from \(Wp\) and \(\Cl(X)\), elimination gives \(Xp\), and
+  (Cl3) for \(X\) gives \(X(\Theta p)\).\by{ro\_ClW\_3}
+\item (Cl4): from \(\pi(S)\) and \(\Cl(X)\), (Cl4) for \(X\) gives
+  \(X(\pi(S))\).\by{ro\_ClW\_4}
+\item (Cl5): assume \(\pi(S)\AND\forall p(Sp\IC Wp)\) and \(\Cl(X)\).
+  For each \(p\), \(Sp\IC Wp\) and elimination give \(Sp\IC Xp\). By
+  Generalization, \(\forall p(Sp\IC Xp)\), so (Cl5) for \(X\) gives
+  \(X(m(S))\).\by{ro\_ClW\_5}
+\end{itemize}
+
+\emph{(b)} Instantiate the clauses of (a) at \(W\) itself.
+\begin{itemize}
+\item[(b1)] (Cl4) at \(S:=W\): \(\pi(W)\IC W(\pi(W))\).
+\item[(b2)] (Cl5) at \(S:=W\), with the theorem \(\forall p(Wp\IC Wp)\):
+  \(\pi(W)\IC W(m(W))\).
+\item[(b3)] (Cl2) at \(m(W),\pi(W)\):
+  \((W(m(W))\AND W(\pi(W)))\IC Wa\).
+\item[(b4)] (Cl3) at \(a\): \(Wa\IC W(\Theta a)\).
+\item[(b5)] \(m(W)\IFF\forall p(Wp\IC p)\), instantiated at \(\Theta a\):
+  \(m(W)\IC(W(\Theta a)\IC\Theta a)\).
+\end{itemize}
+Assume \(a\), that is, \(m(W)\) and \(\pi(W)\). Steps (b1)--(b3) give
+\(Wa\), (b4) gives \(W(\Theta a)\), and (b5) gives \(\Theta a\).
+
+\emph{(c)} Necessitation applied to (b), a theorem without premises.
+
+\emph{(d)} Assume the premises, \(\Pure_u(\Theta)\) and \(\Pres(\Theta)\).
+\begin{itemize}
+\item[(d1)] \(\Cl(G)\), clause by clause, using
+  \(Gp\IFF(\Pure_t(p)\AND p)\) by \(\beta\) (\isa{ro\_G\_iff}).\by{ro\_ClG}
+  \begin{itemize}
+  \item (Cl1): \(\top\) is true and pure by L1.\by{ro\_ClG\_1}
+  \item (Cl2): let \(Gp\) and \(Gq\). Then \(p\AND q\) is true. By L2,
+   A1 and A2, \(\Pure_t(\conj\,p\,q)\). By \(\beta\),
+   \(\Pure_t(p\AND q)\) (\isa{ro\_pure\_be}).\by{ro\_ClG\_2}
+  \item (Cl3): let \(Gp\). \(\Pres(\Theta)\) gives \(\Theta p\).
+   \(\Pure_u(\Theta)\), \(\Pure_t(p)\) and A2 give \(\Pure_t(\Theta p)\).\by{ro\_ClG\_3}
+  \item (Cl4): let \(\pi(S)\), which is \(\Pure_u(S)\). \(\PPu\) and A3 give
+   \(\Pure_t(\pi(S))\), and \(\pi(S)\) is true.\by{ro\_ClG\_4}
+  \item (Cl5): let \(\pi(S)\) and \(\forall p(Sp\IC Gp)\). Since
+   \(Gp\IC p\), \(\forall p(Sp\IC p)\), which is \(m(S)\) by
+   \(\beta\). L3, \(\Pure_u(S)\) and A3 give \(\Pure_t(m(S))\).\by{ro\_ClG\_5}
+  \end{itemize}
+\item[(d2)] \(m(W)\): elimination at \(X:=G\) and (d1) give
+  \(Wp\IC Gp\), hence \(Wp\IC p\). Generalize \(p\), and apply \(\beta\).\by{ro\_mW}
+\item[(d3)] \(\pi(W)\): \(\PPu\), L4 and A4 give \(\Pure_{u\IC u}(\hW\pi)\).
+  Then \(\Pure_u(\Theta)\) and A5 give \(\Pure_u(W)\), which is
+  \(\pi(W)\).\by{ro\_piW}
+\item[(d4)] \(\Pure_t(a)\): L3, (d3) and A3 give \(\Pure_t(m(W))\).
+  \(\PPu\), (d3) and A3 give \(\Pure_t(\pi(W))\). Then L2, A1, A2 and
+  \(\beta\) give \(\Pure_t(m(W)\AND\pi(W))\).\by{ro\_pure\_a}
+\item[(d5)] By (d2) and (d3), \(a\) is true. With (d4), this proves (d).
+\end{itemize}
+\end{proof}
+
+The key clause is (Cl4). At \(S=W\) it places the guard \(\pi(W)\) in
+\(W\), so the conditional \(a\IC\Theta a\) holds in the base logic. Clause
+(Cl1) is not used in (b); it is the clause that accounts for premise L1.
+
+\section{The relativized Lettie construction}\label{sec:relative}
+
+\paragraph{Definitions.}
+The following terms are closed and contain no constants; in Isabelle
+these facts are \isa{ro\_rel\_closed} and \isa{ro\_rel\_consts}.
+\begin{align*}
+ \hR&:=\lambda c'\lambda b\lambda x\lambda y.\,
+   \forall Y\bigl(c'(Y)\IC(Yy\IC\Diamond(b\AND Yx))\bigr)
+   && (\isa{ro\_R}),\\
+ \hF&:=\lambda c'\lambda b\lambda z.\,
+   \Box\bigl(b\IC(\NOT\hR c'bz(\NOT z)\AND\NOT\hR c'b(\NOT z)z)\bigr)
+   && (\isa{ro\_F}),\\
+ \hQ&:=\lambda c'\lambda b\lambda z.(\hF c'bz\IC z)
+   && (\isa{ro\_Q}),\\
+ \hP&:=\lambda c'\lambda b\lambda z.(\NOT z\AND\NOT\hF c'bz)
+   && (\isa{ro\_P}),\\
+ \hPp&:=\lambda c'\lambda b\lambda z.(z\AND\NOT\hF c'bz)
+   && (\isa{ro\_Pp}),\\
+ \hPhi&:=\lambda c'\lambda b.\bigl(b\AND(c'(\hP c'b)\AND c'(\hPp c'b))\bigr)
+   && (\isa{ro\_Phi}).
+\end{align*}
+For a proposition \(b\), let
+\(R_b(x,y):=\hR\pi bxy\), \(F_b(z):=\hF\pi bz\), \(Q_b:=\hQ\pi b\),
+\(P_b:=\hP\pi b\), \(P'_b:=\hPp\pi b\), and \(\Phi:=\hPhi\pi\)
+(\isa{roR}, \isa{roF}, \isa{roQf}, \isa{roP}, \isa{roPp}, \isa{roPhi}).
+Put
+\[
+ C_b(z):=\NOT R_b(z,\NOT z)\AND\NOT R_b(\NOT z,z)\quad(\isa{roC}),
+ \qquad
+ \kappa(b):=\pi(P_b)\AND\pi(P'_b)\quad(\isa{rok}).
+\]
+By \(\beta\) (\isa{roR\_iff}, \isa{roF\_iff}, \isa{roQ\_iff},
+\isa{roP\_iff}, \isa{roPp\_iff}, \isa{roPhi\_iff}):
+\begin{gather*}
+ R_b(x,y)\IFF\forall Y\bigl(\pi(Y)\IC(Yy\IC\Diamond(b\AND Yx))\bigr),\qquad
+ F_b(z)\IFF\Box(b\IC C_b(z)),\\
+ Q_b(z)\IFF(F_b(z)\IC z),\qquad
+ P_b(z)\IFF(\NOT z\AND\NOT F_b(z)),\\
+ P'_b(z)\IFF(z\AND\NOT F_b(z)),\qquad
+ \Phi(b)\IFF(b\AND\kappa(b)).
+\end{gather*}
+The rule ``from \(P\IC(\pi(Y)\IC(Yy\IC\Diamond(b\AND Yx)))\) with \(Y\)
+fresh, infer \(P\IC R_b(x,y)\)'' is \isa{roR\_intro}. Elimination, the
+instance of \(R_b(x,y)\) at a given \(Y\), is \isa{roR\_elim}.
+
+Every result in this section is a premise-free theorem, for arbitrary
+proposition terms \(b\), \(x\) and \(z\).
+
+\begin{lemma}[Relative lemma]\label{lem:relative}
+\(\dentails\Box(b\IC\kappa(b))\IC F_b(Q_b(x))\).\by{ro\_relative}
+\end{lemma}
+
+The proof replays the logical part of Lettie's argument with the guard
+\(b\). It passes through seven premise-free theorems.
+\begin{enumerate}
+\item[(2.1)] \(F_b(x)\IC\Box F_b(x)\). \by{ro\_lemA}
+\item[(2.2)] \(F_b(x)\IC Q_b(x)=x\). \by{ro\_lemB}
+\item[(2.3)] \(F_b(\NOT x)\IFF F_b(x)\). \by{ro\_lemC}
+\item[(2.4)] \(P'_b(z)=P_b(\NOT z)\). \by{ro\_ident}
+\item[(2.5)] \(\NOT Q_b(x)\IC F_b(Q_b(x))\). \by{ro\_lemD}
+\item[(2.6)] \(\Box\NOT P_b(Q_b(x))\). \by{ro\_cor}
+\item[(2.7)] \((b\AND\kappa(b))\IC C_b(Q_b(x))\). \by{ro\_guarded}
+\end{enumerate}
+
+\begin{proof}[Proof of (2.1)--(2.7)]
+(2.1) By \(\beta\), \(F_b(x)\IFF\Box B\) with \(B:=b\IC C_b(x)\). Axiom 4
+gives \(\Box B\IC\Box\Box B\). The K-rule applied to \(\Box B\IC F_b(x)\)
+gives \(\Box\Box B\IC\Box F_b(x)\).
+
+(2.2) By \(\beta\), \(Q_b(x)\IFF(F_b(x)\IC x)\). Hence
+\(\dentails F_b(x)\IC(Q_b(x)\IFF x)\), and the K-rule gives
+\(\Box F_b(x)\IC\Box(Q_b(x)\IFF x)\). Combine with (2.1) and
+\(\Box(A\IFF B)\IC A=B\).
+
+(2.3) Propositional Equivalence gives \(\NOT\NOT x=x\). So, by congruence,
+\(R_b(\NOT x,\NOT\NOT x)\IFF R_b(\NOT x,x)\) and
+\(R_b(\NOT\NOT x,\NOT x)\IFF R_b(x,\NOT x)\). So \(C_b(\NOT x)\IFF C_b(x)\),
+with the two conjuncts exchanged, and Propositional Equivalence gives
+\(C_b(\NOT x)=C_b(x)\). Congruence in \(\Box(b\IC\cdot)\) and \(\beta\)
+give the claim.
+
+(2.4) By \(\beta\), \(P'_b(z)\IFF(z\AND\NOT F_b(z))\) and
+\(P_b(\NOT z)\IFF(\NOT\NOT z\AND\NOT F_b(\NOT z))\). By (2.3) the
+right-hand sides are equivalent. Propositional Equivalence gives the
+identity.
+
+(2.5) By \(\beta\), \(\NOT Q_b(x)\IC F_b(x)\). By (2.2) and symmetry,
+\(F_b(x)\IC x=Q_b(x)\). Leibniz's law for \(F_b\) gives
+\(F_b(x)\IC F_b(Q_b(x))\).
+
+(2.6) Let \(q:=Q_b(x)\). By \(\beta\), \(P_b(q)\IFF(\NOT q\AND\NOT F_b(q))\).
+By (2.5), \(\NOT q\IC F_b(q)\), so \(\dentails\NOT P_b(q)\). This is a
+premise-free theorem, so Necessitation applies.
+
+(2.7) Let \(q:=Q_b(x)\). We first collect seven theorems.
+\begin{itemize}
+\item[(i)] \((b\AND\NOT C_b(q))\IC(q\AND\NOT F_b(q))\). If \(F_b(q)\),
+  then \(\Box(b\IC C_b(q))\) by \(\beta\), and T gives \(b\IC C_b(q)\),
+  a contradiction. So \(\NOT F_b(q)\), and the contrapositive of (2.5)
+  gives \(q\).
+\item[(ii)] \((q\AND\NOT F_b(q))\IC P_b(\NOT q)\). By \(\beta\),
+  \(P_b(\NOT q)\IFF(\NOT\NOT q\AND\NOT F_b(\NOT q))\). Use (2.3) at \(q\).
+\item[(iii)] \((q\AND\NOT F_b(q))\IC P'_b(q)\), by \(\beta\).
+\item[(iv)] \(\Box\NOT(b\AND P_b(q))\). Apply the K-rule to the tautology
+  \(\NOT P_b(q)\IC\NOT(b\AND P_b(q))\), then use (2.6).
+\item[(v)] \(\Diamond(b\AND P'_b(\NOT q))\IFF\Diamond(b\AND P_b(q))\).
+  By (2.4) at \(\NOT q\), \(P'_b(\NOT q)=P_b(\NOT\NOT q)\), and congruence
+  turns this identity into \(P'_b(\NOT q)\IFF P_b(\NOT\NOT q)\). Also
+  \(\NOT\NOT q=q\), so congruence gives
+  \(P_b(\NOT\NOT q)\IFF P_b(q)\). Chaining the two biconditionals,
+  Propositional Equivalence gives
+  \(P'_b(\NOT q)=P_b(q)\), and congruence in \(\Diamond(b\AND\cdot)\)
+  gives (v).
+\item[(vi)] \(R_b(q,\NOT q)\IC(\pi(P_b)\IC(P_b(\NOT q)\IC\Diamond(b\AND P_b(q))))\),
+  the instance at \(Y:=P_b\).
+\item[(vii)] \(R_b(\NOT q,q)\IC(\pi(P'_b)\IC(P'_b(q)\IC\Diamond(b\AND P'_b(\NOT q))))\),
+  the instance at \(Y:=P'_b\).
+\end{itemize}
+Now assume \(b\), \(\pi(P_b)\), \(\pi(P'_b)\) and \(\NOT C_b(q)\), so
+\(R_b(q,\NOT q)\OR R_b(\NOT q,q)\). By (i)--(iii), \(P_b(\NOT q)\) and
+\(P'_b(q)\). In the first case (vi) gives \(\Diamond(b\AND P_b(q))\). In
+the second, (vii) and (v) give the same conclusion. Either contradicts
+(iv). The combination is propositional.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:relative}]
+By (2.7), \(\dentails(b\IC\kappa(b))\IC(b\IC C_b(Q_b(x)))\). The K-rule
+gives \(\Box(b\IC\kappa(b))\IC\Box(b\IC C_b(Q_b(x)))\). The consequent is
+\(F_b(Q_b(x))\) by \(\beta\).
+\end{proof}
+
+The lemma is stated for each term \(x\). Generalization would give
+\(\forall x\), but only the instance \(x:=r\) is used below.
+
+\section{The required pure truth}\label{sec:truth}
+
+Now take \(\Theta:=\Phi=\hPhi\pi\), which is closed, and let \(a\) and
+\(W\) be as in Section~\ref{sec:closure} for this \(\Theta\). Write
+\(\mathrm{Prem}:=\mathrm{LA}\AND\PPu\) (\isa{roPrem}, up to the
+order and grouping of conjuncts).
+\begin{itemize}
+\item[(5.1)] Under Prem, \(\Pure_u(\Phi)\): use \(\PPu\), L5 and A6.\by{ro\_Phi\_pure}
+\item[(5.2)] Under Prem, \(\Pres(\Phi)\). Let \(b\) be pure and true.
+  \(\PPu\), L6, A7, \(\Pure_t(b)\) and A8 give \(\Pure_u(P_b)\); likewise
+  L7 gives \(\Pure_u(P'_b)\). These are \(\pi(P_b)\) and \(\pi(P'_b)\),
+  so \(\kappa(b)\) holds. With \(b\) and \(\beta\), \(\Phi(b)\) holds.\by{ro\_Phi\_pres}
+\item[(5.3)] Under Prem, \(\Pure_t(a)\AND a\): Lemma~\ref{lem:closure}(d)
+  with (5.1) and (5.2).\by{ro\_actual}
+\item[(5.4)] \(\dentails\Box(a\IC\kappa(a))\), with no premises. By
+  \(\beta\), \(\dentails(a\IC\Phi(a))\IC(a\IC\kappa(a))\). Apply the
+  K-rule and use Lemma~\ref{lem:closure}(c).\by{ro\_certificate}
+\item[(5.5)] \(\dentails F_a(Q_a(x))\) for every \(x\), with no
+  premises: Lemma~\ref{lem:relative} at \(b:=a\), and (5.4).\by{ro\_Fa}
+\end{itemize}
+The premises enter only at (5.1)--(5.3). Steps (5.4) and (5.5) are
+theorems of the base logic. No purity or truth assertion is necessitated.
+
+\section{The contradiction}\label{sec:final}
+
+Let \(r\) be a proposition term. With the closed terms
+\(Z:=\lambda a\lambda Y\lambda x.(a\AND Yx)\) and
+\(\cmp:=\lambda Y\lambda S\lambda x.Y(Sx)\) (\isa{ro\_Z},
+\isa{ro\_comp}), \(\beta\) gives
+\(Z\,a\,Y\,x\IFF(a\AND Yx)\) and \(\cmp\,Y\,S\,x\IFF Y(Sx)\)
+(\isa{roZ\_iff}, \isa{roComp\_iff}).
+
+\begin{itemize}
+\item[(6.1)] Under Prem and \(\Uni(r)\), \(R_a(r,y)\) for every \(y\).\by{ro\_step1, ro\_uni\_rel}
+  Let \(Y\) be pure and \(Yy\), and put \(Z_Y:=Z\,a\,Y\).
+  \begin{itemize}
+  \item \(Z_Y\) is pure: L9, \(\Pure_t(a)\) from (5.3) and A9, then
+    \(\Pure_u(Y)\) and A5.
+  \item \(Z_Y(y)\): by \(\beta\), from the truth of \(a\) (5.3) and \(Yy\).
+  \item \(\Uni(r)\) gives \(R(r,y)\) (\isa{u\_rcUni\_inst}); its instance
+    at \(Z_Y\) (\isa{u\_rcR\_elim}) gives \(\Diamond Z_Y(r)\).
+  \item By \(\beta\), \(\NOT(a\AND Yr)\IC\NOT Z_Y(r)\). The K-rule turns
+    \(\Diamond Z_Y(r)\) into \(\Diamond(a\AND Yr)\).
+  \end{itemize}
+  Introduction for \(R_a\) over \(Y\) gives \(R_a(r,y)\).
+\item[(6.2)] Under Prem and \(\Uni(r)\), \(R_a(e,\NOT e)\), where
+  \(e:=Q_a(r)\).\by{ro\_step2, ro\_Rae}
+  Let \(Y\) be pure and \(Y(\NOT e)\), and put \(Y':=\cmp\,Y\,Q_a\).
+  \begin{itemize}
+  \item \(Q_a=\hQ\pi a\) is pure: \(\PPu\), L8, A7, \(\Pure_t(a)\) and A8.
+    Then \(Y'\) is pure: L10, \(\Pure_u(Y)\) and A10, then
+    \(\Pure_u(Q_a)\) and A5.
+  \item \(Y'(\NOT e)\). By (5.5) at \(x:=r\), \(F_a(e)\). By (2.3),
+    \(F_a(\NOT e)\). By (2.2) at \(\NOT e\), \(Q_a(\NOT e)=\NOT e\).
+    By symmetry and Leibniz's law, \(Y(\NOT e)\IC Y(Q_a(\NOT e))\), and
+    \(\beta\) gives \(Y'(\NOT e)\).
+  \item (6.1) at \(y:=\NOT e\) gives \(R_a(r,\NOT e)\). Its instance at
+    \(Y'\) gives \(\Diamond(a\AND Y'(r))\).
+  \item By \(\beta\), \(Y'(r)\IFF Y(e)\). The K-rule gives
+    \(\Diamond(a\AND Y(e))\).
+  \end{itemize}
+  Introduction for \(R_a\) over \(Y\) gives \(R_a(e,\NOT e)\).
+\item[(6.3)] Under Prem, \(\NOT\Uni(r)\).\by{ro\_contra}
+  By (5.5) and \(\beta\), \(\Box(a\IC C_a(e))\). T gives
+  \(a\IC C_a(e)\), and \(a\) is true by (5.3). So \(C_a(e)\), whose first
+  conjunct is \(\NOT R_a(e,\NOT e)\). This contradicts (6.2).
+\item[(6.4)] \(\dentails\mathrm{Prem}\IC\NOT\exists r\,\Uni(r)\).
+  Apply (6.3) to a variable \(r\), then the Instantiation rule.\by{ro\_thm1}
+\end{itemize}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Reorder the antecedent of (6.4) to separate \(\PPu\) (\isa{ro\_thm1\_U}).
+For the CEV form, each conjunct of LA belongs to the Logical Purity or
+the Application schema (\isa{ro\_LA\_derivable}), and \(\PPu\) is a
+member of the premise set (an Assumption step). The theorem transfers from U to C by
+\isa{U\_sub\_CEV}, and modus ponens with the premises gives the
+conclusion (\isa{ro\_thm1\_CEVs}).
+\end{proof}
+
+\section{Fundamental propositions and the corollary}\label{sec:cor}
+
+Unary Recombination (\isa{pp\_unary\_recombination}) is
+\[
+ \Rec:=\forall X^u\forall r\bigl((\Pure_u(X)\AND\Fun_t(r))
+   \IC(\Box Xr\IC\forall z\,Xz)\bigr).
+\]
+Lettie's \(\mathrm{H5}\) (\isa{rcH5}) is
+\(\Pure_{u\IC u}(\negop)\AND\App_{u,u}\AND\Rec\), where
+\(\negop:=\lambda Y\lambda x.\NOT Yx\) (\isa{k\_C}).
+
+\begin{proposition}[Lettie]
+\(\dentails\mathrm{EF}\IC(\mathrm{H5}\IC\exists r\,\Uni(r))\).
+\by{u\_fun\_ExUni}
+\end{proposition}
+\begin{proof}
+This lemma is imported from Lettie's kernel and was checked there. Let
+\(\Fun_t(r)\), and let \(Y\) be pure with \(Yy\) (\isa{u\_fun\_step}).
+The operator \(X:=\negop\,Y\) is pure, since \(\Pure(\negop)\), \(\Pure_u(Y)\)
+and \(\App_{u,u}\) hold. By \(\beta\), \(\NOT Yr\IC Xr\), and the K-rule
+gives \(\Box\NOT Yr\IC\Box Xr\). If \(\Box\NOT Yr\), then \(\Rec\) gives
+\(\forall z\,Xz\), hence \(Xy\), that is, \(\NOT Yy\): a contradiction.
+So \(\Diamond Yr\). Introduction for \(R\) and Generalization give
+\(\Uni(r)\) (\isa{u\_uni\_ctx}), and existential generalization with
+Instantiation over \(\mathrm{EF}\) give the claim.
+\end{proof}
+
+\begin{proof}[Proof of the Corollary]
+Combine Theorem~\ref{thm:main} with the Proposition (\isa{ro\_cor\_EF\_U}).
+Unique fundamentality implies \(\mathrm{EF}\) (\isa{lo\_EF\_of\_UF}), which
+gives \isa{ro\_cor\_U}. For the repository package, the members used are
+the Logical Purity schema (L1--L10 and \(\negop\)), the Application schema,
+unique fundamentality, and \(\Rec\) (\isa{ro\_cor\_set}). The package's
+other members, ``no other fundamentals'' and zeroary Recombination, are
+not used. Adding \(\PPu\) to the package derives \(\bot\)
+(\isa{ro\_recombination\_PP\_inconsistent}).
+\end{proof}
+
+\appendix
+\Needspace{10\baselineskip}
+\section*{Appendix A: verification record}
+
+\begin{singlespace}
+\small
+\raggedright
+\noindent
+Session \isa{Goodman\_Integration\_Recombination\_Only} =
+\isa{PoP\_Main} + \isa{Goodman\_RecOnly\_Closure},
+\isa{Goodman\_RecOnly\_Relative}, \isa{Goodman\_RecOnly\_Final},
+\isa{Goodman\_RecOnly\_Audit}, in \isa{theories/}\linebreak[0]\isa{recombination\_only/}
+of the Goodman application. It is built by the application's checker,
+\isa{./check\_isabelle.sh --export}, serially and with a 60-second
+session timeout, under Isabelle2026. Lettie's files and the Bacon--Dorr
+core are unchanged. The audit theory checks 31 endpoint theorems for
+oracles (none), residual hypotheses (none), and flex--flex pairs (none).
+Its catalog and statement export are in
+\isa{verification/audits/}\linebreak[0]\isa{Goodman\_Integration\_Recombination\_Only.}\linebreak[0]\isa{Goodman\_RecOnly\_Audit/}.
+No proof uses \isa{sorry}, \isa{oops}, \isa{quick\_and\_dirty}, or a new
+axiomatization. No proof uses the axiom-extension calculi
+\isa{CEV\_axiom\_proves} or \isa{goodman\_book\_proves}.
+
+\medskip
+\renewcommand{\arraystretch}{1.12}
+\noindent
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.42\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+This note & Isabelle theorem or definition\\
+\midrule
+\(m,\hCl,\Cl,\hW,W,a,G,\Pres\) & \isa{ro\_m}, \isa{ro\_Cl}, \isa{roCl},
+  \isa{ro\_W}, \isa{roW}, \isa{roa}, \isa{ro\_G}, \isa{roPres}\\
+Premises L1--L4, A1--A5, \(\PPu\) & \isa{roHC} (\isa{roHC0} without \(\PPu\))\\
+Lemma~\ref{lem:closure}(a), clause by clause & \isa{ro\_ClW\_1}--\isa{ro\_ClW\_5}, \isa{ro\_ClW}\\
+Lemma~\ref{lem:closure}(b), (c) & \isa{ro\_base}, \isa{ro\_boxed}\\
+(d1), clause by clause & \isa{ro\_ClG\_1}--\isa{ro\_ClG\_5}, \isa{ro\_ClG}\\
+(d2), (d3), (d4), (d) & \isa{ro\_mW}, \isa{ro\_piW}, \isa{ro\_pure\_a},
+  \isa{ro\_closure\_true}\\
+\(\hR,\hF,\hQ,\hP,\hPp,\hPhi\) & \isa{ro\_R}, \isa{ro\_F}, \isa{ro\_Q},
+  \isa{ro\_P}, \isa{ro\_Pp}, \isa{ro\_Phi}\\
+\(R_b,F_b,Q_b,Q_b(z),P_b,P'_b,C_b,\kappa,\Phi\) & \isa{roR}, \isa{roF},
+  \isa{roQf}, \isa{roQ},
+  \isa{roP}, \isa{roPp}, \isa{roC}, \isa{rok}, \isa{roPhi}\\
+(2.1)--(2.7) & \isa{ro\_lemA}, \isa{ro\_lemB}, \isa{ro\_lemC},
+  \isa{ro\_ident}, \isa{ro\_lemD}, \isa{ro\_cor}, \isa{ro\_guarded}\\
+Lemma~\ref{lem:relative} & \isa{ro\_relative}\\
+Premises L5--L10, A6--A10; Prem & \isa{roHF}; \isa{roPrem}\\
+(5.1)--(5.5) & \isa{ro\_Phi\_pure}, \isa{ro\_Phi\_pres}, \isa{ro\_actual},
+  \isa{ro\_certificate}, \isa{ro\_Fa}\\
+\(Z\), \(\cmp\) & \isa{ro\_Z}, \isa{ro\_comp}\\
+(6.1)--(6.4) & \isa{ro\_step1}, \isa{ro\_uni\_rel}, \isa{ro\_step2},
+  \isa{ro\_Rae}, \isa{ro\_contra}, \isa{ro\_thm1}\\
+Theorem~\ref{thm:main} & \isa{ro\_thm1\_U}, \isa{ro\_thm1\_CEVs}\\
+Proposition (Lettie) & \isa{u\_fun\_step}, \isa{u\_uni\_ctx},
+  \isa{u\_fun\_ExUni} (imported)\\
+Corollary & \isa{ro\_cor\_EF\_U}, \isa{ro\_cor\_U}, \isa{ro\_cor\_set},
+  \isa{ro\_recombination\_refutes\_PP},
+  \isa{ro\_recombination\_PP\_inconsistent}\\
+\bottomrule
+\end{tabularx}
+\end{singlespace}
+
+\end{document}

@@ -1,5 +1,35 @@
 # Standalone release verification
 
+## Recombination without Exhaustion — 11 November 2026 (full build passed under Isabelle2026)
+
+A new session `Goodman_Integration_Recombination_Only`
+(`theories/recombination_only/`, parent `PoP_Main`) formalizes the
+strengthening of Lettie's result that drops Exhaustion:
+`Goodman_RecOnly_Closure`, `Goodman_RecOnly_Relative` and
+`Goodman_RecOnly_Final` contain the proof, and `Goodman_RecOnly_Audit` adds
+no proof. The audit exports `recombination-only-audit.txt` and
+`recombination-only-statements.txt` for 31 endpoints (the steps of the hand
+proof, then `ro_thm1_U`, `ro_cor_EF_U`, `ro_cor_U`, `ro_thm1_CEVs`,
+`ro_recombination_refutes_PP` and `ro_recombination_PP_inconsistent`). It
+fails the build on any oracle, residual hypothesis or flex-flex pair. The
+tree now has 315 theory files and 68 application sessions. No existing
+theory, preserved file, external input or proof changed; Lettie's 11 files
+still match their recorded hashes.
+
+A targeted serial build of the new session with the checker's options
+(`runs/build-2026-11-11T18-35-16-recombination-only-session.log`) passed,
+and its audit files were retained under `audits/` so that the packaging
+tests could compare them with the manifest. Input checks then passed (core
+hashes equal to the pin, 82 preserved files, 11 external input files, 12
+packaging tests), and `./check_isabelle.sh --export` passed with
+**Isabelle2026**: build exit **0**, log
+`build-2026-11-11T18-35-41-865083.log`, every session current. Exports in
+`exports/2026-11-11T18-35-41-865083/`: **89 catalogs**, **1,756
+integration entries and 9 replay entries** (1,765 clean rows). All 172
+exported catalog and statement files are byte-identical to the retained
+copies under `audits/`, the 170 earlier ones included; `audits/summary.json`
+was updated to these counts.
+
 ## Lettie formalization — 11 November 2026 (full build passed under Isabelle2026)
 
 The Isabelle theories of Jacob Lettie (Purity of Pure team) are included

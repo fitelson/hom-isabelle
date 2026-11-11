@@ -429,3 +429,12 @@ session Goodman_Integration_Lettie_Audit in "theories/lettie_audit" = PoP_W +
   sessions PoP_NUP PoP_K6 PoP_PSI PoP_PPT
   theories
     Goodman_Lettie_Audit
+
+session Goodman_Integration_Recombination_Only in "theories/recombination_only" = PoP_Main +
+  description "Recombination without Exhaustion: Logical Purity, Application and PP_u refute a universal proposition."
+  options [timeout = 60, export_theory = true]
+  theories
+    Goodman_RecOnly_Closure
+    Goodman_RecOnly_Relative
+    Goodman_RecOnly_Final
+    Goodman_RecOnly_Audit

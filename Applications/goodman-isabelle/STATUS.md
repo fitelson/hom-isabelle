@@ -1,5 +1,38 @@
 # Verification status
 
+## Recombination without Exhaustion, 11 November 2026
+
+**Result (Isabelle-checked, pending independent human review).** Shortly
+after Lettie found his result (next section), a strengthening was found
+that drops Exhaustion. Over H + PE, twenty instances of Logical Purity and
+Application together with PPᵤ refute the existence of a universal
+proposition. All are ordinary premises: Equivalence and Necessitation apply
+only to premise-free theorems. Since a fundamental proposition is universal
+by unary Recombination (Lettie's `u_fun_ExUni`), PPᵤ is refuted by Logical
+Purity, Application, unary Recombination and a fundamental proposition. This
+answers the Recombination-only reading of Goodman's question negatively,
+subject to that review. No Exhaustion, Persistence, Purity of Fun or
+higher-arity QLN is used.
+
+**Checked endpoints** (session `Goodman_Integration_Recombination_Only` in
+`theories/recombination_only/`, on Lettie's unmodified kernel `PoP_Main`;
+31 audited endpoints, no oracles):
+
+| Statement | Theorem |
+|---|---|
+| H + PE proves LA → (PPᵤ → ¬∃r Uni(r)), LA the twenty Logical Purity and Application instances, as a closed theorem of a calculus with no rule for added premises | `ro_thm1_U` |
+| PPᵤ with the full Logical Purity and Application schemas, as ordinary premises over C, proves ¬∃r Uni(r) | `ro_thm1_CEVs` |
+| H + PE proves LA → (EF → (H5 → ¬PPᵤ)), EF the existence of a fundamental proposition and H5 Lettie's conjunction of Logical Purity at the negator, Application at (u, u) and unary Recombination | `ro_cor_EF_U` (unique form: `ro_cor_U`) |
+| The repository's Recombination package (`pp_recombination_background_axioms`), as ordinary premises over C, proves ¬PPᵤ | `ro_recombination_refutes_PP` |
+| The same package with PP derives ⊥ | `ro_recombination_PP_inconsistent` |
+
+The [hand proof](reports/RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11.pdf)
+names the Isabelle theorem for every numbered step and the premise instance
+at every use of Logical Purity or Application; the
+[correspondence](docs/RECOMBINATION_ONLY_CORRESPONDENCE.md) maps the steps to
+theorems and records the consequence relation. Of the package's members,
+"no other fundamentals" and zeroary Recombination are not used.
+
 ## Goodman's question: Lettie's refutation, 11 November 2026
 
 **Result.** Jacob Lettie, working with the Purity of Pure team, proved that
@@ -40,10 +73,11 @@ distributes a Metamath certificate of the same theorem (not included here);
 on 11 November 2026 it passed `metamath.exe`, `checkmm` and `mmverify.py`,
 resting only on rules of H + PE.
 
-**Open.** Whether PPᵤ is refuted by unary Recombination and a fundamental
-proposition without Exhaustion (or the two Persistence instances that
-Lettie shows would also suffice), with the added principles as ordinary
-premises. Exhaustion enters the proof only through W8–W9.
+**Formerly open.** Whether PPᵤ is refuted by unary Recombination and a
+fundamental proposition without Exhaustion (or the two Persistence instances
+that Lettie shows would also suffice), with the added principles as ordinary
+premises. Exhaustion enters Lettie's proof only through W8–W9. The
+strengthening in the previous section answers this, pending review.
 
 **Withdrawn.** A refutation added on 11 November 2026 and reverted the same
 day (commit 2bd178b) was a theorem of `goodman_book_proves`, an axiom
@@ -53,7 +87,7 @@ does not answer the question as posed.
 
 The dated sections below are the record of earlier checkpoints. Their
 statements that Goodman's question is open are superseded for its full-QLN
-reading.
+reading and, pending review, for its Recombination-only reading.
 
 ## Core compatibility update — 26 September 2026 (third pin refresh)
 
@@ -198,8 +232,9 @@ not a reason to mark that completed task unfinished.
 The [contributor guide](CONTRIBUTING.md) supplies bounded deliverables and
 completion criteria. M5's nested collision is **completed**, not a TODO.
 Goodman's original PP consistency question is answered negatively in its
-full-QLN reading (first section of this file); its Recombination-only reading
-remains an open research question.
+full-QLN reading (Lettie's refutation, above). Its Recombination-only reading
+is answered negatively by the Isabelle-checked strengthening in the first
+section of this file, pending independent human review.
 
 ## Formerly included but not selected
 

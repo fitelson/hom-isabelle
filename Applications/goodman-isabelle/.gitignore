@@ -11,6 +11,7 @@ export/
 *.pdf
 !reports/GOODMAN_VERIFICATION_REPORT_2026-09-20.pdf
 !reports/LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11.pdf
+!reports/RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11.pdf
 !reports/archive/2026-11-11_pre_explanatory_revision/LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11.pdf
 reports/build/
 *.claude-stream.jsonl

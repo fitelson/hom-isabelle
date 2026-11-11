@@ -17,8 +17,14 @@ theorem, whose Isabelle theories are in theories/lettie_pp/ (his files,
 included unmodified with permission; never edit them) with a hand proof in
 reports/LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11 and the map in
 docs/LETTIE_PP_CORRESPONDENCE.md. Keep the hand proof and the Isabelle
-theorems aligned. The Recombination-only reading with ordinary premises is
-OPEN. Always distinguish ordinary premises (Equivalence and Necessitation
+theorems aligned. Recombination-only reading with ordinary premises:
+answered negatively by Recombination without Exhaustion (a strengthening
+found shortly after Lettie's result; do not attribute it to anyone),
+Isabelle-checked in theories/recombination_only/ on Lettie's kernel, with
+the hand proof reports/RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11
+and the map docs/RECOMBINATION_ONLY_CORRESPONDENCE.md. It is pending
+independent human review: say so, and do not call it settled. Keep this hand
+proof and its theorems aligned too. Always distinguish ordinary premises (Equivalence and Necessitation
 only on base theorems) from an axiom extension closed under them, such as
 goodman_book_proves: an earlier refutation of the latter was withdrawn on
 11 November 2026 because it did not answer the question.

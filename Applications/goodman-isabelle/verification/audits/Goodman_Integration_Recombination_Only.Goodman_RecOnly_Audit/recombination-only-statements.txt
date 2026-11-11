@@ -1,0 +1,70 @@
+ro_ClW:
+\<lbrakk>\<And>\<Gamma>. \<Gamma> \<turnstile> ?T : rc_u; \<And>s. subst s ?T = ?T; \<And>\<rho>. rename \<rho> ?T = ?T\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U roCl ?T (roW ?T)
+ro_base:
+\<lbrakk>\<And>\<Gamma>. \<Gamma> \<turnstile> ?T : rc_u; \<And>s. subst s ?T = ?T; \<And>\<rho>. rename \<rho> ?T = ?T\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U Imp (roa ?T) (App ?T (roa ?T))
+ro_boxed:
+\<lbrakk>\<And>\<Gamma>. \<Gamma> \<turnstile> ?T : rc_u; \<And>s. subst s ?T = ?T; \<And>\<rho>. rename \<rho> ?T = ?T\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U \<box>\<^sub>o Imp (roa ?T) (App ?T (roa ?T))
+ro_ClG:
+\<lbrakk>\<And>\<Gamma>. \<Gamma> \<turnstile> ?T : rc_u; \<And>s. subst s ?T = ?T; \<And>\<rho>. rename \<rho> ?T = ?T\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U Imp (roH ?T) (roCl ?T ro_G)
+ro_mW:
+\<lbrakk>\<And>\<Gamma>. \<Gamma> \<turnstile> ?T : rc_u; \<And>s. subst s ?T = ?T; \<And>\<rho>. rename \<rho> ?T = ?T\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U Imp (roH ?T) (rom (roW ?T))
+ro_piW:
+\<lbrakk>\<And>\<Gamma>. \<Gamma> \<turnstile> ?T : rc_u; \<And>s. subst s ?T = ?T; \<And>\<rho>. rename \<rho> ?T = ?T\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U Imp (roH ?T) (App rc_p (roW ?T))
+ro_pure_a:
+\<lbrakk>\<And>\<Gamma>. \<Gamma> \<turnstile> ?T : rc_u; \<And>s. subst s ?T = ?T; \<And>\<rho>. rename \<rho> ?T = ?T\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U Imp (roH ?T) (pp_pure Prop (roa ?T))
+ro_closure_true:
+\<lbrakk>\<And>\<Gamma>. \<Gamma> \<turnstile> ?T : rc_u; \<And>s. subst s ?T = ?T; \<And>\<rho>. rename \<rho> ?T = ?T\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U Imp roHC (Imp (pp_pure rc_u ?T) (Imp (roPres ?T) (Conj (pp_pure Prop (roa ?T)) (roa ?T))))
+ro_lemA:
+\<lbrakk>?\<Gamma> \<turnstile> ?b : Prop; ?\<Gamma> \<turnstile> ?x : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U Imp (roF ?b ?x) (\<box>\<^sub>o roF ?b ?x)
+ro_lemB:
+\<lbrakk>?\<Gamma> \<turnstile> ?b : Prop; ?\<Gamma> \<turnstile> ?x : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U Imp (roF ?b ?x) (Eq Prop (roQ ?b ?x) ?x)
+ro_lemC:
+\<lbrakk>?\<Gamma> \<turnstile> ?b : Prop; ?\<Gamma> \<turnstile> ?x : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U (roF ?b (Neg ?x) \<longleftrightarrow>\<^sub>o roF ?b ?x)
+ro_lemD:
+\<lbrakk>?\<Gamma> \<turnstile> ?b : Prop; ?\<Gamma> \<turnstile> ?x : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U Imp (Neg (roQ ?b ?x)) (roF ?b (roQ ?b ?x))
+ro_cor:
+\<lbrakk>?\<Gamma> \<turnstile> ?b : Prop; ?\<Gamma> \<turnstile> ?x : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U \<box>\<^sub>o Neg (App (roP ?b) (roQ ?b ?x))
+ro_ident:
+\<lbrakk>?\<Gamma> \<turnstile> ?b : Prop; ?\<Gamma> \<turnstile> ?z : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U Eq Prop (App (roPp ?b) ?z) (App (roP ?b) (Neg ?z))
+ro_guarded:
+\<lbrakk>?\<Gamma> \<turnstile> ?b : Prop; ?\<Gamma> \<turnstile> ?x : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U Imp (Conj ?b (rok ?b)) (roC ?b (roQ ?b ?x))
+ro_relative:
+\<lbrakk>?\<Gamma> \<turnstile> ?b : Prop; ?\<Gamma> \<turnstile> ?x : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U Imp (\<box>\<^sub>o Imp ?b (rok ?b)) (roF ?b (roQ ?b ?x))
+ro_Phi_pure:
+?\<Gamma> \<turnstile>\<^sub>U Imp roPrem (pp_pure rc_u roPhi)
+ro_Phi_pres:
+?\<Gamma> \<turnstile>\<^sub>U Imp roPrem (roPres roPhi)
+ro_actual:
+?\<Gamma> \<turnstile>\<^sub>U Imp roPrem (Conj (pp_pure Prop (roa roPhi)) (roa roPhi))
+ro_certificate:
+?\<Gamma> \<turnstile>\<^sub>U \<box>\<^sub>o Imp (roa roPhi) (rok (roa roPhi))
+ro_Fa:
+?\<Gamma> \<turnstile> ?x : Prop \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U roF (roa roPhi) (roQ (roa roPhi) ?x)
+ro_uni_rel:
+\<lbrakk>?\<Gamma> \<turnstile> ?r : Prop; ?\<Gamma> \<turnstile> ?y : Prop\<rbrakk> \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U Imp (Conj roPrem (rcUni ?r)) (roR (roa roPhi) ?r ?y)
+ro_Rae:
+?\<Gamma> \<turnstile> ?r : Prop \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U Imp (Conj roPrem (rcUni ?r)) (roR (roa roPhi) (roQ (roa roPhi) ?r) (Neg (roQ (roa roPhi) ?r)))
+ro_contra:
+?\<Gamma> \<turnstile> ?r : Prop \<Longrightarrow> ?\<Gamma> \<turnstile>\<^sub>U Imp roPrem (Neg (rcUni ?r))
+ro_thm1:
+[] \<turnstile>\<^sub>U Imp roPrem (Neg rcExUni)
+ro_thm1_U:
+[] \<turnstile>\<^sub>U Imp roLA (Imp (pp_pure rc_c rc_p) (Neg rcExUni))
+ro_cor_EF_U:
+[] \<turnstile>\<^sub>U Imp roLA (Imp k_EF (Imp rcH5 (Neg pp_target_PP)))
+ro_cor_U:
+[] \<turnstile>\<^sub>U Imp roLA (Imp (pp_unique_fundamental Prop) (Imp rcH5 (Neg pp_target_PP)))
+ro_thm1_CEVs:
+[] ; ro_T0P \<turnstile>\<^sub>CEV\<^sub>s Neg rcExUni
+ro_recombination_refutes_PP:
+[] ; pp_recombination_background_axioms \<turnstile>\<^sub>CEV\<^sub>s Neg pp_target_PP
+ro_recombination_PP_inconsistent:
+[] ; pp_recombination_PP_axioms \<turnstile>\<^sub>CEV\<^sub>s ObjFalse
+
+UNFOLDED FINAL STATEMENTS
+ro_thm1_U:
+[] \<turnstile>\<^sub>U Imp (Conj (Conj (pp_pure Prop ObjTrue) (Conj (pp_pure cfp_c2 ro_and) (Conj (pp_pure rc_c ro_m) (Conj (pp_pure (rc_c \<rightarrow>\<^sub>o rc_u \<rightarrow>\<^sub>o rc_u) ro_W) (Conj (pp_application_closure Prop rc_u) (Conj (pp_application_closure Prop Prop) (Conj (pp_application_closure rc_u Prop) (Conj (pp_application_closure rc_c (rc_u \<rightarrow>\<^sub>o rc_u)) (pp_application_closure rc_u rc_u))))))))) (Conj (pp_pure (rc_c \<rightarrow>\<^sub>o rc_u) ro_Phi) (Conj (pp_pure (rc_c \<rightarrow>\<^sub>o cfp_c2) ro_P) (Conj (pp_pure (rc_c \<rightarrow>\<^sub>o cfp_c2) ro_Pp) (Conj (pp_pure (rc_c \<rightarrow>\<^sub>o cfp_c2) ro_Q) (Conj (pp_pure (Prop \<rightarrow>\<^sub>o rc_u \<rightarrow>\<^sub>o rc_u) ro_Z) (Conj (pp_pure (rc_u \<rightarrow>\<^sub>o rc_u \<rightarrow>\<^sub>o rc_u) ro_comp) (Conj (pp_application_closure rc_c rc_u) (Conj (pp_application_closure rc_c cfp_c2) (Conj (pp_application_closure Prop rc_u) (Conj (pp_application_closure Prop (rc_u \<rightarrow>\<^sub>o rc_u)) (pp_application_closure rc_u (rc_u \<rightarrow>\<^sub>o rc_u))))))))))))) (Imp (pp_pure rc_c rc_p) (Neg rcExUni))
+ro_cor_EF_U:
+[] \<turnstile>\<^sub>U Imp (Conj (Conj (pp_pure Prop ObjTrue) (Conj (pp_pure cfp_c2 ro_and) (Conj (pp_pure rc_c ro_m) (Conj (pp_pure (rc_c \<rightarrow>\<^sub>o rc_u \<rightarrow>\<^sub>o rc_u) ro_W) (Conj (pp_application_closure Prop rc_u) (Conj (pp_application_closure Prop Prop) (Conj (pp_application_closure rc_u Prop) (Conj (pp_application_closure rc_c (rc_u \<rightarrow>\<^sub>o rc_u)) (pp_application_closure rc_u rc_u))))))))) (Conj (pp_pure (rc_c \<rightarrow>\<^sub>o rc_u) ro_Phi) (Conj (pp_pure (rc_c \<rightarrow>\<^sub>o cfp_c2) ro_P) (Conj (pp_pure (rc_c \<rightarrow>\<^sub>o cfp_c2) ro_Pp) (Conj (pp_pure (rc_c \<rightarrow>\<^sub>o cfp_c2) ro_Q) (Conj (pp_pure (Prop \<rightarrow>\<^sub>o rc_u \<rightarrow>\<^sub>o rc_u) ro_Z) (Conj (pp_pure (rc_u \<rightarrow>\<^sub>o rc_u \<rightarrow>\<^sub>o rc_u) ro_comp) (Conj (pp_application_closure rc_c rc_u) (Conj (pp_application_closure rc_c cfp_c2) (Conj (pp_application_closure Prop rc_u) (Conj (pp_application_closure Prop (rc_u \<rightarrow>\<^sub>o rc_u)) (pp_application_closure rc_u (rc_u \<rightarrow>\<^sub>o rc_u))))))))))))) (Imp k_EF (Imp rcH5 (Neg (pp_pure rc_c rc_p))))
+ro_cor_U:
+[] \<turnstile>\<^sub>U Imp (Conj (Conj (pp_pure Prop ObjTrue) (Conj (pp_pure cfp_c2 ro_and) (Conj (pp_pure rc_c ro_m) (Conj (pp_pure (rc_c \<rightarrow>\<^sub>o rc_u \<rightarrow>\<^sub>o rc_u) ro_W) (Conj (pp_application_closure Prop rc_u) (Conj (pp_application_closure Prop Prop) (Conj (pp_application_closure rc_u Prop) (Conj (pp_application_closure rc_c (rc_u \<rightarrow>\<^sub>o rc_u)) (pp_application_closure rc_u rc_u))))))))) (Conj (pp_pure (rc_c \<rightarrow>\<^sub>o rc_u) ro_Phi) (Conj (pp_pure (rc_c \<rightarrow>\<^sub>o cfp_c2) ro_P) (Conj (pp_pure (rc_c \<rightarrow>\<^sub>o cfp_c2) ro_Pp) (Conj (pp_pure (rc_c \<rightarrow>\<^sub>o cfp_c2) ro_Q) (Conj (pp_pure (Prop \<rightarrow>\<^sub>o rc_u \<rightarrow>\<^sub>o rc_u) ro_Z) (Conj (pp_pure (rc_u \<rightarrow>\<^sub>o rc_u \<rightarrow>\<^sub>o rc_u) ro_comp) (Conj (pp_application_closure rc_c rc_u) (Conj (pp_application_closure rc_c cfp_c2) (Conj (pp_application_closure Prop rc_u) (Conj (pp_application_closure Prop (rc_u \<rightarrow>\<^sub>o rc_u)) (pp_application_closure rc_u (rc_u \<rightarrow>\<^sub>o rc_u))))))))))))) (Imp (pp_unique_fundamental Prop) (Imp rcH5 (Neg (pp_pure rc_c rc_p))))

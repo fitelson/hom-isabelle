@@ -1,0 +1,33 @@
+RECOMBINATION-ONLY-AUDIT: 31 clean endpoints
+SCOPE: Recombination without Exhaustion, built on Jacob Lettie's unmodified kernel PoP_Main. ro_thm1_U is a closed theorem of Lettie's calculus U_proves (no added-axiom rule) whose antecedents are twenty Logical Purity and Application instances (roLA) and Purity of Pure at type t->t; its consequent denies that a universal proposition exists. ro_cor_EF_U and ro_cor_U add a fundamental proposition and Lettie's H5 (Logical Purity at negation, Application at (u,u), unary Recombination). ro_thm1_CEVs, ro_recombination_refutes_PP and ro_recombination_PP_inconsistent are in the ordinary-premise relation CEV_set_derivable over C. No Exhaustion is used. The other entries are the steps of the hand proof.
+ro_ClW: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+ro_base: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+ro_boxed: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+ro_ClG: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+ro_mW: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+ro_piW: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+ro_pure_a: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+ro_closure_true: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=3
+ro_lemA: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+ro_lemB: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+ro_lemC: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+ro_lemD: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+ro_cor: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+ro_ident: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+ro_guarded: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+ro_relative: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+ro_Phi_pure: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+ro_Phi_pres: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+ro_actual: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+ro_certificate: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+ro_Fa: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+ro_uni_rel: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+ro_Rae: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+ro_contra: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=1
+ro_thm1: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+ro_thm1_U: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+ro_cor_EF_U: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+ro_cor_U: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+ro_thm1_CEVs: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+ro_recombination_refutes_PP: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+ro_recombination_PP_inconsistent: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0

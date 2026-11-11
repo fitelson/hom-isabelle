@@ -53,6 +53,12 @@ their own headers record their authorship. Those notes, and his Metamath
 file, are not distributed here. The hand proof in `reports/` and the audit
 session `Goodman_Integration_Lettie_Audit` were written for this repository.
 
+The Recombination-without-Exhaustion strengthening, found shortly after
+Lettie's result, is formalized in `theories/recombination_only/` on top of
+his unmodified kernel, which supplies its calculus and the lemma that a
+fundamental proposition is universal. Its theories, hand proof and audit were
+written for this repository.
+
 Isabelle and its standard libraries, including HOL–ZF, are external
 dependencies under their own terms. The separate Bacon–Dorr repository
 retains its own provenance and source qualifications. This software is
