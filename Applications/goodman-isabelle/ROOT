@@ -423,3 +423,9 @@ session Goodman_Integration_General_M1 in "theories/general_m1" = Goodman_Integr
   theories
     Goodman_General_M1_Native_Semantics
     Goodman_General_M1_Native_Semantics_Audit
+
+session Goodman_Integration_Lettie_Audit in "theories/lettie_audit" = PoP_W +
+  options [timeout = 60, export_theory = true]
+  sessions PoP_NUP PoP_K6 PoP_PSI PoP_PPT
+  theories
+    Goodman_Lettie_Audit

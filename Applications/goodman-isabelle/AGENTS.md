@@ -12,6 +12,17 @@ Packaging is not authority to resume proof research or call another model.
 Follow the user's current scoped task. The M5 nested collision is complete;
 do not revive historical TODOs saying otherwise.
 
+Goodman's question, full-QLN reading: answered negatively by Jacob Lettie's
+theorem, whose Isabelle theories are in theories/lettie_pp/ (his files,
+included unmodified with permission; never edit them) with a hand proof in
+reports/LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11 and the map in
+docs/LETTIE_PP_CORRESPONDENCE.md. Keep the hand proof and the Isabelle
+theorems aligned. The Recombination-only reading with ordinary premises is
+OPEN. Always distinguish ordinary premises (Equivalence and Necessitation
+only on base theorems) from an axiom extension closed under them, such as
+goodman_book_proves: an earlier refutation of the latter was withdrawn on
+11 November 2026 because it did not answer the question.
+
 Current handoff: tasks 1–5 are accepted, and the agreed task-10 report/ledger
 checkpoint is complete. Branden explicitly left tasks 6–9 open for
 contributors. Do not resume them automatically. Read the current ledger

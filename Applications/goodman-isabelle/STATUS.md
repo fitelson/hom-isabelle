@@ -1,5 +1,60 @@
 # Verification status
 
+## Goodman's question: Lettie's refutation, 11 November 2026
+
+**Result.** Jacob Lettie, working with the Purity of Pure team, proved that
+Purity of Pure at type u = t→t is refuted by ten ordinary premises over
+H + PE (the system H with the Rule of Propositional Equivalence; no Modalized
+Functionality):
+
+- Logical Purity at three closed logical terms M, M′, M″;
+- Application at (u→t, u), (u→t, u→u), (u, t) and (u, u);
+- zeroary Exhaustion at the two propositions π(P) and π(P′);
+- some proposition is *universal*: it can have every pure property that any
+  proposition has.
+
+The premises are ordinary: Equivalence and Necessitation apply only to
+theorems of H + PE, never to consequences of the premises. A fundamental
+proposition is universal by unary Recombination (with one more instance of
+Logical Purity). Hence Bacon's theory with a fundamental proposition and both
+directions of QLN, as ordinary premises over Classicism, refutes PPᵤ.
+Purity of Fun, uniqueness of the fundamental proposition and higher-arity QLN
+are not used.
+
+**Checked endpoints** (Lettie's theories in `theories/lettie_pp/`, his
+files unmodified; audit session `Goodman_Integration_Lettie_Audit`):
+
+| Statement | Theorem |
+|---|---|
+| H + PE proves W1 → … → W10 → ¬PPᵤ, as a closed theorem of a calculus with no rule for added premises | `w_not_pp` (in `⊢CEV`: `w_not_pp_C`) |
+| PPᵤ and the nine purity premises prove that no proposition is universal | `nup_NUP_U`, `u_S` |
+| A fundamental proposition is universal, given Recombination and two purity premises | `u_fun_ExUni` |
+| Bacon's theory with a fundamental proposition, as ordinary premises over C, proves ¬PPᵤ | `cfp2` |
+| That theory is consistent, as ordinary premises and as an axiom extension | `k6`, `k6_plus` |
+
+The [hand proof](reports/LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11.pdf)
+proves `w_not_pp` in Goodman's notation, lemma by lemma; the
+[correspondence](docs/LETTIE_PP_CORRESPONDENCE.md) maps each lemma to its
+theorem and records the differences between Lettie's texts. Lettie also
+distributes a Metamath certificate of the same theorem (not included here);
+on 11 November 2026 it passed `metamath.exe`, `checkmm` and `mmverify.py`,
+resting only on rules of H + PE.
+
+**Open.** Whether PPᵤ is refuted by unary Recombination and a fundamental
+proposition without Exhaustion (or the two Persistence instances that
+Lettie shows would also suffice), with the added principles as ordinary
+premises. Exhaustion enters the proof only through W8–W9.
+
+**Withdrawn.** A refutation added on 11 November 2026 and reverted the same
+day (commit 2bd178b) was a theorem of `goodman_book_proves`, an axiom
+extension in which Equivalence applies to theorems that depend on the added
+principles. Its single use of that rule above the added principles means it
+does not answer the question as posed.
+
+The dated sections below are the record of earlier checkpoints. Their
+statements that Goodman's question is open are superseded for its full-QLN
+reading.
+
 ## Core compatibility update — 26 September 2026 (third pin refresh)
 
 The core completed a comprehensive repository audit and its fixes, and added
@@ -142,8 +197,9 @@ not a reason to mark that completed task unfinished.
 
 The [contributor guide](CONTRIBUTING.md) supplies bounded deliverables and
 completion criteria. M5's nested collision is **completed**, not a TODO.
-Goodman's original PP consistency question remains an additional open
-research question, not an implied deliverable of a passing repository build.
+Goodman's original PP consistency question is answered negatively in its
+full-QLN reading (first section of this file); its Recombination-only reading
+remains an open research question.
 
 ## Formerly included but not selected
 

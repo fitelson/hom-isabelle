@@ -10,6 +10,15 @@ The earlier report remains unchanged outside this repository.
 
 ## Completion boundary
 
+**11 November addendum:** Goodman's consistency question has since been
+answered negatively in its full-QLN reading, with the added principles as
+ordinary premises, by Jacob Lettie's theorem; see [STATUS.md](../STATUS.md)
+and [the correspondence](LETTIE_PP_CORRESPONDENCE.md). The classifications
+below are a dated record and are not rewritten. Results over stocks that
+contain both directions of zeroary and unary QLN, PP and a fundamental
+proposition are now vacuous. The Recombination-only reading remains open,
+so results over that stock are not affected.
+
 **26 September addendum:** core generic full-C soundness and countably
 declared-signature completeness are complete in their explicit nontrivial-
 model/minimal-language scope. The application adopts the reviewed source

@@ -46,6 +46,25 @@ def core_fingerprints(core):
     return {p.relative_to(core).as_posix(): sha256(p) for p in sorted(paths)}
 
 
+def verify_external(root=ROOT):
+    """Externally supplied theories are immutable inputs: exact file set and hashes."""
+    root = root.resolve()
+    data = json.loads((root / "verification/provenance/external.json").read_text())
+    count = 0
+    for group in data["inputs"]:
+        base = safe_path(root, group["root"])
+        listed = {row["path"] for row in group["files"]}
+        present = {p.relative_to(root).as_posix() for p in base.rglob("*")
+                   if p.is_file() and p.name != ".DS_Store"}
+        if not listed or present != listed:
+            raise SystemExit("External input file set differs from its manifest: " + group["root"])
+        for row in group["files"]:
+            if sha256(safe_path(root, row["path"])) != row["sha256"]:
+                raise SystemExit("External input drift: " + row["path"])
+            count += 1
+    return count
+
+
 def verify_inputs(core):
     pin = json.loads((ROOT / "dependencies/bacon-dorr.json").read_text())
     if not (core / "ROOT").is_file():
@@ -61,8 +80,9 @@ def verify_inputs(core):
     for item in frozen:
         if sha256(safe_path(ROOT, item["frozen"])) != item["frozen_sha256"]:
             raise SystemExit("Preserved-source drift: " + item["frozen"])
+    external = verify_external()
     mode = "Embedded core source hashes match the pinned baseline" if embedded_core(ROOT, core) else "Core revision/source hashes match"
-    print(f"{mode}; {len(frozen)} preserved files unchanged.", flush=True)
+    print(f"{mode}; {len(frozen)} preserved files unchanged; {external} external input files unchanged.", flush=True)
 
 
 def verify_snapshot():

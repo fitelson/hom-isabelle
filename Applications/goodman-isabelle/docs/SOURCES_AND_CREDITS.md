@@ -44,6 +44,15 @@ not presented as their implementation or endorsement. The corrected M5
 input is an implementation-project repair, not silently attributed to the
 original notes.
 
+The refutation of Purity of Pure is due to Jacob Lettie, working with the
+Purity of Pure team, a group of Claude Opus 5.5 sessions (*If a Proposition
+Is Fundamental, Purity Is Not Pure* and *Weaker Theories That Still Refute
+Purity of Pure*, 9 November 2026). The Isabelle theories in
+`theories/lettie_pp/` are his, included unmodified with his permission;
+their own headers record their authorship. Those notes, and his Metamath
+file, are not distributed here. The hand proof in `reports/` and the audit
+session `Goodman_Integration_Lettie_Audit` were written for this repository.
+
 Isabelle and its standard libraries, including HOL–ZF, are external
 dependencies under their own terms. The separate Bacon–Dorr repository
 retains its own provenance and source qualifications. This software is

@@ -1,0 +1,316 @@
+\documentclass[12pt,leqno]{article}
+
+\usepackage{amsmath,amssymb,amsthm,colortbl,xcolor,nicefrac,setspace}
+\usepackage[T1]{fontenc}
+\usepackage[expert,seriftt,lucidasmallscale]{lucidabr}
+\usepackage{mathrsfs,hyperref,color,graphicx}
+
+% 1-inch margins all around
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+\setlength{\topmargin}{0mm}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+\setlength{\topskip}{0mm}
+\setlength{\hoffset}{0in}
+\setlength{\voffset}{0in}
+
+% ---- Forbesian logical connectives ----
+\newcommand{\AND}{\ensuremath{\mathbin{\&}}}
+\newcommand{\OR}{\ensuremath{\vee}}
+\newcommand{\IFF}{\ensuremath{\leftrightarrow}}
+\newcommand{\IC}{\ensuremath{\rightarrow}}
+\newcommand{\NOT}{\ensuremath{\text{$\thicksim$}}}
+\newcommand{\dentails}{\ensuremath{\vdash}}
+
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\renewcommand{\thelemma}{\Alph{lemma}}
+\newtheorem*{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem*{remark}{Remark}
+
+\onehalfspacing
+
+% ---- document-specific macros ----
+\newcommand{\Pure}{\ensuremath{\mathrm{Pure}}}
+\newcommand{\Fun}{\ensuremath{\mathrm{Fun}}}
+\newcommand{\Uni}{\ensuremath{\mathrm{Uni}}}
+\newcommand{\PPu}{\ensuremath{\mathrm{PP}_u}}
+\newcommand{\HPE}{\ensuremath{\mathrm{H}+\mathrm{PE}}}
+\newcommand{\W}{\ensuremath{\mathrm{W}}}
+
+\begin{document}
+
+\begin{center}
+{\Large Purity of Pure Is Refuted by a Universal Proposition}
+
+\vspace{4pt}
+A hand proof of Jacob Lettie's theorem $\W\dentails\NOT\PPu$\\
+11 November 2026
+\end{center}
+
+\noindent
+The theorem and its proof are due to Jacob Lettie, working with the Purity of
+Pure team, a group of Claude Opus 5.5 sessions (\emph{If a Proposition Is
+Fundamental, Purity Is Not Pure} and \emph{Weaker Theories That Still Refute
+Purity of Pure}, 9 November 2026). They are included in this repository with
+Lettie's permission. This note restates the result in Goodman's notation and
+gives a self-contained proof in our own words. The theorem is kernel-checked as
+\texttt{w\_not\_pp}, and the definitions below match that formal statement
+exactly. Each lemma names, in brackets, the Isabelle theorem that states it;
+the full table is in
+\texttt{docs/}\allowbreak\texttt{LETTIE\_PP\_CORRESPONDENCE.md}.
+
+\section*{Setting}
+
+Propositions have type $t$, and $u=t\IC t$. We write $\pi$ for the constant
+$\Pure_u$, so that \PPu\ is $\Pure_{u\IC t}(\pi)$. As usual
+$\Box p := (p=\top)$ and $\Diamond p:=\NOT\Box\NOT p$.
+
+The base logic is \HPE: the system H of classical higher-order logic with
+$\beta\eta$-conversion and Leibniz identity, together with the Rule of
+Propositional Equivalence (PE): if $\dentails A\IFF B$ then $\dentails A=B$.
+Modalized Functionality is not assumed. PE applies only to theorems of \HPE,
+in the full language including the constants $\Pure_\sigma$, and never to
+consequences of the premises below. We use these facts about \HPE:
+\begin{itemize}
+\item[(N)] Necessitation: if $\dentails A$ then $\dentails\Box A$, for formulas
+  $A$ with or without free variables.
+\item[(S4)] The schemas T ($\Box A\IC A$), K and 4 ($\Box A\IC\Box\Box A$).
+\item[(I)] $\Box(p\IFF q)\IC p=q$, and Leibniz's law: if $a=b$ then
+  $Z(a)=Z(b)$ for every $Z$.
+\item[(B)] Boolean identities from PE, for instance $\NOT\NOT x=x$ and
+  $(A\AND B)=(B\AND A)$.
+\end{itemize}
+Each is a standard consequence of \HPE; see Lettie's main note, \S5.
+
+\section*{Definitions}
+
+All of the following are terms built from logical vocabulary and the constant
+$\pi$. The variables $x,y,z,s$ range over propositions and $Y$ over operators
+of type $u$.
+\begin{align*}
+ R(x,y)  &:= \forall Y\,\bigl(\pi(Y)\IC(Y(y)\IC\Diamond Y(x))\bigr)
+          &&\text{$x$ can have every pure property of $y$,}\\
+ \Uni(x) &:= \forall y\,R(x,y)
+          &&\text{$x$ is universal,}\\
+ F(z)    &:= \Box\bigl(\NOT R(z,\NOT z)\AND\NOT R(\NOT z,z)\bigr)
+          &&\text{$z$ is firm,}\\
+ Q(z)    &:= F(z)\IC z, &&\\
+ P(z)    &:= \NOT z\AND\NOT F(z), \qquad P'(z):=z\AND\NOT F(z). &&
+\end{align*}
+For an operator $Y$ write $Y\circ Q$ for $\lambda z.\,Y(Q(z))$.
+Abstracting $\pi$ gives closed logical terms $M$ and $M'$ of type
+$(u\IC t)\IC u$, and $M''$ of type $(u\IC t)\IC(u\IC u)$, with
+\[
+ M(\pi)=P,\qquad M'(\pi)=P',\qquad M''(\pi)=\lambda Y.\,Y\circ Q
+\]
+by $\beta$-conversion.
+
+\section*{The theory W}
+
+For types $\sigma,\tau$ let
+$\mathrm{App}(\sigma,\tau):=\forall X^{\sigma\IC\tau}\forall y^{\sigma}
+\bigl((\Pure(X)\AND\Pure(y))\IC\Pure(X(y))\bigr)$.
+The theory \W\ has base \HPE\ and exactly ten premises:
+\begin{itemize}
+\item[(W1--3)] $\Pure(M)$, $\Pure(M')$, $\Pure(M'')$;
+\item[(W4--7)] $\mathrm{App}(u\IC t,u)$, $\mathrm{App}(u\IC t,u\IC u)$,
+  $\mathrm{App}(u,t)$, $\mathrm{App}(u,u)$;
+\item[(W8--9)] $\Pure_t(\pi(P))\IC(\pi(P)\IC\Box\pi(P))$ and the same for $P'$;
+\item[(W10)] $\exists x\,\Uni(x)$.
+\end{itemize}
+W1--W7 are instances of Logical Purity and Application, and W8--W9 are
+instances of zeroary Exhaustion. All ten are ordinary premises: none is
+assumed to be necessary, and Necessitation is never applied to a formula whose
+proof uses them.
+
+\begin{theorem}[Lettie; \texttt{w\_not\_pp}]
+$\W\dentails\NOT\PPu$. Equivalently, $\PPu$ and W1--W9 prove
+$\NOT\exists x\,\Uni(x)$: no proposition is universal.
+\end{theorem}
+
+\section*{Proof}
+
+Lemmas A--F are theorems of \HPE\ (they mention $\pi$ but use no premise), so
+(N) may be applied to them.
+
+\begin{lemma}[\texttt{nup\_lemA}]\label{lem:A}
+$F(x)\IC\Box F(x)$.
+\end{lemma}
+
+\begin{proof}
+$F(x)$ is a boxed proposition, so this is an instance of axiom 4.
+\end{proof}
+
+\begin{lemma}[\texttt{nup\_lemB}]\label{lem:B}
+$F(x)\IC Q(x)=x$.
+\end{lemma}
+
+\begin{proof}
+The formula $F(x)\IC(Q(x)\IFF x)$ is a tautology, since $Q(x)$ is
+$F(x)\IC x$. By (N) and K, $\Box F(x)\IC\Box(Q(x)\IFF x)$. Assume $F(x)$.
+Lemma~\ref{lem:A} gives $\Box F(x)$, hence $\Box(Q(x)\IFF x)$, hence $Q(x)=x$
+by (I).
+\end{proof}
+
+\begin{lemma}[\texttt{nup\_lemC, nup\_ident}]\label{lem:C}
+$F(\NOT x)=F(x)$. Consequently $P'(z)=P(\NOT z)$.
+\end{lemma}
+
+\begin{proof}
+Write $C(x)$ for $\NOT R(x,\NOT x)\AND\NOT R(\NOT x,x)$, so that
+$F(x)=\Box C(x)$. Since $\NOT\NOT x=x$ by (B), Leibniz's law turns $C(\NOT x)$,
+which is $\NOT R(\NOT x,\NOT\NOT x)\AND\NOT R(\NOT\NOT x,\NOT x)$, into
+$\NOT R(\NOT x,x)\AND\NOT R(x,\NOT x)$. This is $C(x)$ with its conjuncts
+exchanged, so it equals $C(x)$ by (B). Hence $C(\NOT x)=C(x)$, and Leibniz's
+law with $Z:=\lambda p.\Box p$ gives $F(\NOT x)=F(x)$.
+
+For the second claim, $P(\NOT z)$ is $\NOT\NOT z\AND\NOT F(\NOT z)$. Rewriting
+$\NOT\NOT z$ to $z$ and $F(\NOT z)$ to $F(z)$ by Leibniz's law gives
+$z\AND\NOT F(z)$, which is $P'(z)$.
+\end{proof}
+
+\begin{lemma}[\texttt{nup\_lemD}]\label{lem:D}
+$\NOT Q(x)\IC F(Q(x))$.
+\end{lemma}
+
+\begin{proof}
+Assume $\NOT Q(x)$, that is, $\NOT(F(x)\IC x)$. Then $F(x)$. Lemma~\ref{lem:B}
+gives $Q(x)=x$, so $F(Q(x))=F(x)$ by Leibniz's law, and $F(Q(x))$ holds.
+\end{proof}
+
+\begin{lemma}[\texttt{nup\_cor}]\label{lem:E}
+$\Box\NOT P(Q(x))$.
+\end{lemma}
+
+\begin{proof}
+Suppose $P(Q(x))$, that is, $\NOT Q(x)\AND\NOT F(Q(x))$. Lemma~\ref{lem:D}
+turns the first conjunct into $F(Q(x))$, contradicting the second. So
+$\NOT P(Q(x))$ is a theorem, and (N) gives the claim.
+\end{proof}
+
+\begin{lemma}[\texttt{nup\_step2}]\label{lem:F}
+$(\Box\pi(P)\AND\Box\pi(P'))\IC F(Q(x))$.
+\end{lemma}
+
+\begin{proof}
+Put $q:=Q(x)$. We first prove
+\begin{equation*}
+ (\pi(P)\AND\pi(P'))\IC C(q). \tag{1}
+\end{equation*}
+Assume $\pi(P)$ and $\pi(P')$, and suppose, for a contradiction, that
+$R(q,\NOT q)\OR R(\NOT q,q)$. Then $F(q)$ is false: by T it would give
+$C(q)$, against the supposition. By the contrapositive of
+Lemma~\ref{lem:D}, $q$ is true. Hence $P'(q)$ holds, and so does $P(\NOT q)$,
+because $\NOT\NOT q=q$ and $F(\NOT q)=F(q)$ (Lemma~\ref{lem:C}). There are two
+cases.
+
+\emph{Case 1: $R(q,\NOT q)$.} Instantiate its quantifier at $Y:=P$, which is
+pure by $\pi(P)$. Since $P(\NOT q)$, we get $\Diamond P(q)$.
+
+\emph{Case 2: $R(\NOT q,q)$.} Instantiate at $Y:=P'$, pure by $\pi(P')$. Since
+$P'(q)$, we get $\Diamond P'(\NOT q)$. By Lemma~\ref{lem:C},
+$P'(\NOT q)=P(\NOT\NOT q)=P(q)$, so $\Diamond P(q)$.
+
+In both cases $\Diamond P(q)$, that is, $\Diamond P(Q(x))$, which contradicts
+Lemma~\ref{lem:E}. This proves (1). Since (1) is a theorem of \HPE, (N) and K
+give $(\Box\pi(P)\AND\Box\pi(P'))\IC\Box C(q)$, and $\Box C(q)$ is $F(Q(x))$.
+\end{proof}
+
+We now use the premises. The following lemma is the only place where PP,
+Logical Purity, Application and Exhaustion enter.
+
+\begin{lemma}[\texttt{nup\_step3}]\label{lem:G}
+From \PPu\ and W1--W9:
+\textup{(a)} $\Box\pi(P)$ and $\Box\pi(P')$, hence $F(Q(x))$ for every $x$;
+\textup{(b)} for every $Y$, if $\pi(Y)$ then $\pi(Y\circ Q)$.
+\end{lemma}
+
+\begin{proof}
+(a) By W1 and \PPu, both $M$ and $\pi$ are pure, so W4 gives
+$\Pure(M(\pi))$, which is $\pi(P)$ by $\beta$-conversion. Since $\pi$ and $P$
+are pure, W6 gives $\Pure_t(\pi(P))$. Now W8 applies: $\pi(P)$ is pure and
+true, so $\Box\pi(P)$. The same argument with W2 and W9 gives
+$\Box\pi(P')$. Lemma~\ref{lem:F} then gives $F(Q(x))$ for every $x$.
+
+(b) By W3, \PPu\ and W5, $M''(\pi)$ is pure, and by $\beta$-conversion it is
+$\lambda Y.\,Y\circ Q$. If $\pi(Y)$, then W7 gives that
+$(\lambda Y.\,Y\circ Q)(Y)$ is pure, and this operator is $Y\circ Q$.
+\end{proof}
+
+\begin{proof}[Proof of the Theorem]
+Assume \PPu\ and W1--W9, and suppose that $\Uni(s)$. Put $e:=Q(s)$.
+
+\begin{enumerate}
+\item By Lemma~\ref{lem:G}(a) at $x:=s$, $F(e)$. By Lemma~\ref{lem:C},
+  $F(\NOT e)$, and so $Q(\NOT e)=\NOT e$ by Lemma~\ref{lem:B}.
+\item We show $R(e,\NOT e)$. Let $Y$ be an operator with $\pi(Y)$ and
+  $Y(\NOT e)$. By Lemma~\ref{lem:G}(b), $Y\circ Q$ is pure. By
+  $\beta$-conversion $(Y\circ Q)(\NOT e)$ is $Y(Q(\NOT e))$, which is
+  $Y(\NOT e)$ by Step~1 and Leibniz's law, so $(Y\circ Q)(\NOT e)$ holds.
+  Since $\Uni(s)$, in particular $R(s,\NOT e)$, instantiated at $Y\circ Q$,
+  gives $\Diamond(Y\circ Q)(s)$, that is, $\Diamond Y(Q(s))$, which is
+  $\Diamond Y(e)$. As $Y$ was arbitrary, $R(e,\NOT e)$.
+\item By T, $F(e)$ gives $C(e)$, whose first conjunct is $\NOT R(e,\NOT e)$.
+  This contradicts Step~2.
+\end{enumerate}
+Hence \PPu\ and W1--W9 prove $\NOT\Uni(s)$ for arbitrary $s$, and so
+$\NOT\exists x\,\Uni(x)$. With W10 this gives $\bot$. In this derivation
+Necessitation was applied only to theorems of \HPE\ (Lemmas~\ref{lem:B},
+\ref{lem:E} and~\ref{lem:F}), and the premises are sentences. So the
+deduction theorem applies, and \W\ proves $\NOT\PPu$.
+\end{proof}
+
+\section*{Remarks}
+
+\begin{remark}[Where W comes from]
+W lies below Bacon's theory with a fundamental proposition. Logical Purity
+and Application give W1--W7. Zeroary Exhaustion gives W8--W9. W10 follows
+from $\exists r\,\Fun(r)$ and unary Recombination: if $r$ is fundamental, $Y$
+is pure and $Y(y)$, then $\lambda z.\NOT Y(z)$ is pure and fails at $y$, so
+Recombination gives $\NOT\Box\NOT Y(r)$, that is, $\Diamond Y(r)$. This uses
+one further purity premise, Logical Purity for $\lambda W.\lambda z.\NOT W(z)$;
+the Application step is W7. Hence C with Logical Purity, Application, Exhaustion,
+unary Recombination and $\exists r\,\Fun(r)$, all as ordinary premises,
+refutes \PPu. Purity of Fun is not used.
+\end{remark}
+
+\begin{remark}[Exhaustion]
+Exhaustion is used only through W8--W9, to obtain $\Box\pi(P)$ and
+$\Box\pi(P')$. Lettie's companion note shows that the two Persistence
+formulas $\pi(P)\IC\Box\pi(P)$ and $\pi(P')\IC\Box\pi(P')$ would serve
+instead. Whether \PPu\ is refuted with Recombination and no Exhaustion or
+Persistence, all as ordinary premises, is open.
+\end{remark}
+
+\begin{remark}[Verification]
+In Isabelle the theorem is \texttt{w\_not\_pp}, a closed theorem of the
+calculus \texttt{U\_proves} (H, PE at type $t$, modus ponens, Generalization
+and Instantiation, with no rule for added premises), whose ten antecedents are
+W1--W10 in the order above and whose consequent is $\NOT\PPu$. Step 4 of the
+proof is \texttt{nup\_step4}, and the derivation of W10 in the first remark is
+\texttt{u\_fun\_ExUni}. Lettie's theories are in
+\texttt{theories/lettie\_pp/}, unmodified; this repository's checker builds
+them with Isabelle2026, and its audit catalog records that these theorems
+depend on no oracle.
+
+Lettie's Metamath certificate \texttt{w-not-pp}, distributed with his notes and not included here, states the same theorem
+with $F(z)$ written as $\Box\NOT(R(z,\NOT z)\OR R(\NOT z,z))$, the form
+used in Lettie's main note. The two forms of $F(z)$ are identical
+propositions by PE, but the operators $F$, and hence the terms $M$, $M'$,
+$M''$, are written differently. The file passed three independent
+verifiers, each built from source on 11 November 2026: \texttt{metamath.exe},
+\texttt{checkmm} and \texttt{mmverify.py}. Its trace shows that
+\texttt{w-not-pp} rests only on the typing, substitution and conversion
+rules, three propositional axioms, universal instantiation, modus ponens,
+Generalization and PE (as a rule from a theorem $A\IFF B$). It uses no
+Modalized Functionality and none of the file's purity or QLN axioms. We
+checked the statements of the rules it uses, not the whole axiom base.
+\end{remark}
+
+\end{document}

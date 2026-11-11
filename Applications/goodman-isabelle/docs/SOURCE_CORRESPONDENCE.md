@@ -1,5 +1,15 @@
 # Source claims and Isabelle entry points
 
+## The Question (notes p.1)
+
+| Source item | Entry point | Scope |
+|---|---|---|
+| Is PP consistent with the theory and a fundamental proposition, without Purity of Fun? Full-QLN reading | Jacob Lettie's `w_not_pp` and `cfp2` in [theories/lettie_pp/](../theories/lettie_pp/); [hand proof](../reports/LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11.pdf); [correspondence](LETTIE_PP_CORRESPONDENCE.md) | No. Ordinary premises over H + PE (W ⊢ ¬PPᵤ) and over C (Bacon's theory with a fundamental proposition proves ¬PPᵤ). |
+| The same, Recombination-only reading | — | Open for ordinary premises. Exhaustion enters Lettie's proof only through two zeroary instances. |
+
+The rows below predate this result and describe what was verified about
+Goodman's numbered claims.
+
 Current detailed ledger: [20 September reconciliation](RECONCILIATION_2026-09-20.md).
 The [report](../reports/GOODMAN_VERIFICATION_REPORT_2026-09-20.pdf) incorporates
 accepted tasks 1–5; tasks 6–9 remain open contributor projects.

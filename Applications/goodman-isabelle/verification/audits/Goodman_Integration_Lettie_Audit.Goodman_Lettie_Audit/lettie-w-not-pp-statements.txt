@@ -1,0 +1,34 @@
+w_not_pp:
+[] \<turnstile>\<^sub>U Imp (pp_pure ((pp_e_unary_type \<rightarrow>\<^sub>o Prop) \<rightarrow>\<^sub>o pp_e_unary_type) rc_P) (Imp (pp_pure ((pp_e_unary_type \<rightarrow>\<^sub>o Prop) \<rightarrow>\<^sub>o pp_e_unary_type) rc_Pp) (Imp (pp_pure ((pp_e_unary_type \<rightarrow>\<^sub>o Prop) \<rightarrow>\<^sub>o pp_e_unary_type \<rightarrow>\<^sub>o pp_e_unary_type) rc_W) (Imp (pp_application_closure (pp_e_unary_type \<rightarrow>\<^sub>o Prop) pp_e_unary_type) (Imp (pp_application_closure (pp_e_unary_type \<rightarrow>\<^sub>o Prop) (pp_e_unary_type \<rightarrow>\<^sub>o pp_e_unary_type)) (Imp (pp_application_closure pp_e_unary_type Prop) (Imp (pp_application_closure pp_e_unary_type pp_e_unary_type) (Imp (zI (App (pp_Pure pp_e_unary_type) rcP)) (Imp (zI (App (pp_Pure pp_e_unary_type) rcPp)) (Imp rcExUni (Neg (pp_pure (pp_e_unary_type \<rightarrow>\<^sub>o Prop) (pp_Pure pp_e_unary_type))))))))))))
+w_not_pp_C:
+[] \<turnstile>\<^sub>CEV Imp (pp_pure ((pp_e_unary_type \<rightarrow>\<^sub>o Prop) \<rightarrow>\<^sub>o pp_e_unary_type) rc_P) (Imp (pp_pure ((pp_e_unary_type \<rightarrow>\<^sub>o Prop) \<rightarrow>\<^sub>o pp_e_unary_type) rc_Pp) (Imp (pp_pure ((pp_e_unary_type \<rightarrow>\<^sub>o Prop) \<rightarrow>\<^sub>o pp_e_unary_type \<rightarrow>\<^sub>o pp_e_unary_type) rc_W) (Imp (pp_application_closure (pp_e_unary_type \<rightarrow>\<^sub>o Prop) pp_e_unary_type) (Imp (pp_application_closure (pp_e_unary_type \<rightarrow>\<^sub>o Prop) (pp_e_unary_type \<rightarrow>\<^sub>o pp_e_unary_type)) (Imp (pp_application_closure pp_e_unary_type Prop) (Imp (pp_application_closure pp_e_unary_type pp_e_unary_type) (Imp (zI (App (pp_Pure pp_e_unary_type) rcP)) (Imp (zI (App (pp_Pure pp_e_unary_type) rcPp)) (Imp rcExUni (Neg (pp_pure (pp_e_unary_type \<rightarrow>\<^sub>o Prop) (pp_Pure pp_e_unary_type))))))))))))
+u_S:
+[] \<turnstile>\<^sub>U Imp rcS (Neg rcExUni)
+u_S_C:
+[] \<turnstile>\<^sub>CEV Imp rcS (Neg rcExUni)
+u_fun_ExUni:
+[] \<turnstile>\<^sub>U Imp k_EF (Imp rcH5 rcExUni)
+nup_NUP_U:
+[] \<turnstile>\<^sub>U Imp rcS (Neg rcExUni)
+nup_NUP:
+[] ; insert pp_zeroary_exhaustion rc_T0P \<turnstile>\<^sub>CEV\<^sub>s Neg rcExUni
+cfp2_thm:
+[] \<turnstile>\<^sub>CEV Imp (cfp_and cfp_S2) (Neg pp_target_PP)
+cfp2:
+[] ; pp_CFP_axioms \<turnstile>\<^sub>CEV\<^sub>s Neg pp_target_PP
+cfp6:
+[] ; set cfp_S6 \<turnstile>\<^sub>CEV\<^sub>s pp_zeroary_exhaustion
+k7_HT1:
+\<lbrakk>k7_tonly ?\<tau>; ?\<tau> \<noteq> Prop\<rbrakk> \<Longrightarrow> [] ; pp_CFP_axioms \<turnstile>\<^sub>CEV\<^sub>s Neg (pp_purity_of_pure ?\<tau>)
+k6:
+\<not> [] ; pp_CFP_axioms \<turnstile>\<^sub>CEV\<^sub>s ObjFalse
+k6_plus:
+CEV_axiom_consistent [] pp_CFP_axioms
+syn_S:
+[] \<turnstile>\<^sub>CEV Forall (pp_e_unary_type \<rightarrow>\<^sub>o Prop) (Neg (sPhi (Var 0)))
+syn_Psi:
+[] ; pp_CFP_axioms \<turnstile>\<^sub>CEV\<^sub>s Forall (pp_e_unary_type \<rightarrow>\<^sub>o Prop) (Neg (sPsi (Var 0)))
+ppt_k6:
+\<not> [] ; insert (pp_purity_of_pure Prop) pp_CFP_axioms \<turnstile>\<^sub>CEV\<^sub>s ObjFalse
+ppt_plus_CFP:
+[] ; pp_CFP_axioms \<turnstile>\<^sub>CEV\<^sup>+ pp_purity_of_pure Prop

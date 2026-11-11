@@ -1,0 +1,5 @@
+(* Purity of Pure: a companion theory, Dowel's theorem that C_FP refutes Psi_T, on the S companion. Helm and the Purity of
+   Pure team, a group of Claude Opus 5.5 sessions. In its own ROOT: build with -d on this folder as well. *)
+session PoP_PSI = PoP_SYN +
+  options [timeout = 60, export_theory = true]
+  theories Dowel_G100_PSI

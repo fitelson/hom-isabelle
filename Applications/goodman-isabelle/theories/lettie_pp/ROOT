@@ -1,0 +1,25 @@
+(* Purity of Pure: the main theory and four of its companion theories (S, W, NUP and K6).
+   Helm and the Purity of Pure team, a group of Claude Opus 5.5 sessions. Each theory is Loupe's or Dowel's, changed in its
+   imports line alone. The main session loads the two library theories the main theory needs from source on Bacon_Base, so a
+   reader builds no larger library image. K6 rests on HOL-ZF and the library's exact model. *)
+session PoP_Main in "t" = Bacon_Base +
+  options [timeout = 60, export_theory = true]
+  sessions "HOL-Library" Bacon_Classicism Bacon_Source_Vocabulary_Development Goodman_Legacy_01
+  theories PoP_G100_Kernel
+
+session PoP_SYN in "syn" = PoP_Main +
+  options [timeout = 60, export_theory = true]
+  theories PoP_G100_Syn
+
+session PoP_W in "w" = PoP_Main +
+  options [timeout = 60, export_theory = true]
+  theories PoP_G100_W_Not_PP
+
+session PoP_NUP in "nup" = PoP_Main +
+  options [timeout = 60, export_theory = true]
+  theories PoP_G100_NUP
+
+session PoP_K6 in "k6" = Goodman_Exact_Recombination +
+  options [timeout = 60, export_theory = true]
+  sessions PoP_Main
+  theories PoP_G100_Kernel_ZF_Model

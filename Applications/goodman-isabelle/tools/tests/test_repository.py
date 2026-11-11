@@ -4,6 +4,7 @@ import importlib.util
 import json
 from pathlib import Path
 import re
+import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -69,6 +70,30 @@ class RepositoryTests(unittest.TestCase):
         actual = {p.relative_to(ROOT).as_posix() for d in ("preserved", "preserved-additions")
                   for p in (ROOT / "theories" / d).rglob("*.thy")}
         self.assertEqual(actual, expected)
+
+    def test_external_inputs_match_manifest(self):
+        data = json.loads((ROOT / "verification/provenance/external.json").read_text())
+        listed = sum(len(group["files"]) for group in data["inputs"])
+        self.assertGreater(listed, 0)
+        self.assertEqual(checker.verify_external(ROOT), listed)
+
+    def test_external_input_drift_is_detected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "verification/provenance").mkdir(parents=True)
+            (root / "ext").mkdir()
+            (root / "ext/A.thy").write_text("theory A imports Main begin end\n")
+            row = {"path": "ext/A.thy", "sha256": checker.sha256(root / "ext/A.thy")}
+            (root / "verification/provenance/external.json").write_text(
+                json.dumps({"inputs": [{"root": "ext", "files": [row]}]}))
+            self.assertEqual(checker.verify_external(root), 1)
+            (root / "ext/A.thy").write_text("changed\n")
+            with self.assertRaises(SystemExit):
+                checker.verify_external(root)
+            (root / "ext/A.thy").write_text("theory A imports Main begin end\n")
+            (root / "ext/B.thy").write_text("theory B imports Main begin end\n")
+            with self.assertRaises(SystemExit):
+                checker.verify_external(root)
 
 
 if __name__ == "__main__":

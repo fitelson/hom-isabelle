@@ -1,0 +1,19 @@
+LETTIE-W-NOT-PP-AUDIT: 17 clean endpoints
+SCOPE: Jacob Lettie's formalization (Purity of Pure team), included with permission and unmodified; theories/lettie_pp. w_not_pp is a closed theorem of his calculus U_proves (no added-axiom rule) whose ten premises are antecedents of an implication concluding the negation of Purity of Pure at type t->t; w_not_pp_C is the same implication in CEV_proves. The remaining entries are his companion results (S, NUP, C_FP, K6, PSI, PPt) as stated in the statements export; k6, k6_plus and ppt_k6 are consistency results proved in his HOL-ZF model, not refutations.
+w_not_pp: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+w_not_pp_C: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+u_S: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+u_S_C: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+u_fun_ExUni: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+nup_NUP_U: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+nup_NUP: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+cfp2_thm: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+cfp2: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+cfp6: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+k7_HT1: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=2
+k6: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+k6_plus: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+syn_S: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+syn_Psi: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+ppt_k6: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0
+ppt_plus_CFP: oracles=0 residual_hyps=0 flex_flex=0 statement_premises=0

@@ -18,7 +18,14 @@ Propose an issue identifying the source page or result, the exact proposed
 statement, and the files affected. Agree the scope before undertaking a
 large proof or changing an existing model interface.
 
-Goodman's PP question remains open. The completed 20 September M5 repair
+Goodman's PP question is answered negatively in its full-QLN reading, by
+Jacob Lettie's theorem (see [STATUS.md](STATUS.md) and
+[the correspondence](docs/LETTIE_PP_CORRESPONDENCE.md)). The
+Recombination-only reading, without Exhaustion or Persistence and with the
+added principles as ordinary premises, remains open; it is the main open
+question here. Keep ordinary premises distinct from an axiom extension closed
+under Equivalence and Necessitation: a result for the latter does not answer
+the question. The completed 20 September M5 repair
 is not an unfinished task: its 21 audited endpoints establish the corrected
 local collision and nonreversibility implications. The integration baseline
 contained 1,574 cataloged objects in 82 catalogs, with nine historical replay
@@ -340,7 +347,8 @@ to redistribute private research material.
 
 ## Verification and working rules
 
-1. Use Isabelle2025-2 and the enclosing Bacon–Dorr core with its pinned source hashes.
+1. Use Isabelle2026 and the enclosing Bacon–Dorr core with its pinned source hashes.
+   On Apple Silicon use the `macos_arm` application bundle, not the Intel `macos` one.
    Follow [the verification guide](docs/VERIFICATION.md); do not silently
    refresh a dependency pin to make a check pass.
 2. Keep builds, exports, and native dependency extraction serial. The

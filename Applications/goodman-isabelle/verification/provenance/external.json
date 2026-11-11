@@ -1,0 +1,84 @@
+{
+  "description": "Externally supplied Isabelle theories, kept as immutable inputs. Each listed file must exist with exactly this SHA-256, and its root directory must contain no other file (macOS .DS_Store files excepted).",
+  "inputs": [
+    {
+      "name": "Purity of Pure formalization",
+      "author": "Jacob Lettie (Purity of Pure team)",
+      "permission": "Included with the author's permission, 11 November 2026; files unmodified.",
+      "release_attribution": "Helm and the Purity of Pure team, a group of Claude Opus 5.5 sessions (header of the release's CHECKSUMS.md, 9 November 2026)",
+      "release_folder": "PoP-G100-formalization/3-isabelle",
+      "release_checksums": "PoP-G100-formalization/CHECKSUMS.md; every hash below equals the published one",
+      "library_commit_named_by_release": "c53fa28c6655cf2190c65992a079e9bcd388f9e3",
+      "omitted_release_files": [
+        "3-isabelle/README.pdf (typeset copy of README.md; the application ignores *.pdf)"
+      ],
+      "sessions": [
+        "PoP_Main",
+        "PoP_SYN",
+        "PoP_W",
+        "PoP_NUP",
+        "PoP_K6",
+        "PoP_PSI",
+        "PoP_PPT"
+      ],
+      "root": "theories/lettie_pp",
+      "files": [
+        {
+          "path": "theories/lettie_pp/README.md",
+          "release_path": "3-isabelle/README.md",
+          "sha256": "6bc7f487c72c5dc20e05ec00b0341b33ddd35e8466e63ac7065bdc7faab56797"
+        },
+        {
+          "path": "theories/lettie_pp/ROOT",
+          "release_path": "3-isabelle/ROOT",
+          "sha256": "3cfdefcbc942515a030b4eb962d859c5c6845e9414de1f478e2428d5a8621bfb"
+        },
+        {
+          "path": "theories/lettie_pp/k6/PoP_G100_Kernel_ZF_Model.thy",
+          "release_path": "3-isabelle/k6/PoP_G100_Kernel_ZF_Model.thy",
+          "sha256": "3710a19a2ce2bb0467ea98f4b5444e671e595e7b6200e108ac89f118bf3e2865"
+        },
+        {
+          "path": "theories/lettie_pp/nup/PoP_G100_NUP.thy",
+          "release_path": "3-isabelle/nup/PoP_G100_NUP.thy",
+          "sha256": "bc2a2398b0f70d2de76771e47241266c7227546fe1e7c536872b65e646fcab98"
+        },
+        {
+          "path": "theories/lettie_pp/ppt/PoP_G100_PPt.thy",
+          "release_path": "3-isabelle/ppt/PoP_G100_PPt.thy",
+          "sha256": "4a15c549d37b1f521ce7d290fd0df2d8342ae72d7c2198119426538b162e89bf"
+        },
+        {
+          "path": "theories/lettie_pp/ppt/ROOT",
+          "release_path": "3-isabelle/ppt/ROOT",
+          "sha256": "0e1ae6e9f459bdde651b155e02463d85ea44088fb6729d75c88eb1f2f19740ea"
+        },
+        {
+          "path": "theories/lettie_pp/psi/Dowel_G100_PSI.thy",
+          "release_path": "3-isabelle/psi/Dowel_G100_PSI.thy",
+          "sha256": "9ed09f4f1a3b2498e8f8a9b78eb217dcadf24cd68c2b7b803a05dbbc4e742a50"
+        },
+        {
+          "path": "theories/lettie_pp/psi/ROOT",
+          "release_path": "3-isabelle/psi/ROOT",
+          "sha256": "826d4aa4215fcf69dcf4d8b9da651489846154166100af5d8375a8fac862ff65"
+        },
+        {
+          "path": "theories/lettie_pp/syn/PoP_G100_Syn.thy",
+          "release_path": "3-isabelle/syn/PoP_G100_Syn.thy",
+          "sha256": "a8a71e70566fc93ce7e7ddb8a2d713450cf5b104fa134f30624731a0b3f5a4b1"
+        },
+        {
+          "path": "theories/lettie_pp/t/PoP_G100_Kernel.thy",
+          "release_path": "3-isabelle/t/PoP_G100_Kernel.thy",
+          "sha256": "c34ab75095967be64b693efb02f7c5e9d524d16b49b5ae3c22e78e4c47a2f58a"
+        },
+        {
+          "path": "theories/lettie_pp/w/PoP_G100_W_Not_PP.thy",
+          "release_path": "3-isabelle/w/PoP_G100_W_Not_PP.thy",
+          "sha256": "a81ec5fa671f5c4cfc00874cbedd7c93b675c8dc8156f7c1d364737be11102f9"
+        }
+      ]
+    }
+  ]
+}

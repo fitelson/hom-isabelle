@@ -1,5 +1,18 @@
 # Verification status
 
+## Goodman application, 11 November 2026
+
+The [Goodman application](Applications/goodman-isabelle/README.md) now
+contains Jacob Lettie's refutation of Purity of Pure: ten ordinary premises
+over H + PE refute PP at type t→t, and so does Bacon's theory with a
+fundamental proposition and both directions of QLN, taken as ordinary
+premises. His Isabelle theories are included unmodified, with his
+permission, together with an audit catalog and a hand proof written for
+the repository. The Recombination-only reading of Goodman's question
+remains open; see the application's [status](Applications/goodman-isabelle/STATUS.md).
+This addition changes no core theorem or core ROOT selection, and does not
+extend the core audit coverage.
+
 ## Proposition 2.11 application, 30 September 2026
 
 The separately checked [2.11 application](Applications/2.11/README.md)

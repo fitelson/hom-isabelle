@@ -6,18 +6,35 @@ It is an ordinary subfolder of the
 [Bacon–Dorr repository](../../README.md), not a
 replacement for that development.
 
-**Goodman's consistency question remains open.** We have verified substantial
-parts of his notes, corrected several arguments, and connected the results
-to the new core. We have neither constructed a model of the full background
-plus the required PP instance nor derived a contradiction from that target.
-
 The source question asks whether Purity of Pure is compatible with the
 background theory and exactly one fundamental proposition, without assuming
 Purity of Fun. The code distinguishes several axiom packages; a result for
 one must not be silently attributed to another.
 
+**Goodman's question is answered negatively in its full-QLN reading.**
+Jacob Lettie, working with the Purity of Pure team, proved that ten ordinary
+premises over H + PE refute Purity of Pure at type t→t: three instances of
+Logical Purity, four of Application, two of zeroary Exhaustion, and the
+existence of a *universal* proposition, one that can have every pure
+property any proposition has. A fundamental proposition is universal by
+unary Recombination. So Bacon's theory with a fundamental proposition and
+both directions of QLN, all as ordinary premises over the base logic,
+refutes Purity of Pure; Purity of Fun is not used. Lettie's Isabelle
+theories, included here unmodified with his permission, verify this
+(`w_not_pp`); a [hand proof written for this repository](reports/LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11.pdf)
+follows them lemma by lemma ([correspondence](docs/LETTIE_PP_CORRESPONDENCE.md)).
+
+**Still open:** the Recombination-only reading, without Exhaustion (or
+Persistence), with the added principles as ordinary premises. See
+[STATUS.md](STATUS.md) for the exact scope.
+
+The rest of the application verifies substantial parts of Goodman's notes,
+corrects several arguments, and connects the results to the new core.
+
 ## Start here
 
+- [Lettie's refutation: hand proof (PDF)](reports/LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11.pdf)
+  and [its Isabelle correspondence](docs/LETTIE_PP_CORRESPONDENCE.md)
 - [26 September core compatibility updates](docs/CORE_UPDATE_2026-09-26.md)
 - [What is checked and what remains](STATUS.md)
 - [Goodman verification report (PDF)](reports/GOODMAN_VERIFICATION_REPORT_2026-09-20.pdf)
@@ -44,6 +61,8 @@ Theorem 10.1 (task 5, **independently checked and accepted**). The integration
 catalogs now contain **1,708 entries in 87 catalogs**, plus nine separately
 counted historical replay entries. These counts are not a count of independent mathematical
 results and do not certify complete fidelity to every sentence in the notes.
+On 11 November 2026 Lettie's seven theories and one audit theory were added,
+giving **311 theory files** and **1,725 entries in 88 catalogs**.
 
 One concrete correction is M5. For F(p) = (p ↔ NC(p)), the proposed collision
 at NC(r) and ⊤ fails under a local fun′(r) assumption. Replacing NC(r) by
@@ -99,6 +118,7 @@ statement, and a source-fidelity review.
 | `theories/semantics/`, `logical_stock/`, `exact_qln/`, `exact_l2/` | Exact Bacon carriers, denotation correspondence, QLN and L2 |
 | `theories/m_claims/`, `m5/`, `m5_object/`, `general_m1/`, `t9/` | Model claims, corrections and counting arguments |
 | `theories/control/`, `granularity/`, `wi_master/` | Further consequences and suggested-attack reductions |
+| `theories/lettie_pp/`, `lettie_audit/` | Jacob Lettie's refutation of Purity of Pure (his files, unmodified) and its audit catalog |
 | `theories/preserved/`, `preserved-additions/` | Required historical proof dependencies, with immutable provenance |
 | `dependencies/` | Core revision and source hashes, not a second copy of the core |
 | `verification/` | Audit certificates and extraction provenance |

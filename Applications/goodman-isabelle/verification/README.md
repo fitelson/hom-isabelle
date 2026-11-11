@@ -1,5 +1,49 @@
 # Standalone release verification
 
+## Lettie formalization — 11 November 2026 (full build passed under Isabelle2026)
+
+The Isabelle theories of Jacob Lettie (Purity of Pure team) are included
+with his permission and unmodified in `theories/lettie_pp/`: his seven
+sessions `PoP_Main`, `PoP_SYN`, `PoP_W`, `PoP_NUP`, `PoP_K6`, `PoP_PSI` and
+`PoP_PPT`, his three ROOT files and his README, in his layout. All 11 files
+are byte-identical to his release; their SHA-256 hashes equal those
+published in its CHECKSUMS.md and are recorded in
+`provenance/external.json`. The typeset `README.pdf` was not copied, since
+the application ignores PDFs. `ROOTS` gained the three directories
+`theories/lettie_pp`, `theories/lettie_pp/psi` and
+`theories/lettie_pp/ppt`. The checker now treats these files as immutable
+inputs: it fails on any changed, missing or additional file, and two new
+packaging tests (12 in all) cover this check.
+
+A new session `Goodman_Integration_Lettie_Audit`
+(`theories/lettie_audit/Goodman_Lettie_Audit.thy`) adds no proof. It
+exports `lettie-w-not-pp-audit.txt` and `lettie-w-not-pp-statements.txt`
+for 17 of his principal theorems, `w_not_pp` first, and fails the build on
+any oracle, residual hypothesis or flex-flex pair. The tree now has 311
+theory files and 67 application sessions (59 existing, his seven, and the
+audit session). No existing theory, preserved file or proof changed.
+
+Input checks passed (core hashes equal to the pin, 82 preserved files, 11
+external input files, 12 packaging tests). `./check_isabelle.sh --export`
+then passed with **Isabelle2026**: build exit **0**, 29 seconds, log
+`build-2026-11-11T12-10-57-419558.log`. Most sessions were current from
+builds made earlier the same day with the same sources and Isabelle; this
+invocation built five of his sessions, and a preceding targeted build with
+the checker's options built `PoP_Main`, `PoP_W` and the audit session.
+Exports in `exports/2026-11-11T12-10-57-419558/`: **88 catalogs**, **1,725
+integration entries and 9 replay entries** (1,734 clean rows). The 87
+earlier catalogs match their certificates entry for entry. The new catalog
+`Goodman_Integration_Lettie_Audit.Goodman_Lettie_Audit/lettie-w-not-pp-audit.txt`
+has 17 entries; its certificate and statement file are retained under
+`audits/`.
+
+Of the 170 exported files, 168 are byte-identical to the retained copies.
+`m5-nested-collision-audit.txt` and `wi-master-transfer-audit.txt` differ
+only in their DIRECT-PROVENANCE proof-node counts under Isabelle2026
+(45,179→39,854 and 46,568→41,201); their endpoint lists and kernel fields are
+unchanged. Those two retained files were left as they were. No commit, push
+or upload was performed for this checkpoint.
+
 ## Core update — 26 September 2026 (third pin refresh; full build passed)
 
 After the core's comprehensive repository audit and its fixes (the
