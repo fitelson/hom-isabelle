@@ -120,7 +120,39 @@ full host function spaces.
 Then read [Goodman_Exact_QLN_Model.thy](../theories/exact_qln/Goodman_Exact_QLN_Model.thy).
 The generic interpretation satisfies the explicit no-PP zeroary/unary QLN
 background. Its PP theorem is a classifier-membership iff. It does not
-prove that membership, and therefore does not solve PP consistency.
+prove that membership, and therefore does not by itself decide PP
+consistency. The refutation described in the next section decides it.
+
+## A route through the PP refutation
+
+Read the eight-page note
+[Purity of Pure and Recombination](../reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.pdf)
+first. The Isabelle development in `theories/pp_refutation/` has one theory
+for each of its results, in the same order, and the
+[correspondence table](PP_REFUTATION_CORRESPONDENCE.md) gives the theorem
+for every numbered formula.
+
+1. [Lemma 1](../theories/pp_refutation/logic/Goodman_PP_Refutation_Lemma1.thy),
+   [Lemma 2](../theories/pp_refutation/logic/Goodman_PP_Refutation_Lemma2.thy) and
+   [Lemma 3](../theories/pp_refutation/logic/Goodman_PP_Refutation_Lemma3.thy)
+   are pure logic: the operator Σ, the logical fixed point L, and the
+   proposition q = r ∧ Lr. They hold for every added stock.
+2. [Lemma 4](../theories/pp_refutation/stages/Goodman_PP_Refutation_Lemma4.thy) and
+   [Lemma 5](../theories/pp_refutation/stages/Goodman_PP_Refutation_Lemma5.thy)
+   introduce the pure stages and prove stage induction, symmetry and the
+   predecessor property. They use the Purity schema and Application closure.
+3. [Lemma 6](../theories/pp_refutation/stages/Goodman_PP_Refutation_Lemma6.thy)
+   is the only place PP is used, and the only place a theorem depending on
+   the added axioms is necessitated. Read it most carefully.
+4. [Theorem 1](../theories/pp_refutation/theorem1/Goodman_PP_Refutation_Theorem1.thy)
+   derives the contradiction in two cases and the two consequences.
+5. [The packaging theory](../theories/pp_refutation/packaging/Goodman_PP_Refutation_Packaging.thy)
+   is repository-specific and goes beyond the note: it refutes the named
+   packages and transfers the refutation to the native calculus.
+
+The theories named `Kit` and `Objects` carry the de Bruijn typing, shifting
+and β bookkeeping. They are needed by the calculus and have no counterpart
+in the note.
 
 The [M7 transfer](../theories/m_claims/Goodman_Exact_M7_Transfer.thy) distinguishes
 the complete logical stock from all invariant operators. Its actual

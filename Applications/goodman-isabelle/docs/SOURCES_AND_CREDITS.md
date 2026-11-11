@@ -44,6 +44,14 @@ not presented as their implementation or endorsement. The corrected M5
 input is an implementation-project repair, not silently attributed to the
 original notes.
 
+The note *Purity of Pure and Recombination* (11 November 2026), distributed
+in `reports/` with its LaTeX source, and the refutation it proves are
+likewise products of this implementation project. They answer a question
+posed in Goodman's notes; they are not his work and are not presented as
+endorsed by him. The note is fixed, with SHA-256 of its `.tex`
+`feae0c1547ce942343cc63791bcc39b829c20d2336f805b16f87b495f6d433fe`; the
+Isabelle development was aligned with that text.
+
 Isabelle and its standard libraries, including HOL–ZF, are external
 dependencies under their own terms. The separate Bacon–Dorr repository
 retains its own provenance and source qualifications. This software is

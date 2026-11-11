@@ -375,7 +375,9 @@ documented obstruction, and updated audit coverage.
 
 ## Verification and working rules
 
-1. Use Isabelle2025-2 and the enclosing Bacon–Dorr core with its pinned source hashes.
+1. Use Isabelle2026 and the enclosing Bacon–Dorr core with its pinned source hashes.
+   (The PP refutation sessions have so far been checked only with Isabelle2025-2;
+   see item 11.)
    Follow [the verification guide](docs/VERIFICATION.md); do not silently
    refresh a dependency pin to make a check pass.
 2. Keep builds, exports, and native dependency extraction serial. The
