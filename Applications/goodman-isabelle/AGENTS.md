@@ -22,8 +22,7 @@ The note is FIXED: it has been circulated, so never edit it; its
 checksum is in the correspondence table, and the Isabelle theorems must stay
 aligned with it item by item. State the scope every time: an inconsistency of
 the axiom extension (purity principles and PP as necessitable axioms),
-checked with Isabelle2025-2, not yet rebuilt with Isabelle2026, not yet
-independently refereed. Endpoints over a refuted package are vacuous; say so
+checked with Isabelle2026, not yet independently refereed. Endpoints over a refuted package are vacuous; say so
 when citing them, and do not delete them.
 
 Current handoff: tasks 1–5 are accepted, and the agreed task-10 report/ledger

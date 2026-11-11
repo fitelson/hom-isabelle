@@ -24,9 +24,8 @@ and numbered formula of the note to its theorem. The native endpoint is
 `goodman_book_proves gb_signature G (gb_recombination_PP_axioms G) (book_bottom G)`.
 The result depends on the added principles being axioms, so that the Rule of
 Equivalence applies above them; it does not concern theories in which they
-are merely true. It was checked with Isabelle2025-2 and has not yet been
-rebuilt with Isabelle2026 or independently refereed. See
-[STATUS.md](STATUS.md) for the exact scope.
+are merely true. It is checked with Isabelle2026 and has not yet been
+independently refereed. See [STATUS.md](STATUS.md) for the exact scope.
 
 Before this result we had verified substantial parts of Goodman's notes,
 corrected several arguments, and connected the results to the new core.

@@ -1,5 +1,34 @@
 # Standalone release verification
 
+## Isabelle2026 rebuild — 11 November 2026 (full build passed)
+
+The whole application, including the five PP refutation sessions, was
+rebuilt and exported with **Isabelle2026**, using the Apple Silicon
+(`macos_arm`, `arm64-darwin`) application bundle. Input checks passed (core
+hashes equal to the pin, 82 preserved files, 10 packaging tests).
+`./check_isabelle.sh --export` then passed: exit **0**, build 5 minutes 47
+seconds, log `build-2026-11-11T11-22-02-867811.log`. All 64 sessions were
+selected and built from scratch under Isabelle2026, together with the core
+sessions they need. Exports in `exports/2026-11-11T11-22-02-867811/`:
+**88 catalogs**, **1,786 integration entries and 9 replay entries** (1,795
+clean rows), every catalog matching `catalogs.json` entry for entry.
+
+Of the 170 exported files, 167 were byte-identical to the retained copies.
+The other three differed only in their DIRECT-PROVENANCE proof-node counts,
+as expected when proof terms are produced by a different Isabelle release;
+their endpoint lists, kernel fields and provenance verdicts were unchanged:
+`pp-refutation-audit.txt` (note endpoints 7,218→7,185 nodes, still reaching
+no stock-refuting theorem; packaging endpoints 26,722→26,572),
+`m5-nested-collision-audit.txt` (45,179→39,854) and
+`wi-master-transfer-audit.txt` (46,568→41,201). Those three retained files
+were refreshed from this run, so all 170 retained files now match the
+Isabelle2026 export.
+
+The Intel (`macos`) Isabelle2026 bundle should not be used on Apple Silicon:
+its release notes exclude running Java under Rosetta 2, and on this machine
+its SMT solver paths did not resolve, so `smt` steps in HOL-Library failed
+before any application session was reached. That attempt is not a result.
+
 ## PP refutation sessions — 11 November 2026 (full build passed under Isabelle2025-2)
 
 The formalization of the note "Purity of Pure and Recombination"
@@ -42,11 +71,11 @@ PP and Necessitation and not unary Recombination). The certificate records
 these checks and the imported application-level theorems the note endpoints
 use.
 
-The repository has since been moved to Isabelle2026. These five sessions,
-and this run as a whole, have not yet been checked with Isabelle2026; the
+The repository has since been moved to Isabelle2026. When this section was
+written these five sessions had not yet been checked with Isabelle2026; the
 audit theory uses the same proof-dependency ML interface as the M5 and WI
-audits, plus `Proofterm.thm_node_prop`. No commit, push or upload was
-performed for this checkpoint.
+audits, plus `Proofterm.thm_node_prop`. The Isabelle2026 rebuild recorded
+above has since passed.
 
 ## Core update — 26 September 2026 (third pin refresh; full build passed)
 

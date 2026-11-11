@@ -60,13 +60,13 @@ repository packaging and are kept in a separate theory.
   theorem yet states that corollary or the unconditional M1 classifier
   nonmembership of task 6.
 - **Verification record.** `./check_isabelle.sh --export` passed with
-  Isabelle2025-2 (exit 0, 64 sessions, 88 catalogs, 1,786 integration entries
-  and 9 replay entries; the 87 earlier catalogs unchanged entry for entry).
-  The new catalog has 78 entries with zero oracles, residual hypotheses and
+  **Isabelle2026** (exit 0, 64 sessions built from scratch, 88 catalogs,
+  1,786 integration entries and 9 replay entries, every catalog matching
+  entry for entry), after an earlier pass with Isabelle2025-2. The new
+  catalog has 78 entries with zero oracles, residual hypotheses and
   flex-flex pairs, and its audit fails the build if any endpoint of the note
-  depends on an imported theorem that refutes a stock outright. The sessions
-  have **not yet been rebuilt with Isabelle2026**, which the rest of this
-  repository now expects. See [verification](verification/README.md).
+  depends on an imported theorem that refutes a stock outright. See
+  [verification](verification/README.md).
 - The argument has not yet been independently refereed.
 
 The dated sections below are retained as the record of earlier checkpoints.

@@ -357,8 +357,6 @@ item by item. The note is fixed; do not edit it. Useful contributions:
   starting with Lemma 6 (the only use of PP, and the one application of
   Necessitation above the added axioms) and Lemma 2 (the logical fixed point).
   Report any step whose Isabelle statement does not say what the note says.
-- **Rebuild under Isabelle2026.** The five sessions were checked with
-  Isabelle2025-2. Run the full checker with Isabelle2026 and record the result.
 - **Package the corollaries.** State and prove, as cataloged theorems, that PP
   at t→t is not valid in the exact generic interpretation, and the
   unconditional classifier nonmembership asked for in item 6.
@@ -376,8 +374,8 @@ documented obstruction, and updated audit coverage.
 ## Verification and working rules
 
 1. Use Isabelle2026 and the enclosing Bacon–Dorr core with its pinned source hashes.
-   (The PP refutation sessions have so far been checked only with Isabelle2025-2;
-   see item 11.)
+   On Apple Silicon use the `macos_arm` application bundle, not the Intel `macos`
+   one; Isabelle2026 does not support running under Rosetta 2.
    Follow [the verification guide](docs/VERIFICATION.md); do not silently
    refresh a dependency pin to make a check pass.
 2. Keep builds, exports, and native dependency extraction serial. The

@@ -1,7 +1,7 @@
 PP-REFUTATION-AUDIT: 78 clean endpoints
 SCOPE: formalization of the note Purity of Pure and Recombination (11 November 2026), in the note's order: 66 endpoints for its objects, Lemmas 1-6 and Theorem 1 (stock T0 = purity schema + application closure; T = T0 + PP at type Prop->Prop; Lemmas 1-3 use no added axiom), then 12 packaging endpoints BEYOND THE NOTE (refutation of pp_recombination_PP_axioms and pp_full_QLN_PP_axioms in the constructor calculus; native transfer to gb_recombination_PP_axioms and gb_zeroary_unary_QLN_PP_axioms under sg_rich; native fun-prime statement over gb_T6_core).
-DIRECT-PROVENANCE: note endpoints: 7218 proof nodes traversed, 1351 named theorems; stock-refuting (explosive) theorems reached: NONE.
-DIRECT-PROVENANCE: packaging endpoints: 26722 proof nodes traversed, 3651 named theorems; stock-refuting (explosive) theorems reached: gr_full_QLN_PP_refutation, gr_native_recombination_PP_refutation, gr_recombination_PP_refutation (all proved in Goodman_PP_Refutation_Packaging; no imported one).
+DIRECT-PROVENANCE: note endpoints: 7185 proof nodes traversed, 1351 named theorems; stock-refuting (explosive) theorems reached: NONE.
+DIRECT-PROVENANCE: packaging endpoints: 26572 proof nodes traversed, 3651 named theorems; stock-refuting (explosive) theorems reached: gr_full_QLN_PP_refutation, gr_native_recombination_PP_refutation, gr_recombination_PP_refutation (all proved in Goodman_PP_Refutation_Packaging; no imported one).
 STOCK-USE: Lemmas 1-3 (and objects): does not depend on CEV_axiom_proves.Axiom
 STOCK-USE: Lemmas 4-5: does not depend on gr_Th_PP
 STOCK-USE: Lemmas 4-5: depends on CEV_axiom_proves.Axiom

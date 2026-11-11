@@ -11,8 +11,8 @@ packages with PP are therefore inconsistent. The application contains the
 [proof note](Applications/goodman-isabelle/reports/PP_RECOMBINATION_EXPLANATORY_PROOF_2026-11-11.pdf),
 an Isabelle derivation that follows it item by item, and a
 [status](Applications/goodman-isabelle/STATUS.md) recording the exact scope:
-the result concerns the axiom extension, was checked with Isabelle2025-2, and
-has not yet been rebuilt with Isabelle2026 or independently refereed. This
+the result concerns the axiom extension, is checked with Isabelle2026, and has
+not yet been independently refereed. This
 addition changes no core theorem or core ROOT selection, and does not extend
 the core audit coverage.
 

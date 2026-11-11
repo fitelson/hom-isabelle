@@ -29,7 +29,8 @@ endpoints (66 of the note, 12 packaging) are free of oracles, residual hypothese
 flex-flex pairs. Retained certificate and exact printed statements:
 `verification/audits/Goodman_Integration_PP_Refutation_Packaging.Goodman_PP_Refutation_Audit/`
 (`pp-refutation-audit.txt`, `pp-refutation-statements.txt`). The first check was made
-with Isabelle2025-2 (see `verification/README.md`). The build certifies the Isabelle
+with Isabelle2025-2; the full build has since passed with Isabelle2026 (see
+`verification/README.md`). The build certifies the Isabelle
 statements; that they render the note's statements is what this document records, and
 passing the build is not by itself a source-fidelity audit.
 
