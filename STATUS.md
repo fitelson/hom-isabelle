@@ -13,8 +13,8 @@ found that drops Exhaustion: Logical Purity, Application and PP at type t→t,
 as ordinary premises over H + PE, refute the existence of a universal
 proposition, so the Recombination-only reading of Goodman's question is
 answered negatively too. Its Isabelle session (on Lettie's kernel, with an
-audit catalog) and an aligned hand proof are in the application; it is
-pending independent human review. See the application's
+audit catalog) and an aligned hand proof are in the application. See the
+application's
 [status](Applications/goodman-isabelle/STATUS.md). These additions change no
 core theorem or core ROOT selection, and do not extend the core audit
 coverage.

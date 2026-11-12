@@ -2,8 +2,8 @@ theory Goodman_RecOnly_Final
   imports Goodman_RecOnly_Relative
 begin
 
-text \<open>Recombination without Exhaustion, Sections 5 to 7 of the hand proof: the required pure truth,
-  the final contradiction (Theorem 1) and the Recombination corollary. Calculus: Lettie's U;
+text \<open>Recombination without Exhaustion, Sections 5 to 7 of the hand proof: the premises, the guard
+  (Lemmas 11 and 12), the contradiction (Lemma 13, Theorem 1) and the Recombination corollary. Calculus: Lettie's U;
   the ordinary premises are the antecedent roPrem (Logical Purity and Application instances, and
   PP_u), never necessitated. The set-based statements use the repository's premise relation
   CEV_set_derivable (Assumption, Theorem, Derive_MP only).\<close>
@@ -41,7 +41,7 @@ lemma roHF_shift[simp]: "shift roHF = roHF"
   by (simp add: roHF_def ro_Z_def ro_comp_def pp_application_closure_def pp_pure_def pp_Pure_def shift_def)
 lemma roPrem_shift[simp]: "shift roPrem = roPrem" by (simp add: roPrem_def rc_sft)
 
-section \<open>2. Constructing the required pure truth (Section 5 of the hand proof)\<close>
+section \<open>2. Constructing the required pure truth (Section 6 of the hand proof, Lemmas 11 and 12)\<close>
 
 lemmas roA_closed[simp] = roa_closed[OF roPhi_ty ro_rel_subst(10) ro_rel_ren(10)]
 lemmas roA_ty = roa_ty[OF roPhi_ty ro_rel_subst(10) ro_rel_ren(10)]
@@ -70,7 +70,7 @@ proof -
   show ?thesis using ro_gen[OF roPrem_ty roPrem_shift h] unfolding roPres_def .
 qed
 
-text \<open>(5.3): a is pure and true.\<close>
+text \<open>Lemma 12(a): a is pure and true.\<close>
 theorem ro_actual: "\<Gamma> \<turnstile>\<^sub>U Imp roPrem (Conj (pp_pure Prop (roa roPhi)) (roa roPhi))"
 proof -
   note c = ro_closure_true[OF roPhi_ty ro_rel_subst(10) ro_rel_ren(10), of \<Gamma>]
@@ -79,7 +79,7 @@ proof -
   show ?thesis by (rule u_rc_pc3[OF c ro_Phi_pure ro_Phi_pres tg]) (unfold roPrem_def prop_eval.simps, blast)
 qed
 
-text \<open>(5.4): \<box>(a \<longrightarrow> \<kappa>(a)), a theorem of the base logic.\<close>
+text \<open>Lemma 12(b): \<box>(a \<longrightarrow> \<kappa>(a)), a theorem of the base logic.\<close>
 theorem ro_certificate: "\<Gamma> \<turnstile>\<^sub>U \<box>\<^sub>o (Imp (roa roPhi) (rok (roa roPhi)))"
 proof -
   let ?a = "roa roPhi"
@@ -90,11 +90,11 @@ proof -
   show ?thesis by (rule U_proves.MP[OF bx u_rc_K[OF g]])
 qed
 
-text \<open>Lemma 2 at b = a: F_a(Q_a(x)) for every x.\<close>
+text \<open>Lemma 12(c), Lemma 9 at b = a: F_a(Q_a(x)) for every x.\<close>
 theorem ro_Fa: assumes x: "\<Gamma> \<turnstile> x : Prop" shows "\<Gamma> \<turnstile>\<^sub>U roF (roa roPhi) (roQ (roa roPhi) x)"
   by (rule U_proves.MP[OF ro_certificate ro_relative[OF roA_ty x]])
 
-section \<open>3. The final contradiction (Section 6 of the hand proof)\<close>
+section \<open>3. The final contradiction (Section 7 of the hand proof)\<close>
 
 definition roZ :: "oterm \<Rightarrow> oterm \<Rightarrow> oterm" where "roZ a Y = App (App ro_Z a) Y"
 definition roComp :: "oterm \<Rightarrow> oterm \<Rightarrow> oterm" where "roComp Y Z = App (App ro_comp Y) Z"
@@ -355,8 +355,8 @@ proof -
 qed
 
 text \<open>Goodman's question, Recombination-only reading, with ordinary premises: the repository's
-  Recombination background (Logical Purity, Application, unique fundamentality, no other
-  fundamentals, zeroary and unary Recombination, no Exhaustion) refutes PP_u.\<close>
+  Recombination background (Logical Purity, Application, unique fundamentality, no fundamentals
+  at other types, zeroary and unary Recombination, no Exhaustion) refutes PP_u.\<close>
 theorem ro_recombination_refutes_PP: "[] ; pp_recombination_background_axioms \<turnstile>\<^sub>CEV\<^sub>s Neg pp_target_PP"
   by (rule ro_cor_set) (auto simp: pp_recombination_background_axioms_def pp_background_axioms_def)
 

@@ -22,9 +22,10 @@ answered negatively by Recombination without Exhaustion (a strengthening
 found shortly after Lettie's result; do not attribute it to anyone),
 Isabelle-checked in theories/recombination_only/ on Lettie's kernel, with
 the hand proof reports/RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11
-and the map docs/RECOMBINATION_ONLY_CORRESPONDENCE.md. It is pending
-independent human review: say so, and do not call it settled. Keep this hand
-proof and its theorems aligned too. Always distinguish ordinary premises (Equivalence and Necessitation
+and the map docs/RECOMBINATION_ONLY_CORRESPONDENCE.md. Keep this hand
+proof and its theorems aligned too. This hand proof contains only the
+mathematics, with steps matching the Isabelle proof one for one; theorem
+names and verification records belong in the correspondence file. Always distinguish ordinary premises (Equivalence and Necessitation
 only on base theorems) from an axiom extension closed under them, such as
 goodman_book_proves: an earlier refutation of the latter was withdrawn on
 11 November 2026 because it did not answer the question.

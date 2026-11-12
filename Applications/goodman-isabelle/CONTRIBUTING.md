@@ -24,11 +24,10 @@ Jacob Lettie's theorem (see [STATUS.md](STATUS.md) and
 Lettie found his result, a strengthening was found that drops Exhaustion:
 the Recombination-only reading, without Exhaustion or Persistence and with
 the added principles as ordinary premises, is answered negatively by an
-Isabelle-checked proof
-([correspondence](docs/RECOMBINATION_ONLY_CORRESPONDENCE.md)). It awaits
-independent human review; checking the
+Isabelle-checked proof, with a
 [hand proof](reports/RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11.pdf)
-against its theorems is a welcome contribution. Keep ordinary premises distinct from an axiom extension closed
+aligned to its theorems
+([correspondence](docs/RECOMBINATION_ONLY_CORRESPONDENCE.md)). Keep ordinary premises distinct from an axiom extension closed
 under Equivalence and Necessitation: a result for the latter does not answer
 the question. The completed 20 September M5 repair
 is not an unfinished task: its 21 audited endpoints establish the corrected

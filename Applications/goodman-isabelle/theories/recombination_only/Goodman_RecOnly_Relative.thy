@@ -2,8 +2,8 @@ theory Goodman_RecOnly_Relative
   imports Goodman_RecOnly_Closure
 begin
 
-text \<open>Recombination without Exhaustion: the relativized Lettie construction (Lemma 2 and steps
-  (2.1)-(2.7), Section 4 of the hand proof). Everything here is a theorem of Lettie's U with no
+text \<open>Recombination without Exhaustion: the relativized Lettie construction (Lemmas 3 to 9,
+  Section 4 of the hand proof). Everything here is a theorem of Lettie's U with no
   added premise: the guard b and the purity assertions \<pi>(P_b), \<pi>(P'_b) occur only as
   antecedents.\<close>
 
@@ -226,7 +226,7 @@ proof -
   show ?thesis by (rule u_rc_pc2[OF g i has_type.Imp[OF P roR_ty[OF b x y]]]) (unfold prop_eval.simps, blast)
 qed
 
-section \<open>3. Lemma 2: the logical part of Lettie's proof, with a guard b\<close>
+section \<open>3. Lemmas 3 to 9: the logical part of Lettie's proof, with a guard b\<close>
 
 lemma ro_lemA: assumes b: "\<Gamma> \<turnstile> b : Prop" and x: "\<Gamma> \<turnstile> x : Prop"
   shows "\<Gamma> \<turnstile>\<^sub>U Imp (roF b x) (\<box>\<^sub>o (roF b x))"
@@ -284,7 +284,7 @@ proof -
   show ?thesis by (rule u_rc_pc4[OF d ro_lemB[OF b x] U_eq_sym[OF tQ x] ll]) (insert tQ tFQ, (unfold prop_eval.simps)?, blast+)
 qed
 
-text \<open>(2.6): \<box>\<not>P_b(Q_b(x)).\<close>
+text \<open>Lemma 7: \<box>\<not>P_b(Q_b(x)).\<close>
 lemma ro_cor: assumes b: "\<Gamma> \<turnstile> b : Prop" and x: "\<Gamma> \<turnstile> x : Prop"
   shows "\<Gamma> \<turnstile>\<^sub>U \<box>\<^sub>o (Neg (App (roP b) (roQ b x)))"
 proof -
@@ -307,7 +307,7 @@ proof -
   show ?thesis by (rule u_rc_eq_of_iff[OF t1 t2 i])
 qed
 
-text \<open>(2.7): (b \<and> \<kappa>(b)) \<longrightarrow> C_b(q), q = Q_b(x).\<close>
+text \<open>Lemma 8 (the guarded step): (b \<and> \<kappa>(b)) \<longrightarrow> C_b(q), q = Q_b(x).\<close>
 lemma ro_guarded: assumes b: "\<Gamma> \<turnstile> b : Prop" and x: "\<Gamma> \<turnstile> x : Prop"
   shows "\<Gamma> \<turnstile>\<^sub>U Imp (Conj b (rok b)) (roC b (roQ b x))"
 proof -
@@ -323,7 +323,7 @@ proof -
   have tPpq: "\<Gamma> \<turnstile> App (roPp b) ?q : Prop" and tPpn: "\<Gamma> \<turnstile> App (roPp b) ?n : Prop"
     by (rule has_type.App[OF tPp tq], rule has_type.App[OF tPp tn])
   note fq = roF_iff[OF b tq] and d = ro_lemD[OF b x] and T = U_modal_T[OF has_type.Imp[OF b tC], unfolded modal_T_def]
-  text \<open>If b and not C_b(q): F_b(q) fails by factivity, so q holds by Lemma D.\<close>
+  text \<open>If b and not C_b(q): F_b(q) fails by factivity, so q holds by Lemma 6.\<close>
   have st1: "\<Gamma> \<turnstile>\<^sub>U Imp (Conj b (Neg (roC b ?q))) (Conj ?q (Neg (roF b ?q)))"
     by (rule u_rc_pc3[OF fq T d]) (insert b tC tq tFq, (unfold prop_eval.simps)?, blast+)
   text \<open>Hence P_b(\<not>q) and P'_b(q).\<close>
@@ -331,7 +331,7 @@ proof -
     by (rule u_rc_pc2[OF roP_iff[OF b tn] ro_lemC[OF b tq]]) (insert tq tFq tPn, (unfold prop_eval.simps)?, blast+)
   have s4: "\<Gamma> \<turnstile>\<^sub>U Imp (Conj ?q (Neg (roF b ?q))) (App (roPp b) ?q)"
     by (rule u_rc_pc1[OF roPp_iff[OF b tq]]) (insert tq tFq tPpq, (unfold prop_eval.simps)?, blast+)
-  text \<open>(2.6) excludes \<diamond>(b \<and> P_b(q)).\<close>
+  text \<open>Lemma 7 excludes \<diamond>(b \<and> P_b(q)).\<close>
   have k0: "\<Gamma> \<turnstile>\<^sub>U Imp (Neg (App (roP b) ?q)) (Neg (Conj b (App (roP b) ?q)))"
     by (rule U_taut) (insert tPq b, unfold prop_tautology_def prop_eval.simps, blast)
   have bP: "\<Gamma> \<turnstile>\<^sub>U \<box>\<^sub>o (Neg (Conj b (App (roP b) ?q)))" by (rule U_proves.MP[OF ro_cor[OF b x] u_rc_K[OF k0]])
@@ -355,7 +355,7 @@ proof -
   show ?thesis by (rule ro_pc7[OF st1 s3 s4 bP dia r1 r2 tg]) (unfold rok_def roC_def prop_eval.simps, blast)
 qed
 
-text \<open>Lemma 2: \<box>(b \<longrightarrow> \<kappa>(b)) \<longrightarrow> F_b(Q_b(x)).\<close>
+text \<open>Lemma 9: \<box>(b \<longrightarrow> \<kappa>(b)) \<longrightarrow> F_b(Q_b(x)).\<close>
 theorem ro_relative: assumes b: "\<Gamma> \<turnstile> b : Prop" and x: "\<Gamma> \<turnstile> x : Prop"
   shows "\<Gamma> \<turnstile>\<^sub>U Imp (\<box>\<^sub>o (Imp b (rok b))) (roF b (roQ b x))"
 proof -

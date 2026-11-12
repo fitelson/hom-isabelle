@@ -2,10 +2,10 @@ theory Goodman_RecOnly_Closure
   imports PoP_Main.PoP_G100_Kernel
 begin
 
-text \<open>Recombination without Exhaustion: the closure lemma for pure truths (Lemma 1, Section 3 of
-  reports/RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11). Built on Jacob Lettie's kernel
+text \<open>Recombination without Exhaustion: the closure lemma for pure truths (Lemmas 1 and 2 in Section 3
+  and Lemma 10 in Section 6 of reports/RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11). Built on Jacob Lettie's kernel
   (PoP_Main, unmodified). Calculus: Lettie's U. The parameter \<pi> is the constant rc_p;
-  the operator \<Theta> is an arbitrary closed term T of type u. Every added principle used in Part 3
+  the operator \<Theta> is an arbitrary closed term T of type u. Every added principle used for Lemma 10
   is an antecedent of the theorem, so no added principle is necessitated.\<close>
 
 declare has_type.App[rule del]
@@ -229,7 +229,7 @@ definition roCl5 :: "oterm \<Rightarrow> oterm" where
 definition roClB :: "oterm \<Rightarrow> oterm \<Rightarrow> oterm" where
   "roClB T X = Conj (roCl1 X) (Conj (roCl2 X) (Conj (roCl3 T X) (Conj (roCl4 X) (roCl5 X))))"
 
-text \<open>The ordinary premises of Part 3: Logical Purity at \<top>, conjunction, m and W; Application at
+text \<open>The ordinary premises of Lemma 10: Logical Purity at \<top>, conjunction, m and W; Application at
   (t, t\<rightarrow>t), (t, t), (u, t), (u\<rightarrow>t, u\<rightarrow>u) and (u, u); and PP_u.\<close>
 definition roHC :: oterm where
   "roHC = Conj (pp_pure Prop ObjTrue) (Conj (pp_pure (Prop \<rightarrow>\<^sub>o (Prop \<rightarrow>\<^sub>o Prop)) ro_and)
@@ -686,7 +686,7 @@ proof -
   show ?thesis by (rule ro_pc6[OF p1 p2 p3 p4 be ro_piW tg]) (unfold roH_def roHC_def roa_def rom_def pp_pure_def prop_eval.simps, blast)
 qed
 
-text \<open>Lemma 1, Part 3: a is pure and true. Together with ro_boxed this is the closure lemma.\<close>
+text \<open>Lemma 10: a is pure and true.\<close>
 
 theorem ro_closure_true:
   "\<Gamma> \<turnstile>\<^sub>U Imp roHC (Imp (pp_pure rc_u T) (Imp (roPres T) (Conj (pp_pure Prop (roa T)) (roa T))))"

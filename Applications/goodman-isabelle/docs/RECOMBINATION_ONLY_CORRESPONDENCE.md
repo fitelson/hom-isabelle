@@ -8,11 +8,13 @@ universal by unary Recombination, PPᵤ is refuted by Logical Purity, Applicatio
 Recombination and a fundamental proposition: the Recombination-only reading of Goodman's
 question. No Exhaustion, Persistence or Purity of Fun is used.
 
-Status: Isabelle-checked (Isabelle2026, no oracles), pending independent human review.
+Status: checked in Isabelle (Isabelle2026, no oracles).
 
 **Hand proof.** [`reports/RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11.pdf`](../reports/RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11.pdf)
-(self-contained TeX alongside). Every numbered step names its Isabelle theorem, and every
-use of Logical Purity or Application names its instance (Table 1 of the note).
+(self-contained TeX alongside). It is written as an ordinary theorem-proof note and does
+not mention the formalization. Its lemmas follow the Isabelle proof one for one, with the
+same routes and the same premise instances (L1–L10, A1–A10 in §5 of the note). The tables
+below map each one to its theorem.
 
 **Isabelle.** Session `Goodman_Integration_Recombination_Only` in
 [`theories/recombination_only/`](../theories/recombination_only/), on top of Lettie's
@@ -31,7 +33,7 @@ Build: `./check_isabelle.sh --export` (serial, 60 seconds per session).
   uses `CEV_axiom_proves` or `goodman_book_proves`.
 - The set statements use the repository's `CEV_set_derivable` over C (Assumption, Theorem,
   Derive_MP only): ordinary premises.
-- Necessitations in the proof: `ro_boxed` (□(a → Θa), Lemma 1), `ro_cor` (□¬P_b(Q_b x)),
+- Necessitations in the proof: `ro_boxed` (□(a → Θa), Lemma 2), `ro_cor` (□¬P_b(Q_b x), Lemma 7),
   and K/4 steps on base theorems (`u_rc_K`, `U_modal_4`). All are of premise-free theorems.
 
 ## Main statements
@@ -51,7 +53,7 @@ and composition; Application at (t,t→t), (t,t), (u,t), (u→t,u→u), (u,u), (
 Application at (u,u) and unary Recombination. `ExUni` is Lettie's `rcExUni`,
 ∃r ∀y ∀Y (π(Y) → (Yy → ◇Yr)). `pp_recombination_background_axioms` is the repository's
 stock package for the question (Logical Purity, Application, unique fundamental
-proposition, no other fundamentals, zeroary and unary Recombination; no Exhaustion, no
+proposition, no fundamentals at other types, zeroary and unary Recombination; no Exhaustion, no
 Persistence, no Purity of Fun). Of these, the proof uses Logical Purity, Application,
 unique fundamentality (for the existence of a fundamental proposition) and unary
 Recombination.
@@ -60,35 +62,45 @@ Recombination.
 
 | Note | Isabelle (theory) |
 |---|---|
-| §3 m, Ĉl, Cl, Ŵ, W, a, G, Pres | `ro_m`, `ro_Cl`, `roCl`, `ro_W`, `roW`, `roa`, `ro_G`, `roPres` (Goodman_RecOnly_Closure) |
-| Lemma 1(a), clause by clause | `ro_ClW_1`–`ro_ClW_5`, `ro_ClW` |
-| Lemma 1(b), (c) | `ro_base`, `ro_boxed` |
-| Lemma 1(d1), clause by clause | `ro_ClG_1`–`ro_ClG_5`, `ro_ClG` |
-| Lemma 1(d2)–(d4), (d) | `ro_mW`, `ro_piW`, `ro_pure_a`, `ro_closure_true` |
-| §4 R̂, F̂, Q̂, P̂, P̂′, Φ̂ | `ro_R`, `ro_F`, `ro_Q`, `ro_P`, `ro_Pp`, `ro_Phi` (Goodman_RecOnly_Relative) |
-| R_b, F_b, Q_b, Q_b(z), P_b, P′_b, C_b, κ, Φ | `roR`, `roF`, `roQf`, `roQ`, `roP`, `roPp`, `roC`, `rok`, `roPhi` |
-| (2.1)–(2.7) | `ro_lemA`, `ro_lemB`, `ro_lemC`, `ro_ident`, `ro_lemD`, `ro_cor`, `ro_guarded` |
-| Lemma 2 | `ro_relative` |
-| §5 premises L5–L10, A6–A10; Prem | `roHF`; `roPrem` (Goodman_RecOnly_Final) |
-| (5.1)–(5.5) | `ro_Phi_pure`, `ro_Phi_pres`, `ro_actual`, `ro_certificate`, `ro_Fa` |
-| §6 Z, comp | `ro_Z`, `ro_comp` |
-| (6.1)–(6.4) | `ro_step1`, `ro_uni_rel`, `ro_step2`, `ro_Rae`, `ro_contra`, `ro_thm1` |
-| Theorem 1 | `ro_thm1_U`, `ro_thm1_CEVs` |
-| §7 Proposition (Lettie: a fundamental proposition is universal) | `u_fun_step`, `u_uni_ctx`, `u_fun_ExUni` (Lettie's kernel, imported) |
+| §1 R, Uni, ∃r Uni(r); Rec₁; neg | `rcR`, `rcUni`, `rcExUni`; `pp_unary_recombination`; `k_C` |
+| §1 Proposition (Lettie: fundamental propositions are universal) | `u_fun_step`, `u_uni_ctx`, `u_fun_ExUni` (Lettie's kernel, imported) |
+| §2 base-logic laws: Necessitation, K-rule, T, 4, □(A↔B) → A=B | `U_nec`, `u_rc_K`, `U_modal_T`, `U_modal_4`, `u_rc_box_iff_eq` |
+| §3 m, and, Cl (Cl1)–(Cl5), W, a; Ĉl, Ŵ | `ro_m`, `ro_and`, `roCl` (`roCl1`–`roCl5`), `roW`, `roa`; `ro_Cl`, `ro_W` (Goodman_RecOnly_Closure) |
+| §3 elimination and introduction for W | `ro_W_elim`, `ro_W_intro` |
+| Lemma 1 (W satisfies the closure conditions), condition by condition | `ro_ClW_1`–`ro_ClW_5`, `ro_ClW` |
+| Lemma 2 (a → Θ(a) is a base theorem) | `ro_base`, `ro_boxed` |
+| §4 R_b, C_b, F_b, Q_b, P_b, P′_b, κ, Φ | `roR`, `roC`, `roF`, `roQf`/`roQ`, `roP`, `roPp`, `rok`, `roPhi` (Goodman_RecOnly_Relative) |
+| §4 R̂, F̂, Q̂, P̂, P̂′, Φ̂; elimination and introduction for R_b | `ro_R`, `ro_F`, `ro_Q`, `ro_P`, `ro_Pp`, `ro_Phi`; `roR_elim`, `roR_intro` |
+| Lemma 3 (firmness persists) | `ro_lemA` |
+| Lemma 4 (Q_b fixes firm propositions) | `ro_lemB` |
+| Lemma 5 (symmetry) | `ro_lemC` (biconditional), `ro_ident` |
+| Lemma 6 (¬Q_b(x) → F_b(Q_b(x))) | `ro_lemD` |
+| Lemma 7 (the first test necessarily fails) | `ro_cor` |
+| Lemma 8 (the guarded step) | `ro_guarded` |
+| Lemma 9 (necessary purity under the guard suffices) | `ro_relative` |
+| §5 Z, comp; L1–L10, A1–A10; LA | `ro_Z`, `ro_comp` (Goodman_RecOnly_Final); `roHC0`, `roHF`; `roLA` |
+| §6 G, Pres | `ro_G`, `roPres` |
+| Lemma 10 (the guard is pure and true): Cl(G) condition by condition; m(W); π(W); Pure_t(a) | `ro_ClG_1`–`ro_ClG_5`, `ro_ClG`; `ro_mW`; `ro_piW`; `ro_pure_a`; `ro_closure_true` (premises `roHC`, hypothesis `roH`) |
+| Lemma 11 (Φ is pure and preserves pure truths) | `ro_Phi_pure`, `ro_Phi_pres` |
+| Lemma 12 (properties of the guard) (a), (b), (c) | `ro_actual`, `ro_certificate`, `ro_Fa` |
+| Lemma 13 (universality relative to the guard) | `ro_step1`, `ro_uni_rel` |
+| Proof of Theorem 1: R_a(e, ¬e); contradiction; ¬∃r Uni(r) | `ro_step2`, `ro_Rae`; `ro_contra`; `ro_thm1` (premises `roPrem`) |
+| Theorem 1 | `ro_thm1_U`; over C, `ro_thm1_CEVs` (via `ro_LA_derivable`, `U_sub_CEV`) |
+| Corollary: EF, H5; a unique fundamental proposition gives EF | `k_EF`, `rcH5`; `lo_EF_of_UF` |
 | Corollary | `ro_cor_EF_U`, `ro_cor_U`, `ro_cor_set`, `ro_recombination_refutes_PP`, `ro_recombination_PP_inconsistent` |
 
 ## Notes on the formalization
 
-1. Lemma 1 is proved for an arbitrary closed term Θ (typed, invariant under substitution
-   and renaming), with π the constant `Pure_u`. Part (b) is a premise-free theorem, so
-   Necessitation applies to it directly.
-2. The symmetry F_b(¬x) = F_b(x) is proved as a biconditional (2.3), as in Lettie's
-   development; the identity (2.4) then follows by Propositional Equivalence.
+1. Lemmas 1, 2 and 10 are proved for an arbitrary closed term Θ (typed, invariant under
+   substitution and renaming), with π the constant `Pure_u`. Lemma 2's a → Θ(a) is a
+   premise-free theorem, so Necessitation applies to it directly.
+2. The symmetry F_b(¬x) ↔ F_b(x) is proved as a biconditional (Lemma 5), as in Lettie's
+   development; the identity P′_b(z) = P_b(¬z) then follows by Propositional Equivalence.
 3. Theorem 1's premises over H + PE are 20 named instances rather than the schemas; the
-   set version over C uses the full schemas (`ro_LA_derivable`).
-4. Clause (Cl1) of the closure condition is not needed for a → Θa; it is the clause that
-   accounts for premise L1.
-
-## Not done
-
-No independent human review yet.
+   set version over C uses the full schemas (`ro_LA_derivable`). A1 (App at (t,t→t)) and A8
+   (App at (t,u)) are the same formula, since u = t→t; it occurs once in `roHC0` and once in
+   `roHF`, so there are nineteen distinct instances.
+4. Condition (Cl1) is not needed for Lemma 2; it is the condition that accounts for premise
+   L1 (in Lemma 10).
+5. The theories state the closure and relativized lemmas for an arbitrary closed term T and
+   arbitrary proposition terms b, x, z, as the note does in words.

@@ -24,7 +24,7 @@ theories, included here unmodified with his permission, verify this
 (`w_not_pp`); a [hand proof written for this repository](reports/LETTIE_PP_REFUTATION_HAND_PROOF_2026-11-11.pdf)
 follows them lemma by lemma ([correspondence](docs/LETTIE_PP_CORRESPONDENCE.md)).
 
-**Recombination-only reading: Isabelle-checked, pending review.** Shortly
+**Recombination-only reading: answered negatively.** Shortly
 after Lettie found his result, a strengthening was found that drops
 Exhaustion. Logical Purity, Application and Purity of Pure at type t→t, as
 ordinary premises over H + PE, refute the existence of a universal
@@ -34,8 +34,7 @@ Persistence. The proof is checked in Isabelle on top of Lettie's kernel
 (`ro_thm1_U`, `ro_recombination_refutes_PP`), with a
 [hand proof](reports/RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11.pdf)
 aligned step by step ([correspondence](docs/RECOMBINATION_ONLY_CORRESPONDENCE.md)).
-It has not yet had independent human review. See [STATUS.md](STATUS.md)
-for the exact scope.
+See [STATUS.md](STATUS.md) for the exact scope.
 
 The rest of the application verifies substantial parts of Goodman's notes,
 corrects several arguments, and connects the results to the new core.

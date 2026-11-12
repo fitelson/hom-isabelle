@@ -16,3 +16,4 @@ export/
 reports/build/
 *.claude-stream.jsonl
 .env
+/reports/Formalization Files.zip

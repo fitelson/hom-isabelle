@@ -18,8 +18,8 @@ below are a dated record and are not rewritten. Results over stocks that
 contain both directions of zeroary and unary QLN, PP and a fundamental
 proposition are now vacuous. The Recombination-only reading was still open
 at that point. Shortly afterwards a strengthening that drops Exhaustion
-answered it negatively as well (Isabelle-checked, pending independent human
-review; [correspondence](RECOMBINATION_ONLY_CORRESPONDENCE.md)), so results
+answered it negatively as well (checked in Isabelle;
+[correspondence](RECOMBINATION_ONLY_CORRESPONDENCE.md)), so results
 over a stock with Logical Purity, Application, PP, unary Recombination and a
 fundamental proposition are vacuous too.
 

@@ -35,7 +35,7 @@ itself is answered negatively in its full-QLN reading by Jacob Lettie's
 theorem (see the application's [status](goodman-isabelle/STATUS.md)). Shortly
 after Lettie found his result, a strengthening was found that drops
 Exhaustion; it answers the Recombination-only reading negatively as well
-(Isabelle-checked, pending independent human review).
+(checked in Isabelle).
 
 From the repository root, run checks **serially**:
 

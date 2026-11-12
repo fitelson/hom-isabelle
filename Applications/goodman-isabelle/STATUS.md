@@ -2,16 +2,16 @@
 
 ## Recombination without Exhaustion, 11 November 2026
 
-**Result (Isabelle-checked, pending independent human review).** Shortly
+**Result (checked in Isabelle).** Shortly
 after Lettie found his result (next section), a strengthening was found
 that drops Exhaustion. Over H + PE, twenty instances of Logical Purity and
-Application together with PPᵤ refute the existence of a universal
+Application (nineteen distinct formulas; A1 = A8) together with PPᵤ refute the existence of a universal
 proposition. All are ordinary premises: Equivalence and Necessitation apply
 only to premise-free theorems. Since a fundamental proposition is universal
 by unary Recombination (Lettie's `u_fun_ExUni`), PPᵤ is refuted by Logical
 Purity, Application, unary Recombination and a fundamental proposition. This
-answers the Recombination-only reading of Goodman's question negatively,
-subject to that review. No Exhaustion, Persistence, Purity of Fun or
+answers the Recombination-only reading of Goodman's question negatively.
+No Exhaustion, Persistence, Purity of Fun or
 higher-arity QLN is used.
 
 **Checked endpoints** (session `Goodman_Integration_Recombination_Only` in
@@ -27,11 +27,12 @@ higher-arity QLN is used.
 | The same package with PP derives ⊥ | `ro_recombination_PP_inconsistent` |
 
 The [hand proof](reports/RECOMBINATION_WITHOUT_EXHAUSTION_HAND_PROOF_2026-11-11.pdf)
-names the Isabelle theorem for every numbered step and the premise instance
-at every use of Logical Purity or Application; the
-[correspondence](docs/RECOMBINATION_ONLY_CORRESPONDENCE.md) maps the steps to
-theorems and records the consequence relation. Of the package's members,
-"no other fundamentals" and zeroary Recombination are not used.
+contains only the mathematical argument. Its numbered steps follow the
+Isabelle proof one for one, and it names the premise instance at every use
+of Logical Purity or Application. The
+[correspondence](docs/RECOMBINATION_ONLY_CORRESPONDENCE.md) maps each step to
+its theorem and records the consequence relation. Of the package's members,
+"no fundamentals at other types" and zeroary Recombination are not used.
 
 ## Goodman's question: Lettie's refutation, 11 November 2026
 
@@ -77,7 +78,7 @@ resting only on rules of H + PE.
 fundamental proposition without Exhaustion (or the two Persistence instances
 that Lettie shows would also suffice), with the added principles as ordinary
 premises. Exhaustion enters Lettie's proof only through W8–W9. The
-strengthening in the previous section answers this, pending review.
+strengthening in the previous section answers this.
 
 **Withdrawn.** A refutation added on 11 November 2026 and reverted the same
 day (commit 2bd178b) was a theorem of `goodman_book_proves`, an axiom
@@ -87,7 +88,7 @@ does not answer the question as posed.
 
 The dated sections below are the record of earlier checkpoints. Their
 statements that Goodman's question is open are superseded for its full-QLN
-reading and, pending review, for its Recombination-only reading.
+reading and for its Recombination-only reading.
 
 ## Core compatibility update — 26 September 2026 (third pin refresh)
 
@@ -234,7 +235,7 @@ completion criteria. M5's nested collision is **completed**, not a TODO.
 Goodman's original PP consistency question is answered negatively in its
 full-QLN reading (Lettie's refutation, above). Its Recombination-only reading
 is answered negatively by the Isabelle-checked strengthening in the first
-section of this file, pending independent human review.
+section of this file.
 
 ## Formerly included but not selected
 
